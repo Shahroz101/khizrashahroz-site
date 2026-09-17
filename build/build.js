@@ -1,0 +1,471 @@
+// Local build script — generates the secondary static pages into ../dist/
+// Run with: node build.js
+// Output is plain static HTML; no build step is required on the server.
+const fs = require("fs");
+const path = require("path");
+const expensiveLivingRoomArticle = require("./article-living-room.js");
+const masonJarArticle = require("./article-mason-jar.js");
+const aboveFridgeArticle = require("./article-above-fridge.js");
+const livingRoomColorsArticle = require("./article-living-room-colors.js");
+const { picture } = require("./picture-helper.js");
+const { generateFormats } = require("./generate-image-formats.js");
+
+const DIST = path.join(__dirname, "..", "dist");
+const POSTS_DIR = path.join(DIST, "posts");
+
+function nav(current) {
+  const items = [
+    { label: "Home", href: "/" },
+    { label: "Decor", href: "/#latest" },
+    { label: "Rooms", href: "/#latest" },
+    { label: "Color Ideas", href: "/#favorites" },
+    { label: "Seasonal", href: "/#favorites" },
+    { label: "About", href: "/about/" },
+  ];
+  return items
+    .map(
+      (i) =>
+        `<li><a href="${i.href}"${i.href === current ? ' class="is-active"' : ""}>${i.label}</a></li>`
+    )
+    .join("\n      ");
+}
+
+const pinterestIcon = `<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.2-5s-.3-.6-.3-1.6c0-1.5.9-2.6 2-2.6.9 0 1.4.7 1.4 1.6 0 1-.6 2.4-.9 3.7-.3 1.1.6 2 1.7 2 2 0 3.5-2.6 3.5-5 0-2.2-1.6-3.8-4-3.8-2.7 0-4.4 2-4.4 4.2 0 .8.3 1.7.7 2.2.1.1.1.2.1.3l-.3 1.1c0 .2-.2.2-.3.1-1.3-.6-2.1-2.5-2.1-4 0-3.2 2.4-6.2 6.8-6.2 3.6 0 6.3 2.6 6.3 6 0 3.6-2.2 6.4-5.4 6.4-1.1 0-2.1-.6-2.4-1.3l-.7 2.5c-.2.9-.9 2.1-1.4 2.8A10 10 0 1 0 12 2z"></path></svg>`;
+const instagramIcon = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"></circle></svg>`;
+const facebookIcon = `<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.2c0-.9.3-1.4 1.5-1.4h1.4V5.1c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1V11H8v3h2.5v7h3z"></path></svg>`;
+const searchIcon = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="16.2" y1="16.2" x2="21" y2="21"></line></svg>`;
+
+function header(current) {
+  return `<header class="site-header">
+  <nav class="nav-row" aria-label="Primary">
+    <a href="/" class="wordmark">Khizra Shahroz</a>
+    <ul class="nav-links">
+      ${nav(current)}
+    </ul>
+    <div class="nav-actions">
+      <button type="button" class="icon-btn" data-search aria-label="Search the site">${searchIcon}</button>
+      <a href="https://pinterest.com" class="icon-btn" aria-label="Khizra Shahroz on Pinterest">${pinterestIcon}</a>
+      <button type="button" class="icon-btn hamburger" data-hamburger aria-label="Open menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<div class="mobile-drawer" id="mobile-drawer" data-drawer data-open="false">
+  <div class="mobile-drawer-panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="mobile-drawer-top">
+      <span class="wordmark">Khizra Shahroz</span>
+      <button type="button" class="icon-btn" data-drawer-close aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
+      </button>
+    </div>
+    <ul class="mobile-drawer-links">
+      ${nav(current)}
+    </ul>
+    <div class="mobile-drawer-social">
+      <button type="button" class="icon-btn" aria-label="Search the site">${searchIcon}</button>
+      <a href="https://pinterest.com" class="icon-btn" aria-label="Khizra Shahroz on Pinterest">${pinterestIcon}</a>
+    </div>
+  </div>
+</div>`;
+}
+
+function footer() {
+  return `<footer class="site-footer">
+  <section class="newsletter" aria-labelledby="newsletter-title">
+    <div class="wrap-1100 newsletter-grid">
+      <div>
+        <h2 id="newsletter-title">A little home inspiration, delivered.</h2>
+        <p class="supporting">Get beautiful decorating ideas, seasonal inspiration, and my latest favorites straight to your inbox.</p>
+      </div>
+      <form class="newsletter-form" data-newsletter-form novalidate>
+        <label for="ks-email" class="visually-hidden">Your email address</label>
+        <input id="ks-email" type="email" name="email" required placeholder="Your email address">
+        <button type="submit">Sign me up <span aria-hidden="true">→</span></button>
+        <p class="newsletter-message" data-newsletter-message aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <div class="footer-inner">
+    <div class="wrap-1240">
+      <p class="footer-statement">Make your home feel like <em>you.</em></p>
+      <p class="footer-support">Beautiful spaces, thoughtful decorating ideas, and a little inspiration for your next home project.</p>
+
+      <div class="footer-columns">
+        <div>
+          <p class="footer-col-head">Khizra Shahroz</p>
+          <p class="footer-desc">Home decor inspiration for creating a home you genuinely love.</p>
+        </div>
+        <nav aria-label="Explore">
+          <p class="footer-col-head">Explore</p>
+          <ul>
+            <li><a href="/blog/">Home Decor</a></li>
+            <li><a href="/blog/">Living Room</a></li>
+            <li><a href="/blog/">Bedroom</a></li>
+            <li><a href="/blog/">Kitchen</a></li>
+            <li><a href="/#favorites">Color Ideas</a></li>
+            <li><a href="/#favorites">Seasonal Decor</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="About">
+          <p class="footer-col-head">About</p>
+          <ul>
+            <li><a href="/about/">About Khizra</a></li>
+            <li><a href="/contact/">Contact</a></li>
+            <li><a href="/contact/">Work With Me</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer-col-head">Follow along</p>
+          <div class="footer-social">
+            <a href="https://pinterest.com" aria-label="Pinterest">${pinterestIcon}</a>
+            <a href="https://instagram.com" aria-label="Instagram">${instagramIcon}</a>
+            <a href="https://facebook.com" aria-label="Facebook">${facebookIcon}</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Khizra Shahroz</p>
+        <div class="legal-links">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms</a>
+          <a href="/contact/">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>`;
+}
+
+function page({ title, description, canonical, current, body, extraHead = "" }) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<title>${title}</title>
+<meta name="description" content="${description}">
+<link rel="canonical" href="${canonical}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${description}">
+<meta property="og:url" content="${canonical}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@500&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@500&display=swap"></noscript>
+<link rel="stylesheet" href="/css/styles.css?v=3">
+${extraHead}</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+${header(current)}
+<main id="main">
+${body}
+</main>
+${footer()}
+</body>
+</html>
+`;
+}
+
+/* ---------------- Post data ---------------- */
+// These 3 posts already exist as full articles on the live server (created
+// outside this local build). Their post pages are NOT regenerated here —
+// only their metadata is used to list them on the blog index. Do not add
+// these slugs to a write*Post() call, or their live pages get clobbered.
+const externalPosts = [
+  {
+    slug: "cozy-bedroom-ideas",
+    title: "18 Cozy Bedroom Ideas That Make You Want to Stay in Bed All Day",
+    category: "Bedroom",
+    readingTime: "10 min read",
+    excerpt: "Some bedrooms look pretty. Others make you want to cancel every plan you have and stay under the covers until further notice — here's how to build that atmosphere.",
+    image: "/images/cozy-bedroom/upholstered-headboard.jpg",
+  },
+  {
+    slug: "kitchen-counter-decor",
+    title: "18 Kitchen Counter Decor Ideas That Look Stylish and Practical",
+    category: "Kitchen",
+    readingTime: "11 min read",
+    excerpt: "A kitchen can have beautiful cabinets, gorgeous lighting, and the perfect backsplash, yet somehow the counter still looks like it lost a fight with a grocery bag — here's how to fix that.",
+    image: "/images/kitchen-counter/coffee-station-marble-tray.jpg",
+  },
+  {
+    slug: "small-bathroom-ideas",
+    title: "15 Small Bathroom Ideas That Make the Space Feel Bigger",
+    category: "Bathroom",
+    readingTime: "11 min read",
+    excerpt: "A tiny bathroom can feel surprisingly spacious once you stop trying to squeeze more things into it and start thinking about light, sightlines, storage, and visual clutter instead.",
+    image: "/images/small-bathroom/floating-fluted-vanity.jpg",
+  },
+];
+
+const longFormPosts = [
+  {
+    slug: "expensive-living-room-decor-ideas",
+    title: "17 Living Room Decor Ideas That Make Your Space Feel Instantly More Expensive",
+    category: "Living Room",
+    readingTime: "12 min read",
+    date: "September 15, 2026",
+    excerpt: "You don't need a designer budget — the right proportions, lighting, textures, and a little restraint can make an ordinary living room feel completely polished.",
+    alt: "Living room styled with layered lighting, a large area rug and natural textures",
+    image: "/images/living-room/stock-elegant-room.jpg",
+    bodyHtml: expensiveLivingRoomArticle.body,
+  },
+  {
+    slug: "mason-jar-decor-ideas",
+    title: "15 Mason Jar Decor Ideas That Make Your Home Feel More Charming",
+    category: "Decorating",
+    readingTime: "10 min read",
+    date: "September 17, 2026",
+    excerpt: "Vases, candle holders, planters, organizers and gifts — 15 simple ways to turn ordinary Mason jars into charming, purposeful home decor.",
+    alt: "Mason jars styled as wall-mounted sconces with fairy lights and flowers",
+    image: "/images/mason-jar/hero.jpg",
+    bodyHtml: masonJarArticle.body,
+  },
+  {
+    slug: "above-fridge-decor-ideas",
+    title: "12 Ways to Style Above the Fridge",
+    category: "Kitchen",
+    readingTime: "9 min read",
+    date: "September 17, 2026",
+    excerpt: "Baskets, trays, cookbooks and a little restraint — 12 simple ways to turn the awkward space above your fridge into a styled part of the kitchen.",
+    alt: "Stainless steel refrigerator styled with a ceramic vase, framed art and a woven basket on top",
+    image: "/images/above-fridge/hero.jpg",
+    bodyHtml: aboveFridgeArticle.body,
+  },
+  {
+    slug: "living-room-color-ideas",
+    title: "15 Living Room Color Ideas That Create a Calm and Sophisticated Space",
+    category: "Color Ideas",
+    readingTime: "11 min read",
+    date: "September 17, 2026",
+    excerpt: "Warm whites, greige, sage, dusty blue and more — 15 living room paint colors, plus how to combine, light and layer them so the room feels calm and pulled-together.",
+    alt: "Warm neutral living room with a sage sofa, round wood coffee table and natural light",
+    image: "/images/living-room-colors/hero.jpg",
+    bodyHtml: livingRoomColorsArticle.body,
+  },
+];
+
+const allPosts = externalPosts.concat(longFormPosts);
+
+function ensureDir(dir) {
+  fs.mkdirSync(dir, { recursive: true });
+}
+
+function writeLongPost(post) {
+  const body = `
+<section class="page-hero">
+  <div class="wrap-1240">
+    <p class="breadcrumb"><a href="/blog/">Blog</a> / ${post.category}</p>
+    <h1>${post.title}</h1>
+    <p class="lede">${post.excerpt}</p>
+  </div>
+</section>
+<article class="section prose">
+  <div class="wrap-1240">
+    ${post.bodyHtml}
+    <p style="margin-top:2.5em"><a href="/blog/" class="btn-underline">Back to all posts <span aria-hidden="true">→</span></a></p>
+  </div>
+</article>`;
+  const html = page({
+    title: `${post.title} — Khizra Shahroz`,
+    description: post.excerpt,
+    canonical: `https://khizrashahroz.com/posts/${post.slug}/`,
+    current: "",
+    body,
+  });
+  const dir = path.join(POSTS_DIR, post.slug);
+  ensureDir(dir);
+  fs.writeFileSync(path.join(dir, "index.html"), html);
+}
+
+function writeBlog() {
+  const cards = allPosts
+    .map(
+      (p) => `<article class="compact-card">
+        <a href="/posts/${p.slug}/" class="photo-link" aria-label="${p.title}">
+          <div class="photo-slot" role="img" aria-label="${p.alt || p.title}" style="background-image:url('${p.image}');background-size:cover;background-position:center;"></div>
+        </a>
+        <div>
+          <div class="post-meta-row"><span>${p.category}</span><span class="divider" aria-hidden="true">/</span><span class="time">${p.readingTime}</span></div>
+          <h3><a href="/posts/${p.slug}/">${p.title}</a></h3>
+          <p class="excerpt">${p.excerpt}</p>
+        </div>
+      </article>`
+    )
+    .join("\n      ");
+
+  const body = `
+<section class="page-hero">
+  <div class="wrap-1240">
+    <p class="eyebrow" style="justify-content:center;display:flex">From the blog</p>
+    <h1>All decorating ideas</h1>
+    <p class="lede">Every article, newest first — decor, color, and seasonal inspiration for making your home feel like you.</p>
+  </div>
+</section>
+<section class="section latest">
+  <div class="wrap-1360">
+    <div class="blog-grid">
+      ${cards}
+    </div>
+  </div>
+</section>`;
+  const dir = path.join(DIST, "blog");
+  ensureDir(dir);
+  fs.writeFileSync(
+    path.join(dir, "index.html"),
+    page({
+      title: "Blog — Khizra Shahroz",
+      description: "Every home decor article from Khizra Shahroz — decorating ideas, color palettes, and seasonal inspiration.",
+      canonical: "https://khizrashahroz.com/blog/",
+      current: "/blog/",
+      body,
+    })
+  );
+}
+
+function writeAbout() {
+  const body = `
+<section class="section about" style="border-bottom:1px solid var(--hairline)">
+  <div class="wrap-1240 about-grid">
+    <div class="about-portrait">
+      <div class="photo-slot" role="img" aria-label="Khizra Shahroz styling a bookshelf in her cream-toned living room">
+        <span>portrait of khizra<br>5:6 — editorial crop, at home</span>
+      </div>
+      <span class="handwritten-accent" aria-hidden="true">make it yours ♡</span>
+    </div>
+    <div>
+      <p class="eyebrow">Meet Khizra</p>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:400;font-size:clamp(30px, 3.9vw, 50px);line-height:1.12;letter-spacing:-.01em;">Decorating should feel exciting—not overwhelming.</h1>
+      <div class="about-copy">
+        <p>Hi, I'm Khizra. I believe a beautiful home doesn't have to be complicated, expensive, or perfectly styled all the time.</p>
+        <p>I'm here to share the decorating ideas, color combinations, cozy corners, and little details that can make your space feel more like you.</p>
+        <p>Whether you're refreshing one room or dreaming up an entirely new home: pretty rooms, practical ideas, and plenty of reasons to redecorate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section prose">
+  <div class="wrap-1240">
+    <h2>How Khizra Shahroz started</h2>
+    <p>What began as a place to keep track of my own decorating decisions has grown into a home for anyone who wants their space to feel warmer, more personal, and a little more finished — without a full renovation budget.</p>
+    <h2>Work with me</h2>
+    <p>I partner with home brands on styled photography, product features, and honest reviews. If that sounds like a fit, <a href="/contact/">get in touch</a>.</p>
+  </div>
+</section>`;
+  const dir = path.join(DIST, "about");
+  ensureDir(dir);
+  fs.writeFileSync(
+    path.join(dir, "index.html"),
+    page({
+      title: "About Khizra — Khizra Shahroz",
+      description: "Meet Khizra Shahroz, home decor writer and interior stylist behind pretty homes, practical ideas, and a strong point of view.",
+      canonical: "https://khizrashahroz.com/about/",
+      current: "/about/",
+      body,
+    })
+  );
+}
+
+function writeSimplePage({ slug, title, heading, lede, sections }) {
+  const body = `
+<section class="page-hero">
+  <div class="wrap-1240">
+    <h1>${heading}</h1>
+    ${lede ? `<p class="lede">${lede}</p>` : ""}
+  </div>
+</section>
+<section class="section prose">
+  <div class="wrap-1240">
+    ${sections}
+  </div>
+</section>`;
+  const dir = path.join(DIST, slug);
+  ensureDir(dir);
+  fs.writeFileSync(
+    path.join(dir, "index.html"),
+    page({
+      title,
+      description: lede || heading,
+      canonical: `https://khizrashahroz.com/${slug}/`,
+      current: `/${slug}/`,
+      body,
+    })
+  );
+}
+
+ensureDir(DIST);
+ensureDir(POSTS_DIR);
+
+longFormPosts.forEach(writeLongPost);
+writeBlog();
+writeAbout();
+
+writeSimplePage({
+  slug: "contact",
+  title: "Contact — Khizra Shahroz",
+  heading: "Get in touch",
+  lede: "Questions, collaboration ideas, or just want to say hi? I'd love to hear from you.",
+  sections: `<form class="contact-form" action="mailto:hello@khizrashahroz.com" method="post" enctype="text/plain">
+      <div><label for="name">Name</label><input id="name" name="name" type="text" required></div>
+      <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+      <div><label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea></div>
+      <button type="submit" class="btn-primary">Send message <span aria-hidden="true">→</span></button>
+    </form>`,
+});
+
+writeSimplePage({
+  slug: "start-here",
+  title: "Start Here — Khizra Shahroz",
+  heading: "New here? Start with these.",
+  lede: "A short path through the ideas that matter most if you're just getting started.",
+  sections: `<h2>1. Learn the palette</h2>
+    <p>Start with <a href="/posts/living-room-color-ideas/">15 Living Room Color Ideas That Create a Calm and Sophisticated Space</a> to understand the color thinking behind most of what's on this site.</p>
+    <h2>2. Fix one room</h2>
+    <p><a href="/posts/cozy-bedroom-ideas/">18 Cozy Bedroom Ideas That Make You Want to Stay in Bed All Day</a> is the most practical single article to act on this weekend.</p>
+    <h2>3. Keep going</h2>
+    <p>From there, browse the <a href="/blog/">full blog</a> or jump to <a href="/#favorites">reader favorites</a>.</p>`,
+});
+
+writeSimplePage({
+  slug: "privacy",
+  title: "Privacy Policy — Khizra Shahroz",
+  heading: "Privacy Policy",
+  lede: "Last updated September 2026.",
+  sections: `<p>This site collects the minimum information necessary to operate: email addresses submitted through the newsletter signup form, and standard, anonymized analytics about how pages are used.</p>
+    <h2>What we collect</h2>
+    <p>Email address (newsletter signup, optional), and basic browser/device analytics (no personally identifying data).</p>
+    <h2>How it's used</h2>
+    <p>Newsletter emails are used solely to send decorating content you've opted into, and are never sold or shared with third parties.</p>
+    <h2>Your choices</h2>
+    <p>You can unsubscribe from the newsletter at any time using the link in any email, or by contacting us directly via the <a href="/contact/">contact page</a>.</p>`,
+});
+
+writeSimplePage({
+  slug: "terms",
+  title: "Terms of Use — Khizra Shahroz",
+  heading: "Terms of Use",
+  lede: "Last updated September 2026.",
+  sections: `<p>By using khizrashahroz.com, you agree to use the content here for personal, non-commercial reference. Republishing full articles or images without permission is not allowed.</p>
+    <h2>Content</h2>
+    <p>All decorating advice is offered for informational purposes; results will vary by space, budget, and materials used.</p>
+    <h2>Affiliate disclosure</h2>
+    <p>Some links on this site may be affiliate links, meaning a small commission may be earned at no extra cost to you.</p>`,
+});
+
+generateFormats()
+  .then(() => console.log("Build complete."))
+  .catch((err) => {
+    console.error("Image format generation failed:", err);
+    process.exit(1);
+  });

@@ -108,6 +108,16 @@ button { font-family: inherit; }
   white-space: nowrap;
   margin-right: auto;
   color: var(--charcoal);
+  display: flex;
+  align-items: center;
+}
+.wordmark img {
+  display: block;
+  height: 44px;
+  width: auto;
+}
+.mobile-drawer-top .wordmark img {
+  height: 36px;
 }
 .nav-links {
   display: flex; align-items: center;

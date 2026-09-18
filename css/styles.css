@@ -1,4 +1,45 @@
 /* Khizra Shahroz — design tokens & base styles */
+
+/* Self-hosted fonts (latin subset only — see build/source-assets for
+   how these were extracted from Google Fonts). Removes the
+   fonts.googleapis.com/fonts.gstatic.com round-trips from the
+   critical rendering path. */
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/fonts/playfair-normal-variable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/playfair-italic-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 300 500;
+  font-display: swap;
+  src: url("/fonts/dmsans-normal-variable.woff2") format("woff2");
+}
+@font-face {
+  font-family: "DM Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/dmsans-italic-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/caveat-500.woff2") format("woff2");
+}
+
 :root {
   --cream: #FAF7F2;
   --ivory: #FFFDFC;

@@ -10,6 +10,9 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
 RewriteRule ^(.+)\.html$ /$1/ [R=301,L]
 
+# Old /posts/slug/ URLs -> /slug/ (posts moved to the site root)
+RewriteRule ^posts/(.+)/?$ /$1/ [R=301,L]
+
 <IfModule mod_headers.c>
   <FilesMatch "\.(jpe?g|png|webp|avif|css|js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"

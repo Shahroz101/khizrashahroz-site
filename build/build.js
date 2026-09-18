@@ -12,7 +12,6 @@ const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
 const DIST = path.join(__dirname, "..");
-const POSTS_DIR = path.join(DIST, "posts");
 
 function nav(current) {
   const items = [
@@ -290,11 +289,11 @@ function writeLongPost(post) {
   const html = page({
     title: `${post.title} — Khizra Shahroz`,
     description: post.excerpt,
-    canonical: `https://khizrashahroz.com/posts/${post.slug}/`,
+    canonical: `https://khizrashahroz.com/${post.slug}/`,
     current: "",
     body,
   });
-  const dir = path.join(POSTS_DIR, post.slug);
+  const dir = path.join(DIST, post.slug);
   ensureDir(dir);
   fs.writeFileSync(path.join(dir, "index.html"), html);
 }
@@ -303,12 +302,12 @@ function writeBlog() {
   const cards = allPosts
     .map(
       (p) => `<article class="compact-card">
-        <a href="/posts/${p.slug}/" class="photo-link" aria-label="${p.title}">
+        <a href="/${p.slug}/" class="photo-link" aria-label="${p.title}">
           <div class="photo-slot" role="img" aria-label="${p.alt || p.title}" style="background-image:url('${p.image}');background-size:cover;background-position:center;"></div>
         </a>
         <div>
           <div class="post-meta-row"><span>${p.category}</span><span class="divider" aria-hidden="true">/</span><span class="time">${p.readingTime}</span></div>
-          <h3><a href="/posts/${p.slug}/">${p.title}</a></h3>
+          <h3><a href="/${p.slug}/">${p.title}</a></h3>
           <p class="excerpt">${p.excerpt}</p>
         </div>
       </article>`
@@ -415,7 +414,6 @@ function writeSimplePage({ slug, title, heading, lede, sections }) {
 }
 
 ensureDir(DIST);
-ensureDir(POSTS_DIR);
 
 longFormPosts.forEach(writeLongPost);
 writeBlog();
@@ -440,9 +438,9 @@ writeSimplePage({
   heading: "New here? Start with these.",
   lede: "A short path through the ideas that matter most if you're just getting started.",
   sections: `<h2>1. Learn the palette</h2>
-    <p>Start with <a href="/posts/living-room-color-ideas/">15 Living Room Color Ideas That Create a Calm and Sophisticated Space</a> to understand the color thinking behind most of what's on this site.</p>
+    <p>Start with <a href="/living-room-color-ideas/">15 Living Room Color Ideas That Create a Calm and Sophisticated Space</a> to understand the color thinking behind most of what's on this site.</p>
     <h2>2. Fix one room</h2>
-    <p><a href="/posts/cozy-bedroom-ideas/">18 Cozy Bedroom Ideas That Make You Want to Stay in Bed All Day</a> is the most practical single article to act on this weekend.</p>
+    <p><a href="/cozy-bedroom-ideas/">18 Cozy Bedroom Ideas That Make You Want to Stay in Bed All Day</a> is the most practical single article to act on this weekend.</p>
     <h2>3. Keep going</h2>
     <p>From there, browse the <a href="/blog/">full blog</a> or jump to <a href="/#favorites">reader favorites</a>.</p>`,
 });

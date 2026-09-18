@@ -7,6 +7,7 @@ const expensiveLivingRoomArticle = require("./article-living-room.js");
 const masonJarArticle = require("./article-mason-jar.js");
 const aboveFridgeArticle = require("./article-above-fridge.js");
 const livingRoomColorsArticle = require("./article-living-room-colors.js");
+const toiletTankArticle = require("./article-toilet-tank.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -253,6 +254,17 @@ const longFormPosts = [
     alt: "Warm neutral living room with a sage sofa, round wood coffee table and natural light",
     image: "/images/living-room-colors/hero.jpg",
     bodyHtml: livingRoomColorsArticle.body,
+  },
+  {
+    slug: "toilet-tank-decorating-ideas",
+    title: "16 Toilet Tank Decorating Ideas That Make Your Bathroom Feel More Finished",
+    category: "Bathroom",
+    readingTime: "9 min read",
+    date: "September 18, 2026",
+    excerpt: "Plants, trays, candles and a little restraint — 16 simple, moisture-friendly ways to style the awkward empty space on top of your toilet tank.",
+    alt: "Woven tray on a toilet tank styled with a eucalyptus vase, candle and rolled towels",
+    image: "/images/toilet-tank/hero.jpg",
+    bodyHtml: toiletTankArticle.body,
   },
 ];
 

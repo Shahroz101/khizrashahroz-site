@@ -36,7 +36,7 @@ const searchIcon = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" 
 function header(current) {
   return `<header class="site-header">
   <nav class="nav-row" aria-label="Primary">
-    <a href="/" class="wordmark"><img src="/images/brand/logo.png" alt="Khizra Shahroz" width="1049" height="150"></a>
+    <a href="/" class="wordmark"><img src="/images/brand/logo.png?v=2" alt="Khizra Shahroz" width="1049" height="150"></a>
     <ul class="nav-links">
       ${nav(current)}
     </ul>
@@ -53,7 +53,7 @@ function header(current) {
 <div class="mobile-drawer" id="mobile-drawer" data-drawer data-open="false">
   <div class="mobile-drawer-panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <div class="mobile-drawer-top">
-      <span class="wordmark"><img src="/images/brand/logo.png" alt="Khizra Shahroz" width="1049" height="150"></span>
+      <span class="wordmark"><img src="/images/brand/logo.png?v=2" alt="Khizra Shahroz" width="1049" height="150"></span>
       <button type="button" class="icon-btn" data-drawer-close aria-label="Close menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
       </button>

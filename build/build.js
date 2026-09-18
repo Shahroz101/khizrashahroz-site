@@ -18,9 +18,7 @@ function nav(current) {
   const items = [
     { label: "Home", href: "/" },
     { label: "Decor", href: "/#latest" },
-    { label: "Rooms", href: "/#latest" },
     { label: "Color Ideas", href: "/#favorites" },
-    { label: "Seasonal", href: "/#favorites" },
     { label: "About", href: "/about/" },
   ];
   return items
@@ -106,8 +104,8 @@ function footer() {
             <li><a href="/blog/">Living Room</a></li>
             <li><a href="/blog/">Bedroom</a></li>
             <li><a href="/blog/">Kitchen</a></li>
+            <li><a href="/blog/">Bathroom</a></li>
             <li><a href="/#favorites">Color Ideas</a></li>
-            <li><a href="/#favorites">Seasonal Decor</a></li>
           </ul>
         </nav>
         <nav aria-label="About">

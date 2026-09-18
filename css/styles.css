@@ -2,10 +2,12 @@
 :root {
   --cream: #FAF7F2;
   --ivory: #FFFDFC;
-  --pale-blush: #FBF1F2;
-  --soft-blush: #F4DDE0;
-  --blush: #DFAEB5;
+  /* One pink, everywhere: 185,130,138. Backgrounds are the same hue
+     at lower opacity rather than a different, lighter hex. */
   --dusty-rose: #B9828A;
+  --blush: #B9828A;
+  --soft-blush: rgba(185,130,138,.18);
+  --pale-blush: rgba(185,130,138,.06);
   --charcoal: #292526;
   --taupe: #806F69;
   --body-text: #4A4243;

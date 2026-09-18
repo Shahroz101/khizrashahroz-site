@@ -113,11 +113,11 @@ button { font-family: inherit; }
 }
 .wordmark img {
   display: block;
-  height: 30px;
+  height: 28px;
   width: auto;
 }
 .mobile-drawer-top .wordmark img {
-  height: 26px;
+  height: 24px;
 }
 .nav-links {
   display: flex; align-items: center;

@@ -9,7 +9,9 @@
       header.classList.toggle("is-scrolled", scrolled);
     };
     window.addEventListener("scroll", setScrolled, { passive: true });
-    setScrolled();
+    // Defer the initial read to the next frame instead of forcing a
+    // synchronous layout during script execution (Lighthouse: forced reflow).
+    requestAnimationFrame(setScrolled);
   }
 
   /* Mobile drawer */

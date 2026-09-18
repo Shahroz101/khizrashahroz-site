@@ -135,9 +135,7 @@ function footer() {
       </div>
     </div>
   </div>
-</footer>
-
-<script src="/js/main.js"></script>`;
+</footer>`;
 }
 
 function page({ title, description, canonical, current, body, extraHead = "" }) {
@@ -164,6 +162,7 @@ function page({ title, description, canonical, current, body, extraHead = "" }) 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@500&display=swap"></noscript>
 <link rel="stylesheet" href="/css/styles.css?v=7">
+<script defer src="/js/main.js?v=2"></script>
 ${extraHead}</head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>

@@ -36,7 +36,7 @@ const searchIcon = `<svg width="17" height="17" viewBox="0 0 24 24" fill="none" 
 function header(current) {
   return `<header class="site-header">
   <nav class="nav-row" aria-label="Primary">
-    <a href="/" class="wordmark"><img src="/images/brand/logo.png?v=2" alt="Khizra Shahroz" width="1049" height="150"></a>
+    <a href="/" class="wordmark"><picture><source srcset="/images/brand/logo.avif?v=3" type="image/avif"><source srcset="/images/brand/logo.webp?v=3" type="image/webp"><img src="/images/brand/logo.png?v=3" alt="Khizra Shahroz" width="1049" height="150"></picture></a>
     <ul class="nav-links">
       ${nav(current)}
     </ul>
@@ -53,7 +53,7 @@ function header(current) {
 <div class="mobile-drawer" id="mobile-drawer" data-drawer data-open="false">
   <div class="mobile-drawer-panel" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <div class="mobile-drawer-top">
-      <span class="wordmark"><img src="/images/brand/logo.png?v=2" alt="Khizra Shahroz" width="1049" height="150"></span>
+      <span class="wordmark"><picture><source srcset="/images/brand/logo.avif?v=3" type="image/avif"><source srcset="/images/brand/logo.webp?v=3" type="image/webp"><img src="/images/brand/logo.png?v=3" alt="Khizra Shahroz" width="1049" height="150"></picture></span>
       <button type="button" class="icon-btn" data-drawer-close aria-label="Close menu">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>
       </button>
@@ -163,7 +163,7 @@ function page({ title, description, canonical, current, body, extraHead = "" }) 
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@500&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=Caveat:wght@500&display=swap"></noscript>
-<link rel="stylesheet" href="/css/styles.css?v=6">
+<link rel="stylesheet" href="/css/styles.css?v=7">
 ${extraHead}</head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>

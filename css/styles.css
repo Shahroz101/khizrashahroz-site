@@ -113,6 +113,9 @@ button { font-family: inherit; }
   display: flex;
   align-items: center;
 }
+.wordmark picture {
+  display: block;
+}
 .wordmark img {
   display: block;
   height: 28px;

@@ -13,8 +13,11 @@ const sharp = require("sharp");
 const IMAGES_DIR = path.join(__dirname, "..", "images");
 const SOURCE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png"]);
 
+const SKIP_DIRS = new Set(["brand"]);
+
 function walk(dir, files = []) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isDirectory() && SKIP_DIRS.has(entry.name)) continue;
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) walk(full, files);
     else files.push(full);

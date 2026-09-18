@@ -10,7 +10,7 @@ const livingRoomColorsArticle = require("./article-living-room-colors.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
-const DIST = path.join(__dirname, "..", "dist");
+const DIST = path.join(__dirname, "..");
 const POSTS_DIR = path.join(DIST, "posts");
 
 function nav(current) {

@@ -10,7 +10,7 @@ const fs = require("fs");
 const path = require("path");
 const sharp = require("sharp");
 
-const IMAGES_DIR = path.join(__dirname, "..", "dist", "images");
+const IMAGES_DIR = path.join(__dirname, "..", "images");
 const SOURCE_EXTENSIONS = new Set([".jpg", ".jpeg", ".png"]);
 
 function walk(dir, files = []) {

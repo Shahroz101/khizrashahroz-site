@@ -10,6 +10,7 @@ const livingRoomColorsArticle = require("./article-living-room-colors.js");
 const toiletTankArticle = require("./article-toilet-tank.js");
 const coffeeTableArticle = require("./article-coffee-table.js");
 const smallDiningRoomArticle = require("./article-small-dining-room.js");
+const sofaWallArticle = require("./article-sofa-wall.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -296,6 +297,17 @@ const longFormPosts = [
     alt: "Small dining nook with a round wood table, woven chairs and open shelving styled with plants",
     image: "/images/small-dining-room/hero.jpg",
     bodyHtml: smallDiningRoomArticle.body,
+  },
+  {
+    slug: "sofa-wall-decor-ideas",
+    title: "19 Sofa Wall Decor Ideas That Make Your Living Room Feel Finished",
+    category: "Living Room",
+    readingTime: "13 min read",
+    date: "September 20, 2026",
+    excerpt: "Oversized artwork, gallery walls, mirrors, shelves and textiles — 19 ways to turn the empty wall behind your sofa into the room's best feature.",
+    alt: "Living room sofa wall combining a photo gallery, round mirror, macrame hanging and a styled floating shelf",
+    image: "/images/sofa-wall-decor/hero.jpg",
+    bodyHtml: sofaWallArticle.body,
   },
 ];
 

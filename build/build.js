@@ -9,6 +9,7 @@ const aboveFridgeArticle = require("./article-above-fridge.js");
 const livingRoomColorsArticle = require("./article-living-room-colors.js");
 const toiletTankArticle = require("./article-toilet-tank.js");
 const coffeeTableArticle = require("./article-coffee-table.js");
+const smallDiningRoomArticle = require("./article-small-dining-room.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -284,6 +285,17 @@ const longFormPosts = [
     alt: "Coffee table styled with a mirrored tray, candle, book stack and a vase of dried florals",
     image: "/images/coffee-table/hero.jpg",
     bodyHtml: coffeeTableArticle.body,
+  },
+  {
+    slug: "small-dining-room-ideas",
+    title: "18 Small Dining Room Ideas That Make Every Inch Count",
+    category: "Dining Room",
+    readingTime: "11 min read",
+    date: "September 20, 2026",
+    excerpt: "Round tables, banquettes, mirrors and layered lighting — 18 practical ways to make a small dining room feel comfortable, stylish and easy to move around in.",
+    alt: "Small dining nook with a round wood table, woven chairs and open shelving styled with plants",
+    image: "/images/small-dining-room/hero.jpg",
+    bodyHtml: smallDiningRoomArticle.body,
   },
 ];
 

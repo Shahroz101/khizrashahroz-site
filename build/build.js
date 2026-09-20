@@ -11,6 +11,7 @@ const toiletTankArticle = require("./article-toilet-tank.js");
 const coffeeTableArticle = require("./article-coffee-table.js");
 const smallDiningRoomArticle = require("./article-small-dining-room.js");
 const sofaWallArticle = require("./article-sofa-wall.js");
+const nurseryArticle = require("./article-nursery.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -308,6 +309,17 @@ const longFormPosts = [
     alt: "Living room sofa wall combining a photo gallery, round mirror, macrame hanging and a styled floating shelf",
     image: "/images/sofa-wall-decor/hero.jpg",
     bodyHtml: sofaWallArticle.body,
+  },
+  {
+    slug: "nursery-decor-ideas",
+    title: "23 Nursery Decor Ideas That Feel Cozy, Practical, and Beautiful",
+    category: "Decorating",
+    readingTime: "14 min read",
+    date: "September 20, 2026",
+    excerpt: "Warm neutrals, natural wood, soft lighting and smart storage — 23 nursery decor ideas that balance beauty, comfort, safety and everyday practicality.",
+    alt: "Cozy sage green nursery with a white crib, woven baskets and a soft rug",
+    image: "/images/nursery-decor/hero.jpg",
+    bodyHtml: nurseryArticle.body,
   },
 ];
 

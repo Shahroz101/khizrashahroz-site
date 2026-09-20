@@ -8,6 +8,7 @@ const masonJarArticle = require("./article-mason-jar.js");
 const aboveFridgeArticle = require("./article-above-fridge.js");
 const livingRoomColorsArticle = require("./article-living-room-colors.js");
 const toiletTankArticle = require("./article-toilet-tank.js");
+const coffeeTableArticle = require("./article-coffee-table.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -272,6 +273,17 @@ const longFormPosts = [
     alt: "Woven tray on a toilet tank styled with a eucalyptus vase, candle and rolled towels",
     image: "/images/toilet-tank/hero.jpg",
     bodyHtml: toiletTankArticle.body,
+  },
+  {
+    slug: "coffee-table-organizing-ideas",
+    title: "17 Coffee Table Organizing Ideas",
+    category: "Living Room",
+    readingTime: "9 min read",
+    date: "September 20, 2026",
+    excerpt: "Trays, bowls, book stacks and a little restraint — 17 simple ways to organize a coffee table so it stays useful, not just photogenic.",
+    alt: "Coffee table styled with a mirrored tray, candle, book stack and a vase of dried florals",
+    image: "/images/coffee-table/hero.jpg",
+    bodyHtml: coffeeTableArticle.body,
   },
 ];
 

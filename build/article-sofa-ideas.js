@@ -50,6 +50,7 @@ function photo(key) {
   return `<figure>
       ${picture({ dir: "sofa-ideas", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Shop via <a href="${amazonLink(p.asin)}" target="_blank" rel="nofollow sponsored noopener">Amazon — ${p.label}</a></figcaption>
+      <a class="shop-cta" href="${amazonLink(p.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop This on Amazon <span class="arrow" aria-hidden="true">→</span></a>
     </figure>`;
 }
 

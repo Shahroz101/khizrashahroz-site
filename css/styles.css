@@ -487,6 +487,16 @@ body.nav-open { overflow: hidden; }
 }
 .prose figcaption a { color: var(--dusty-rose); text-decoration: underline; text-underline-offset: 2px; }
 .prose figcaption a:hover { color: var(--charcoal); }
+.prose .shop-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 12px; min-height: 44px; padding: 0 24px;
+  background: var(--blush); color: var(--charcoal);
+  font-size: 12px; letter-spacing: .14em; text-transform: uppercase;
+  border-radius: 2px; text-decoration: none; transition: background .3s ease, color .3s ease;
+}
+.prose .shop-cta .arrow { transition: transform .3s ease; }
+.prose .shop-cta:hover { background: var(--charcoal); color: var(--ivory); }
+.prose .shop-cta:hover .arrow { transform: translateX(3px); }
 .breadcrumb { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--taupe); }
 .breadcrumb a { color: var(--dusty-rose); }
 .breadcrumb a:hover { text-decoration: underline; }

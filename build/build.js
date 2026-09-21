@@ -14,6 +14,7 @@ const sofaWallArticle = require("./article-sofa-wall.js");
 const nurseryArticle = require("./article-nursery.js");
 const sofaIdeasArticle = require("./article-sofa-ideas.js");
 const kitchenShelfArticle = require("./article-kitchen-shelf.js");
+const entrywayArticle = require("./article-entryway.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -344,6 +345,17 @@ const longFormPosts = [
     alt: "Wood shelf styled with a framed print, mug hooks, plants and a Smeg coffee maker below",
     image: "/images/kitchen-shelf-decor/hero.jpg",
     bodyHtml: kitchenShelfArticle.body,
+  },
+  {
+    slug: "entryway-table-decor-ideas",
+    title: "17 Ways to Decorate Entryway Table",
+    category: "Decorating",
+    readingTime: "13 min read",
+    date: "September 21, 2026",
+    excerpt: "Mirrors, statement vases, layered books and a little restraint — practical ways to style an entryway table, plus real products you can shop for each one.",
+    alt: "Oval wood mirror above a wood console table styled with an olive branch vase and basket, open front door beyond",
+    image: "/images/entryway-table-decor/hero.jpg",
+    bodyHtml: entrywayArticle.body,
   },
 ];
 

@@ -13,6 +13,7 @@ const smallDiningRoomArticle = require("./article-small-dining-room.js");
 const sofaWallArticle = require("./article-sofa-wall.js");
 const nurseryArticle = require("./article-nursery.js");
 const sofaIdeasArticle = require("./article-sofa-ideas.js");
+const kitchenShelfArticle = require("./article-kitchen-shelf.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -175,7 +176,7 @@ function page({ title, description, canonical, current, body, extraHead = "" }) 
 <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-italic-400.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/dmsans-italic-400.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/caveat-500.woff2" crossorigin>
-<link rel="stylesheet" href="/css/styles.css?v=9">
+<link rel="stylesheet" href="/css/styles.css?v=10">
 <script defer src="/js/main.js?v=2"></script>
 ${extraHead}</head>
 <body>
@@ -332,6 +333,17 @@ const longFormPosts = [
     alt: "Modern gray corduroy sectional sofa with reversible chaise in a living room",
     image: "/images/sofa-ideas/hero.jpg",
     bodyHtml: sofaIdeasArticle.body,
+  },
+  {
+    slug: "kitchen-shelf-decor-ideas",
+    title: "21 Kitchen Shelf Decor Ideas That Look Stylish Without Feeling Cluttered",
+    category: "Kitchen",
+    readingTime: "14 min read",
+    date: "September 21, 2026",
+    excerpt: "Cookbooks, cutting boards, glass jars and a little restraint — 21 kitchen shelf decor ideas that stay practical, plus real products you can shop for each one.",
+    alt: "Wood shelf styled with a framed print, mug hooks, plants and a Smeg coffee maker below",
+    image: "/images/kitchen-shelf-decor/hero.jpg",
+    bodyHtml: kitchenShelfArticle.body,
   },
 ];
 

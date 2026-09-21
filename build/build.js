@@ -12,6 +12,7 @@ const coffeeTableArticle = require("./article-coffee-table.js");
 const smallDiningRoomArticle = require("./article-small-dining-room.js");
 const sofaWallArticle = require("./article-sofa-wall.js");
 const nurseryArticle = require("./article-nursery.js");
+const sofaIdeasArticle = require("./article-sofa-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -320,6 +321,17 @@ const longFormPosts = [
     alt: "Cozy sage green nursery with a white crib, woven baskets and a soft rug",
     image: "/images/nursery-decor/hero.jpg",
     bodyHtml: nurseryArticle.body,
+  },
+  {
+    slug: "sofa-ideas-living-room",
+    title: "19 Sofa Ideas That Can Completely Change Your Living Room",
+    category: "Living Room",
+    readingTime: "13 min read",
+    date: "September 21, 2026",
+    excerpt: "Warm neutrals, deep seating, curved silhouettes and bold color — 19 sofa ideas to help you choose the right shape, fabric and layout for the way you actually live.",
+    alt: "Modern gray corduroy sectional sofa with reversible chaise in a living room",
+    image: "/images/sofa-ideas/hero.jpg",
+    bodyHtml: sofaIdeasArticle.body,
   },
 ];
 

@@ -15,6 +15,7 @@ const nurseryArticle = require("./article-nursery.js");
 const sofaIdeasArticle = require("./article-sofa-ideas.js");
 const kitchenShelfArticle = require("./article-kitchen-shelf.js");
 const entrywayArticle = require("./article-entryway.js");
+const laundryRoomArticle = require("./article-laundry-room.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -356,6 +357,17 @@ const longFormPosts = [
     alt: "Oval wood mirror above a wood console table styled with an olive branch vase and basket, open front door beyond",
     image: "/images/entryway-table-decor/hero.jpg",
     bodyHtml: entrywayArticle.body,
+  },
+  {
+    slug: "laundry-room-ideas",
+    title: "18 Laundry Room Ideas That Make Wash Day Easier and More Stylish",
+    category: "Decorating",
+    readingTime: "13 min read",
+    date: "September 23, 2026",
+    excerpt: "Countertops, floating shelves, hanging rods and a little restraint — 18 laundry room ideas that make the space more organized and more enjoyable to use, plus real products you can shop for each one.",
+    alt: "Laundry room styled with brass pendant lights, floating wood shelves and a marble backsplash above a hidden washer",
+    image: "/images/laundry-room/hero.jpg",
+    bodyHtml: laundryRoomArticle.body,
   },
 ];
 

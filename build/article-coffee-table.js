@@ -7,6 +7,11 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 768, h: 1365, alt: "Coffee table styled with a mirrored tray, candle, book stack and a vase of dried florals", url: "https://www.pinterest.com/pin/1137018237205329735/", label: "Coffee Table Styling" },
   trayZone: { src: "tray-zone", w: 1200, h: 1999, alt: "Round coffee table with a wood tray holding a candle, coasters and a decorative object", url: "https://www.pinterest.com/pin/1115977982697284733/", label: "Coffee Table Tray Zone" },
@@ -32,12 +37,120 @@ const PIN = {
   styleScratch: { src: "style-scratch", w: 1168, h: 1755, alt: "Round wood tray styled with a minimalist book, taper candles and a vase", url: "https://www.pinterest.com/pin/1145181011527290417/", label: "Minimalist Coffee Table Tray" },
 };
 
+const PRODUCTS = {
+  hero: [
+    { asin: "B0H38MSH7Q", title: "11.5\" Round Acacia Wood Serving Tray", w: 1417, h: 1349 },
+    { asin: "B0CZQ5JRQT", title: "Acacia Round Wood Serving Tray for Ottoman Coffee Dining Table Decorations", w: 1194, h: 1500 },
+  ],
+  trayZone: [
+    { asin: "B0GTHY3YNL", title: "Round Bamboo Tray, 12 Inch Decorative Serving Tray with Walnut Finish Coffee Table Tray, Natural Bamboo Ottoman Tray for Vanity, Snacks, Vanity, Entryway & Home Decor", w: 1329, h: 1489 },
+    { asin: "B09WKN9RMK", title: "11.5 Inches Candle Holder Tray Home Decor, Round Wood Tray for Coffee Table, Small Wooden Serving Decorative Trays for Home", w: 1500, h: 1500 },
+  ],
+  bookStack: [
+    { asin: "B0GKXY24FG", title: "Vintage Faux Book Box Set of 3 Brown Linen Decorative Books for Shelves, Fake Books for Decoration with Secret Compartment, Rustic Farmhouse Coffee Table Decor (Brown-Beige-White)", w: 1500, h: 1500 },
+    { asin: "B0GZ2FGXTX", title: "Aesthetic Decorative Books, Set of 2 Boxes for Coffee Table & Mantel Decor", w: 1254, h: 1254 },
+  ],
+  bowlClutter: [
+    { asin: "B0B9CLPCFN", title: "FANDOS Wooden Dough Bowl for Decor - 17¾ in Long Hand Carved Paulownia, Large Rustic Decorative Bowl for Home Table Centerpiece, Keys, Entryway Table, Catchall Tray & Wooden Dining Room Centerpiece", w: 1500, h: 1112 },
+    { asin: "B0BS6L33SF", title: "Hanobe Wood Decorative Dough Bowl for Coffee Table Decor, 14\" Rustic Brown", w: 1500, h: 750 },
+  ],
+  trayBowlCombo: [
+    { asin: "B072FTC2GF", title: "Home Redefined 17.5\"x12\" Gold Glossy Crocodile Faux Leather Serving Tray Beautiful Modern Elegant Decorative Tray with Handles Ottoman Coffee Table Tray for All Occasion's", w: 1500, h: 691 },
+    { asin: "B0DRYD63RT", title: "12 Inch Golden Round Platter Tray, Trays for Domestic Purposes, Stainless Steel Serving, Circle Decorative Tray, Vanity Tray for Centerpiece Home Decor", w: 1221, h: 1206 },
+  ],
+  remoteSpot: [
+    { asin: "B0F92TZRFM", title: "Decorative Storage Book Box – Hidden Storage for Remote Controls, Keys, and Small Items – Elegant Home Decor for Living Room, Bedroom, Coffee Table – Modern Style Faux Book Organizer (Pairs)", w: 1392, h: 1479 },
+    { asin: "B09JK5PYHF", title: "Mela Artisans Trellis Mango Wood Storage Box - Whitewash, 7.5in x 4.5in", w: 1500, h: 1448 },
+  ],
+  catchallBowl: [
+    { asin: "B0GWMS5KND", title: "6'' Key Bowl, Purse Bowl - Small Decorative Bowl, Soft Beige", w: 1500, h: 1500 },
+    { asin: "B0BQ2G8JX6", title: "Mecaikru Ceramic Ring Dish, 4 in Jewelry Tray with Kiln Glaze Catchall Bowl", w: 1500, h: 1301 },
+  ],
+  tieredTray: [
+    { asin: "B0DPW42QPH", title: "Modern Decorative Tray Set of 2, Wooden Round Crocodile Leather Tray with Polished Metal Handles, Decorative Serving Trays Coffee Table Trays Ottoman Platter for Home Decor (Golden)", w: 1479, h: 1149 },
+    { asin: "B0CGX169W1", title: "Round Gold Decorative Serving Tray with Handles, 13” Versatile Ottoman Tray for Coffee Table, Entertaining, Outdoor Patio, Living Room", w: 1484, h: 1500 },
+  ],
+  decorativeBox: [
+    { asin: "B0FVTCLQK9", title: "Farmhouse Decorative Storage Trunks Set of 3 Linen and Wood Boho Vintage Boxes with Metal Handles and Clasp, Rustic Wooden Keepsake Chests for Living Room, Entryway & Bedroom Organization", w: 1298, h: 1500 },
+    { asin: "B0H1524FZZ", title: "JARLINK Decorative Box with Lid, Handwoven Water Hyacinth Wicker Woven Box", w: 1500, h: 1418 },
+  ],
+  coasters: [
+    { asin: "B0GGH5B6D7", title: "Set of 4 White Drink Coasters, 4-Inch Exquisite Marble Stone Coasters, Natural Stone Design, Perfect for housewarmings, Anniversaries, and Office Decor, While Helping Protect countertops", w: 1080, h: 1490 },
+    { asin: "B09L42TT2L", title: "Natural Travertine Marble Coasters Set of 4-4\" Round Stone Drink Coasters, Non-Slip Cork Backing, Housewarming Gift, Wedding, Protect Tables from Stains & Scratches (BD140)", w: 1358, h: 1500 },
+  ],
+  threeZones: [
+    { asin: "B0DZ5R6KF7", title: "6\" Small Decorative Bowl, Multi-Purpose Decorative Bowls for Keys, Candy and Home Decor, Ceramic Bowl （Retro White）", w: 1500, h: 620 },
+    { asin: "B0FNLFWDNG", title: "salomayes Wabi-Sabi Ceramic Decorative Bowl, Matte Off-White Catchall Bowl", w: 1500, h: 804 },
+  ],
+  lowVase: [
+    { asin: "B0DKD27HPB", title: "Ceramic Vase Set-3, Small Flower Vases for Decor, Modern Boho Farmhouse Style, Decorative Vases for Pampas Grass & Dried Flowers, Distressed Finish (Beige)", w: 1500, h: 1499 },
+    { asin: "B0C6JHS1JL", title: "White Ceramic Vase, GUKJOB Small Cute Flower Vase for Pampas Grass, Home, Living Room, Dining Table, Farmhouse, Office Decor, Bedroom, Table, and Kitchen Shelf (White)", w: 694, h: 1500 },
+  ],
+  ottomanTray: [
+    { asin: "B0CFV12DDZ", title: "Hrastany Round Wood Decorative Serving Tray for Coffee Table, Brown", w: 1500, h: 1497 },
+    { asin: "B0CBK8SY98", title: "Acacia Wood Serving Tray with Handles - 17\"x13\" Round, Decorative Ottoman Tray for Living Room, Coffee Table, Breakfast in Bed, Candle Display", w: 1397, h: 1454 },
+  ],
+  magazines: [
+    { asin: "B0FFBBMHNM", title: "PUERSI Freestanding Magazine Holder, Metal Magazine Rack Floor Stand", w: 1182, h: 1500 },
+    { asin: "B0GS4QN3LB", title: "Magazine Holder Floor, Magazine Holder – Wooden & Metal Decorative Magazines Rack, Freestanding Newspaper & Book Storage Organizer for Living Room, Bedroom, and Office", w: 1383, h: 1427 },
+  ],
+  focalObject: [
+    { asin: "B09ZB98BTH", title: "White Ceramic Vase-Flower Vase Dried Flower Vase for Modern Home Decor, Fit for Foyer Living Room Fireplace Bedroom Kitchen,Decent Gift, 8.27\" H", w: 433, h: 1284 },
+    { asin: "B0D8LFPQGF", title: "flature Ceramic Vase with Grooves - Waterproof Flower Vase in Matte White for Fresh Flowers, Dried Flowers, Pampas Grass, Large 7.9\" Tall Vase as a Gift, Decoration for Living Room, Bedroom, Office.", w: 1117, h: 1500 },
+  ],
+  naturalMaterials: [
+    { asin: "B0892H4PBV", title: "Coffee Table Tray Round Rattan Ottoman Tray Woven Serving Trays with Handles for Home and Kitchen Decorative Natural (Large 14 inch x 2.4 inch)", w: 1395, h: 1500 },
+    { asin: "B0891WXY1G", title: "Round Rattan Serving Tray Decorative Woven Ottoman Trays with Handles for Coffee Table Natural (Small 11.8 inch x 2 inch)", w: 1395, h: 1500 },
+  ],
+  emptySection: [
+    { asin: "B0D4537YMT", title: "Ceramic Vase for Flowers – Modern Small Ribbed Textured Flower Vase for Home Decor, Pampas Grass, Decorative, Farmhouse, Coffee Table, Kitchen Centerpieces, Bookshelf and Home Living (White)", w: 836, h: 1500 },
+    { asin: "B0GV9S68KW", title: "5.8\" Small White Round Ceramic Vase, Coffee Table Shelf Decor", w: 1488, h: 1500 },
+  ],
+  seasonal: [
+    { asin: "B0D5HPN3R4", title: "AOMOONOA Artificial Pumpkin Decor, Brown and White Decorative Pumpkins", w: 1500, h: 1500 },
+    { asin: "B0D9VQ9LZB", title: "DN DECONATION White and Gold Fall Pumpkin Decoration for Table Centerpieces", w: 1500, h: 1500 },
+  ],
+  whyCluttered: [
+    { asin: "B09FHPF82P", title: "FREELOVE 12 Inch Brushed Gold Round Tray, Stainless Steel Brass Decorative Tray for Coffee Table, Vanity, Bathroom Counter, Dresser, Candles, Perfume, Jewelry and Bar Cart Décor", w: 1332, h: 1500 },
+    { asin: "B0CLFVWT46", title: "Round Decorative Tray, 12\" Wooden Round Black Tray with Gold Metal Handles", w: 1500, h: 1431 },
+  ],
+  howOrganize: [
+    { asin: "B0FH6N1JZS", title: "Decorative Books for Home Decor - Stackable Faux Book Box for Coffee Table Styling & Hidden Storage - Neutral Linen Fake Books as Display Riser for Shelf & Entryway (Set of 2, Van Gogh Art)", w: 1200, h: 1200 },
+    { asin: "B0FGJ6MG13", title: "Decorative Books Set of 2, Linen Faux Coffee Table Books", w: 1155, h: 1155 },
+  ],
+  howMany: [
+    { asin: "B09LQB2PR2", title: "Hanobe Wooden Tray for Coffee Table, Decorative Round Candle Holder Plate", w: 1474, h: 1500 },
+    { asin: "B0FRFSYQTN", title: "Hanobe Wood Decorative Ottoman Tray for Living Room with Handles, 22\"", w: 1447, h: 1500 },
+  ],
+  styleScratch: [
+    { asin: "B0DGX4D9VN", title: "13.8\" Round Wood Tray, Acacia Wooden Decorative Serving Tray for Coffee Table and Home Decor, Wooden Appetizer Charcuterie Board for Kitchen Countertop", w: 1500, h: 1487 },
+    { asin: "B0CT957L7R", title: "PINXIURY 13.8 Inch Round Wooden Decorative Serving Tray for Coffee Table and Home Decor, Round Wood Tray for Table Centerpiece, Small Candle Tray, Acacia, Appetizer Charcuterie Board", w: 1500, h: 1465 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "coffee-table-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function photo(key) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "coffee-table", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const ideas = [
@@ -272,6 +385,7 @@ const body = `
 <p>A coffee table can go from beautifully styled to completely chaotic in about five minutes. I know the struggle. You put down a book, a candle, the remote, a coffee cup, and suddenly your coffee table organizing ideas have turned into a small storage crisis.</p>
 <p>The good news? You don't need a huge table or expensive accessories to make it work. You just need a system that gives everything a place while keeping the table looking intentional.</p>
 <p>I've found that the best coffee table setups balance style, function, and breathing room. So let's look at what actually works, why some arrangements feel cluttered, and how you can organize your own table without making it look like a showroom nobody can touch.</p>
+<p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
 ${photo("hero")}
 
 <h2>Why Does a Coffee Table Get Cluttered So Easily?</h2>

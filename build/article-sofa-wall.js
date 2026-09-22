@@ -5,6 +5,11 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1000, h: 1500, alt: "Living room sofa wall combining a photo gallery, round mirror, macrame hanging and a styled floating shelf", url: "https://www.pinterest.com/pin/140806235232924/", label: "Sofa Wall Decor Styling" },
   whyMatters: { src: "why-wall-matters-gallery", w: 1200, h: 1200, alt: "Full sofa wall covered in a dramatic eclectic gallery of mixed colorful frames", url: "https://www.pinterest.com/pin/9499849211175027/", label: "Sofa Wall Gallery Impact" },
@@ -36,12 +41,144 @@ const PIN = {
   finalThoughts: { src: "final-thoughts-ledge", w: 819, h: 1024, alt: "Warm picture ledge with leaning framed art, candles and a plant above a sofa", url: "https://www.pinterest.com/pin/4011087181013264/", label: "Sofa Wall Decor Final Look" },
 };
 
+const PRODUCTS = {
+  oversizedArtwork: [
+    { asin: "B0FPCK3Q9W", title: "Large Framed Boho Abstract Brown Floral Wall Art for Living Room, 24x36 In", w: 1500, h: 1500 },
+    { asin: "B0GDX7ZKX8", title: "Large Framed Sage Green Abstract Wall Art for Living Room Decor, 36x36 In", w: 1500, h: 1500 },
+  ],
+  hero: [
+    { asin: "B0G1RVTGY6", title: "Large Framed Sage Green Abstract Landscape Wall Art for Living Room, 24x36", w: 1500, h: 1500 },
+    { asin: "B0DL2YCZT5", title: "Large Framed Black and White Abstract Wall Art for Living Room, 3 Piece", w: 1500, h: 1500 },
+  ],
+  galleryWall: [
+    { asin: "B086YWCYJN", title: "ArtbyHannah Gallery Wall Frame Set, 8 Pack Neutral Wall Decor, Beige, Large", w: 1500, h: 1088 },
+    { asin: "B0GD6BBWDP", title: "Fixwal Picture Frames Set, 15 Pack, MDF, Soft Earth Tones, 8x10, 5x7, 4x6", w: 1500, h: 1247 },
+  ],
+  whyMatters: [
+    { asin: "B0GD6GKTRZ", title: "15 Pack Vintage Picture Frames for Wall or Tabletop Display Ornate Vintage Frames Gallery Wall Frame Set Vintage Wall Art for Gallery Bedroom Living Room Antique Photo Frame for Wall Décor", w: 1500, h: 1434 },
+    { asin: "B0D7HPY8WH", title: "ArtbyHannah Gallery Wall Frame Set, 8 Pack Neutral Wall Decor, White, Small", w: 1500, h: 1017 },
+  ],
+  roundMirror: [
+    { asin: "B0D5QVH8WX", title: "Round Bathroom Mirror, Circle Mirror, Black, 30\" L x 30\" W, 1 Pack", w: 500, h: 500 },
+    { asin: "B0FD32X7JR", title: "Round Mirror 30 inch, Circle Black Mirror, Matte Black Metal Frame", w: 1024, h: 1024 },
+  ],
+  howHigh: [
+    { asin: "B0CNSJHPD4", title: "XRAMFY 30 Inch Round Mirror-Black Circle Mirrors for Bathroom, Entryway", w: 1500, h: 1500 },
+    { asin: "B0DB4SKRMJ", title: "Black Round Mirror 36 inch Deep Frame Circle Mirror, Metal Framed Bathroom Mirror, Round Vanity Mirror, Circle Mirrors for Wall Entryway Bedroom Living Room Hallway", w: 1500, h: 1500 },
+  ],
+  archedMirror: [
+    { asin: "B0FN3W98B7", title: "Sweetcrispy 24\"x 36\" Arched Gold Bathroom Mirrors for Wall, Vanity Mirror", w: 1500, h: 1500 },
+    { asin: "B09Z2BC4NS", title: "Arched Bathroom Mirror for Wall, 36\" x 24\" Metal Frame Vanity Mirror, Gold", w: 1500, h: 1500 },
+  ],
+  favoriteApproach: [
+    { asin: "B09GJVGZFP", title: "HARRITPURE 20\"x30\" Arched Bathroom Mirror Wall Mounted Gold Arch Mirror", w: 1500, h: 1500 },
+    { asin: "B0FG7RMRQG", title: "Delma Arched Bathroom Mirror, 24\"x36\", Gold", w: 1500, h: 1500 },
+  ],
+  framedPrints: [
+    { asin: "B0DFW4XNT7", title: "WRFON Framed Sage Green Botanical Wall Art Set of 3, Watercolor Eucalyptus & Wild Plant Canvas Prints, Minimalist Green Wall Decor for Living Room Bedroom Bathroom, 12x16 Inches", w: 1477, h: 894 },
+    { asin: "B0FH2BS9J9", title: "LLEEMPI Sage Green Botanical Wall Art Set of 3, 16x24 Wood Framed Prints", w: 1482, h: 953 },
+  ],
+  ideasIntro: [
+    { asin: "B0G4CLKT1N", title: "AVECCO 3 Piece Vintage Wildflower Botanical Framed Canvas Wall Art 12x16 in", w: 1500, h: 909 },
+    { asin: "B0FS157JBD", title: "Framed 3 Piece Neutral Vintage Botanical Wall Art for Dining Room, 16x24 In", w: 1500, h: 1500 },
+  ],
+  floatingShelves: [
+    { asin: "B0FXM5ZKBR", title: "Harwaya 36 Inch Floating Shelves for Wall Set of 2, Large Long Wall Shelves for Living Room Decor, Walnut Brown Wooden Hanging Shelves for Bedroom Kitchen Bathroom Office Books Pictures (Dark Wood)", w: 1500, h: 1396 },
+    { asin: "B0DZWXJ9VZ", title: "BAYKA Rustic Brown Floating Shelves 22.5in, Set of 2, Wall Mount Wood Shelf", w: 1500, h: 1495 },
+  ],
+  greenery: [
+    { asin: "B0DFVYHM7X", title: "ROGMARS 36 Inches Long Walnut Floating Shelves", w: 1080, h: 1140 },
+    { asin: "B0D8J12XF9", title: "Acovy 36 inch Picture Ledge Shelf, Wood Floating Shelves, Brown, Set of 2", w: 1500, h: 1500 },
+  ],
+  wovenBaskets: [
+    { asin: "B0GPWC5JTB", title: "Laquedecraft Baskets Wall Decor Set of 3, Natural Handwoven Wicker", w: 1349, h: 1198 },
+    { asin: "B0CZ8KRWF8", title: "CroBlissful 7 Pcs Boho Wall Baskets Woven Seagrass Round, Classic", w: 1491, h: 1500 },
+  ],
+  mixObjects: [
+    { asin: "B0CPWBV1SF", title: "PEMAR Handwoven Jute Wall Hanging Baskets, Set of 3 Round Woven Wall Decor (22\", 19\", 15\"), Decorative Wall Accents for Living Room, Bedroom and Entryway", w: 1500, h: 1318 },
+    { asin: "B0CDXKTP1S", title: "Glenmal 3 Pcs Boho Wall Basket Decor Boho Wicker Wall Hanging, Classic", w: 1458, h: 1500 },
+  ],
+  texturedTextile: [
+    { asin: "B0CWNMY216", title: "Achart Macrame Wall Hanging Large- Boho Wall Decor- large wall art- Wall Decor Living Room- Macrame Tapestry Boho Decor for Bedroom (Beige-Fringe)", w: 1473, h: 1500 },
+    { asin: "B0CBLT4PPM", title: "Achart Macrame Wall Hanging Large- Boho Wall Decor- large wall art- Wall Decor Living Room- Macrame Tapestry Boho Decor for Bedroom (Wooden Bead)", w: 1001, h: 1019 },
+  ],
+  howLarge: [
+    { asin: "B0CXSRT211", title: "Macrame Wall Hanging Wedding Hanger Tassel Knotting Boho Decor 47\"W*25\"L", w: 1458, h: 1413 },
+    { asin: "B074DSNYKR", title: "Mkono Macrame Wall Hanging, Boho Tapestry Decor, Woven Art, Ivory 17\"Wx33\"L", w: 738, h: 1498 },
+  ],
+  blackWhitePhoto: [
+    { asin: "B0GDXLD6L7", title: "3 Pcs Framed Black and White Cheetah Canvas Wall Art, 16x24in", w: 1474, h: 839 },
+    { asin: "B01MRV5OLU", title: "ENGLANT-4 Panels Set Framed Canvas Print for Seascape Beach and Boat Sunrise Scenery Black and White Giclee Canvas Print Wall Art Ready to Hang", w: 891, h: 899 },
+  ],
+  symmetricalWall: [
+    { asin: "B0GKGQHJTF", title: "Vintage Black And White Poster Italy Amalfi Coast Car Canvas Wall Art Retro Luxury Travel Landscape Photography Prints Painting For Living Room Bedroom Apartment Wall Decor 16x24in Unframed", w: 1038, h: 1500 },
+    { asin: "B0FM88TNR5", title: "Framed Black And White Retro Newspaper Wall Art Motivational Office Decor", w: 1045, h: 1500 },
+  ],
+  pictureLedge: [
+    { asin: "B0DZ25HFW2", title: "RICHFOCUS Picture Ledge Shelf, 16 inch Floating Shelves Set of 2, Wood Wall Shelves with Lip, Wall Decor Storage for Bedroom Living Room Bathroom Kitchen Nursery Photo Picture, Walnut", w: 1500, h: 1500 },
+    { asin: "B0DC69FL57", title: "Boswillon Floating Shelves Set of 2, Small Wall Shelf with Lip, 16in, Oak", w: 1000, h: 1000 },
+  ],
+  finalThoughts: [
+    { asin: "B0CBRM4VQ8", title: "FLYJOE Picture Ledge Wall Shelves 36 inch Width Set of 2, Solid Pine Wood Rustic Floating Ledge Shelves for Wall for Kids' Room Bedroom Kitchen Bathroom Living Room Nursery Display Wall Decor, Walnut", w: 1500, h: 1500 },
+    { asin: "B08523F1VL", title: "HOMWOO Floating Shelves Walnut Natural Wood Wall Shelves Small Picture Ledge for Home, Living Room, Bedroom, Bathroom, Office, 12 Inches", w: 1478, h: 1228 },
+  ],
+  sculpturalDecor: [
+    { asin: "B0F4C4XNJB", title: "Large Wood Abstract Wall Art for Living Room, Modern 3D Artwork for Walls", w: 1500, h: 1500 },
+    { asin: "B0D2Z3YYLV", title: "WELLAND Cedar Wall Sculptures, Set of 2, Live Edge Wood Art", w: 1500, h: 1500 },
+  ],
+  personalGallery: [
+    { asin: "B0CCJ234WH", title: "qmmp Modern Wooden Wall Sculptures - Set of 3 - Home Decor Accent - Large Wall Art for Living Room, Bedroom, Office - Easy Installation (Walnut, Medium - Mountain and Sun)", w: 1500, h: 1500 },
+    { asin: "B08B4RH3N1", title: "The Wooden Town Carved Wood Wall Art Set of 3, 36x12 Inch, Burnt Finish", w: 1132, h: 1236 },
+  ],
+  landscapePainting: [
+    { asin: "B0CBFGZRYX", title: "InSimSea Framed Canvas Wall Art Vintage Decor, Framed Vintage Landscape Canvas Wall Art, Wild Field Oil Painting Prints, Cottagecore Bedroom Bathroom Office Decor, 24\"x36\"", w: 1500, h: 983 },
+    { asin: "B0DHKL5YS8", title: "FUHAIHUA Canvas Wall Art For Living Room Large Wall Decor For Bedroom Modern Office Wall Decorations Forest River Landscape Paintings Farmhouse Pictures Artwork Room Aesthetic Home Decor 20x40 In", w: 1500, h: 1190 },
+  ],
+  colorfulWall: [
+    { asin: "B0CNRGSVKV", title: "InSimSea Framed Canvas Prints Art Vintage Decor, Rural Scenery Landscape Paintings, Large Countryside Farmhouse Hanging Wall Decorations for Living Room Dining Room Bedroom, 24\"x36\"", w: 1053, h: 1500 },
+    { asin: "B0CT361QSZ", title: "MHARTK66 Large Size Wall Art for Living Room Modern Wall Decor for Bedroom Office Decor Abstract Mountain Forest Landscapes Ink Painting 3 Piece Framed Canvas Art Prints Ready to Hang Wall Pictures", w: 1472, h: 945 },
+  ],
+  moldingMinimal: [
+    { asin: "B0GYNPPF3B", title: "Framed Minimalist Art Set of 3, Botanical Line Prints, Pictures Wall Decor", w: 1500, h: 1095 },
+    { asin: "B0FX9B8LQR", title: "HesenDot Abstract Geometric Wall Art Set of 3, 30x40CM Minimalist Line Framed Canvas Prints, Boho Modern Neutral Beige Black Shapes Wall Decor for Living Room Bedroom Bathroom Office Home", w: 1500, h: 1224 },
+  ],
+  decorativeMolding: [
+    { asin: "B0F8W2LXSQ", title: "Large Framed Neutral Black Beige Abstract Wall Art Decor Set of 2, 20x30 In", w: 1500, h: 1500 },
+    { asin: "B0D8KY85QX", title: "CHDITB Modern Abstract Canvas Wall Art, Neutral Framed Art Prints, Black Beige Large Wall Painting, Geometric Line Textured Minimalist Wall Decor for Living Room Bedroom Dining Room Office 24\"x36\"x3", w: 1483, h: 1062 },
+  ],
+  howToChoose: [
+    { asin: "B0H6VVLVB6", title: "HesenDot Neutral Abstract Framed Wall Art, Modern Geometric Canvas Prints", w: 1200, h: 1500 },
+    { asin: "B0FMJZY69K", title: "Framed Neutral Modern Abstract Geometric Wall Art for Living Room, 24x36 In", w: 1500, h: 1500 },
+  ],
+  mistakes: [
+    { asin: "B0BVLL9PCR", title: "Sage Green Boho Wall Art Set of 3, Minimalist Framed Wall Art Geometric Line Leaf Sun Moon Beige Green Canvas Artwork Paintings, Abstract Botanical Boho Room Decor, Office, 12\"x16\"", w: 1482, h: 1265 },
+    { asin: "B0FB94XJ1V", title: "Minimalist Botanical Framed Wall Art, 3 Piece Set, 16x24 Inch", w: 1500, h: 988 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "sofa-wall-decor-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function photo(key) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "sofa-wall-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const ideas = [
@@ -307,6 +444,7 @@ const body = `
 <p>That empty wall behind your sofa can make an otherwise beautiful living room feel strangely unfinished. I've made this mistake myself: a great sofa, a decent rug, nice lighting, and then one giant blank wall sitting there like it forgot to participate.</p>
 <p>The right sofa wall decor ideas can completely change that. You can use oversized artwork, a gallery wall, mirrors, shelves, baskets, textiles, or even architectural details to give the wall personality without making the room feel cluttered.</p>
 <p>The trick comes down to scale, spacing, color, and balance. So before you start hammering nails into the wall, let's talk about what actually works.</p>
+<p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
 ${photo("hero")}
 
 <h2>Why the Wall Behind Your Sofa Matters</h2>

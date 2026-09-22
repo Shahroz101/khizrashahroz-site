@@ -8,6 +8,11 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 768, h: 1273, alt: "Small dining nook with a round wood table, woven chairs and open shelving styled with plants", url: "https://www.pinterest.com/pin/15692298699074897/", label: "Small Dining Room Styling" },
   banquette: { src: "built-in-banquette", w: 600, h: 600, alt: "Built-in banquette bench with black chairs and a chandelier in a small dining corner", url: "https://www.pinterest.com/pin/349169777367496354/", label: "Built-In Dining Banquette" },
@@ -34,12 +39,124 @@ const PIN = {
   uncluttered: { src: "uncluttered-corner", w: 1080, h: 1920, alt: "Small uncluttered dining corner with a round table, two chairs and a large round mirror above", url: "https://www.pinterest.com/pin/1026468940090547480/", label: "Uncluttered Small Dining Room" },
 };
 
+const PRODUCTS = {
+  hero: [
+    { asin: "B0FLXN992L", title: "23.4\" Round Tulip Dining Table for 2-4 People with Walnut Top and Black Metal Pedestal Base, Mid-Century Modern Small Space Table for Kitchen, Living Room, Cafe", w: 1207, h: 1311 },
+    { asin: "B0G64JSMQL", title: "MECHYIN 31.5\" Round Dining Table for 2-4, Small Kitchen Table with Storage", w: 1313, h: 1500 },
+  ],
+  furnitureRoundTable: [
+    { asin: "B0GS8GBX3V", title: "Round Dining Table 27.5\" Circle Tulip Table for 4 People,Oak", w: 1500, h: 1500 },
+    { asin: "B0CP3FCV4M", title: "30 Inch Round Dining Table, Modern Tulip Bistro Table with White Faux Marble Top and Weighted Gold Pedestal Base, Small Kitchen Table for 2-4 People, Mid Century Style for Dining Room, Cafe, Office", w: 1500, h: 1500 },
+  ],
+  roundTable: [
+    { asin: "B0DSV3V2F9", title: "23.62\" Small Round Dining Table for 2 – Durable & Well-Made Tulip Table with Sturdy Metal Frame, Compact 2-Seater Kitchen or Dining Room Table for Small Spaces, Apartments, Café, Restaurant, Office", w: 799, h: 949 },
+    { asin: "B0C5QM9VW2", title: "Round Dining Table White with Pedestal Base,31.5\" Modern Tulip Dining Room Table for 1-4 People,Pedestal Dining Table with Round Top for Kitchen Living Room (Tulip Dining Table White)", w: 616, h: 750 },
+  ],
+  checklist: [
+    { asin: "B0FLXPBPRX", title: "27.3\" Round Tulip Dining Table for 2-4 People with Walnut Top and Black Metal Pedestal Base, Mid-Century Modern Small Space Table for Kitchen, Living Room, Cafe", w: 1207, h: 1311 },
+    { asin: "B0FVSL2VHZ", title: "Small Dining Table with MDF Top & Metal Pedestal Base", w: 1500, h: 1500 },
+  ],
+  banquette: [
+    { asin: "B0D5H6GYTR", title: "SwallowLiving Handcrafted Solid Wood Bench, 30\" - Farmhouse-Style Entryway Seating for Living & Dining Room, Rustic Design, Natural Finish", w: 1500, h: 1500 },
+    { asin: "B0FZSSG1QZ", title: "Wood Bench Indoor Farmhouse Skinny Entryway Bench Hallway Foyer with Sturdy", w: 1500, h: 1500 },
+  ],
+  cornerNook: [
+    { asin: "B0DCFPQ6TW", title: "HOOBRO Dining Bench, Bamboo Farmhouse Entryway Bench with Back for Kitchen, Living Room, Bedroom, Easy to Assemble, Sturdy and Stable, Natural YL05CD01", w: 1500, h: 1343 },
+    { asin: "B0GFYHGYBJ", title: "Solid Wood Farmhouse Bench 31.5\"/39.4\"/47.2\"/55.1\"/59\" Skinny Bench Rustic Long Entryway Bench, Heavy Duty, Durable ＆ Easy Assembly, For Hallway, Kitchen, Bedroom, Dining(Wood,31.5\"x11.8\"x17.7\")", w: 1000, h: 1000 },
+  ],
+  benchSeating: [
+    { asin: "B0CD3P6LJK", title: "Bamboo Natural 36 inch Wooden Bench, Small Wood Benches for Entryway, Living & Dining Room, Kitchen, Bedroom, Bathroom, Hallway, Front Door, For Indoor & Outdoor Patio Use, Mid Century Modern Decor", w: 1500, h: 1500 },
+    { asin: "B079VSYW8V", title: "WELLAND Live Edge Cedar Entryway Bench with Metal Legs, 28\"", w: 1500, h: 1500 },
+  ],
+  openBackChairs: [
+    { asin: "B0FP2NKP7V", title: "Roundhill Furniture Lavin Wishbone Dining Chairs, Set of 2, Walnut", w: 1500, h: 1500 },
+    { asin: "B0FP2P96QP", title: "Roundhill Furniture Lavin Wishbone Dining Chairs, Set of 2, Black", w: 1500, h: 1500 },
+  ],
+  armlessChairs: [
+    { asin: "B08DKDFGYJ", title: "HAPPYGRILL 2 Pieces Wooden Dining Chairs Set, Vintage Armless Windsor Chairs, Kitchen Dining Chairs with Backrest, Natural", w: 1042, h: 882 },
+    { asin: "B0GKDJF16Z", title: "Wooden Dining Chairs Set of 2, Mid Century Modern Side Chairs", w: 1500, h: 1500 },
+  ],
+  mirrorTable: [
+    { asin: "B0GTNR7GHW", title: "FICTOR Round Wood Wall Mirror, 36\" Boho Wavy Circle Mirror", w: 1500, h: 1500 },
+    { asin: "B0G488L12Q", title: "Rustic Round Wall Mirror 30 Inch, Natural Wood Frame with Black Metal Trim, Industrial Farmhouse Round Wood Mirror, Decorative Wall Mirror for Bathroom, Living Room, Entryway", w: 1500, h: 1500 },
+  ],
+  mirrorFeelBigger: [
+    { asin: "B0C8S3MFDF", title: "Chende Gold Mirrors for Decor, 32'' Round Wall Mirror with Beveled Glass Frame, Modern Decorative Mirror with Wood Frame for Living Room, Entryway, Dining Room, Bathroom", w: 1500, h: 1500 },
+    { asin: "B08NWZZNVX", title: "Chende Round Decorative Mirror for Wall Decor, 39\" x 39\" Large Living Room Mirror with Removable Metal Leaves for Entryway, Home Office, Bedroom,Farmhouse", w: 1000, h: 1000 },
+  ],
+  rugTable: [
+    { asin: "B08R3SD218", title: "Hausattire Jute Braided Woven Area Rug 6 Feet Round - Natural", w: 1500, h: 1500 },
+    { asin: "B09TNFLGS2", title: "HOMEMONDE Round Braided Jute Area Rug | 6' Round | Natural", w: 1500, h: 1500 },
+  ],
+  darkGreenRoom: [
+    { asin: "B0CWLCW84D", title: "Denique Iron Taper Candle Holder Set of 3, Black Candlestick Holders Decorative Candle Stand, Tapered Candle Holders Tall Set for Wedding, Dining Table, Home Decoration (Black)", w: 1500, h: 1500 },
+    { asin: "B0B2WJ51ZB", title: "NLBTW Black Candlestick Holders, Set of 3 Tall Metal Taper Candle Holder", w: 995, h: 1401 },
+  ],
+  simplePalette: [
+    { asin: "B0CBQ1H1BW", title: "Vitalizart Beige Table Runner 14 x 72 Inches Long Slub Texture Cotton Linen Table Runner for Rustic Home Decorations Dining Room Wedding Decor Reception Bridal Shower Thanksgiving Christmas", w: 1293, h: 1500 },
+    { asin: "B0H5TLZ87H", title: "100% Natural Cotton Linen Table Runner, 14x72in Natural Linen", w: 1500, h: 1500 },
+  ],
+  pendantLighting: [
+    { asin: "B0D8QQ63JX", title: "18\" Modern Double Drum Fabric Pendant Light, Large Hanging Ceiling Chandelier Fixture with Dual Layer Fabric Shade, Ideal for Dining Room, Living Room, Bedroom, and Kitchen", w: 1443, h: 1500 },
+    { asin: "B0CR9TBN44", title: "Licperron 3-Light Pendant Light Fixtures, Black Pendant Lights Kitchen Island, Adjustable Pendant Lighting with Clear Glass Shade, Modern Hanging Light Fixtures for Dining Room, Hallway, Living Room", w: 1431, h: 1500 },
+  ],
+  wallSconces: [
+    { asin: "B0BP7Q68X3", title: "Tipace Black Hardwired Wall Sconces Set of 2,Modern Bathroom Vanity Sconces Wall Lighting with Clear Glass Shade,Farmhouse Wall Mount Lights for Mirror Bedroom Living Room Hallway Kitchen", w: 1500, h: 1500 },
+    { asin: "B0CDGRX6QV", title: "Antique Brass Hardwired Wall Sconce Set of 2 - Gold Finish with White Fabric Shades，Bedroom Lighting, Living Room, Farmhouse, Fireplace, Hallway, Bedside Lamp,Bathroom Wall Lights", w: 1493, h: 1500 },
+  ],
+  shelvesAbove: [
+    { asin: "B09T66W5D1", title: "QEEIG Floating Shelves for Wall Small Shelf (Brown, Set of 3, 15.7\" x 6.7\")", w: 1182, h: 1500 },
+    { asin: "B0DZWXJ9VZ", title: "BAYKA Rustic Brown Floating Shelves 22.5in, Set of 2, Wall Mount Wood Shelf", w: 1500, h: 1495 },
+  ],
+  dropLeaf: [
+    { asin: "B01F8MD2OK", title: "Signature Design by Ashley Small Round Drop Leaf Dining Table, Brown", w: 1242, h: 1344 },
+    { asin: "B0GH2HZL1R", title: "36\" Folding Round Dining Table, Wooden Drop Leaf Table with for 2-4 People, Space Saving Design, Easy Assembly, Foldable Dining Table for Kitchen, Living Room, Small Spaces, Walnut", w: 1454, h: 1500 },
+  ],
+  verticalStorage: [
+    { asin: "B0DK4K2TPW", title: "MyGift Wall Plate Display Rack, 3 Tier Farmhouse Whitewashed Wood Wall Mounted Plate Storage Rack, Holds 6-10inch Plates", w: 886, h: 1474 },
+    { asin: "B0DVD6Y68S", title: "MyGift 3-Tier Wall Mounted Plate Display Rack – Industrial Matte Black Metal & Dark Burnt Wood Storage for 6-10 Inch Plates, Decorative Plate Holder for Kitchen or Dining Room", w: 853, h: 1500 },
+  ],
+  slimConsole: [
+    { asin: "B09NL1RH4D", title: "HOOBRO Narrow Console Table, 29.5\" Small Entryway Table, Thin Sofa Side Display Table, for Hallway, Bedroom, Living Room, Foyer, Rustic Brown and Black BF75XG01", w: 1422, h: 1500 },
+    { asin: "B0FG7JWXFV", title: "ELYKEN Bamboo 2-Tier Narrow Console Table, 36.2\" Long Slim Hallway Table", w: 1099, h: 1500 },
+  ],
+  focalPoint: [
+    { asin: "B0DSZV5DG7", title: "Large Framed Modern Colorful Abstract Wall Art for Living Room, 24x36 In", w: 1500, h: 1500 },
+    { asin: "B0G2C66YY4", title: "Large Framed Neutral Abstract Wall Art for Living Room, 3 Piece Set, 24x36", w: 1500, h: 1500 },
+  ],
+  finalThoughts: [
+    { asin: "B0BXL7FM6X", title: "Black Chandelier, 6-Light Farmhouse Chandelier for Dining Room Lighting Fixtures Hanging, Industrial Modern Chandelier for Bedroom, Foyer, Hall, Kitchen, Living Room, Entryway (No Assembly Required)", w: 1500, h: 1500 },
+    { asin: "B0FL7RLW9X", title: "KAISITE Modern Gold Chandelier 5-Light Farmhouse Chandelier for Dining Room Industrial Dining Kitchen Light Fixture Over Table Ceiling Chandelier for Bedroom Living Room Foyer Entryway", w: 1496, h: 1389 },
+  ],
+  uncluttered: [
+    { asin: "B0F7KWKZ6S", title: "10\" Decorative Bowl,Ceramic Fruit Bowl for Kitchen Counter,Coffee Table, Dining Room,Table Centerpiece Bowel,Entryway Key Holder & Jewelry Organizer (Ocean Blue)", w: 1500, h: 1500 },
+    { asin: "B0GQMFR6QL", title: "DOWAN 9.5\" Wabi-Sabi Decorative Bowl, Irregular Moss Green Glazed Ceramic Catchall Bowl for Keys and Wallet, Stone Texture Centerpiece Table Bowl for Entryway, Living Room & Coffee Table Decor", w: 1500, h: 647 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "small-dining-room-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function photo(key) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "small-dining-room", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const ideas = [
@@ -278,6 +395,7 @@ const body = `
 <p>A small dining room can look cramped in about five minutes. Put in a table that feels too big, add bulky chairs, throw in a cabinet because you "need storage," and suddenly you can barely pull a chair out. The good news? These 18 small dining room ideas can help you create a space that feels comfortable, stylish, and genuinely useful without knocking down a wall.</p>
 <p>I've always thought small dining spaces reward thoughtful decorating more than big ones. You have to make every piece earn its place, but that constraint can actually create a more intentional room. And honestly, who needs a dining room the size of a hotel ballroom just to eat pasta?</p>
 <p>Architectural Digest makes a similar point when discussing compact dining areas, noting that small spaces can still accommodate gathering, working, and everyday activities when you choose furniture and layouts carefully.</p>
+<p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
 ${photo("hero")}
 
 <h2>How Do You Make a Small Dining Room Feel Bigger?</h2>

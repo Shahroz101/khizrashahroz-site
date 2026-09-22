@@ -7,6 +7,11 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 450, h: 563, alt: "Cozy sage green nursery with a white crib, woven baskets and a soft rug", url: "https://www.pinterest.com/pin/12807180183426583/", label: "Nursery Decor Styling" },
   whatMakesGood: { src: "what-makes-good-nursery", w: 1199, h: 1788, alt: "Nursery reading nook layering a book display, floor cushion, poufs and warm lighting", url: "https://www.pinterest.com/pin/422281213070986/", label: "Layered Nursery Design" },
@@ -38,12 +43,144 @@ const PIN = {
   finalThoughts: { src: "final-thoughts", w: 800, h: 1200, alt: "Elegant blush pink nursery with a tufted ottoman, crystal pendant and floral artwork", url: "https://www.pinterest.com/pin/8233211829670181/", label: "Nursery Decor Final Look" },
 };
 
+const PRODUCTS = {
+  readingCorner: [
+    { asin: "B0H3982PPV", title: "Rocking Chair Nursery, Upholstered Glider Rocker Cushions Indoor, Comfy Rocking Accent Chair with Armrests, Cozy White Boucle Rocking Armchair for Living Room Bedroom Reading Nook, Adults", w: 1500, h: 1500 },
+    { asin: "B072VH7Q29", title: "Delta Children Blair Slim Nursery Glider Swivel Rocker Chair, Cream", w: 1197, h: 1500 },
+  ],
+  ottoman: [
+    { asin: "B0B1TCSXVM", title: "Storkcraft Premium Hoop Glider & Ottoman, Natural/Beige", w: 1445, h: 1500 },
+    { asin: "B0DQQ3RR14", title: "GIANTEX Rocking Chair Nursery, Teddy Upholstered Glider Rocker Chair w/High Backrest, Armrests & Rubber Wood Feet, Modern Sherpa Rocking Accent Chair for Living Room, Bedroom & Office, Beige", w: 1353, h: 1500 },
+  ],
+  statementWall: [
+    { asin: "B0H4QMX17X", title: "Pink and White Cream Striped Wallpaper Peel and Stick Girls Nursery Self-Adhesive Removable Waterproof Wallpaper for Bedroom Kitchen Bathroom (Blush, 17.32\"x 118.11\")", w: 1500, h: 1500 },
+    { asin: "B0GGZ1VFMS", title: "Peel and Stick Wallpaper for Nursery Pink Cherry Blossom Waterproof", w: 1500, h: 1500 },
+  ],
+  accentWall: [
+    { asin: "B0GQB6BGQ5", title: "Peel and Stick Wallpaper for Nursery Pink Cute Bow Leaf Waterproof", w: 1500, h: 1500 },
+    { asin: "B0GTKHLQT2", title: "Beige Plaid Peel and Stick Wallpaper Removable Checkered Contact Paper, Gingham Self-Adhesive Waterproof Vinyl Roll for Shelf Drawer Liner Bedroom Nursery 17.3\"x80\"", w: 1500, h: 1500 },
+  ],
+  wallArt: [
+    { asin: "B0FX9R88KY", title: "Framed Cute Animal Wall Art Nursery Decor Set of 3, Watercolor Elephant Giraffe Lion Canvas, Whimsical Wildlife Pictures Print, Nursery Wall Decor for Kids’ Bedroom Daycare – 16x12 inch", w: 1500, h: 980 },
+    { asin: "B0CLW97SF5", title: "Baby Safari Nursery Wall Decor - Set of 3 Pictures Cute Animal Wall Prints on Canvas Jungle Nursery Safari Decor Gifts for Baby Boys and Girls Room, Framed Wall Art 12 x 16 Inch", w: 1489, h: 1295 },
+  ],
+  galleryWall: [
+    { asin: "B0D5D96TQN", title: "Baby Safari Nursery Wall Art Decor 11x16 Inch Set of 3 Wood Framed", w: 1500, h: 1500 },
+    { asin: "B0FSS6MHNC", title: "Woodland Animal Nursery Wall Art Decor Set of 3 Wood Framed Wall Prints", w: 1500, h: 1500 },
+  ],
+  bookshelf: [
+    { asin: "B0C6T7192K", title: "Fixwal Floating Nursery Book Shelves for Wall, 16.5 Inches, Set of 3, White", w: 1215, h: 1500 },
+    { asin: "B0DSZWWZKB", title: "birola Nursery Shelves with Beads Design - 32 Inches Wall Book Shelves Set of 3, Space-Saving Nursery Book Shelves for Kids Room, Bedroom and Study Room(Natural)", w: 1444, h: 1500 },
+  ],
+  naturalWood: [
+    { asin: "B0DK13QLX9", title: "3Pack Nursery Book Shelves, Solid Wood Floatingshelf for Wall, Walnut Brown", w: 1500, h: 1500 },
+    { asin: "B0D953XVJ4", title: "VIVIKA Nursery Book Shelves, Natural Rattan Scalloped, 15.8\" W, Set of 2", w: 1449, h: 1500 },
+  ],
+  vintageDresser: [
+    { asin: "B0CZKLBJ4M", title: "Walnut Fluted 4 Drawers Dresser for Bedroom, Chest of Drawers with Metal Wide Handle, Wooden Dresser for Closet, Bedroom, Living Room, 23.6\" x 14.9\"D x 30.7\" H", w: 1500, h: 1500 },
+    { asin: "B0CFLF4DF6", title: "Furnulem Rustic Brown Dressers for Bedroom, 5 Drawer Dresser for Closet", w: 1334, h: 1500 },
+  ],
+  roomToGrow: [
+    { asin: "B0DMM1P14R", title: "woodtalks 3 Drawer Dresser, Wood Chest Drawers with Storage for Closet, Bedroom, Living Room and Hallway, Drawers Dresser Bedside Nightstand, Walnut, Brown", w: 1500, h: 1500 },
+    { asin: "B0BWY7NK35", title: "Furnulem White Tall Dresser for Bedroom, 5 Fabric Bins Tall Nightstand", w: 743, h: 1500 },
+  ],
+  changingStation: [
+    { asin: "B0FH1M6ZMD", title: "Fortella Baby Diaper Caddy, 3 Tier Rolling Cart for Baby Essentials, Taupe", w: 1500, h: 1469 },
+    { asin: "B0F1CCB62Y", title: "Modanais Baby Diaper Caddy Organizer Cart - 3 Tier Rolling Cart, Off White", w: 1500, h: 1465 },
+  ],
+  rug: [
+    { asin: "B0FHGNFZNW", title: "Area Rugs 5x7 Living Room Washable Modern Rug, Neutral Beige Soft Non Slip Rugs Ultra-Thin Indoor Carpet for Bedroom Dining Room Nursery Home Office", w: 1500, h: 1500 },
+    { asin: "B0C2Z1T5GV", title: "Nakagishi Boho 5x7 Area Rug Living Room Rugs Machine Washable Beige/Brown", w: 1500, h: 1500 },
+  ],
+  hero: [
+    { asin: "B0FRN4QRM4", title: "5x7 Solid Beige Area Rugs for Living Room, Geometric Washable Rug", w: 1500, h: 1500 },
+    { asin: "B0G4FZBRCK", title: "GarveeHome Scalloped Washable 5x7 Area Rugs for Living Room Non Slip, Beige", w: 1500, h: 1500 },
+  ],
+  lighting: [
+    { asin: "B0G23HXF8S", title: "Tip perk Cloud & Moon Lights - Floating Cloud & Moon Wall Lamps", w: 1500, h: 1500 },
+    { asin: "B0FRR35T3D", title: "Cloud Light Battery-Operated Wall Lamp for Nursery Kids Bedroom & Baby Room with Pull-String Switch 3V 3000K Warm Night Light Hanging Night Lights (No Charging Needed)", w: 1500, h: 1500 },
+  ],
+  nightLight: [
+    { asin: "B0FWXJS95L", title: "KALEOLI Cloud Night Light 2 Pack for Nursery Decor - Toddler Night Light", w: 1500, h: 1500 },
+    { asin: "B0BMJSM74K", title: "Cloud Light - Floating Cloud Wall Lamp | Baby Nursery Cloud Night Light", w: 1500, h: 1500 },
+  ],
+  warmNeutral: [
+    { asin: "B0DL529V5W", title: "Boho Cloud Moon Crib Mobile Boho Baby Mobile for Crib Neutral Clouds, Moon & Stars Design Nursery Mobile for Boys & Girls", w: 1500, h: 1500 },
+    { asin: "B0BBZZ1SXT", title: "let's make Boho Baby Crib Mobile for Boys and Girls, Stars, Clouds, Moon", w: 1500, h: 1500 },
+  ],
+  whatMakesGood: [
+    { asin: "B0D259MJZL", title: "Cloud Crib Mobile for Girls & Boys, Boucle Cloud Baby Mobile for Crib Neutral Boho Nursery Mobile, Stars and Moon", w: 1500, h: 1500 },
+    { asin: "B0D543WKJJ", title: "EERKEOD Baby Crib Mobile Bear Nursery Mobile for Boys Girls Teddy Velvet Mobile Nursery Decor for Infant Bedroom Hanging Baby Mobile for Bassinet Newborn Baby Gift（Brown Bear）", w: 1500, h: 1500 },
+  ],
+  sageGreen: [
+    { asin: "B0F8C7S2V8", title: "Sage Green Inspirational Floral Pillow Covers 18x18, Wildflower Nursery Decor, How Wonderful Life Is Now You're in the World Decorative Throw Pillow Covers for Kids Room Playroom, Double-Sided", w: 1500, h: 1372 },
+    { asin: "B0GVYM9P3C", title: "Sage Green Girl Nursery Pillow Covers 18x18 inches, Vintage Nursery Decor Throw Pillow Covers, You'll Never Know Dear How Much I Love You Decorative Pillowcases for Girls Room Bedroom Playroom", w: 1500, h: 1367 },
+  ],
+  colorScheme: [
+    { asin: "B0F7X9VSH8", title: "PANDICORN Stay Cozy Sage Green Pillow Cover 12x20 Inch, Lumbar Pillow Case", w: 1006, h: 606 },
+    { asin: "B0CYX465YH", title: "2 Pack Sage Green Gingham Ruffle Throw Pillow Covers 18''x18''", w: 1500, h: 1500 },
+  ],
+  beigeCream: [
+    { asin: "B0H4LLHJJB", title: "Vintage Baby Lion Wall Art, Safari Nursery Animal Print, Beige And Brown Lion Poster for Room Decor", w: 878, h: 1298 },
+    { asin: "B0H4LD6TW7", title: "Vintage Baby Giraffe Wall Art, Neutral Safari Animal Print, Cream And Tan Giraffe Poster for Room Decor", w: 878, h: 1298 },
+  ],
+  canopy: [
+    { asin: "B08PRWFCTZ", title: "Wonder Space Elegant Kids Bed Canopy - Lace Chiffon Netting with Pom Pom, Princess Girls Fairy Dream Tent, Nursery Room Baby Crib Hanging Curtain Mosquito Net Children Reading Nook Decoration (Beige)", w: 655, h: 1443 },
+    { asin: "B0CGJ23WHY", title: "Wonder Space Kids Bed Canopy with Ruffles, Pastel Neutral Color for Boys & Girls, Frilled Cotton Tent Nursery Room Baby Crib Hanging Curtain Mosquito Netting Children Reading Nook Decoration (Ivory)", w: 710, h: 1448 },
+  ],
+  baskets: [
+    { asin: "B0GJDW2CDL", title: "5 Pack Small Woven Storage Baskets for Shelves, Gift Baskets Empty", w: 1389, h: 1286 },
+    { asin: "B0D31SM7FS", title: "Beautiful Storage Basket Set of 4 - Natural Jute Rope Bins for Shelves", w: 1500, h: 1500 },
+  ],
+  clutterFree: [
+    { asin: "B0DKHZ1JLG", title: "NaturalCozy 11.8\"x8\"x4.5” Storage Baskets for Shelves 3 Pack | Cotton Rope Woven Small Baskets for Organizing | Small Storage Bins for Nursery, Bathroom, Closet, Cube Shelf, Decorative, Gift Basket", w: 1500, h: 1154 },
+    { asin: "B0C77KDKZ5", title: "4 Pack Storage Baskets for Organizing, Woven Baskets for Shelves - Perfect for Toys, Books, Towels, and Clothes, Durable Gift Basket Bins Toy Storage, 12.7''Lx9''Wx7.8''H, Brown & White", w: 1500, h: 1352 },
+  ],
+  personalized: [
+    { asin: "B0GVPDJ3S5", title: "Personalized Wooden Name Signs 10 INCH Small Nursery Wall Decor Custom Kids Room Door Tags Baby Shower Gift Birthday Party Decor Wooden Name Wall Art Custom Baby Name Sign", w: 1500, h: 1438 },
+    { asin: "B09NMGR365", title: "Wooden Name Sign 8-35\" Wide Personalized Letters for Nursery Art Wall Room Decor Baby Shower Occasion Family Name Sign Nameplate Wood Plaque", w: 973, h: 789 },
+  ],
+  curtains: [
+    { asin: "B0CQXLHQL1", title: "Aiyufeng Blush Pink Sheer Curtains 84 Inches Long 2 Panels Set, Light Filtering Soft Airy Voile Rod Pocket Baby Pink Sheer Window Drapes for Bedroom Living Room, Each 40Wx84L Inches", w: 1500, h: 1500 },
+    { asin: "B0F26NXD3L", title: "Dusty Pink Ruffle Curtains 84 Inches Long for Bedroom Living Room Rod Pocket Light Filtering Soft Victorian Romantic Ruffle Pleated Curtains for Girls Nursery Room Window Privacy Decor 52x84, Blush", w: 1500, h: 1500 },
+  ],
+  natureIn: [
+    { asin: "B0GXF493H1", title: "Faux Ivy Eucalyptus Vine Fake Hanging Plants in White Pot, Medium", w: 516, h: 1458 },
+    { asin: "B0H4T6W1KX", title: "Trailing Artificial Pothos Plant with Ceramic Pot, Potted Faux Greenery with Adjustable Drooping Vines,Fake Houseplant for Home Office High Shelf, Cabinet Top & Vertical Indoor Decor (White Pot)", w: 1500, h: 1500 },
+  ],
+  feelExpensive: [
+    { asin: "B0DZ283Z7D", title: "Wood Framed Wildflower Nursery Wall Art Set of 2, Boho Flower Botanical Wall Decor Paintings, Baby Girl Nurseries Pictures Posters Prints for Nursery Baby Room Bedroom Home Decoration 12x16 Inch", w: 1500, h: 1131 },
+    { asin: "B0G3NCB4TW", title: "Framed Wildflower Wall Art Set of 3, Pink Floral Canvas Wall Decor Pictures, Vintage Flower Botanical Paintings, Nursery Flowers Butterfly Posters Prints for Bedroom Living Room 12x16 Inch", w: 1500, h: 921 },
+  ],
+  finalThoughts: [
+    { asin: "B0H3FDBX27", title: "OPFDE Wood Framed Botanical Wall Art Set of 3, Neutral Wildflower Wall Decor, Minimalist Beige Stripe Poster Print, Vintage Cottagecore Farmhouse Floral Artwork for Living Room Bathroom 12x16 Inch", w: 1482, h: 953 },
+    { asin: "B0H6WR6PXR", title: "Tinonedraw Dusty Pastel Floral Framed Canvas Wall Art Set, Boho Neutral Flower Wall Decor, Shabby Chic Wildflower Artwork, French Cottage Botanical Art Prints for Bedroom Living Room Nursery 16\"x24\"x3", w: 1500, h: 1055 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "nursery-decor-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function photo(key) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "nursery-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const ideas = [
@@ -327,6 +464,7 @@ const body = `
 <p>A nursery should feel calm, cozy, and easy to live with, and these 23 nursery decor ideas can help you create exactly that without turning the room into a showroom. I've always liked nurseries that mix pretty details with practical choices because babies have a funny way of making your carefully styled room look very lived-in within about five minutes.</p>
 <p>The good news? You don't need expensive furniture or a perfectly themed room. A thoughtful color palette, comfortable lighting, smart storage, and a few personal touches can completely change the space.</p>
 <p>So, what actually makes a nursery work? Let's start there before we get into the decorating ideas.</p>
+<p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
 ${photo("hero")}
 
 <h2>What Makes a Good Nursery?</h2>

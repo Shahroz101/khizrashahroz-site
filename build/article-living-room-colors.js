@@ -4,6 +4,11 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1200, h: 1547, alt: "Warm neutral living room with a sage sofa, round wood coffee table and natural light", url: "https://www.pinterest.com/pin/809873945534385773/", label: "Warm Neutral Living Room" },
   warmWhite: { src: "warm-white", w: 736, h: 1308, alt: "Luxury neutral living room with a lit fireplace, dark wood built-ins and warm white walls", url: "https://www.pinterest.com/pin/901916262894983431/", label: "Warm White Living Room" },
@@ -28,6 +33,109 @@ const PIN = {
   trimMatch: { src: "trim-match", w: 704, h: 1024, alt: "Olive green living room wall with white trim and natural light", url: "https://www.pinterest.com/pin/390054017752326254/", label: "Living Room Wall and Trim Color" },
 };
 
+const PRODUCTS = {
+  hero: [
+    { asin: "B0DMDTQ8VW", title: "BEDELITE Velvet Pillow Covers with Zipper, Sage Green, 18x18 Inches, 2 Pack", w: 1500, h: 1500 },
+    { asin: "B091SSW8BW", title: "Sage Couch Velvet Throw Pillow Covers 18x18 inch Set of 2 with Zipper Decorative Luxury Soft Solid Square Cushion Covers Case for Sofa Bed Living Room Car", w: 1500, h: 1500 },
+  ],
+  warmWhite: [
+    { asin: "B0BYMLF7KP", title: "Foindtower Decorative Textured Boucle Throw Pillow Covers 18x18 Inch,Ivory", w: 1500, h: 1500 },
+    { asin: "B0BNVY2JSY", title: "Jeneoo Ivory Decorative Square Thick Throw Pillow Covers Fine Textured Boucle Couch Cushion Cases for Home Livingroom Sofa Decor, Set of 2, 18 x 18 Inch", w: 1348, h: 1312 },
+  ],
+  softBeige: [
+    { asin: "B0CKRBWK64", title: "Foindtower Linen Solid Decorative Throw Pillow Covers 18x18 Natural Beige", w: 1500, h: 1500 },
+    { asin: "B0BZC12NJR", title: "Anickal Set of 2 Light Beige Pillow Covers 18x18 Inch", w: 1500, h: 1500 },
+  ],
+  greige: [
+    { asin: "B0CH3BYH4M", title: "Foindtower Solid Textured Chenille Throw Pillow Covers 18x18 Inch,Taupe", w: 1500, h: 1500 },
+    { asin: "B0D66K98VT", title: "a moment Grey-Beige Chenille Throw Pillow Covers 18x18 Inch Pack of 2 Modern Decorative Throw Pillow Cases Farmhouse Cross Throw Pillowcases Home Decor for Sofa Bedroom Living Room", w: 1500, h: 1500 },
+  ],
+  taupe: [
+    { asin: "B0CMQBJ6GK", title: "Foindtower Solid Textured Chenille Throw Pillow Covers 20x20 Inch,Taupe", w: 1500, h: 1500 },
+    { asin: "B09NBWCBR7", title: "HWY 50 Taupe Chenille Throw Pillow Covers 18x18 Inch Buttons Pack of 2", w: 1377, h: 1367 },
+  ],
+  sageGreen: [
+    { asin: "B0D46VRPN7", title: "Foindtower Cozy Textured Boucle Lumbar Throw Pillow Cover 12x20 Dusty Green", w: 1500, h: 1500 },
+    { asin: "B0D46W4SVT", title: "Foindtower Decorative Textured Boucle Throw Pillow Covers 16x16 Dusty Green", w: 1500, h: 1500 },
+  ],
+  oliveGreen: [
+    { asin: "B0DDXDGB9N", title: "ANRODUO Boho Decorative Pillow Covers Olive Green Stripe 18x18 Pack of 2", w: 1500, h: 1500 },
+    { asin: "B0GGRXSB6R", title: "Velvet Throw Pillow Covers 2 Pack 18x18 Inch Olive Green", w: 1500, h: 1500 },
+  ],
+  dustyBlue: [
+    { asin: "B0CCNBTXXG", title: "Meekio Linen Blend Throw Pillow Covers 18x18 Set of 2, Dusty Blue", w: 1500, h: 1500 },
+    { asin: "B0FJFCJRN4", title: "HAUSSY Pack of 2 Faux Linen Throw Pillow Covers 18x18 Inch, Dusty Blue", w: 1500, h: 1500 },
+  ],
+  blueGray: [
+    { asin: "B0DKNXCR6N", title: "Foindtower Decorative Linen Floral Throw Pillow Covers 18×18 Inch,Blue", w: 1500, h: 1500 },
+    { asin: "B0FKGWSBJR", title: "Giwawa Blue and Gray Throw Pillow Covers - 18x18 Inch Set of 2 Blue and White Boho Style Pillow Case Ethnic Design Decorative Cushion Cover for Farmhouse Couch Sofa Car Decor", w: 1500, h: 1061 },
+  ],
+  mushroom: [
+    { asin: "B0GVDVCD5H", title: "ANRODUO Decorative Linen Pillow Covers 18x18 Inch Mushroom Brown Pack of 2", w: 1500, h: 1500 },
+    { asin: "B0GVDQWW6V", title: "ANRODUO Decorative Linen Pillow Covers 20x20 Inch Mushroom Brown Pack of 2", w: 1500, h: 1500 },
+  ],
+  creamyGreige: [
+    { asin: "B0D69YCVT6", title: "Throw Pillow Covers Neutral Beige Set of 2 18x18 Inch Pillow Covers, Soft Velvet Farmhouse Decorative Pillowcases for Couch Sofa Bed, Home Boho Decor, Modern Cushion Covers", w: 1400, h: 1300 },
+    { asin: "B0CPC2X8BF", title: "Set of 4 Beige Decorative Throw Pillow Covers 18x18 Inch Corduroy Pillow Covers for Bed Couch Sofa Living Room Soft Square Cushion Cases", w: 1500, h: 1500 },
+  ],
+  charcoalGray: [
+    { asin: "B0D3CZWX8T", title: "FUTEI Pack of 2 Boucle Textured Throw Pillow Covers 18x18 Inch, Dark Grey", w: 1500, h: 1500 },
+    { asin: "B0GJPD919Y", title: "ZeeMart Fine-Textured Throw Pillow Covers Set of 2, 18x18 Inch Charcoal", w: 1500, h: 1500 },
+  ],
+  warmGray: [
+    { asin: "B07TTYWYBV", title: "RainRoad Velvet Gray Throw Pillow Covers18x18 Inch,Set of 2", w: 1128, h: 1053 },
+    { asin: "B0D3HRL77C", title: "Pack of 2 Corduroy Decorative Throw Pillow Covers 18x18 Inch, Light Grey", w: 1500, h: 1500 },
+  ],
+  terracotta: [
+    { asin: "B0C7192LBD", title: "Jeneoo Terracotta Decorative Throw Pillow Covers Soft Chenille Comfy Solid Rust Couch Cushion Case Decor (Set of 2, 18 x 18 Inches)", w: 1315, h: 1325 },
+    { asin: "B0C783V5NX", title: "ZWJD Rust Throw Pillow Covers 18x18 Set of 2 Chenille Fall Pillow Covers with Elegant Design Soft and Luxurious Decorative Throw Pillows for Couch, Bed, and Home Decor", w: 1500, h: 1119 },
+  ],
+  dustyRose: [
+    { asin: "B08LHKLWFC", title: "lalaLOOM Velvet Throw Pillow Covers, Set of 2, 18x18 Dusty Rose", w: 1000, h: 1000 },
+    { asin: "B0HBCDMYW9", title: "Jeneoo Dusty Rose Decorative Throw Pillow Covers Soft Chenille Comfy Square Couch Cushion Cases for Home Livingroom Sofa Decor (Set of 2, 18 x 18 Inches)", w: 1318, h: 1321 },
+  ],
+  deepBrown: [
+    { asin: "B0DGQFR151", title: "Pack of 2 Corduroy Decorative Throw Pillow Covers 18x18 Inch, Dark Brown", w: 1500, h: 1500 },
+    { asin: "B0DXF6RZRW", title: "Jeneoo Golden Brown Decorative Throw Pillow Covers Soft Chenille Comfy Square Couch Cushion Cases for Living Room Sofa Decor (Set of 2, 18 x 18 Inches)", w: 1317, h: 1320 },
+  ],
+  chooseColor: [
+    { asin: "B0D3C8SVYC", title: "Mighty Board Minis Polystyrene Paint Color Test Panels, 12\" x 9\", Set of 5, White", w: 1000, h: 1000 },
+    { asin: "B0DJVCQBL6", title: "FAVOMOTO 1 Set Standard Paint Sample Cards, 365 Colors Walls Paint Chips Samples Architecture Contrast Sheets Color Chart for Painting Projects", w: 1137, h: 953 },
+  ],
+  combineColors: [
+    { asin: "B0CPC1NCZS", title: "Set of 4 Neutral Decorative Throw Pillow Covers 18x18 Inch Corduroy Pillow Covers for Bed Couch Sofa Living Room Soft Square Cushion Cases", w: 1500, h: 1500 },
+    { asin: "B09QPQQV48", title: "Coliuso Decorative Throw Pillow Covers 18x18 Set of 4, Grey and White Modern Simple Square Pillow Case Cushion Cover for Sofa Couch Farmhouse Outdoor Living Room (Gray and White, 18\" x18\")", w: 1485, h: 1480 },
+  ],
+  warmVsCool: [
+    { asin: "B0C7V67VVV", title: "Aganear Fleece Throw Blanket for Couch, Fall Boho Blankets,50\"x60\" Khaki", w: 1500, h: 1500 },
+    { asin: "B0G2JHBZRW", title: "Khaki Throw Blanket for Couch Sofa 50x60 inches Striped Design", w: 1500, h: 1500 },
+  ],
+  lookExpensive: [
+    { asin: "B0D9W1XH1T", title: "Deconovo Boucle Pillow Covers Set of 2, Textured Throw Pillow Covers for Living Room Sofa, Modern Decorative Couch Pillows, NO Pillow Insert, Ivory White, 18x18 Inch", w: 1500, h: 1500 },
+    { asin: "B0CG5J91NV", title: "Foindtower Decorative Textured Boucle Throw Pillow Covers 20x20 Inch,Ivory", w: 1500, h: 1500 },
+  ],
+  trimMatch: [
+    { asin: "B0H5QDD8XT", title: "5 Pcs Paint Sample Boards 12\" x 9\" Paint Color Test Panels", w: 1500, h: 1476 },
+    { asin: "B0CP22RPYQ", title: "Gadpiparty Paint Color Sample Cards Paint Samples for Color Matching Standard Sample Card Set for Diy Projects Floor Hardware Portable 3.74 X 1.57 X 1.18 in", w: 1458, h: 1336 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "living-room-colors-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 // No cropping: every image renders at its real, original pixel ratio.
 // Served as AVIF first, WebP second, original JPEG as the final fallback —
 // see picture() in build.js for the shared <picture> markup.
@@ -36,7 +144,8 @@ function photo(key) {
   return `<figure>
       ${picture({ dir: "living-room-colors", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const ideas = [
@@ -235,6 +344,7 @@ const body = `
 <p>Choosing living room color ideas sounds easy until you stand in front of twenty beige paint cards and suddenly every single one looks exactly the same. I have been there, and honestly, choosing the right color takes more thought than simply picking a shade you like.</p>
 <p>The right living room color can make your space feel calmer, brighter, warmer, and much more expensive without changing your furniture. I especially like colors that create a soft backdrop while still giving the room enough personality to feel intentional.</p>
 <p>So, what actually makes a living room feel calm and sophisticated? Color temperature, undertones, natural light, and the way you combine shades all matter. Let's get into the details before we start picking paint colors.</p>
+<p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
 ${photo("hero")}
 
 <h2>What Colors Make a Living Room Feel Calm and Sophisticated?</h2>

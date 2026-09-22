@@ -1,8 +1,16 @@
 // Body content for the "17 Living Room Decor Ideas" post.
 // Images sourced from Pinterest pins the user selected and provided
-// directly; each is credited back to its pin per their request.
+// directly; each is credited back to its pin per their request. Each
+// photo is also paired with 2-3 real Amazon products matched to the
+// idea, tagged with the user's Amazon Associates ID (dwellingdre0c-20)
+// and an FTC affiliate disclosure in the intro.
 
 const { picture } = require("./picture-helper.js");
+
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
 
 const PIN = {
   preamble: { src: "preamble-hero", w: 720, h: 1280, alt: "Living room with a round gold coffee table and pink cushions", url: "https://www.pinterest.com/pin/986499493391561003/", label: "Luxurious Minimalism Living Room" },
@@ -25,6 +33,111 @@ const PIN = {
   vintage: { src: "vintage-mix", w: 736, h: 1104, alt: "Floating shelves styled with framed art and potted plants", url: "https://www.pinterest.com/pin/703756189453449/", label: "Wall Decor Behind the Couch" },
 };
 
+const PRODUCTS = {
+  preamble: [
+    { asin: "B0FNWD5624", title: "Washable Area Rug 12x15, Vintage Neutral Soft Brown", w: 1200, h: 1500 },
+    { asin: "B0H6PVBGPL", title: "DMOYEST Neutral 10x14 Area Rug for Living Room, Washable Brown", w: 1500, h: 1500 },
+  ],
+  rug: [
+    { asin: "B0GL357H51", title: "8x10 Area Rug for Living Room, Neutral Washable Carpet, Beige", w: 1500, h: 1500 },
+    { asin: "B0F5H9MQK2", title: "Washable Rug 8x10, Large Neutral Soft Abstract Modern Carpet, Beige", w: 1500, h: 1500 },
+    { asin: "B0GWCLSD52", title: "8x10 Area Rug for Living Room, Washable Neutral Abstract Beige Carpet", w: 1500, h: 1500 },
+  ],
+  curtains: [
+    { asin: "B0BCFXNZSC", title: "Guken Linen Curtains 84 Inch Long, Rod Pocket, Ivory Cream", w: 1500, h: 1500 },
+    { asin: "B0BYD1BPNB", title: "Joydeco Linen Curtains 96 Inch Length, 2 Panel Set, Ivory", w: 1500, h: 1500 },
+    { asin: "B0D46FQW8Y", title: "H.VERSAILTEX Adjustable Curtain Rod 16.2 to 90.6 Inches, Black", w: 1500, h: 1122 },
+  ],
+  lighting: [
+    { asin: "B0GJZGM1YW", title: "Arc Floor Lamp with Remote and Dimmable, Black", w: 1500, h: 1500 },
+    { asin: "B0DX71QB4V", title: "3 Light Arc Floor Lamp with Remote, Beige Shade Black Pole", w: 1500, h: 1500 },
+  ],
+  art: [
+    { asin: "B0G3879W1B", title: "Blue White and Gray Abstract Canvas Wall Art, Framed Large Print", w: 1500, h: 1115 },
+    { asin: "B0GKFYG83Q", title: "Tarfupth Large Abstract Canvas Wall Art, White Minimalist Textured", w: 1500, h: 932 },
+  ],
+  textures: [
+    { asin: "B0CG5J91NV", title: "Foindtower Decorative Textured Boucle Throw Pillow Covers 20x20, Ivory", w: 1500, h: 1500 },
+    { asin: "B0D9W1XH1T", title: "Deconovo Boucle Pillow Covers Set of 2, Ivory White", w: 1500, h: 1500 },
+  ],
+  palette: [
+    { asin: "B0DYNNJWG1", title: "Vanselia Ceramic Flower Vase, Farmhouse Rustic Vintage, 7.4 Inch Retro", w: 1500, h: 1500 },
+    { asin: "B0F128SXWN", title: "Modern Ceramic Vase Set, Neutral Colors, 4 Piece Collection", w: 1200, h: 1199 },
+    { asin: "B0FQVQ255P", title: "Neutral Ceramic Vase Set of 4, Modern Colors Home Decor", w: 1500, h: 1500 },
+  ],
+  natural: [
+    { asin: "B0GF1V6WHQ", title: "6 Light Boho Drum Chandelier, Hand Woven Rattan, Gold and White", w: 1500, h: 1500 },
+    { asin: "B0FN4BHLLW", title: "14.6 Inch Rattan Pendant Light, Woven White Wicker Chandelier", w: 1500, h: 1500 },
+  ],
+  coffeeTable: [
+    { asin: "B09JYT6HCH", title: "3 Pcs Nested Vintage Wood Serving Tray Set, Coffee Table Decor", w: 1394, h: 1225 },
+    { asin: "B0GJDB2KZC", title: "FGU 2 Pack Round Wood Decorative Trays for Coffee Table, Black", w: 1500, h: 1123 },
+  ],
+  symmetry: [
+    { asin: "B0FKFYXGNN", title: "22 Inch Farmhouse Table Lamps Set of 2, Rustic", w: 1500, h: 1500 },
+    { asin: "B0G2MGMMF3", title: "Seealle 23 Inch Modern Ceramic Table Lamps Set of 2, White", w: 1500, h: 1500 },
+    { asin: "B0H5NQYWB4", title: "Seealle 24 Inch Farmhouse Table Lamps Set of 2", w: 1500, h: 1500 },
+  ],
+  mirror: [
+    { asin: "B0C8S3MFDF", title: "Chende Gold Mirror for Decor, 32 Inch Round with Beveled Glass Frame", w: 1500, h: 1500 },
+    { asin: "B08P6ZC9XZ", title: "Chende Round Mirror for Wall Decor, 32 Inch with Beveled Edge Glass", w: 1000, h: 1000 },
+  ],
+  pillows: [
+    { asin: "B0CPC1NCZS", title: "Set of 4 Neutral Decorative Throw Pillow Covers, Corduroy 18x18", w: 1500, h: 1500 },
+    { asin: "B0FFN2NXGN", title: "Set of 4 Soft Textured Throw Pillow Covers, Beige Taupe Brown", w: 1500, h: 1500 },
+    { asin: "B09QPQQV48", title: "Coliuso Decorative Throw Pillow Covers Set of 4, Grey and White", w: 1485, h: 1480 },
+  ],
+  gallery: [
+    { asin: "B0FKTBPFRT", title: "upsimples Picture Frames Set of 19, Black Frame", w: 1500, h: 1071 },
+    { asin: "B09RZTGGYP", title: "LUCKYLIFE Picture Frames Collage Wall Decor 10-Pack", w: 1500, h: 1249 },
+  ],
+  plant: [
+    { asin: "B0FRF5XCFD", title: "5Ft Artificial Fiddle Leaf Fig Tree Indoor for Home Decor", w: 1500, h: 1500 },
+    { asin: "B0D25BQ9PP", title: "Artificial Fiddle Leaf Fig Tree with White Planter, 5ft Tall", w: 563, h: 1500 },
+  ],
+  furniture: [
+    { asin: "B0G48SLDZH", title: "8x10 Area Rug for Living Room, Washable Non-Slip, Beige", w: 1500, h: 1500 },
+    { asin: "B0FKYHSK7X", title: "Neutral Beige 5x7 Area Rug, Washable Low Pile with Fringe", w: 1500, h: 1500 },
+  ],
+  accent: [
+    { asin: "B07PGFC1PB", title: "VAKADO Emerald Green Velvet Throw Pillow Covers 18x18, Set of 2", w: 880, h: 677 },
+    { asin: "B08L6VJTT1", title: "PAVILIA Emerald Green Decorative Throw Pillow Covers 18x18, Set of 2", w: 1500, h: 1500 },
+  ],
+  declutter: [
+    { asin: "B0FP5B3PWX", title: "5 Pack Woven Storage Baskets, Decorative Bins for Organizing", w: 1432, h: 1449 },
+    { asin: "B0D31SM7FS", title: "Beautiful Storage Basket Set of 4, Natural Jute Rope Bins", w: 1500, h: 1500 },
+  ],
+  vintage: [
+    { asin: "B0BP75KWD6", title: "Iron Taper Candle Holder Set of 3, Decorative Candle Stand", w: 1500, h: 1500 },
+    { asin: "B0CNLX2V7T", title: "Romadedi Gold Candlestick Candle Holders, Brass Color, Pack of 2", w: 1500, h: 1500 },
+    { asin: "B0CM8M5N3K", title: "Rustic Cast Iron Taper Candle Holder Set of 3, Vintage", w: 1500, h: 1500 },
+  ],
+  stockElegant: [
+    { asin: "B0B48G18TF", title: "Dimmable 3 Light Arc Floor Lamp, Mid Century Tree Floor Lamp, Beige Shades", w: 1500, h: 1500 },
+    { asin: "B0HC5WFGYH", title: "Arc Floor Lamp for Living Room, Black Standing Lamp with Linen Shade", w: 1500, h: 1500 },
+  ],
+  stockTextures: [
+    { asin: "B0CF4SSYHC", title: "Foindtower Decorative Textured Boucle Throw Pillow Covers 20x20, Camel", w: 1500, h: 1470 },
+    { asin: "B0FY2YRSKK", title: "YCOLL Textured Boucle Throw Pillow Covers 20x20, Pack of 2, Ivory", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "living-room-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 // No cropping: every image renders at its real, original pixel ratio.
 // Served as AVIF first, WebP second, original JPEG as the final fallback —
 // see picture() in build.js for the shared <picture> markup.
@@ -33,12 +146,13 @@ function photo(key) {
   return `<figure>
       ${picture({ dir: "living-room", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const STOCK = {
-  elegant: { src: "stock-elegant-room", w: 1600, h: 2400, alt: "High-ceilinged living room sectional lit by a floor lamp at dusk", photographer: "Roberto Nickson", profile: "https://unsplash.com/@rpnickson", page: "https://unsplash.com/photos/rEJxpBskj3Q" },
-  textures: { src: "stock-layered-textures", w: 1600, h: 1600, alt: "Living room with woven pendant lights, rattan and layered plants", photographer: "Spacejoy", profile: "https://unsplash.com/@spacejoy", page: "https://unsplash.com/photos/living-room-with-grey-sofa-YqFz7UMm8qE" },
+  elegant: { src: "stock-elegant-room", w: 1600, h: 2400, alt: "High-ceilinged living room sectional lit by a floor lamp at dusk", photographer: "Roberto Nickson", profile: "https://unsplash.com/@rpnickson", page: "https://unsplash.com/photos/rEJxpBskj3Q", productsKey: "stockElegant" },
+  textures: { src: "stock-layered-textures", w: 1600, h: 1600, alt: "Living room with woven pendant lights, rattan and layered plants", photographer: "Spacejoy", profile: "https://unsplash.com/@spacejoy", page: "https://unsplash.com/photos/living-room-with-grey-sofa-YqFz7UMm8qE", productsKey: "stockTextures" },
 };
 
 function stockPhoto(key) {
@@ -46,7 +160,8 @@ function stockPhoto(key) {
   return `<figure>
       ${picture({ dir: "living-room", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo by <a href="${p.profile}" target="_blank" rel="nofollow noopener">${p.photographer}</a> on <a href="${p.page}" target="_blank" rel="nofollow noopener">Unsplash</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(p.productsKey)}`;
 }
 
 const ideas = [
@@ -318,6 +433,7 @@ function ideaBlock(idea) {
 const body = `
 <p>You do not need a designer budget to make your living room look expensive. The right <strong>living room decor ideas</strong> can make an ordinary sofa, basic coffee table, and simple walls feel surprisingly polished. I have found that the trick rarely comes down to buying more. It comes down to choosing better proportions, better lighting, better textures, and fewer things that actually matter.</p>
 <p>I have also learned the hard way that one gorgeous cushion cannot rescue a room with a tiny rug and a ceiling light that makes everyone look like they have not slept since 2017. Good design works from the foundation upward.</p>
+<p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
 ${photo("preamble")}
 <p>So, what actually makes a living room feel expensive? And which upgrades deserve your money first?</p>
 <p>Let us talk about the details that create that collected, designer-style feeling without turning your home into a showroom.</p>

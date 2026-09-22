@@ -4,6 +4,11 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1024, h: 1536, alt: "Woven tray on a toilet tank styled with a eucalyptus vase, candle and rolled towels", url: "https://www.pinterest.com/pin/7388786885644458/", label: "Toilet Tank Tray Styling" },
   plant: { src: "plant", w: 1200, h: 1724, alt: "Snake plant and a woven lidded jar styled on a woven tray on a toilet tank", url: "https://www.pinterest.com/pin/20969954511919774/", label: "Toilet Tank Plant Styling" },
@@ -27,12 +32,112 @@ const PIN = {
   smallBathroom: { src: "small-bathroom", w: 538, h: 957, alt: "Stone tray with a faux plant and essential oils on a toilet tank in a green bathroom", url: "https://www.pinterest.com/pin/258675572343664364/", label: "Small Bathroom Toilet Tank Styling" },
 };
 
+const PRODUCTS = {
+  hero: [
+    { asin: "B0DZNX1Z7H", title: "Small Acacia Wood Serving Trays Mini Wooden Platters Wooden Vanity Tray Dispenser Wood Counter Plates Bathroom Countertop Organizer Trays Coffee Bar Tray Appetizer Serving Board Snack Serve Board", w: 1500, h: 1397 },
+    { asin: "B0DSKT1LYC", title: "DEBETOOL Round Rustic Wood Decorative Tray", w: 1333, h: 1500 },
+  ],
+  plant: [
+    { asin: "B0BHYNSYSV", title: "Hollyone Artificial Snake Plant Potted Faux Sansevieria Trifasciata Plants, 13\" Tropical Fake Plants in White Pots for Home Office Room Indoor Decor Housewarming Gifts", w: 893, h: 1500 },
+    { asin: "B0DCFZTJTJ", title: "Hollyone Artificial Snake Plant Potted Faux Sansevieria Trifasciata Plants, 13\" Tropical Fake Snake Plants in Black Pots for Home Office Room Indoor Decor Housewarming Gifts", w: 885, h: 1500 },
+  ],
+  tray: [
+    { asin: "B0BPL5MJSP", title: "Bamboo Vanity Bathroom Tray for Counter, Bamboo Tray for Bathroom, Toilet Tank, Perfume 11.8L x 5.9W x 0.8H inch (Bamboo)", w: 1500, h: 948 },
+    { asin: "B0GTTSHXPF", title: "Small Wooden Tray | Acacia Wood Serving Tray Platter Mini Vanity Tray Decor", w: 1500, h: 1442 },
+  ],
+  candle: [
+    { asin: "B0G1ZMT8D2", title: "Luxury Textured Ceramic Jar Scented Candle | Non Toxic 100% Natural Coconut & Soy Wax Blend Cotton Wick | 5.2oz | Hand Poured Highly Scented Long - Lasting | Navy Blue | (Wooded Sage)", w: 1072, h: 1218 },
+    { asin: "B0DQFFJJ8P", title: "Ceramic Candle Candles – Scented Candles for Relaxation and Daily Wind-Down, for Bedroom or Bathroom Home Decor Display, Eucalyptus Sage Aroma for Calm, Spa-Like Comfort – 4\", Blue Pottery Finish", w: 1500, h: 1500 },
+  ],
+  vase: [
+    { asin: "B0H8SX1Z1H", title: "5.63 Inch Round Matte White Minimalist Ceramic Flower Vase", w: 697, h: 1410 },
+    { asin: "B0DYNB5K2V", title: "Vanselia Ceramic Flower Vase Home Decor - Small Farmhouse Table Vases Rustic Vintage Living Room Kitchen Bedroom Decorations for House Book Shelf Office Coffee Desk Dining Fireplace (6.3\" Rustic)", w: 1500, h: 1500 },
+  ],
+  bookStack: [
+    { asin: "B0GKXY24FG", title: "Vintage Faux Book Box Set of 3 Brown Linen Decorative Books for Shelves, Fake Books for Decoration with Secret Compartment, Rustic Farmhouse Coffee Table Decor (Brown-Beige-White)", w: 1500, h: 1500 },
+    { asin: "B0FVB4XBFP", title: "Decorative Books for Home Decor - 2 Linen Fake Books for Decorating Shelf", w: 1500, h: 1500 },
+  ],
+  framedPrint: [
+    { asin: "B0DFW4XNT7", title: "WRFON Framed Sage Green Botanical Wall Art Set of 3, Watercolor Eucalyptus & Wild Plant Canvas Prints, Minimalist Green Wall Decor for Living Room Bedroom Bathroom, 12x16 Inches", w: 1477, h: 894 },
+    { asin: "B0H54741GF", title: "Botanical Bathroom Wall Art Framed Sage Green Bathroom Signs Decor Eucalyptus Leaf Canvas Prints Boho Minimalist Aesthetic Artwork", w: 774, h: 933 },
+  ],
+  neutralArrangement: [
+    { asin: "B0DYNNHV81", title: "Vanselia Ceramic Flower Vase Home Decor - Small Farmhouse Table Vases Rustic Vintage Living Room Kitchen Bedroom Decorations for House Book Shelf Office Coffee Desk Dining Fireplace (6.3\" Retro)", w: 1500, h: 1500 },
+    { asin: "B0GY885X46", title: "Small Ceramic Vase for Home Decor, 6 Inch Modern Farmhouse Vase with Twine Bow, Textured White Decorative Vase for Flowers, Table Centerpiece, Shelf, Living Room, Office", w: 1500, h: 1500 },
+  ],
+  basket: [
+    { asin: "B0G6DJKZVV", title: "Toilet Paper Storage Basket, Wicker Baskets for Toilet Tank Top, Small Woven Basket Toilet Tank Basket Bedroom Kitchen Bathroom Shelf Organizer Decor", w: 1500, h: 1140 },
+    { asin: "B0F89ZQZ9M", title: "Coeusy Scalloped Toilet Paper Basket, Wicker Basket for Bathroom, Natural", w: 1500, h: 1200 },
+  ],
+  eucalyptus: [
+    { asin: "B09CT3S9VT", title: "Tiyard 18pcs Eucalyptus Stems Artificial Eucalyptus Leaves Stems", w: 1500, h: 1500 },
+    { asin: "B0DS7T4JJZ", title: "Bessol Artificial Eucalyptus Stems in Glass Vase with Faux Water, 13.5\" Fake Plants for Home Decor, Coffee Table Centerpieces, Office, Bathroom & Farmhouse - Green Faux Plants Decorations", w: 1307, h: 1500 },
+  ],
+  bowl: [
+    { asin: "B0G53H1RMX", title: "6'' Key Bowl, Purse Bowl - Small Decorative Bowl, White", w: 1200, h: 1200 },
+    { asin: "B0DL687PHG", title: "4.7\" Small Decorative Bowl, Small Key Bowl, Ceramic Potpourri Bowl", w: 1419, h: 971 },
+  ],
+  blackWhite: [
+    { asin: "B09VDBNWJ7", title: "Ceramic Black Small Vase, Dry Flower Vases Minimalism Style for Modern Table Shelf Fit Fireplace Bedroom Kitchen Living Room Home Decor (Black, Small)", w: 862, h: 1500 },
+    { asin: "B0B11L7SQN", title: "Black Ceramic Vase, Small Cute Flower Vase for Flowers Plants, Matte Vases for Modern Table Shelf Home Decor Wedding Boho Decor, Ceramic Vase for Pampas Grass Fluffy Stem Bouquet Flowers", w: 899, h: 1500 },
+  ],
+  rustic: [
+    { asin: "B0CN2NC39S", title: "Round Decorative Tray Wood Bathroom Counter Organizer Farmhouse Kitchen Decor Wooden Riser for Soap Dish, Perfume, Candle, Sponge, 10\" - Brown", w: 1344, h: 1500 },
+    { asin: "B0C68RBNYL", title: "Wood Bathroom Tray Farmhouse Decor Kitchen Soap Holder, 8.7\"x3.6\" Brown", w: 1453, h: 1500 },
+  ],
+  stoneMarble: [
+    { asin: "B0FW4CPJ1Z", title: "Natural Marble Tray Oval, Calacatta Viola, 10 x 5 x 0.6", w: 1454, h: 1018 },
+    { asin: "B0D4F55946", title: "Real Natural Marble Tray for Bathroom, Vanity, Kitchen Counter & Desktop", w: 1496, h: 1500 },
+  ],
+  spa: [
+    { asin: "B0DFWMH1VM", title: "Ceramic Vase Set of 3, Flowers Neutral Modern Vases Home Decor Rustic Farmhouse Decor Pampas Vase for Table Mantel Entryway Shelf Living Room Kitchen Bathroom - Brown", w: 1500, h: 1500 },
+    { asin: "B09ZL23DWT", title: "CEMABT Beige Ceramic vase Set-3 Small Flower vases for Decor,Modern Boho Farmhouse Home Decor,Decorative vase for Pampas Grass&Dried Flowers,idea Shelf,Table,Bookshelf ，Entryway- Distressed", w: 1042, h: 1434 },
+  ],
+  matchColors: [
+    { asin: "B0D7BSRLBN", title: "Beige Ceramic Vase, GUKJOB Small Cute Flower Vase for Pampas Grass, Home, Living Room, Dining Table, Farmhouse, Office Decor, Bedroom, Table, and Kitchen Shelf (Beige)", w: 694, h: 1500 },
+    { asin: "B0D7Q3XTF9", title: "Mfacoy White Ceramic Flower Vase, Minimalist Decor, Modern Home Decorative Vase, Small Pampas Grass Vases For Kitchen, Bedroom, Office, Living Room, Bathroom, Shelf Centerpiece Table Decorations(8 in)", w: 1500, h: 1500 },
+  ],
+  minimal: [
+    { asin: "B0FDKFPHXB", title: "Modern Ceramic Vase Set, Neutral Colors, Decorative Vases for Home Decor, 4 Piece Collection (Beige)", w: 1500, h: 1500 },
+    { asin: "B0B8HKRP3Z", title: "White Ceramic Vases for Pampas Grass,Water Drop Design Doughnut vase Modern Home Decor Minimalist Nordic Boho Ins Style (White Mini)", w: 1200, h: 1200 },
+  ],
+  intro: [
+    { asin: "B0GHYB3RXJ", title: "Faux Snake Plant 22\" Tall, Realistic Touch Leaves, Potted Artificial Plants Indoor for Home Decor Small Office Home Living Room", w: 1033, h: 1500 },
+    { asin: "B0D6V9H2SN", title: "Hollyone Artificial Snake Plants 9\" Faux Agave Succulent Plant Potted in White Pot Fake Sansevieria Aloe Tropical Plant for Desk Modern Office Home Bathroom Indoor Outdoor Decor", w: 1394, h: 1500 },
+  ],
+  declutter: [
+    { asin: "B0FKBBZLYM", title: "6.8\"x4.8\" Small Gold Metal Basket - Wire Mesh for Organizing", w: 1273, h: 763 },
+    { asin: "B0GTMSZVYZ", title: "2Pcs Gold Wire Baskets, Large Small Mesh Organizer for Wedding Bath Desk", w: 1452, h: 1478 },
+  ],
+  smallBathroom: [
+    { asin: "B0H6ZDMR9K", title: "16 Inch Artificial Snake Plant in Ceramic Pot", w: 1500, h: 1500 },
+    { asin: "B0H26LN74L", title: "Mini plants Small Artificial Snake Plant in Black Pot 10.5\" - Green", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "toilet-tank-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function photo(key) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "toilet-tank", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const ideas = [
@@ -248,6 +353,7 @@ const body = `
 <p>A toilet tank usually gets ignored, but toilet tank decorating ideas can completely change the look of a small bathroom. I started paying more attention to this little spot when I realized how often a bathroom looked almost finished except for one awkward, completely empty toilet tank.</p>
 <p>The trick, though, isn't to pile random stuff on top and call it decor. You want a few pieces that add personality without making cleaning annoying or interfering with the toilet itself. After trying different bathroom styling approaches, I've found that simple, lightweight, moisture-friendly decor works best.</p>
 <p>And honestly, who says the toilet area has to look boring?</p>
+<p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
 ${photo("hero")}
 
 <h2>What Can You Put on Top of a Toilet Tank?</h2>

@@ -1,8 +1,16 @@
 // Body content for the "15 Mason Jar Decor Ideas" post.
 // Images sourced from Pinterest pins the user selected and provided
-// directly; each is credited back to its pin per their request.
+// directly; each is credited back to its pin per their request. Each
+// photo is also paired with 2-3 real Amazon products matched to the
+// idea, tagged with the user's Amazon Associates ID (dwellingdre0c-20)
+// and an FTC affiliate disclosure in the intro.
 
 const { picture } = require("./picture-helper.js");
+
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
 
 const PIN = {
   hero: { src: "hero", w: 1040, h: 2030, alt: "Wall-mounted Mason jar sconces glowing with fairy lights and holding white rose stems", url: "https://www.pinterest.com/pin/17592254793796164/", label: "Mason Jar Wall Sconce Lighting" },
@@ -27,6 +35,111 @@ const PIN = {
   mistakes: { src: "mistakes", w: 736, h: 1312, alt: "Painted Mason jar styled as a candle holder", url: "https://www.pinterest.com/pin/4609293567373690944/", label: "Painted Mason Jar Candle Holder" },
 };
 
+const PRODUCTS = {
+  hero: [
+    { asin: "B07T2GKZDT", title: "Rustic Mason Jar Sconces Wall Decor, Rustic Brown, Set of 2", w: 1491, h: 1500 },
+    { asin: "B07SSLD42M", title: "Rustic Wall Sconces Mason Jar Sconces with LED Fairy Lights and White Peony, Set of Two", w: 993, h: 983 },
+  ],
+  flowerVases: [
+    { asin: "B0FCFVGS7L", title: "6 Inch Rustic Metal Mason Jar Vase Centerpiece for Table, White, 2 Pcs", w: 1500, h: 1433 },
+    { asin: "B0GX5LL57W", title: "6 Pcs Clear Mason Jar Glass Flower Vases for Centerpieces", w: 1342, h: 1500 },
+    { asin: "B0H6BHNNR7", title: "12 Pack 16oz Clear Mason Jars Vases for Flowers, 3x5 Inch", w: 1500, h: 1458 },
+  ],
+  painted: [
+    { asin: "B0C77YSTP4", title: "Fall Mason Jar Centerpiece for Table, Fall Decorations for Home", w: 1500, h: 1500 },
+    { asin: "B0CDWY4C7N", title: "Tioncy 12 Set Decorative Mason Jar with Light for Table Centerpiece, Gold", w: 1489, h: 1500 },
+  ],
+  candles: [
+    { asin: "B0F8NTPZ62", title: "2 Pcs Mason Jar Candle Holder Insert, Rustic Iron Candle Hooks, 2qt", w: 1500, h: 1500 },
+    { asin: "B0GSQRGQF5", title: "2 Pcs Mason Jar Candle Holder Insert, Rustic Iron Candle Hooks, 1qt", w: 1500, h: 1500 },
+  ],
+  herbs: [
+    { asin: "B0FPFSP8MW", title: "Teenyyou Hydroponic Garden Mason Jar Kit, Self Watering Herb Planter Starter Kit, 12 Set", w: 1500, h: 1500 },
+    { asin: "B0GL323VZ7", title: "Colored Hydroponic Mason Garden Jar Bulk 16 oz, Self Watering Herb Planter Kit, 4 Set", w: 1492, h: 1500 },
+    { asin: "B01MRVMKQH", title: "Click & Grow Indoor Herb Garden Kit with Grow Light, White", w: 1500, h: 1453 },
+  ],
+  bathroom: [
+    { asin: "B0D2WSB7XY", title: "SheeChung 3 Pack Glass Mason Jar Qtip Holder, Black Stainless Steel Lids", w: 1478, h: 1496 },
+    { asin: "B098PYJNZR", title: "Amolliar Glass Apothecary Jar Qtip Holder Metal Lids, 4pc, Black", w: 1398, h: 1500 },
+    { asin: "B08MTBXH8P", title: "Amolliar Mason Jar Bathroom Accessories Set, 4Pcs Glass Bathroom Set, Bronze", w: 1196, h: 1200 },
+  ],
+  kitchen: [
+    { asin: "B0FDWSD3W9", title: "6 Pack 27 Oz Glass Jars with Wood Lid", w: 1321, h: 1315 },
+    { asin: "B0813YMWV5", title: "Marbelous Set of 3 Glass Mason Jar with Airtight Lid, 50 Ounces", w: 1462, h: 1044 },
+    { asin: "B0GGNJPBBM", title: "kitchentoolz 1 Gallon Mason Jars Wide Mouth with Airtight Bamboo Lids, Set of 2", w: 1107, h: 1132 },
+  ],
+  hanging: [
+    { asin: "B0FDGBYW17", title: "5-Pack Handwoven Rope Mason Jar Hangers for Wide-Mouth Jars", w: 1296, h: 1500 },
+    { asin: "B0GZV31Q18", title: "24 Pack Black Stainless Steel Wire Handles Hangers for Mason Jar", w: 1500, h: 1444 },
+  ],
+  centerpiece: [
+    { asin: "B0FDWYC2T5", title: "Honeydak 12 Sets Mason Jar, Wedding Centerpieces, Clear", w: 1500, h: 1464 },
+    { asin: "B0FH4HS6TC", title: "Chunful 12 Pcs Glass Mason Jar with Lights for Centerpiece, Warm Light", w: 1500, h: 1467 },
+    { asin: "B0F2FFX8RS", title: "12 Pack Mason Jar Vases for Centerpieces, Clear Glass Flower Vase", w: 1435, h: 1500 },
+  ],
+  wallDecor: [
+    { asin: "B0C4NZ7R7C", title: "Wall Candle Sconces Set of 2, Farmhouse Mounted Wooden Candle Holders with Lights", w: 1500, h: 1500 },
+    { asin: "B07T2GLP6N", title: "Farmhouse Mason Jar Wall Sconces Set of 2, Rustic Gray Decor", w: 1469, h: 1500 },
+  ],
+  fairyLight: [
+    { asin: "B07CPSJRT4", title: "GIGALUMI Hanging Mason Jar Solar Lights, 6 Pack 30 LED Hanging Lantern", w: 1474, h: 1489 },
+    { asin: "B07PGDBVLW", title: "SunKite Solar Mason Jar Lights, 8 Pack 20 LED Waterproof Fairy Firefly Lids", w: 990, h: 895 },
+  ],
+  seasonal: [
+    { asin: "B0DT3L72W5", title: "Fall Sunflower Mason Jar Centerpiece, Artificial Autumn Flowers in Rustic Glass Vase", w: 1500, h: 1483 },
+    { asin: "B0FDWKRFPJ", title: "Lyrow 6 Pack Fall Centerpieces for Tables, Autumn Mason Jar Decor", w: 1500, h: 1497 },
+  ],
+  office: [
+    { asin: "B0H82Q1B1J", title: "4 Pcs Farmhouse Mason Jar Salt and Pepper Shakers Set, Rustic Napkin Holder", w: 1500, h: 926 },
+    { asin: "B07P3ZQYS2", title: "Amolliar Glass Mason Jar Qtip Dispenser Holder, Black, 2 Pack", w: 1194, h: 1188 },
+  ],
+  terrarium: [
+    { asin: "B074JL42NL", title: "Portland Terrarium Kit, DIY Mason Jar Terrarium Kit", w: 1027, h: 1500 },
+    { asin: "B0G4VP6JGD", title: "NUOBESTY Glass Terrarium Jar with Cork Lid", w: 1425, h: 1500 },
+  ],
+  rustic: [
+    { asin: "B0G1YHZ98J", title: "Suncalla 3 Pcs Spring Mason Jar Table Centerpiece, Farmhouse Rustic Burlap Vases", w: 1500, h: 1500 },
+    { asin: "B0DSK39SHM", title: "Daifunli 6 Set Picnic Party Centerpieces for Table, Mason Jar Table Decor", w: 1500, h: 1484 },
+  ],
+  gift: [
+    { asin: "B09YRC9SXW", title: "ComSaf Mini Mason Jars 4 oz, 8 Pack Regular Mouth Glass Jars with Lids", w: 1491, h: 1377 },
+    { asin: "B0GPWLBCMN", title: "8 Pack Small Glass Jars with Lids, 4oz Vintage Embossed Mini Mason Jars", w: 1500, h: 1472 },
+    { asin: "B0BM9215FR", title: "TANGLONG 16 oz Mason Jars with Handle, Mason Jar Cups, 12 Pack", w: 1500, h: 1477 },
+  ],
+  styleGrouping: [
+    { asin: "B0GDDXGXXP", title: "Mason Jars 32 oz, 12 Pack Large Wide Mouth Mason Jar with Airtight Lids and Bands", w: 1473, h: 1439 },
+    { asin: "B0DRYH5PGB", title: "ComSaf Regular Mouth 12 oz Mason Jars, 6 Pack Glass Jars with Lids", w: 1500, h: 1486 },
+  ],
+  styleRepetition: [
+    { asin: "B0B71M8KQ6", title: "16 oz Wide Mouth Mason Jars 12 Pack, Glass Canning Jars with Airtight Lids", w: 1500, h: 1490 },
+    { asin: "B0FDWT98D8", title: "27 Oz Mason Glass Jars with Screw Top Lids, 4 Pack", w: 1325, h: 1287 },
+  ],
+  jarTypes: [
+    { asin: "B07KBXNPQ4", title: "SPANLA Mason Jars Variety Pack, 24 Pack Canning Jars with Regular Lids", w: 1500, h: 1331 },
+    { asin: "B0C7KXFY9L", title: "4 oz Small Mason Jar Mugs with Handle, 24 Pack Mini Glass Jars with Airtight Metal Lids", w: 1483, h: 1500 },
+  ],
+  mistakes: [
+    { asin: "B0H4VM6Z81", title: "Zerodeko 4 Pack Clear Glass Candle Holders with Handle for Standing", w: 1431, h: 1500 },
+    { asin: "B0BX36JXYX", title: "VOHO Clear Votive Candle Holders for Table Centerpiece, Glass Candle Holder", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "mason-jar-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 // No cropping: every image renders at its real, original pixel ratio.
 // Served as AVIF first, WebP second, original JPEG as the final fallback —
 // see picture() in build.js for the shared <picture> markup.
@@ -35,7 +148,8 @@ function photo(key) {
   return `<figure>
       ${picture({ dir: "mason-jar", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const ideas = [
@@ -293,6 +407,7 @@ const body = `
 <p>Mason jars have no business being this versatile. You buy one for storing something in the kitchen, and suddenly you're looking at it thinking, "Could this become a vase?" That little thought can lead to some surprisingly pretty <strong>Mason jar decor ideas</strong>.</p>
 <p>I've always liked decorating with pieces that serve a purpose instead of simply sitting around looking pretty. Mason jars fit that perfectly. They work as vases, organizers, candle holders, planters, centerpieces, and even small decorative displays.</p>
 <p>And the best part? You don't need a huge DIY budget or a garage full of crafting supplies.</p>
+<p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
 <blockquote><p>&ldquo;There are so many ways to craft and create with Ball&reg; Jars.&rdquo;</p><cite>&mdash; Ball Mason Jars, DIY Mason Jar Crafts (Ball)</cite></blockquote>
 <p>So, if you have a few jars hiding in a cabinet, don't toss them into the recycling bin just yet. Let's turn them into something your home can actually use.</p>
 ${photo("hero")}

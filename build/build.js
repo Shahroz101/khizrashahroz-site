@@ -16,6 +16,7 @@ const sofaIdeasArticle = require("./article-sofa-ideas.js");
 const kitchenShelfArticle = require("./article-kitchen-shelf.js");
 const entrywayArticle = require("./article-entryway.js");
 const laundryRoomArticle = require("./article-laundry-room.js");
+const sageGreenBedroomArticle = require("./article-sage-green-bedroom.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -368,6 +369,17 @@ const longFormPosts = [
     alt: "Laundry room styled with brass pendant lights, floating wood shelves and a marble backsplash above a hidden washer",
     image: "/images/laundry-room/hero.jpg",
     bodyHtml: laundryRoomArticle.body,
+  },
+  {
+    slug: "sage-green-bedroom-ideas",
+    title: "25 Sage Green Bedroom Ideas That Feel Calm, Cozy, and Beautiful",
+    category: "Decorating",
+    readingTime: "15 min read",
+    date: "September 23, 2026",
+    excerpt: "From full wall color to a single upholstered headboard — 25 sage green bedroom ideas covering paint, bedding, wood tones and accents, plus real products you can shop for each one.",
+    alt: "Sage green bedroom with a wood bed frame, rattan pendant light, layered botanical art and a jute rug",
+    image: "/images/sage-green-bedroom/hero.jpg",
+    bodyHtml: sageGreenBedroomArticle.body,
   },
 ];
 

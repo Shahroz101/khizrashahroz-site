@@ -17,6 +17,7 @@ const kitchenShelfArticle = require("./article-kitchen-shelf.js");
 const entrywayArticle = require("./article-entryway.js");
 const laundryRoomArticle = require("./article-laundry-room.js");
 const sageGreenBedroomArticle = require("./article-sage-green-bedroom.js");
+const whiteFarmhouseDecorArticle = require("./article-white-farmhouse-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -380,6 +381,17 @@ const longFormPosts = [
     alt: "Sage green bedroom with a wood bed frame, rattan pendant light, layered botanical art and a jute rug",
     image: "/images/sage-green-bedroom/hero.jpg",
     bodyHtml: sageGreenBedroomArticle.body,
+  },
+  {
+    slug: "white-farmhouse-decor-ideas",
+    title: "20 White Farmhouse Decor Ideas That Feel Fresh, Cozy, and Timeless",
+    category: "Decorating",
+    readingTime: "14 min read",
+    date: "September 24, 2026",
+    excerpt: "Warm whites, natural wood, vintage frames and a little restraint — 20 white farmhouse decor ideas that feel collected instead of themed, plus real products you can shop for each one.",
+    alt: "White farmhouse living room with a slipcovered sofa, wool rug, gallery of framed sheet music and a wood mantel",
+    image: "/images/white-farmhouse-decor/hero.jpg",
+    bodyHtml: whiteFarmhouseDecorArticle.body,
   },
 ];
 

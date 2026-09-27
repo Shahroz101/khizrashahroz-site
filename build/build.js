@@ -19,6 +19,7 @@ const laundryRoomArticle = require("./article-laundry-room.js");
 const sageGreenBedroomArticle = require("./article-sage-green-bedroom.js");
 const whiteFarmhouseDecorArticle = require("./article-white-farmhouse-decor.js");
 const moodyDarkBedroomArticle = require("./article-moody-dark-bedroom.js");
+const cozyApartmentArticle = require("./article-cozy-apartment-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -404,6 +405,17 @@ const longFormPosts = [
     alt: "Dark bedroom with black paneled walls and ceiling, a gold sputnik chandelier, cognac leather tufted headboard and rust linen bedding",
     image: "/images/moody-dark-bedroom/hero.jpg",
     bodyHtml: moodyDarkBedroomArticle.body,
+  },
+  {
+    slug: "cozy-apartment-decor-ideas",
+    title: "22 Cozy Apartment Decor Ideas That Make a Small Space Feel Like Home",
+    category: "Decorating",
+    readingTime: "15 min read",
+    date: "September 27, 2026",
+    excerpt: "Warm lighting, layered texture, smart storage and a little restraint \u2014 22 cozy apartment decor ideas for small spaces and rentals, plus real products you can shop for each one.",
+    alt: "Small apartment living room with a cream sofa, storage ottoman, nesting wood tables, a vintage rug and warm lamp light",
+    image: "/images/cozy-apartment-decor/hero.jpg",
+    bodyHtml: cozyApartmentArticle.body,
   },
 ];
 

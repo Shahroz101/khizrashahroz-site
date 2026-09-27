@@ -18,6 +18,7 @@ const entrywayArticle = require("./article-entryway.js");
 const laundryRoomArticle = require("./article-laundry-room.js");
 const sageGreenBedroomArticle = require("./article-sage-green-bedroom.js");
 const whiteFarmhouseDecorArticle = require("./article-white-farmhouse-decor.js");
+const moodyDarkBedroomArticle = require("./article-moody-dark-bedroom.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -392,6 +393,17 @@ const longFormPosts = [
     alt: "White farmhouse living room with a slipcovered sofa, wool rug, gallery of framed sheet music and a wood mantel",
     image: "/images/white-farmhouse-decor/hero.jpg",
     bodyHtml: whiteFarmhouseDecorArticle.body,
+  },
+  {
+    slug: "moody-dark-bedroom-ideas",
+    title: "24 Moody and Dark Bedroom Ideas That Feel Cozy, Not Gloomy",
+    category: "Decorating",
+    readingTime: "16 min read",
+    date: "September 27, 2026",
+    excerpt: "Deep navy, forest green, charcoal and chocolate brown — 24 moody and dark bedroom ideas that stay warm and inviting, plus real products you can shop for each one.",
+    alt: "Dark bedroom with black paneled walls and ceiling, a gold sputnik chandelier, cognac leather tufted headboard and rust linen bedding",
+    image: "/images/moody-dark-bedroom/hero.jpg",
+    bodyHtml: moodyDarkBedroomArticle.body,
   },
 ];
 

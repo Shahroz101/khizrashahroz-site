@@ -425,6 +425,54 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
+// Converts "September 27, 2026" -> "2026-09-27" for sitemap <lastmod>.
+function toIsoDate(dateStr) {
+  const d = new Date(dateStr);
+  if (isNaN(d.getTime())) return null;
+  return d.toISOString().slice(0, 10);
+}
+
+const STATIC_PAGE_SLUGS = ["", "blog", "about", "contact", "start-here", "privacy", "terms"];
+
+function writeSitemap() {
+  const today = new Date().toISOString().slice(0, 10);
+
+  const postUrls = allPosts.map((post) => {
+    const lastmod = post.date ? toIsoDate(post.date) : null;
+    return { loc: `https://khizrashahroz.com/${post.slug}/`, lastmod };
+  });
+
+  const staticUrls = STATIC_PAGE_SLUGS.map((slug) => ({
+    loc: `https://khizrashahroz.com/${slug ? slug + "/" : ""}`,
+    lastmod: today,
+  }));
+
+  const urls = staticUrls.concat(postUrls);
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls
+  .map(
+    (u) => `  <url>
+    <loc>${u.loc}</loc>${u.lastmod ? `\n    <lastmod>${u.lastmod}</lastmod>` : ""}
+  </url>`
+  )
+  .join("\n")}
+</urlset>
+`;
+
+  fs.writeFileSync(path.join(DIST, "sitemap.xml"), xml);
+}
+
+function writeRobotsTxt() {
+  const txt = `User-agent: *
+Allow: /
+
+Sitemap: https://khizrashahroz.com/sitemap.xml
+`;
+  fs.writeFileSync(path.join(DIST, "robots.txt"), txt);
+}
+
 function writeLongPost(post) {
   const body = `
 <section class="page-hero">
@@ -624,6 +672,9 @@ writeSimplePage({
     <h2>Affiliate disclosure</h2>
     <p>Some links on this site may be affiliate links, meaning a small commission may be earned at no extra cost to you.</p>`,
 });
+
+writeSitemap();
+writeRobotsTxt();
 
 generateFormats()
   .then(() => console.log("Build complete."))

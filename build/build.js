@@ -22,6 +22,7 @@ const moodyDarkBedroomArticle = require("./article-moody-dark-bedroom.js");
 const cozyApartmentArticle = require("./article-cozy-apartment-decor.js");
 const powderRoomArticle = require("./article-powder-room-decor.js");
 const aboveToiletArticle = require("./article-above-toilet-decor.js");
+const tieredTrayArticle = require("./article-tiered-tray-styling.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -440,6 +441,17 @@ const longFormPosts = [
     alt: "White arched wall cabinet with glass doors and brass hardware above a toilet, styled with a trailing plant on top",
     image: "/images/above-toilet-decor/hero.jpg",
     bodyHtml: aboveToiletArticle.body,
+  },
+  {
+    slug: "how-to-style-a-tiered-tray",
+    title: "How to Style a Tiered Tray: Easy Ideas for a Cozy, Collected Look",
+    category: "Decorating",
+    readingTime: "14 min read",
+    date: "September 28, 2026",
+    excerpt: "Height, texture, and a little restraint — how to style a tiered tray for the kitchen, coffee station, or any season without it looking cluttered.",
+    alt: "Three-tier wood tray styled with pumpkins, a Welcome Fall sign, candles, wood beads and a grateful thankful blessed frame",
+    image: "/images/tiered-tray-styling/hero.jpg",
+    bodyHtml: tieredTrayArticle.body,
   },
 ];
 

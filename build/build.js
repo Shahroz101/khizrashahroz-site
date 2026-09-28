@@ -21,6 +21,7 @@ const whiteFarmhouseDecorArticle = require("./article-white-farmhouse-decor.js")
 const moodyDarkBedroomArticle = require("./article-moody-dark-bedroom.js");
 const cozyApartmentArticle = require("./article-cozy-apartment-decor.js");
 const powderRoomArticle = require("./article-powder-room-decor.js");
+const aboveToiletArticle = require("./article-above-toilet-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -428,6 +429,17 @@ const longFormPosts = [
     alt: "Dark botanical wallpaper powder room with a brass oval mirror, gold pendant lights and a black fluted floating vanity on hexagon tile",
     image: "/images/powder-room-decor/hero.jpg",
     bodyHtml: powderRoomArticle.body,
+  },
+  {
+    slug: "above-toilet-decor-ideas",
+    title: "20 Ways to Style Above Toilet",
+    category: "Bathroom",
+    readingTime: "13 min read",
+    date: "September 28, 2026",
+    excerpt: "Floating shelves, a sculptural mirror or one large print — 20 ways to style the wall above the toilet so it feels finished instead of forgotten.",
+    alt: "White arched wall cabinet with glass doors and brass hardware above a toilet, styled with a trailing plant on top",
+    image: "/images/above-toilet-decor/hero.jpg",
+    bodyHtml: aboveToiletArticle.body,
   },
 ];
 

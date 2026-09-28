@@ -20,6 +20,7 @@ const sageGreenBedroomArticle = require("./article-sage-green-bedroom.js");
 const whiteFarmhouseDecorArticle = require("./article-white-farmhouse-decor.js");
 const moodyDarkBedroomArticle = require("./article-moody-dark-bedroom.js");
 const cozyApartmentArticle = require("./article-cozy-apartment-decor.js");
+const powderRoomArticle = require("./article-powder-room-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -416,6 +417,17 @@ const longFormPosts = [
     alt: "Small apartment living room with a cream sofa, storage ottoman, nesting wood tables, a vintage rug and warm lamp light",
     image: "/images/cozy-apartment-decor/hero.jpg",
     bodyHtml: cozyApartmentArticle.body,
+  },
+  {
+    slug: "powder-room-decor-ideas",
+    title: "15 Elegant Powder Room Decor Ideas That Make a Small Space Feel Expensive",
+    category: "Decorating",
+    readingTime: "12 min read",
+    date: "September 28, 2026",
+    excerpt: "Dramatic wallpaper, warm brass and one sculptural mirror — 15 elegant powder room decor ideas that make a tiny space feel like the jewelry of the house.",
+    alt: "Dark botanical wallpaper powder room with a brass oval mirror, gold pendant lights and a black fluted floating vanity on hexagon tile",
+    image: "/images/powder-room-decor/hero.jpg",
+    bodyHtml: powderRoomArticle.body,
   },
 ];
 

@@ -23,6 +23,7 @@ const cozyApartmentArticle = require("./article-cozy-apartment-decor.js");
 const powderRoomArticle = require("./article-powder-room-decor.js");
 const aboveToiletArticle = require("./article-above-toilet-decor.js");
 const tieredTrayArticle = require("./article-tiered-tray-styling.js");
+const pantryArticle = require("./article-pantry-organization.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -452,6 +453,17 @@ const longFormPosts = [
     alt: "Three-tier wood tray styled with pumpkins, a Welcome Fall sign, candles, wood beads and a grateful thankful blessed frame",
     image: "/images/tiered-tray-styling/hero.jpg",
     bodyHtml: tieredTrayArticle.body,
+  },
+  {
+    slug: "how-to-organise-your-pantry",
+    title: "How to Organise Your Pantry Without Making It a Full-Time Job",
+    category: "Kitchen",
+    readingTime: "12 min read",
+    date: "September 29, 2026",
+    excerpt: "Zones, FIFO, and a little restraint with containers — how to organise your pantry around the way you actually cook so it stays tidy without constant upkeep.",
+    alt: "Neatly organized pantry shelves lined with glass jars and bottles of dry goods",
+    image: "/images/pantry-organization/hero-pantry-jars.jpg",
+    bodyHtml: pantryArticle.body,
   },
 ];
 

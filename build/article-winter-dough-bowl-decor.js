@@ -3,9 +3,10 @@
 // selected and provided directly; each is credited back to its pin per
 // their request. Photos only — no Amazon product grids on this one. A
 // handful of supplied pins turned out to be off-topic (fall decor, a
-// product photo, a mismatched figurine scene) and were dropped; one idea
-// (Candles and Dried Citrus) has no strong dedicated photo left and runs
-// without one rather than force a bad match.
+// product photo) and were dropped; one idea (Candles and Dried Citrus)
+// has no strong dedicated photo left and runs without one rather than
+// force a bad match. The preamble and closing paragraphs each get a
+// photo too, matching every other article in this series.
 
 const { picture } = require("./picture-helper.js");
 
@@ -34,6 +35,7 @@ const PIN = {
   idea22: { src: "ornament-filled", w: 564, h: 752, alt: "Light wood dough bowl filled with oversized textured mercury glass ornaments, fairy lights and pine branches on a dining table", url: "https://www.pinterest.com/pin/532409987219064414/", label: "Ornament-Filled Winter Dough Bowl" },
   idea23: { src: "moss-and-pinecone", w: 1003, h: 1024, alt: "Dough bowl filled with moss balls, twine and rattan balls, pinecones and cedar branches on a console table", url: "https://www.pinterest.com/pin/563018695708280/", label: "Moss and Pinecone Winter Dough Bowl" },
   idea24: { src: "fairy-lights", w: 1000, h: 1500, alt: "Light wood dough bowl filled with frosted pinecones, silver mercury ornaments and a strand of warm fairy lights on a mantel", url: "https://www.pinterest.com/pin/17732992278484693/", label: "Simple Winter Dough Bowl With Fairy Lights" },
+  finalThoughts: { src: "final-thoughts", w: 720, h: 821, alt: "Dough bowl with black glossy ornaments, a gold deer figurine, frosted greenery and warm fairy lights on a dining table", url: "https://www.pinterest.com/pin/246783254573728277/", label: "Finished Winter Dough Bowl Display" },
 };
 
 function photo(key) {
@@ -381,6 +383,7 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>My favorite looks usually combine natural wood, winter greenery, warm lighting, and neutral accents because those elements feel seasonal without becoming overly themed.</p>
 <p>So grab your dough bowl, shop your own cabinets first, and experiment. Add a few pinecones, move them around, step back, and see what feels right.</p>
 <p>And if your first attempt looks slightly chaotic? Congratulations. You have officially joined the very normal process of decorating. Move three things, remove two, add one candle, and suddenly it looks intentional. That&rsquo;s basically interior design magic.</p>
+${photo("finalThoughts")}
 `;
 
 module.exports = { body };

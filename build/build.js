@@ -24,6 +24,7 @@ const powderRoomArticle = require("./article-powder-room-decor.js");
 const aboveToiletArticle = require("./article-above-toilet-decor.js");
 const tieredTrayArticle = require("./article-tiered-tray-styling.js");
 const pantryArticle = require("./article-pantry-organization.js");
+const doughBowlArticle = require("./article-winter-dough-bowl-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -464,6 +465,17 @@ const longFormPosts = [
     alt: "Neatly organized pantry shelves lined with glass jars and bottles of dry goods",
     image: "/images/pantry-organization/hero-pantry-jars.jpg",
     bodyHtml: pantryArticle.body,
+  },
+  {
+    slug: "winter-dough-bowl-decor-ideas",
+    title: "24 Winter Dough Bowl Decor Ideas That Make Your Home Feel Instantly Cozier",
+    category: "Decorating",
+    readingTime: "15 min read",
+    date: "September 29, 2026",
+    excerpt: "Greenery, candles, pinecones and tiny trees — 24 winter dough bowl decor ideas that turn a rustic wooden bowl into a warm, collected centerpiece.",
+    alt: "Glass ornaments, pinecones and cinnamon sticks in a raw-edge dough bowl on a coffee table with a cozy sofa and Christmas tree lights behind it",
+    image: "/images/winter-dough-bowl-decor/hero.jpg",
+    bodyHtml: doughBowlArticle.body,
   },
 ];
 

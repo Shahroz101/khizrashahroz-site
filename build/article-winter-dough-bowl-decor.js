@@ -36,6 +36,11 @@ const PIN = {
   idea23: { src: "moss-and-pinecone", w: 1003, h: 1024, alt: "Dough bowl filled with moss balls, twine and rattan balls, pinecones and cedar branches on a console table", url: "https://www.pinterest.com/pin/563018695708280/", label: "Moss and Pinecone Winter Dough Bowl" },
   idea24: { src: "fairy-lights", w: 1000, h: 1500, alt: "Light wood dough bowl filled with frosted pinecones, silver mercury ornaments and a strand of warm fairy lights on a mantel", url: "https://www.pinterest.com/pin/17732992278484693/", label: "Simple Winter Dough Bowl With Fairy Lights" },
   finalThoughts: { src: "final-thoughts", w: 720, h: 821, alt: "Dough bowl with black glossy ornaments, a gold deer figurine, frosted greenery and warm fairy lights on a dining table", url: "https://www.pinterest.com/pin/246783254573728277/", label: "Finished Winter Dough Bowl Display" },
+  howToDecorate: { src: "how-to-decorate", w: 1078, h: 1440, alt: "Round wood tray with a ceramic snowman figurine, flocked mini trees, greenery and a gold star on a rustic side table", url: "https://www.pinterest.com/pin/12666442696508381/", label: "Winter Dough Bowl Styling Ideas" },
+};
+
+const STOCK = {
+  keepFresh: { src: "keep-fresh-after-christmas", w: 960, h: 640, alt: "White mantel with a garland of small gold ornaments, brass stars, evergreen and plaid stockings", url: "https://stocksnap.io/photo/holiday-decorations-LNP01UMEWR", label: "Kelly Ishmael", site: "StockSnap" },
 };
 
 function photo(key) {
@@ -43,6 +48,14 @@ function photo(key) {
   return `<figure>
       ${picture({ dir: "winter-dough-bowl-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
+    </figure>`;
+}
+
+function stockPhoto(key) {
+  const p = STOCK[key];
+  return `<figure>
+      ${picture({ dir: "winter-dough-bowl-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
+      <figcaption>Photo by ${p.label} via <a href="${p.url}" target="_blank" rel="nofollow noopener">${p.site}</a></figcaption>
     </figure>`;
 }
 
@@ -330,6 +343,7 @@ ${photo("hero")}
 <p>I also leave some of the wooden bowl visible. That little bit of empty space gives the arrangement room to breathe and lets the character of the bowl actually show.</p>
 <p>A recent winter decorating example from My True Style uses greenery, pinecones, candles, ornaments, and woodland accents in several different dough bowl arrangements.</p>
 <p>Now that we have the basics out of the way, let&rsquo;s get to the fun part.</p>
+${photo("howToDecorate")}
 
 <h2>24 Winter Dough Bowl Decor Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}
@@ -354,6 +368,7 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>Suddenly, the same arrangement works beautifully through January and February.</p>
 <p>You can also make small changes instead of rebuilding everything. Replace red berries with white ones, remove ornaments, swap Christmas trees for birch branches, or add a few neutral ceramic pieces.</p>
 <p>That saves time and money while keeping your home feeling fresh.</p>
+${stockPhoto("keepFresh")}
 
 <h2>What Should You Put in a Dough Bowl for Winter?</h2>
 <p>If you want to build your own arrangement instead of copying one idea exactly, start with items you already have.</p>

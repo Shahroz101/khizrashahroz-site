@@ -26,6 +26,7 @@ const tieredTrayArticle = require("./article-tiered-tray-styling.js");
 const pantryArticle = require("./article-pantry-organization.js");
 const doughBowlArticle = require("./article-winter-dough-bowl-decor.js");
 const mantelDecorArticle = require("./article-mantel-decor-ideas.js");
+const japandiKitchenArticle = require("./article-japandi-kitchen-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -488,6 +489,17 @@ const longFormPosts = [
     alt: "Rustic wood mantel with a framed pressed botanical print, three graduated brass candlesticks, a stoneware vase of flowers and a firewood basket beside a lit fireplace",
     image: "/images/mantel-decor-ideas/hero.jpg",
     bodyHtml: mantelDecorArticle.body,
+  },
+  {
+    slug: "japandi-kitchen-decor-ideas",
+    title: "20 Japandi Kitchen Decor Ideas for a Calm, Warm, and Timeless Space",
+    category: "Kitchen",
+    readingTime: "15 min read",
+    date: "September 30, 2026",
+    excerpt: "Warm wood, natural stone and handmade ceramics — 20 Japandi kitchen decor ideas that feel calm and collected instead of cold and empty.",
+    alt: "Japandi kitchen island with fluted wood panels, wood bar stools, pleated linen pendant lights and a ceramic vase of dried branches",
+    image: "/images/japandi-kitchen-decor/hero.jpg",
+    bodyHtml: japandiKitchenArticle.body,
   },
 ];
 

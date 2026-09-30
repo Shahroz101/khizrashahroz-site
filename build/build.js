@@ -27,6 +27,7 @@ const pantryArticle = require("./article-pantry-organization.js");
 const doughBowlArticle = require("./article-winter-dough-bowl-decor.js");
 const mantelDecorArticle = require("./article-mantel-decor-ideas.js");
 const japandiKitchenArticle = require("./article-japandi-kitchen-decor.js");
+const elfOnTheShelfArticle = require("./article-elf-on-the-shelf-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -500,6 +501,17 @@ const longFormPosts = [
     alt: "Japandi kitchen island with fluted wood panels, wood bar stools, pleated linen pendant lights and a ceramic vase of dried branches",
     image: "/images/japandi-kitchen-decor/hero.jpg",
     bodyHtml: japandiKitchenArticle.body,
+  },
+  {
+    slug: "elf-on-the-shelf-ideas",
+    title: "24 Elf on the Shelf Ideas That Kids Will Actually Love",
+    category: "Holidays",
+    readingTime: "13 min read",
+    date: "September 30, 2026",
+    excerpt: "Cereal messages, marshmallow snowball fights and a candy cane swing — 24 Elf on the Shelf ideas that look magical but take very little effort.",
+    alt: "Elf on the Shelf sitting on a bathroom sink beside a toothpaste smiley face doodle",
+    image: "/images/elf-on-the-shelf-ideas/hero.jpg",
+    bodyHtml: elfOnTheShelfArticle.body,
   },
 ];
 

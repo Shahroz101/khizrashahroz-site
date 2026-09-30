@@ -76,8 +76,8 @@ const ideas = [
     photoKey: "idea3",
     paras: [
       "Grab some mini marshmallows and place them around the room.",
-      "Sit your elf behind a small cup, toy, or block as a pretend hiding spot.",
-      "Add another stuffed animal on the opposite side and create a tiny marshmallow battle.",
+      "Stack a few marshmallows into a small fort as your elf&rsquo;s pretend hiding spot, then knock over a stuffed snowman on the opposite side like it just lost the battle.",
+      "A tiny handmade sign that says &ldquo;Caution: Snowball Fight!!!&rdquo; adds a nice finishing touch.",
       "This idea works especially well when you have several toys that can join the scene.",
     ],
   },
@@ -86,7 +86,7 @@ const ideas = [
     title: "Elf Takes a Bubble Bath",
     photoKey: "idea4",
     paras: [
-      "Give your elf a tiny &ldquo;bath&rdquo; using a bowl, mug, or small container filled with cotton balls.",
+      "Give your elf a tiny &ldquo;bath&rdquo; using a bowl, mug, or small container filled with mini marshmallows to look like bubbles.",
       "Place the elf inside and add a towel nearby.",
       "You can also put a few small bath toys around the scene.",
       "The official Elf on the Shelf site even features a Scout Elf spa setup using a washcloth, bowl, marshmallows, and paper decorations.",
@@ -121,9 +121,9 @@ const ideas = [
     title: "Elf Writes a Christmas Note",
     photoKey: "idea7",
     paras: [
-      "Sit your elf beside a tiny handwritten note addressed to your child.",
-      "You could write:",
-      "&ldquo;Good morning! I noticed how kind you were yesterday. Keep spreading Christmas cheer!&rdquo;",
+      "Sit your elf beside a message built entirely out of colorful sticky notes on the wall or fridge.",
+      "Shape the notes into a little Christmas tree and a snowflake, then spell out something simple underneath, like a name or a short word.",
+      "You can also stick a real note nearby that says something like, &ldquo;Good morning! I noticed how kind you were yesterday. Keep spreading Christmas cheer!&rdquo;",
       "This idea adds something different because it turns the elf into more than a hiding game.",
       "A tiny personal message can feel much more special than an elaborate setup.",
     ],
@@ -155,8 +155,8 @@ const ideas = [
     title: "Elf Makes a Candy Cane Swing",
     photoKey: "idea10",
     paras: [
-      "Tie a ribbon or string between two sturdy points and attach a candy cane to create a tiny swing.",
-      "Place your elf on the swing.",
+      "Tie a ribbon or string between two sturdy points, like a light fixture, and attach a candy cane to create a tiny swing.",
+      "Place your elf on the swing. If you have more than one elf, hang a second swing right beside it for a matching pair.",
       "This scene looks adorable in photographs, but make sure you secure everything properly and keep small materials away from young children who might grab them.",
     ],
   },
@@ -176,8 +176,8 @@ const ideas = [
     title: "Elf Makes a Paper Snow Angel",
     photoKey: "idea12",
     paras: [
-      "Sprinkle a few cotton balls or pieces of white paper across a safe tabletop.",
-      "Lay your elf in the middle and arrange the material around it to resemble a snow angel.",
+      "Turn a small toy laundry basket into a pretend snow machine and sit your elf right on top of it.",
+      "Scatter cotton balls or pieces of white paper across the floor around the basket, as if your elf just sprayed snow everywhere.",
       "Add a tiny scarf or hat if you have one.",
       "This setup gives you the winter feeling without bringing actual snow into your living room.",
     ],
@@ -199,9 +199,9 @@ const ideas = [
     title: "Elf Has a Dance Party",
     photoKey: "idea14",
     paras: [
-      "Surround your elf with stuffed animals and turn the scene into a tiny Christmas dance party.",
-      "Add paper music notes or a handmade &ldquo;Dance Party&rdquo; sign.",
-      "You can place the group near a speaker without turning the setup into an electrical experiment.",
+      "Pair your elf up with a Barbie or another doll and turn the scene into a tiny Christmas dance party.",
+      "Hang a small disco ball overhead if you have one, or draw a quick dance floor on paper underneath them.",
+      "You can place the pair near a speaker without turning the setup into an electrical experiment.",
       "The official Elf on the Shelf store also lists dance parties among its Scout Elf scene ideas.",
     ],
   },
@@ -210,7 +210,7 @@ const ideas = [
     title: "Elf Plays a Board Game",
     photoKey: "idea15",
     paras: [
-      "Set up a small board game and position the elf opposite a stuffed animal.",
+      "Set up a small board game and position the elf among a few stuffed animal friends like it&rsquo;s in the middle of a real game night.",
       "Place a few game pieces around them.",
       "You could even leave the dice showing an obviously dramatic number.",
       "Kids love scenes that make the elf look like it actually has a personality.",
@@ -221,8 +221,8 @@ const ideas = [
     title: "Elf Builds a Marshmallow Tower",
     photoKey: "idea16",
     paras: [
-      "Give your elf a pile of mini marshmallows and toothpick-free building materials.",
-      "Stack the marshmallows around the elf and create a tiny &ldquo;construction site.&rdquo;",
+      "Give your elf a pile of mini marshmallows and let it stack a few into a tiny marshmallow snowman right beside itself.",
+      "Draw a simple face on the top marshmallow and scatter a few extra ones around the &ldquo;construction site.&rdquo;",
       "For younger children, skip any small pieces that could create a choking hazard. The official safety guidance warns parents about small objects and recommends adult supervision for Scout Elf activities.",
     ],
   },
@@ -231,9 +231,9 @@ const ideas = [
     title: "Elf Gets Wrapped Like a Present",
     photoKey: "idea17",
     paras: [
-      "Place your elf inside an open gift box and wrap some ribbon around the box.",
-      "Leave the lid slightly open so your child can spot the elf.",
-      "Add a tag that says:",
+      "Grab a spool of ribbon and let your elf get completely wrapped up in it, as if it tried to wrap itself like a present and got a little too enthusiastic.",
+      "If you have a second elf, tangle them up together for double the trouble.",
+      "Add a tag nearby that says:",
       "&ldquo;To: The Best Kid Ever.&rdquo;",
       "This idea feels especially magical during the final week before Christmas.",
     ],
@@ -242,7 +242,7 @@ const ideas = [
     n: "18",
     title: "Elf Makes a Kindness Challenge",
     photoKey: "idea18",
-    paras: ["Place your elf beside a small card with one simple challenge.", "For example:", "&ldquo;Do one kind thing today.&rdquo;", "You can make the challenge age appropriate:"],
+    paras: ["Have your elf model the challenge instead of just announcing it. Sit it in the sink with a tiny scrub brush, as if it already got started on today&rsquo;s kind deed.", "Prop a small card nearby with a simple challenge, like:", "&ldquo;Do one kind thing today.&rdquo;", "You can make the challenge age appropriate:"],
     list: ["Help clean up", "Share a toy", "Compliment someone", "Help with breakfast", "Write a thank-you note"],
     after: ["The tradition can become much more meaningful when you use the elf to encourage kindness rather than only creating silly messes."],
   },
@@ -251,9 +251,9 @@ const ideas = [
     title: "Elf Has a Snowball Fight With Stuffed Animals",
     photoKey: "idea19",
     paras: [
-      "Place cotton balls around your elf and several stuffed animals.",
+      "Ball up little scraps of paper into tiny snowballs and scatter them between your elf and a second elf or stuffed animal sitting across the room.",
       "Position everyone as if they just finished an intense snowball battle.",
-      "Put one cotton ball on your elf&rsquo;s head for extra comedy.",
+      "A small chalkboard sign propped up between them that says &ldquo;Snowball Fight Anyone?&rdquo; sets the scene perfectly.",
       "Why does the elf always seem to start trouble and somehow look innocent afterward?",
     ],
   },
@@ -274,10 +274,9 @@ const ideas = [
     title: "Elf Has a Pizza Party",
     photoKey: "idea21",
     paras: [
-      "Create a tiny pizza party using paper circles, toy food, or a few safe snack pieces.",
-      "Place the elf beside a miniature plate.",
-      "Add stuffed animals as guests.",
-      "The official Scout Elf product ideas include pizza party scenes, so this setup fits naturally into the playful food theme.",
+      "Dress your elf up in a tiny felt pizza slice costume, complete with pepperoni dots, and tuck it in among your holiday decor for your kids to discover.",
+      "If you don&rsquo;t have a costume, a paper pizza slice cut to fit around the elf works just as well.",
+      "The official Scout Elf product ideas include pizza-themed scenes, so this setup fits naturally into the playful food theme.",
     ],
   },
   {
@@ -297,9 +296,8 @@ const ideas = [
     title: "Elf Creates a Christmas Countdown",
     photoKey: "idea23",
     paras: [
-      "Place your elf beside a homemade countdown calendar.",
-      "Use paper numbers or small cards showing how many days remain until Christmas.",
-      "Each morning, your child can update the number.",
+      "Make a homemade paper chain countdown and loop it around a light fixture or ceiling fan, then have your elf hang from it like it&rsquo;s swinging on the countdown itself.",
+      "Number each link so your child can tear one off each morning to see how many days remain until Christmas.",
       "This idea gives your elf a purpose beyond hiding and creates a daily ritual that builds anticipation.",
     ],
   },
@@ -309,7 +307,8 @@ const ideas = [
     photoKey: "idea24",
     paras: [
       "Save this one for Christmas Eve.",
-      "Place your elf beside a small handwritten goodbye note and perhaps a tiny Christmas treat.",
+      "If you have a Santa photo, figurine, or costume around, pose your elf sitting with Santa for one last picture, as if he&rsquo;s personally walking the elf home.",
+      "Otherwise, place your elf beside a small handwritten goodbye note and perhaps a tiny Christmas treat.",
       "You can explain that the elf needs to return to the North Pole to help Santa.",
       "The official tradition says Scout Elves return to the North Pole on Christmas Eve.",
       "Keep the final scene simple. After weeks of elaborate hiding spots, a quiet goodbye can actually feel more meaningful.",
@@ -409,6 +408,7 @@ ${photo("keepFromExhausting")}
 <p>Put the elf inside a gift bag.</p>
 <p>Place the elf beside a handwritten note.</p>
 <p>Hide the elf underneath the Christmas tree.</p>
+<p>Give the elf a &ldquo;car wash&rdquo; using a sponge and a pile of your child&rsquo;s toy cars.</p>
 <p>These setups prove something I wish more parents remembered: the magic comes from the surprise, not the production value.</p>
 <p>Your child doesn&rsquo;t know how long you spent arranging the scene.</p>
 <p>They just know the elf moved.</p>

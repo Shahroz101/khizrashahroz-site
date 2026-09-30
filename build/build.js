@@ -25,6 +25,7 @@ const aboveToiletArticle = require("./article-above-toilet-decor.js");
 const tieredTrayArticle = require("./article-tiered-tray-styling.js");
 const pantryArticle = require("./article-pantry-organization.js");
 const doughBowlArticle = require("./article-winter-dough-bowl-decor.js");
+const mantelDecorArticle = require("./article-mantel-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -476,6 +477,17 @@ const longFormPosts = [
     alt: "Glass ornaments, pinecones and cinnamon sticks in a raw-edge dough bowl on a coffee table with a cozy sofa and Christmas tree lights behind it",
     image: "/images/winter-dough-bowl-decor/hero.jpg",
     bodyHtml: doughBowlArticle.body,
+  },
+  {
+    slug: "mantel-decor-ideas",
+    title: "19 Mantel Decor Ideas for a Stylish and Cozy Fireplace",
+    category: "Decorating",
+    readingTime: "14 min read",
+    date: "September 30, 2026",
+    excerpt: "Scale, layering, texture and restraint — 19 mantel decor ideas that make a fireplace feel intentional and collected without looking overdone.",
+    alt: "Rustic wood mantel with a framed pressed botanical print, three graduated brass candlesticks, a stoneware vase of flowers and a firewood basket beside a lit fireplace",
+    image: "/images/mantel-decor-ideas/hero.jpg",
+    bodyHtml: mantelDecorArticle.body,
   },
 ];
 

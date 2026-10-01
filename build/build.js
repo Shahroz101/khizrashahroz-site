@@ -29,6 +29,7 @@ const mantelDecorArticle = require("./article-mantel-decor-ideas.js");
 const japandiKitchenArticle = require("./article-japandi-kitchen-decor.js");
 const elfOnTheShelfArticle = require("./article-elf-on-the-shelf-ideas.js");
 const christmasPorchArticle = require("./article-christmas-porch-decor.js");
+const elfOnTheShelfFunAndEasyArticle = require("./article-elf-on-the-shelf-ideas-fun-and-easy.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -524,6 +525,17 @@ const longFormPosts = [
     alt: "Cozy porch bench with red and green plaid pillows and throw, a wreath on the window, string lights and mini lit trees",
     image: "/images/christmas-porch-decor/hero.jpg",
     bodyHtml: christmasPorchArticle.body,
+  },
+  {
+    slug: "elf-on-the-shelf-ideas-fun-and-easy",
+    title: "25 Elf on the Shelf Ideas That Are Actually Fun and Easy",
+    category: "Holidays",
+    readingTime: "14 min read",
+    date: "October 1, 2026",
+    excerpt: "Cereal angels, marshmallow bubble baths and a candy cane cage — 25 easy Elf on the Shelf ideas using things you probably already have at home.",
+    alt: "Two Elf on the Shelf dolls sitting in powdered snow next to a powdered-sugar snowman, sharing a mug of hot cocoa",
+    image: "/images/elf-on-the-shelf-ideas-fun-and-easy/hero.jpg",
+    bodyHtml: elfOnTheShelfFunAndEasyArticle.body,
   },
 ];
 

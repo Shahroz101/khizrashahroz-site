@@ -121,8 +121,8 @@ const ideas = [
     title: "Rustic Christmas Porch With Pinecones",
     photoKey: "idea6",
     paras: [
-      "For a relaxed farmhouse look, let pinecones do some of the decorating.",
-      "Mix pinecones with cedar, pine branches, berries, and burlap ribbon. Add a wooden sign or vintage lantern to complete the rustic look.",
+      "For a relaxed farmhouse look, let a berry-covered wreath and glowing lanterns do most of the decorating.",
+      "Mix red berries with pine branches, mini trees tucked into wood crates, and a plaid blanket for texture. Add a wooden sign or vintage lantern to complete the rustic look.",
       "Better Homes &amp; Gardens features pinecones, fresh greenery, lanterns, plaid, and natural materials throughout its farmhouse Christmas porch ideas.",
     ],
   },
@@ -182,7 +182,7 @@ const ideas = [
     photoKey: "idea12",
     paras: [
       "Not every Christmas porch needs red.",
-      "Try cream, beige, taupe, white, soft green, and natural wood. Add a neutral wreath, woven baskets, white lights, and simple greenery.",
+      "Try cream, beige, taupe, white, soft green, and natural wood. Group a few small trees of different heights in aged stone urns or a galvanized bucket, then add warm white lights and a simple black lantern.",
       "This approach works particularly well if your interior already follows a neutral decorating style.",
     ],
   },
@@ -253,8 +253,8 @@ const ideas = [
     title: "Christmas Porch With Evergreen Baskets",
     photoKey: "idea19",
     paras: [
-      "Fill large woven baskets with evergreen branches.",
-      "Add pinecones, berries, ribbon, and a few ornaments for extra texture. The baskets soften the harder architectural lines around your front door.",
+      "Fill large woven baskets with small potted evergreen trees instead of a planter.",
+      "Wrap the trees in warm white lights and let the baskets themselves add texture. They soften the harder architectural lines around your front door.",
       "This idea also works beautifully after Christmas because you can remove the obvious holiday details and keep the greenery.",
     ],
   },

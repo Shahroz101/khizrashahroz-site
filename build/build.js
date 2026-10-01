@@ -28,6 +28,7 @@ const doughBowlArticle = require("./article-winter-dough-bowl-decor.js");
 const mantelDecorArticle = require("./article-mantel-decor-ideas.js");
 const japandiKitchenArticle = require("./article-japandi-kitchen-decor.js");
 const elfOnTheShelfArticle = require("./article-elf-on-the-shelf-ideas.js");
+const christmasPorchArticle = require("./article-christmas-porch-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -512,6 +513,17 @@ const longFormPosts = [
     alt: "Elf on the Shelf sitting on a bathroom sink beside a toothpaste smiley face doodle",
     image: "/images/elf-on-the-shelf-ideas/hero.jpg",
     bodyHtml: elfOnTheShelfArticle.body,
+  },
+  {
+    slug: "christmas-porch-decor-ideas",
+    title: "28 Christmas Porch Decor Ideas That Make Your Home Feel Instantly Festive",
+    category: "Holidays",
+    readingTime: "16 min read",
+    date: "October 1, 2026",
+    excerpt: "Greenery, lanterns, bows and warm lighting — 28 Christmas porch decor ideas that create a clear, festive focal point from the sidewalk to the door.",
+    alt: "Cozy porch bench with red and green plaid pillows and throw, a wreath on the window, string lights and mini lit trees",
+    image: "/images/christmas-porch-decor/hero.jpg",
+    bodyHtml: christmasPorchArticle.body,
   },
 ];
 

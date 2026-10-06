@@ -40,6 +40,7 @@ const fallBedroomArticle = require("./article-fall-bedroom-ideas.js");
 const coffeeBarDecorArticle = require("./article-coffee-bar-decor-ideas.js");
 const farmhouseKitchenArticle = require("./article-farmhouse-kitchen-ideas.js");
 const gardenPlantsArticle = require("./article-must-have-garden-plants.js");
+const readingNookArticle = require("./article-reading-nook-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -656,6 +657,17 @@ const longFormPosts = [
     alt: "Lush garden path lined with lavender, hydrangeas, hostas and zinnias leading to a wood bench, with butterflies in the air",
     image: "/images/must-have-garden-plants/hero.jpg",
     bodyHtml: gardenPlantsArticle.body,
+  },
+  {
+    slug: "reading-nook-ideas",
+    title: "10 Reading Nook Ideas That Work Even in a Tiny Space",
+    category: "Decorating",
+    readingTime: "11 min read",
+    date: "October 11, 2026",
+    excerpt: "From a converted closet to the space under the stairs — 10 reading nook ideas that turn a dead corner into the coziest spot in the house.",
+    alt: "Two mid-century wood chairs with a small round table beside a window, positioned next to a tall bookshelf in a warmly lit room",
+    image: "/images/reading-nook-ideas/hero.jpg",
+    bodyHtml: readingNookArticle.body,
   },
 ];
 

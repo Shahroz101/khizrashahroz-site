@@ -43,6 +43,7 @@ const gardenPlantsArticle = require("./article-must-have-garden-plants.js");
 const readingNookArticle = require("./article-reading-nook-ideas.js");
 const modernEntrywayArticle = require("./article-modern-entryway-ideas.js");
 const pinkBedroomArticle = require("./article-pink-bedroom-ideas.js");
+const timelessKitchenLayoutsArticle = require("./article-timeless-kitchen-layouts.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -692,6 +693,17 @@ const longFormPosts = [
     alt: "Blush pink bedroom with a round rose gold mirror above the bed, copper wall sconces and layered pink and white pillows",
     image: "/images/pink-bedroom-ideas/hero.jpg",
     bodyHtml: pinkBedroomArticle.body,
+  },
+  {
+    slug: "timeless-kitchen-layouts",
+    title: "10 Kitchen Layouts That Actually Stand the Test of Time",
+    category: "Kitchen",
+    readingTime: "12 min read",
+    date: "October 14, 2026",
+    excerpt: "From the efficient galley to the flexible zone-style design — 10 kitchen layouts that work for real life, not just the listing photos.",
+    alt: "Large modern kitchen with a gray waterfall-edge island, three black pendant lights, glossy gray cabinets and a dining area beyond",
+    image: "/images/timeless-kitchen-layouts/hero.jpg",
+    bodyHtml: timelessKitchenLayoutsArticle.body,
   },
 ];
 

@@ -30,6 +30,13 @@ const japandiKitchenArticle = require("./article-japandi-kitchen-decor.js");
 const elfOnTheShelfArticle = require("./article-elf-on-the-shelf-ideas.js");
 const christmasPorchArticle = require("./article-christmas-porch-decor.js");
 const elfOnTheShelfFunAndEasyArticle = require("./article-elf-on-the-shelf-ideas-fun-and-easy.js");
+const bathroomStorageArticle = require("./article-bathroom-storage-ideas.js");
+const kidsRoomArticle = require("./article-kids-room-design-ideas.js");
+const blueFarmhouseBedroomArticle = require("./article-blue-farmhouse-bedroom-decor.js");
+const dormWallDecorArticle = require("./article-dorm-wall-decor-ideas.js");
+const bohoPaintingArticle = require("./article-boho-painting-ideas.js");
+const homeOfficeSetupArticle = require("./article-home-office-setup-tips.js");
+const fallBedroomArticle = require("./article-fall-bedroom-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -536,6 +543,83 @@ const longFormPosts = [
     alt: "Two Elf on the Shelf dolls sitting in powdered snow next to a powdered-sugar snowman, sharing a mug of hot cocoa",
     image: "/images/elf-on-the-shelf-ideas-fun-and-easy/hero.jpg",
     bodyHtml: elfOnTheShelfFunAndEasyArticle.body,
+  },
+  {
+    slug: "bathroom-storage-ideas",
+    title: "10 Bathroom Storage Ideas That Actually Keep Clutter Under Control",
+    category: "Bathroom",
+    readingTime: "12 min read",
+    date: "October 2, 2026",
+    excerpt: "Floating shelves, a mirrored cabinet, a hanging caddy and more — 10 bathroom storage ideas that clear the counter without losing any style.",
+    alt: "Black ladder towel rack and backlit mirrored medicine cabinet above a dark wood vanity in a small tiled bathroom",
+    image: "/images/bathroom-storage-ideas/hero.jpg",
+    bodyHtml: bathroomStorageArticle.body,
+  },
+  {
+    slug: "kids-room-design-ideas",
+    title: "10 Playful Kids Room Ideas That Still Make Sense for Real Life",
+    category: "Kids Room",
+    readingTime: "11 min read",
+    date: "October 3, 2026",
+    excerpt: "Interactive walls, zoned layouts and furniture that pulls double duty — 10 kids room ideas that balance imagination with everyday practicality.",
+    alt: "Cozy neutral kids playroom corner with a cloud-shaped bean bag, star cushions, a fabric teepee tent, a knit pouf and a shaggy white rug",
+    image: "/images/kids-room-design-ideas/hero.jpg",
+    bodyHtml: kidsRoomArticle.body,
+  },
+  {
+    slug: "blue-farmhouse-bedroom-decor",
+    title: "10 Blue Farmhouse Bedroom Ideas for a Cozy, Collected Look",
+    category: "Bedroom",
+    readingTime: "7 min read",
+    date: "October 4, 2026",
+    excerpt: "Weathered wood, warm metals and a tight blue palette — 10 ways to bring farmhouse warmth into a blue bedroom without it reading cold or coastal.",
+    alt: "Glam bedroom with a tufted navy velvet channel-back headboard, a royal blue velvet bench with gold trim, mirrored nightstands and cobalt ceramic lamps",
+    image: "/images/blue-farmhouse-bedroom-decor/hero.jpg",
+    bodyHtml: blueFarmhouseBedroomArticle.body,
+  },
+  {
+    slug: "dorm-wall-decor-ideas",
+    title: "10 Dorm Wall Decor Ideas Every Student Will Want to Copy",
+    category: "Dorm Decor",
+    readingTime: "14 min read",
+    date: "October 5, 2026",
+    excerpt: "Gallery walls, tapestries, pegboards and fairy lights — 10 dorm wall decor ideas that turn a cinderblock box into somewhere you actually want to live.",
+    alt: "Two black floating shelves styled with books, plants and small decor above a desk, with a pale blue electric guitar mounted on the wall nearby",
+    image: "/images/dorm-wall-decor-ideas/hero.jpg",
+    bodyHtml: dormWallDecorArticle.body,
+  },
+  {
+    slug: "boho-painting-ideas",
+    title: "10 Easy Boho Painting Ideas Anyone Can Try at Home",
+    category: "Wall Decor",
+    readingTime: "8 min read",
+    date: "October 6, 2026",
+    excerpt: "Arches, mandalas, celestial motifs and more — 10 forgiving boho painting ideas that turn a blank wall into something personal, no art degree required.",
+    alt: "Black line-art mural of faces and botanical leaves painted across a bedroom wall behind a neatly made bed",
+    image: "/images/boho-painting-ideas/hero.jpg",
+    bodyHtml: bohoPaintingArticle.body,
+  },
+  {
+    slug: "home-office-setup-tips",
+    title: "10 Tips for a Home Office Setup That Actually Works",
+    category: "Home Office",
+    readingTime: "9 min read",
+    date: "October 7, 2026",
+    excerpt: "From chair to lighting to a routine that sticks — 10 practical home office setup tips that go beyond the Pinterest version to a space that actually works.",
+    alt: "Woman with a morning rituals mug reading a planner at a wood desk while a golden retriever rests on the chair beside her",
+    image: "/images/home-office-setup-tips/routine.jpg",
+    bodyHtml: homeOfficeSetupArticle.body,
+  },
+  {
+    slug: "fall-bedroom-ideas",
+    title: "10 Ways to Make Your Bedroom Feel Like Fall",
+    category: "Bedroom",
+    readingTime: "8 min read",
+    date: "October 8, 2026",
+    excerpt: "Moody colors, plush bedding and warm lighting — 10 ways to bring real autumn coziness into your bedroom without tipping into a haunted hayride.",
+    alt: "Warm fall bedroom with a mustard yellow diamond-pattern rug, rust headboard, white bedding and a tripod floor lamp beside a shuttered window",
+    image: "/images/fall-bedroom-ideas/hero.jpg",
+    bodyHtml: fallBedroomArticle.body,
   },
 ];
 

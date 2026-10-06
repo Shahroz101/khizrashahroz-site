@@ -38,6 +38,7 @@ const bohoPaintingArticle = require("./article-boho-painting-ideas.js");
 const homeOfficeSetupArticle = require("./article-home-office-setup-tips.js");
 const fallBedroomArticle = require("./article-fall-bedroom-ideas.js");
 const coffeeBarDecorArticle = require("./article-coffee-bar-decor-ideas.js");
+const farmhouseKitchenArticle = require("./article-farmhouse-kitchen-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -632,6 +633,17 @@ const longFormPosts = [
     alt: "Arched alcove coffee bar with floral wallpaper, sage green cabinets, an espresso machine and light wood shelving",
     image: "/images/coffee-bar-decor-ideas/hero.jpg",
     bodyHtml: coffeeBarDecorArticle.body,
+  },
+  {
+    slug: "farmhouse-kitchen-ideas",
+    title: "10 Farmhouse Kitchen Ideas You'll Actually Want to Copy",
+    category: "Kitchen",
+    readingTime: "10 min read",
+    date: "October 9, 2026",
+    excerpt: "An apron sink, open shelving and a butcher block island — 10 farmhouse kitchen ideas that feel collected and warm instead of staged.",
+    alt: "Farmhouse kitchen with dark green cabinets, butcher block countertops, open wood shelving and a small wood island",
+    image: "/images/farmhouse-kitchen-ideas/hero.jpg",
+    bodyHtml: farmhouseKitchenArticle.body,
   },
 ];
 

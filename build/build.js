@@ -46,6 +46,7 @@ const pinkBedroomArticle = require("./article-pink-bedroom-ideas.js");
 const timelessKitchenLayoutsArticle = require("./article-timeless-kitchen-layouts.js");
 const toddlerRoomArticle = require("./article-toddler-room-ideas.js");
 const bedroomCeilingArticle = require("./article-bedroom-ceiling-design-ideas.js");
+const smallBedroomPaintColorsArticle = require("./article-small-bedroom-paint-colors.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -728,6 +729,17 @@ const longFormPosts = [
     alt: "Modern honeycomb-patterned ceiling installation reflected in a mirrored wardrobe above a white platform bed with framed art",
     image: "/images/bedroom-ceiling-design-ideas/hero.jpg",
     bodyHtml: bedroomCeilingArticle.body,
+  },
+  {
+    slug: "small-bedroom-paint-colors",
+    title: "12 Paint Colors That Actually Make a Small Bedroom Feel Bigger",
+    category: "Bedroom",
+    readingTime: "9 min read",
+    date: "October 17, 2026",
+    excerpt: "From powder blue to muted olive — 12 paint colors that make a small bedroom feel calmer, brighter and bigger than it actually is.",
+    alt: "Small bedroom with warm neutral walls, a round mirror above a tufted headboard and layered bedding",
+    image: "/images/small-bedroom-paint-colors/hero.jpg",
+    bodyHtml: smallBedroomPaintColorsArticle.body,
   },
 ];
 

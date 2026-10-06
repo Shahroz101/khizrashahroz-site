@@ -330,7 +330,6 @@ ${photo("whatToPrioritize")}
 <p>A powder room gives you one of the easiest opportunities in the house to experiment with wallpaper, saturated color, unusual lighting, dramatic mirrors, and beautiful finishes.</p>
 <blockquote><p>&ldquo;The goal involves creating a room that delights guests and puts a smile on their faces.&rdquo;</p><cite>&mdash; Jay Jeffers, Benjamin Moore</cite></blockquote>
 <p>And honestly, if a tiny room containing nothing more than a toilet and sink can make someone stop and say, &ldquo;Wow, I love this,&rdquo; I'd call that a pretty successful decorating project.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

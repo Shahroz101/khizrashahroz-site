@@ -371,7 +371,6 @@ ${photo("whatToPut")}
 <p>Choose a color palette you genuinely love, keep your daily essentials close, use vertical storage when space feels tight and resist the temptation to decorate every square inch.</p>
 <p>Because ultimately, your coffee bar should make you want to stop for a minute.</p>
 <p>And honestly, if a cute little coffee corner gives you one peaceful moment before the day gets chaotic, I&rsquo;d call that pretty successful decorating.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

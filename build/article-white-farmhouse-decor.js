@@ -517,7 +517,6 @@ ${photo("feelsPersonal")}
 <p>Maybe it needs a vintage frame.</p>
 <p>Or maybe it needs absolutely nothing.</p>
 <p>Sometimes leaving a little space is the most farmhouse thing you can do.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

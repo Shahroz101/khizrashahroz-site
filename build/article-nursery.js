@@ -530,7 +530,6 @@ ${photo("feelExpensive")}
 <p>After all, the nursery doesn't need to look perfect every minute. Real life will quickly add laundry, toys, books, and approximately 47 tiny socks to the room.</p>
 <p>And honestly? That's part of the charm.</p>
 <p>Choose pieces you love, make the room practical for your daily routine, and leave enough flexibility for your child to grow into the space. A beautiful nursery should feel like a cozy part of your home, not a museum exhibit.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

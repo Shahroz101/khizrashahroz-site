@@ -512,7 +512,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>I think that captures the whole idea perfectly.</p>
 <p>Your apartment does not need to look bigger, fancier, or more expensive than it actually is. It simply needs to feel good when you walk through the door.</p>
 <p>And if a beautiful throw blanket, a warm lamp, and one slightly unnecessary vintage chair help accomplish that, well, I certainly won't judge.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

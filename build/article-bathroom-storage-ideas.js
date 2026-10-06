@@ -193,7 +193,6 @@ ${creditedPhoto("baskets-bins.jpg", "Woven seagrass basket filled with travel-si
 <p>The best bathroom storage ideas aren't the most expensive ones. They're the ones that actually match how you use the room, whether that's three products total or a shelf's worth of skincare you're not ready to part with.</p>
 <p>Start with one idea from this list &mdash; a basket here, a floating shelf there &mdash; and build from there instead of trying to overhaul the whole room in a weekend.</p>
 <p>Give it a few weeks, and don't be surprised if the bathroom quietly becomes your favorite room to get ready in.</p>
-${photo("why-it-matters.jpg", "Antique gold-framed mirror above a pedestal sink with a linen hand towel, a trailing plant and a canvas shower curtain in a white tiled bathroom", 683, 1024)}
 `;
 
 module.exports = { body };

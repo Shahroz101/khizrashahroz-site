@@ -364,7 +364,6 @@ ${photo("howToLookExpensive")}
 <p>And remember, you do not have to decorate every available inch. Sometimes one beautiful shelf looks better than a wall full of stuff.</p>
 <p>So before you walk into your bathroom and stare at that empty wall again, ask yourself one simple question: what would make this space feel more like me?</p>
 <p>Start there. The toilet can handle the rest.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

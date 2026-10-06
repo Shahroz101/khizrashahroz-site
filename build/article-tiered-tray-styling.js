@@ -338,7 +338,6 @@ ${photo("easyFormula")}
 <p>A beautifully styled tiered tray should feel collected, useful, and relaxed. If you can still see some of the tray, reach the things you actually use, and enjoy looking at it every time you walk past, you probably got it right.</p>
 <p>And if you add one too many little pumpkins or mugs?</p>
 <p>Well, there is always tomorrow's decorating edit.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

@@ -432,7 +432,6 @@ ${photo("safety")}
 <p>Either way, have fun with it.</p>
 <p>Your front porch doesn&rsquo;t need to look perfect. It just needs to make you smile when you come home.</p>
 <p>And honestly, isn&rsquo;t that what Christmas decorating should do?</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

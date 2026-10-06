@@ -458,7 +458,6 @@ ${photo("busyParents5min")}
 <p>After all, your kids probably won&rsquo;t remember whether you created the most impressive elf setup on the internet.</p>
 <p>They&rsquo;ll remember waking up, running downstairs, searching the room, and shouting, &ldquo;I FOUND HIM!&rdquo;</p>
 <p>And honestly, isn&rsquo;t that the whole point?</p>
-${photo("conclusion")}
 `;
 
 module.exports = { body };

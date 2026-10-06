@@ -261,7 +261,6 @@ ${stockPhoto("monthlyReset")}
 <p>Most importantly, organise the pantry around your real life. If you cook pasta three times a week, make pasta easy to grab. If you bake once every six months, do not give baking supplies half the pantry.</p>
 <p>A good pantry should make cooking easier, grocery shopping smarter, and forgotten food less common.</p>
 <p>And if your pantry stays perfectly organised for more than a week, congratulations. You have officially achieved what the rest of us consider kitchen-level sorcery.</p>
-${stockPhoto("finalThoughts")}
 `;
 
 module.exports = { body };

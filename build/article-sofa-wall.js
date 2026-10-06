@@ -508,7 +508,6 @@ ${photo("favoriteApproach")}
 <p>The key comes down to scale, spacing, balance, and personality.</p>
 <p>So before you buy another generic canvas because it happens to be on sale, look at your sofa and ask yourself one question: What would make this wall feel like it actually belongs to my home?</p>
 <p>That answer will probably lead you to something much more interesting than another piece of random wall art.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

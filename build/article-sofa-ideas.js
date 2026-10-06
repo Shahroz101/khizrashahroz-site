@@ -379,7 +379,6 @@ ${photo("howIChoose")}
 <p>And please, sit on the sofa before buying it if you can. Sit normally, slouch a little, stretch your legs, and test it like you actually live there.</p>
 <p>After all, your sofa has one very important job.</p>
 <p>It needs to make you want to stay.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

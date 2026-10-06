@@ -600,8 +600,6 @@ ${photo("feelExpensive")}
 <p>The most important thing? Choose your sage based on your actual room, not just a pretty picture online.</p>
 <p>Look at your natural light. Check the undertones. Sample the paint. Then build the rest of the room around the version of sage that actually works in your space.</p>
 <p>And if you're still staring at five nearly identical green paint chips wondering why they all suddenly look different, welcome to decorating. We've all been there.</p>
-${photo("finalThoughts1")}
-${photo("finalThoughts2")}
 `;
 
 module.exports = { body };

@@ -407,7 +407,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>And when you completely forget to move the elf one night?</p>
 <p>Just blame Santa&rsquo;s GPS.</p>
 <p>It happens to the best of us.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

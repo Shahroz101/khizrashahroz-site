@@ -143,7 +143,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>Your home office doesn't need to look like it belongs in a design magazine to actually work for you. It needs a consistent spot, a chair that doesn't punish your back, decent lighting, and a few boundaries between "work" and "everything else."</p>
 <p>Start with whichever one of these feels most overdue &mdash; the chair, the lighting, finally moving the desk away from the bed &mdash; and build from there. You don't need to fix all ten in one weekend.</p>
 <p>Your home office, your rules. Just maybe not from the kitchen table anymore.</p>
-${photo("routine.jpg", "Woman with a morning rituals mug reading a planner at a wood desk while a golden retriever rests on the chair beside her", 1312, 736)}
 `;
 
 module.exports = { body };

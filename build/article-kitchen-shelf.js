@@ -448,7 +448,6 @@ ${photo("howIdStyle", "howIdStyle")}
 <p>Most importantly, edit your shelves instead of constantly adding to them.</p>
 <p>A beautiful kitchen shelf doesn't need to look perfect. It just needs to look intentional.</p>
 <p>So grab your favorite mug, move that vase three inches to the left, and see what happens. Your kitchen might already have everything it needs to look fantastic.</p>
-${photo("finalThoughts", "finalThoughts")}
 `;
 
 module.exports = { body };

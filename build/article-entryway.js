@@ -330,7 +330,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>Most importantly, let the entryway reflect the rest of your home. A beautiful console should not feel like a completely separate design project. It should feel like the first little preview of what waits beyond the front door.</p>
 <p>And remember, you do not need to decorate every square inch. Sometimes the smartest styling decision involves leaving a little breathing room.</p>
 <p>After all, your entryway table needs to welcome people into your home, not make them wonder whether they accidentally walked into a home decor showroom.</p>
-${photo("finalThoughts", "finalThoughts")}
 `;
 
 module.exports = { body };

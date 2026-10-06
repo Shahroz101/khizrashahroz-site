@@ -380,7 +380,6 @@ ${photo("mistakes")}
 <p>A good Japandi kitchen should give your eyes somewhere to rest.</p>
 <p>For me, that is the real appeal. The kitchen still feels like a place where people cook, eat, talk, make coffee, leave a cutting board on the counter, and occasionally forget to unload the dishwasher. It simply does all of that with a little more calm.</p>
 <p>And honestly, if your kitchen can make Monday morning coffee feel slightly more peaceful, I&rsquo;d call that a pretty successful design choice.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

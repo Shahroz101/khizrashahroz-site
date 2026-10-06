@@ -398,7 +398,6 @@ ${stockPhoto("keepFresh")}
 <p>My favorite looks usually combine natural wood, winter greenery, warm lighting, and neutral accents because those elements feel seasonal without becoming overly themed.</p>
 <p>So grab your dough bowl, shop your own cabinets first, and experiment. Add a few pinecones, move them around, step back, and see what feels right.</p>
 <p>And if your first attempt looks slightly chaotic? Congratulations. You have officially joined the very normal process of decorating. Move three things, remove two, add one candle, and suddenly it looks intentional. That&rsquo;s basically interior design magic.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

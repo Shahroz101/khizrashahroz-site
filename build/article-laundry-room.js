@@ -502,7 +502,6 @@ ${photo("smallSpace2")}
 <p>After all, you're probably going to spend plenty of time there.</p>
 <p>So why settle for a room that looks like it exists solely because the washing machine demanded somewhere to live?</p>
 <p>Create a laundry room that works hard, stays organized, and still makes you smile when you walk in. Your future laundry piles probably won't disappear, but at least they'll have a much nicer place to wait.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

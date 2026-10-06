@@ -442,7 +442,6 @@ ${photo("checklist")}
 <p>Design for that reality.</p>
 <p>Because a small dining room doesn't need to look bigger than it really is. It just needs to work beautifully for the people who use it.</p>
 <p>And if you can accomplish that while still having enough room to pull your chair out without performing a complicated yoga pose, I'd call that a decorating win.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

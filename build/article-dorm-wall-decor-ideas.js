@@ -182,7 +182,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>Dorm wall decor was never really just about how the room looks in photos. It's about building a space that feels like yours when you're living hundreds of miles from the place that used to hold that title.</p>
 <p>Whatever direction you lean &mdash; cozy neutrals, bold neon, a wall that's somehow all three &mdash; the goal is the same: a room that makes you smile a little every time you walk in.</p>
 <p>Pick one idea from this list and start there tonight. The rest of the room will catch up.</p>
-${photo("statement-poster.png", "Framed abstract silhouette art print hung above a neutral upholstered bed with a mustard throw blanket and layered pillows", 574, 1024, "png")}
 `;
 
 module.exports = { body };

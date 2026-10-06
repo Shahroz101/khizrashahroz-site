@@ -141,7 +141,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>If your walls have been feeling a little flat and you're craving something that actually looks like you, boho painting is about as accessible as a creative project gets &mdash; cheap, forgiving, and genuinely fun even if the last time you picked up a paintbrush was a school art class.</p>
 <p>Grab a canvas, or an old board, or honestly just a section of wall you don't mind committing to. Pick whichever palette feels right and start. Abstract, botanical, celestial &mdash; it really doesn't matter which direction you go.</p>
 <p>And if it doesn't turn out how you pictured it? Paint over it and try again. That's basically the entire spirit of boho art.</p>
-${photo("hero.jpg", "Black line-art mural of faces and botanical leaves painted across a bedroom wall behind a neatly made bed", 1280, 720)}
 `;
 
 module.exports = { body };

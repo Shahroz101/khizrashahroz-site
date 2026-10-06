@@ -349,7 +349,6 @@ ${photo("mistakes")}
 <p>Start with one strong focal point. Add a few supporting pieces at different heights, introduce something natural or textured, and then stop before the mantel starts looking crowded.</p>
 <p>Whether you prefer modern, farmhouse, cottage, traditional, rustic, or eclectic decor, your fireplace can become one of the most personal parts of your home.</p>
 <p>And honestly, if you style it beautifully enough, you might even convince yourself to stop rearranging it every weekend. No promises.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

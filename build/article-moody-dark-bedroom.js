@@ -537,7 +537,6 @@ ${photo("whatIWouldChoose")}
 <p>Start with the feeling you want. Then choose your dominant color, build in texture, add warm lighting, and give the room a few lighter elements to keep everything balanced.</p>
 <p>Remember, you don't need to follow the classic bright bedroom formula just because everyone else does. If deep green walls, walnut furniture, velvet bedding, and dim brass sconces make you want to cancel your plans and stay in bed, you might have found your style.</p>
 <p>And honestly, that sounds like a pretty successful bedroom to me.</p>
-${photo("finalThoughts")}
 `;
 
 module.exports = { body };

@@ -146,7 +146,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>Ten ideas, and you really don't need all of them to feel the shift. A few scented candles and a genuinely plush throw can do more than a full room overhaul if you pick the right ones.</p>
 <p>Your bed is about to become real estate you spend a lot more time in over the next few months. It's worth the extra attention.</p>
 <p>Light the candle, fluff the pillows, and let the bedroom catch up to the season already happening outside your window.</p>
-${photo("hero.jpg", "Warm fall bedroom with a mustard yellow diamond-pattern rug, rust headboard, white bedding and a tripod floor lamp beside a shuttered window", 1280, 800)}
 `;
 
 module.exports = { body };

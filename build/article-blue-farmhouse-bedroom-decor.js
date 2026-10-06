@@ -133,7 +133,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>A blue farmhouse bedroom isn't about picking one perfect shade and calling it done. It's the layering &mdash; a moody wall against pale bedding, a worn dresser next to something newly upholstered, natural texture softening every hard edge &mdash; that actually makes the look work.</p>
 <p>You don't have to tackle the whole room this weekend. Swap the bedding, add one accent, try a moodier wall if you're feeling brave. Small changes shift the whole feel faster than people expect.</p>
 <p>Start with whichever idea you keep coming back to, and let the rest of the room catch up around it.</p>
-${photo("hero.jpg", "Glam bedroom with a tufted navy velvet channel-back headboard, a royal blue velvet bench with gold trim, mirrored nightstands and cobalt ceramic lamps", 1400, 1318)}
 `;
 
 module.exports = { body };

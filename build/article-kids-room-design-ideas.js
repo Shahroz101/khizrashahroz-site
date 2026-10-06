@@ -141,7 +141,6 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>A great kids room was never really about matching throw pillows. It's about building a space where your child feels like the room belongs to them &mdash; and where cleanup has at least a fighting chance.</p>
 <p>The best part of these ideas is how little they lock you in. Swap a theme, rotate the art wall, adjust a zone as your kid grows, and the bones of the room keep working without you starting from zero every year.</p>
 <p>Pick one idea and start there. The rest can follow whenever you're ready.</p>
-${photo("hero.jpg", "Cozy neutral kids playroom corner with a cloud-shaped bean bag, star cushions, a fabric teepee tent, a knit pouf and a shaggy white rug", 1312, 736, "jpg")}
 `;
 
 module.exports = { body };

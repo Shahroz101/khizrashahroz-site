@@ -41,6 +41,7 @@ const coffeeBarDecorArticle = require("./article-coffee-bar-decor-ideas.js");
 const farmhouseKitchenArticle = require("./article-farmhouse-kitchen-ideas.js");
 const gardenPlantsArticle = require("./article-must-have-garden-plants.js");
 const readingNookArticle = require("./article-reading-nook-ideas.js");
+const modernEntrywayArticle = require("./article-modern-entryway-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -668,6 +669,17 @@ const longFormPosts = [
     alt: "Two mid-century wood chairs with a small round table beside a window, positioned next to a tall bookshelf in a warmly lit room",
     image: "/images/reading-nook-ideas/hero.jpg",
     bodyHtml: readingNookArticle.body,
+  },
+  {
+    slug: "modern-entryway-ideas",
+    title: "10 Entryway Upgrades That Actually Make a First Impression",
+    category: "Entryway",
+    readingTime: "8 min read",
+    date: "October 12, 2026",
+    excerpt: "Statement lighting, a bold accent wall and a console table that earns its keep — 10 entryway ideas that make the first few feet of your home count.",
+    alt: "Opulent entryway with a large tiered crystal chandelier, two curved sofas, a round coffee table and a mirrored front door",
+    image: "/images/modern-entryway-ideas/hero.jpg",
+    bodyHtml: modernEntrywayArticle.body,
   },
 ];
 

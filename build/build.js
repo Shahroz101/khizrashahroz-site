@@ -39,6 +39,7 @@ const homeOfficeSetupArticle = require("./article-home-office-setup-tips.js");
 const fallBedroomArticle = require("./article-fall-bedroom-ideas.js");
 const coffeeBarDecorArticle = require("./article-coffee-bar-decor-ideas.js");
 const farmhouseKitchenArticle = require("./article-farmhouse-kitchen-ideas.js");
+const gardenPlantsArticle = require("./article-must-have-garden-plants.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -644,6 +645,17 @@ const longFormPosts = [
     alt: "Farmhouse kitchen with dark green cabinets, butcher block countertops, open wood shelving and a small wood island",
     image: "/images/farmhouse-kitchen-ideas/hero.jpg",
     bodyHtml: farmhouseKitchenArticle.body,
+  },
+  {
+    slug: "must-have-garden-plants",
+    title: "10 Plants Worth Making Room for in Your Garden",
+    category: "Garden",
+    readingTime: "9 min read",
+    date: "October 10, 2026",
+    excerpt: "Lavender, coneflowers and a few things to skip entirely — 10 reliable plants that earn their spot in a garden, plus what to avoid planting.",
+    alt: "Lush garden path lined with lavender, hydrangeas, hostas and zinnias leading to a wood bench, with butterflies in the air",
+    image: "/images/must-have-garden-plants/hero.jpg",
+    bodyHtml: gardenPlantsArticle.body,
   },
 ];
 

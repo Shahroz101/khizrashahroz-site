@@ -42,6 +42,7 @@ const farmhouseKitchenArticle = require("./article-farmhouse-kitchen-ideas.js");
 const gardenPlantsArticle = require("./article-must-have-garden-plants.js");
 const readingNookArticle = require("./article-reading-nook-ideas.js");
 const modernEntrywayArticle = require("./article-modern-entryway-ideas.js");
+const pinkBedroomArticle = require("./article-pink-bedroom-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -680,6 +681,17 @@ const longFormPosts = [
     alt: "Opulent entryway with a large tiered crystal chandelier, two curved sofas, a round coffee table and a mirrored front door",
     image: "/images/modern-entryway-ideas/hero.jpg",
     bodyHtml: modernEntrywayArticle.body,
+  },
+  {
+    slug: "pink-bedroom-ideas",
+    title: "10 Pink Bedroom Ideas That Feel Grown-Up, Not Girly",
+    category: "Bedroom",
+    readingTime: "10 min read",
+    date: "October 13, 2026",
+    excerpt: "Blush walls, moody accents and metallic touches — 10 pink bedroom ideas that prove the color can be chic and sophisticated, not just sweet.",
+    alt: "Blush pink bedroom with a round rose gold mirror above the bed, copper wall sconces and layered pink and white pillows",
+    image: "/images/pink-bedroom-ideas/hero.jpg",
+    bodyHtml: pinkBedroomArticle.body,
   },
 ];
 

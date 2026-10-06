@@ -37,6 +37,7 @@ const dormWallDecorArticle = require("./article-dorm-wall-decor-ideas.js");
 const bohoPaintingArticle = require("./article-boho-painting-ideas.js");
 const homeOfficeSetupArticle = require("./article-home-office-setup-tips.js");
 const fallBedroomArticle = require("./article-fall-bedroom-ideas.js");
+const coffeeBarDecorArticle = require("./article-coffee-bar-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -620,6 +621,17 @@ const longFormPosts = [
     alt: "Warm fall bedroom with a mustard yellow diamond-pattern rug, rust headboard, white bedding and a tripod floor lamp beside a shuttered window",
     image: "/images/fall-bedroom-ideas/hero.jpg",
     bodyHtml: fallBedroomArticle.body,
+  },
+  {
+    slug: "coffee-bar-decor-ideas",
+    title: "19 Coffee Bar Decor Ideas That Make Your Coffee Corner Feel Like a Café",
+    category: "Kitchen",
+    readingTime: "14 min read",
+    date: "October 6, 2026",
+    excerpt: "Wood shelves, glass canisters and a tray that keeps it all tidy — 19 coffee bar decor ideas that turn even a forgotten corner into a cozy, café-worthy spot.",
+    alt: "Arched alcove coffee bar with floral wallpaper, sage green cabinets, an espresso machine and light wood shelving",
+    image: "/images/coffee-bar-decor-ideas/hero.jpg",
+    bodyHtml: coffeeBarDecorArticle.body,
   },
 ];
 

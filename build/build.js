@@ -44,6 +44,7 @@ const readingNookArticle = require("./article-reading-nook-ideas.js");
 const modernEntrywayArticle = require("./article-modern-entryway-ideas.js");
 const pinkBedroomArticle = require("./article-pink-bedroom-ideas.js");
 const timelessKitchenLayoutsArticle = require("./article-timeless-kitchen-layouts.js");
+const toddlerRoomArticle = require("./article-toddler-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -704,6 +705,17 @@ const longFormPosts = [
     alt: "Large modern kitchen with a gray waterfall-edge island, three black pendant lights, glossy gray cabinets and a dining area beyond",
     image: "/images/timeless-kitchen-layouts/hero.jpg",
     bodyHtml: timelessKitchenLayoutsArticle.body,
+  },
+  {
+    slug: "toddler-room-ideas",
+    title: "12 Toddler Room Ideas That Actually Work for Real Life",
+    category: "Kids Room",
+    readingTime: "13 min read",
+    date: "October 15, 2026",
+    excerpt: "Montessori floor beds, smart storage and themes that won't need repainting in a year — 12 toddler room ideas built for real life, not just photos.",
+    alt: "Warm Montessori-style toddler bedroom with a low wood floor bed, open shelf of wooden toys and a round jute rug by a sunny window",
+    image: "/images/toddler-room-ideas/hero.jpg",
+    bodyHtml: toddlerRoomArticle.body,
   },
 ];
 

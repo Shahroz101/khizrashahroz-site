@@ -45,6 +45,7 @@ const modernEntrywayArticle = require("./article-modern-entryway-ideas.js");
 const pinkBedroomArticle = require("./article-pink-bedroom-ideas.js");
 const timelessKitchenLayoutsArticle = require("./article-timeless-kitchen-layouts.js");
 const toddlerRoomArticle = require("./article-toddler-room-ideas.js");
+const bedroomCeilingArticle = require("./article-bedroom-ceiling-design-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -716,6 +717,17 @@ const longFormPosts = [
     alt: "Warm Montessori-style toddler bedroom with a low wood floor bed, open shelf of wooden toys and a round jute rug by a sunny window",
     image: "/images/toddler-room-ideas/hero.jpg",
     bodyHtml: toddlerRoomArticle.body,
+  },
+  {
+    slug: "bedroom-ceiling-design-ideas",
+    title: "12 Bedroom Ceiling Ideas That Make Your Room Feel Finished",
+    category: "Bedroom",
+    readingTime: "9 min read",
+    date: "October 16, 2026",
+    excerpt: "Coffered panels, exposed beams and a starry-night glow — 12 bedroom ceiling ideas for the one surface most people forget to design.",
+    alt: "Modern honeycomb-patterned ceiling installation reflected in a mirrored wardrobe above a white platform bed with framed art",
+    image: "/images/bedroom-ceiling-design-ideas/hero.jpg",
+    bodyHtml: bedroomCeilingArticle.body,
   },
 ];
 

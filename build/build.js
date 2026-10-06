@@ -30,6 +30,7 @@ const japandiKitchenArticle = require("./article-japandi-kitchen-decor.js");
 const elfOnTheShelfArticle = require("./article-elf-on-the-shelf-ideas.js");
 const christmasPorchArticle = require("./article-christmas-porch-decor.js");
 const elfOnTheShelfFunAndEasyArticle = require("./article-elf-on-the-shelf-ideas-fun-and-easy.js");
+const coffeeBarDecorArticle = require("./article-coffee-bar-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -536,6 +537,17 @@ const longFormPosts = [
     alt: "Two Elf on the Shelf dolls sitting in powdered snow next to a powdered-sugar snowman, sharing a mug of hot cocoa",
     image: "/images/elf-on-the-shelf-ideas-fun-and-easy/hero.jpg",
     bodyHtml: elfOnTheShelfFunAndEasyArticle.body,
+  },
+  {
+    slug: "coffee-bar-decor-ideas",
+    title: "19 Coffee Bar Decor Ideas That Make Your Coffee Corner Feel Like a Café",
+    category: "Kitchen",
+    readingTime: "14 min read",
+    date: "October 6, 2026",
+    excerpt: "Wood shelves, glass canisters and a tray that keeps it all tidy — 19 coffee bar decor ideas that turn even a forgotten corner into a cozy, café-worthy spot.",
+    alt: "Arched alcove coffee bar with floral wallpaper, sage green cabinets, an espresso machine and light wood shelving",
+    image: "/images/coffee-bar-decor-ideas/hero.jpg",
+    bodyHtml: coffeeBarDecorArticle.body,
   },
 ];
 

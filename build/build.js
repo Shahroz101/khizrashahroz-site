@@ -56,6 +56,7 @@ const bathroomAccentWallArticle = require("./article-bathroom-accent-wall-ideas.
 const greenLivingRoomArticle = require("./article-green-living-room-ideas.js");
 const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
+const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -848,6 +849,17 @@ const longFormPosts = [
     alt: "Wood pergola walkway covered in climbing vines leading to a stone fountain surrounded by greenery",
     image: "/images/pergola-ideas/hero.jpg",
     bodyHtml: pergolaArticle.body,
+  },
+  {
+    slug: "dessert-board-ideas",
+    title: "14 Themed Dessert Board Ideas That Actually Disappear at Parties",
+    category: "Decorating",
+    readingTime: "10 min read",
+    date: "October 27, 2026",
+    excerpt: "From a chocolate lover's board to breakfast-for-dessert — 14 themed dessert board ideas for every occasion, no baking marathon required.",
+    alt: "Round dessert board with cookies, brownies, strawberries, macarons, pretzel sticks and caramel dip arranged by color",
+    image: "/images/dessert-board-ideas/hero.jpg",
+    bodyHtml: dessertBoardArticle.body,
   },
 ];
 

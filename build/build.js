@@ -72,6 +72,7 @@ const springCraftArticle = require("./article-spring-craft-ideas.js");
 const livingRoomLayoutArticle = require("./article-living-room-layout-ideas.js");
 const mirrorWallPanellingArticle = require("./article-mirror-wall-panelling-ideas.js");
 const openKitchenDesignArticle = require("./article-open-kitchen-design-ideas.js");
+const patioTransformationArticle = require("./article-patio-transformation-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1040,6 +1041,17 @@ const longFormPosts = [
     alt: "Spacious open kitchen with a wide island connecting to the surrounding living space",
     image: "/images/open-kitchen-design-ideas/hero.jpg",
     bodyHtml: openKitchenDesignArticle.body,
+  },
+  {
+    slug: "patio-transformation-ideas",
+    title: "15 Patio Ideas That Make You Want to Live Outside",
+    category: "Outdoor",
+    readingTime: "11 min read",
+    date: "November 12, 2026",
+    excerpt: "From mixed furniture to a rolling bar cart — 15 patio ideas that turn a plain concrete slab into the spot everyone wants to hang out all summer.",
+    alt: "Well-maintained outdoor patio styled with furniture, greenery and ambient lighting",
+    image: "/images/patio-transformation-ideas/hero.jpg",
+    bodyHtml: patioTransformationArticle.body,
   },
 ];
 

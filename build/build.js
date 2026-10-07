@@ -62,6 +62,7 @@ const bathroomShelfArticle = require("./article-bathroom-shelf-decor-ideas.js");
 const bathroomDesignTrendsArticle = require("./article-bathroom-design-trends.js");
 const coastalLivingRoomArticle = require("./article-coastal-living-room-ideas.js");
 const mothersDayGrazingBoardArticle = require("./article-mothers-day-grazing-board-ideas.js");
+const kitchenIslandCenterpieceArticle = require("./article-kitchen-island-centerpiece-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -920,6 +921,17 @@ const longFormPosts = [
     alt: "Elegant Mother's Day grazing board with cheese, fruit, flowers and small bowls arranged with intention",
     image: "/images/mothers-day-grazing-board-ideas/hero.jpg",
     bodyHtml: mothersDayGrazingBoardArticle.body,
+  },
+  {
+    slug: "kitchen-island-centerpiece-ideas",
+    title: "14 Kitchen Island Centerpiece Ideas That Actually Get Used",
+    category: "Kitchen",
+    readingTime: "10 min read",
+    date: "November 2, 2026",
+    excerpt: "From a wooden dough bowl to mixed-material styling — 14 kitchen island centerpiece ideas that add personality without blocking prep space.",
+    alt: "Wooden dough bowl centerpiece styled on a kitchen island",
+    image: "/images/kitchen-island-centerpiece-ideas/hero.jpg",
+    bodyHtml: kitchenIslandCenterpieceArticle.body,
   },
 ];
 

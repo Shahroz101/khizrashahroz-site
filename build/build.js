@@ -91,6 +91,7 @@ const partyTableSetupArticle = require("./article-party-table-setup-ideas.js");
 const stackedLaundryRoomArticle = require("./article-stacked-laundry-room-ideas.js");
 const bathroomDesignStylesArticle = require("./article-bathroom-design-styles.js");
 const kitchenWindowTreatmentArticle = require("./article-kitchen-window-treatment-ideas.js");
+const tvStandDecorArticle = require("./article-tv-stand-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1268,6 +1269,17 @@ const longFormPosts = [
     alt: "Stunning Scandinavian-inspired kitchen with a beautifully styled window treatment",
     image: "/images/kitchen-window-treatment-ideas/hero.jpg",
     bodyHtml: kitchenWindowTreatmentArticle.body,
+  },
+  {
+    slug: "tv-stand-decor-ideas",
+    title: "18 TV Stand Decor Ideas That Actually Work",
+    category: "Living Room",
+    readingTime: "13 min read",
+    date: "December 1, 2026",
+    excerpt: "From symmetrical styling to balanced asymmetry — 18 TV stand decor ideas that turn a neglected surface into something intentional.",
+    alt: "Beautifully styled TV stand with thoughtfully arranged decor",
+    image: "/images/tv-stand-decor-ideas/hero.jpg",
+    bodyHtml: tvStandDecorArticle.body,
   },
 ];
 

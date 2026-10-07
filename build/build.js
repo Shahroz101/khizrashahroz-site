@@ -51,6 +51,7 @@ const frontPorchArticle = require("./article-front-porch-ideas.js");
 const cottageGardenArticle = require("./article-cottage-garden-ideas.js");
 const cozyLivingRoomArticle = require("./article-cozy-living-room-ideas.js");
 const dormKitchenArticle = require("./article-dorm-kitchen-ideas.js");
+const gamingRoomArticle = require("./article-gaming-room-setup-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -788,6 +789,17 @@ const longFormPosts = [
     alt: "Small shared dorm kitchenette with a mini-fridge, microwave, over-the-sink dish rack and towels hanging from the cabinet",
     image: "/images/dorm-kitchen-ideas/hero.jpg",
     bodyHtml: dormKitchenArticle.body,
+  },
+  {
+    slug: "gaming-room-setup-ideas",
+    title: "12 Gaming Room Setup Ideas for Teens",
+    category: "Kids Room",
+    readingTime: "9 min read",
+    date: "October 22, 2026",
+    excerpt: "From RGB builds to a cozy warm-lit corner — 12 gaming room setup ideas that balance comfort, personality and performance.",
+    alt: "Dual monitor RGB gaming desk setup glowing orange and red with a mechanical keyboard and speakers in a dark room",
+    image: "/images/gaming-room-setup-ideas/hero.jpg",
+    bodyHtml: gamingRoomArticle.body,
   },
 ];
 

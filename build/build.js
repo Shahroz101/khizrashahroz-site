@@ -53,6 +53,7 @@ const cozyLivingRoomArticle = require("./article-cozy-living-room-ideas.js");
 const dormKitchenArticle = require("./article-dorm-kitchen-ideas.js");
 const gamingRoomArticle = require("./article-gaming-room-setup-ideas.js");
 const bathroomAccentWallArticle = require("./article-bathroom-accent-wall-ideas.js");
+const greenLivingRoomArticle = require("./article-green-living-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -812,6 +813,17 @@ const longFormPosts = [
     alt: "Modern minimalist bathroom with a textured concrete-look accent wall, glass shower enclosure and pendant lights over a floating vanity",
     image: "/images/bathroom-accent-wall-ideas/hero.jpg",
     bodyHtml: bathroomAccentWallArticle.body,
+  },
+  {
+    slug: "green-living-room-ideas",
+    title: "13 Green Living Room Ideas That Actually Work",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "October 24, 2026",
+    excerpt: "From emerald walls to a sage-and-olive mix — 13 green living room ideas for every level of commitment, bold to subtle.",
+    alt: "Bright living room with a cream sofa, two framed botanical leaf prints, hanging pendant lights and potted plants on either side",
+    image: "/images/green-living-room-ideas/hero.jpg",
+    bodyHtml: greenLivingRoomArticle.body,
   },
 ];
 

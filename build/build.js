@@ -55,6 +55,7 @@ const gamingRoomArticle = require("./article-gaming-room-setup-ideas.js");
 const bathroomAccentWallArticle = require("./article-bathroom-accent-wall-ideas.js");
 const greenLivingRoomArticle = require("./article-green-living-room-ideas.js");
 const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
+const pergolaArticle = require("./article-pergola-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -836,6 +837,17 @@ const longFormPosts = [
     alt: "Cottage living room with linen sofas, a wicker armchair, lace curtains, dried florals and a rustic wood coffee table",
     image: "/images/cottagecore-style-ideas/hero.jpg",
     bodyHtml: cottagecoreStyleArticle.body,
+  },
+  {
+    slug: "pergola-ideas",
+    title: "14 Pergola Ideas to Build a Genuine Outdoor Retreat",
+    category: "Outdoor",
+    readingTime: "10 min read",
+    date: "October 26, 2026",
+    excerpt: "From a fire pit pergola to a hanging swing bed — 14 pergola ideas that turn a plain backyard into a real outdoor retreat.",
+    alt: "Wood pergola walkway covered in climbing vines leading to a stone fountain surrounded by greenery",
+    image: "/images/pergola-ideas/hero.jpg",
+    bodyHtml: pergolaArticle.body,
   },
 ];
 

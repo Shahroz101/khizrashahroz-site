@@ -102,6 +102,7 @@ const sideTableDecorArticle = require("./article-side-table-decor-ideas.js");
 const winterWonderlandArticle = require("./article-winter-wonderland-home-decor-ideas.js");
 const mothersDayCraftsArticle = require("./article-mothers-day-crafts-for-kids.js");
 const bedroomWallDecorArticle = require("./article-bedroom-wall-decor-ideas.js");
+const bohoBedroomDecorArticle = require("./article-boho-bedroom-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1400,6 +1401,17 @@ const longFormPosts = [
     alt: "Bedroom with a dramatic oversized abstract art mural behind the bed",
     image: "/images/bedroom-wall-decor-ideas/hero.jpg",
     bodyHtml: bedroomWallDecorArticle.body,
+  },
+  {
+    slug: "boho-bedroom-decor-ideas",
+    title: "20 Dreamy Boho Bedroom Decor Ideas",
+    category: "Bedroom",
+    readingTime: "14 min read",
+    date: "December 12, 2026",
+    excerpt: "From layered textiles to a sunburst mirror — 20 boho bedroom decor ideas built on texture, global pieces and a little imperfection.",
+    alt: "Boho bedroom with draped curtains, layered textiles and a woven rug",
+    image: "/images/boho-bedroom-decor-ideas/hero.jpg",
+    bodyHtml: bohoBedroomDecorArticle.body,
   },
 ];
 

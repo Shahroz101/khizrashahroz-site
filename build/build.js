@@ -58,6 +58,7 @@ const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
+const bathroomShelfArticle = require("./article-bathroom-shelf-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -872,6 +873,17 @@ const longFormPosts = [
     alt: "Above-cabinet decor styling with a woven basket, lantern and framed signs above white kitchen cabinets near a window",
     image: "/images/above-cabinet-decor-ideas/hero.jpg",
     bodyHtml: aboveCabinetArticle.body,
+  },
+  {
+    slug: "bathroom-shelf-decor-ideas",
+    title: "15 Bathroom Shelf Decor Ideas That Actually Work",
+    category: "Bathroom",
+    readingTime: "10 min read",
+    date: "October 29, 2026",
+    excerpt: "From layered towels to a sculptural focal point — 15 bathroom shelf decor ideas that balance style, function and real-life habits.",
+    alt: "Rustic wood bathroom shelf styled with flowers, folded towels, soap bottles and a home sweet home sign above a toilet",
+    image: "/images/bathroom-shelf-decor-ideas/hero.jpg",
+    bodyHtml: bathroomShelfArticle.body,
   },
 ];
 

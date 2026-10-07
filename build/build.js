@@ -83,6 +83,7 @@ const makeupVanityArticle = require("./article-makeup-vanity-ideas.js");
 const greenBathroomDecorArticle = require("./article-green-bathroom-decor-ideas.js");
 const homeOfficeAestheticArticle = require("./article-home-office-aesthetic-ideas.js");
 const laundryRoomEffortlessArticle = require("./article-laundry-room-ideas-effortless.js");
+const easterWreathArticle = require("./article-easter-wreath-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1172,6 +1173,17 @@ const longFormPosts = [
     alt: "Effortless laundry room with smart storage and a calm, functional layout",
     image: "/images/laundry-room-ideas-effortless/hero.jpg",
     bodyHtml: laundryRoomEffortlessArticle.body,
+  },
+  {
+    slug: "easter-wreath-ideas",
+    title: "16 Easter Wreaths Worth Hanging on the Door",
+    category: "Holidays",
+    readingTime: "12 min read",
+    date: "November 23, 2026",
+    excerpt: "From a classic pastel floral to a luxe gold and white design — 16 Easter wreaths that turn a forgettable front door into something people notice.",
+    alt: "Pinterest-worthy Easter wreath hanging on a front door",
+    image: "/images/easter-wreath-ideas/hero.jpg",
+    bodyHtml: easterWreathArticle.body,
   },
 ];
 

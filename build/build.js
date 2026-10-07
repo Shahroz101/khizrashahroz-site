@@ -82,6 +82,7 @@ const diningRoomTrendsArticle = require("./article-dining-room-trends.js");
 const makeupVanityArticle = require("./article-makeup-vanity-ideas.js");
 const greenBathroomDecorArticle = require("./article-green-bathroom-decor-ideas.js");
 const homeOfficeAestheticArticle = require("./article-home-office-aesthetic-ideas.js");
+const laundryRoomEffortlessArticle = require("./article-laundry-room-ideas-effortless.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1160,6 +1161,17 @@ const longFormPosts = [
     alt: "Serene and sophisticated home office styled with intention",
     image: "/images/home-office-aesthetic-ideas/hero.jpg",
     bodyHtml: homeOfficeAestheticArticle.body,
+  },
+  {
+    slug: "laundry-room-ideas-effortless",
+    title: "16 Laundry Room Ideas That Feel Effortless",
+    category: "Decorating",
+    readingTime: "12 min read",
+    date: "November 22, 2026",
+    excerpt: "From a built-in folding station to budget-friendly upgrades — 16 laundry room ideas that make the chore feel genuinely manageable.",
+    alt: "Effortless laundry room with smart storage and a calm, functional layout",
+    image: "/images/laundry-room-ideas-effortless/hero.jpg",
+    bodyHtml: laundryRoomEffortlessArticle.body,
   },
 ];
 

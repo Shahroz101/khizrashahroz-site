@@ -74,6 +74,7 @@ const mirrorWallPanellingArticle = require("./article-mirror-wall-panelling-idea
 const openKitchenDesignArticle = require("./article-open-kitchen-design-ideas.js");
 const patioTransformationArticle = require("./article-patio-transformation-ideas.js");
 const pinkHomeDecorArticle = require("./article-pink-home-decor-ideas.js");
+const smallBedroomOrganizationArticle = require("./article-small-bedroom-organization-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1064,6 +1065,17 @@ const longFormPosts = [
     alt: "Charming pink bedroom styled with soft textiles and warm accents",
     image: "/images/pink-home-decor-ideas/hero.jpg",
     bodyHtml: pinkHomeDecorArticle.body,
+  },
+  {
+    slug: "small-bedroom-organization-ideas",
+    title: "15 Small Bedroom Organization Ideas That Actually Stick",
+    category: "Bedroom",
+    readingTime: "12 min read",
+    date: "November 14, 2026",
+    excerpt: "From under-bed storage to seasonal rotation — 15 small bedroom organization ideas built around how the room actually gets used, not just how it looks tidy for a day.",
+    alt: "Small bedroom organized with smart storage solutions and clear surfaces",
+    image: "/images/small-bedroom-organization-ideas/hero.jpg",
+    bodyHtml: smallBedroomOrganizationArticle.body,
   },
 ];
 

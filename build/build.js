@@ -57,6 +57,7 @@ const greenLivingRoomArticle = require("./article-green-living-room-ideas.js");
 const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
+const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -860,6 +861,17 @@ const longFormPosts = [
     alt: "Round dessert board with cookies, brownies, strawberries, macarons, pretzel sticks and caramel dip arranged by color",
     image: "/images/dessert-board-ideas/hero.jpg",
     bodyHtml: dessertBoardArticle.body,
+  },
+  {
+    slug: "above-cabinet-decor-ideas",
+    title: "15 Above-the-Cabinet Decor Ideas That Don't Look Dated",
+    category: "Kitchen",
+    readingTime: "9 min read",
+    date: "October 28, 2026",
+    excerpt: "From tall ceramic vases to leaving it empty on purpose — 15 above-the-cabinet decor ideas that make a kitchen look taller and more finished.",
+    alt: "Above-cabinet decor styling with a woven basket, lantern and framed signs above white kitchen cabinets near a window",
+    image: "/images/above-cabinet-decor-ideas/hero.jpg",
+    bodyHtml: aboveCabinetArticle.body,
   },
 ];
 

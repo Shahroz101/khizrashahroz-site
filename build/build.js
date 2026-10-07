@@ -95,6 +95,7 @@ const tvStandDecorArticle = require("./article-tv-stand-decor-ideas.js");
 const pumpkinCarvingArticle = require("./article-pumpkin-carving-ideas.js");
 const fallMantelDecorArticle = require("./article-fall-mantel-decor-ideas.js");
 const roundTrayDecorArticle = require("./article-round-tray-decor-ideas.js");
+const blackGoldGalleryWallArticle = require("./article-black-gold-gallery-wall-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1316,6 +1317,17 @@ const longFormPosts = [
     alt: "Round wood tray styled with a vase, candlesticks and a candle on a coffee table",
     image: "/images/round-tray-decor-ideas/hero.jpg",
     bodyHtml: roundTrayDecorArticle.body,
+  },
+  {
+    slug: "black-gold-gallery-wall-ideas",
+    title: "Black and Gold Gallery Wall Ideas for a Bold, Sophisticated Look",
+    category: "Wall Decor",
+    readingTime: "11 min read",
+    date: "December 5, 2026",
+    excerpt: "Frames, art, layout and lighting — a complete guide to building a black and gold gallery wall that reads as sophisticated, not themed.",
+    alt: "Luxurious black and gold gallery wall styled behind a sofa with a statement clock",
+    image: "/images/black-gold-gallery-wall-ideas/hero.jpg",
+    bodyHtml: blackGoldGalleryWallArticle.body,
   },
 ];
 

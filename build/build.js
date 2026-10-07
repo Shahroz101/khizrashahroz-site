@@ -101,6 +101,7 @@ const mudroomIdeasArticle = require("./article-mudroom-ideas.js");
 const sideTableDecorArticle = require("./article-side-table-decor-ideas.js");
 const winterWonderlandArticle = require("./article-winter-wonderland-home-decor-ideas.js");
 const mothersDayCraftsArticle = require("./article-mothers-day-crafts-for-kids.js");
+const bedroomWallDecorArticle = require("./article-bedroom-wall-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1388,6 +1389,17 @@ const longFormPosts = [
     alt: "Framed Mother's Day craft with buttons spelling MUMS and a handwritten message",
     image: "/images/mothers-day-crafts-for-kids/hero.jpg",
     bodyHtml: mothersDayCraftsArticle.body,
+  },
+  {
+    slug: "bedroom-wall-decor-ideas",
+    title: "Creative Wall Decor Ideas for Your Bedroom",
+    category: "Bedroom",
+    readingTime: "11 min read",
+    date: "December 11, 2026",
+    excerpt: "From a gallery wall to a cluster of vintage mirrors — ten ways to turn a plain bedroom wall into the room's focal point.",
+    alt: "Bedroom with a dramatic oversized abstract art mural behind the bed",
+    image: "/images/bedroom-wall-decor-ideas/hero.jpg",
+    bodyHtml: bedroomWallDecorArticle.body,
   },
 ];
 

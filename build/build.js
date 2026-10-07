@@ -88,6 +88,7 @@ const winterDiningTableDecorArticle = require("./article-winter-dining-table-dec
 const handcraftedWallDecorArticle = require("./article-handcrafted-wall-decor-ideas.js");
 const dessertsInACupArticle = require("./article-desserts-in-a-cup-ideas.js");
 const partyTableSetupArticle = require("./article-party-table-setup-ideas.js");
+const stackedLaundryRoomArticle = require("./article-stacked-laundry-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1232,6 +1233,17 @@ const longFormPosts = [
     alt: "Beautifully styled party table setup with layered serving pieces and decor",
     image: "/images/party-table-setup-ideas/hero.jpg",
     bodyHtml: partyTableSetupArticle.body,
+  },
+  {
+    slug: "stacked-laundry-room-ideas",
+    title: "17 Stacked Laundry Room Ideas Worth Copying",
+    category: "Decorating",
+    readingTime: "12 min read",
+    date: "November 28, 2026",
+    excerpt: "From a closet-style setup with sliding doors to an ultra-compact tiny-home build — 17 stacked laundry room ideas for every footprint.",
+    alt: "Stylish stacked washer and dryer laundry setup with smart storage",
+    image: "/images/stacked-laundry-room-ideas/hero.jpg",
+    bodyHtml: stackedLaundryRoomArticle.body,
   },
 ];
 

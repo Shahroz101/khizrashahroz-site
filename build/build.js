@@ -76,6 +76,7 @@ const patioTransformationArticle = require("./article-patio-transformation-ideas
 const pinkHomeDecorArticle = require("./article-pink-home-decor-ideas.js");
 const smallBedroomOrganizationArticle = require("./article-small-bedroom-organization-ideas.js");
 const easterTableSettingArticle = require("./article-easter-table-setting-ideas.js");
+const teenBoyBedroomArticle = require("./article-teen-boy-bedroom-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1088,6 +1089,17 @@ const longFormPosts = [
     alt: "Beautifully styled Easter table setting with cohesive color and layered texture",
     image: "/images/easter-table-setting-ideas/hero.jpg",
     bodyHtml: easterTableSettingArticle.body,
+  },
+  {
+    slug: "teen-boy-bedroom-ideas",
+    title: "15 Teen Boy Bedroom Ideas That Actually Get Used",
+    category: "Bedroom",
+    readingTime: "12 min read",
+    date: "November 16, 2026",
+    excerpt: "From a bold accent wall to a tech charging dock — 15 teen boy bedroom ideas that feel stylish, functional, and genuinely his.",
+    alt: "Stylish teen boy bedroom with a bold accent wall and modern furniture",
+    image: "/images/teen-boy-bedroom-ideas/hero.jpg",
+    bodyHtml: teenBoyBedroomArticle.body,
   },
 ];
 

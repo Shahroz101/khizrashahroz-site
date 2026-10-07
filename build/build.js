@@ -71,6 +71,7 @@ const easterBasketStufferArticle = require("./article-easter-basket-stuffer-idea
 const springCraftArticle = require("./article-spring-craft-ideas.js");
 const livingRoomLayoutArticle = require("./article-living-room-layout-ideas.js");
 const mirrorWallPanellingArticle = require("./article-mirror-wall-panelling-ideas.js");
+const openKitchenDesignArticle = require("./article-open-kitchen-design-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1028,6 +1029,17 @@ const longFormPosts = [
     alt: "Elegant mirror styled as a dramatic wall feature in a well-lit interior",
     image: "/images/mirror-wall-panelling-ideas/hero.jpg",
     bodyHtml: mirrorWallPanellingArticle.body,
+  },
+  {
+    slug: "open-kitchen-design-ideas",
+    title: "9 Open Kitchen Design Ideas for a Genuinely Spacious Feel",
+    category: "Kitchen",
+    readingTime: "9 min read",
+    date: "November 11, 2026",
+    excerpt: "From smart hidden storage to a cohesive light palette — 9 open kitchen design ideas that make a space feel bigger without a full renovation.",
+    alt: "Spacious open kitchen with a wide island connecting to the surrounding living space",
+    image: "/images/open-kitchen-design-ideas/hero.jpg",
+    bodyHtml: openKitchenDesignArticle.body,
   },
 ];
 

@@ -70,6 +70,7 @@ const charcuterieCupArticle = require("./article-charcuterie-cup-ideas.js");
 const easterBasketStufferArticle = require("./article-easter-basket-stuffer-ideas.js");
 const springCraftArticle = require("./article-spring-craft-ideas.js");
 const livingRoomLayoutArticle = require("./article-living-room-layout-ideas.js");
+const mirrorWallPanellingArticle = require("./article-mirror-wall-panelling-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1016,6 +1017,17 @@ const longFormPosts = [
     alt: "Sleek modern living room with furniture arranged to anchor the space",
     image: "/images/living-room-layout-ideas/hero.jpg",
     bodyHtml: livingRoomLayoutArticle.body,
+  },
+  {
+    slug: "mirror-wall-panelling-ideas",
+    title: "15 Mirror Wall Panelling Ideas to Instantly Elevate Any Room",
+    category: "Wall Decor",
+    readingTime: "11 min read",
+    date: "November 10, 2026",
+    excerpt: "From antique smoky finishes to gold-trimmed panels — 15 mirror wall panelling ideas that make a room look bigger, brighter and considerably more expensive.",
+    alt: "Elegant mirror styled as a dramatic wall feature in a well-lit interior",
+    image: "/images/mirror-wall-panelling-ideas/hero.jpg",
+    bodyHtml: mirrorWallPanellingArticle.body,
   },
 ];
 

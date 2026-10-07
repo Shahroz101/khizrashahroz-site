@@ -81,6 +81,7 @@ const graduationCenterpieceArticle = require("./article-graduation-party-centerp
 const diningRoomTrendsArticle = require("./article-dining-room-trends.js");
 const makeupVanityArticle = require("./article-makeup-vanity-ideas.js");
 const greenBathroomDecorArticle = require("./article-green-bathroom-decor-ideas.js");
+const homeOfficeAestheticArticle = require("./article-home-office-aesthetic-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1148,6 +1149,17 @@ const longFormPosts = [
     alt: "Beautifully styled green bathroom with natural textures and warm lighting",
     image: "/images/green-bathroom-decor-ideas/hero.jpg",
     bodyHtml: greenBathroomDecorArticle.body,
+  },
+  {
+    slug: "home-office-aesthetic-ideas",
+    title: "16 Home Office Aesthetic Ideas for a Workspace Worth Showing Up To",
+    category: "Home Office",
+    readingTime: "12 min read",
+    date: "November 21, 2026",
+    excerpt: "From Scandinavian simplicity to a luxurious library feel — 16 home office aesthetic ideas for every style, from minimalist to maximalist.",
+    alt: "Serene and sophisticated home office styled with intention",
+    image: "/images/home-office-aesthetic-ideas/hero.jpg",
+    bodyHtml: homeOfficeAestheticArticle.body,
   },
 ];
 

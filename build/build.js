@@ -94,6 +94,7 @@ const kitchenWindowTreatmentArticle = require("./article-kitchen-window-treatmen
 const tvStandDecorArticle = require("./article-tv-stand-decor-ideas.js");
 const pumpkinCarvingArticle = require("./article-pumpkin-carving-ideas.js");
 const fallMantelDecorArticle = require("./article-fall-mantel-decor-ideas.js");
+const roundTrayDecorArticle = require("./article-round-tray-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1304,6 +1305,17 @@ const longFormPosts = [
     alt: "Living room with a fireplace mantel ready for fall styling",
     image: "/images/fall-mantel-decor-ideas/hero.jpg",
     bodyHtml: fallMantelDecorArticle.body,
+  },
+  {
+    slug: "round-tray-decor-ideas",
+    title: "18 Round Tray Decor Ideas for Every Room",
+    category: "Decorating",
+    readingTime: "13 min read",
+    date: "December 4, 2026",
+    excerpt: "From a coffee table centerpiece to a bar cart moment — 18 round tray decor ideas that organize clutter without losing the style.",
+    alt: "Round wood tray styled with a vase, candlesticks and a candle on a coffee table",
+    image: "/images/round-tray-decor-ideas/hero.jpg",
+    bodyHtml: roundTrayDecorArticle.body,
   },
 ];
 

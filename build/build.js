@@ -54,6 +54,7 @@ const dormKitchenArticle = require("./article-dorm-kitchen-ideas.js");
 const gamingRoomArticle = require("./article-gaming-room-setup-ideas.js");
 const bathroomAccentWallArticle = require("./article-bathroom-accent-wall-ideas.js");
 const greenLivingRoomArticle = require("./article-green-living-room-ideas.js");
+const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -824,6 +825,17 @@ const longFormPosts = [
     alt: "Bright living room with a cream sofa, two framed botanical leaf prints, hanging pendant lights and potted plants on either side",
     image: "/images/green-living-room-ideas/hero.jpg",
     bodyHtml: greenLivingRoomArticle.body,
+  },
+  {
+    slug: "cottagecore-style-ideas",
+    title: "13 Ways to Bring Cottagecore Style Into Your Home",
+    category: "Decorating",
+    readingTime: "10 min read",
+    date: "October 25, 2026",
+    excerpt: "From aged brass hardware to a proper reading nook — 13 ways to bring real cottagecore style into any home without it looking like a costume.",
+    alt: "Cottage living room with linen sofas, a wicker armchair, lace curtains, dried florals and a rustic wood coffee table",
+    image: "/images/cottagecore-style-ideas/hero.jpg",
+    bodyHtml: cottagecoreStyleArticle.body,
   },
 ];
 

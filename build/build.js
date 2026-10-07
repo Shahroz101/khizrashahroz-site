@@ -59,6 +59,7 @@ const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
 const bathroomShelfArticle = require("./article-bathroom-shelf-decor-ideas.js");
+const bathroomDesignTrendsArticle = require("./article-bathroom-design-trends.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -884,6 +885,17 @@ const longFormPosts = [
     alt: "Rustic wood bathroom shelf styled with flowers, folded towels, soap bottles and a home sweet home sign above a toilet",
     image: "/images/bathroom-shelf-decor-ideas/hero.jpg",
     bodyHtml: bathroomShelfArticle.body,
+  },
+  {
+    slug: "bathroom-design-trends",
+    title: "14 Bathroom Trends Actually Worth Following This Year",
+    category: "Bathroom",
+    readingTime: "11 min read",
+    date: "October 30, 2026",
+    excerpt: "From walk-in showers to matte black fixtures — 14 bathroom design trends that are sticking around because they actually make the room better.",
+    alt: "Matte black freestanding tub against white subway tile with a dark built-in niche and black pendant light",
+    image: "/images/bathroom-design-trends/hero.jpg",
+    bodyHtml: bathroomDesignTrendsArticle.body,
   },
 ];
 

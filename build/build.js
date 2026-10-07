@@ -64,6 +64,7 @@ const coastalLivingRoomArticle = require("./article-coastal-living-room-ideas.js
 const mothersDayGrazingBoardArticle = require("./article-mothers-day-grazing-board-ideas.js");
 const kitchenIslandCenterpieceArticle = require("./article-kitchen-island-centerpiece-ideas.js");
 const homeGymArticle = require("./article-home-gym-ideas.js");
+const texturedWallArticle = require("./article-textured-wall-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -944,6 +945,17 @@ const longFormPosts = [
     alt: "Home gym corner with weight equipment set up against a wall",
     image: "/images/home-gym-ideas/hero.jpg",
     bodyHtml: homeGymArticle.body,
+  },
+  {
+    slug: "textured-wall-ideas",
+    title: "14 Textured Wall Ideas Worth Trying in Any Room",
+    category: "Wall Decor",
+    readingTime: "11 min read",
+    date: "November 4, 2026",
+    excerpt: "From Venetian plaster to slat wood — 14 textured wall ideas that add real depth and character to any room, no designer price tag required.",
+    alt: "Extravagant textured accent wall in a richly styled interior",
+    image: "/images/textured-wall-ideas/hero.jpg",
+    bodyHtml: texturedWallArticle.body,
   },
 ];
 

@@ -86,6 +86,7 @@ const laundryRoomEffortlessArticle = require("./article-laundry-room-ideas-effor
 const easterWreathArticle = require("./article-easter-wreath-ideas.js");
 const winterDiningTableDecorArticle = require("./article-winter-dining-table-decor-ideas.js");
 const handcraftedWallDecorArticle = require("./article-handcrafted-wall-decor-ideas.js");
+const dessertsInACupArticle = require("./article-desserts-in-a-cup-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1208,6 +1209,17 @@ const longFormPosts = [
     alt: "Dramatic handcrafted sculptural wall art installation behind a desk",
     image: "/images/handcrafted-wall-decor-ideas/hero.jpg",
     bodyHtml: handcraftedWallDecorArticle.body,
+  },
+  {
+    slug: "desserts-in-a-cup-ideas",
+    title: "17 Desserts in a Cup for Every Kind of Party",
+    category: "Entertaining",
+    readingTime: "11 min read",
+    date: "November 26, 2026",
+    excerpt: "From classic Oreo to s'mores — 17 desserts in a cup that solve portioning, presentation and the last-slice fight all at once.",
+    alt: "Assortment of individually portioned dessert cups styled for a party",
+    image: "/images/desserts-in-a-cup-ideas/hero.jpg",
+    bodyHtml: dessertsInACupArticle.body,
   },
 ];
 

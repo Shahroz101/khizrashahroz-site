@@ -47,6 +47,7 @@ const timelessKitchenLayoutsArticle = require("./article-timeless-kitchen-layout
 const toddlerRoomArticle = require("./article-toddler-room-ideas.js");
 const bedroomCeilingArticle = require("./article-bedroom-ceiling-design-ideas.js");
 const smallBedroomPaintColorsArticle = require("./article-small-bedroom-paint-colors.js");
+const frontPorchArticle = require("./article-front-porch-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -740,6 +741,17 @@ const longFormPosts = [
     alt: "Small bedroom with warm neutral walls, a round mirror above a tufted headboard and layered bedding",
     image: "/images/small-bedroom-paint-colors/hero.jpg",
     bodyHtml: smallBedroomPaintColorsArticle.body,
+  },
+  {
+    slug: "front-porch-ideas",
+    title: "12 Small Porch Ideas That Make a Tiny Entryway Feel Custom-Built",
+    category: "Outdoor",
+    readingTime: "10 min read",
+    date: "October 18, 2026",
+    excerpt: "From a bold front door to a tiered plant ladder — 12 small porch ideas that make a tight entryway feel intentional instead of cramped.",
+    alt: "Small covered front porch with a black door, warm lantern sconce, potted topiary trees and a wood bench with cream pillows",
+    image: "/images/front-porch-ideas/hero.jpg",
+    bodyHtml: frontPorchArticle.body,
   },
 ];
 

@@ -104,6 +104,7 @@ const mothersDayCraftsArticle = require("./article-mothers-day-crafts-for-kids.j
 const bedroomWallDecorArticle = require("./article-bedroom-wall-decor-ideas.js");
 const bohoBedroomDecorArticle = require("./article-boho-bedroom-decor-ideas.js");
 const smallBackyardPoolArticle = require("./article-small-backyard-pool-ideas.js");
+const neutralBedroomArticle = require("./article-neutral-bedroom-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1424,6 +1425,17 @@ const longFormPosts = [
     alt: "Small narrow backyard pool with a stone wall and wood deck",
     image: "/images/small-backyard-pool-ideas/hero.jpg",
     bodyHtml: smallBackyardPoolArticle.body,
+  },
+  {
+    slug: "neutral-bedroom-ideas",
+    title: "Neutral Bedroom Ideas for a Timeless, Elegant Look",
+    category: "Bedroom",
+    readingTime: "12 min read",
+    date: "December 14, 2026",
+    excerpt: "Palette, texture, lighting and seasonal swaps — a complete guide to building a neutral bedroom that feels calm, not boring.",
+    alt: "Warm neutral bedroom with layered bedding, open shelving and ambient lighting",
+    image: "/images/neutral-bedroom-ideas/hero.jpg",
+    bodyHtml: neutralBedroomArticle.body,
   },
 ];
 

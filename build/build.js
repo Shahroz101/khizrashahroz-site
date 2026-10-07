@@ -103,6 +103,7 @@ const winterWonderlandArticle = require("./article-winter-wonderland-home-decor-
 const mothersDayCraftsArticle = require("./article-mothers-day-crafts-for-kids.js");
 const bedroomWallDecorArticle = require("./article-bedroom-wall-decor-ideas.js");
 const bohoBedroomDecorArticle = require("./article-boho-bedroom-decor-ideas.js");
+const smallBackyardPoolArticle = require("./article-small-backyard-pool-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1412,6 +1413,17 @@ const longFormPosts = [
     alt: "Boho bedroom with draped curtains, layered textiles and a woven rug",
     image: "/images/boho-bedroom-decor-ideas/hero.jpg",
     bodyHtml: bohoBedroomDecorArticle.body,
+  },
+  {
+    slug: "small-backyard-pool-ideas",
+    title: "20 Genius Small Backyard Swimming Pool Ideas",
+    category: "Outdoor",
+    readingTime: "15 min read",
+    date: "December 13, 2026",
+    excerpt: "From plunge pools to glass-edged designs — 20 small backyard pool ideas that turn limited space into the whole design advantage.",
+    alt: "Small narrow backyard pool with a stone wall and wood deck",
+    image: "/images/small-backyard-pool-ideas/hero.jpg",
+    bodyHtml: smallBackyardPoolArticle.body,
   },
 ];
 

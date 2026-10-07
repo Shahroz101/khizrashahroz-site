@@ -98,6 +98,7 @@ const roundTrayDecorArticle = require("./article-round-tray-decor-ideas.js");
 const blackGoldGalleryWallArticle = require("./article-black-gold-gallery-wall-ideas.js");
 const springCenterpieceArticle = require("./article-spring-centerpiece-ideas.js");
 const mudroomIdeasArticle = require("./article-mudroom-ideas.js");
+const sideTableDecorArticle = require("./article-side-table-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1352,6 +1353,17 @@ const longFormPosts = [
     alt: "Built-in mudroom bench with open storage cubbies, hooks and a window seat",
     image: "/images/mudroom-ideas/hero.jpg",
     bodyHtml: mudroomIdeasArticle.body,
+  },
+  {
+    slug: "side-table-decor-ideas",
+    title: "19 Side Table Decor Ideas for a Charming Look",
+    category: "Decorating",
+    readingTime: "14 min read",
+    date: "December 8, 2026",
+    excerpt: "From layered books to intentional negative space — 19 side table decor ideas built around height, texture and a little restraint.",
+    alt: "Round side table styled with books, an orchid and a black table lamp",
+    image: "/images/side-table-decor-ideas/hero.jpg",
+    bodyHtml: sideTableDecorArticle.body,
   },
 ];
 

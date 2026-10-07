@@ -97,6 +97,7 @@ const fallMantelDecorArticle = require("./article-fall-mantel-decor-ideas.js");
 const roundTrayDecorArticle = require("./article-round-tray-decor-ideas.js");
 const blackGoldGalleryWallArticle = require("./article-black-gold-gallery-wall-ideas.js");
 const springCenterpieceArticle = require("./article-spring-centerpiece-ideas.js");
+const mudroomIdeasArticle = require("./article-mudroom-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1340,6 +1341,17 @@ const longFormPosts = [
     alt: "Pink tulip arrangement with a striped bow styled on a wood console table",
     image: "/images/spring-centerpiece-ideas/hero.jpg",
     bodyHtml: springCenterpieceArticle.body,
+  },
+  {
+    slug: "mudroom-ideas",
+    title: "19 Mudroom Ideas for Every Home",
+    category: "Entryway",
+    readingTime: "13 min read",
+    date: "December 7, 2026",
+    excerpt: "From a built-in bench to a seasonal storage rotation — 19 mudroom ideas that actually hold up to real daily use.",
+    alt: "Built-in mudroom bench with open storage cubbies, hooks and a window seat",
+    image: "/images/mudroom-ideas/hero.jpg",
+    bodyHtml: mudroomIdeasArticle.body,
   },
 ];
 

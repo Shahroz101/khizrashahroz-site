@@ -63,6 +63,7 @@ const bathroomDesignTrendsArticle = require("./article-bathroom-design-trends.js
 const coastalLivingRoomArticle = require("./article-coastal-living-room-ideas.js");
 const mothersDayGrazingBoardArticle = require("./article-mothers-day-grazing-board-ideas.js");
 const kitchenIslandCenterpieceArticle = require("./article-kitchen-island-centerpiece-ideas.js");
+const homeGymArticle = require("./article-home-gym-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -932,6 +933,17 @@ const longFormPosts = [
     alt: "Wooden dough bowl centerpiece styled on a kitchen island",
     image: "/images/kitchen-island-centerpiece-ideas/hero.jpg",
     bodyHtml: kitchenIslandCenterpieceArticle.body,
+  },
+  {
+    slug: "home-gym-ideas",
+    title: "14 Practical Home Gym Ideas That Actually Get Used",
+    category: "Home Office",
+    readingTime: "12 min read",
+    date: "November 3, 2026",
+    excerpt: "From a minimal no-decision setup to a family-friendly layout — 14 practical home gym ideas built around what actually keeps people training.",
+    alt: "Home gym corner with weight equipment set up against a wall",
+    image: "/images/home-gym-ideas/hero.jpg",
+    bodyHtml: homeGymArticle.body,
   },
 ];
 

@@ -73,6 +73,7 @@ const livingRoomLayoutArticle = require("./article-living-room-layout-ideas.js")
 const mirrorWallPanellingArticle = require("./article-mirror-wall-panelling-ideas.js");
 const openKitchenDesignArticle = require("./article-open-kitchen-design-ideas.js");
 const patioTransformationArticle = require("./article-patio-transformation-ideas.js");
+const pinkHomeDecorArticle = require("./article-pink-home-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1052,6 +1053,17 @@ const longFormPosts = [
     alt: "Well-maintained outdoor patio styled with furniture, greenery and ambient lighting",
     image: "/images/patio-transformation-ideas/hero.jpg",
     bodyHtml: patioTransformationArticle.body,
+  },
+  {
+    slug: "pink-home-decor-ideas",
+    title: "15 Pink Home Decor Ideas for a Genuinely Charming Home",
+    category: "Color Ideas",
+    readingTime: "11 min read",
+    date: "November 13, 2026",
+    excerpt: "From a pink velvet sofa to a bold deep-pink statement wall — 15 pink home decor ideas that read as sophisticated, not sugary sweet.",
+    alt: "Charming pink bedroom styled with soft textiles and warm accents",
+    image: "/images/pink-home-decor-ideas/hero.jpg",
+    bodyHtml: pinkHomeDecorArticle.body,
   },
 ];
 

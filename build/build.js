@@ -105,6 +105,7 @@ const bedroomWallDecorArticle = require("./article-bedroom-wall-decor-ideas.js")
 const bohoBedroomDecorArticle = require("./article-boho-bedroom-decor-ideas.js");
 const smallBackyardPoolArticle = require("./article-small-backyard-pool-ideas.js");
 const neutralBedroomArticle = require("./article-neutral-bedroom-ideas.js");
+const outdoorKitchenArticle = require("./article-outdoor-kitchen-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1436,6 +1437,17 @@ const longFormPosts = [
     alt: "Warm neutral bedroom with layered bedding, open shelving and ambient lighting",
     image: "/images/neutral-bedroom-ideas/hero.jpg",
     bodyHtml: neutralBedroomArticle.body,
+  },
+  {
+    slug: "outdoor-kitchen-ideas",
+    title: "20 Outdoor Kitchen Ideas to Transform Your Backyard",
+    category: "Outdoor",
+    readingTime: "15 min read",
+    date: "December 15, 2026",
+    excerpt: "From a built-in grill station to budget-friendly phased upgrades — 20 outdoor kitchen ideas that extend a home's living space.",
+    alt: "Built-in outdoor kitchen with a pergola, grill and stone countertop in a desert backyard",
+    image: "/images/outdoor-kitchen-ideas/hero.jpg",
+    bodyHtml: outdoorKitchenArticle.body,
   },
 ];
 

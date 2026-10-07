@@ -75,6 +75,7 @@ const openKitchenDesignArticle = require("./article-open-kitchen-design-ideas.js
 const patioTransformationArticle = require("./article-patio-transformation-ideas.js");
 const pinkHomeDecorArticle = require("./article-pink-home-decor-ideas.js");
 const smallBedroomOrganizationArticle = require("./article-small-bedroom-organization-ideas.js");
+const easterTableSettingArticle = require("./article-easter-table-setting-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1076,6 +1077,17 @@ const longFormPosts = [
     alt: "Small bedroom organized with smart storage solutions and clear surfaces",
     image: "/images/small-bedroom-organization-ideas/hero.jpg",
     bodyHtml: smallBedroomOrganizationArticle.body,
+  },
+  {
+    slug: "easter-table-setting-ideas",
+    title: "15 Easter Table Settings Worth Copying",
+    category: "Entertaining",
+    readingTime: "11 min read",
+    date: "November 15, 2026",
+    excerpt: "From classic pastel to glam crystal and candlelight — 15 Easter table settings built on real color harmony, texture and a clear focal point.",
+    alt: "Beautifully styled Easter table setting with cohesive color and layered texture",
+    image: "/images/easter-table-setting-ideas/hero.jpg",
+    bodyHtml: easterTableSettingArticle.body,
   },
 ];
 

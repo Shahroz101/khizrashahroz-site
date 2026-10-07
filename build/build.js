@@ -79,6 +79,7 @@ const easterTableSettingArticle = require("./article-easter-table-setting-ideas.
 const teenBoyBedroomArticle = require("./article-teen-boy-bedroom-ideas.js");
 const graduationCenterpieceArticle = require("./article-graduation-party-centerpiece-ideas.js");
 const diningRoomTrendsArticle = require("./article-dining-room-trends.js");
+const makeupVanityArticle = require("./article-makeup-vanity-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1124,6 +1125,17 @@ const longFormPosts = [
     alt: "Stylish dining room showcasing current design trends with layered textures and lighting",
     image: "/images/dining-room-trends/hero.jpg",
     bodyHtml: diningRoomTrendsArticle.body,
+  },
+  {
+    slug: "makeup-vanity-ideas",
+    title: "16 Makeup Vanity Ideas Worth Moving Off the Bathroom Counter",
+    category: "Bedroom",
+    readingTime: "12 min read",
+    date: "November 19, 2026",
+    excerpt: "From Hollywood glam to a dual-purpose desk setup — 16 makeup vanity ideas built around real lighting, real storage, and real style.",
+    alt: "Beautifully styled makeup vanity with flattering lighting and organized storage",
+    image: "/images/makeup-vanity-ideas/hero.jpg",
+    bodyHtml: makeupVanityArticle.body,
   },
 ];
 

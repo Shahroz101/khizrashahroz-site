@@ -90,6 +90,7 @@ const dessertsInACupArticle = require("./article-desserts-in-a-cup-ideas.js");
 const partyTableSetupArticle = require("./article-party-table-setup-ideas.js");
 const stackedLaundryRoomArticle = require("./article-stacked-laundry-room-ideas.js");
 const bathroomDesignStylesArticle = require("./article-bathroom-design-styles.js");
+const kitchenWindowTreatmentArticle = require("./article-kitchen-window-treatment-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1256,6 +1257,17 @@ const longFormPosts = [
     alt: "Stunning modern industrial bathroom showcasing a distinct design style",
     image: "/images/bathroom-design-styles/hero.jpg",
     bodyHtml: bathroomDesignStylesArticle.body,
+  },
+  {
+    slug: "kitchen-window-treatment-ideas",
+    title: "18 Kitchen Window Treatments Worth Trying",
+    category: "Kitchen",
+    readingTime: "13 min read",
+    date: "November 30, 2026",
+    excerpt: "From breezy sheer curtains to bold geometric panels — 18 kitchen window treatments that pull the whole room together.",
+    alt: "Stunning Scandinavian-inspired kitchen with a beautifully styled window treatment",
+    image: "/images/kitchen-window-treatment-ideas/hero.jpg",
+    bodyHtml: kitchenWindowTreatmentArticle.body,
   },
 ];
 

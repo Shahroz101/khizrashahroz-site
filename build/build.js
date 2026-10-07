@@ -68,6 +68,7 @@ const texturedWallArticle = require("./article-textured-wall-ideas.js");
 const kidsBedroomColorArticle = require("./article-kids-bedroom-color-combinations.js");
 const charcuterieCupArticle = require("./article-charcuterie-cup-ideas.js");
 const easterBasketStufferArticle = require("./article-easter-basket-stuffer-ideas.js");
+const springCraftArticle = require("./article-spring-craft-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -992,6 +993,17 @@ const longFormPosts = [
     alt: "Colorful Easter basket filled with a variety of thoughtfully chosen stuffers",
     image: "/images/easter-basket-stuffer-ideas/hero.jpg",
     bodyHtml: easterBasketStufferArticle.body,
+  },
+  {
+    slug: "spring-craft-ideas",
+    title: "15 Spring Craft Ideas Worth an Afternoon",
+    category: "Decorating",
+    readingTime: "11 min read",
+    date: "November 8, 2026",
+    excerpt: "From a faux-greenery wreath to a nature shadow box — 15 easy spring craft ideas that don't need an art degree or a garage full of supplies.",
+    alt: "Collection of handmade spring crafts styled together, including painted jars and floral decor",
+    image: "/images/spring-craft-ideas/hero.jpg",
+    bodyHtml: springCraftArticle.body,
   },
 ];
 

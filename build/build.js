@@ -87,6 +87,7 @@ const easterWreathArticle = require("./article-easter-wreath-ideas.js");
 const winterDiningTableDecorArticle = require("./article-winter-dining-table-decor-ideas.js");
 const handcraftedWallDecorArticle = require("./article-handcrafted-wall-decor-ideas.js");
 const dessertsInACupArticle = require("./article-desserts-in-a-cup-ideas.js");
+const partyTableSetupArticle = require("./article-party-table-setup-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1220,6 +1221,17 @@ const longFormPosts = [
     alt: "Assortment of individually portioned dessert cups styled for a party",
     image: "/images/desserts-in-a-cup-ideas/hero.jpg",
     bodyHtml: dessertsInACupArticle.body,
+  },
+  {
+    slug: "party-table-setup-ideas",
+    title: "16 Party Table Setup Ideas for Every Occasion",
+    category: "Entertaining",
+    readingTime: "12 min read",
+    date: "November 27, 2026",
+    excerpt: "From a classic layered table to a last-minute panic-mode setup — 16 party table ideas that fit the actual occasion instead of chasing a trend.",
+    alt: "Beautifully styled party table setup with layered serving pieces and decor",
+    image: "/images/party-table-setup-ideas/hero.jpg",
+    bodyHtml: partyTableSetupArticle.body,
   },
 ];
 

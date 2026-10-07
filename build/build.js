@@ -67,6 +67,7 @@ const homeGymArticle = require("./article-home-gym-ideas.js");
 const texturedWallArticle = require("./article-textured-wall-ideas.js");
 const kidsBedroomColorArticle = require("./article-kids-bedroom-color-combinations.js");
 const charcuterieCupArticle = require("./article-charcuterie-cup-ideas.js");
+const easterBasketStufferArticle = require("./article-easter-basket-stuffer-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -980,6 +981,17 @@ const longFormPosts = [
     alt: "Row of individual charcuterie cups layered with meats, cheeses and fruit",
     image: "/images/charcuterie-cup-ideas/hero.jpg",
     bodyHtml: charcuterieCupArticle.body,
+  },
+  {
+    slug: "easter-basket-stuffer-ideas",
+    title: "15 Easter Basket Stuffers Worth Skipping the Candy Aisle For",
+    category: "Holidays",
+    readingTime: "11 min read",
+    date: "November 7, 2026",
+    excerpt: "From mini art kits to a gift card with a creative twist — 15 Easter basket stuffers that beat another chocolate bunny, for every age in the house.",
+    alt: "Colorful Easter basket filled with a variety of thoughtfully chosen stuffers",
+    image: "/images/easter-basket-stuffer-ideas/hero.jpg",
+    bodyHtml: easterBasketStufferArticle.body,
   },
 ];
 

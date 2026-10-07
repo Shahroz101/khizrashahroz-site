@@ -96,6 +96,7 @@ const pumpkinCarvingArticle = require("./article-pumpkin-carving-ideas.js");
 const fallMantelDecorArticle = require("./article-fall-mantel-decor-ideas.js");
 const roundTrayDecorArticle = require("./article-round-tray-decor-ideas.js");
 const blackGoldGalleryWallArticle = require("./article-black-gold-gallery-wall-ideas.js");
+const springCenterpieceArticle = require("./article-spring-centerpiece-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1328,6 +1329,17 @@ const longFormPosts = [
     alt: "Luxurious black and gold gallery wall styled behind a sofa with a statement clock",
     image: "/images/black-gold-gallery-wall-ideas/hero.jpg",
     bodyHtml: blackGoldGalleryWallArticle.body,
+  },
+  {
+    slug: "spring-centerpiece-ideas",
+    title: "18 Spring Centerpiece Ideas for a Fresh Home",
+    category: "Decorating",
+    readingTime: "13 min read",
+    date: "December 6, 2026",
+    excerpt: "From a lemon bowl to a single statement branch — 18 spring centerpiece ideas that take under 15 minutes and skip the expensive flower order.",
+    alt: "Pink tulip arrangement with a striped bow styled on a wood console table",
+    image: "/images/spring-centerpiece-ideas/hero.jpg",
+    bodyHtml: springCenterpieceArticle.body,
   },
 ];
 

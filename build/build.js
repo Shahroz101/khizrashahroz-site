@@ -80,6 +80,7 @@ const teenBoyBedroomArticle = require("./article-teen-boy-bedroom-ideas.js");
 const graduationCenterpieceArticle = require("./article-graduation-party-centerpiece-ideas.js");
 const diningRoomTrendsArticle = require("./article-dining-room-trends.js");
 const makeupVanityArticle = require("./article-makeup-vanity-ideas.js");
+const greenBathroomDecorArticle = require("./article-green-bathroom-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1136,6 +1137,17 @@ const longFormPosts = [
     alt: "Beautifully styled makeup vanity with flattering lighting and organized storage",
     image: "/images/makeup-vanity-ideas/hero.jpg",
     bodyHtml: makeupVanityArticle.body,
+  },
+  {
+    slug: "green-bathroom-decor-ideas",
+    title: "16 Green Bathroom Decor Ideas Worth Trying",
+    category: "Bathroom",
+    readingTime: "12 min read",
+    date: "November 20, 2026",
+    excerpt: "From sage green walls to a bold green and black pairing — 16 green bathroom decor ideas for every shade, style and budget.",
+    alt: "Beautifully styled green bathroom with natural textures and warm lighting",
+    image: "/images/green-bathroom-decor-ideas/hero.jpg",
+    bodyHtml: greenBathroomDecorArticle.body,
   },
 ];
 

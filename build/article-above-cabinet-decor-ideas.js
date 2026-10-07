@@ -1,19 +1,22 @@
 // Body content for "15 Above-the-Cabinet Decor Ideas That Don't Look
 // Dated". Photos carried over from the source article. Several
-// photo/idea pairings were mismatched or duplicated: the idea 04
-// "Statement Art" photo was the exact same file used as the hero, the
-// idea 03 "Minimal Greenery" photo was actually a sign-heavy cluttered
-// display with barely any greenery, and the idea 06 "Sculptural Objects"
-// photo was actually a Christmas-decorated shelf (reassigned to a
-// different photo that genuinely shows a sculptural object — a ceramic
-// rooster). Idea 07 was renamed slightly to "Wooden Crates and Bowls"
-// since its photo shows stacked crates, not the shallow dough bowls the
-// text originally described, and idea 11 was softened from
-// "architectural pieces" (corbels, columns) to match what its photo
-// actually shows (tall dried stems, a round clock, candlesticks). Five
-// ideas ended up with no photo at all (03, 04, 08, 09, 14) — reordered so
-// no two gaps run back to back. Condensed 4 intro H2/H3 sections down to
-// 2, dropped the post-list "long-term" styling section.
+// photo/idea pairings were mismatched or duplicated in the source itself:
+// the "Statement Art" idea's photo was the exact same file used as the
+// hero (text rewritten to match what it actually shows — framed signs
+// displayed upright, not leaned art), the "Minimal Greenery" idea's
+// photo was actually a sign-heavy collected display with just a small
+// potted sprig tucked in (text rewritten to match), and the "Sculptural
+// Objects" idea's source photo was actually a Christmas-decorated shelf
+// (reassigned to a different source photo that genuinely shows a
+// sculptural object — a ceramic rooster). The "Wooden Crates and Bowls"
+// idea was renamed slightly since its photo shows stacked crates, not
+// the shallow dough bowls the text originally described, and the
+// "Architectural" idea was softened from corbels/columns to match what
+// its photo actually shows (tall dried stems, a round clock,
+// candlesticks). Three ideas (Glass Vessels, Cookbooks, Statement
+// Lighting) genuinely have no photo in the source article — confirmed by
+// walking the source HTML in document order. Condensed 4 intro H2/H3
+// sections down to 2, dropped the post-list "long-term" styling section.
 
 const { picture } = require("./picture-helper.js");
 
@@ -54,8 +57,9 @@ const ideas = [
     paras: [
       "Greenery works well above kitchen cabinets, but only with real restraint. Less greenery almost always reads as more expensive than a lot of it.",
       "Skip trailing vines entirely. Faux olive branches, eucalyptus stems, or a single sculptural plant do far more with far less.",
-      "Keep it genuinely sparse, and ask one honest question before adding anything: would this actually grow like this in nature? If the answer is no, it's a pass.",
+      "It doesn't need to stand alone, either. A single potted sprig can hold its own inside a fuller, more collected display &mdash; like the mix of signage, a monogram letter and mugs shown here &mdash; as long as it isn't competing for attention with everything else up there.",
     ],
+    photo: pinPhoto("minimal-greenery.jpg", "Collected above-cabinet display with a wood-framed home sign, a monogram letter, mugs, an arched mirror and a small potted plant above white kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/211174976960626/", "Collected Above-Cabinet Display"),
   },
   {
     n: "03",
@@ -107,12 +111,13 @@ const ideas = [
   },
   {
     n: "08",
-    title: "Statement Art Leaned Against the Wall",
+    title: "Framed Signs Grouped Like Art",
     paras: [
-      "This one surprises people every time, but yes, art genuinely works above kitchen cabinets when the scale is right.",
-      "Lean framed pieces against the wall rather than hanging them. It reads as relaxed and current in a way a perfectly hung frame doesn't.",
-      "Neutral abstracts, vintage-style sketches, and soft landscapes all work well here, and a piece of real art instantly removes any lingering showroom-kitchen feeling.",
+      "This one surprises people every time, but yes, framed signs genuinely work above kitchen cabinets when the scale and grouping are right.",
+      "Sit them upright along the shelf instead of hanging a single centered piece. Letting a run of frames overlap slightly with the decor around them reads as collected and current in a way one perfectly hung frame doesn't.",
+      "A run of framed signs mixed with a woven wreath, a lantern and a small windmill accent, like the grouping shown here, instantly removes any lingering showroom-kitchen feeling.",
     ],
+    photo: pinPhoto("statement-art.jpg", "Framed signs, a woven wreath, a lantern and a windmill accent displayed above white kitchen cabinets near a window", 736, 552, "https://www.pinterest.com/pin/2111131072146904/", "Framed Signs Above Kitchen Cabinets"),
   },
   {
     n: "09",

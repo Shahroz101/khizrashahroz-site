@@ -50,6 +50,7 @@ const smallBedroomPaintColorsArticle = require("./article-small-bedroom-paint-co
 const frontPorchArticle = require("./article-front-porch-ideas.js");
 const cottageGardenArticle = require("./article-cottage-garden-ideas.js");
 const cozyLivingRoomArticle = require("./article-cozy-living-room-ideas.js");
+const dormKitchenArticle = require("./article-dorm-kitchen-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -776,6 +777,17 @@ const longFormPosts = [
     alt: "Warm neutral living room with a beige sectional sofa, layered textured pillows, a chunky knit throw and wood coffee table lit by soft window light",
     image: "/images/cozy-living-room-ideas/hero.jpg",
     bodyHtml: cozyLivingRoomArticle.body,
+  },
+  {
+    slug: "dorm-kitchen-ideas",
+    title: "12 Dorm Kitchen Ideas That Make a Tiny Kitchenette Actually Work",
+    category: "Dorm Decor",
+    readingTime: "9 min read",
+    date: "October 21, 2026",
+    excerpt: "From a rolling cart to a vertical shelf stack — 12 dorm kitchen ideas that make the tiniest kitchenette genuinely functional.",
+    alt: "Small shared dorm kitchenette with a mini-fridge, microwave, over-the-sink dish rack and towels hanging from the cabinet",
+    image: "/images/dorm-kitchen-ideas/hero.jpg",
+    bodyHtml: dormKitchenArticle.body,
   },
 ];
 

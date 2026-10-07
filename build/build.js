@@ -61,6 +61,7 @@ const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
 const bathroomShelfArticle = require("./article-bathroom-shelf-decor-ideas.js");
 const bathroomDesignTrendsArticle = require("./article-bathroom-design-trends.js");
 const coastalLivingRoomArticle = require("./article-coastal-living-room-ideas.js");
+const mothersDayGrazingBoardArticle = require("./article-mothers-day-grazing-board-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -908,6 +909,17 @@ const longFormPosts = [
     alt: "Bright coastal living room with white furniture and large windows overlooking the ocean",
     image: "/images/coastal-living-room-ideas/hero.jpg",
     bodyHtml: coastalLivingRoomArticle.body,
+  },
+  {
+    slug: "mothers-day-grazing-board-ideas",
+    title: "14 Mother's Day Grazing Board Ideas Worth the Effort",
+    category: "Entertaining",
+    readingTime: "11 min read",
+    date: "November 1, 2026",
+    excerpt: "From a rosé-inspired spread to a breakfast-in-bed tray — 14 Mother's Day grazing board ideas that feel thoughtful without needing a culinary degree.",
+    alt: "Elegant Mother's Day grazing board with cheese, fruit, flowers and small bowls arranged with intention",
+    image: "/images/mothers-day-grazing-board-ideas/hero.jpg",
+    bodyHtml: mothersDayGrazingBoardArticle.body,
   },
 ];
 

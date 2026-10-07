@@ -84,6 +84,7 @@ const greenBathroomDecorArticle = require("./article-green-bathroom-decor-ideas.
 const homeOfficeAestheticArticle = require("./article-home-office-aesthetic-ideas.js");
 const laundryRoomEffortlessArticle = require("./article-laundry-room-ideas-effortless.js");
 const easterWreathArticle = require("./article-easter-wreath-ideas.js");
+const winterDiningTableDecorArticle = require("./article-winter-dining-table-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1184,6 +1185,17 @@ const longFormPosts = [
     alt: "Pinterest-worthy Easter wreath hanging on a front door",
     image: "/images/easter-wreath-ideas/hero.jpg",
     bodyHtml: easterWreathArticle.body,
+  },
+  {
+    slug: "winter-dining-table-decor-ideas",
+    title: "16 Winter Dining Table Decor Ideas Worth Setting Out",
+    category: "Dining Room",
+    readingTime: "12 min read",
+    date: "November 24, 2026",
+    excerpt: "From layered table runners to a single winter-themed center bowl — 16 winter dining table decor ideas that feel cozy, not cluttered.",
+    alt: "Elegant winter dining table decor with layered textures and candlelight",
+    image: "/images/winter-dining-table-decor-ideas/hero.jpg",
+    bodyHtml: winterDiningTableDecorArticle.body,
   },
 ];
 

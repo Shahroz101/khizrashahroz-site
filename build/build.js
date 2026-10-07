@@ -69,6 +69,7 @@ const kidsBedroomColorArticle = require("./article-kids-bedroom-color-combinatio
 const charcuterieCupArticle = require("./article-charcuterie-cup-ideas.js");
 const easterBasketStufferArticle = require("./article-easter-basket-stuffer-ideas.js");
 const springCraftArticle = require("./article-spring-craft-ideas.js");
+const livingRoomLayoutArticle = require("./article-living-room-layout-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1004,6 +1005,17 @@ const longFormPosts = [
     alt: "Collection of handmade spring crafts styled together, including painted jars and floral decor",
     image: "/images/spring-craft-ideas/hero.jpg",
     bodyHtml: springCraftArticle.body,
+  },
+  {
+    slug: "living-room-layout-ideas",
+    title: "15 Living Room Layouts for Every Kind of Space",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "November 9, 2026",
+    excerpt: "From floating the furniture to zoning an open floor plan — 15 living room layouts that fix the one thing decor alone can't.",
+    alt: "Sleek modern living room with furniture arranged to anchor the space",
+    image: "/images/living-room-layout-ideas/hero.jpg",
+    bodyHtml: livingRoomLayoutArticle.body,
   },
 ];
 

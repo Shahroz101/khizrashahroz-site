@@ -52,6 +52,7 @@ const cottageGardenArticle = require("./article-cottage-garden-ideas.js");
 const cozyLivingRoomArticle = require("./article-cozy-living-room-ideas.js");
 const dormKitchenArticle = require("./article-dorm-kitchen-ideas.js");
 const gamingRoomArticle = require("./article-gaming-room-setup-ideas.js");
+const bathroomAccentWallArticle = require("./article-bathroom-accent-wall-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -800,6 +801,17 @@ const longFormPosts = [
     alt: "Dual monitor RGB gaming desk setup glowing orange and red with a mechanical keyboard and speakers in a dark room",
     image: "/images/gaming-room-setup-ideas/hero.jpg",
     bodyHtml: gamingRoomArticle.body,
+  },
+  {
+    slug: "bathroom-accent-wall-ideas",
+    title: "12 Bathroom Accent Wall Ideas Worth Stealing",
+    category: "Bathroom",
+    readingTime: "9 min read",
+    date: "October 23, 2026",
+    excerpt: "From a marble feature wall to a living plant wall — 12 bathroom accent wall ideas that turn one surface into the whole room's statement.",
+    alt: "Modern minimalist bathroom with a textured concrete-look accent wall, glass shower enclosure and pendant lights over a floating vanity",
+    image: "/images/bathroom-accent-wall-ideas/hero.jpg",
+    bodyHtml: bathroomAccentWallArticle.body,
   },
 ];
 

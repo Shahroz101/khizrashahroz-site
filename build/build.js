@@ -93,6 +93,7 @@ const bathroomDesignStylesArticle = require("./article-bathroom-design-styles.js
 const kitchenWindowTreatmentArticle = require("./article-kitchen-window-treatment-ideas.js");
 const tvStandDecorArticle = require("./article-tv-stand-decor-ideas.js");
 const pumpkinCarvingArticle = require("./article-pumpkin-carving-ideas.js");
+const fallMantelDecorArticle = require("./article-fall-mantel-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1292,6 +1293,17 @@ const longFormPosts = [
     alt: "Collection of cute carved pumpkins styled for a charming fall display",
     image: "/images/pumpkin-carving-ideas/hero.jpg",
     bodyHtml: pumpkinCarvingArticle.body,
+  },
+  {
+    slug: "fall-mantel-decor-ideas",
+    title: "18 Fall Mantel Decor Ideas to Try This Season",
+    category: "Decorating",
+    readingTime: "13 min read",
+    date: "December 3, 2026",
+    excerpt: "From a leafy garland with mini pumpkins to a moody brown palette — 18 fall mantel decor ideas that feel cozy without looking like a seasonal gift shop.",
+    alt: "Living room with a fireplace mantel ready for fall styling",
+    image: "/images/fall-mantel-decor-ideas/hero.jpg",
+    bodyHtml: fallMantelDecorArticle.body,
   },
 ];
 

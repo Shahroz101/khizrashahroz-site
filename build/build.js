@@ -85,6 +85,7 @@ const homeOfficeAestheticArticle = require("./article-home-office-aesthetic-idea
 const laundryRoomEffortlessArticle = require("./article-laundry-room-ideas-effortless.js");
 const easterWreathArticle = require("./article-easter-wreath-ideas.js");
 const winterDiningTableDecorArticle = require("./article-winter-dining-table-decor-ideas.js");
+const handcraftedWallDecorArticle = require("./article-handcrafted-wall-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1196,6 +1197,17 @@ const longFormPosts = [
     alt: "Elegant winter dining table decor with layered textures and candlelight",
     image: "/images/winter-dining-table-decor-ideas/hero.jpg",
     bodyHtml: winterDiningTableDecorArticle.body,
+  },
+  {
+    slug: "handcrafted-wall-decor-ideas",
+    title: "17 Handcrafted Wall Decor Ideas Worth Making Yourself",
+    category: "Wall Decor",
+    readingTime: "11 min read",
+    date: "November 25, 2026",
+    excerpt: "From macramé hangings to painted rock art — 17 handcrafted wall decor ideas that bring genuine texture and personality no store-bought piece can match.",
+    alt: "Dramatic handcrafted sculptural wall art installation behind a desk",
+    image: "/images/handcrafted-wall-decor-ideas/hero.jpg",
+    bodyHtml: handcraftedWallDecorArticle.body,
   },
 ];
 

@@ -65,6 +65,7 @@ const mothersDayGrazingBoardArticle = require("./article-mothers-day-grazing-boa
 const kitchenIslandCenterpieceArticle = require("./article-kitchen-island-centerpiece-ideas.js");
 const homeGymArticle = require("./article-home-gym-ideas.js");
 const texturedWallArticle = require("./article-textured-wall-ideas.js");
+const kidsBedroomColorArticle = require("./article-kids-bedroom-color-combinations.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -956,6 +957,17 @@ const longFormPosts = [
     alt: "Extravagant textured accent wall in a richly styled interior",
     image: "/images/textured-wall-ideas/hero.jpg",
     bodyHtml: texturedWallArticle.body,
+  },
+  {
+    slug: "kids-bedroom-color-combinations",
+    title: "15 Kids Bedroom Color Combinations That Actually Work",
+    category: "Kids Room",
+    readingTime: "12 min read",
+    date: "November 5, 2026",
+    excerpt: "From soft blue and white to charcoal gray and orange — 15 kids bedroom color combinations that balance personality with a room you can actually sleep in.",
+    alt: "Colorful kids bedroom showing a thoughtfully chosen color palette",
+    image: "/images/kids-bedroom-color-combinations/hero.jpg",
+    bodyHtml: kidsBedroomColorArticle.body,
   },
 ];
 

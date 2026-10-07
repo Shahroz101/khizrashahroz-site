@@ -60,6 +60,7 @@ const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
 const bathroomShelfArticle = require("./article-bathroom-shelf-decor-ideas.js");
 const bathroomDesignTrendsArticle = require("./article-bathroom-design-trends.js");
+const coastalLivingRoomArticle = require("./article-coastal-living-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -896,6 +897,17 @@ const longFormPosts = [
     alt: "Matte black freestanding tub against white subway tile with a dark built-in niche and black pendant light",
     image: "/images/bathroom-design-trends/hero.jpg",
     bodyHtml: bathroomDesignTrendsArticle.body,
+  },
+  {
+    slug: "coastal-living-room-ideas",
+    title: "11 Coastal Living Room Ideas That Don't Feel Like a Theme Park",
+    category: "Living Room",
+    readingTime: "9 min read",
+    date: "October 31, 2026",
+    excerpt: "From an ocean-sky-sand palette to natural light tricks — 11 coastal living room ideas that capture the feeling without tipping into gift-shop territory.",
+    alt: "Bright coastal living room with white furniture and large windows overlooking the ocean",
+    image: "/images/coastal-living-room-ideas/hero.jpg",
+    bodyHtml: coastalLivingRoomArticle.body,
   },
 ];
 

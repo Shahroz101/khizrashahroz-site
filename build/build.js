@@ -92,6 +92,7 @@ const stackedLaundryRoomArticle = require("./article-stacked-laundry-room-ideas.
 const bathroomDesignStylesArticle = require("./article-bathroom-design-styles.js");
 const kitchenWindowTreatmentArticle = require("./article-kitchen-window-treatment-ideas.js");
 const tvStandDecorArticle = require("./article-tv-stand-decor-ideas.js");
+const pumpkinCarvingArticle = require("./article-pumpkin-carving-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1280,6 +1281,17 @@ const longFormPosts = [
     alt: "Beautifully styled TV stand with thoughtfully arranged decor",
     image: "/images/tv-stand-decor-ideas/hero.jpg",
     bodyHtml: tvStandDecorArticle.body,
+  },
+  {
+    slug: "pumpkin-carving-ideas",
+    title: "18 Cute Pumpkin Carving Ideas Worth Trying",
+    category: "Holidays",
+    readingTime: "12 min read",
+    date: "December 2, 2026",
+    excerpt: "From a sleepy crescent moon to a tiny pumpkin family — 18 cute pumpkin carving ideas that skip the scary jack-o'-lantern entirely.",
+    alt: "Collection of cute carved pumpkins styled for a charming fall display",
+    image: "/images/pumpkin-carving-ideas/hero.jpg",
+    bodyHtml: pumpkinCarvingArticle.body,
   },
 ];
 

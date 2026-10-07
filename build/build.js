@@ -66,6 +66,7 @@ const kitchenIslandCenterpieceArticle = require("./article-kitchen-island-center
 const homeGymArticle = require("./article-home-gym-ideas.js");
 const texturedWallArticle = require("./article-textured-wall-ideas.js");
 const kidsBedroomColorArticle = require("./article-kids-bedroom-color-combinations.js");
+const charcuterieCupArticle = require("./article-charcuterie-cup-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -968,6 +969,17 @@ const longFormPosts = [
     alt: "Colorful kids bedroom showing a thoughtfully chosen color palette",
     image: "/images/kids-bedroom-color-combinations/hero.jpg",
     bodyHtml: kidsBedroomColorArticle.body,
+  },
+  {
+    slug: "charcuterie-cup-ideas",
+    title: "15 Charcuterie Cup Ideas for Stress-Free Hosting",
+    category: "Entertaining",
+    readingTime: "11 min read",
+    date: "November 6, 2026",
+    excerpt: "From a classic meat-and-cheese cup to a luxe treat-yourself version — 15 charcuterie cup ideas that skip the board chaos entirely.",
+    alt: "Row of individual charcuterie cups layered with meats, cheeses and fruit",
+    image: "/images/charcuterie-cup-ideas/hero.jpg",
+    bodyHtml: charcuterieCupArticle.body,
   },
 ];
 

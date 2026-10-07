@@ -77,6 +77,7 @@ const pinkHomeDecorArticle = require("./article-pink-home-decor-ideas.js");
 const smallBedroomOrganizationArticle = require("./article-small-bedroom-organization-ideas.js");
 const easterTableSettingArticle = require("./article-easter-table-setting-ideas.js");
 const teenBoyBedroomArticle = require("./article-teen-boy-bedroom-ideas.js");
+const graduationCenterpieceArticle = require("./article-graduation-party-centerpiece-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1100,6 +1101,17 @@ const longFormPosts = [
     alt: "Stylish teen boy bedroom with a bold accent wall and modern furniture",
     image: "/images/teen-boy-bedroom-ideas/hero.jpg",
     bodyHtml: teenBoyBedroomArticle.body,
+  },
+  {
+    slug: "graduation-party-centerpiece-ideas",
+    title: "16 Graduation Party Centerpieces Worth Copying",
+    category: "Entertaining",
+    readingTime: "11 min read",
+    date: "November 17, 2026",
+    excerpt: "From diploma scrolls to personalized keepsakes — 16 graduation party centerpiece ideas that make the tables feel as planned as the party itself.",
+    alt: "Graduation party table styled with centerpieces celebrating the occasion",
+    image: "/images/graduation-party-centerpiece-ideas/hero.jpg",
+    bodyHtml: graduationCenterpieceArticle.body,
   },
 ];
 

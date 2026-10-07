@@ -100,6 +100,7 @@ const springCenterpieceArticle = require("./article-spring-centerpiece-ideas.js"
 const mudroomIdeasArticle = require("./article-mudroom-ideas.js");
 const sideTableDecorArticle = require("./article-side-table-decor-ideas.js");
 const winterWonderlandArticle = require("./article-winter-wonderland-home-decor-ideas.js");
+const mothersDayCraftsArticle = require("./article-mothers-day-crafts-for-kids.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1376,6 +1377,17 @@ const longFormPosts = [
     alt: "Cozy winter living room with string lights, a flocked wreath and a candlelit coffee table",
     image: "/images/winter-wonderland-home-decor-ideas/hero.jpg",
     bodyHtml: winterWonderlandArticle.body,
+  },
+  {
+    slug: "mothers-day-crafts-for-kids",
+    title: "20 Adorable Mother's Day Crafts for Kids of Every Age",
+    category: "Holidays",
+    readingTime: "14 min read",
+    date: "December 10, 2026",
+    excerpt: "From a handprint bouquet to a handwritten video message — 20 Mother's Day crafts that scale from toddlers to teens.",
+    alt: "Framed Mother's Day craft with buttons spelling MUMS and a handwritten message",
+    image: "/images/mothers-day-crafts-for-kids/hero.jpg",
+    bodyHtml: mothersDayCraftsArticle.body,
   },
 ];
 

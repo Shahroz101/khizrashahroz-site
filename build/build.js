@@ -49,6 +49,7 @@ const bedroomCeilingArticle = require("./article-bedroom-ceiling-design-ideas.js
 const smallBedroomPaintColorsArticle = require("./article-small-bedroom-paint-colors.js");
 const frontPorchArticle = require("./article-front-porch-ideas.js");
 const cottageGardenArticle = require("./article-cottage-garden-ideas.js");
+const cozyLivingRoomArticle = require("./article-cozy-living-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -764,6 +765,17 @@ const longFormPosts = [
     alt: "Storybook Victorian cottage with a turret roof and wraparound porch surrounded by overflowing pink, purple and white garden flowers",
     image: "/images/cottage-garden-ideas/hero.jpg",
     bodyHtml: cottageGardenArticle.body,
+  },
+  {
+    slug: "cozy-living-room-ideas",
+    title: "12 Ways to Make Your Living Room Feel Genuinely Cozy",
+    category: "Living Room",
+    readingTime: "9 min read",
+    date: "October 20, 2026",
+    excerpt: "From a thicker rug to layered lighting — 12 simple ways to turn any living room into the coziest room in the house.",
+    alt: "Warm neutral living room with a beige sectional sofa, layered textured pillows, a chunky knit throw and wood coffee table lit by soft window light",
+    image: "/images/cozy-living-room-ideas/hero.jpg",
+    bodyHtml: cozyLivingRoomArticle.body,
   },
 ];
 

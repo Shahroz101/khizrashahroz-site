@@ -48,6 +48,7 @@ const toddlerRoomArticle = require("./article-toddler-room-ideas.js");
 const bedroomCeilingArticle = require("./article-bedroom-ceiling-design-ideas.js");
 const smallBedroomPaintColorsArticle = require("./article-small-bedroom-paint-colors.js");
 const frontPorchArticle = require("./article-front-porch-ideas.js");
+const cottageGardenArticle = require("./article-cottage-garden-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -752,6 +753,17 @@ const longFormPosts = [
     alt: "Small covered front porch with a black door, warm lantern sconce, potted topiary trees and a wood bench with cream pillows",
     image: "/images/front-porch-ideas/hero.jpg",
     bodyHtml: frontPorchArticle.body,
+  },
+  {
+    slug: "cottage-garden-ideas",
+    title: "12 Cottage Garden Ideas for a Yard That Feels Like a Storybook",
+    category: "Garden",
+    readingTime: "11 min read",
+    date: "October 19, 2026",
+    excerpt: "From overflowing borders to a rose-covered arbor — 12 cottage garden ideas that bring storybook charm to any size yard.",
+    alt: "Storybook Victorian cottage with a turret roof and wraparound porch surrounded by overflowing pink, purple and white garden flowers",
+    image: "/images/cottage-garden-ideas/hero.jpg",
+    bodyHtml: cottageGardenArticle.body,
   },
 ];
 

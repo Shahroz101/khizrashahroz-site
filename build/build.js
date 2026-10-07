@@ -99,6 +99,7 @@ const blackGoldGalleryWallArticle = require("./article-black-gold-gallery-wall-i
 const springCenterpieceArticle = require("./article-spring-centerpiece-ideas.js");
 const mudroomIdeasArticle = require("./article-mudroom-ideas.js");
 const sideTableDecorArticle = require("./article-side-table-decor-ideas.js");
+const winterWonderlandArticle = require("./article-winter-wonderland-home-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1364,6 +1365,17 @@ const longFormPosts = [
     alt: "Round side table styled with books, an orchid and a black table lamp",
     image: "/images/side-table-decor-ideas/hero.jpg",
     bodyHtml: sideTableDecorArticle.body,
+  },
+  {
+    slug: "winter-wonderland-home-decor-ideas",
+    title: "Winter Wonderland Home Decor Ideas for a Cozy Space",
+    category: "Decorating",
+    readingTime: "12 min read",
+    date: "December 9, 2026",
+    excerpt: "Layered textiles, warm lighting and a bit of greenery — a complete guide to making a home feel like a winter retreat.",
+    alt: "Cozy winter living room with string lights, a flocked wreath and a candlelit coffee table",
+    image: "/images/winter-wonderland-home-decor-ideas/hero.jpg",
+    bodyHtml: winterWonderlandArticle.body,
   },
 ];
 

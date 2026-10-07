@@ -78,6 +78,7 @@ const smallBedroomOrganizationArticle = require("./article-small-bedroom-organiz
 const easterTableSettingArticle = require("./article-easter-table-setting-ideas.js");
 const teenBoyBedroomArticle = require("./article-teen-boy-bedroom-ideas.js");
 const graduationCenterpieceArticle = require("./article-graduation-party-centerpiece-ideas.js");
+const diningRoomTrendsArticle = require("./article-dining-room-trends.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1112,6 +1113,17 @@ const longFormPosts = [
     alt: "Graduation party table styled with centerpieces celebrating the occasion",
     image: "/images/graduation-party-centerpiece-ideas/hero.jpg",
     bodyHtml: graduationCenterpieceArticle.body,
+  },
+  {
+    slug: "dining-room-trends",
+    title: "16 Dining Room Trends Worth Trying This Season",
+    category: "Dining Room",
+    readingTime: "12 min read",
+    date: "November 18, 2026",
+    excerpt: "From statement ceilings to sculptural chairs — 16 dining room trends that mix comfort with style without feeling intimidating.",
+    alt: "Stylish dining room showcasing current design trends with layered textures and lighting",
+    image: "/images/dining-room-trends/hero.jpg",
+    bodyHtml: diningRoomTrendsArticle.body,
   },
 ];
 

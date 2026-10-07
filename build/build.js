@@ -89,6 +89,7 @@ const handcraftedWallDecorArticle = require("./article-handcrafted-wall-decor-id
 const dessertsInACupArticle = require("./article-desserts-in-a-cup-ideas.js");
 const partyTableSetupArticle = require("./article-party-table-setup-ideas.js");
 const stackedLaundryRoomArticle = require("./article-stacked-laundry-room-ideas.js");
+const bathroomDesignStylesArticle = require("./article-bathroom-design-styles.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1244,6 +1245,17 @@ const longFormPosts = [
     alt: "Stylish stacked washer and dryer laundry setup with smart storage",
     image: "/images/stacked-laundry-room-ideas/hero.jpg",
     bodyHtml: stackedLaundryRoomArticle.body,
+  },
+  {
+    slug: "bathroom-design-styles",
+    title: "17 Bathroom Design Styles Worth Trying",
+    category: "Bathroom",
+    readingTime: "13 min read",
+    date: "November 29, 2026",
+    excerpt: "From farmhouse charm to a high-tech haven — 17 bathroom design styles that prove this room can be just as expressive as the rest of the house.",
+    alt: "Stunning modern industrial bathroom showcasing a distinct design style",
+    image: "/images/bathroom-design-styles/hero.jpg",
+    bodyHtml: bathroomDesignStylesArticle.body,
   },
 ];
 

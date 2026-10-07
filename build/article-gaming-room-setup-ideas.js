@@ -27,6 +27,14 @@ function photo(src, alt, w, h) {
     </figure>`;
 }
 
+function pinPhoto(src, alt, w, h, pinUrl, label) {
+  const { base, ext } = splitExt(src);
+  return `<figure>
+      ${picture({ dir: "gaming-room-setup-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
+      <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
+    </figure>`;
+}
+
 const ideas = [
   {
     n: "01",
@@ -36,7 +44,7 @@ const ideas = [
       "The trick to making RGB actually look good instead of chaotic is balance &mdash; stick to two main colors, matching peripherals, and indirect lighting rather than every light source going its own direction.",
       "A glowing PC case paired with a clean desk mat, like the orange-lit tower and dual monitors shown here, proves that RGB can look genuinely premium instead of overwhelming when it's done with restraint.",
     ],
-    photo: photo("rgb-setup.jpg", "Dual monitor gaming desk setup with an orange and red RGB-lit PC tower, mechanical keyboard and desk speakers in a dark room", 1400, 934),
+    photo: pinPhoto("rgb-setup.jpg", "Dual monitor gaming desk setup with an orange and red RGB-lit PC tower, mechanical keyboard and desk speakers in a dark room", 1400, 934, "https://www.pinterest.com/pin/14355292557496283/", "RGB Gaming Room Setup"),
   },
   {
     n: "02",
@@ -46,7 +54,7 @@ const ideas = [
       "The formula is simple: black furniture adds depth, white or gray walls keep the room from feeling heavy, and a single accent light carries whatever personality the room needs.",
       "An illuminated display shelf against dark monochrome walls, like the one shown here with wall-mounted controllers as art, is proof this look can hold up for years without ever feeling dated.",
     ],
-    photo: photo("monochrome-setup.jpg", "Dark gray monochrome gaming bedroom with wall-mounted game controllers as decor, an illuminated display shelf and a gray bed", 794, 1058),
+    photo: pinPhoto("monochrome-setup.jpg", "Dark gray monochrome gaming bedroom with wall-mounted game controllers as decor, an illuminated display shelf and a gray bed", 794, 1058, "https://www.pinterest.com/pin/3025924743787806/", "Black and White Gaming Room"),
   },
   {
     n: "03",
@@ -56,7 +64,7 @@ const ideas = [
       "Texture is what makes a room feel warm instead of cold &mdash; soft lighting, collected figures or keepsakes on a shelf, and warm wood tones all layer together instead of competing.",
       "Warm shelf lighting glowing behind action figures and games, like the setup shown here next to an easy chair and a lamp-lit bed, feels considerably easier on the eyes during long sessions than cold blue LEDs ever do.",
     ],
-    photo: photo("cozy-warm-setup.jpg", "Cozy warm-toned gaming room with a curved monitor, string lights glowing behind a shelf of collectible figures and games, and a gaming chair beside a bed", 576, 1024),
+    photo: pinPhoto("cozy-warm-setup.jpg", "Cozy warm-toned gaming room with a curved monitor, string lights glowing behind a shelf of collectible figures and games, and a gaming chair beside a bed", 576, 1024, "https://www.pinterest.com/pin/16536723628406091/", "Cozy Warm-Toned Gaming Room"),
   },
   {
     n: "04",
@@ -66,7 +74,7 @@ const ideas = [
       "The move is to commit to one theme rather than mixing a dozen different aesthetics together. Pick one favorite series, one color palette, and matching posters, and the whole thing reads as intentional instead of cluttered.",
       "A wall of character posters and art, like the one shown here surrounding a dual-tone RGB desk and a row of plushies, shows exactly how far one consistent theme can carry a room.",
     ],
-    photo: photo("anime-setup.jpg", "Anime-themed gaming desk setup with a curved RGB monitor, keyboard, plush toys and anime character posters on the wall", 576, 1024),
+    photo: pinPhoto("anime-setup.jpg", "Anime-themed gaming desk setup with a curved RGB monitor, keyboard, plush toys and anime character posters on the wall", 576, 1024, "https://www.pinterest.com/pin/864691197277518202/", "Anime-Inspired Gaming Setup"),
   },
   {
     n: "05",
@@ -76,7 +84,7 @@ const ideas = [
       "The approach is simple: keep the palette tight &mdash; navy, gray, and black work well together &mdash; and let one single statement piece carry the whole room instead of ten smaller ones competing for attention.",
       "A glowing neon circle sign anchoring an otherwise simple navy-and-gray corner desk, like the one shown here, is exactly that kind of restraint. One bold element, everything else quiet.",
     ],
-    photo: photo("modern-accent-setup.jpg", "Clean navy and gray gaming bedroom with a glowing neon circle sign on a padded accent wall above a corner desk and gaming chair", 683, 1024),
+    photo: pinPhoto("modern-accent-setup.jpg", "Clean navy and gray gaming bedroom with a glowing neon circle sign on a padded accent wall above a corner desk and gaming chair", 683, 1024, "https://www.pinterest.com/pin/211174979077420/", "Modern Gaming Room With Neon Accent"),
   },
   {
     n: "06",
@@ -86,7 +94,7 @@ const ideas = [
       "Electric blue, pink, purple, and cyan tend to work best, and custom neon signs &mdash; a gamer tag, a lightning bolt, a favorite quote &mdash; instantly make a setup feel one-of-a-kind.",
       "A wall of custom neon logos layered over gaming posters, like the ones shown here glowing red and blue against a dark room, is neon at its most confident &mdash; loud, but still clearly intentional.",
     ],
-    photo: photo("neon-setup.jpg", "Dark gaming bedroom with multiple custom neon signs glowing red and blue above gaming posters and a wall-mounted TV", 500, 625),
+    photo: pinPhoto("neon-setup.jpg", "Dark gaming bedroom with multiple custom neon signs glowing red and blue above gaming posters and a wall-mounted TV", 500, 625, "https://www.pinterest.com/pin/565272190750289548/", "Neon Gaming Room Setup"),
   },
   {
     n: "07",
@@ -96,7 +104,7 @@ const ideas = [
       "Compact furniture is non-negotiable here &mdash; slim desks, wall shelves instead of floor storage, and a wall-mounted TV instead of a bulky standing one all free up real floor space.",
       "A themed single-bed setup with a corner desk and wall-mounted screen, like the one shown here, proves a small footprint doesn't mean a scaled-down gaming experience.",
     ],
-    photo: photo("compact-bedroom-setup.jpg", "Small bedroom gaming setup with a wall-mounted TV above a corner desk, themed wall decor and a single bed with a colorful patchwork quilt", 683, 1024),
+    photo: pinPhoto("compact-bedroom-setup.jpg", "Small bedroom gaming setup with a wall-mounted TV above a corner desk, themed wall decor and a single bed with a colorful patchwork quilt", 683, 1024, "https://www.pinterest.com/pin/355714070590604971/", "Small Bedroom Gaming Setup"),
   },
   {
     n: "08",
@@ -106,7 +114,7 @@ const ideas = [
       "Once you're used to two screens, going back to one feels almost painful. You can watch a walkthrough while playing, keep a voice chat visible, or multitask without constantly tabbing in and out.",
       "The trick to keeping it from looking chaotic is balance &mdash; matched monitor sizes and aligned heights, like the side-by-side pair shown here, read as a cohesive setup instead of two screens that just happen to share a desk.",
     ],
-    photo: photo("dual-monitor-setup.jpg", "Corner gaming desk with two matched monitors side by side, a gaming chair, RGB-lit PC tower and shelves of manga and posters", 574, 1024),
+    photo: pinPhoto("dual-monitor-setup.jpg", "Corner gaming desk with two matched monitors side by side, a gaming chair, RGB-lit PC tower and shelves of manga and posters", 574, 1024, "https://www.pinterest.com/pin/505106914477754746/", "Dual Monitor Gaming Desk"),
   },
   {
     n: "09",
@@ -116,7 +124,7 @@ const ideas = [
       "Running LED strips behind display shelves adds both lighting and visual depth at once &mdash; it works especially well behind collectibles, games, or figures, where the glow highlights what's actually on display.",
       "A shelf of collectible figures lit from behind in contrasting orange and blue, like the one shown here above a dual-monitor desk, turns a basic storage shelf into one of the room's best features.",
     ],
-    photo: photo("led-wall-setup.jpg", "Shelves of collectible figures backlit with orange and blue LED strip lighting above a dual monitor gaming desk with a black gaming chair", 574, 1024),
+    photo: pinPhoto("led-wall-setup.jpg", "Shelves of collectible figures backlit with orange and blue LED strip lighting above a dual monitor gaming desk with a black gaming chair", 574, 1024, "https://www.pinterest.com/pin/573434965076027657/", "LED Shelf Gaming Setup"),
   },
   {
     n: "10",
@@ -136,7 +144,7 @@ const ideas = [
       "Wall-mounting the TV is the single best upgrade for a console setup &mdash; it frees up desk space, improves the viewing angle, and instantly makes cable management easier.",
       "Comfortable floor seating matters more here than almost anywhere else, since console gaming usually means leaning back rather than sitting upright. A wall-mounted screen paired with deep bean bag seating, like the setup shown here, nails that completely.",
     ],
-    photo: photo("console-setup.jpg", "Console gaming room with a large wall-mounted TV, an arcade machine, purple neon ceiling lighting and plush purple bean bag seating", 683, 1024),
+    photo: pinPhoto("console-setup.jpg", "Console gaming room with a large wall-mounted TV, an arcade machine, purple neon ceiling lighting and plush purple bean bag seating", 683, 1024, "https://www.pinterest.com/pin/413557178310748862/", "Console Gaming Room Setup"),
   },
   {
     n: "12",
@@ -165,7 +173,7 @@ ${photo("hero.jpg", "Dual monitor RGB gaming desk setup glowing orange and red w
 <h2>What Actually Makes a Gaming Room Setup Work</h2>
 <p>A good gaming room setup comes down to five things working together: comfort, lighting, organization, personality, and performance. Skip one, and the room starts to feel incomplete no matter how much money went into it. Comfort especially gets overlooked &mdash; an adjustable chair, proper monitor height, and decent cable management matter more than almost anything else, since most teens spend hours a day in that one spot.</p>
 <p>Budget matters less than people think. Some of the best gaming rooms cost surprisingly little because the owner built around one real statement piece &mdash; a bold desk, a cool chair, a neon sign &mdash; instead of buying a pile of random accessories. Lighting is the cheapest way to transform a plain room into something cinematic, and a corner desk setup can make even a tiny bedroom feel like a dedicated zone the moment you sit down.</p>
-${photo("intro-corner.jpg", "Corner gaming desk setup with a teal neon light strip, pegboard organizer and dual monitor on a white desk", 576, 1024)}
+${pinPhoto("intro-corner.jpg", "Corner gaming desk setup with a teal neon light strip, pegboard organizer and dual monitor on a white desk", 576, 1024, "https://www.pinterest.com/pin/4503668374131354/", "Corner Gaming Desk Setup")}
 
 <h2>12 Gaming Room Setup Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

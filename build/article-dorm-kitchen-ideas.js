@@ -23,6 +23,14 @@ function photo(src, alt, w, h) {
     </figure>`;
 }
 
+function pinPhoto(src, alt, w, h, pinUrl, label) {
+  const { base, ext } = splitExt(src);
+  return `<figure>
+      ${picture({ dir: "dorm-kitchen-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
+      <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
+    </figure>`;
+}
+
 const ideas = [
   {
     n: "01",
@@ -32,7 +40,7 @@ const ideas = [
       "Use it for snacks, utensils, even a small coffee station &mdash; the point is flexibility. Push it out of the way when you need floor space, roll it over when you're actually prepping food.",
       "A three-tier version like the one shown here, with a towel, dry goods, and even a small blender tucked onto its shelves, basically works as a second kitchen that happens to have wheels.",
     ],
-    photo: photo("rolling-cart.jpg", "Black three-tier rolling cart in a kitchen holding utensils, a folded towel, dry goods jars and a small blender", 1024, 1024),
+    photo: pinPhoto("rolling-cart.jpg", "Black three-tier rolling cart in a kitchen holding utensils, a folded towel, dry goods jars and a small blender", 1024, 1024, "https://www.pinterest.com/pin/977773769110183439/", "Rolling Cart for a Dorm Kitchen"),
   },
   {
     n: "02",
@@ -51,7 +59,7 @@ const ideas = [
       "Keep mugs, pods, sugar, and cream together in one spot so the mess stays contained instead of spreading across every surface.",
       "Even a small setup, like the labeled Keurig station shown here complete with its own little \"Coffee\" sign, reads as intentional rather than thrown together &mdash; it's a small detail that adds real personality.",
     ],
-    photo: photo("coffee-station.jpg", "Compact coffee station on a dorm countertop with a Keurig machine, mugs, coffee and tea canisters and a wooden tray", 735, 1021),
+    photo: pinPhoto("coffee-station.jpg", "Compact coffee station on a dorm countertop with a Keurig machine, mugs, coffee and tea canisters and a wooden tray", 735, 1021, "https://www.pinterest.com/pin/985231165065391/", "Dorm Coffee Station Setup"),
   },
   {
     n: "04",
@@ -70,7 +78,7 @@ const ideas = [
       "The real benefit is zoning &mdash; your sink area stays dedicated to washing and prep, and the rest of your counter stays genuinely clear for everything else.",
       "A two-tier version like the one shown here handles glasses, bowls, plates, and utensils all at once, which is a lot of dish capacity for a footprint that otherwise sits empty.",
     ],
-    photo: photo("sink-shelf.jpg", "Two-tier black metal dish rack mounted over a double kitchen sink, holding glasses, bowls, plates and hanging utensils", 1250, 1226),
+    photo: pinPhoto("sink-shelf.jpg", "Two-tier black metal dish rack mounted over a double kitchen sink, holding glasses, bowls, plates and hanging utensils", 1250, 1226, "https://www.pinterest.com/pin/4604367795817739008/", "Over-the-Sink Dish Rack"),
   },
   {
     n: "06",
@@ -89,7 +97,7 @@ const ideas = [
       "It also keeps everything visible, which matters more than it sounds like it should. You grab exactly what you need mid-cook instead of digging through a drawer one-handed.",
       "A simple wall-mounted setup, like the knife strip visible here next to a compact microwave-and-toaster-oven shelf, makes a tiny kitchen feel noticeably more organized for almost no cost.",
     ],
-    photo: photo("magnetic-strips.jpg", "Dorm kitchen shelving unit with a microwave and toaster oven, a magnetic knife strip mounted on the wall and a rolling cart with a hot plate", 735, 1021),
+    photo: pinPhoto("magnetic-strips.jpg", "Dorm kitchen shelving unit with a microwave and toaster oven, a magnetic knife strip mounted on the wall and a rolling cart with a hot plate", 735, 1021, "https://www.pinterest.com/pin/211174972769820/", "Magnetic Strip Dorm Kitchen Storage"),
   },
   {
     n: "08",
@@ -108,7 +116,7 @@ const ideas = [
       "Stack a mini-fridge, microwave, and coffee maker into one column and you've consolidated three separate appliances into a single footprint instead of spreading them across the room.",
       "A setup like the one shown here &mdash; mini-fridge on the bottom, microwave and coffee station stacked above, open shelving for mugs and snacks on top &mdash; can genuinely double your usable storage without claiming any more floor.",
     ],
-    photo: photo("vertical-shelf.jpg", "Tall wood shelving unit in a dorm room stacking a coffee maker, mugs and dishes above a black mini-fridge with a microwave on top", 736, 1021),
+    photo: pinPhoto("vertical-shelf.jpg", "Tall wood shelving unit in a dorm room stacking a coffee maker, mugs and dishes above a black mini-fridge with a microwave on top", 736, 1021, "https://www.pinterest.com/pin/1407443628465375/", "Vertical Shelving for a Dorm Kitchenette"),
   },
   {
     n: "10",
@@ -127,7 +135,7 @@ const ideas = [
       "The effect is less about storage capacity and more about how the whole kitchen reads. Grouped items look intentional; loose items look like clutter, even when it's the same amount of stuff.",
       "A wire shelving unit lined with a few matching baskets, the way it's set up here alongside the microwave and mini-fridge, turns an ordinary dorm shelf into something that actually looks organized at a glance.",
     ],
-    photo: photo("baskets.jpg", "White wire shelving unit in a dorm room holding woven baskets, a microwave and a mini-fridge, next to a desk with photos and decor", 735, 1021),
+    photo: pinPhoto("baskets.jpg", "White wire shelving unit in a dorm room holding woven baskets, a microwave and a mini-fridge, next to a desk with photos and decor", 735, 1021, "https://www.pinterest.com/pin/193654852721150506/", "Dorm Kitchen Basket Storage"),
   },
   {
     n: "12",
@@ -151,12 +159,12 @@ function ideaBlock(idea) {
 const body = `
 <p>Walking into a first dorm kitchen is usually a mix of awe and panic. The counters are microscopic, the appliances all seem to conspire against you, and somehow you're expected to cook, store food, stay clean, and still make it look halfway decent &mdash; all in the footprint of a shoebox.</p>
 <p>The good news: small doesn't mean useless. With the right setup, even a genuinely tiny dorm kitchen can feel surprisingly functional, and it comes down to one thing more than anything else &mdash; giving every item an actual home instead of letting things pile up wherever they land.</p>
-${photo("hero.jpg", "Small shared dorm kitchenette with a mini-fridge, microwave, over-the-sink dish rack and towels hanging from the cabinet", 736, 981)}
+${pinPhoto("hero.jpg", "Small shared dorm kitchenette with a mini-fridge, microwave, over-the-sink dish rack and towels hanging from the cabinet", 736, 981, "https://www.pinterest.com/pin/106819822408428181/", "Small Shared Dorm Kitchenette")}
 
 <h2>Why Dorm Kitchens Feel Chaotic Fast</h2>
 <p>Most dorm kitchens feel overwhelming within a week, and it's rarely about the size itself &mdash; it's the lack of structure. Set one bowl down and the whole counter suddenly looks crowded, because there was never a designated place for it in the first place. Once you create actual zones for food, utensils, and appliances, even a genuinely tiny kitchen starts to feel manageable.</p>
 <p>Every item counts more here than it would in a full-sized kitchen, too. There's no room for a stray bag of chips or a coffee maker camped out in the middle of your one workspace. Before buying anything, figure out what you'll actually use &mdash; a blender that also chops is worth it, a ten-piece waffle iron set almost never is. And don't skip vertical space: shelves, hooks, and wall-mounted racks can double your real storage without taking up a single inch of floor.</p>
-${photo("intro-chaos.jpg", "Small dorm room corner with pink curtains and string lights, a black mini-fridge, microwave and a small wood shelving unit", 735, 1021)}
+${pinPhoto("intro-chaos.jpg", "Small dorm room corner with pink curtains and string lights, a black mini-fridge, microwave and a small wood shelving unit", 735, 1021, "https://www.pinterest.com/pin/11329436558985555/", "Organized Dorm Kitchen Corner")}
 
 <h2>12 Dorm Kitchen Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

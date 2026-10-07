@@ -29,6 +29,14 @@ function photo(src, alt, w, h) {
     </figure>`;
 }
 
+function pinPhoto(src, alt, w, h, pinUrl, label) {
+  const { base, ext } = splitExt(src);
+  return `<figure>
+      ${picture({ dir: "above-cabinet-decor-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
+      <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
+    </figure>`;
+}
+
 const ideas = [
   {
     n: "01",
@@ -38,7 +46,7 @@ const ideas = [
       "Matte finishes genuinely age better than glossy ones &mdash; soft whites, warm taupes, and muted charcoal tend to hold up the longest without feeling trendy.",
       "For it to read as intentional rather than random: stick to odd numbers like three or five, vary the heights slightly, and keep the color palette tight, the way the grouped pitchers shown here do.",
     ],
-    photo: photo("tall-vases.jpg", "Row of tall matte white ceramic vases and pitchers lined up above white kitchen cabinets", 683, 1024),
+    photo: pinPhoto("tall-vases.jpg", "Row of tall matte white ceramic vases and pitchers lined up above white kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/281543726327128/", "Tall Ceramic Vases Above Cabinets"),
   },
   {
     n: "02",
@@ -57,7 +65,7 @@ const ideas = [
       "Large-scale woven baskets with clean, simple shapes read as architectural and calm, while small baskets scream clutter immediately.",
       "These work especially well in farmhouse kitchens, transitional spaces, and warm neutral color schemes, like the basket paired with ceramic vases shown here. As a bonus, they hide dust far better than shiny decor ever does.",
     ],
-    photo: photo("woven-baskets.jpg", "Large woven basket and neutral ceramic vases arranged above white kitchen cabinets with a trailing plant", 683, 1024),
+    photo: pinPhoto("woven-baskets.jpg", "Large woven basket and neutral ceramic vases arranged above white kitchen cabinets with a trailing plant", 683, 1024, "https://www.pinterest.com/pin/526287906469115616/", "Oversized Woven Basket Above Cabinets"),
   },
   {
     n: "04",
@@ -76,7 +84,7 @@ const ideas = [
       "Restraint is the key. One or two pieces per section read as collected; a full shelf of antique finds starts to feel like a flea market display instead.",
       "A pair of vintage lanterns flanking glass vessels and trailing greenery, like the arrangement shown here, proves how much warmth a few well-chosen old pieces can add.",
     ],
-    photo: photo("vintage-finds.jpg", "Vintage lanterns, clear glass vases and trailing greenery arranged above dark wood kitchen cabinets", 683, 1024),
+    photo: pinPhoto("vintage-finds.jpg", "Vintage lanterns, clear glass vases and trailing greenery arranged above dark wood kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/19844054604962826/", "Vintage Finds Above Kitchen Cabinets"),
   },
   {
     n: "06",
@@ -95,7 +103,7 @@ const ideas = [
       "Stone-inspired decor, abstract ceramic forms, and matte resin objects all work well here, but so does something with a little more personality.",
       "A single sculptural figure, like the ceramic rooster anchoring the pitcher and greenery shown here, can carry an entire section on its own.",
     ],
-    photo: photo("sculptural-objects-2.jpg", "White ceramic rooster figure, a pitcher and greenery with string lights arranged above white kitchen cabinets", 736, 490),
+    photo: pinPhoto("sculptural-objects-2.jpg", "White ceramic rooster figure, a pitcher and greenery with string lights arranged above white kitchen cabinets", 736, 490, "https://www.pinterest.com/pin/27936460194077298/", "Sculptural Decor Above Cabinets"),
   },
   {
     n: "08",
@@ -114,7 +122,7 @@ const ideas = [
       "Stacked wooden crates do similar work while adding genuine storage &mdash; tucking jars, tins, and smaller vessels inside keeps the look rustic without looking cluttered.",
       "Style either option with almost nothing, a few neutral spheres, or one sculptural object. Sometimes, like the crate stack shown here, the wood texture alone is enough to carry the whole section.",
     ],
-    photo: photo("dough-bowls.jpg", "Stacked wooden crates filled with jars and tins arranged above cream kitchen cabinets with a trailing plant nearby", 640, 1024),
+    photo: pinPhoto("dough-bowls.jpg", "Stacked wooden crates filled with jars and tins arranged above cream kitchen cabinets with a trailing plant nearby", 640, 1024, "https://www.pinterest.com/pin/138626494776107280/", "Wooden Crates Above Kitchen Cabinets"),
   },
   {
     n: "10",
@@ -133,7 +141,7 @@ const ideas = [
       "Dried branches in fall, light greenery in spring, and neutral stems in winter all keep the seasonal nod subtle rather than overwhelming.",
       "A tasteful holiday arrangement like the one shown here &mdash; garland, warm lights, a single festive sign &mdash; proves seasonal styling can still look put-together rather than like a decoration explosion. If a piece says something as specific as \"Pumpkin Spice,\" it doesn't belong up there.",
     ],
-    photo: photo("seasonal-decor.jpg", "Christmas garland, pinecones, candles and a sign reading Today Is a Good Day arranged above white kitchen cabinets", 736, 552),
+    photo: pinPhoto("seasonal-decor.jpg", "Christmas garland, pinecones, candles and a sign reading Today Is a Good Day arranged above white kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/33495590973507454/", "Seasonal Decor Above Cabinets"),
   },
   {
     n: "12",
@@ -143,7 +151,7 @@ const ideas = [
       "These work especially well in classic or traditional kitchens, where a little formality above the cabinets matches the rest of the room.",
       "The height does real work here &mdash; tall stems in matching vases, like the ones shown here, draw the eye upward the same way a taller piece of furniture would.",
     ],
-    photo: photo("architectural.jpg", "Tall dried pampas grass stems in vases, a round wall clock and black candlesticks arranged above white kitchen cabinets", 736, 982),
+    photo: pinPhoto("architectural.jpg", "Tall dried pampas grass stems in vases, a round wall clock and black candlesticks arranged above white kitchen cabinets", 736, 982, "https://www.pinterest.com/pin/4785143351413207/", "Architectural Details Above Cabinets"),
   },
   {
     n: "13",
@@ -153,7 +161,7 @@ const ideas = [
       "Stoneware pitchers in neutral glazes, with a little visible imperfection in the finish, work best &mdash; they feel collected rather than purchased as a matching set.",
       "Paired with a trailing plant, like the setup shown here, pitchers and bowls read as effortless and considerably more expensive than they actually were.",
     ],
-    photo: photo("pitchers.jpg", "Trailing green plant and neutral ceramic pitchers and bowls arranged above cream kitchen cabinets", 683, 1024),
+    photo: pinPhoto("pitchers.jpg", "Trailing green plant and neutral ceramic pitchers and bowls arranged above cream kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/70650287900983592/", "Neutral Pitchers Above Cabinets"),
   },
   {
     n: "14",
@@ -163,7 +171,7 @@ const ideas = [
       "All-white ceramics, all-wood tones, or all-black accents each work on their own &mdash; the trick is picking one lane and staying in it rather than mixing several.",
       "A black-and-white palette like the one shown here, carried through pitchers, greenery, and even the window treatment below, shows exactly how far one consistent color story can stretch.",
     ],
-    photo: photo("monochrome.jpg", "Black and white buffalo check styling above kitchen cabinets with white pitchers, greenery and a Joy sign", 683, 1024),
+    photo: pinPhoto("monochrome.jpg", "Black and white buffalo check styling above kitchen cabinets with white pitchers, greenery and a Joy sign", 683, 1024, "https://www.pinterest.com/pin/5840674511726860/", "Monochrome Above-Cabinet Styling"),
   },
   {
     n: "15",
@@ -173,7 +181,7 @@ const ideas = [
       "Not every cabinet run needs styling. Strategic emptiness actually makes the sections that are styled stand out more by comparison.",
       "A clean, open kitchen like the one shown here, with nothing at all above the cabinets, proves that restraint can look just as finished as a fully styled shelf. If the kitchen already feels busy, stepping back is often the right move.",
     ],
-    photo: photo("empty-space.jpg", "Open white kitchen with bare cabinets and no decor above them, with woven pendant lights and a dining area nearby", 736, 882),
+    photo: pinPhoto("empty-space.jpg", "Open white kitchen with bare cabinets and no decor above them, with woven pendant lights and a dining area nearby", 736, 882, "https://www.pinterest.com/pin/351912464203596/", "Empty Space Above Kitchen Cabinets"),
   },
 ];
 
@@ -193,11 +201,11 @@ ${photo("hero.jpg", "Above-cabinet decor styling with a woven basket, lantern an
 <h2>Why This Space Actually Matters</h2>
 <p>Does anyone consciously notice the space above kitchen cabinets? Yes &mdash; everyone does, they just don't register it as a deliberate decision. The eye naturally travels upward in a kitchen, especially when upper cabinets stop short of the ceiling. Left empty, the kitchen looks unfinished. Left cluttered, it looks chaotic. Styled well, it quietly elevates the entire room the same way throw pillows finish off a living room.</p>
 <p>The decor that dates this space fastest: tiny knickknacks that disappear from view, fake grapes and trailing ivy vines, matching word signs scattered everywhere, and dust-catching clutter with no real visual rhythm. Dated decor almost always comes from filling space instead of actually styling it &mdash; and those are two very different things.</p>
-${photo("intro-matters-1.jpg", "Above-cabinet decor with a woven basket, greenery, framed signs and a lantern above cream kitchen cabinets", 736, 552)}
+${pinPhoto("intro-matters-1.jpg", "Above-cabinet decor with a woven basket, greenery, framed signs and a lantern above cream kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/68744802382/", "Above-Cabinet Decor Styling")}
 
 <h2>Choosing the Right Approach for Your Kitchen</h2>
 <p>Three questions settle most of the decisions here. What's the kitchen's actual style &mdash; a modern kitchen calls for different above-cabinet decor than a farmhouse or transitional one, and staying consistent is what makes the space feel intentional. How high are the cabinets &mdash; short cabinets need taller decor, tall cabinets need more breathing room, and scale matters more here than almost anywhere else in the kitchen. And finally, contrast or continuity &mdash; contrast tends to work better in neutral kitchens, continuity in already-colorful ones, and mixing the two without a plan is what creates visual chaos.</p>
-${photo("intro-choose.jpg", "Above-cabinet styling with mirrors, candlesticks and trailing plants above white kitchen cabinets around a kitchen island with a chandelier", 720, 960)}
+${pinPhoto("intro-choose.jpg", "Above-cabinet styling with mirrors, candlesticks and trailing plants above white kitchen cabinets around a kitchen island with a chandelier", 720, 960, "https://www.pinterest.com/pin/844493674948355/", "Choosing Above-Cabinet Decor")}
 
 <h2>15 Above-the-Cabinet Decor Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

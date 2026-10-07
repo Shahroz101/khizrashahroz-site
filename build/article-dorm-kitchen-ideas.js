@@ -1,13 +1,15 @@
 // Body content for "12 Dorm Kitchen Ideas That Make a Tiny Kitchenette
-// Actually Work". Photos carried over from the source article, with
-// exclusions: the source reused one image twice (once with "and the large
-// console!" text baked into the photo itself), reused it a second time for
-// a different idea, and included a plain white-background product photo
-// (wall pot rack) and one genuinely mismatched photo (a cluttered
-// unrelated kitchen, nothing like a dorm setup) — all four were dropped
-// rather than reused. That leaves photos for 6 of the 12 ideas; ideas
-// alternate photo/no-photo so no two photo-less sections ever run
-// back-to-back. Condensed 3 padded intro H2 sections down to 1.
+// Actually Work". Photos carried over from the source article. The source
+// reused its hero photo (4.jpg) a second time for the Coffee Station idea
+// — kept, downloaded separately as coffee-station.jpg. The "and the large
+// console!" baked-in-text photo and the wall pot-rack product photo were
+// originally dropped for being imperfect; both restored (Compact,
+// Multi-Function Appliances / Removable Hooks) with captions that
+// honestly describe what's shown. One intro-section photo (a cluttered,
+// genuinely unrelated kitchen with no tie to a specific idea) stays
+// excluded. Four ideas (Stackable Dishes, Collapsible Drying Racks,
+// Clip-On Counter Extensions, Wall-Mounted Spice Racks) have no photo in
+// the source at all. Condensed 3 padded intro H2 sections down to 1.
 
 const { picture } = require("./picture-helper.js");
 
@@ -124,8 +126,9 @@ const ideas = [
     paras: [
       "Full-sized appliances overwhelm a tiny kitchen fast. Mini blenders, small toasters, and single-serve coffee makers give you the same function in a fraction of the footprint.",
       "Prioritize anything that does double duty &mdash; a blender that also chops, a toaster oven that replaces both a toaster and a mini oven. Fewer single-purpose gadgets means more usable counter.",
-      "It's tempting to overbuy small appliances that seemed useful in the store. Stick to what you'll actually use weekly, and add anything else later only if the space genuinely allows it.",
+      "A console like the one shown here, with a coffee maker and lamps on top and a mini-fridge and microwave tucked behind closed doors below, proves a few compact appliances can disappear into furniture instead of cluttering the room.",
     ],
+    photo: photo("multi-function-appliances.jpg", "White dorm room console with doors open revealing a mini-fridge and microwave, a coffee maker and two lamps on top between two beds", 588, 1024),
   },
   {
     n: "11",
@@ -143,8 +146,9 @@ const ideas = [
     paras: [
       "Removable adhesive hooks solve the problem every dorm kitchen has: you need more hanging storage, but you can't drill into the wall to get it.",
       "Use them for utensils, towels, oven mitts, or small tools &mdash; anywhere a shelf won't fit but a single hook will. Corners and the wall above a sink are usually the best unclaimed real estate.",
-      "They're inexpensive, they come off without damage at move-out, and they turn genuinely dead wall space into practical storage in about thirty seconds per hook.",
+      "A row of hooks does more work than people expect &mdash; the wall-mounted rack shown here holds an entire set of pots, pans and even cutting boards off the counter, all hanging in a strip that would otherwise sit flat against the wall doing nothing.",
     ],
+    photo: pinPhoto("removable-hooks.jpg", "Wall-mounted metal rack with a row of hooks holding hanging pots, pans and utensils above a kitchen counter with cutting boards", 400, 400, "https://www.pinterest.com/pin/4604719614041044480/", "Wall-Mounted Hook Storage"),
   },
 ];
 

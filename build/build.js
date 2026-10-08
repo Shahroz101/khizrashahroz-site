@@ -122,6 +122,7 @@ const halfBathroomArticle = require("./article-half-bathroom-ideas.js");
 const winterDecorCozyHomeArticle = require("./article-winter-decor-cozy-home.js");
 const bathroomSinkDecorArticle = require("./article-bathroom-sink-decor-ideas.js");
 const diningTableCenterpieceArticle = require("./article-dining-table-centerpiece-ideas.js");
+const farmhouseDecorArticle = require("./article-farmhouse-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1640,6 +1641,17 @@ const longFormPosts = [
     alt: "Candle cluster centerpiece with greenery and mini pumpkins on a dining table",
     image: "/images/dining-table-centerpiece-ideas/hero.jpg",
     bodyHtml: diningTableCenterpieceArticle.body,
+  },
+  {
+    slug: "farmhouse-decor-ideas",
+    title: "15 Farmhouse Decor Ideas for a Cozy Home",
+    category: "Decorating",
+    readingTime: "13 min read",
+    date: "January 1, 2027",
+    excerpt: "From reclaimed wood furniture to layered neutral textiles — 15 farmhouse decor ideas built on comfort, texture and a bit of lived-in imperfection.",
+    alt: "Farmhouse kitchen with exposed beams, a butcher block island and vintage pendant lights",
+    image: "/images/farmhouse-decor-ideas/hero.jpg",
+    bodyHtml: farmhouseDecorArticle.body,
   },
 ];
 

@@ -117,6 +117,7 @@ const christmasAppetizerArticle = require("./article-christmas-appetizer-ideas.j
 const blackFarmhouseLivingRoomArticle = require("./article-black-farmhouse-living-room-ideas.js");
 const diyChristmasGiftArticle = require("./article-diy-christmas-gift-ideas.js");
 const farmhouseLivingRoomArticle = require("./article-farmhouse-living-room-ideas.js");
+const diyFarmhouseBathroomArticle = require("./article-diy-farmhouse-bathroom-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1580,6 +1581,17 @@ const longFormPosts = [
     alt: "Neutral farmhouse living room with shiplap walls and a reclaimed wood coffee table",
     image: "/images/farmhouse-living-room-ideas/hero.jpg",
     bodyHtml: farmhouseLivingRoomArticle.body,
+  },
+  {
+    slug: "diy-farmhouse-bathroom-decor",
+    title: "18 Easy DIY Farmhouse-Style Bathroom Decor Projects",
+    category: "Bathroom",
+    readingTime: "13 min read",
+    date: "December 27, 2026",
+    excerpt: "From a repurposed ladder towel rack to a hand-built wooden vanity — 18 farmhouse bathroom DIY projects that don't require a contractor.",
+    alt: "Rustic reclaimed wood bathroom vanity with a vessel sink and brass fixtures",
+    image: "/images/diy-farmhouse-bathroom-decor/hero.jpg",
+    bodyHtml: diyFarmhouseBathroomArticle.body,
   },
 ];
 

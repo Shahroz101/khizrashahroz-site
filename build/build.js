@@ -149,6 +149,7 @@ const japandiBathroomPrinciplesArticle = require("./article-japandi-bathroom-pri
 const modernSpanishBathroomArticle = require("./article-modern-spanish-bathroom-elements.js");
 const grazingBoardOccasionArticle = require("./article-grazing-board-by-occasion.js");
 const poolsideDecorArticle = require("./article-poolside-decor-summer-vibes.js");
+const bakingStationArticle = require("./article-baking-station-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1964,6 +1965,17 @@ const longFormPosts = [
     alt: "Stylish poolside setup with loungers and summer decor",
     image: "/images/poolside-decor-summer-vibes/hero.png",
     bodyHtml: poolsideDecorArticle.body,
+  },
+  {
+    slug: "baking-station-ideas",
+    title: "8 Baking Station Setups for a Smarter Kitchen",
+    category: "Kitchen",
+    readingTime: "10 min read",
+    date: "January 28, 2027",
+    excerpt: "From a pantry corner to a full baking island — 8 dedicated baking station setups that keep flour, mixers and tools from taking over the main counter.",
+    alt: "Organized baking station with mixer, ingredients and baking tools",
+    image: "/images/baking-station-ideas/hero.jpg",
+    bodyHtml: bakingStationArticle.body,
   },
 ];
 

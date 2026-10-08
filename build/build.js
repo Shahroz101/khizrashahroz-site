@@ -128,6 +128,7 @@ const smallPantryHacksArticle = require("./article-small-pantry-organization-hac
 const laundryRoomRoutineArticle = require("./article-laundry-room-routine-workflow.js");
 const topOfFridgeStylingArticle = require("./article-top-of-fridge-styling-guide.js");
 const elegantPowderRoomArticle = require("./article-elegant-powder-room-design-direction.js");
+const deskSetupConfigurationsArticle = require("./article-desk-setup-configurations.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1712,6 +1713,17 @@ const longFormPosts = [
     alt: "Elegant small powder room with a floating vanity, backlit mirror and warm wood tones",
     image: "/images/elegant-powder-room-design-direction/hero.jpg",
     bodyHtml: elegantPowderRoomArticle.body,
+  },
+  {
+    slug: "desk-setup-configurations",
+    title: "17 Desk Setup Configurations for How You Actually Work",
+    category: "Home Office",
+    readingTime: "11 min read",
+    date: "January 7, 2027",
+    excerpt: "From a dual-monitor station to a setup built for a side hobby — 17 desk configurations organized around how the work actually happens, not just how it looks.",
+    alt: "Ergonomic home office chair paired with an adjustable standing desk",
+    image: "/images/desk-setup-configurations/ergonomic.png",
+    bodyHtml: deskSetupConfigurationsArticle.body,
   },
 ];
 

@@ -111,6 +111,7 @@ const tvWallDecorArticle = require("./article-tv-wall-decor-ideas.js");
 const textureInHomeDecorArticle = require("./article-texture-in-home-decor.js");
 const winterCraftArticle = require("./article-winter-craft-ideas.js");
 const christmasBedroomDecorArticle = require("./article-christmas-bedroom-decor-ideas.js");
+const bathroomMirrorArticle = require("./article-bathroom-mirror-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1508,6 +1509,17 @@ const longFormPosts = [
     alt: "Christmas bedroom with a greenery and string light headboard",
     image: "/images/christmas-bedroom-decor-ideas/hero.jpg",
     bodyHtml: christmasBedroomDecorArticle.body,
+  },
+  {
+    slug: "bathroom-mirror-ideas",
+    title: "Gorgeous Bathroom Mirror Ideas to Upgrade Your Vanity Area",
+    category: "Bathroom",
+    readingTime: "11 min read",
+    date: "December 21, 2026",
+    excerpt: "From a backlit round mirror to a full smart-mirror setup — a complete guide to choosing the right mirror for any bathroom vanity.",
+    alt: "Backlit rectangular bathroom mirror above a wood vanity",
+    image: "/images/bathroom-mirror-ideas/hero.jpg",
+    bodyHtml: bathroomMirrorArticle.body,
   },
 ];
 

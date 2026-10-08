@@ -138,6 +138,7 @@ const nurseryDesignDirectionArticle = require("./article-nursery-design-directio
 const coffeeStationPlacementArticle = require("./article-coffee-station-placement-workflow.js");
 const wovenTrayStylingArticle = require("./article-woven-tray-styling-contents.js");
 const bathroomRefreshPriorityArticle = require("./article-bathroom-refresh-priority-guide.js");
+const spaBathroomRealityArticle = require("./article-spa-bathroom-reality-check.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1832,6 +1833,17 @@ const longFormPosts = [
     alt: "Luxurious bathroom with plush oversized towels and elegant styling",
     image: "/images/bathroom-refresh-priority-guide/hero.png",
     bodyHtml: bathroomRefreshPriorityArticle.body,
+  },
+  {
+    slug: "spa-bathroom-reality-check",
+    title: "20 Spa Bathroom Features, Ranked by How Realistic They Actually Are",
+    category: "Bathroom",
+    readingTime: "14 min read",
+    date: "January 17, 2027",
+    excerpt: "From a weekend towel swap to a full steam shower install — 20 spa bathroom features sorted by what they actually take to pull off, not just how they photograph.",
+    alt: "Serene and opulent spa-like bathroom with soft lighting",
+    image: "/images/spa-bathroom-reality-check/hero.png",
+    bodyHtml: spaBathroomRealityArticle.body,
   },
 ];
 

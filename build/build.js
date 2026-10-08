@@ -132,6 +132,7 @@ const deskSetupConfigurationsArticle = require("./article-desk-setup-configurati
 const aboveFireplaceScaleArticle = require("./article-above-fireplace-scale-proportion.js");
 const bathroomOrgZoneArticle = require("./article-bathroom-organization-zone-system.js");
 const blackPowderRoomArticle = require("./article-black-powder-room-material-choices.js");
+const consoleTableStylingArticle = require("./article-console-table-styling-rules.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1760,6 +1761,17 @@ const longFormPosts = [
     alt: "Elegant black powder room with striking contrast and bold finishes",
     image: "/images/black-powder-room-material-choices/hero.png",
     bodyHtml: blackPowderRoomArticle.body,
+  },
+  {
+    slug: "console-table-styling-rules",
+    title: "12 Console Table Styling Rules That Actually Work",
+    category: "Entryway",
+    readingTime: "11 min read",
+    date: "January 11, 2027",
+    excerpt: "From the one golden rule to twelve ways to put it into practice — console table styling built around restraint and scale, not just a shopping list of objects.",
+    alt: "Vintage-style console table styled with a mirror, lamp and small bowl",
+    image: "/images/console-table-styling-rules/hero.jpg",
+    bodyHtml: consoleTableStylingArticle.body,
   },
 ];
 

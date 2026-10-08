@@ -146,6 +146,7 @@ const homeDecorTrendsArticle = require("./article-home-decor-trends-worth-adopti
 const bedroomOfficeBoundaryArticle = require("./article-bedroom-office-boundary-setting.js");
 const kitchenUpgradesValueArticle = require("./article-kitchen-upgrades-value-check.js");
 const japandiBathroomPrinciplesArticle = require("./article-japandi-bathroom-principles.js");
+const modernSpanishBathroomArticle = require("./article-modern-spanish-bathroom-elements.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1928,6 +1929,17 @@ const longFormPosts = [
     alt: "Serene Japandi bathroom combining minimalism and warmth",
     image: "/images/japandi-bathroom-principles/hero.png",
     bodyHtml: japandiBathroomPrinciplesArticle.body,
+  },
+  {
+    slug: "modern-spanish-bathroom-elements",
+    title: "5 Elements That Define a Modern Spanish Bathroom",
+    category: "Bathroom",
+    readingTime: "8 min read",
+    date: "January 25, 2027",
+    excerpt: "From terracotta tile to mixed metal hardware — the five specific elements that separate a genuine modern Spanish bathroom from a generic spa-inspired one.",
+    alt: "Freestanding tub in front of French doors opening to a Spanish-style courtyard",
+    image: "/images/modern-spanish-bathroom-elements/hero.png",
+    bodyHtml: modernSpanishBathroomArticle.body,
   },
 ];
 

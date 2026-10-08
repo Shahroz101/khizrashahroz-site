@@ -126,6 +126,7 @@ const farmhouseDecorArticle = require("./article-farmhouse-decor-ideas.js");
 const homeOfficeWorkspaceArticle = require("./article-home-office-productive-workspace.js");
 const smallPantryHacksArticle = require("./article-small-pantry-organization-hacks.js");
 const laundryRoomRoutineArticle = require("./article-laundry-room-routine-workflow.js");
+const topOfFridgeStylingArticle = require("./article-top-of-fridge-styling-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1688,6 +1689,17 @@ const longFormPosts = [
     alt: "Bright laundry room with a front-load washer, woven baskets and open shelving",
     image: "/images/laundry-room-routine-workflow/hero.jpg",
     bodyHtml: laundryRoomRoutineArticle.body,
+  },
+  {
+    slug: "top-of-fridge-styling-guide",
+    title: "16 Top-of-Fridge Styling Ideas (and When to Just Leave It Empty)",
+    category: "Kitchen",
+    readingTime: "11 min read",
+    date: "January 5, 2027",
+    excerpt: "From oversized woven baskets to knowing when to leave it bare — 16 top-of-fridge styling ideas built around an actual decision framework, not just a shopping list.",
+    alt: "Styled top of fridge with a Magnolia Home tray, cookbook and greenery",
+    image: "/images/top-of-fridge-styling-guide/intro-eye-level.jpg",
+    bodyHtml: topOfFridgeStylingArticle.body,
   },
 ];
 

@@ -119,6 +119,7 @@ const diyChristmasGiftArticle = require("./article-diy-christmas-gift-ideas.js")
 const farmhouseLivingRoomArticle = require("./article-farmhouse-living-room-ideas.js");
 const diyFarmhouseBathroomArticle = require("./article-diy-farmhouse-bathroom-decor.js");
 const halfBathroomArticle = require("./article-half-bathroom-ideas.js");
+const winterDecorCozyHomeArticle = require("./article-winter-decor-cozy-home.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1604,6 +1605,17 @@ const longFormPosts = [
     alt: "Modern half bathroom with a floating vanity and statement lighting",
     image: "/images/half-bathroom-ideas/hero.jpg",
     bodyHtml: halfBathroomArticle.body,
+  },
+  {
+    slug: "winter-decor-cozy-home",
+    title: "14 Winter Decor Ideas for a Cozy Home",
+    category: "Decorating",
+    readingTime: "12 min read",
+    date: "December 29, 2026",
+    excerpt: "From chunky throws to a cohesive winter color palette — 14 ways to make a home feel genuinely cozy through the colder months.",
+    alt: "Cozy living room with chunky knit throws and faux fur pillows styled for winter",
+    image: "/images/winter-decor-cozy-home/hero.jpg",
+    bodyHtml: winterDecorCozyHomeArticle.body,
   },
 ];
 

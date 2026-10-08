@@ -106,6 +106,7 @@ const bohoBedroomDecorArticle = require("./article-boho-bedroom-decor-ideas.js")
 const smallBackyardPoolArticle = require("./article-small-backyard-pool-ideas.js");
 const neutralBedroomArticle = require("./article-neutral-bedroom-ideas.js");
 const outdoorKitchenArticle = require("./article-outdoor-kitchen-ideas.js");
+const timelessKitchenPaintArticle = require("./article-timeless-kitchen-paint-colors.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1448,6 +1449,17 @@ const longFormPosts = [
     alt: "Built-in outdoor kitchen with a pergola, grill and stone countertop in a desert backyard",
     image: "/images/outdoor-kitchen-ideas/hero.jpg",
     bodyHtml: outdoorKitchenArticle.body,
+  },
+  {
+    slug: "timeless-kitchen-paint-colors",
+    title: "20 Timeless Kitchen Paint Colors to Transform Your Space",
+    category: "Kitchen",
+    readingTime: "14 min read",
+    date: "December 16, 2026",
+    excerpt: "From soft white to deep forest green — 20 timeless kitchen paint colors picked for how well they hold up long after the trend cycle moves on.",
+    alt: "Elegant kitchen painted in a timeless blush tone with a large floral centerpiece",
+    image: "/images/timeless-kitchen-paint-colors/hero.jpg",
+    bodyHtml: timelessKitchenPaintArticle.body,
   },
 ];
 

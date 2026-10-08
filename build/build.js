@@ -131,6 +131,7 @@ const elegantPowderRoomArticle = require("./article-elegant-powder-room-design-d
 const deskSetupConfigurationsArticle = require("./article-desk-setup-configurations.js");
 const aboveFireplaceScaleArticle = require("./article-above-fireplace-scale-proportion.js");
 const bathroomOrgZoneArticle = require("./article-bathroom-organization-zone-system.js");
+const blackPowderRoomArticle = require("./article-black-powder-room-material-choices.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1748,6 +1749,17 @@ const longFormPosts = [
     alt: "Modern bathroom with tiered shelving used for vertical organization",
     image: "/images/bathroom-organization-zone-system/tiered-shelving.png",
     bodyHtml: bathroomOrgZoneArticle.body,
+  },
+  {
+    slug: "black-powder-room-material-choices",
+    title: "12 Black Powder Room Ideas, Executed Through Material Choice",
+    category: "Bathroom",
+    readingTime: "10 min read",
+    date: "January 10, 2027",
+    excerpt: "From matte walls with brass accents to black paired with warm wood — 12 black powder room ideas built around how the color actually gets executed, surface by surface.",
+    alt: "Elegant black powder room with striking contrast and bold finishes",
+    image: "/images/black-powder-room-material-choices/hero.png",
+    bodyHtml: blackPowderRoomArticle.body,
   },
 ];
 

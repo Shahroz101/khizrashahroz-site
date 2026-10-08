@@ -130,6 +130,7 @@ const topOfFridgeStylingArticle = require("./article-top-of-fridge-styling-guide
 const elegantPowderRoomArticle = require("./article-elegant-powder-room-design-direction.js");
 const deskSetupConfigurationsArticle = require("./article-desk-setup-configurations.js");
 const aboveFireplaceScaleArticle = require("./article-above-fireplace-scale-proportion.js");
+const bathroomOrgZoneArticle = require("./article-bathroom-organization-zone-system.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1736,6 +1737,17 @@ const longFormPosts = [
     alt: "Fireplace mantel styled with a round mirror, dried branches and ceramic vases",
     image: "/images/above-fireplace-scale-proportion/hero.jpg",
     bodyHtml: aboveFireplaceScaleArticle.body,
+  },
+  {
+    slug: "bathroom-organization-zone-system",
+    title: "15 Bathroom Organization Hacks Built Around a Real Zone System",
+    category: "Bathroom",
+    readingTime: "10 min read",
+    date: "January 9, 2027",
+    excerpt: "From drawer dividers to a labeled zone system — 15 bathroom organization hacks built around actual daily habits, not just a shopping list of bins.",
+    alt: "Modern bathroom with tiered shelving used for vertical organization",
+    image: "/images/bathroom-organization-zone-system/tiered-shelving.png",
+    bodyHtml: bathroomOrgZoneArticle.body,
   },
 ];
 

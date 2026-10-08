@@ -124,6 +124,7 @@ const bathroomSinkDecorArticle = require("./article-bathroom-sink-decor-ideas.js
 const diningTableCenterpieceArticle = require("./article-dining-table-centerpiece-ideas.js");
 const farmhouseDecorArticle = require("./article-farmhouse-decor-ideas.js");
 const homeOfficeWorkspaceArticle = require("./article-home-office-productive-workspace.js");
+const smallPantryHacksArticle = require("./article-small-pantry-organization-hacks.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1664,6 +1665,17 @@ const longFormPosts = [
     alt: "Modern, sleek home office setup with an ergonomic chair and adjustable desk",
     image: "/images/home-office-productive-workspace/hero.png",
     bodyHtml: homeOfficeWorkspaceArticle.body,
+  },
+  {
+    slug: "small-pantry-organization-hacks",
+    title: "15 Small Pantry Organization Hacks for a Clutter-Free Kitchen",
+    category: "Kitchen",
+    readingTime: "10 min read",
+    date: "January 3, 2027",
+    excerpt: "From vertical storage to a slim rolling cart — 15 small pantry organization hacks that work even in a single cabinet or narrow closet.",
+    alt: "Modern pantry with pull-out shelving neatly organized with canned goods and jars",
+    image: "/images/small-pantry-organization-hacks/hero.jpeg",
+    bodyHtml: smallPantryHacksArticle.body,
   },
 ];
 

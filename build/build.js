@@ -120,6 +120,7 @@ const farmhouseLivingRoomArticle = require("./article-farmhouse-living-room-idea
 const diyFarmhouseBathroomArticle = require("./article-diy-farmhouse-bathroom-decor.js");
 const halfBathroomArticle = require("./article-half-bathroom-ideas.js");
 const winterDecorCozyHomeArticle = require("./article-winter-decor-cozy-home.js");
+const bathroomSinkDecorArticle = require("./article-bathroom-sink-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1616,6 +1617,17 @@ const longFormPosts = [
     alt: "Cozy living room with chunky knit throws and faux fur pillows styled for winter",
     image: "/images/winter-decor-cozy-home/hero.jpg",
     bodyHtml: winterDecorCozyHomeArticle.body,
+  },
+  {
+    slug: "bathroom-sink-decor-ideas",
+    title: "15 Bathroom Sink Decor Ideas That Actually Make a Bathroom Look Great",
+    category: "Bathroom",
+    readingTime: "12 min read",
+    date: "December 30, 2026",
+    excerpt: "From a decorative tray to a subtle metallic accent — 15 bathroom sink decor ideas that make the most-used surface in the house look intentional.",
+    alt: "Styled bathroom sink with a soap dispenser, greenery and rolled towels",
+    image: "/images/bathroom-sink-decor-ideas/hero.jpg",
+    bodyHtml: bathroomSinkDecorArticle.body,
   },
 ];
 

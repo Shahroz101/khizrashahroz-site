@@ -142,6 +142,7 @@ const spaBathroomRealityArticle = require("./article-spa-bathroom-reality-check.
 const smallBedroomVisualTricksArticle = require("./article-small-bedroom-visual-space-tricks.js");
 const postChristmasWinterArticle = require("./article-post-christmas-winter-transition.js");
 const bohoBedroomDiyBuyArticle = require("./article-boho-bedroom-diy-vs-buy.js");
+const homeDecorTrendsArticle = require("./article-home-decor-trends-worth-adopting.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1880,6 +1881,17 @@ const longFormPosts = [
     alt: "Serene bohemian bedroom exuding comfort and warmth",
     image: "/images/boho-bedroom-diy-vs-buy/hero.png",
     bodyHtml: bohoBedroomDiyBuyArticle.body,
+  },
+  {
+    slug: "home-decor-trends-worth-adopting",
+    title: "24 Home Decor Trends: Which Ones Are Actually Worth Adopting",
+    category: "Decorating",
+    readingTime: "16 min read",
+    date: "January 21, 2027",
+    excerpt: "From safe bets like mixed textures and vintage finds to riskier swings like curved furniture — an honest read on 24 current home decor trends.",
+    alt: "Futuristic home interior seamlessly blending modern design elements",
+    image: "/images/home-decor-trends-worth-adopting/hero.png",
+    bodyHtml: homeDecorTrendsArticle.body,
   },
 ];
 

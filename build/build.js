@@ -134,6 +134,7 @@ const bathroomOrgZoneArticle = require("./article-bathroom-organization-zone-sys
 const blackPowderRoomArticle = require("./article-black-powder-room-material-choices.js");
 const consoleTableStylingArticle = require("./article-console-table-styling-rules.js");
 const bedroomSelfExpressionArticle = require("./article-bedroom-self-expression-ideas.js");
+const nurseryDesignDirectionArticle = require("./article-nursery-design-direction-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1784,6 +1785,17 @@ const longFormPosts = [
     alt: "Tranquil bedroom in soft pastel tones with layered textures",
     image: "/images/bedroom-self-expression-ideas/hero.png",
     bodyHtml: bedroomSelfExpressionArticle.body,
+  },
+  {
+    slug: "nursery-design-direction-guide",
+    title: "14 Nursery Design Directions to Pick Before You Buy Anything",
+    category: "Nursery",
+    readingTime: "13 min read",
+    date: "January 13, 2027",
+    excerpt: "From neutral and timeless to small-space-first — 14 complete nursery design directions to choose from before buying a single piece of furniture.",
+    alt: "Soft, calming baby nursery room with warm natural light",
+    image: "/images/nursery-design-direction-guide/hero.jpg",
+    bodyHtml: nurseryDesignDirectionArticle.body,
   },
 ];
 

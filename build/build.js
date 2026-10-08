@@ -116,6 +116,7 @@ const christmasGiftBasketArticle = require("./article-christmas-gift-basket-idea
 const christmasAppetizerArticle = require("./article-christmas-appetizer-ideas.js");
 const blackFarmhouseLivingRoomArticle = require("./article-black-farmhouse-living-room-ideas.js");
 const diyChristmasGiftArticle = require("./article-diy-christmas-gift-ideas.js");
+const farmhouseLivingRoomArticle = require("./article-farmhouse-living-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1568,6 +1569,17 @@ const longFormPosts = [
     alt: "Hand-painted wooden Christmas ornaments being crafted on a table",
     image: "/images/diy-christmas-gift-ideas/hero.jpg",
     bodyHtml: diyChristmasGiftArticle.body,
+  },
+  {
+    slug: "farmhouse-living-room-ideas",
+    title: "10 Farmhouse Living Room Ideas for a Rustic and Cozy Feel",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "December 26, 2026",
+    excerpt: "From a reclaimed wood coffee table to layered rugs — 10 farmhouse living room ideas built on natural materials and a bit of history.",
+    alt: "Neutral farmhouse living room with shiplap walls and a reclaimed wood coffee table",
+    image: "/images/farmhouse-living-room-ideas/hero.jpg",
+    bodyHtml: farmhouseLivingRoomArticle.body,
   },
 ];
 

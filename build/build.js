@@ -143,6 +143,7 @@ const smallBedroomVisualTricksArticle = require("./article-small-bedroom-visual-
 const postChristmasWinterArticle = require("./article-post-christmas-winter-transition.js");
 const bohoBedroomDiyBuyArticle = require("./article-boho-bedroom-diy-vs-buy.js");
 const homeDecorTrendsArticle = require("./article-home-decor-trends-worth-adopting.js");
+const bedroomOfficeBoundaryArticle = require("./article-bedroom-office-boundary-setting.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1892,6 +1893,17 @@ const longFormPosts = [
     alt: "Futuristic home interior seamlessly blending modern design elements",
     image: "/images/home-decor-trends-worth-adopting/hero.png",
     bodyHtml: homeDecorTrendsArticle.body,
+  },
+  {
+    slug: "bedroom-office-boundary-setting",
+    title: "20 Bedroom Office Setups That Actually Separate Work From Sleep",
+    category: "Home Office",
+    readingTime: "14 min read",
+    date: "January 22, 2027",
+    excerpt: "From a curtain-covered hideaway to a desk that folds flat against the wall — 20 ways to keep a shared bedroom office from blurring into the rest of the room.",
+    alt: "Warm and inviting bedroom workspace balancing comfort and function",
+    image: "/images/bedroom-office-boundary-setting/hero.png",
+    bodyHtml: bedroomOfficeBoundaryArticle.body,
   },
 ];
 

@@ -121,6 +121,7 @@ const diyFarmhouseBathroomArticle = require("./article-diy-farmhouse-bathroom-de
 const halfBathroomArticle = require("./article-half-bathroom-ideas.js");
 const winterDecorCozyHomeArticle = require("./article-winter-decor-cozy-home.js");
 const bathroomSinkDecorArticle = require("./article-bathroom-sink-decor-ideas.js");
+const diningTableCenterpieceArticle = require("./article-dining-table-centerpiece-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1628,6 +1629,17 @@ const longFormPosts = [
     alt: "Styled bathroom sink with a soap dispenser, greenery and rolled towels",
     image: "/images/bathroom-sink-decor-ideas/hero.jpg",
     bodyHtml: bathroomSinkDecorArticle.body,
+  },
+  {
+    slug: "dining-table-centerpiece-ideas",
+    title: "15 Beautiful Dining Table Centerpiece Ideas You Can Copy",
+    category: "Dining Room",
+    readingTime: "12 min read",
+    date: "December 31, 2026",
+    excerpt: "From a low floral arrangement to a rustic dough bowl — 15 dining table centerpiece ideas built around one strong focal point.",
+    alt: "Candle cluster centerpiece with greenery and mini pumpkins on a dining table",
+    image: "/images/dining-table-centerpiece-ideas/hero.jpg",
+    bodyHtml: diningTableCenterpieceArticle.body,
   },
 ];
 

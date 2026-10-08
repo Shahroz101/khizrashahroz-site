@@ -140,6 +140,7 @@ const wovenTrayStylingArticle = require("./article-woven-tray-styling-contents.j
 const bathroomRefreshPriorityArticle = require("./article-bathroom-refresh-priority-guide.js");
 const spaBathroomRealityArticle = require("./article-spa-bathroom-reality-check.js");
 const smallBedroomVisualTricksArticle = require("./article-small-bedroom-visual-space-tricks.js");
+const postChristmasWinterArticle = require("./article-post-christmas-winter-transition.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1856,6 +1857,17 @@ const longFormPosts = [
     alt: "Beautifully designed small bedroom with a light, airy feel",
     image: "/images/small-bedroom-visual-space-tricks/hero.jpeg",
     bodyHtml: smallBedroomVisualTricksArticle.body,
+  },
+  {
+    slug: "post-christmas-winter-transition",
+    title: "How to Transition From Christmas to Winter Decor, Step by Step",
+    category: "Decorating",
+    readingTime: "14 min read",
+    date: "January 19, 2027",
+    excerpt: "From what to take down first to what quietly stays — 20 ideas for moving a home from holiday decor into a cozy winter look without starting over.",
+    alt: "Cozy winter living room with warm textures after Christmas decor comes down",
+    image: "/images/post-christmas-winter-transition/hero.jpg",
+    bodyHtml: postChristmasWinterArticle.body,
   },
 ];
 

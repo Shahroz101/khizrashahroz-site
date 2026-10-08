@@ -133,6 +133,7 @@ const aboveFireplaceScaleArticle = require("./article-above-fireplace-scale-prop
 const bathroomOrgZoneArticle = require("./article-bathroom-organization-zone-system.js");
 const blackPowderRoomArticle = require("./article-black-powder-room-material-choices.js");
 const consoleTableStylingArticle = require("./article-console-table-styling-rules.js");
+const bedroomSelfExpressionArticle = require("./article-bedroom-self-expression-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1772,6 +1773,17 @@ const longFormPosts = [
     alt: "Vintage-style console table styled with a mirror, lamp and small bowl",
     image: "/images/console-table-styling-rules/hero.jpg",
     bodyHtml: consoleTableStylingArticle.body,
+  },
+  {
+    slug: "bedroom-self-expression-ideas",
+    title: "12 Ways to Make a Bedroom Feel Like Genuinely Yours",
+    category: "Bedroom",
+    readingTime: "10 min read",
+    date: "January 12, 2027",
+    excerpt: "From a DIY wall display to a mood board that actually gets used — 12 bedroom ideas built around self-expression and personality, not just comfort.",
+    alt: "Tranquil bedroom in soft pastel tones with layered textures",
+    image: "/images/bedroom-self-expression-ideas/hero.png",
+    bodyHtml: bedroomSelfExpressionArticle.body,
   },
 ];
 

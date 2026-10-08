@@ -118,6 +118,7 @@ const blackFarmhouseLivingRoomArticle = require("./article-black-farmhouse-livin
 const diyChristmasGiftArticle = require("./article-diy-christmas-gift-ideas.js");
 const farmhouseLivingRoomArticle = require("./article-farmhouse-living-room-ideas.js");
 const diyFarmhouseBathroomArticle = require("./article-diy-farmhouse-bathroom-decor.js");
+const halfBathroomArticle = require("./article-half-bathroom-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1592,6 +1593,17 @@ const longFormPosts = [
     alt: "Rustic reclaimed wood bathroom vanity with a vessel sink and brass fixtures",
     image: "/images/diy-farmhouse-bathroom-decor/hero.jpg",
     bodyHtml: diyFarmhouseBathroomArticle.body,
+  },
+  {
+    slug: "half-bathroom-ideas",
+    title: "14 Half Bathroom Ideas for an Inviting Space",
+    category: "Bathroom",
+    readingTime: "11 min read",
+    date: "December 28, 2026",
+    excerpt: "From a statement mirror to a sliding pocket door — 14 half bathroom ideas that make the most of a room with very little square footage.",
+    alt: "Modern half bathroom with a floating vanity and statement lighting",
+    image: "/images/half-bathroom-ideas/hero.jpg",
+    bodyHtml: halfBathroomArticle.body,
   },
 ];
 

@@ -113,6 +113,7 @@ const winterCraftArticle = require("./article-winter-craft-ideas.js");
 const christmasBedroomDecorArticle = require("./article-christmas-bedroom-decor-ideas.js");
 const bathroomMirrorArticle = require("./article-bathroom-mirror-ideas.js");
 const christmasGiftBasketArticle = require("./article-christmas-gift-basket-ideas.js");
+const christmasAppetizerArticle = require("./article-christmas-appetizer-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1532,6 +1533,17 @@ const longFormPosts = [
     alt: "Cozy Christmas gift basket filled with plaid pillows and a tartan throw",
     image: "/images/christmas-gift-basket-ideas/hero.jpg",
     bodyHtml: christmasGiftBasketArticle.body,
+  },
+  {
+    slug: "christmas-appetizer-ideas",
+    title: "24 Christmas Appetizer Ideas for Your Holiday Table",
+    category: "Entertaining",
+    readingTime: "17 min read",
+    date: "December 23, 2026",
+    excerpt: "From cranberry brie crostini to a tree-shaped charcuterie board — 24 Christmas appetizer ideas that balance rich and light for a holiday spread.",
+    alt: "Full Christmas appetizer spread with charcuterie, skewers and dips on a holiday table",
+    image: "/images/christmas-appetizer-ideas/hero.jpg",
+    bodyHtml: christmasAppetizerArticle.body,
   },
 ];
 

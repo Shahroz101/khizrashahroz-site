@@ -144,6 +144,7 @@ const postChristmasWinterArticle = require("./article-post-christmas-winter-tran
 const bohoBedroomDiyBuyArticle = require("./article-boho-bedroom-diy-vs-buy.js");
 const homeDecorTrendsArticle = require("./article-home-decor-trends-worth-adopting.js");
 const bedroomOfficeBoundaryArticle = require("./article-bedroom-office-boundary-setting.js");
+const kitchenUpgradesValueArticle = require("./article-kitchen-upgrades-value-check.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1904,6 +1905,17 @@ const longFormPosts = [
     alt: "Warm and inviting bedroom workspace balancing comfort and function",
     image: "/images/bedroom-office-boundary-setting/hero.png",
     bodyHtml: bedroomOfficeBoundaryArticle.body,
+  },
+  {
+    slug: "kitchen-upgrades-value-check",
+    title: "10 Kitchen Upgrades: Which Ones Hold Value, Which Ones Are Just a Trend",
+    category: "Kitchen",
+    readingTime: "11 min read",
+    date: "January 23, 2027",
+    excerpt: "From a farmhouse sink that never dates to a bold backsplash that might not — 10 kitchen upgrades assessed for lasting value, not just current style.",
+    alt: "Luxurious kitchen showcasing elegant design and premium finishes",
+    image: "/images/kitchen-upgrades-value-check/hero.png",
+    bodyHtml: kitchenUpgradesValueArticle.body,
   },
 ];
 

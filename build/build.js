@@ -109,6 +109,7 @@ const outdoorKitchenArticle = require("./article-outdoor-kitchen-ideas.js");
 const timelessKitchenPaintArticle = require("./article-timeless-kitchen-paint-colors.js");
 const tvWallDecorArticle = require("./article-tv-wall-decor-ideas.js");
 const textureInHomeDecorArticle = require("./article-texture-in-home-decor.js");
+const winterCraftArticle = require("./article-winter-craft-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1484,6 +1485,17 @@ const longFormPosts = [
     alt: "Cozy textured living room with layered rugs, faux fur and velvet pillows",
     image: "/images/texture-in-home-decor/hero.jpg",
     bodyHtml: textureInHomeDecorArticle.body,
+  },
+  {
+    slug: "winter-craft-ideas",
+    title: "20 Winter Craft Ideas That Actually Feel Worth Making",
+    category: "Holidays",
+    readingTime: "14 min read",
+    date: "December 19, 2026",
+    excerpt: "From a chunky yarn wreath to a cozy blanket ladder — 20 winter craft ideas that double as decor worth keeping up all season.",
+    alt: "Winter shadow box craft with a felted snowman and birch branches",
+    image: "/images/winter-craft-ideas/hero.jpg",
+    bodyHtml: winterCraftArticle.body,
   },
 ];
 

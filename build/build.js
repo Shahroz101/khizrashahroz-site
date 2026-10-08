@@ -150,6 +150,7 @@ const modernSpanishBathroomArticle = require("./article-modern-spanish-bathroom-
 const grazingBoardOccasionArticle = require("./article-grazing-board-by-occasion.js");
 const poolsideDecorArticle = require("./article-poolside-decor-summer-vibes.js");
 const bakingStationArticle = require("./article-baking-station-ideas.js");
+const fluffyBedStylingArticle = require("./article-fluffy-bed-styling-technique.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1976,6 +1977,17 @@ const longFormPosts = [
     alt: "Organized baking station with mixer, ingredients and baking tools",
     image: "/images/baking-station-ideas/hero.jpg",
     bodyHtml: bakingStationArticle.body,
+  },
+  {
+    slug: "fluffy-bed-styling-technique",
+    title: "How to Style a Bed So It Actually Looks Fluffy",
+    category: "Bedroom",
+    readingTime: "14 min read",
+    date: "January 29, 2027",
+    excerpt: "From a real duvet insert upgrade to the karate-chop pillow crease — the actual technique behind a bed that looks plush and hotel-worthy, not just made.",
+    alt: "Modern bedroom with a neatly styled bed featuring layered pillows",
+    image: "/images/fluffy-bed-styling-technique/hero.jpg",
+    bodyHtml: fluffyBedStylingArticle.body,
   },
 ];
 

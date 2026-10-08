@@ -123,6 +123,7 @@ const winterDecorCozyHomeArticle = require("./article-winter-decor-cozy-home.js"
 const bathroomSinkDecorArticle = require("./article-bathroom-sink-decor-ideas.js");
 const diningTableCenterpieceArticle = require("./article-dining-table-centerpiece-ideas.js");
 const farmhouseDecorArticle = require("./article-farmhouse-decor-ideas.js");
+const homeOfficeWorkspaceArticle = require("./article-home-office-productive-workspace.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1652,6 +1653,17 @@ const longFormPosts = [
     alt: "Farmhouse kitchen with exposed beams, a butcher block island and vintage pendant lights",
     image: "/images/farmhouse-decor-ideas/hero.jpg",
     bodyHtml: farmhouseDecorArticle.body,
+  },
+  {
+    slug: "home-office-productive-workspace",
+    title: "10 Ways to Turn a Spare Corner Into a Home Office You Actually Want to Work In",
+    category: "Home Office",
+    readingTime: "9 min read",
+    date: "January 2, 2027",
+    excerpt: "From a chair worth sitting in to real natural light — 10 practical changes that turn any spare corner into a home office that actually gets used.",
+    alt: "Modern, sleek home office setup with an ergonomic chair and adjustable desk",
+    image: "/images/home-office-productive-workspace/hero.png",
+    bodyHtml: homeOfficeWorkspaceArticle.body,
   },
 ];
 

@@ -107,6 +107,7 @@ const smallBackyardPoolArticle = require("./article-small-backyard-pool-ideas.js
 const neutralBedroomArticle = require("./article-neutral-bedroom-ideas.js");
 const outdoorKitchenArticle = require("./article-outdoor-kitchen-ideas.js");
 const timelessKitchenPaintArticle = require("./article-timeless-kitchen-paint-colors.js");
+const tvWallDecorArticle = require("./article-tv-wall-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1460,6 +1461,17 @@ const longFormPosts = [
     alt: "Elegant kitchen painted in a timeless blush tone with a large floral centerpiece",
     image: "/images/timeless-kitchen-paint-colors/hero.jpg",
     bodyHtml: timelessKitchenPaintArticle.body,
+  },
+  {
+    slug: "tv-wall-decor-ideas",
+    title: "20 TV Wall Decor Ideas to Elevate Your Entertainment Space",
+    category: "Living Room",
+    readingTime: "14 min read",
+    date: "December 17, 2026",
+    excerpt: "From a bold accent wall to a built-in niche — 20 TV wall decor ideas that turn the screen into just one part of a considered wall.",
+    alt: "Sophisticated living room with a TV mounted on a dark textured accent wall",
+    image: "/images/tv-wall-decor-ideas/hero.jpg",
+    bodyHtml: tvWallDecorArticle.body,
   },
 ];
 

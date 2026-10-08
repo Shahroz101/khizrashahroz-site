@@ -114,6 +114,7 @@ const christmasBedroomDecorArticle = require("./article-christmas-bedroom-decor-
 const bathroomMirrorArticle = require("./article-bathroom-mirror-ideas.js");
 const christmasGiftBasketArticle = require("./article-christmas-gift-basket-ideas.js");
 const christmasAppetizerArticle = require("./article-christmas-appetizer-ideas.js");
+const blackFarmhouseLivingRoomArticle = require("./article-black-farmhouse-living-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1544,6 +1545,17 @@ const longFormPosts = [
     alt: "Full Christmas appetizer spread with charcuterie, skewers and dips on a holiday table",
     image: "/images/christmas-appetizer-ideas/hero.jpg",
     bodyHtml: christmasAppetizerArticle.body,
+  },
+  {
+    slug: "black-farmhouse-living-room-ideas",
+    title: "Black Farmhouse Living Room Ideas for a Bold and Elegant Look",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "December 24, 2026",
+    excerpt: "From a black leather sofa to brass-and-black light fixtures — 10 ways to add bold contrast to a farmhouse living room without losing its warmth.",
+    alt: "Black farmhouse living room with a vaulted ceiling and fireplace",
+    image: "/images/black-farmhouse-living-room-ideas/hero.jpg",
+    bodyHtml: blackFarmhouseLivingRoomArticle.body,
   },
 ];
 

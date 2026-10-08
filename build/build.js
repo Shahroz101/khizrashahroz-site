@@ -137,6 +137,7 @@ const bedroomSelfExpressionArticle = require("./article-bedroom-self-expression-
 const nurseryDesignDirectionArticle = require("./article-nursery-design-direction-guide.js");
 const coffeeStationPlacementArticle = require("./article-coffee-station-placement-workflow.js");
 const wovenTrayStylingArticle = require("./article-woven-tray-styling-contents.js");
+const bathroomRefreshPriorityArticle = require("./article-bathroom-refresh-priority-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1820,6 +1821,17 @@ const longFormPosts = [
     alt: "Woven tray styled with candles, greenery and small decorative objects",
     image: "/images/woven-tray-styling-contents/hero.jpg",
     bodyHtml: wovenTrayStylingArticle.body,
+  },
+  {
+    slug: "bathroom-refresh-priority-guide",
+    title: "Bathroom Refresh Priorities: What to Do First, Save For, and Plan Around",
+    category: "Bathroom",
+    readingTime: "14 min read",
+    date: "January 16, 2027",
+    excerpt: "From quick weekend wins to changes worth a real splurge — 20 bathroom refresh ideas sorted by priority and budget instead of just listed alphabetically.",
+    alt: "Luxurious bathroom with plush oversized towels and elegant styling",
+    image: "/images/bathroom-refresh-priority-guide/hero.png",
+    bodyHtml: bathroomRefreshPriorityArticle.body,
   },
 ];
 

@@ -129,6 +129,7 @@ const laundryRoomRoutineArticle = require("./article-laundry-room-routine-workfl
 const topOfFridgeStylingArticle = require("./article-top-of-fridge-styling-guide.js");
 const elegantPowderRoomArticle = require("./article-elegant-powder-room-design-direction.js");
 const deskSetupConfigurationsArticle = require("./article-desk-setup-configurations.js");
+const aboveFireplaceScaleArticle = require("./article-above-fireplace-scale-proportion.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1724,6 +1725,17 @@ const longFormPosts = [
     alt: "Ergonomic home office chair paired with an adjustable standing desk",
     image: "/images/desk-setup-configurations/ergonomic.png",
     bodyHtml: deskSetupConfigurationsArticle.body,
+  },
+  {
+    slug: "above-fireplace-scale-proportion",
+    title: "15 Above-Fireplace Ideas Built Around Scale and Proportion",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "January 8, 2027",
+    excerpt: "From oversized artwork to knowing when to leave it empty — 15 above-fireplace ideas built around getting the scale right first, not just picking a style.",
+    alt: "Fireplace mantel styled with a round mirror, dried branches and ceramic vases",
+    image: "/images/above-fireplace-scale-proportion/hero.jpg",
+    bodyHtml: aboveFireplaceScaleArticle.body,
   },
 ];
 

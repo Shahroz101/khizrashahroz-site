@@ -151,6 +151,7 @@ const grazingBoardOccasionArticle = require("./article-grazing-board-by-occasion
 const poolsideDecorArticle = require("./article-poolside-decor-summer-vibes.js");
 const bakingStationArticle = require("./article-baking-station-ideas.js");
 const fluffyBedStylingArticle = require("./article-fluffy-bed-styling-technique.js");
+const homeOfficeDeskBudgetArticle = require("./article-home-office-desk-budget-tiers.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1988,6 +1989,17 @@ const longFormPosts = [
     alt: "Modern bedroom with a neatly styled bed featuring layered pillows",
     image: "/images/fluffy-bed-styling-technique/hero.jpg",
     bodyHtml: fluffyBedStylingArticle.body,
+  },
+  {
+    slug: "home-office-desk-budget-tiers",
+    title: "8 Home Office Desk Styles for Every Budget",
+    category: "Home Office",
+    readingTime: "9 min read",
+    date: "January 30, 2027",
+    excerpt: "From a basic tabletop desk to a sit-to-stand investment piece — 8 home office desk types organized by budget tier, not specific products.",
+    alt: "Stylish home office desk setup suited for any budget",
+    image: "/images/home-office-desk-budget-tiers/hero.jpg",
+    bodyHtml: homeOfficeDeskBudgetArticle.body,
   },
 ];
 

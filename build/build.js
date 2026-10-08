@@ -125,6 +125,7 @@ const diningTableCenterpieceArticle = require("./article-dining-table-centerpiec
 const farmhouseDecorArticle = require("./article-farmhouse-decor-ideas.js");
 const homeOfficeWorkspaceArticle = require("./article-home-office-productive-workspace.js");
 const smallPantryHacksArticle = require("./article-small-pantry-organization-hacks.js");
+const laundryRoomRoutineArticle = require("./article-laundry-room-routine-workflow.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1676,6 +1677,17 @@ const longFormPosts = [
     alt: "Modern pantry with pull-out shelving neatly organized with canned goods and jars",
     image: "/images/small-pantry-organization-hacks/hero.jpeg",
     bodyHtml: smallPantryHacksArticle.body,
+  },
+  {
+    slug: "laundry-room-routine-workflow",
+    title: "16 Laundry Room Ideas Built Around Your Actual Routine",
+    category: "Laundry Room",
+    readingTime: "9 min read",
+    date: "January 4, 2027",
+    excerpt: "From task lighting to a pegboard that can change with you — 16 laundry room ideas organized around how the space actually gets used.",
+    alt: "Bright laundry room with a front-load washer, woven baskets and open shelving",
+    image: "/images/laundry-room-routine-workflow/hero.jpg",
+    bodyHtml: laundryRoomRoutineArticle.body,
   },
 ];
 

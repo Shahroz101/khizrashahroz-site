@@ -135,6 +135,7 @@ const blackPowderRoomArticle = require("./article-black-powder-room-material-cho
 const consoleTableStylingArticle = require("./article-console-table-styling-rules.js");
 const bedroomSelfExpressionArticle = require("./article-bedroom-self-expression-ideas.js");
 const nurseryDesignDirectionArticle = require("./article-nursery-design-direction-guide.js");
+const coffeeStationPlacementArticle = require("./article-coffee-station-placement-workflow.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1796,6 +1797,17 @@ const longFormPosts = [
     alt: "Soft, calming baby nursery room with warm natural light",
     image: "/images/nursery-design-direction-guide/hero.jpg",
     bodyHtml: nurseryDesignDirectionArticle.body,
+  },
+  {
+    slug: "coffee-station-placement-workflow",
+    title: "15 Coffee Station Ideas, Built Around Placement and Daily Workflow",
+    category: "Kitchen",
+    readingTime: "13 min read",
+    date: "January 14, 2027",
+    excerpt: "From choosing the right spot to picking a style that fits — 15 coffee station ideas organized around what actually gets used every morning, not just what photographs well.",
+    alt: "Stylish home coffee bar setup transformed into a cozy cafe-style nook",
+    image: "/images/coffee-station-placement-workflow/hero.jpg",
+    bodyHtml: coffeeStationPlacementArticle.body,
   },
 ];
 

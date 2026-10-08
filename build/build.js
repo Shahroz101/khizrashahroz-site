@@ -110,6 +110,7 @@ const timelessKitchenPaintArticle = require("./article-timeless-kitchen-paint-co
 const tvWallDecorArticle = require("./article-tv-wall-decor-ideas.js");
 const textureInHomeDecorArticle = require("./article-texture-in-home-decor.js");
 const winterCraftArticle = require("./article-winter-craft-ideas.js");
+const christmasBedroomDecorArticle = require("./article-christmas-bedroom-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1496,6 +1497,17 @@ const longFormPosts = [
     alt: "Winter shadow box craft with a felted snowman and birch branches",
     image: "/images/winter-craft-ideas/hero.jpg",
     bodyHtml: winterCraftArticle.body,
+  },
+  {
+    slug: "christmas-bedroom-decor-ideas",
+    title: "22 Christmas Bedroom Decor Ideas for a Cozy Holiday Retreat",
+    category: "Bedroom",
+    readingTime: "16 min read",
+    date: "December 20, 2026",
+    excerpt: "From a greenery headboard to a layered neutral palette — 22 Christmas bedroom decor ideas that turn a plain bedroom into a genuine holiday retreat.",
+    alt: "Christmas bedroom with a greenery and string light headboard",
+    image: "/images/christmas-bedroom-decor-ideas/hero.jpg",
+    bodyHtml: christmasBedroomDecorArticle.body,
   },
 ];
 

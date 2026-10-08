@@ -115,6 +115,7 @@ const bathroomMirrorArticle = require("./article-bathroom-mirror-ideas.js");
 const christmasGiftBasketArticle = require("./article-christmas-gift-basket-ideas.js");
 const christmasAppetizerArticle = require("./article-christmas-appetizer-ideas.js");
 const blackFarmhouseLivingRoomArticle = require("./article-black-farmhouse-living-room-ideas.js");
+const diyChristmasGiftArticle = require("./article-diy-christmas-gift-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1556,6 +1557,17 @@ const longFormPosts = [
     alt: "Black farmhouse living room with a vaulted ceiling and fireplace",
     image: "/images/black-farmhouse-living-room-ideas/hero.jpg",
     bodyHtml: blackFarmhouseLivingRoomArticle.body,
+  },
+  {
+    slug: "diy-christmas-gift-ideas",
+    title: "25 DIY Christmas Gift Ideas That Feel Personal and Actually Useful",
+    category: "Holidays",
+    readingTime: "18 min read",
+    date: "December 25, 2026",
+    excerpt: "From personalized candles to a handmade memory jar — 25 DIY Christmas gift ideas built around a little time and a specific person in mind.",
+    alt: "Hand-painted wooden Christmas ornaments being crafted on a table",
+    image: "/images/diy-christmas-gift-ideas/hero.jpg",
+    bodyHtml: diyChristmasGiftArticle.body,
   },
 ];
 

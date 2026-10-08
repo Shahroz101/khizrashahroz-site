@@ -148,6 +148,7 @@ const kitchenUpgradesValueArticle = require("./article-kitchen-upgrades-value-ch
 const japandiBathroomPrinciplesArticle = require("./article-japandi-bathroom-principles.js");
 const modernSpanishBathroomArticle = require("./article-modern-spanish-bathroom-elements.js");
 const grazingBoardOccasionArticle = require("./article-grazing-board-by-occasion.js");
+const poolsideDecorArticle = require("./article-poolside-decor-summer-vibes.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1952,6 +1953,17 @@ const longFormPosts = [
     alt: "Holiday charcuterie wreath board with cheese, meats and berries",
     image: "/images/grazing-board-by-occasion/hero.jpg",
     bodyHtml: grazingBoardOccasionArticle.body,
+  },
+  {
+    slug: "poolside-decor-summer-vibes",
+    title: "6 Poolside Decor Ideas for a Resort Feel at Home",
+    category: "Outdoor",
+    readingTime: "11 min read",
+    date: "January 27, 2027",
+    excerpt: "From a defined lounge zone to layered evening lighting — 6 poolside decor ideas that turn the space around the pool into an actual destination.",
+    alt: "Stylish poolside setup with loungers and summer decor",
+    image: "/images/poolside-decor-summer-vibes/hero.png",
+    bodyHtml: poolsideDecorArticle.body,
   },
 ];
 

@@ -147,6 +147,7 @@ const bedroomOfficeBoundaryArticle = require("./article-bedroom-office-boundary-
 const kitchenUpgradesValueArticle = require("./article-kitchen-upgrades-value-check.js");
 const japandiBathroomPrinciplesArticle = require("./article-japandi-bathroom-principles.js");
 const modernSpanishBathroomArticle = require("./article-modern-spanish-bathroom-elements.js");
+const grazingBoardOccasionArticle = require("./article-grazing-board-by-occasion.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1940,6 +1941,17 @@ const longFormPosts = [
     alt: "Freestanding tub in front of French doors opening to a Spanish-style courtyard",
     image: "/images/modern-spanish-bathroom-elements/hero.png",
     bodyHtml: modernSpanishBathroomArticle.body,
+  },
+  {
+    slug: "grazing-board-by-occasion",
+    title: "18 Grazing Boards Built Around the Occasion, Not Just the Aesthetic",
+    category: "Entertaining",
+    readingTime: "14 min read",
+    date: "January 26, 2027",
+    excerpt: "From a kids' party board to a build-your-own spread — 18 grazing board ideas organized by what the event actually needs, not just a color scheme.",
+    alt: "Holiday charcuterie wreath board with cheese, meats and berries",
+    image: "/images/grazing-board-by-occasion/hero.jpg",
+    bodyHtml: grazingBoardOccasionArticle.body,
   },
 ];
 

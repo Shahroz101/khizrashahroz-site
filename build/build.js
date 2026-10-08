@@ -136,6 +136,7 @@ const consoleTableStylingArticle = require("./article-console-table-styling-rule
 const bedroomSelfExpressionArticle = require("./article-bedroom-self-expression-ideas.js");
 const nurseryDesignDirectionArticle = require("./article-nursery-design-direction-guide.js");
 const coffeeStationPlacementArticle = require("./article-coffee-station-placement-workflow.js");
+const wovenTrayStylingArticle = require("./article-woven-tray-styling-contents.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1808,6 +1809,17 @@ const longFormPosts = [
     alt: "Stylish home coffee bar setup transformed into a cozy cafe-style nook",
     image: "/images/coffee-station-placement-workflow/hero.jpg",
     bodyHtml: coffeeStationPlacementArticle.body,
+  },
+  {
+    slug: "woven-tray-styling-contents",
+    title: "What to Actually Put on a Woven Tray, by Category",
+    category: "Decorating",
+    readingTime: "8 min read",
+    date: "January 15, 2027",
+    excerpt: "From a bar setup to a candle grouping — a guide to styling a woven tray based on what it needs to hold, not just which room it sits in.",
+    alt: "Woven tray styled with candles, greenery and small decorative objects",
+    image: "/images/woven-tray-styling-contents/hero.jpg",
+    bodyHtml: wovenTrayStylingArticle.body,
   },
 ];
 

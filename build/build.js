@@ -141,6 +141,7 @@ const bathroomRefreshPriorityArticle = require("./article-bathroom-refresh-prior
 const spaBathroomRealityArticle = require("./article-spa-bathroom-reality-check.js");
 const smallBedroomVisualTricksArticle = require("./article-small-bedroom-visual-space-tricks.js");
 const postChristmasWinterArticle = require("./article-post-christmas-winter-transition.js");
+const bohoBedroomDiyBuyArticle = require("./article-boho-bedroom-diy-vs-buy.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1868,6 +1869,17 @@ const longFormPosts = [
     alt: "Cozy winter living room with warm textures after Christmas decor comes down",
     image: "/images/post-christmas-winter-transition/hero.jpg",
     bodyHtml: postChristmasWinterArticle.body,
+  },
+  {
+    slug: "boho-bedroom-diy-vs-buy",
+    title: "23 Boho Bedroom Pieces: What to Thrift, What to DIY, What to Buy New",
+    category: "Bedroom",
+    readingTime: "15 min read",
+    date: "January 20, 2027",
+    excerpt: "From a thrifted carved mirror to a statement rug worth buying new — 23 boho bedroom pieces sorted by how they actually get acquired, not just what they look like.",
+    alt: "Serene bohemian bedroom exuding comfort and warmth",
+    image: "/images/boho-bedroom-diy-vs-buy/hero.png",
+    bodyHtml: bohoBedroomDiyBuyArticle.body,
   },
 ];
 

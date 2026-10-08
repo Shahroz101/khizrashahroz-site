@@ -145,6 +145,7 @@ const bohoBedroomDiyBuyArticle = require("./article-boho-bedroom-diy-vs-buy.js")
 const homeDecorTrendsArticle = require("./article-home-decor-trends-worth-adopting.js");
 const bedroomOfficeBoundaryArticle = require("./article-bedroom-office-boundary-setting.js");
 const kitchenUpgradesValueArticle = require("./article-kitchen-upgrades-value-check.js");
+const japandiBathroomPrinciplesArticle = require("./article-japandi-bathroom-principles.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1916,6 +1917,17 @@ const longFormPosts = [
     alt: "Luxurious kitchen showcasing elegant design and premium finishes",
     image: "/images/kitchen-upgrades-value-check/hero.png",
     bodyHtml: kitchenUpgradesValueArticle.body,
+  },
+  {
+    slug: "japandi-bathroom-principles",
+    title: "10 Japandi Bathroom Ideas, Grounded in the Principles Behind Them",
+    category: "Bathroom",
+    readingTime: "11 min read",
+    date: "January 24, 2027",
+    excerpt: "From natural materials to layered lighting — 10 Japandi bathroom ideas explained through the actual wabi-sabi and hygge principles behind the style, not just the look.",
+    alt: "Serene Japandi bathroom combining minimalism and warmth",
+    image: "/images/japandi-bathroom-principles/hero.png",
+    bodyHtml: japandiBathroomPrinciplesArticle.body,
   },
 ];
 

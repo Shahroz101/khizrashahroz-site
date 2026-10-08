@@ -112,6 +112,7 @@ const textureInHomeDecorArticle = require("./article-texture-in-home-decor.js");
 const winterCraftArticle = require("./article-winter-craft-ideas.js");
 const christmasBedroomDecorArticle = require("./article-christmas-bedroom-decor-ideas.js");
 const bathroomMirrorArticle = require("./article-bathroom-mirror-ideas.js");
+const christmasGiftBasketArticle = require("./article-christmas-gift-basket-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1520,6 +1521,17 @@ const longFormPosts = [
     alt: "Backlit rectangular bathroom mirror above a wood vanity",
     image: "/images/bathroom-mirror-ideas/hero.jpg",
     bodyHtml: bathroomMirrorArticle.body,
+  },
+  {
+    slug: "christmas-gift-basket-ideas",
+    title: "23 Christmas Gift Basket Ideas That Feel Thoughtful and Personal",
+    category: "Holidays",
+    readingTime: "17 min read",
+    date: "December 22, 2026",
+    excerpt: "From a cozy homebody basket to a personalized name-embroidered one — 23 Christmas gift basket ideas built around one strong centerpiece instead of a pile of extras.",
+    alt: "Cozy Christmas gift basket filled with plaid pillows and a tartan throw",
+    image: "/images/christmas-gift-basket-ideas/hero.jpg",
+    bodyHtml: christmasGiftBasketArticle.body,
   },
 ];
 

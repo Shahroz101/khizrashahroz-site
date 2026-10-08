@@ -127,6 +127,7 @@ const homeOfficeWorkspaceArticle = require("./article-home-office-productive-wor
 const smallPantryHacksArticle = require("./article-small-pantry-organization-hacks.js");
 const laundryRoomRoutineArticle = require("./article-laundry-room-routine-workflow.js");
 const topOfFridgeStylingArticle = require("./article-top-of-fridge-styling-guide.js");
+const elegantPowderRoomArticle = require("./article-elegant-powder-room-design-direction.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1700,6 +1701,17 @@ const longFormPosts = [
     alt: "Styled top of fridge with a Magnolia Home tray, cookbook and greenery",
     image: "/images/top-of-fridge-styling-guide/intro-eye-level.jpg",
     bodyHtml: topOfFridgeStylingArticle.body,
+  },
+  {
+    slug: "elegant-powder-room-design-direction",
+    title: "17 Elegant Powder Room Ideas That Actually Feel Intentional",
+    category: "Bathroom",
+    readingTime: "13 min read",
+    date: "January 6, 2027",
+    excerpt: "From picking one hero element to knowing which finishes to repeat — 17 elegant powder room ideas built around a real decision framework, not just a shopping list.",
+    alt: "Elegant small powder room with a floating vanity, backlit mirror and warm wood tones",
+    image: "/images/elegant-powder-room-design-direction/hero.jpg",
+    bodyHtml: elegantPowderRoomArticle.body,
   },
 ];
 

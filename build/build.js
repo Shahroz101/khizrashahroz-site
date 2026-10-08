@@ -108,6 +108,7 @@ const neutralBedroomArticle = require("./article-neutral-bedroom-ideas.js");
 const outdoorKitchenArticle = require("./article-outdoor-kitchen-ideas.js");
 const timelessKitchenPaintArticle = require("./article-timeless-kitchen-paint-colors.js");
 const tvWallDecorArticle = require("./article-tv-wall-decor-ideas.js");
+const textureInHomeDecorArticle = require("./article-texture-in-home-decor.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -1472,6 +1473,17 @@ const longFormPosts = [
     alt: "Sophisticated living room with a TV mounted on a dark textured accent wall",
     image: "/images/tv-wall-decor-ideas/hero.jpg",
     bodyHtml: tvWallDecorArticle.body,
+  },
+  {
+    slug: "texture-in-home-decor",
+    title: "18 Unique Ways to Use Texture in Home Decor",
+    category: "Decorating",
+    readingTime: "13 min read",
+    date: "December 18, 2026",
+    excerpt: "From layered rugs to woven wall art — 18 ways to bring real texture into a room without a full redesign.",
+    alt: "Cozy textured living room with layered rugs, faux fur and velvet pillows",
+    image: "/images/texture-in-home-decor/hero.jpg",
+    bodyHtml: textureInHomeDecorArticle.body,
   },
 ];
 

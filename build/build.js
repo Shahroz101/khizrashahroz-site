@@ -171,6 +171,7 @@ const fallPorchArticle = require("./article-fall-porch-styling-guide.js");
 const smallFlatEntranceArticle = require("./article-small-flat-entrance-system.js");
 const oneIdeaPerRoomArticle = require("./article-one-idea-per-room-starter-guide.js");
 const paverPatioArticle = require("./article-paver-patio-material-ideas.js");
+const diyHomeAestheticsArticle = require("./article-diy-home-aesthetics-projects.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2228,6 +2229,17 @@ const longFormPosts = [
     alt: "Creative paver patio design transforming a backyard space",
     image: "/images/paver-patio-material-ideas/hero.jpg",
     bodyHtml: paverPatioArticle.body,
+  },
+  {
+    slug: "diy-home-aesthetics-projects",
+    title: "13 Weekend DIY Projects That Change How a Room Feels",
+    category: "DIY",
+    readingTime: "12 min read",
+    date: "February 19, 2027",
+    excerpt: "From a peel-and-stick backsplash to rope-wrapped baskets — 13 low-cost DIY projects that upgrade a space without a contractor or a big budget.",
+    alt: "Sunlit bedroom showcasing DIY home aesthetic projects",
+    image: "/images/diy-home-aesthetics-projects/hero.png",
+    bodyHtml: diyHomeAestheticsArticle.body,
   },
 ];
 

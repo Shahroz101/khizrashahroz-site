@@ -165,6 +165,7 @@ const blackBedroomArticle = require("./article-black-bedroom-psychology-executio
 const blackKitchenArticle = require("./article-black-kitchen-interior-ideas.js");
 const bohoFarmhouseArticle = require("./article-boho-farmhouse-style-principles.js");
 const budgetBackyardArticle = require("./article-budget-backyard-diy-ideas.js");
+const coastalBedroomArticle = require("./article-coastal-bedroom-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2156,6 +2157,17 @@ const longFormPosts = [
     alt: "Stylish budget backyard makeover with cozy seating and ambiance",
     image: "/images/budget-backyard-diy-ideas/hero.png",
     bodyHtml: budgetBackyardArticle.body,
+  },
+  {
+    slug: "coastal-bedroom-ideas",
+    title: "10 Coastal Bedroom Ideas for a Breezy, Beachy Retreat",
+    category: "Bedroom",
+    readingTime: "9 min read",
+    date: "February 13, 2027",
+    excerpt: "Soft whites, natural texture and restrained nautical details — 10 ideas for a coastal bedroom that skips the literal beach-house clichés.",
+    alt: "Calming coastal bedroom with fresh greenery and breezy design",
+    image: "/images/coastal-bedroom-ideas/hero.png",
+    bodyHtml: coastalBedroomArticle.body,
   },
 ];
 

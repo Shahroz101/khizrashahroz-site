@@ -163,6 +163,7 @@ const bedroomLightingMoodArticle = require("./article-bedroom-lighting-mood.js")
 const fallKitchenDecorArticle = require("./article-fall-kitchen-decor-categories.js");
 const blackBedroomArticle = require("./article-black-bedroom-psychology-execution.js");
 const blackKitchenArticle = require("./article-black-kitchen-interior-ideas.js");
+const bohoFarmhouseArticle = require("./article-boho-farmhouse-style-principles.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2132,6 +2133,17 @@ const longFormPosts = [
     alt: "Sleek black kitchen interior with bold cabinetry and warm accents",
     image: "/images/black-kitchen-interior-ideas/hero.jpg",
     bodyHtml: blackKitchenArticle.body,
+  },
+  {
+    slug: "boho-farmhouse-style-principles",
+    title: "The Principles Behind a Boho Farmhouse Room That Actually Works",
+    category: "Living Room",
+    readingTime: "12 min read",
+    date: "February 11, 2027",
+    excerpt: "Boho and farmhouse shouldn't work together on paper — the principles that make the blend read as effortless instead of mismatched.",
+    alt: "Boho farmhouse living room blending rustic warmth with layered textures",
+    image: "/images/boho-farmhouse-style-principles/hero.jpg",
+    bodyHtml: bohoFarmhouseArticle.body,
   },
 ];
 

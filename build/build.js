@@ -161,6 +161,7 @@ const bathroomLightingMoodArticle = require("./article-bathroom-lighting-mood-st
 const bathroomWallDecorArticle = require("./article-bathroom-wall-decor-execution.js");
 const bedroomLightingMoodArticle = require("./article-bedroom-lighting-mood.js");
 const fallKitchenDecorArticle = require("./article-fall-kitchen-decor-categories.js");
+const blackBedroomArticle = require("./article-black-bedroom-psychology-execution.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2108,6 +2109,17 @@ const longFormPosts = [
     alt: "Cozy softly lit kitchen with warm fall-inspired decor",
     image: "/images/fall-kitchen-decor-categories/hero.png",
     bodyHtml: fallKitchenDecorArticle.body,
+  },
+  {
+    slug: "black-bedroom-psychology-execution",
+    title: "Why Black Bedrooms Work (and How to Actually Execute One)",
+    category: "Bedroom",
+    readingTime: "13 min read",
+    date: "February 9, 2027",
+    excerpt: "From the psychology of a dark room to the lighting and texture that make it work — a practical look at what separates a luxurious black bedroom from a heavy one.",
+    alt: "Bold black bedroom with layered textures and warm accents",
+    image: "/images/black-bedroom-psychology-execution/hero.png",
+    bodyHtml: blackBedroomArticle.body,
   },
 ];
 

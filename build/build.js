@@ -166,6 +166,7 @@ const blackKitchenArticle = require("./article-black-kitchen-interior-ideas.js")
 const bohoFarmhouseArticle = require("./article-boho-farmhouse-style-principles.js");
 const budgetBackyardArticle = require("./article-budget-backyard-diy-ideas.js");
 const coastalBedroomArticle = require("./article-coastal-bedroom-ideas.js");
+const cornerLandscapingArticle = require("./article-corner-landscaping-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2168,6 +2169,17 @@ const longFormPosts = [
     alt: "Calming coastal bedroom with fresh greenery and breezy design",
     image: "/images/coastal-bedroom-ideas/hero.png",
     bodyHtml: coastalBedroomArticle.body,
+  },
+  {
+    slug: "corner-landscaping-ideas",
+    title: "What to Actually Do With an Awkward Garden Corner",
+    category: "Outdoor",
+    readingTime: "9 min read",
+    date: "February 14, 2027",
+    excerpt: "Almost every yard has one unused corner — how to turn it into seating, a flower bed, or a small purpose-built spot instead of leaving it empty.",
+    alt: "Charming garden corner transformed with thoughtful landscaping",
+    image: "/images/corner-landscaping-ideas/hero.png",
+    bodyHtml: cornerLandscapingArticle.body,
   },
 ];
 

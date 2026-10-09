@@ -157,6 +157,7 @@ const bathroomLightFixturesArticle = require("./article-bathroom-light-fixtures-
 const fallDecorLuxeLookArticle = require("./article-affordable-fall-decor-luxe-look.js");
 const smallBackyardLandscapingArticle = require("./article-small-backyard-landscaping-ideas.js");
 const minimalistBathroomArticle = require("./article-minimalist-bathroom-sustained.js");
+const bathroomLightingMoodArticle = require("./article-bathroom-lighting-mood-styles.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2060,6 +2061,17 @@ const longFormPosts = [
     alt: "Modern minimalist bathroom with a clean, uncluttered design",
     image: "/images/minimalist-bathroom-sustained/hero.png",
     bodyHtml: minimalistBathroomArticle.body,
+  },
+  {
+    slug: "bathroom-lighting-mood-styles",
+    title: "17 Bathroom Lighting Ideas for Setting the Mood",
+    category: "Bathroom",
+    readingTime: "14 min read",
+    date: "February 5, 2027",
+    excerpt: "From a statement chandelier to real candlelight — 17 bathroom lighting ideas built around mood and style, not just fixture type.",
+    alt: "Stylish modern bathroom with a mix of layered lighting",
+    image: "/images/bathroom-lighting-mood-styles/hero.png",
+    bodyHtml: bathroomLightingMoodArticle.body,
   },
 ];
 

@@ -156,6 +156,7 @@ const bathroomArtIdeasArticle = require("./article-bathroom-art-ideas-unique.js"
 const bathroomLightFixturesArticle = require("./article-bathroom-light-fixtures-guide.js");
 const fallDecorLuxeLookArticle = require("./article-affordable-fall-decor-luxe-look.js");
 const smallBackyardLandscapingArticle = require("./article-small-backyard-landscaping-ideas.js");
+const minimalistBathroomArticle = require("./article-minimalist-bathroom-sustained.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2048,6 +2049,17 @@ const longFormPosts = [
     alt: "Small backyard patio styled with colorful outdoor furniture",
     image: "/images/small-backyard-landscaping-ideas/hero.png",
     bodyHtml: smallBackyardLandscapingArticle.body,
+  },
+  {
+    slug: "minimalist-bathroom-sustained",
+    title: "How to Build (and Actually Keep) a Minimalist Bathroom",
+    category: "Bathroom",
+    readingTime: "12 min read",
+    date: "February 4, 2027",
+    excerpt: "From smart storage to a nightly reset habit — how to build a minimalist bathroom that actually stays minimal, not just one that looks that way on day one.",
+    alt: "Modern minimalist bathroom with a clean, uncluttered design",
+    image: "/images/minimalist-bathroom-sustained/hero.png",
+    bodyHtml: minimalistBathroomArticle.body,
   },
 ];
 

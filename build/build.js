@@ -160,6 +160,7 @@ const minimalistBathroomArticle = require("./article-minimalist-bathroom-sustain
 const bathroomLightingMoodArticle = require("./article-bathroom-lighting-mood-styles.js");
 const bathroomWallDecorArticle = require("./article-bathroom-wall-decor-execution.js");
 const bedroomLightingMoodArticle = require("./article-bedroom-lighting-mood.js");
+const fallKitchenDecorArticle = require("./article-fall-kitchen-decor-categories.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2096,6 +2097,17 @@ const longFormPosts = [
     alt: "Cozy bedroom featuring warm, layered lighting for a relaxing atmosphere",
     image: "/images/bedroom-lighting-mood/hero.png",
     bodyHtml: bedroomLightingMoodArticle.body,
+  },
+  {
+    slug: "fall-kitchen-decor-categories",
+    title: "15 Fall Kitchen Decor Categories Worth Adding This Season",
+    category: "Kitchen",
+    readingTime: "11 min read",
+    date: "February 8, 2027",
+    excerpt: "From seasonal towels to a mini pantry-door wreath — 15 fall kitchen decor categories organized by what they actually change, not a specific product to hunt down.",
+    alt: "Cozy softly lit kitchen with warm fall-inspired decor",
+    image: "/images/fall-kitchen-decor-categories/hero.png",
+    bodyHtml: fallKitchenDecorArticle.body,
   },
 ];
 

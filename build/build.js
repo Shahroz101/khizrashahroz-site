@@ -159,6 +159,7 @@ const smallBackyardLandscapingArticle = require("./article-small-backyard-landsc
 const minimalistBathroomArticle = require("./article-minimalist-bathroom-sustained.js");
 const bathroomLightingMoodArticle = require("./article-bathroom-lighting-mood-styles.js");
 const bathroomWallDecorArticle = require("./article-bathroom-wall-decor-execution.js");
+const bedroomLightingMoodArticle = require("./article-bedroom-lighting-mood.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2084,6 +2085,17 @@ const longFormPosts = [
     alt: "Stylish bathroom wall decor arrangement adding personality to the space",
     image: "/images/bathroom-wall-decor-execution/hero.jpg",
     bodyHtml: bathroomWallDecorArticle.body,
+  },
+  {
+    slug: "bedroom-lighting-mood",
+    title: "11 Bedroom Lighting Ideas for Setting the Right Mood",
+    category: "Bedroom",
+    readingTime: "11 min read",
+    date: "February 7, 2027",
+    excerpt: "From layered lighting to a proper dimmer switch — 11 bedroom lighting ideas that cover reading, winding down and everything in between.",
+    alt: "Cozy bedroom featuring warm, layered lighting for a relaxing atmosphere",
+    image: "/images/bedroom-lighting-mood/hero.png",
+    bodyHtml: bedroomLightingMoodArticle.body,
   },
 ];
 

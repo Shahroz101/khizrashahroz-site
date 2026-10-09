@@ -170,6 +170,7 @@ const cornerLandscapingArticle = require("./article-corner-landscaping-ideas.js"
 const fallPorchArticle = require("./article-fall-porch-styling-guide.js");
 const smallFlatEntranceArticle = require("./article-small-flat-entrance-system.js");
 const oneIdeaPerRoomArticle = require("./article-one-idea-per-room-starter-guide.js");
+const paverPatioArticle = require("./article-paver-patio-material-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2216,6 +2217,17 @@ const longFormPosts = [
     alt: "Harmonious home decor collage showcasing ideas for every room",
     image: "/images/one-idea-per-room-starter-guide/hero.jpeg",
     bodyHtml: oneIdeaPerRoomArticle.body,
+  },
+  {
+    slug: "paver-patio-material-ideas",
+    title: "10 Paver Patio Materials, and What Each One Actually Gets You",
+    category: "Outdoor",
+    readingTime: "10 min read",
+    date: "February 18, 2027",
+    excerpt: "Brick, concrete, natural stone and flagstone all read completely differently in the same backyard — what each paver material actually brings to a patio.",
+    alt: "Creative paver patio design transforming a backyard space",
+    image: "/images/paver-patio-material-ideas/hero.jpg",
+    bodyHtml: paverPatioArticle.body,
   },
 ];
 

@@ -167,6 +167,7 @@ const bohoFarmhouseArticle = require("./article-boho-farmhouse-style-principles.
 const budgetBackyardArticle = require("./article-budget-backyard-diy-ideas.js");
 const coastalBedroomArticle = require("./article-coastal-bedroom-ideas.js");
 const cornerLandscapingArticle = require("./article-corner-landscaping-ideas.js");
+const fallPorchArticle = require("./article-fall-porch-styling-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2180,6 +2181,17 @@ const longFormPosts = [
     alt: "Charming garden corner transformed with thoughtful landscaping",
     image: "/images/corner-landscaping-ideas/hero.png",
     bodyHtml: cornerLandscapingArticle.body,
+  },
+  {
+    slug: "fall-porch-styling-guide",
+    title: "Creating a Fall Porch That Actually Holds Up All Season",
+    category: "Outdoor",
+    readingTime: "11 min read",
+    date: "February 15, 2027",
+    excerpt: "Palette, layering and lighting — the choices that keep a fall porch looking styled for the whole season, not just the first week.",
+    alt: "Beautifully styled fall porch with warm seasonal decor",
+    image: "/images/fall-porch-styling-guide/hero.jpg",
+    bodyHtml: fallPorchArticle.body,
   },
 ];
 

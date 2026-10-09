@@ -164,6 +164,7 @@ const fallKitchenDecorArticle = require("./article-fall-kitchen-decor-categories
 const blackBedroomArticle = require("./article-black-bedroom-psychology-execution.js");
 const blackKitchenArticle = require("./article-black-kitchen-interior-ideas.js");
 const bohoFarmhouseArticle = require("./article-boho-farmhouse-style-principles.js");
+const budgetBackyardArticle = require("./article-budget-backyard-diy-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2144,6 +2145,17 @@ const longFormPosts = [
     alt: "Boho farmhouse living room blending rustic warmth with layered textures",
     image: "/images/boho-farmhouse-style-principles/hero.jpg",
     bodyHtml: bohoFarmhouseArticle.body,
+  },
+  {
+    slug: "budget-backyard-diy-ideas",
+    title: "15 Budget Backyard Ideas That Actually Look Finished",
+    category: "Outdoor",
+    readingTime: "12 min read",
+    date: "February 12, 2027",
+    excerpt: "From a DIY fire pit to a repurposed pallet deck — 15 mostly-DIY backyard projects that add up to a styled yard without a big renovation.",
+    alt: "Stylish budget backyard makeover with cozy seating and ambiance",
+    image: "/images/budget-backyard-diy-ideas/hero.png",
+    bodyHtml: budgetBackyardArticle.body,
   },
 ];
 

@@ -169,6 +169,7 @@ const coastalBedroomArticle = require("./article-coastal-bedroom-ideas.js");
 const cornerLandscapingArticle = require("./article-corner-landscaping-ideas.js");
 const fallPorchArticle = require("./article-fall-porch-styling-guide.js");
 const smallFlatEntranceArticle = require("./article-small-flat-entrance-system.js");
+const oneIdeaPerRoomArticle = require("./article-one-idea-per-room-starter-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2204,6 +2205,17 @@ const longFormPosts = [
     alt: "Stylish small flat entrance making the most of a tight space",
     image: "/images/small-flat-entrance-system/hero.png",
     bodyHtml: smallFlatEntranceArticle.body,
+  },
+  {
+    slug: "one-idea-per-room-starter-guide",
+    title: "One Decor Idea Per Room: A Starter Guide for a Whole-Home Refresh",
+    category: "Decor",
+    readingTime: "11 min read",
+    date: "February 17, 2027",
+    excerpt: "From a bold piece of living room art to kids' room wall decals — one highest-impact idea for eight different rooms, a sampler instead of a full checklist.",
+    alt: "Harmonious home decor collage showcasing ideas for every room",
+    image: "/images/one-idea-per-room-starter-guide/hero.jpeg",
+    bodyHtml: oneIdeaPerRoomArticle.body,
   },
 ];
 

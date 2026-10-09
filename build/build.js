@@ -155,6 +155,7 @@ const homeOfficeDeskBudgetArticle = require("./article-home-office-desk-budget-t
 const bathroomArtIdeasArticle = require("./article-bathroom-art-ideas-unique.js");
 const bathroomLightFixturesArticle = require("./article-bathroom-light-fixtures-guide.js");
 const fallDecorLuxeLookArticle = require("./article-affordable-fall-decor-luxe-look.js");
+const smallBackyardLandscapingArticle = require("./article-small-backyard-landscaping-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2036,6 +2037,17 @@ const longFormPosts = [
     alt: "Cozy fall living room styled with affordable luxe-looking decor",
     image: "/images/affordable-fall-decor-luxe-look/hero.png",
     bodyHtml: fallDecorLuxeLookArticle.body,
+  },
+  {
+    slug: "small-backyard-landscaping-ideas",
+    title: "12 Landscaping Ideas for a Small Backyard",
+    category: "Outdoor",
+    readingTime: "12 min read",
+    date: "February 3, 2027",
+    excerpt: "From vertical gardening to a well-placed mirror — 12 landscaping ideas that make a small backyard feel considerably bigger than it actually is.",
+    alt: "Small backyard patio styled with colorful outdoor furniture",
+    image: "/images/small-backyard-landscaping-ideas/hero.png",
+    bodyHtml: smallBackyardLandscapingArticle.body,
   },
 ];
 

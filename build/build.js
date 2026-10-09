@@ -154,6 +154,7 @@ const fluffyBedStylingArticle = require("./article-fluffy-bed-styling-technique.
 const homeOfficeDeskBudgetArticle = require("./article-home-office-desk-budget-tiers.js");
 const bathroomArtIdeasArticle = require("./article-bathroom-art-ideas-unique.js");
 const bathroomLightFixturesArticle = require("./article-bathroom-light-fixtures-guide.js");
+const fallDecorLuxeLookArticle = require("./article-affordable-fall-decor-luxe-look.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2024,6 +2025,17 @@ const longFormPosts = [
     alt: "Well-lit bathroom with a thoughtfully chosen light fixture",
     image: "/images/bathroom-light-fixtures-guide/hero.png",
     bodyHtml: bathroomLightFixturesArticle.body,
+  },
+  {
+    slug: "affordable-fall-decor-luxe-look",
+    title: "10 Affordable Fall Decor Categories That Look Expensive",
+    category: "Decorating",
+    readingTime: "11 min read",
+    date: "February 2, 2027",
+    excerpt: "From velvet pumpkins to layered rugs — 10 affordable fall decor categories that deliver a luxe look without a luxury budget.",
+    alt: "Cozy fall living room styled with affordable luxe-looking decor",
+    image: "/images/affordable-fall-decor-luxe-look/hero.png",
+    bodyHtml: fallDecorLuxeLookArticle.body,
   },
 ];
 

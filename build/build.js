@@ -152,6 +152,7 @@ const poolsideDecorArticle = require("./article-poolside-decor-summer-vibes.js")
 const bakingStationArticle = require("./article-baking-station-ideas.js");
 const fluffyBedStylingArticle = require("./article-fluffy-bed-styling-technique.js");
 const homeOfficeDeskBudgetArticle = require("./article-home-office-desk-budget-tiers.js");
+const bathroomArtIdeasArticle = require("./article-bathroom-art-ideas-unique.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2000,6 +2001,17 @@ const longFormPosts = [
     alt: "Stylish home office desk setup suited for any budget",
     image: "/images/home-office-desk-budget-tiers/hero.jpg",
     bodyHtml: homeOfficeDeskBudgetArticle.body,
+  },
+  {
+    slug: "bathroom-art-ideas-unique",
+    title: "5 Bathroom Art Styles That Actually Elevate the Space",
+    category: "Bathroom",
+    readingTime: "13 min read",
+    date: "January 31, 2027",
+    excerpt: "From an oversized abstract piece to a curated gallery wall — 5 bathroom art styles, how to choose between them, and where they actually work best.",
+    alt: "Stylish bathroom featuring unique wall art as a focal point",
+    image: "/images/bathroom-art-ideas-unique/hero.jpg",
+    bodyHtml: bathroomArtIdeasArticle.body,
   },
 ];
 

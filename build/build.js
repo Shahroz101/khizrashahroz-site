@@ -153,6 +153,7 @@ const bakingStationArticle = require("./article-baking-station-ideas.js");
 const fluffyBedStylingArticle = require("./article-fluffy-bed-styling-technique.js");
 const homeOfficeDeskBudgetArticle = require("./article-home-office-desk-budget-tiers.js");
 const bathroomArtIdeasArticle = require("./article-bathroom-art-ideas-unique.js");
+const bathroomLightFixturesArticle = require("./article-bathroom-light-fixtures-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2012,6 +2013,17 @@ const longFormPosts = [
     alt: "Stylish bathroom featuring unique wall art as a focal point",
     image: "/images/bathroom-art-ideas-unique/hero.jpg",
     bodyHtml: bathroomArtIdeasArticle.body,
+  },
+  {
+    slug: "bathroom-light-fixtures-guide",
+    title: "A Practical Guide to Choosing Bathroom Light Fixtures",
+    category: "Bathroom",
+    readingTime: "12 min read",
+    date: "February 1, 2027",
+    excerpt: "From vanity lights to LED strips — a practical buying guide covering every bathroom fixture type, how to choose between them, and the mistakes worth avoiding.",
+    alt: "Well-lit bathroom with a thoughtfully chosen light fixture",
+    image: "/images/bathroom-light-fixtures-guide/hero.png",
+    bodyHtml: bathroomLightFixturesArticle.body,
   },
 ];
 

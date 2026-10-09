@@ -158,6 +158,7 @@ const fallDecorLuxeLookArticle = require("./article-affordable-fall-decor-luxe-l
 const smallBackyardLandscapingArticle = require("./article-small-backyard-landscaping-ideas.js");
 const minimalistBathroomArticle = require("./article-minimalist-bathroom-sustained.js");
 const bathroomLightingMoodArticle = require("./article-bathroom-lighting-mood-styles.js");
+const bathroomWallDecorArticle = require("./article-bathroom-wall-decor-execution.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2072,6 +2073,17 @@ const longFormPosts = [
     alt: "Stylish modern bathroom with a mix of layered lighting",
     image: "/images/bathroom-lighting-mood-styles/hero.png",
     bodyHtml: bathroomLightingMoodArticle.body,
+  },
+  {
+    slug: "bathroom-wall-decor-execution",
+    title: "15 Bathroom Wall Decor Ideas and How to Actually Install Them",
+    category: "Bathroom",
+    readingTime: "13 min read",
+    date: "February 6, 2027",
+    excerpt: "From framed art to a styled wall niche — 15 bathroom wall decor ideas paired with the moisture and mounting considerations that determine whether they actually last.",
+    alt: "Stylish bathroom wall decor arrangement adding personality to the space",
+    image: "/images/bathroom-wall-decor-execution/hero.jpg",
+    bodyHtml: bathroomWallDecorArticle.body,
   },
 ];
 

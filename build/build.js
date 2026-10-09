@@ -162,6 +162,7 @@ const bathroomWallDecorArticle = require("./article-bathroom-wall-decor-executio
 const bedroomLightingMoodArticle = require("./article-bedroom-lighting-mood.js");
 const fallKitchenDecorArticle = require("./article-fall-kitchen-decor-categories.js");
 const blackBedroomArticle = require("./article-black-bedroom-psychology-execution.js");
+const blackKitchenArticle = require("./article-black-kitchen-interior-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2120,6 +2121,17 @@ const longFormPosts = [
     alt: "Bold black bedroom with layered textures and warm accents",
     image: "/images/black-bedroom-psychology-execution/hero.png",
     bodyHtml: blackBedroomArticle.body,
+  },
+  {
+    slug: "black-kitchen-interior-ideas",
+    title: "Why Black Kitchens Keep Winning Over Design Skeptics",
+    category: "Kitchen",
+    readingTime: "11 min read",
+    date: "February 10, 2027",
+    excerpt: "From the cabinets to the lighting that keeps it from feeling heavy — what actually makes a black kitchen read as sophisticated instead of severe.",
+    alt: "Sleek black kitchen interior with bold cabinetry and warm accents",
+    image: "/images/black-kitchen-interior-ideas/hero.jpg",
+    bodyHtml: blackKitchenArticle.body,
   },
 ];
 

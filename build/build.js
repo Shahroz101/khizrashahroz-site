@@ -181,6 +181,7 @@ const blueFarmhouseLivingRoomArticle = require("./article-blue-farmhouse-living-
 const cozyFarmhouseKitchenArticle = require("./article-cozy-farmhouse-kitchen-warmth.js");
 const frontYardSittingAreaArticle = require("./article-front-yard-sitting-area-ideas.js");
 const galleryWallExecutionArticle = require("./article-gallery-wall-execution-guide.js");
+const goldBathroomDecorArticle = require("./article-gold-bathroom-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2348,6 +2349,17 @@ const longFormPosts = [
     alt: "Stunning gallery wall showcasing a timeless home decor trend",
     image: "/images/gallery-wall-execution-guide/hero.jpg",
     bodyHtml: galleryWallExecutionArticle.body,
+  },
+  {
+    slug: "gold-bathroom-decor-ideas",
+    title: "Gold Bathroom Decor Ideas to Elevate Your Space With Glam",
+    category: "Bathroom",
+    readingTime: "10 min read",
+    date: "March 1, 2027",
+    excerpt: "From fixtures to tile — where gold actually earns its place in a bathroom, and how much is too much.",
+    alt: "Luxurious gold bathroom decor adding glamorous touches",
+    image: "/images/gold-bathroom-decor-ideas/hero.png",
+    bodyHtml: goldBathroomDecorArticle.body,
   },
 ];
 

@@ -176,6 +176,7 @@ const diyHotCocoaBarArticle = require("./article-diy-hot-cocoa-bar-ideas.js");
 const fallBedroomTextileArticle = require("./article-fall-bedroom-textile-checklist.js");
 const farmhouseTableStylesArticle = require("./article-farmhouse-kitchen-table-styles.js");
 const flowerBedEdgingArticle = require("./article-flower-bed-edging-materials.js");
+const foyerFinishingArticle = require("./article-foyer-finishing-touches.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2288,6 +2289,17 @@ const longFormPosts = [
     alt: "Beautifully edged flower bed enhancing garden design",
     image: "/images/flower-bed-edging-materials/hero.png",
     bodyHtml: flowerBedEdgingArticle.body,
+  },
+  {
+    slug: "foyer-finishing-touches",
+    title: "The Finishing Touches That Make a Foyer Actually Shine",
+    category: "Entryway",
+    readingTime: "9 min read",
+    date: "February 24, 2027",
+    excerpt: "Scent, texture, a personal welcome moment — the finishing layer that separates a furnished entryway from one that actually feels complete.",
+    alt: "Beautifully styled foyer with elegant finishing touches",
+    image: "/images/foyer-finishing-touches/hero.jpg",
+    bodyHtml: foyerFinishingArticle.body,
   },
 ];
 

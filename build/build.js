@@ -190,6 +190,7 @@ const pillowArrangementArticle = require("./article-pillow-arrangement-no-headbo
 const buildPergolaArticle = require("./article-how-to-build-a-pergola.js");
 const livingRoomCurtainsArticle = require("./article-choosing-living-room-curtains.js");
 const patioFurnitureArticle = require("./article-choosing-patio-furniture.js");
+const homeOfficeColorArticle = require("./article-home-office-color-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2456,6 +2457,17 @@ const longFormPosts = [
     alt: "Stylish patio furniture perfectly suited for an outdoor space",
     image: "/images/choosing-patio-furniture/hero.png",
     bodyHtml: patioFurnitureArticle.body,
+  },
+  {
+    slug: "home-office-color-guide",
+    title: "How to Choose the Right Colors for a Home Office",
+    category: "Home Office",
+    readingTime: "10 min read",
+    date: "March 10, 2027",
+    excerpt: "Natural light, desired feeling and finish — the actual decision process behind a home office color that supports focus instead of fighting it.",
+    alt: "Thoughtfully chosen home office colors creating a productive space",
+    image: "/images/home-office-color-guide/hero.png",
+    bodyHtml: homeOfficeColorArticle.body,
   },
 ];
 

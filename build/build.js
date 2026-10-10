@@ -236,6 +236,7 @@ const sofaTrendsArticle = require("./article-sofa-trends-worth-knowing.js");
 const bathroomPaintColorsArticle = require("./article-bathroom-paint-colors-fresh-look.js");
 const lampTypesArticle = require("./article-lamp-types-to-brighten-your-home.js");
 const smallSpaceSofaArticle = require("./article-small-space-sofa-types.js");
+const wabiSabiBathroomArticle = require("./article-wabi-sabi-bathroom-style.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3008,6 +3009,17 @@ const longFormPosts = [
     alt: "A small living room furnished with a sofa that actually fits",
     image: "/images/small-space-sofa-types/hero.png",
     bodyHtml: smallSpaceSofaArticle.body,
+  },
+  {
+    slug: "wabi-sabi-bathroom-style",
+    title: "27 Wabi-Sabi Bathroom Ideas for Embracing Imperfection",
+    category: "Bathroom",
+    readingTime: "16 min read",
+    date: "April 25, 2027",
+    excerpt: "Weathered wood, cracked glaze, aged brass — 27 wabi-sabi bathroom ideas built around honest, natural imperfection rather than polish.",
+    alt: "A serene, stylish bathroom embracing wabi-sabi imperfection",
+    image: "/images/wabi-sabi-bathroom-style/hero.png",
+    bodyHtml: wabiSabiBathroomArticle.body,
   },
 ];
 

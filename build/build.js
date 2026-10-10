@@ -240,6 +240,7 @@ const wabiSabiBathroomArticle = require("./article-wabi-sabi-bathroom-style.js")
 const modernKitchenColorPairingsArticle = require("./article-modern-kitchen-color-pairings.js");
 const farmhouseCurtainStylesArticle = require("./article-farmhouse-curtain-styles-guide.js");
 const fallDecorTrendsArticle = require("./article-fall-decor-trends-this-year.js");
+const kitchenCabinetMakeoverArticle = require("./article-kitchen-cabinet-makeover-techniques.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3056,6 +3057,17 @@ const longFormPosts = [
     alt: "A cozy living room embracing this year's fall decor trends",
     image: "/images/fall-decor-trends-this-year/hero.png",
     bodyHtml: fallDecorTrendsArticle.body,
+  },
+  {
+    slug: "kitchen-cabinet-makeover-techniques",
+    title: "8 Kitchen Cabinet Makeover Techniques Worth Trying",
+    category: "Kitchen",
+    readingTime: "10 min read",
+    date: "April 29, 2027",
+    excerpt: "Paint, refacing, a hardware swap, two-tone color — 8 ways to transform tired kitchen cabinets without a full replacement.",
+    alt: "A newly transformed kitchen after a cabinet makeover",
+    image: "/images/kitchen-cabinet-makeover-techniques/hero.png",
+    bodyHtml: kitchenCabinetMakeoverArticle.body,
   },
 ];
 

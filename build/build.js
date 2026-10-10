@@ -224,6 +224,7 @@ const staircaseWallDecorArticle = require("./article-staircase-wall-decor-ideas.
 const modernSpanishBedroomArticle = require("./article-modern-spanish-bedroom-guide.js");
 const bathroomFlooringArticle = require("./article-bathroom-flooring-material-ideas.js");
 const raisedBedEdgingArticle = require("./article-raised-bed-edging-ideas.js");
+const summerHomeDecorArticle = require("./article-summer-home-decor-refresh.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2864,6 +2865,17 @@ const longFormPosts = [
     alt: "Charming raised garden bed with stylish edging upgrading the space",
     image: "/images/raised-bed-edging-ideas/hero.png",
     bodyHtml: raisedBedEdgingArticle.body,
+  },
+  {
+    slug: "summer-home-decor-refresh",
+    title: "12 Easy Ways to Refresh a Home for Summer",
+    category: "Decorating",
+    readingTime: "12 min read",
+    date: "April 13, 2027",
+    excerpt: "Light fabrics, sheer curtains and fresh scent — 12 small, reversible swaps that make a whole home feel like summer without a renovation.",
+    alt: "Bright, breezy summer home decor refreshing the space",
+    image: "/images/summer-home-decor-refresh/hero.jpg",
+    bodyHtml: summerHomeDecorArticle.body,
   },
 ];
 

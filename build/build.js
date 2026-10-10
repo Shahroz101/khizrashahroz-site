@@ -204,6 +204,7 @@ const spaFallBathroomArticle = require("./article-spa-fall-bathroom-under-100.js
 const blackDeskHomeOfficeArticle = require("./article-black-desk-home-office-styling.js");
 const mirrorCabinetStylingArticle = require("./article-bathroom-mirror-cabinet-styling.js");
 const entrywayDropZoneArticle = require("./article-entryway-drop-zone-wall.js");
+const japandiBedroomArticle = require("./article-japandi-bedroom-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2624,6 +2625,17 @@ const longFormPosts = [
     alt: "Meticulously organized entryway drop zone wall",
     image: "/images/entryway-drop-zone-wall/hero.png",
     bodyHtml: entrywayDropZoneArticle.body,
+  },
+  {
+    slug: "japandi-bedroom-ideas",
+    title: "14 Japandi Bedroom Ideas for a Peaceful, Minimal Look",
+    category: "Bedroom",
+    readingTime: "12 min read",
+    date: "March 24, 2027",
+    excerpt: "A low bed frame, wabi-sabi imperfection and soft diffused light — 14 ideas blending Japanese calm with Scandinavian warmth in the bedroom.",
+    alt: "Minimalist Japandi bedroom with a calm, peaceful atmosphere",
+    image: "/images/japandi-bedroom-ideas/hero.png",
+    bodyHtml: japandiBedroomArticle.body,
   },
 ];
 

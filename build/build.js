@@ -202,6 +202,7 @@ const gardenPartyThemeArticle = require("./article-garden-party-theme-planning.j
 const bohoApartmentGuideArticle = require("./article-boho-apartment-styling-guide.js");
 const spaFallBathroomArticle = require("./article-spa-fall-bathroom-under-100.js");
 const blackDeskHomeOfficeArticle = require("./article-black-desk-home-office-styling.js");
+const mirrorCabinetStylingArticle = require("./article-bathroom-mirror-cabinet-styling.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2600,6 +2601,17 @@ const longFormPosts = [
     alt: "Modern home office centered around a sleek black desk",
     image: "/images/black-desk-home-office-styling/hero.png",
     bodyHtml: blackDeskHomeOfficeArticle.body,
+  },
+  {
+    slug: "bathroom-mirror-cabinet-styling",
+    title: "How to Style Bathroom Mirror Cabinets, Not Just Hang One",
+    category: "Bathroom",
+    readingTime: "11 min read",
+    date: "March 22, 2027",
+    excerpt: "By design direction — modern luxe, farmhouse, minimalist, eclectic — plus the lighting and organization details most bathrooms skip.",
+    alt: "Elegant bathroom mirror cabinet styled thoughtfully",
+    image: "/images/bathroom-mirror-cabinet-styling/hero.png",
+    bodyHtml: mirrorCabinetStylingArticle.body,
   },
 ];
 

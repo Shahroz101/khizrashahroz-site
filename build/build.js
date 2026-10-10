@@ -217,6 +217,7 @@ const midCenturyValueArticle = require("./article-mid-century-living-room-value.
 const midCenturyMakeoverArticle = require("./article-mid-century-makeover-process.js");
 const midCenturyBudgetArticle = require("./article-mid-century-budget-thrift.js");
 const midCenturyAuthenticityArticle = require("./article-mid-century-authenticity-guide.js");
+const spanishBathroomFinishingArticle = require("./article-spanish-bathroom-finishing-layer.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2780,6 +2781,17 @@ const longFormPosts = [
     alt: "Authentic mid-century living room with genuine design character",
     image: "/images/mid-century-authenticity-guide/hero.jpg",
     bodyHtml: midCenturyAuthenticityArticle.body,
+  },
+  {
+    slug: "spanish-bathroom-finishing-layer",
+    title: "The Finishing Layer for a Modern Spanish Bathroom (After the Tile and Arches)",
+    category: "Bathroom",
+    readingTime: "10 min read",
+    date: "April 6, 2027",
+    excerpt: "Lighting, black contrast, genuine accessories and real restraint — the layer that finishes a Spanish-style bathroom once the tile and arch work is already in place.",
+    alt: "Beautiful modern Spanish bathroom with warm, inviting design",
+    image: "/images/spanish-bathroom-finishing-layer/hero.png",
+    bodyHtml: spanishBathroomFinishingArticle.body,
   },
 ];
 

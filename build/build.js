@@ -186,6 +186,7 @@ const entrywayBenchArticle = require("./article-entryway-bench-ideas.js");
 const guestRoomTrendsArticle = require("./article-guest-room-trends.js");
 const smallHomeOfficeArticle = require("./article-small-home-office-space-solutions.js");
 const modernFarmhouseKitchenNoRenoArticle = require("./article-modern-farmhouse-kitchen-no-reno.js");
+const pillowArrangementArticle = require("./article-pillow-arrangement-no-headboard.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2408,6 +2409,17 @@ const longFormPosts = [
     alt: "Bright modern farmhouse kitchen with timeless charm",
     image: "/images/modern-farmhouse-kitchen-no-reno/hero.png",
     bodyHtml: modernFarmhouseKitchenNoRenoArticle.body,
+  },
+  {
+    slug: "pillow-arrangement-no-headboard",
+    title: "How to Arrange Pillows on a Bed Without a Headboard",
+    category: "Bedroom",
+    readingTime: "9 min read",
+    date: "March 6, 2027",
+    excerpt: "The layering technique that gives a headboard-free bed the same finished look — large to small, leaned against the wall, in the right order.",
+    alt: "Creative pillow arrangement ideas for a bed without a headboard",
+    image: "/images/pillow-arrangement-no-headboard/hero.jpg",
+    bodyHtml: pillowArrangementArticle.body,
   },
 ];
 

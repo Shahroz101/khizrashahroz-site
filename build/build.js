@@ -197,6 +197,7 @@ const gardenArtGuideArticle = require("./article-garden-art-guide.js");
 const frenchFarmhouseLivingRoomArticle = require("./article-french-farmhouse-living-room.js");
 const luxuriousBedroomArticle = require("./article-luxurious-bedroom-comprehensive-guide.js");
 const fallGardenDesignArticle = require("./article-fall-garden-design-guide.js");
+const bathroomRemodelPlanningArticle = require("./article-bathroom-remodel-planning-steps.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2540,6 +2541,17 @@ const longFormPosts = [
     alt: "Beautiful suburban garden showcasing stunning fall colors",
     image: "/images/fall-garden-design-guide/hero.png",
     bodyHtml: fallGardenDesignArticle.body,
+  },
+  {
+    slug: "bathroom-remodel-planning-steps",
+    title: "How to Plan a Bathroom Remodel, Step by Step",
+    category: "Bathroom",
+    readingTime: "12 min read",
+    date: "March 17, 2027",
+    excerpt: "Budget, permits, ordering before demo — the actual project sequence that keeps a bathroom remodel from going over cost and over schedule.",
+    alt: "Beautifully remodeled modern bathroom showcasing planning success",
+    image: "/images/bathroom-remodel-planning-steps/hero.png",
+    bodyHtml: bathroomRemodelPlanningArticle.body,
   },
 ];
 

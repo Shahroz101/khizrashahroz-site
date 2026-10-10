@@ -213,6 +213,7 @@ const livingRoomTrendsArticle = require("./article-living-room-decor-trends.js")
 const luxuryBedroomIdeasArticle = require("./article-luxury-bedroom-decor-ideas.js");
 const luxuryLivingRoomValueArticle = require("./article-luxury-living-room-property-value.js");
 const midCentury2026TrendsArticle = require("./article-mid-century-2026-trends.js");
+const midCenturyValueArticle = require("./article-mid-century-living-room-value.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2732,6 +2733,17 @@ const longFormPosts = [
     alt: "Stylish mid-century living room reflecting the latest 2026 trends",
     image: "/images/mid-century-2026-trends/hero.jpg",
     bodyHtml: midCentury2026TrendsArticle.body,
+  },
+  {
+    slug: "mid-century-living-room-value",
+    title: "Why Mid-Century Living Rooms Appeal to Buyers (and What Actually Earns That Appeal)",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "April 2, 2027",
+    excerpt: "Real vintage furniture can hold its value in a way most decor never does — what makes mid-century's buyer appeal genuine, and how to actually earn it.",
+    alt: "Charming mid-century living room with genuine buyer appeal",
+    image: "/images/mid-century-living-room-value/hero.jpg",
+    bodyHtml: midCenturyValueArticle.body,
   },
 ];
 

@@ -207,6 +207,7 @@ const entrywayDropZoneArticle = require("./article-entryway-drop-zone-wall.js");
 const japandiBedroomArticle = require("./article-japandi-bedroom-ideas.js");
 const kitchenTrendsArticle = require("./article-kitchen-trends-worth-adopting.js");
 const flowerBedEdgingTechniqueArticle = require("./article-flower-bed-edging-technique.js");
+const frontYardLandscapingArticle = require("./article-front-yard-landscaping-design.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2660,6 +2661,17 @@ const longFormPosts = [
     alt: "Essential garden tools for creating a flower bed edge",
     image: "/images/flower-bed-edging-technique/hero.png",
     bodyHtml: flowerBedEdgingTechniqueArticle.body,
+  },
+  {
+    slug: "front-yard-landscaping-design",
+    title: "12 Landscaping Design Ideas for a Front Yard That Actually Works",
+    category: "Outdoor",
+    readingTime: "11 min read",
+    date: "March 27, 2027",
+    excerpt: "From a welcoming pathway to a mix of hardscaping and softscaping — 12 ideas for front yard landscaping that reads as designed, not just planted.",
+    alt: "Beautiful front yard landscaping design with a quaint entrance",
+    image: "/images/front-yard-landscaping-design/hero.png",
+    bodyHtml: frontYardLandscapingArticle.body,
   },
 ];
 

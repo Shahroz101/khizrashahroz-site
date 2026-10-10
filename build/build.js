@@ -201,6 +201,7 @@ const bathroomRemodelPlanningArticle = require("./article-bathroom-remodel-plann
 const gardenPartyThemeArticle = require("./article-garden-party-theme-planning.js");
 const bohoApartmentGuideArticle = require("./article-boho-apartment-styling-guide.js");
 const spaFallBathroomArticle = require("./article-spa-fall-bathroom-under-100.js");
+const blackDeskHomeOfficeArticle = require("./article-black-desk-home-office-styling.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2588,6 +2589,17 @@ const longFormPosts = [
     alt: "Cozy spa-like fall bathroom styled on a budget",
     image: "/images/spa-fall-bathroom-under-100/hero.jpg",
     bodyHtml: spaFallBathroomArticle.body,
+  },
+  {
+    slug: "black-desk-home-office-styling",
+    title: "How to Style a Home Office Around a Black Desk",
+    category: "Home Office",
+    readingTime: "10 min read",
+    date: "March 21, 2027",
+    excerpt: "Palette, lighting and a chair that doesn't fight the look — how to build a home office around a black desk as the room's actual anchor.",
+    alt: "Modern home office centered around a sleek black desk",
+    image: "/images/black-desk-home-office-styling/hero.png",
+    bodyHtml: blackDeskHomeOfficeArticle.body,
   },
 ];
 

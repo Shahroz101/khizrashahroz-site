@@ -196,6 +196,7 @@ const fallMantelTechniqueArticle = require("./article-fall-mantel-styling-techni
 const gardenArtGuideArticle = require("./article-garden-art-guide.js");
 const frenchFarmhouseLivingRoomArticle = require("./article-french-farmhouse-living-room.js");
 const luxuriousBedroomArticle = require("./article-luxurious-bedroom-comprehensive-guide.js");
+const fallGardenDesignArticle = require("./article-fall-garden-design-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2528,6 +2529,17 @@ const longFormPosts = [
     alt: "Luxurious bedroom design with elegant, comprehensive styling",
     image: "/images/luxurious-bedroom-comprehensive-guide/hero.jpg",
     bodyHtml: luxuriousBedroomArticle.body,
+  },
+  {
+    slug: "fall-garden-design-guide",
+    title: "How to Design a Garden That Actually Peaks in Fall",
+    category: "Garden",
+    readingTime: "11 min read",
+    date: "March 16, 2027",
+    excerpt: "Plant choice, trees, hardscaping and smart watering — what it actually takes to make fall a garden's best season instead of its quiet fade-out.",
+    alt: "Beautiful suburban garden showcasing stunning fall colors",
+    image: "/images/fall-garden-design-guide/hero.png",
+    bodyHtml: fallGardenDesignArticle.body,
   },
 ];
 

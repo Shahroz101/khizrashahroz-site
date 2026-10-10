@@ -187,6 +187,7 @@ const guestRoomTrendsArticle = require("./article-guest-room-trends.js");
 const smallHomeOfficeArticle = require("./article-small-home-office-space-solutions.js");
 const modernFarmhouseKitchenNoRenoArticle = require("./article-modern-farmhouse-kitchen-no-reno.js");
 const pillowArrangementArticle = require("./article-pillow-arrangement-no-headboard.js");
+const buildPergolaArticle = require("./article-how-to-build-a-pergola.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2420,6 +2421,17 @@ const longFormPosts = [
     alt: "Creative pillow arrangement ideas for a bed without a headboard",
     image: "/images/pillow-arrangement-no-headboard/hero.jpg",
     bodyHtml: pillowArrangementArticle.body,
+  },
+  {
+    slug: "how-to-build-a-pergola",
+    title: "How to Build a Pergola: A Step-by-Step Guide",
+    category: "Outdoor",
+    readingTime: "11 min read",
+    date: "March 7, 2027",
+    excerpt: "Posts, beams and rafters in the right order — the actual construction steps behind a pergola build, not just the finished look.",
+    alt: "Beautifully built pergola enhancing a backyard space",
+    image: "/images/how-to-build-a-pergola/hero.png",
+    bodyHtml: buildPergolaArticle.body,
   },
 ];
 

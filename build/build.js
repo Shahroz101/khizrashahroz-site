@@ -225,6 +225,7 @@ const modernSpanishBedroomArticle = require("./article-modern-spanish-bedroom-gu
 const bathroomFlooringArticle = require("./article-bathroom-flooring-material-ideas.js");
 const raisedBedEdgingArticle = require("./article-raised-bed-edging-ideas.js");
 const summerHomeDecorArticle = require("./article-summer-home-decor-refresh.js");
+const diyBathroomShelvingArticle = require("./article-diy-bathroom-shelving-projects.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2876,6 +2877,17 @@ const longFormPosts = [
     alt: "Bright, breezy summer home decor refreshing the space",
     image: "/images/summer-home-decor-refresh/hero.jpg",
     bodyHtml: summerHomeDecorArticle.body,
+  },
+  {
+    slug: "diy-bathroom-shelving-projects",
+    title: "5 DIY Bathroom Shelving Projects Worth Building",
+    category: "DIY",
+    readingTime: "9 min read",
+    date: "April 14, 2027",
+    excerpt: "Floating wood, industrial pipe, a ladder shelf, crates or rope — five bathroom shelving builds, plus what to know before drilling into that wall.",
+    alt: "Minimalist bathroom shelving adding both style and function",
+    image: "/images/diy-bathroom-shelving-projects/hero.png",
+    bodyHtml: diyBathroomShelvingArticle.body,
   },
 ];
 

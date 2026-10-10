@@ -220,6 +220,7 @@ const midCenturyAuthenticityArticle = require("./article-mid-century-authenticit
 const spanishBathroomFinishingArticle = require("./article-spanish-bathroom-finishing-layer.js");
 const modernSpanishInteriorArticle = require("./article-modern-spanish-interior-design.js");
 const moodyLivingRoomArticle = require("./article-moody-living-room-ideas.js");
+const staircaseWallDecorArticle = require("./article-staircase-wall-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2816,6 +2817,17 @@ const longFormPosts = [
     alt: "Stunning moody living room with rich, dramatic styling",
     image: "/images/moody-living-room-ideas/hero.jpg",
     bodyHtml: moodyLivingRoomArticle.body,
+  },
+  {
+    slug: "staircase-wall-decor-ideas",
+    title: "15 Staircase Wall Decor Ideas You'll Actually Love",
+    category: "Wall Decor",
+    readingTime: "12 min read",
+    date: "April 9, 2027",
+    excerpt: "From a gallery wall that follows the stairs to a vertical garden built into the wall — 15 ideas for the biggest wall in the house that usually gets left bare.",
+    alt: "Beautifully decorated staircase wall adding character to the home",
+    image: "/images/staircase-wall-decor-ideas/hero.png",
+    bodyHtml: staircaseWallDecorArticle.body,
   },
 ];
 

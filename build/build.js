@@ -188,6 +188,7 @@ const smallHomeOfficeArticle = require("./article-small-home-office-space-soluti
 const modernFarmhouseKitchenNoRenoArticle = require("./article-modern-farmhouse-kitchen-no-reno.js");
 const pillowArrangementArticle = require("./article-pillow-arrangement-no-headboard.js");
 const buildPergolaArticle = require("./article-how-to-build-a-pergola.js");
+const livingRoomCurtainsArticle = require("./article-choosing-living-room-curtains.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2432,6 +2433,17 @@ const longFormPosts = [
     alt: "Beautifully built pergola enhancing a backyard space",
     image: "/images/how-to-build-a-pergola/hero.png",
     bodyHtml: buildPergolaArticle.body,
+  },
+  {
+    slug: "choosing-living-room-curtains",
+    title: "How to Choose the Right Curtains for a Living Room",
+    category: "Living Room",
+    readingTime: "10 min read",
+    date: "March 8, 2027",
+    excerpt: "Fabric weight, color, measuring and hardware — the actual decision process behind curtains that elevate a living room instead of just covering the window.",
+    alt: "Elegant living room curtains enhancing natural light and style",
+    image: "/images/choosing-living-room-curtains/hero.jpg",
+    bodyHtml: livingRoomCurtainsArticle.body,
   },
 ];
 

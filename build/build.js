@@ -219,6 +219,7 @@ const midCenturyBudgetArticle = require("./article-mid-century-budget-thrift.js"
 const midCenturyAuthenticityArticle = require("./article-mid-century-authenticity-guide.js");
 const spanishBathroomFinishingArticle = require("./article-spanish-bathroom-finishing-layer.js");
 const modernSpanishInteriorArticle = require("./article-modern-spanish-interior-design.js");
+const moodyLivingRoomArticle = require("./article-moody-living-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2804,6 +2805,17 @@ const longFormPosts = [
     alt: "Elegant modern Spanish interior with warm, natural styling",
     image: "/images/modern-spanish-interior-design/hero.png",
     bodyHtml: modernSpanishInteriorArticle.body,
+  },
+  {
+    slug: "moody-living-room-ideas",
+    title: "13 Moody Living Room Ideas That Instantly Transform Your Space",
+    category: "Living Room",
+    readingTime: "12 min read",
+    date: "April 8, 2027",
+    excerpt: "Deep wall color, layered lighting and rich texture — 13 ideas for a moody living room that reads as enveloping and restful, not cave-like.",
+    alt: "Stunning moody living room with rich, dramatic styling",
+    image: "/images/moody-living-room-ideas/hero.jpg",
+    bodyHtml: moodyLivingRoomArticle.body,
   },
 ];
 

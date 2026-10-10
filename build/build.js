@@ -216,6 +216,7 @@ const midCentury2026TrendsArticle = require("./article-mid-century-2026-trends.j
 const midCenturyValueArticle = require("./article-mid-century-living-room-value.js");
 const midCenturyMakeoverArticle = require("./article-mid-century-makeover-process.js");
 const midCenturyBudgetArticle = require("./article-mid-century-budget-thrift.js");
+const midCenturyAuthenticityArticle = require("./article-mid-century-authenticity-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2768,6 +2769,17 @@ const longFormPosts = [
     alt: "Stylish mid-century living room achieved on a real budget",
     image: "/images/mid-century-budget-thrift/hero.jpg",
     bodyHtml: midCenturyBudgetArticle.body,
+  },
+  {
+    slug: "mid-century-authenticity-guide",
+    title: "How to Spot Genuine Mid-Century Design (and Avoid Getting Duped)",
+    category: "Living Room",
+    readingTime: "12 min read",
+    date: "April 5, 2027",
+    excerpt: "Check the legs, check the materials, question the ornamentation — how to tell real mid-century design from furniture just borrowing the look.",
+    alt: "Authentic mid-century living room with genuine design character",
+    image: "/images/mid-century-authenticity-guide/hero.jpg",
+    bodyHtml: midCenturyAuthenticityArticle.body,
   },
 ];
 

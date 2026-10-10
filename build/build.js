@@ -210,6 +210,7 @@ const flowerBedEdgingTechniqueArticle = require("./article-flower-bed-edging-tec
 const frontYardLandscapingArticle = require("./article-front-yard-landscaping-design.js");
 const livingRoomCornerArticle = require("./article-living-room-corner-decor-ideas.js");
 const livingRoomTrendsArticle = require("./article-living-room-decor-trends.js");
+const luxuryBedroomIdeasArticle = require("./article-luxury-bedroom-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2696,6 +2697,17 @@ const longFormPosts = [
     alt: "Stylish living room showcasing the latest 2026 decor trends",
     image: "/images/living-room-decor-trends/hero.jpg",
     bodyHtml: livingRoomTrendsArticle.body,
+  },
+  {
+    slug: "luxury-bedroom-decor-ideas",
+    title: "18 Modern Luxury Bedroom Decor Ideas for an Upscale Look",
+    category: "Bedroom",
+    readingTime: "14 min read",
+    date: "March 30, 2027",
+    excerpt: "From a statement headboard to a bedroom chandelier — 18 specific objects that signal an upscale look more directly than a general mood ever could.",
+    alt: "Symmetrical luxury bedroom with elegant matching decor",
+    image: "/images/luxury-bedroom-decor-ideas/hero.png",
+    bodyHtml: luxuryBedroomIdeasArticle.body,
   },
 ];
 

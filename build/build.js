@@ -174,6 +174,7 @@ const paverPatioArticle = require("./article-paver-patio-material-ideas.js");
 const diyHomeAestheticsArticle = require("./article-diy-home-aesthetics-projects.js");
 const diyHotCocoaBarArticle = require("./article-diy-hot-cocoa-bar-ideas.js");
 const fallBedroomTextileArticle = require("./article-fall-bedroom-textile-checklist.js");
+const farmhouseTableStylesArticle = require("./article-farmhouse-kitchen-table-styles.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2264,6 +2265,17 @@ const longFormPosts = [
     alt: "Cozy autumn bedroom styled for the fall season",
     image: "/images/fall-bedroom-textile-checklist/hero.png",
     bodyHtml: fallBedroomTextileArticle.body,
+  },
+  {
+    slug: "farmhouse-kitchen-table-styles",
+    title: "15 Farmhouse Kitchen Table Styles to Shop Around",
+    category: "Kitchen",
+    readingTime: "11 min read",
+    date: "February 22, 2027",
+    excerpt: "From rustic oak to a dark moody finish — 15 farmhouse table styles, and what each one actually brings to the kitchen it anchors.",
+    alt: "Cozy rustic farmhouse kitchen featuring a wooden dining table",
+    image: "/images/farmhouse-kitchen-table-styles/hero.png",
+    bodyHtml: farmhouseTableStylesArticle.body,
   },
 ];
 

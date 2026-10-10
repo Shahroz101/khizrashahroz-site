@@ -241,6 +241,7 @@ const modernKitchenColorPairingsArticle = require("./article-modern-kitchen-colo
 const farmhouseCurtainStylesArticle = require("./article-farmhouse-curtain-styles-guide.js");
 const fallDecorTrendsArticle = require("./article-fall-decor-trends-this-year.js");
 const kitchenCabinetMakeoverArticle = require("./article-kitchen-cabinet-makeover-techniques.js");
+const gardenWeddingTipsArticle = require("./article-garden-wedding-planning-tips.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3068,6 +3069,17 @@ const longFormPosts = [
     alt: "A newly transformed kitchen after a cabinet makeover",
     image: "/images/kitchen-cabinet-makeover-techniques/hero.png",
     bodyHtml: kitchenCabinetMakeoverArticle.body,
+  },
+  {
+    slug: "garden-wedding-planning-tips",
+    title: "9 Tips for Pulling Off a Garden Wedding Without a Hitch",
+    category: "Entertaining",
+    readingTime: "11 min read",
+    date: "April 30, 2027",
+    excerpt: "Venue selection, weatherproofing, bugs and a real backup plan — 9 tips that keep a garden wedding beautiful instead of chaotic.",
+    alt: "A beautiful garden wedding ceremony surrounded by natural beauty",
+    image: "/images/garden-wedding-planning-tips/hero.png",
+    bodyHtml: gardenWeddingTipsArticle.body,
   },
 ];
 

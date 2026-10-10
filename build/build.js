@@ -180,6 +180,7 @@ const foyerFinishingArticle = require("./article-foyer-finishing-touches.js");
 const blueFarmhouseLivingRoomArticle = require("./article-blue-farmhouse-living-room-ideas.js");
 const cozyFarmhouseKitchenArticle = require("./article-cozy-farmhouse-kitchen-warmth.js");
 const frontYardSittingAreaArticle = require("./article-front-yard-sitting-area-ideas.js");
+const galleryWallExecutionArticle = require("./article-gallery-wall-execution-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2336,6 +2337,17 @@ const longFormPosts = [
     alt: "Charming front yard sitting area with wooden bench and greenery",
     image: "/images/front-yard-sitting-area-ideas/hero.png",
     bodyHtml: frontYardSittingAreaArticle.body,
+  },
+  {
+    slug: "gallery-wall-execution-guide",
+    title: "How to Actually Execute a Gallery Wall (Without Losing Your Mind)",
+    category: "Wall Decor",
+    readingTime: "10 min read",
+    date: "February 28, 2027",
+    excerpt: "Layout, spacing, frame matching and the mistakes that make a gallery wall look unplanned — the process, not just the concept.",
+    alt: "Stunning gallery wall showcasing a timeless home decor trend",
+    image: "/images/gallery-wall-execution-guide/hero.jpg",
+    bodyHtml: galleryWallExecutionArticle.body,
   },
 ];
 

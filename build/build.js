@@ -232,6 +232,7 @@ const farmhouseKitchenSinkGuideArticle = require("./article-farmhouse-kitchen-si
 const fallGiftBasketArticle = require("./article-fall-gift-basket-ideas.js");
 const livingRoomPartitionArticle = require("./article-living-room-partition-designs.js");
 const diningRoomMirrorArticle = require("./article-dining-room-mirror-ideas.js");
+const sofaTrendsArticle = require("./article-sofa-trends-worth-knowing.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2960,6 +2961,17 @@ const longFormPosts = [
     alt: "Elegant mirror elevating a dining room's entire look",
     image: "/images/dining-room-mirror-ideas/hero.png",
     bodyHtml: diningRoomMirrorArticle.body,
+  },
+  {
+    slug: "sofa-trends-worth-knowing",
+    title: "10 Sofa Trends: Which Ones Are Worth Buying Into",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "April 21, 2027",
+    excerpt: "Curved, modular, recliner, sustainable — 10 current sofa trends sorted into lasting investments and ones worth a closer look first.",
+    alt: "Current sofa trends shaping living room design",
+    image: "/images/sofa-trends-worth-knowing/hero.png",
+    bodyHtml: sofaTrendsArticle.body,
   },
 ];
 

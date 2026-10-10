@@ -178,6 +178,7 @@ const farmhouseTableStylesArticle = require("./article-farmhouse-kitchen-table-s
 const flowerBedEdgingArticle = require("./article-flower-bed-edging-materials.js");
 const foyerFinishingArticle = require("./article-foyer-finishing-touches.js");
 const blueFarmhouseLivingRoomArticle = require("./article-blue-farmhouse-living-room-ideas.js");
+const cozyFarmhouseKitchenArticle = require("./article-cozy-farmhouse-kitchen-warmth.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2312,6 +2313,17 @@ const longFormPosts = [
     alt: "Relaxing blue farmhouse living room with cozy, coastal touches",
     image: "/images/blue-farmhouse-living-room-ideas/hero.png",
     bodyHtml: blueFarmhouseLivingRoomArticle.body,
+  },
+  {
+    slug: "cozy-farmhouse-kitchen-warmth",
+    title: "What Actually Makes a Farmhouse Kitchen Feel Cozy (Not Just Farmhouse)",
+    category: "Kitchen",
+    readingTime: "11 min read",
+    date: "February 26, 2027",
+    excerpt: "Plenty of kitchens have every farmhouse feature and still feel cold — the undertone, patina and texture decisions that actually create warmth.",
+    alt: "Cozy farmhouse kitchen with rustic charm and warm details",
+    image: "/images/cozy-farmhouse-kitchen-warmth/hero.png",
+    bodyHtml: cozyFarmhouseKitchenArticle.body,
   },
 ];
 

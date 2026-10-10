@@ -237,6 +237,7 @@ const bathroomPaintColorsArticle = require("./article-bathroom-paint-colors-fres
 const lampTypesArticle = require("./article-lamp-types-to-brighten-your-home.js");
 const smallSpaceSofaArticle = require("./article-small-space-sofa-types.js");
 const wabiSabiBathroomArticle = require("./article-wabi-sabi-bathroom-style.js");
+const modernKitchenColorPairingsArticle = require("./article-modern-kitchen-color-pairings.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3020,6 +3021,17 @@ const longFormPosts = [
     alt: "A serene, stylish bathroom embracing wabi-sabi imperfection",
     image: "/images/wabi-sabi-bathroom-style/hero.png",
     bodyHtml: wabiSabiBathroomArticle.body,
+  },
+  {
+    slug: "modern-kitchen-color-pairings",
+    title: "7 Kitchen Color Pairings That Actually Work Together",
+    category: "Kitchen",
+    readingTime: "10 min read",
+    date: "April 26, 2027",
+    excerpt: "White and wood, navy and brass, charcoal and gold — 7 kitchen color pairings, plus how to mix two tones without it looking accidental.",
+    alt: "A modern kitchen built around a considered color pairing",
+    image: "/images/modern-kitchen-color-pairings/hero.jpg",
+    bodyHtml: modernKitchenColorPairingsArticle.body,
   },
 ];
 

@@ -221,6 +221,7 @@ const spanishBathroomFinishingArticle = require("./article-spanish-bathroom-fini
 const modernSpanishInteriorArticle = require("./article-modern-spanish-interior-design.js");
 const moodyLivingRoomArticle = require("./article-moody-living-room-ideas.js");
 const staircaseWallDecorArticle = require("./article-staircase-wall-decor-ideas.js");
+const modernSpanishBedroomArticle = require("./article-modern-spanish-bedroom-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2828,6 +2829,17 @@ const longFormPosts = [
     alt: "Beautifully decorated staircase wall adding character to the home",
     image: "/images/staircase-wall-decor-ideas/hero.png",
     bodyHtml: staircaseWallDecorArticle.body,
+  },
+  {
+    slug: "modern-spanish-bedroom-guide",
+    title: "A Step-by-Step Guide to a Modern Spanish Bedroom",
+    category: "Bedroom",
+    readingTime: "11 min read",
+    date: "April 10, 2027",
+    excerpt: "Palette and surfaces first, then furniture, textiles and the personal layer — a step-by-step guide to a Spanish-style bedroom built for genuine rest.",
+    alt: "Beautiful modern Spanish bedroom with warm, inviting design",
+    image: "/images/modern-spanish-bedroom-guide/hero.png",
+    bodyHtml: modernSpanishBedroomArticle.body,
   },
 ];
 

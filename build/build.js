@@ -205,6 +205,7 @@ const blackDeskHomeOfficeArticle = require("./article-black-desk-home-office-sty
 const mirrorCabinetStylingArticle = require("./article-bathroom-mirror-cabinet-styling.js");
 const entrywayDropZoneArticle = require("./article-entryway-drop-zone-wall.js");
 const japandiBedroomArticle = require("./article-japandi-bedroom-ideas.js");
+const kitchenTrendsArticle = require("./article-kitchen-trends-worth-adopting.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2636,6 +2637,17 @@ const longFormPosts = [
     alt: "Minimalist Japandi bedroom with a calm, peaceful atmosphere",
     image: "/images/japandi-bedroom-ideas/hero.png",
     bodyHtml: japandiBedroomArticle.body,
+  },
+  {
+    slug: "kitchen-trends-worth-adopting",
+    title: "12 Kitchen Trends for 2026: Which Ones Are Actually Worth Adopting",
+    category: "Kitchen",
+    readingTime: "13 min read",
+    date: "March 25, 2027",
+    excerpt: "From hidden storage to oversized lighting — an honest read on 12 kitchen trends, sorted into safe bets and riskier style swings.",
+    alt: "Trendy modern kitchen showcasing 2026 design innovations",
+    image: "/images/kitchen-trends-worth-adopting/hero.jpg",
+    bodyHtml: kitchenTrendsArticle.body,
   },
 ];
 

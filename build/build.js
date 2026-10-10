@@ -239,6 +239,7 @@ const smallSpaceSofaArticle = require("./article-small-space-sofa-types.js");
 const wabiSabiBathroomArticle = require("./article-wabi-sabi-bathroom-style.js");
 const modernKitchenColorPairingsArticle = require("./article-modern-kitchen-color-pairings.js");
 const farmhouseCurtainStylesArticle = require("./article-farmhouse-curtain-styles-guide.js");
+const fallDecorTrendsArticle = require("./article-fall-decor-trends-this-year.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3044,6 +3045,17 @@ const longFormPosts = [
     alt: "A farmhouse living room with curtains that fit the style perfectly",
     image: "/images/farmhouse-curtain-styles-guide/hero.png",
     bodyHtml: farmhouseCurtainStylesArticle.body,
+  },
+  {
+    slug: "fall-decor-trends-this-year",
+    title: "10 Fall Decor Trends Actually Worth Trying This Year",
+    category: "Seasonal",
+    readingTime: "10 min read",
+    date: "April 28, 2027",
+    excerpt: "Dark academia, moody florals, candle culture, minimalist Halloween — 10 fall aesthetic trends beyond the usual pumpkin-and-plaid defaults.",
+    alt: "A cozy living room embracing this year's fall decor trends",
+    image: "/images/fall-decor-trends-this-year/hero.png",
+    bodyHtml: fallDecorTrendsArticle.body,
   },
 ];
 

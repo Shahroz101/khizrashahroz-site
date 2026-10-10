@@ -243,6 +243,7 @@ const fallDecorTrendsArticle = require("./article-fall-decor-trends-this-year.js
 const kitchenCabinetMakeoverArticle = require("./article-kitchen-cabinet-makeover-techniques.js");
 const gardenWeddingTipsArticle = require("./article-garden-wedding-planning-tips.js");
 const powderRoomLuxuryArticle = require("./article-powder-room-luxury-elements.js");
+const backyardWeddingCaseArticle = require("./article-backyard-wedding-celebration-case.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3092,6 +3093,17 @@ const longFormPosts = [
     alt: "A close-up of a luxurious powder room vanity with elegant details",
     image: "/images/powder-room-luxury-elements/hero.png",
     bodyHtml: powderRoomLuxuryArticle.body,
+  },
+  {
+    slug: "backyard-wedding-celebration-case",
+    title: "7 Real Reasons to Get Married in Your Own Backyard",
+    category: "Entertaining",
+    readingTime: "11 min read",
+    date: "May 2, 2027",
+    excerpt: "Budget, personal meaning, creative freedom and no curfew — the real case for a backyard wedding, plus the planning details worth getting right.",
+    alt: "A beautiful backyard wedding celebration in a personal setting",
+    image: "/images/backyard-wedding-celebration-case/hero.png",
+    bodyHtml: backyardWeddingCaseArticle.body,
   },
 ];
 

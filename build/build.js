@@ -214,6 +214,7 @@ const luxuryBedroomIdeasArticle = require("./article-luxury-bedroom-decor-ideas.
 const luxuryLivingRoomValueArticle = require("./article-luxury-living-room-property-value.js");
 const midCentury2026TrendsArticle = require("./article-mid-century-2026-trends.js");
 const midCenturyValueArticle = require("./article-mid-century-living-room-value.js");
+const midCenturyMakeoverArticle = require("./article-mid-century-makeover-process.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2744,6 +2745,17 @@ const longFormPosts = [
     alt: "Charming mid-century living room with genuine buyer appeal",
     image: "/images/mid-century-living-room-value/hero.jpg",
     bodyHtml: midCenturyValueArticle.body,
+  },
+  {
+    slug: "mid-century-makeover-process",
+    title: "A Mid-Century Living Room Makeover, Step by Step",
+    category: "Living Room",
+    readingTime: "12 min read",
+    date: "April 3, 2027",
+    excerpt: "Plan, then palette, then anchor furniture, then layout and lighting — the project sequence that gets a mid-century makeover done with the least rework.",
+    alt: "Beautifully transformed mid-century living room makeover",
+    image: "/images/mid-century-makeover-process/hero.jpg",
+    bodyHtml: midCenturyMakeoverArticle.body,
   },
 ];
 

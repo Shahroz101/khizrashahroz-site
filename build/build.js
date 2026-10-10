@@ -193,6 +193,7 @@ const patioFurnitureArticle = require("./article-choosing-patio-furniture.js");
 const homeOfficeColorArticle = require("./article-home-office-color-guide.js");
 const cozyPergolaArticle = require("./article-cozy-pergola-outdoor-space.js");
 const fallMantelTechniqueArticle = require("./article-fall-mantel-styling-technique.js");
+const gardenArtGuideArticle = require("./article-garden-art-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2492,6 +2493,17 @@ const longFormPosts = [
     alt: "Chic neutral-toned fall mantel decor styled beautifully",
     image: "/images/fall-mantel-styling-technique/hero.png",
     bodyHtml: fallMantelTechniqueArticle.body,
+  },
+  {
+    slug: "garden-art-guide",
+    title: "How to Create Garden Art That Actually Looks Intentional",
+    category: "Garden",
+    readingTime: "10 min read",
+    date: "March 13, 2027",
+    excerpt: "Style, placement and material — the decisions that make garden art read as designed instead of scattered.",
+    alt: "Stunning garden art adding charm to an outdoor space",
+    image: "/images/garden-art-guide/hero.png",
+    bodyHtml: gardenArtGuideArticle.body,
   },
 ];
 

@@ -203,6 +203,7 @@ const bohoApartmentGuideArticle = require("./article-boho-apartment-styling-guid
 const spaFallBathroomArticle = require("./article-spa-fall-bathroom-under-100.js");
 const blackDeskHomeOfficeArticle = require("./article-black-desk-home-office-styling.js");
 const mirrorCabinetStylingArticle = require("./article-bathroom-mirror-cabinet-styling.js");
+const entrywayDropZoneArticle = require("./article-entryway-drop-zone-wall.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2612,6 +2613,17 @@ const longFormPosts = [
     alt: "Elegant bathroom mirror cabinet styled thoughtfully",
     image: "/images/bathroom-mirror-cabinet-styling/hero.png",
     bodyHtml: mirrorCabinetStylingArticle.body,
+  },
+  {
+    slug: "entryway-drop-zone-wall",
+    title: "Turning One Entryway Wall Into an Actual Drop Zone",
+    category: "Entryway",
+    readingTime: "11 min read",
+    date: "March 23, 2027",
+    excerpt: "Hooks, a shelf and baskets built in the right order — the one-wall project that gives keys, bags and mail somewhere to actually land.",
+    alt: "Meticulously organized entryway drop zone wall",
+    image: "/images/entryway-drop-zone-wall/hero.png",
+    bodyHtml: entrywayDropZoneArticle.body,
   },
 ];
 

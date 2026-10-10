@@ -179,6 +179,7 @@ const flowerBedEdgingArticle = require("./article-flower-bed-edging-materials.js
 const foyerFinishingArticle = require("./article-foyer-finishing-touches.js");
 const blueFarmhouseLivingRoomArticle = require("./article-blue-farmhouse-living-room-ideas.js");
 const cozyFarmhouseKitchenArticle = require("./article-cozy-farmhouse-kitchen-warmth.js");
+const frontYardSittingAreaArticle = require("./article-front-yard-sitting-area-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2324,6 +2325,17 @@ const longFormPosts = [
     alt: "Cozy farmhouse kitchen with rustic charm and warm details",
     image: "/images/cozy-farmhouse-kitchen-warmth/hero.png",
     bodyHtml: cozyFarmhouseKitchenArticle.body,
+  },
+  {
+    slug: "front-yard-sitting-area-ideas",
+    title: "11 Front Yard Sitting Area Ideas for a Beautiful Home",
+    category: "Outdoor",
+    readingTime: "10 min read",
+    date: "February 27, 2027",
+    excerpt: "From a built-in bench to a pergola with climbing plants — 11 ways to turn a corner of the front yard into a real place to sit.",
+    alt: "Charming front yard sitting area with wooden bench and greenery",
+    image: "/images/front-yard-sitting-area-ideas/hero.png",
+    bodyHtml: frontYardSittingAreaArticle.body,
   },
 ];
 

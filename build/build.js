@@ -238,6 +238,7 @@ const lampTypesArticle = require("./article-lamp-types-to-brighten-your-home.js"
 const smallSpaceSofaArticle = require("./article-small-space-sofa-types.js");
 const wabiSabiBathroomArticle = require("./article-wabi-sabi-bathroom-style.js");
 const modernKitchenColorPairingsArticle = require("./article-modern-kitchen-color-pairings.js");
+const farmhouseCurtainStylesArticle = require("./article-farmhouse-curtain-styles-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3032,6 +3033,17 @@ const longFormPosts = [
     alt: "A modern kitchen built around a considered color pairing",
     image: "/images/modern-kitchen-color-pairings/hero.jpg",
     bodyHtml: modernKitchenColorPairingsArticle.body,
+  },
+  {
+    slug: "farmhouse-curtain-styles-guide",
+    title: "9 Curtain Styles Built for a Farmhouse Living Room",
+    category: "Living Room",
+    readingTime: "10 min read",
+    date: "April 27, 2027",
+    excerpt: "Linen, buffalo check, burlap, layered panels — 9 curtain styles that actually speak a farmhouse living room's textile language.",
+    alt: "A farmhouse living room with curtains that fit the style perfectly",
+    image: "/images/farmhouse-curtain-styles-guide/hero.png",
+    bodyHtml: farmhouseCurtainStylesArticle.body,
   },
 ];
 

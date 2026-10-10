@@ -177,6 +177,7 @@ const fallBedroomTextileArticle = require("./article-fall-bedroom-textile-checkl
 const farmhouseTableStylesArticle = require("./article-farmhouse-kitchen-table-styles.js");
 const flowerBedEdgingArticle = require("./article-flower-bed-edging-materials.js");
 const foyerFinishingArticle = require("./article-foyer-finishing-touches.js");
+const blueFarmhouseLivingRoomArticle = require("./article-blue-farmhouse-living-room-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2300,6 +2301,17 @@ const longFormPosts = [
     alt: "Beautifully styled foyer with elegant finishing touches",
     image: "/images/foyer-finishing-touches/hero.jpg",
     bodyHtml: foyerFinishingArticle.body,
+  },
+  {
+    slug: "blue-farmhouse-living-room-ideas",
+    title: "Blue Farmhouse Living Room Ideas for a Relaxing Space",
+    category: "Living Room",
+    readingTime: "10 min read",
+    date: "February 25, 2027",
+    excerpt: "A muted blue, warm wood tones and soft lighting — how to pull off a farmhouse living room that leans calm instead of cold.",
+    alt: "Relaxing blue farmhouse living room with cozy, coastal touches",
+    image: "/images/blue-farmhouse-living-room-ideas/hero.png",
+    bodyHtml: blueFarmhouseLivingRoomArticle.body,
   },
 ];
 

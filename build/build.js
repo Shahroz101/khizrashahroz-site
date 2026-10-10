@@ -191,6 +191,7 @@ const buildPergolaArticle = require("./article-how-to-build-a-pergola.js");
 const livingRoomCurtainsArticle = require("./article-choosing-living-room-curtains.js");
 const patioFurnitureArticle = require("./article-choosing-patio-furniture.js");
 const homeOfficeColorArticle = require("./article-home-office-color-guide.js");
+const cozyPergolaArticle = require("./article-cozy-pergola-outdoor-space.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2468,6 +2469,17 @@ const longFormPosts = [
     alt: "Thoughtfully chosen home office colors creating a productive space",
     image: "/images/home-office-color-guide/hero.png",
     bodyHtml: homeOfficeColorArticle.body,
+  },
+  {
+    slug: "cozy-pergola-outdoor-space",
+    title: "Making a Pergola Feel Like a Real Outdoor Room, Not Just a Structure",
+    category: "Outdoor",
+    readingTime: "10 min read",
+    date: "March 11, 2027",
+    excerpt: "Seating, weatherproofing and the DIY-vs-pro decision — the practical layer that turns a pergola from a backyard structure into an actual room.",
+    alt: "Cozy pergola creating a beautiful outdoor living space",
+    image: "/images/cozy-pergola-outdoor-space/hero.png",
+    bodyHtml: cozyPergolaArticle.body,
   },
 ];
 

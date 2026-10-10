@@ -231,6 +231,7 @@ const bohoLivingRoomGuideArticle = require("./article-boho-living-room-decor-gui
 const farmhouseKitchenSinkGuideArticle = require("./article-farmhouse-kitchen-sink-guide.js");
 const fallGiftBasketArticle = require("./article-fall-gift-basket-ideas.js");
 const livingRoomPartitionArticle = require("./article-living-room-partition-designs.js");
+const diningRoomMirrorArticle = require("./article-dining-room-mirror-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2948,6 +2949,17 @@ const longFormPosts = [
     alt: "Stylish living room partition design separating an open floor plan",
     image: "/images/living-room-partition-designs/hero.png",
     bodyHtml: livingRoomPartitionArticle.body,
+  },
+  {
+    slug: "dining-room-mirror-ideas",
+    title: "10 Dining Room Mirror Styles Worth Considering",
+    category: "Dining Room",
+    readingTime: "10 min read",
+    date: "April 20, 2027",
+    excerpt: "From an oversized arch to Art Deco glamour — 10 mirror styles that make a dining room feel brighter and more finished.",
+    alt: "Elegant mirror elevating a dining room's entire look",
+    image: "/images/dining-room-mirror-ideas/hero.png",
+    bodyHtml: diningRoomMirrorArticle.body,
   },
 ];
 

@@ -184,6 +184,7 @@ const galleryWallExecutionArticle = require("./article-gallery-wall-execution-gu
 const goldBathroomDecorArticle = require("./article-gold-bathroom-decor-ideas.js");
 const entrywayBenchArticle = require("./article-entryway-bench-ideas.js");
 const guestRoomTrendsArticle = require("./article-guest-room-trends.js");
+const smallHomeOfficeArticle = require("./article-small-home-office-space-solutions.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2384,6 +2385,17 @@ const longFormPosts = [
     alt: "Beautifully designed guest room reflecting 2026 trends",
     image: "/images/guest-room-trends/hero.jpg",
     bodyHtml: guestRoomTrendsArticle.body,
+  },
+  {
+    slug: "small-home-office-space-solutions",
+    title: "12 Desk and Storage Solutions for a Genuinely Small Home Office",
+    category: "Home Office",
+    readingTime: "11 min read",
+    date: "March 4, 2027",
+    excerpt: "From a wall-mounted desk to a converted closet office — 12 furniture solutions built around the space constraint, not scaled down from something bigger.",
+    alt: "Small home office featuring creative space-saving solutions",
+    image: "/images/small-home-office-space-solutions/hero.png",
+    bodyHtml: smallHomeOfficeArticle.body,
   },
 ];
 

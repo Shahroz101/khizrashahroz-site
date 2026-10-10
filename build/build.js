@@ -211,6 +211,7 @@ const frontYardLandscapingArticle = require("./article-front-yard-landscaping-de
 const livingRoomCornerArticle = require("./article-living-room-corner-decor-ideas.js");
 const livingRoomTrendsArticle = require("./article-living-room-decor-trends.js");
 const luxuryBedroomIdeasArticle = require("./article-luxury-bedroom-decor-ideas.js");
+const luxuryLivingRoomValueArticle = require("./article-luxury-living-room-property-value.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2708,6 +2709,17 @@ const longFormPosts = [
     alt: "Symmetrical luxury bedroom with elegant matching decor",
     image: "/images/luxury-bedroom-decor-ideas/hero.png",
     bodyHtml: luxuryBedroomIdeasArticle.body,
+  },
+  {
+    slug: "luxury-living-room-property-value",
+    title: "Which Luxury Living Room Upgrades Actually Pay Back at Resale",
+    category: "Living Room",
+    readingTime: "12 min read",
+    date: "March 31, 2027",
+    excerpt: "Lighting and flooring move the needle at appraisal; furniture and accessories don't. Sorting which living room upgrades affect resale value and which are just for you.",
+    alt: "Luxury living room renovation boosting overall property value",
+    image: "/images/luxury-living-room-property-value/hero.jpg",
+    bodyHtml: luxuryLivingRoomValueArticle.body,
   },
 ];
 

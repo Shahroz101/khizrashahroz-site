@@ -230,6 +230,7 @@ const blackBathroomDecorArticle = require("./article-black-bathroom-decor-ideas.
 const bohoLivingRoomGuideArticle = require("./article-boho-living-room-decor-guide.js");
 const farmhouseKitchenSinkGuideArticle = require("./article-farmhouse-kitchen-sink-guide.js");
 const fallGiftBasketArticle = require("./article-fall-gift-basket-ideas.js");
+const livingRoomPartitionArticle = require("./article-living-room-partition-designs.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2936,6 +2937,17 @@ const longFormPosts = [
     alt: "A beautifully arranged fall gift basket full of seasonal items",
     image: "/images/fall-gift-basket-ideas/hero.jpg",
     bodyHtml: fallGiftBasketArticle.body,
+  },
+  {
+    slug: "living-room-partition-designs",
+    title: "10 Living Room Partition Ideas for an Open Floor Plan",
+    category: "Living Room",
+    readingTime: "10 min read",
+    date: "April 19, 2027",
+    excerpt: "From wooden slats to built-in cabinets — 10 ways to define separate zones in an open floor plan without putting up a real wall.",
+    alt: "Stylish living room partition design separating an open floor plan",
+    image: "/images/living-room-partition-designs/hero.png",
+    bodyHtml: livingRoomPartitionArticle.body,
   },
 ];
 

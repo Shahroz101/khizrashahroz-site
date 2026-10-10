@@ -200,6 +200,7 @@ const fallGardenDesignArticle = require("./article-fall-garden-design-guide.js")
 const bathroomRemodelPlanningArticle = require("./article-bathroom-remodel-planning-steps.js");
 const gardenPartyThemeArticle = require("./article-garden-party-theme-planning.js");
 const bohoApartmentGuideArticle = require("./article-boho-apartment-styling-guide.js");
+const spaFallBathroomArticle = require("./article-spa-fall-bathroom-under-100.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2576,6 +2577,17 @@ const longFormPosts = [
     alt: "Stylish boho apartment with warm, eclectic charm",
     image: "/images/boho-apartment-styling-guide/hero.png",
     bodyHtml: bohoApartmentGuideArticle.body,
+  },
+  {
+    slug: "spa-fall-bathroom-under-100",
+    title: "A Cozy, Spa-Like Fall Bathroom for Under $100",
+    category: "Bathroom",
+    readingTime: "10 min read",
+    date: "March 20, 2027",
+    excerpt: "Textiles, lighting, scent and a real deep clean — eight specific changes that create a spa-like fall bathroom without blowing past $100.",
+    alt: "Cozy spa-like fall bathroom styled on a budget",
+    image: "/images/spa-fall-bathroom-under-100/hero.jpg",
+    bodyHtml: spaFallBathroomArticle.body,
   },
 ];
 

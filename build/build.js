@@ -198,6 +198,7 @@ const frenchFarmhouseLivingRoomArticle = require("./article-french-farmhouse-liv
 const luxuriousBedroomArticle = require("./article-luxurious-bedroom-comprehensive-guide.js");
 const fallGardenDesignArticle = require("./article-fall-garden-design-guide.js");
 const bathroomRemodelPlanningArticle = require("./article-bathroom-remodel-planning-steps.js");
+const gardenPartyThemeArticle = require("./article-garden-party-theme-planning.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2552,6 +2553,17 @@ const longFormPosts = [
     alt: "Beautifully remodeled modern bathroom showcasing planning success",
     image: "/images/bathroom-remodel-planning-steps/hero.png",
     bodyHtml: bathroomRemodelPlanningArticle.body,
+  },
+  {
+    slug: "garden-party-theme-planning",
+    title: "How to Plan a Garden Party People Actually Remember",
+    category: "Entertaining",
+    readingTime: "11 min read",
+    date: "March 18, 2027",
+    excerpt: "Theme, timing and a manageable menu — the full picture behind a garden party that works, not just one showstopping centerpiece.",
+    alt: "Whimsical garden party setting the perfect celebratory mood",
+    image: "/images/garden-party-theme-planning/hero.png",
+    bodyHtml: gardenPartyThemeArticle.body,
   },
 ];
 

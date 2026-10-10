@@ -199,6 +199,7 @@ const luxuriousBedroomArticle = require("./article-luxurious-bedroom-comprehensi
 const fallGardenDesignArticle = require("./article-fall-garden-design-guide.js");
 const bathroomRemodelPlanningArticle = require("./article-bathroom-remodel-planning-steps.js");
 const gardenPartyThemeArticle = require("./article-garden-party-theme-planning.js");
+const bohoApartmentGuideArticle = require("./article-boho-apartment-styling-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2564,6 +2565,17 @@ const longFormPosts = [
     alt: "Whimsical garden party setting the perfect celebratory mood",
     image: "/images/garden-party-theme-planning/hero.png",
     bodyHtml: gardenPartyThemeArticle.body,
+  },
+  {
+    slug: "boho-apartment-styling-guide",
+    title: "The Principles Behind Styling a Whole Boho Apartment",
+    category: "Decorating",
+    readingTime: "11 min read",
+    date: "March 19, 2027",
+    excerpt: "Texture as a system, imperfection carried consistently — what actually ties a boho apartment together room to room, not just one styled corner.",
+    alt: "Stylish boho apartment with warm, eclectic charm",
+    image: "/images/boho-apartment-styling-guide/hero.png",
+    bodyHtml: bohoApartmentGuideArticle.body,
   },
 ];
 

@@ -212,6 +212,7 @@ const livingRoomCornerArticle = require("./article-living-room-corner-decor-idea
 const livingRoomTrendsArticle = require("./article-living-room-decor-trends.js");
 const luxuryBedroomIdeasArticle = require("./article-luxury-bedroom-decor-ideas.js");
 const luxuryLivingRoomValueArticle = require("./article-luxury-living-room-property-value.js");
+const midCentury2026TrendsArticle = require("./article-mid-century-2026-trends.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2720,6 +2721,17 @@ const longFormPosts = [
     alt: "Luxury living room renovation boosting overall property value",
     image: "/images/luxury-living-room-property-value/hero.jpg",
     bodyHtml: luxuryLivingRoomValueArticle.body,
+  },
+  {
+    slug: "mid-century-2026-trends",
+    title: "What's Actually New in Mid-Century for 2026, Not Just Timeless",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "April 1, 2027",
+    excerpt: "Bolder jewel tones, curved sofas and a looser attitude toward perfection — what's genuinely shifting in mid-century style for 2026, beyond the usual fundamentals.",
+    alt: "Stylish mid-century living room reflecting the latest 2026 trends",
+    image: "/images/mid-century-2026-trends/hero.jpg",
+    bodyHtml: midCentury2026TrendsArticle.body,
   },
 ];
 

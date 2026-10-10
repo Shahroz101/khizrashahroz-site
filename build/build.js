@@ -244,6 +244,7 @@ const kitchenCabinetMakeoverArticle = require("./article-kitchen-cabinet-makeove
 const gardenWeddingTipsArticle = require("./article-garden-wedding-planning-tips.js");
 const powderRoomLuxuryArticle = require("./article-powder-room-luxury-elements.js");
 const backyardWeddingCaseArticle = require("./article-backyard-wedding-celebration-case.js");
+const fallWreathStyleGuideArticle = require("./article-fall-wreath-style-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3104,6 +3105,17 @@ const longFormPosts = [
     alt: "A beautiful backyard wedding celebration in a personal setting",
     image: "/images/backyard-wedding-celebration-case/hero.png",
     bodyHtml: backyardWeddingCaseArticle.body,
+  },
+  {
+    slug: "fall-wreath-style-guide",
+    title: "A Complete Guide to Fall Wreaths: Styles, Materials and Getting It Right",
+    category: "Seasonal",
+    readingTime: "15 min read",
+    date: "May 3, 2027",
+    excerpt: "Color, size, door match and nine styles to try — everything that goes into a fall wreath that actually looks considered, not store-bought.",
+    alt: "A beautiful fall wreath instantly making a home feel cozy",
+    image: "/images/fall-wreath-style-guide/hero.jpg",
+    bodyHtml: fallWreathStyleGuideArticle.body,
   },
 ];
 

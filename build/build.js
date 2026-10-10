@@ -173,6 +173,7 @@ const oneIdeaPerRoomArticle = require("./article-one-idea-per-room-starter-guide
 const paverPatioArticle = require("./article-paver-patio-material-ideas.js");
 const diyHomeAestheticsArticle = require("./article-diy-home-aesthetics-projects.js");
 const diyHotCocoaBarArticle = require("./article-diy-hot-cocoa-bar-ideas.js");
+const fallBedroomTextileArticle = require("./article-fall-bedroom-textile-checklist.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2252,6 +2253,17 @@ const longFormPosts = [
     alt: "Delicious DIY hot cocoa bar styled for a cozy winter treat",
     image: "/images/diy-hot-cocoa-bar-ideas/hero.jpg",
     bodyHtml: diyHotCocoaBarArticle.body,
+  },
+  {
+    slug: "fall-bedroom-textile-checklist",
+    title: "The Fall Bedroom Textile Checklist: Throws, Pillows, Sleepwear and More",
+    category: "Bedroom",
+    readingTime: "11 min read",
+    date: "February 21, 2027",
+    excerpt: "The physical items that actually make a bedroom feel like fall — throws, layered bedding, a warm rug and more — not a repaint or a lighting overhaul.",
+    alt: "Cozy autumn bedroom styled for the fall season",
+    image: "/images/fall-bedroom-textile-checklist/hero.png",
+    bodyHtml: fallBedroomTextileArticle.body,
   },
 ];
 

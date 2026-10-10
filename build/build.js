@@ -175,6 +175,7 @@ const diyHomeAestheticsArticle = require("./article-diy-home-aesthetics-projects
 const diyHotCocoaBarArticle = require("./article-diy-hot-cocoa-bar-ideas.js");
 const fallBedroomTextileArticle = require("./article-fall-bedroom-textile-checklist.js");
 const farmhouseTableStylesArticle = require("./article-farmhouse-kitchen-table-styles.js");
+const flowerBedEdgingArticle = require("./article-flower-bed-edging-materials.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2276,6 +2277,17 @@ const longFormPosts = [
     alt: "Cozy rustic farmhouse kitchen featuring a wooden dining table",
     image: "/images/farmhouse-kitchen-table-styles/hero.png",
     bodyHtml: farmhouseTableStylesArticle.body,
+  },
+  {
+    slug: "flower-bed-edging-materials",
+    title: "6 Flower Bed Edging Materials, and What Each One Actually Does",
+    category: "Garden",
+    readingTime: "9 min read",
+    date: "February 23, 2027",
+    excerpt: "Stone, metal, brick, wood, concrete or a living border — what each flower bed edging material actually brings to a garden, and which one fits.",
+    alt: "Beautifully edged flower bed enhancing garden design",
+    image: "/images/flower-bed-edging-materials/hero.png",
+    bodyHtml: flowerBedEdgingArticle.body,
   },
 ];
 

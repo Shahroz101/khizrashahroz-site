@@ -189,6 +189,7 @@ const modernFarmhouseKitchenNoRenoArticle = require("./article-modern-farmhouse-
 const pillowArrangementArticle = require("./article-pillow-arrangement-no-headboard.js");
 const buildPergolaArticle = require("./article-how-to-build-a-pergola.js");
 const livingRoomCurtainsArticle = require("./article-choosing-living-room-curtains.js");
+const patioFurnitureArticle = require("./article-choosing-patio-furniture.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2444,6 +2445,17 @@ const longFormPosts = [
     alt: "Elegant living room curtains enhancing natural light and style",
     image: "/images/choosing-living-room-curtains/hero.jpg",
     bodyHtml: livingRoomCurtainsArticle.body,
+  },
+  {
+    slug: "choosing-patio-furniture",
+    title: "How to Choose the Right Patio Furniture for Your Outdoor Space",
+    category: "Outdoor",
+    readingTime: "10 min read",
+    date: "March 9, 2027",
+    excerpt: "Materials, comfort and real-world maintenance — the decision process behind patio furniture that survives more than one good-looking season.",
+    alt: "Stylish patio furniture perfectly suited for an outdoor space",
+    image: "/images/choosing-patio-furniture/hero.png",
+    bodyHtml: patioFurnitureArticle.body,
   },
 ];
 

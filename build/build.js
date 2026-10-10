@@ -226,6 +226,7 @@ const bathroomFlooringArticle = require("./article-bathroom-flooring-material-id
 const raisedBedEdgingArticle = require("./article-raised-bed-edging-ideas.js");
 const summerHomeDecorArticle = require("./article-summer-home-decor-refresh.js");
 const diyBathroomShelvingArticle = require("./article-diy-bathroom-shelving-projects.js");
+const blackBathroomDecorArticle = require("./article-black-bathroom-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2888,6 +2889,17 @@ const longFormPosts = [
     alt: "Minimalist bathroom shelving adding both style and function",
     image: "/images/diy-bathroom-shelving-projects/hero.png",
     bodyHtml: diyBathroomShelvingArticle.body,
+  },
+  {
+    slug: "black-bathroom-decor-ideas",
+    title: "13 Black Bathroom Decor Ideas for a Full Bathroom",
+    category: "Bathroom",
+    readingTime: "11 min read",
+    date: "April 15, 2027",
+    excerpt: "Wet-area tile, a black shower frame, layered lighting — 13 black bathroom ideas built for a full bathroom, not just a powder room.",
+    alt: "Striking black bathroom decor transforming a full bathroom",
+    image: "/images/black-bathroom-decor-ideas/hero.jpg",
+    bodyHtml: blackBathroomDecorArticle.body,
   },
 ];
 

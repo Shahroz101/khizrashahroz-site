@@ -192,6 +192,7 @@ const livingRoomCurtainsArticle = require("./article-choosing-living-room-curtai
 const patioFurnitureArticle = require("./article-choosing-patio-furniture.js");
 const homeOfficeColorArticle = require("./article-home-office-color-guide.js");
 const cozyPergolaArticle = require("./article-cozy-pergola-outdoor-space.js");
+const fallMantelTechniqueArticle = require("./article-fall-mantel-styling-technique.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2480,6 +2481,17 @@ const longFormPosts = [
     alt: "Cozy pergola creating a beautiful outdoor living space",
     image: "/images/cozy-pergola-outdoor-space/hero.png",
     bodyHtml: cozyPergolaArticle.body,
+  },
+  {
+    slug: "fall-mantel-styling-technique",
+    title: "The Technique Behind a Fall Mantel That Actually Looks Styled",
+    category: "Decorating",
+    readingTime: "10 min read",
+    date: "March 12, 2027",
+    excerpt: "Focal point, layering order and balance — the styling technique that separates a considered fall mantel from one that just has decor on it.",
+    alt: "Chic neutral-toned fall mantel decor styled beautifully",
+    image: "/images/fall-mantel-styling-technique/hero.png",
+    bodyHtml: fallMantelTechniqueArticle.body,
   },
 ];
 

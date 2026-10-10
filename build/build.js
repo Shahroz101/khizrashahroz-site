@@ -215,6 +215,7 @@ const luxuryLivingRoomValueArticle = require("./article-luxury-living-room-prope
 const midCentury2026TrendsArticle = require("./article-mid-century-2026-trends.js");
 const midCenturyValueArticle = require("./article-mid-century-living-room-value.js");
 const midCenturyMakeoverArticle = require("./article-mid-century-makeover-process.js");
+const midCenturyBudgetArticle = require("./article-mid-century-budget-thrift.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2756,6 +2757,17 @@ const longFormPosts = [
     alt: "Beautifully transformed mid-century living room makeover",
     image: "/images/mid-century-makeover-process/hero.jpg",
     bodyHtml: midCenturyMakeoverArticle.body,
+  },
+  {
+    slug: "mid-century-budget-thrift",
+    title: "Mid-Century Style on a Real Budget: Thrift, DIY and Where to Actually Spend",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "April 4, 2027",
+    excerpt: "A few genuine vintage finds, affordable modern pairings, and a handful of DIY projects — where to spend, where to save, and why this style actually suits a budget.",
+    alt: "Stylish mid-century living room achieved on a real budget",
+    image: "/images/mid-century-budget-thrift/hero.jpg",
+    bodyHtml: midCenturyBudgetArticle.body,
   },
 ];
 

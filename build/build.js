@@ -172,6 +172,7 @@ const smallFlatEntranceArticle = require("./article-small-flat-entrance-system.j
 const oneIdeaPerRoomArticle = require("./article-one-idea-per-room-starter-guide.js");
 const paverPatioArticle = require("./article-paver-patio-material-ideas.js");
 const diyHomeAestheticsArticle = require("./article-diy-home-aesthetics-projects.js");
+const diyHotCocoaBarArticle = require("./article-diy-hot-cocoa-bar-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2240,6 +2241,17 @@ const longFormPosts = [
     alt: "Sunlit bedroom showcasing DIY home aesthetic projects",
     image: "/images/diy-home-aesthetics-projects/hero.png",
     bodyHtml: diyHomeAestheticsArticle.body,
+  },
+  {
+    slug: "diy-hot-cocoa-bar-ideas",
+    title: "15 DIY Hot Cocoa Bar Ideas for a Delicious Winter Treat",
+    category: "Holidays",
+    readingTime: "12 min read",
+    date: "February 20, 2027",
+    excerpt: "From a budget-friendly tray to a full rolling cart — 15 hot cocoa bar styles for every occasion, space and crowd this winter.",
+    alt: "Delicious DIY hot cocoa bar styled for a cozy winter treat",
+    image: "/images/diy-hot-cocoa-bar-ideas/hero.jpg",
+    bodyHtml: diyHotCocoaBarArticle.body,
   },
 ];
 

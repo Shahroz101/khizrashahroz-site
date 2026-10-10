@@ -194,6 +194,7 @@ const homeOfficeColorArticle = require("./article-home-office-color-guide.js");
 const cozyPergolaArticle = require("./article-cozy-pergola-outdoor-space.js");
 const fallMantelTechniqueArticle = require("./article-fall-mantel-styling-technique.js");
 const gardenArtGuideArticle = require("./article-garden-art-guide.js");
+const frenchFarmhouseLivingRoomArticle = require("./article-french-farmhouse-living-room.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2504,6 +2505,17 @@ const longFormPosts = [
     alt: "Stunning garden art adding charm to an outdoor space",
     image: "/images/garden-art-guide/hero.png",
     bodyHtml: gardenArtGuideArticle.body,
+  },
+  {
+    slug: "french-farmhouse-living-room",
+    title: "How to Design a Cozy French Farmhouse Living Room",
+    category: "Living Room",
+    readingTime: "11 min read",
+    date: "March 14, 2027",
+    excerpt: "Antique accessories, subtle pattern and a touch of real elegance — what separates French farmhouse from its rustic American cousin.",
+    alt: "Cozy French farmhouse living room with elegant, rustic charm",
+    image: "/images/french-farmhouse-living-room/hero.png",
+    bodyHtml: frenchFarmhouseLivingRoomArticle.body,
   },
 ];
 

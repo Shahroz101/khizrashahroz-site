@@ -234,6 +234,7 @@ const livingRoomPartitionArticle = require("./article-living-room-partition-desi
 const diningRoomMirrorArticle = require("./article-dining-room-mirror-ideas.js");
 const sofaTrendsArticle = require("./article-sofa-trends-worth-knowing.js");
 const bathroomPaintColorsArticle = require("./article-bathroom-paint-colors-fresh-look.js");
+const lampTypesArticle = require("./article-lamp-types-to-brighten-your-home.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2984,6 +2985,17 @@ const longFormPosts = [
     alt: "A beautifully painted bathroom with a fresh, inviting color",
     image: "/images/bathroom-paint-colors-fresh-look/hero.png",
     bodyHtml: bathroomPaintColorsArticle.body,
+  },
+  {
+    slug: "lamp-types-to-brighten-your-home",
+    title: "5 Table Lamp Types Worth Adding to Any Room",
+    category: "Decorating",
+    readingTime: "7 min read",
+    date: "April 23, 2027",
+    excerpt: "Touch-control, retro-inspired, adjustable color temperature, soft fabric shade, cordless — five lamp types and where each one actually fits.",
+    alt: "A warmly lit living room brightened by the right table lamp",
+    image: "/images/lamp-types-to-brighten-your-home/hero.png",
+    bodyHtml: lampTypesArticle.body,
   },
 ];
 

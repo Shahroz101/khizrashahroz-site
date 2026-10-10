@@ -235,6 +235,7 @@ const diningRoomMirrorArticle = require("./article-dining-room-mirror-ideas.js")
 const sofaTrendsArticle = require("./article-sofa-trends-worth-knowing.js");
 const bathroomPaintColorsArticle = require("./article-bathroom-paint-colors-fresh-look.js");
 const lampTypesArticle = require("./article-lamp-types-to-brighten-your-home.js");
+const smallSpaceSofaArticle = require("./article-small-space-sofa-types.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2996,6 +2997,17 @@ const longFormPosts = [
     alt: "A warmly lit living room brightened by the right table lamp",
     image: "/images/lamp-types-to-brighten-your-home/hero.png",
     bodyHtml: lampTypesArticle.body,
+  },
+  {
+    slug: "small-space-sofa-types",
+    title: "6 Sofa Types That Actually Fit a Small Space",
+    category: "Living Room",
+    readingTime: "9 min read",
+    date: "April 24, 2027",
+    excerpt: "Convertible futons, compact mid-century silhouettes, reversible chaise sectionals — six sofa types built around fitting, not just style.",
+    alt: "A small living room furnished with a sofa that actually fits",
+    image: "/images/small-space-sofa-types/hero.png",
+    bodyHtml: smallSpaceSofaArticle.body,
   },
 ];
 

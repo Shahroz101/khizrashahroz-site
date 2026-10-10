@@ -209,6 +209,7 @@ const kitchenTrendsArticle = require("./article-kitchen-trends-worth-adopting.js
 const flowerBedEdgingTechniqueArticle = require("./article-flower-bed-edging-technique.js");
 const frontYardLandscapingArticle = require("./article-front-yard-landscaping-design.js");
 const livingRoomCornerArticle = require("./article-living-room-corner-decor-ideas.js");
+const livingRoomTrendsArticle = require("./article-living-room-decor-trends.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2684,6 +2685,17 @@ const longFormPosts = [
     alt: "Stylish living room corner transformed with thoughtful decor",
     image: "/images/living-room-corner-decor-ideas/hero.jpg",
     bodyHtml: livingRoomCornerArticle.body,
+  },
+  {
+    slug: "living-room-decor-trends",
+    title: "Living Room Decor Trends 2026: What's Actually Worth Following",
+    category: "Living Room",
+    readingTime: "12 min read",
+    date: "March 29, 2027",
+    excerpt: "Texture, layered lighting and a properly sized rug are the safe bets — an honest read on which 2026 living room trends have real staying power.",
+    alt: "Stylish living room showcasing the latest 2026 decor trends",
+    image: "/images/living-room-decor-trends/hero.jpg",
+    bodyHtml: livingRoomTrendsArticle.body,
   },
 ];
 

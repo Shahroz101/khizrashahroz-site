@@ -242,6 +242,7 @@ const farmhouseCurtainStylesArticle = require("./article-farmhouse-curtain-style
 const fallDecorTrendsArticle = require("./article-fall-decor-trends-this-year.js");
 const kitchenCabinetMakeoverArticle = require("./article-kitchen-cabinet-makeover-techniques.js");
 const gardenWeddingTipsArticle = require("./article-garden-wedding-planning-tips.js");
+const powderRoomLuxuryArticle = require("./article-powder-room-luxury-elements.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -3080,6 +3081,17 @@ const longFormPosts = [
     alt: "A beautiful garden wedding ceremony surrounded by natural beauty",
     image: "/images/garden-wedding-planning-tips/hero.png",
     bodyHtml: gardenWeddingTipsArticle.body,
+  },
+  {
+    slug: "powder-room-luxury-elements",
+    title: "What Actually Makes a Powder Room Feel Luxurious",
+    category: "Bathroom",
+    readingTime: "10 min read",
+    date: "May 1, 2027",
+    excerpt: "Scent, sound and personalization matter more than any single finish — the sensory details that make a tiny powder room feel genuinely luxurious.",
+    alt: "A close-up of a luxurious powder room vanity with elegant details",
+    image: "/images/powder-room-luxury-elements/hero.png",
+    bodyHtml: powderRoomLuxuryArticle.body,
   },
 ];
 

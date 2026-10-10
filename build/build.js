@@ -218,6 +218,7 @@ const midCenturyMakeoverArticle = require("./article-mid-century-makeover-proces
 const midCenturyBudgetArticle = require("./article-mid-century-budget-thrift.js");
 const midCenturyAuthenticityArticle = require("./article-mid-century-authenticity-guide.js");
 const spanishBathroomFinishingArticle = require("./article-spanish-bathroom-finishing-layer.js");
+const modernSpanishInteriorArticle = require("./article-modern-spanish-interior-design.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2792,6 +2793,17 @@ const longFormPosts = [
     alt: "Beautiful modern Spanish bathroom with warm, inviting design",
     image: "/images/spanish-bathroom-finishing-layer/hero.png",
     bodyHtml: spanishBathroomFinishingArticle.body,
+  },
+  {
+    slug: "modern-spanish-interior-design",
+    title: "Modern Spanish Interior Design for a Whole Stylish Home",
+    category: "Decorating",
+    readingTime: "11 min read",
+    date: "April 7, 2027",
+    excerpt: "Warm palette, natural materials and real restraint carried from room to room — modern Spanish style applied to a whole home, not just one space.",
+    alt: "Elegant modern Spanish interior with warm, natural styling",
+    image: "/images/modern-spanish-interior-design/hero.png",
+    bodyHtml: modernSpanishInteriorArticle.body,
   },
 ];
 

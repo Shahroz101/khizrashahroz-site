@@ -183,6 +183,7 @@ const frontYardSittingAreaArticle = require("./article-front-yard-sitting-area-i
 const galleryWallExecutionArticle = require("./article-gallery-wall-execution-guide.js");
 const goldBathroomDecorArticle = require("./article-gold-bathroom-decor-ideas.js");
 const entrywayBenchArticle = require("./article-entryway-bench-ideas.js");
+const guestRoomTrendsArticle = require("./article-guest-room-trends.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2372,6 +2373,17 @@ const longFormPosts = [
     alt: "Cozy entryway featuring a stylish wooden bench",
     image: "/images/entryway-bench-ideas/hero.png",
     bodyHtml: entrywayBenchArticle.body,
+  },
+  {
+    slug: "guest-room-trends",
+    title: "10 Guest Room Trends That Create the Ultimate Retreat",
+    category: "Bedroom",
+    readingTime: "11 min read",
+    date: "March 3, 2027",
+    excerpt: "From layered bedding to a cozy seating nook — 10 trends turning the spare room into a genuine small retreat for guests.",
+    alt: "Beautifully designed guest room reflecting 2026 trends",
+    image: "/images/guest-room-trends/hero.jpg",
+    bodyHtml: guestRoomTrendsArticle.body,
   },
 ];
 

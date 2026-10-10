@@ -223,6 +223,7 @@ const moodyLivingRoomArticle = require("./article-moody-living-room-ideas.js");
 const staircaseWallDecorArticle = require("./article-staircase-wall-decor-ideas.js");
 const modernSpanishBedroomArticle = require("./article-modern-spanish-bedroom-guide.js");
 const bathroomFlooringArticle = require("./article-bathroom-flooring-material-ideas.js");
+const raisedBedEdgingArticle = require("./article-raised-bed-edging-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2852,6 +2853,17 @@ const longFormPosts = [
     alt: "Luxurious bathroom flooring transforming the entire space",
     image: "/images/bathroom-flooring-material-ideas/hero.png",
     bodyHtml: bathroomFlooringArticle.body,
+  },
+  {
+    slug: "raised-bed-edging-ideas",
+    title: "Raised Garden Bed Materials, and How to Choose Between Them",
+    category: "Garden",
+    readingTime: "10 min read",
+    date: "April 12, 2027",
+    excerpt: "Wood, metal, stone or concrete — a raised bed's edging is a structural wall, not a border line, which makes the material choice genuinely different.",
+    alt: "Charming raised garden bed with stylish edging upgrading the space",
+    image: "/images/raised-bed-edging-ideas/hero.png",
+    bodyHtml: raisedBedEdgingArticle.body,
   },
 ];
 

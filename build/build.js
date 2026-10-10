@@ -206,6 +206,7 @@ const mirrorCabinetStylingArticle = require("./article-bathroom-mirror-cabinet-s
 const entrywayDropZoneArticle = require("./article-entryway-drop-zone-wall.js");
 const japandiBedroomArticle = require("./article-japandi-bedroom-ideas.js");
 const kitchenTrendsArticle = require("./article-kitchen-trends-worth-adopting.js");
+const flowerBedEdgingTechniqueArticle = require("./article-flower-bed-edging-technique.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2648,6 +2649,17 @@ const longFormPosts = [
     alt: "Trendy modern kitchen showcasing 2026 design innovations",
     image: "/images/kitchen-trends-worth-adopting/hero.jpg",
     bodyHtml: kitchenTrendsArticle.body,
+  },
+  {
+    slug: "flower-bed-edging-technique",
+    title: "How to Actually Dig and Edge a Flower Bed",
+    category: "Garden",
+    readingTime: "9 min read",
+    date: "March 26, 2027",
+    excerpt: "Planning, digging, shaping and maintaining the line — the physical technique behind a crisp flower bed edge, independent of which material goes in it.",
+    alt: "Essential garden tools for creating a flower bed edge",
+    image: "/images/flower-bed-edging-technique/hero.png",
+    bodyHtml: flowerBedEdgingTechniqueArticle.body,
   },
 ];
 

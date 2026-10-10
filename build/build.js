@@ -233,6 +233,7 @@ const fallGiftBasketArticle = require("./article-fall-gift-basket-ideas.js");
 const livingRoomPartitionArticle = require("./article-living-room-partition-designs.js");
 const diningRoomMirrorArticle = require("./article-dining-room-mirror-ideas.js");
 const sofaTrendsArticle = require("./article-sofa-trends-worth-knowing.js");
+const bathroomPaintColorsArticle = require("./article-bathroom-paint-colors-fresh-look.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2972,6 +2973,17 @@ const longFormPosts = [
     alt: "Current sofa trends shaping living room design",
     image: "/images/sofa-trends-worth-knowing/hero.png",
     bodyHtml: sofaTrendsArticle.body,
+  },
+  {
+    slug: "bathroom-paint-colors-fresh-look",
+    title: "12 Bathroom Paint Colors to Give the Space a Fresh Look",
+    category: "Bathroom",
+    readingTime: "12 min read",
+    date: "April 22, 2027",
+    excerpt: "From crisp white to dramatic black — 12 bathroom paint colors covering safe, timeless and genuinely bold.",
+    alt: "A beautifully painted bathroom with a fresh, inviting color",
+    image: "/images/bathroom-paint-colors-fresh-look/hero.png",
+    bodyHtml: bathroomPaintColorsArticle.body,
   },
 ];
 

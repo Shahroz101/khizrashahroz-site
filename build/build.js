@@ -229,6 +229,7 @@ const diyBathroomShelvingArticle = require("./article-diy-bathroom-shelving-proj
 const blackBathroomDecorArticle = require("./article-black-bathroom-decor-ideas.js");
 const bohoLivingRoomGuideArticle = require("./article-boho-living-room-decor-guide.js");
 const farmhouseKitchenSinkGuideArticle = require("./article-farmhouse-kitchen-sink-guide.js");
+const fallGiftBasketArticle = require("./article-fall-gift-basket-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2924,6 +2925,17 @@ const longFormPosts = [
     alt: "A beautiful farmhouse kitchen sink anchoring the whole space",
     image: "/images/farmhouse-kitchen-sink-guide/hero.jpg",
     bodyHtml: farmhouseKitchenSinkGuideArticle.body,
+  },
+  {
+    slug: "fall-gift-basket-ideas",
+    title: "10 Fall Gift Basket Ideas for Every Occasion",
+    category: "Seasonal",
+    readingTime: "10 min read",
+    date: "April 18, 2027",
+    excerpt: "Thanksgiving, a fall birthday, a wedding or just-because — the theme, essentials and styling that make a fall gift basket actually land.",
+    alt: "A beautifully arranged fall gift basket full of seasonal items",
+    image: "/images/fall-gift-basket-ideas/hero.jpg",
+    bodyHtml: fallGiftBasketArticle.body,
   },
 ];
 

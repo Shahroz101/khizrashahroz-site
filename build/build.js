@@ -222,6 +222,7 @@ const modernSpanishInteriorArticle = require("./article-modern-spanish-interior-
 const moodyLivingRoomArticle = require("./article-moody-living-room-ideas.js");
 const staircaseWallDecorArticle = require("./article-staircase-wall-decor-ideas.js");
 const modernSpanishBedroomArticle = require("./article-modern-spanish-bedroom-guide.js");
+const bathroomFlooringArticle = require("./article-bathroom-flooring-material-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2840,6 +2841,17 @@ const longFormPosts = [
     alt: "Beautiful modern Spanish bedroom with warm, inviting design",
     image: "/images/modern-spanish-bedroom-guide/hero.png",
     bodyHtml: modernSpanishBedroomArticle.body,
+  },
+  {
+    slug: "bathroom-flooring-material-ideas",
+    title: "13 Bathroom Flooring Materials and What Each One Actually Gets You",
+    category: "Bathroom",
+    readingTime: "11 min read",
+    date: "April 11, 2027",
+    excerpt: "From polished concrete to terracotta — 13 bathroom flooring materials, and what each one brings to a space, especially a small one.",
+    alt: "Luxurious bathroom flooring transforming the entire space",
+    image: "/images/bathroom-flooring-material-ideas/hero.png",
+    bodyHtml: bathroomFlooringArticle.body,
   },
 ];
 

@@ -182,6 +182,7 @@ const cozyFarmhouseKitchenArticle = require("./article-cozy-farmhouse-kitchen-wa
 const frontYardSittingAreaArticle = require("./article-front-yard-sitting-area-ideas.js");
 const galleryWallExecutionArticle = require("./article-gallery-wall-execution-guide.js");
 const goldBathroomDecorArticle = require("./article-gold-bathroom-decor-ideas.js");
+const entrywayBenchArticle = require("./article-entryway-bench-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2360,6 +2361,17 @@ const longFormPosts = [
     alt: "Luxurious gold bathroom decor adding glamorous touches",
     image: "/images/gold-bathroom-decor-ideas/hero.png",
     bodyHtml: goldBathroomDecorArticle.body,
+  },
+  {
+    slug: "entryway-bench-ideas",
+    title: "9 Entryway Bench Styles for a Functional and Beautiful Space",
+    category: "Entryway",
+    readingTime: "9 min read",
+    date: "March 2, 2027",
+    excerpt: "From rustic wood to built-in storage — 9 entryway bench styles that solve the daily shoe-removal problem while finishing the space.",
+    alt: "Cozy entryway featuring a stylish wooden bench",
+    image: "/images/entryway-bench-ideas/hero.png",
+    bodyHtml: entrywayBenchArticle.body,
   },
 ];
 

@@ -208,6 +208,7 @@ const japandiBedroomArticle = require("./article-japandi-bedroom-ideas.js");
 const kitchenTrendsArticle = require("./article-kitchen-trends-worth-adopting.js");
 const flowerBedEdgingTechniqueArticle = require("./article-flower-bed-edging-technique.js");
 const frontYardLandscapingArticle = require("./article-front-yard-landscaping-design.js");
+const livingRoomCornerArticle = require("./article-living-room-corner-decor-ideas.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2672,6 +2673,17 @@ const longFormPosts = [
     alt: "Beautiful front yard landscaping design with a quaint entrance",
     image: "/images/front-yard-landscaping-design/hero.png",
     bodyHtml: frontYardLandscapingArticle.body,
+  },
+  {
+    slug: "living-room-corner-decor-ideas",
+    title: "14 Living Room Corner Decor Ideas You Haven't Tried Yet",
+    category: "Living Room",
+    readingTime: "12 min read",
+    date: "March 28, 2027",
+    excerpt: "From a cozy reading nook to a mini gallery wall — 14 ways to give an awkward living room corner a genuine purpose.",
+    alt: "Stylish living room corner transformed with thoughtful decor",
+    image: "/images/living-room-corner-decor-ideas/hero.jpg",
+    bodyHtml: livingRoomCornerArticle.body,
   },
 ];
 

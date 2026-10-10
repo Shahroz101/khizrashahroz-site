@@ -195,6 +195,7 @@ const cozyPergolaArticle = require("./article-cozy-pergola-outdoor-space.js");
 const fallMantelTechniqueArticle = require("./article-fall-mantel-styling-technique.js");
 const gardenArtGuideArticle = require("./article-garden-art-guide.js");
 const frenchFarmhouseLivingRoomArticle = require("./article-french-farmhouse-living-room.js");
+const luxuriousBedroomArticle = require("./article-luxurious-bedroom-comprehensive-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2516,6 +2517,17 @@ const longFormPosts = [
     alt: "Cozy French farmhouse living room with elegant, rustic charm",
     image: "/images/french-farmhouse-living-room/hero.png",
     bodyHtml: frenchFarmhouseLivingRoomArticle.body,
+  },
+  {
+    slug: "luxurious-bedroom-comprehensive-guide",
+    title: "How to Design a Luxurious Bedroom: A Comprehensive Guide",
+    category: "Bedroom",
+    readingTime: "13 min read",
+    date: "March 15, 2027",
+    excerpt: "Palette, layered lighting and real textile layering — the decisions that make a bedroom feel luxurious, independent of how much it costs.",
+    alt: "Luxurious bedroom design with elegant, comprehensive styling",
+    image: "/images/luxurious-bedroom-comprehensive-guide/hero.jpg",
+    bodyHtml: luxuriousBedroomArticle.body,
   },
 ];
 

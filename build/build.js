@@ -228,6 +228,7 @@ const summerHomeDecorArticle = require("./article-summer-home-decor-refresh.js")
 const diyBathroomShelvingArticle = require("./article-diy-bathroom-shelving-projects.js");
 const blackBathroomDecorArticle = require("./article-black-bathroom-decor-ideas.js");
 const bohoLivingRoomGuideArticle = require("./article-boho-living-room-decor-guide.js");
+const farmhouseKitchenSinkGuideArticle = require("./article-farmhouse-kitchen-sink-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2912,6 +2913,17 @@ const longFormPosts = [
     alt: "Cozy boho living room with warm, eclectic charm",
     image: "/images/boho-living-room-decor-guide/hero.png",
     bodyHtml: bohoLivingRoomGuideArticle.body,
+  },
+  {
+    slug: "farmhouse-kitchen-sink-guide",
+    title: "How to Choose a Farmhouse Kitchen Sink",
+    category: "Kitchen",
+    readingTime: "10 min read",
+    date: "April 17, 2027",
+    excerpt: "Material, size, mount style and bowl configuration — the decisions that actually matter before committing to a farmhouse sink.",
+    alt: "A beautiful farmhouse kitchen sink anchoring the whole space",
+    image: "/images/farmhouse-kitchen-sink-guide/hero.jpg",
+    bodyHtml: farmhouseKitchenSinkGuideArticle.body,
   },
 ];
 

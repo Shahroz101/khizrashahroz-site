@@ -185,6 +185,7 @@ const goldBathroomDecorArticle = require("./article-gold-bathroom-decor-ideas.js
 const entrywayBenchArticle = require("./article-entryway-bench-ideas.js");
 const guestRoomTrendsArticle = require("./article-guest-room-trends.js");
 const smallHomeOfficeArticle = require("./article-small-home-office-space-solutions.js");
+const modernFarmhouseKitchenNoRenoArticle = require("./article-modern-farmhouse-kitchen-no-reno.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2396,6 +2397,17 @@ const longFormPosts = [
     alt: "Small home office featuring creative space-saving solutions",
     image: "/images/small-home-office-space-solutions/hero.png",
     bodyHtml: smallHomeOfficeArticle.body,
+  },
+  {
+    slug: "modern-farmhouse-kitchen-no-reno",
+    title: "Modern Farmhouse Kitchen Look: What You Can Do Without a Renovation",
+    category: "Kitchen",
+    readingTime: "11 min read",
+    date: "March 5, 2027",
+    excerpt: "Paint, hardware and lighting get you most of the way there — which farmhouse kitchen elements are a weekend swap, and which genuinely need a renovation.",
+    alt: "Bright modern farmhouse kitchen with timeless charm",
+    image: "/images/modern-farmhouse-kitchen-no-reno/hero.png",
+    bodyHtml: modernFarmhouseKitchenNoRenoArticle.body,
   },
 ];
 

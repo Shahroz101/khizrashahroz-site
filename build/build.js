@@ -227,6 +227,7 @@ const raisedBedEdgingArticle = require("./article-raised-bed-edging-ideas.js");
 const summerHomeDecorArticle = require("./article-summer-home-decor-refresh.js");
 const diyBathroomShelvingArticle = require("./article-diy-bathroom-shelving-projects.js");
 const blackBathroomDecorArticle = require("./article-black-bathroom-decor-ideas.js");
+const bohoLivingRoomGuideArticle = require("./article-boho-living-room-decor-guide.js");
 const { picture } = require("./picture-helper.js");
 const { generateFormats } = require("./generate-image-formats.js");
 
@@ -2900,6 +2901,17 @@ const longFormPosts = [
     alt: "Striking black bathroom decor transforming a full bathroom",
     image: "/images/black-bathroom-decor-ideas/hero.jpg",
     bodyHtml: blackBathroomDecorArticle.body,
+  },
+  {
+    slug: "boho-living-room-decor-guide",
+    title: "Boho Living Room Decor, Built From the Ground Up",
+    category: "Decorating",
+    readingTime: "9 min read",
+    date: "April 16, 2027",
+    excerpt: "Foundation first, then texture, then the louder stuff — the build order behind a boho living room that reads as collected, not cluttered.",
+    alt: "Cozy boho living room with warm, eclectic charm",
+    image: "/images/boho-living-room-decor-guide/hero.png",
+    bodyHtml: bohoLivingRoomGuideArticle.body,
   },
 ];
 

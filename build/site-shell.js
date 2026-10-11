@@ -333,7 +333,7 @@ function page({ title, description, canonical, current = "", body, image = SITE.
 <link rel="preload" as="font" type="font/woff2" href="/fonts/playfair-italic-400.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/dmsans-italic-400.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/caveat-500.woff2" crossorigin>
-<link rel="stylesheet" href="/css/styles.css?v=11">
+<link rel="stylesheet" href="/css/styles.css?v=12">
 <script defer src="/js/main.js?v=3"></script>
 ${analyticsTag()}${ld}${extraHead}</head>
 <body>

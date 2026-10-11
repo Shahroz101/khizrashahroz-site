@@ -852,7 +852,7 @@ function refreshExternalChrome(DIST, slug) {
   html = html
     .replace(/<header class="site-header">[\s\S]*?(?=<main id="main">)/, header("") + "\n")
     .replace(/<footer class="site-footer">[\s\S]*?<\/footer>/, footer())
-    .replace(/\/css\/styles\.css\?v=\d+/, "/css/styles.css?v=11")
+    .replace(/\/css\/styles\.css\?v=\d+/, "/css/styles.css?v=12")
     .replace(/\/js\/main\.js\?v=\d+/, "/js/main.js?v=3");
   fs.writeFileSync(file, html);
 }

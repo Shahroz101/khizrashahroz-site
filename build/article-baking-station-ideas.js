@@ -9,24 +9,95 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0CT4Q8HPV", title: "Wooden Mixer Slider Mat, Sliding Tray for Countertop Organization", w: 1424, h: 1500 },
+    { asin: "B0F43FJZLH", title: "Stand Mixer Attachment Holder, Securely Holds 4 Mixer Attachments", w: 1500, h: 1492 },
+  ],
+  why: [
+    { asin: "B0GJZKPFQJ", title: "Kitchen Utensil Holder for Countertop, 4 Compartments, Acacia Wood", w: 1500, h: 1500 },
+    { asin: "B0FB97JNB2", title: "Large Kitchen Utensil Holder, Acacia Wood, 3 Compartments, Farmhouse Caddy", w: 1387, h: 1500 },
+  ],
+  needs: [
+    { asin: "B0000VLP76", title: "Fox Run Marble Pastry Board, 16\" x 20\", Natural White Marble Dough Board", w: 1500, h: 612 },
+    { asin: "B0GWVC2ZLY", title: "White Carrara Marble Cutting Board, 24 x 20 Inch, Extra Large Pastry Slab", w: 1500, h: 798 },
+  ],
+  pantry: [
+    { asin: "B0H3N9P9WP", title: "Vtopmart 5 PCS Flour and Sugar Storage Container Set for Regular Bakers", w: 1181, h: 1500 },
+    { asin: "B0FFHLPTXV", title: "Extra Large Flour and Sugar Storage Containers, Set of 2, Airtight", w: 1500, h: 1214 },
+  ],
+  countertop: [
+    { asin: "B0DXFB86J7", title: "Kitchen Cutting Board Organizer Rack, 5-Slot Storage Holder for Bakeware", w: 1463, h: 1500 },
+    { asin: "B0CKWY2TY2", title: "Silicone Baking Mat Roll, Heat Resistant, Non-Stick Pastry Mat for Dough Rolling", w: 1479, h: 1436 },
+  ],
+  coffeeCombo: [
+    { asin: "B0F59KR6F4", title: "Coffee Bar Accessories, Coffee Station Organizer for Counter", w: 1500, h: 1500 },
+    { asin: "B0BQJKKQL3", title: "QUALLON Coffee Bar Accessories and Organizer, 2 Tier Wood Coffee Tray", w: 1131, h: 1500 },
+  ],
+  nook: [
+    { asin: "B0DP7LGNMQ", title: "KLM Rolling Storage Cart, 4-Tier Black Kitchen Cart with Wheels, Slim", w: 1500, h: 1500 },
+    { asin: "B0H4LTSHTH", title: "Utility Slim Storage Cart, 6 Tier Narrow Metal Frame Cart", w: 382, h: 1358 },
+  ],
+  hiddenCabinet: [
+    { asin: "B0DGBVDK14", title: "OCG 2 Tier Pull Out Cabinet Organizer, 14\" W x 21\" D, Chrome Finish", w: 1500, h: 1319 },
+    { asin: "B09QZMJ17J", title: "DINDON 2 Tier Pull Out Cabinet Organizer, Double Tier Wire Basket, Chrome", w: 1500, h: 1167 },
+  ],
+  farmhouse: [
+    { asin: "B0CYWP3RMQ", title: "Vintage Glass Jars with Wooden Lids, 6 Pack, 24 oz Airtight Storage", w: 1500, h: 1492 },
+    { asin: "B0DSCJQS22", title: "3 Pcs Ceramic Canisters Set for Kitchen, 74/36/18 oz", w: 1163, h: 1055 },
+  ],
+  modern: [
+    { asin: "B0F3NY87WH", title: "Ceramic Kitchen Canisters for Countertop, Set of 3, Airtight Bamboo Lids", w: 1500, h: 1500 },
+    { asin: "B0GL218YY8", title: "Ceramic Kitchen Canisters for Countertop, Set of 3, Airtight Ceramic Lids", w: 1500, h: 1500 },
+  ],
+  island: [
+    { asin: "B0CZLFHJVJ", title: "HOOBRO Kitchen Island with Storage, Rolling Island Cart, 2 Drawers & Outlet", w: 1485, h: 1500 },
+    { asin: "B0H6JB6Y1L", title: "Rolling Kitchen Island Cart with Storage, 3 Tier, Wood Large Worktop", w: 1500, h: 1413 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "baking-station-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "baking-station-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "baking-station-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}">Pinterest &mdash; ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
@@ -34,76 +105,77 @@ const body = `
 <p>A dedicated station keeps all of that from taking over the main counter every time a recipe gets started.</p>
 <p>It doesn't need to be a full separate room. Most of these setups work within an existing kitchen footprint.</p>
 <p>These 8 ideas cover a range of space and budget, from a pantry corner to a full island.</p>
-${photo("hero.jpg", "Organized baking station with mixer, ingredients and baking tools", 1152, 768)}
+${photo("hero.jpg", "Organized baking station with mixer, ingredients and baking tools", 1152, 768, "hero")}
 
 <h2>Why a Dedicated Station Actually Helps</h2>
 <p>Baking involves more simultaneous steps than most everyday cooking &mdash; measuring, mixing, resting, baking &mdash; and each step needs its own space.</p>
 <p>A fixed spot for baking tools means not hunting through general kitchen storage mid-recipe.</p>
 <p>It also keeps flour and sugar mess contained to one area instead of spreading across the whole kitchen.</p>
 <p>This matters more for anyone who bakes regularly, where the setup gets used often enough to be worth the dedicated space.</p>
-${pinPhoto("intro-why.jpg", "Well-organized baking station making baking tasks easier", 1024, 683, "https://www.pinterest.com/pin/68748897218/", "organized baking station")}
+${pinPhoto("intro-why.jpg", "Well-organized baking station making baking tasks easier", 1024, 683, "https://www.pinterest.com/pin/68748897218/", "organized baking station", "why")}
 
 <h2>What a Good Station Actually Needs</h2>
 <p>A flat, sturdy work surface comes first &mdash; marble or a smooth counter material works best for rolling dough.</p>
 <p>Storage for the baking-specific essentials &mdash; flour, sugar, extracts, measuring tools &mdash; should live within arm's reach, not scattered through general pantry shelving.</p>
 <p>An accessible outlet matters if a stand mixer lives at the station permanently.</p>
 <p>Good lighting rounds it out, since precise measuring and dough work both benefit from clear visibility.</p>
-${pinPhoto("intro-needs.jpg", "Essential baking station elements including surface and storage", 1024, 1024, "https://www.pinterest.com/pin/2111131073634675/", "baking station essentials")}
+${pinPhoto("intro-needs.jpg", "Essential baking station elements including surface and storage", 1024, 1024, "https://www.pinterest.com/pin/2111131073634675/", "baking station essentials", "needs")}
 
 <h2>1. The Pantry Baking Station</h2>
 <p>A section of pantry shelving dedicated entirely to baking supplies keeps everything in one predictable spot.</p>
 <p>This works well for anyone with a walk-in or large pantry that can spare a few shelves.</p>
 <p>Clear containers for flour, sugar and other staples make the whole area easier to scan at a glance.</p>
 <p>A small fold-out or pull-out surface nearby adds workspace without taking up permanent counter room.</p>
-${pinPhoto("pantry-station.jpg", "Pantry baking station with organized shelving and supplies", 683, 1024, "https://www.pinterest.com/pin/26458716564054534/", "pantry baking station")}
+${pinPhoto("pantry-station.jpg", "Pantry baking station with organized shelving and supplies", 683, 1024, "https://www.pinterest.com/pin/26458716564054534/", "pantry baking station", "pantry")}
 
 <h2>2. The Countertop Baking Station</h2>
 <p>A defined section of existing counter, kept clear and dedicated to baking tools, is the simplest version of this idea.</p>
 <p>No construction or new furniture required &mdash; just consistent, deliberate use of the space that's already there.</p>
 <p>A tray or mat marking the zone keeps it from slowly becoming general counter clutter.</p>
 <p>This suits a smaller kitchen that can't spare a dedicated cabinet or nook.</p>
-${pinPhoto("countertop-station.jpg", "Countertop baking station with dedicated workspace", 683, 1024, "https://www.pinterest.com/pin/15129348744585133/", "countertop baking station")}
+${pinPhoto("countertop-station.jpg", "Countertop baking station with dedicated workspace", 683, 1024, "https://www.pinterest.com/pin/15129348744585133/", "countertop baking station", "countertop")}
 
 <h2>3. The Coffee and Baking Combo Station</h2>
 <p>Pairing a coffee setup with baking supplies makes sense in a kitchen that doesn't have room for two separate dedicated zones.</p>
 <p>Morning coffee prep and baking don't usually happen at the same time, so sharing a surface rarely causes real conflict.</p>
 <p>A shared tray system helps keep the two sets of supplies from blending into one disorganized pile.</p>
 <p>This is a practical compromise for a smaller kitchen rather than an ideal, dedicated solution.</p>
+${productGrid("coffeeCombo")}
 
 <h2>4. The Small Kitchen Baking Nook</h2>
 <p>A narrow, underused corner can hold a compact baking setup without taking real floor space.</p>
 <p>A slim rolling cart or a wall-mounted fold-down surface both work well in this kind of tight spot.</p>
 <p>This proves a dedicated station doesn't require a large kitchen, just a willingness to use an awkward corner intentionally.</p>
 <p>Vertical storage matters more here than in any larger setup, since floor and counter space stay minimal.</p>
-${pinPhoto("small-kitchen-nook.jpg", "Compact baking nook fitted into a small kitchen corner", 693, 1024, "https://www.pinterest.com/pin/3307399721940280/", "small kitchen baking nook")}
+${pinPhoto("small-kitchen-nook.jpg", "Compact baking nook fitted into a small kitchen corner", 693, 1024, "https://www.pinterest.com/pin/3307399721940280/", "small kitchen baking nook", "nook")}
 
 <h2>5. The Hidden Cabinet Baking Station</h2>
 <p>A pull-out or fold-down station tucked inside a cabinet disappears completely when not in use.</p>
 <p>This suits anyone who wants a dedicated baking setup without a permanently visible station taking up counter space.</p>
 <p>The cabinet itself needs enough depth and clearance to pull the surface out fully without obstruction.</p>
 <p>A bigger upfront investment than most ideas on this list, but the cleanest-looking result when closed.</p>
-${pinPhoto("hidden-cabinet.jpg", "Hidden baking station concealed within kitchen cabinetry", 736, 1024, "https://www.pinterest.com/pin/422281203245512/", "hidden cabinet baking station")}
+${pinPhoto("hidden-cabinet.jpg", "Hidden baking station concealed within kitchen cabinetry", 736, 1024, "https://www.pinterest.com/pin/422281203245512/", "hidden cabinet baking station", "hiddenCabinet")}
 
 <h2>6. The Farmhouse Style Baking Station</h2>
 <p>Butcher block counters, open wood shelving and vintage-style canisters bring warmth to a baking zone.</p>
 <p>This suits a kitchen that already leans farmhouse or traditional elsewhere.</p>
 <p>Open storage works especially well here, since the canisters and tools themselves double as decor.</p>
 <p>A style choice that happens to also be practical, since wood surfaces hold up well to regular flour and dough work.</p>
-${pinPhoto("farmhouse-style.jpg", "Farmhouse style baking station with rustic wood elements", 512, 1024, "https://www.pinterest.com/pin/7740630606684013/", "farmhouse baking station")}
+${pinPhoto("farmhouse-style.jpg", "Farmhouse style baking station with rustic wood elements", 512, 1024, "https://www.pinterest.com/pin/7740630606684013/", "farmhouse baking station", "farmhouse")}
 
 <h2>7. The Modern Minimalist Baking Station</h2>
 <p>Clean lines, closed storage and a restrained color palette keep this version from looking cluttered even with regular use.</p>
 <p>Tools and ingredients stay hidden behind cabinetry rather than displayed openly.</p>
 <p>This suits a kitchen that already leans modern, where an open farmhouse-style setup would feel out of place.</p>
 <p>Requires more discipline to keep tidy, since nothing is meant to stay visible between uses.</p>
-${pinPhoto("modern-minimalist.jpg", "Modern minimalist baking station with clean lines and hidden storage", 576, 1024, "https://www.pinterest.com/pin/151152131239704312/", "modern minimalist baking station")}
+${pinPhoto("modern-minimalist.jpg", "Modern minimalist baking station with clean lines and hidden storage", 576, 1024, "https://www.pinterest.com/pin/151152131239704312/", "modern minimalist baking station", "modern")}
 
 <h2>8. The Baking Island Setup</h2>
 <p>A full island or large peninsula dedicated to baking is the most ambitious version of this idea.</p>
 <p>This works best in a larger kitchen that can spare the square footage for a single-purpose surface.</p>
 <p>It allows for the most storage, the most workspace and room for more than one person to bake at once.</p>
 <p>Worth it for anyone who bakes seriously and regularly, rather than occasionally.</p>
-${pinPhoto("baking-island.jpg", "Dedicated baking island setup with ample workspace and storage", 683, 1024, "https://www.pinterest.com/pin/17240411070520170/", "baking island setup")}
+${pinPhoto("baking-island.jpg", "Dedicated baking island setup with ample workspace and storage", 683, 1024, "https://www.pinterest.com/pin/17240411070520170/", "baking island setup", "island")}
 
 <h2>Final Thoughts</h2>
 <p>None of these 8 setups require a full kitchen renovation.</p>

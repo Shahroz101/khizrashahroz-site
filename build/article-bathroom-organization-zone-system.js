@@ -12,16 +12,106 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0D3FH8KDP", title: "Kate and Laurel Ciel Modern Glam Wide Two-Tier Wall Shelf, 24 x 20, Gold", w: 1471, h: 1500 },
+    { asin: "B0CMZRLV7D", title: "UTEX Bathroom Wall Shelf, 3-Tier Wall-Mounted Organizer with Hooks, White", w: 1167, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0G1JZV3BV", title: "Rattan Storage Baskets Set, Wooden Frame with Woven Cane Design", w: 1477, h: 1304 },
+    { asin: "B08LR9RTZD", title: "Decorative Baskets for Organizing Bathroom, 2 Set Bathroom Storage Organizer Basket Bin", w: 1500, h: 1117 },
+  ],
+  idea2: [
+    { asin: "B094624Q8Z", title: "SpaceAid Bamboo Drawer Dividers with Inserts and Labels", w: 1500, h: 1398 },
+    { asin: "B08DXDZ51L", title: "Adjustable Drawer Dividers, Cut-to-Fit DIY Organizers, White, 8 Pack", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B08FR51S8T", title: "Jay-Chi Over Door Hanging Organizer Storage, 7 Large Pockets Closet Bathroom Organizer", w: 1207, h: 1500 },
+    { asin: "B09L4R5T55", title: "ULG 1 Pack Over Door Organizer with 5 Large and 10 Mesh Side Pockets", w: 1098, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B01M7WVH4H", title: "12\" Magnetic Tool Holder Strip, A Tool Magnet Bar for Garage Organization", w: 1476, h: 1500 },
+    { asin: "B0CQS68BRS", title: "Magnetic Storage Organizer Tool Holder, Magnetic Tool Holder Strip, 6-Pack", w: 1475, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0D3XDYRVX", title: "Hanging Wire Basket with Hook, Hanging Wire Basket Wall Storage and Display Basket", w: 835, h: 576 },
+    { asin: "B0937R3JYW", title: "Metal Hanging Wire Basket with Hooks for Storage, Bawuie 4 Pack Wall Mount on Door", w: 1000, h: 1000 },
+  ],
+  idea6: [
+    { asin: "B0BVZKG6XL", title: "Tessco 8 Pcs Cotton Swab Holder Dispenser Glass Apothecary Jars with Bamboo Lids 10oz Clear", w: 1500, h: 1379 },
+    { asin: "B07FD52GJJ", title: "WHOLE HOUSEWARES Glass Apothecary Jars with Lids, Set of 3 for Bathroom Storage", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B08B1TX1CQ", title: "YouCopia SinkSuite Under Sink Turntable with Adjustable Dividers", w: 1228, h: 1500 },
+    { asin: "B0B3WSZ3QP", title: "Set of 4, 10 Inch Non-Skid Lazy Susan Organizers, Turntable Rack for Cabinet", w: 1330, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0FQ798VV2", title: "Floating Shelves Set of 3, Easy Install, 15.7 Inch Brown Wall Mount Shelf", w: 1024, h: 1024 },
+    { asin: "B0F4P45GZ4", title: "Towel Rack with Wall Mounted Bathroom Shelves, Set of 3, Solid Wood, Farmhouse", w: 1500, h: 1484 },
+  ],
+  idea9: [
+    { asin: "B002Q9MCG8", title: "DYMO LetraTag 100H Handheld Label Maker, Thermal Printing, Easy-to-Use", w: 367, h: 813 },
+    { asin: "B09NX9FYMS", title: "Label Maker Machine with Tape, Mini Label Maker Phomemo P12", w: 1500, h: 1210 },
+  ],
+  idea10: [
+    { asin: "B07M712RTW", title: "Simple Houseware Hanging Shower Head Caddy Organizer, 24 x 10, Chrome", w: 691, h: 1500 },
+    { asin: "B0CBJMVJ7D", title: "WXCGX Hanging Shower Caddy Over Shower Head Organizer: Stainless Rustproof Bathroom Storage", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0D2D958NB", title: "DAOUTIME Bathroom Standing Shelf, 3 Tier Corner Stand, Free-Standing Shelf Units", w: 1500, h: 1500 },
+    { asin: "B0CSSHPG7N", title: "Wisuce White Small Corner Shelf Stand, 3-Tier Bamboo Corner Bookshelf", w: 1500, h: 1500 },
+  ],
+  idea12: [
+    { asin: "B08F999N1D", title: "Heavy Duty Bathroom Towel and Robe Wall Hooks", w: 1500, h: 1294 },
+    { asin: "B0882SYGRX", title: "TocTen 4 Pack Bath Towel Hook Set, SUS 304Stainless Steel Robe Hook", w: 901, h: 796 },
+  ],
+  idea13: [
+    { asin: "B083YW13H4", title: "SheeChung Mason Jar Bathroom Accessories Set, 6Pcs Rustic Bathroom Set, Brown", w: 1471, h: 1395 },
+    { asin: "B0873Z9XDM", title: "HOME-X Mason Jar for Bathroom Organization, Apothecary Jars with Lids, Set of 2 8oz", w: 1500, h: 1235 },
+  ],
+  idea14: [
+    { asin: "B0C8QBG139", title: "Sorbus Fridge Organizers and Storage, Clear Plastic Bins (Large, 8 Pack)", w: 1491, h: 1500 },
+    { asin: "B0BC8VSWC7", title: "Vtopmart 6 Pack Clear Stackable Storage Bins with Lids and Handles, Large", w: 1410, h: 1500 },
+  ],
+  idea15: [
+    { asin: "B00GQP0XTQ", title: "Utopia Towels 8 Piece Majestic Plush Luxury Towel Set, Cotton, Grey", w: 1368, h: 1500 },
+    { asin: "B09YNXMJSR", title: "6 Piece Towel Set, 2 Bath Towels 2 Hand Towels 2 Washcloths", w: 1500, h: 1394 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "bathroom-organization-zone-system-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "bathroom-organization-zone-system", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
@@ -29,110 +119,112 @@ const body = `
 <p>It's a zoning problem.</p>
 <p>When everything lives in one shared space instead of a designated spot, small messes multiply fast.</p>
 <p>These 15 hacks build toward one real system, not just a pile of individual purchases.</p>
-${photo("tiered-shelving.png", "Modern bathroom with tiered shelving used for vertical organization", 683, 1024)}
+${photo("tiered-shelving.png", "Modern bathroom with tiered shelving used for vertical organization", 683, 1024, "hero")}
 
 <h2>1. Build Zones Before Buying Anything</h2>
 <p>Before a single new bin or basket shows up, sort by actual use: daily essentials, weekly items, and rarely-used backups.</p>
 <p>Daily items go at arm's reach. Everything else can live higher up or further back.</p>
 <p>This one step makes every other hack on this list more effective.</p>
 <p>A system built on real habits sticks. One built on good intentions usually doesn't.</p>
+${productGrid("idea1")}
 
 <h2>2. Divide and Conquer the Drawers</h2>
 <p>A drawer without dividers turns into a junk drawer within a week, no matter how it started.</p>
 <p>Simple inserts keep small items &mdash; bobby pins, nail clippers, lip balm &mdash; from sliding into one tangled pile.</p>
 <p>Grouping by category, not by size, makes items easier to find under time pressure.</p>
 <p>This is one of the cheapest fixes on the whole list.</p>
-${photo("drawer-dividers.png", "Open bathroom drawer organized with sleek dividers for small items", 576, 1024)}
+${photo("drawer-dividers.png", "Open bathroom drawer organized with sleek dividers for small items", 576, 1024, "idea2")}
 
 <h2>3. Put the Door to Work</h2>
 <p>A bathroom door is wasted space more often than not.</p>
 <p>An over-the-door rack or pocket organizer adds real storage without touching a single wall.</p>
 <p>Hair tools, cleaning supplies and extra towels all work well here.</p>
 <p>It's one of the few upgrades that's fully reversible if the layout ever changes.</p>
-${photo("over-door-storage.png", "Bathroom door fitted with an over-the-door storage rack", 576, 1024)}
+${photo("over-door-storage.png", "Bathroom door fitted with an over-the-door storage rack", 576, 1024, "idea3")}
 
 <h2>4. Add Magnetic Strips for Metal Tools</h2>
 <p>Tweezers, nail clippers, bobby pins &mdash; small metal tools disappear into drawers constantly.</p>
 <p>A magnetic strip mounted inside a cabinet door keeps them visible and off the counter.</p>
 <p>It's a five-minute install that solves a surprisingly persistent clutter problem.</p>
 <p>This works especially well paired with the drawer dividers above &mdash; two systems, same category of items.</p>
-${photo("magnetic-strips.png", "Close-up of a magnetic strip holding small metal bathroom tools", 683, 1024)}
+${photo("magnetic-strips.png", "Close-up of a magnetic strip holding small metal bathroom tools", 683, 1024, "idea4")}
 
 <h2>5. Hang What Can Be Hung</h2>
 <p>Wire baskets on hooks free up shelf and counter space fast.</p>
 <p>Rolled towels, spare toiletries or cleaning supplies all work well hung rather than stacked.</p>
 <p>This suits a smaller bathroom where every flat surface is already spoken for.</p>
 <p>Vertical storage almost always beats horizontal in a tight footprint.</p>
-${photo("wire-baskets.png", "Wire baskets hanging from hooks on a bathroom wall", 576, 1024)}
+${photo("wire-baskets.png", "Wire baskets hanging from hooks on a bathroom wall", 576, 1024, "idea5")}
 
 <h2>6. Switch to Clear Containers</h2>
 <p>Clear glass or acrylic containers do double duty &mdash; they look intentional and make contents instantly visible.</p>
 <p>Cotton balls, cotton swabs and bath salts all look more like decor than clutter once they're decanted.</p>
 <p>No more guessing what's inside an opaque box before opening it.</p>
 <p>This swap alone can make a cluttered counter look considerably more put-together.</p>
-${photo("clear-containers.png", "Clear glass containers filled with cotton balls and bath products", 576, 1024)}
+${photo("clear-containers.png", "Clear glass containers filled with cotton balls and bath products", 576, 1024, "idea6")}
 
 <h2>7. Add a Lazy Susan to a Deep Cabinet</h2>
 <p>Deep, dark cabinets are where bottles go to get forgotten.</p>
 <p>A turntable keeps everything in that back corner actually reachable.</p>
 <p>No more digging past the front row just to find what's hiding behind it.</p>
 <p>This fix is especially useful under a sink, where cabinet depth is usually the biggest obstacle.</p>
-${photo("lazy-susan.png", "Open bathroom cabinet with a lazy Susan turntable for organization", 576, 1024)}
+${photo("lazy-susan.png", "Open bathroom cabinet with a lazy Susan turntable for organization", 576, 1024, "idea7")}
 
 <h2>8. Install Floating Shelves</h2>
 <p>A floating shelf adds storage without the bulk of a full cabinet.</p>
 <p>It works especially well above the toilet or beside the vanity, where a cabinet wouldn't fit.</p>
 <p>Keep what's on display intentional &mdash; a floating shelf reads as styled, not just storage, when it's not overloaded.</p>
 <p>This pairs naturally with the zone system from the first hack on this list.</p>
+${productGrid("idea8")}
 
 <h2>9. Label Everything That Isn't Obvious</h2>
 <p>Labels aren't just for the pantry.</p>
 <p>A labeled bin gets put back in the right spot far more reliably than an unlabeled one.</p>
 <p>This matters even more in a shared bathroom, where everyone needs to know the system without asking.</p>
 <p>A label maker helps, but a marker and masking tape work in a pinch too.</p>
-${photo("labels.png", "Well-organized bathroom storage solution using labeled containers", 683, 1024)}
+${photo("labels.png", "Well-organized bathroom storage solution using labeled containers", 683, 1024, "idea9")}
 
 <h2>10. Give Everyone Their Own Shower Caddy</h2>
 <p>A shared shower turns into a pile of competing bottles fast.</p>
 <p>A separate caddy per person keeps everyone's products contained and easy to grab.</p>
 <p>This cuts down on the daily hunt for a specific bottle among five identical-looking ones.</p>
 <p>It also makes it obvious at a glance when someone's running low on something.</p>
-${photo("shower-caddy.png", "Well-organized shower caddy with neatly arranged bathroom products", 683, 1024)}
+${photo("shower-caddy.png", "Well-organized shower caddy with neatly arranged bathroom products", 683, 1024, "idea10")}
 
 <h2>11. Use the Corners</h2>
 <p>Corner shelving claims space that otherwise goes completely unused.</p>
 <p>A tiered corner unit works especially well in a small bathroom with limited wall space elsewhere.</p>
 <p>It's one of the few storage additions that doesn't compete with existing furniture for floor space.</p>
 <p>Corners are consistently the most overlooked storage opportunity in a small bathroom.</p>
-${photo("corner-shelving.png", "Small bathroom designed with corner shelving units for storage", 576, 1024)}
+${photo("corner-shelving.png", "Small bathroom designed with corner shelving units for storage", 576, 1024, "idea11")}
 
 <h2>12. Add Hooks Wherever They're Missing</h2>
 <p>A single towel hook rarely covers a whole household's needs.</p>
 <p>Adding a few more &mdash; behind the door, beside the shower, near the sink &mdash; solves the daily "where do I hang this" problem.</p>
 <p>Hooks are cheap, quick to install, and don't require any real planning.</p>
 <p>This is one of the lowest-effort, highest-impact fixes on the entire list.</p>
-${photo("hooks.png", "Bathroom wall fitted with multiple hooks for towels and robes", 683, 1024)}
+${photo("hooks.png", "Bathroom wall fitted with multiple hooks for towels and robes", 683, 1024, "idea12")}
 
 <h2>13. Repurpose Mason Jars</h2>
 <p>A mason jar holds cotton swabs, bath salts or small toiletries just as well as a store-bought container.</p>
 <p>It's an easy way to add storage without buying anything new.</p>
 <p>Grouped together on a shelf or tray, a few jars read as styled rather than improvised.</p>
 <p>This is one of the cheapest options here, and often the one already sitting in a kitchen cabinet.</p>
-${photo("mason-jars.png", "Vintage-inspired bathroom scene featuring repurposed mason jars", 576, 1024)}
+${photo("mason-jars.png", "Vintage-inspired bathroom scene featuring repurposed mason jars", 576, 1024, "idea13")}
 
 <h2>14. Switch to Stackable Bins</h2>
 <p>Stackable, uniform bins make better use of cabinet height than a pile of mismatched boxes.</p>
 <p>Clear versions keep contents visible without opening each one to check.</p>
 <p>This works especially well under the sink, where vertical space usually goes to waste.</p>
 <p>Fewer loose items floating around means less time spent searching for anything.</p>
-${photo("stackable-bins.png", "Bathroom cabinet organized with clear stackable storage bins", 576, 1024)}
+${photo("stackable-bins.png", "Bathroom cabinet organized with clear stackable storage bins", 576, 1024, "idea14")}
 
 <h2>15. Fold Towels With a System</h2>
 <p>How towels get folded affects how much shelf space they actually take up.</p>
 <p>A simple tri-fold or roll uses noticeably less room than a casual stack.</p>
 <p>Rolling also makes towels easier to grab one at a time without toppling the rest.</p>
 <p>It's a small habit change that makes a real difference in a linen closet or open shelf.</p>
-${photo("folded-towels.png", "Serene bathroom scene with neatly folded and rolled towels on display", 576, 1024)}
+${photo("folded-towels.png", "Serene bathroom scene with neatly folded and rolled towels on display", 576, 1024, "idea15")}
 
 <h2>Final Thoughts</h2>
 <p>None of these 15 hacks require a full bathroom renovation.</p>

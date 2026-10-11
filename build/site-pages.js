@@ -102,7 +102,7 @@ function roomTiles(posts) {
       </a>`;
       }).join("\n      ")}
       <a href="/blog/" class="room-tile room-tile--all">
-        <span class="label"><strong>Every idea, newest first</strong><span>All ${plural(posts.length, "guide")} <span aria-hidden="true">→</span></span></span>
+        <span class="label"><strong>Every idea, newest first</strong><span>Browse everything <span aria-hidden="true">→</span></span></span>
       </a>
     </div>`;
 }
@@ -122,7 +122,7 @@ function ctaBand(posts) {
     <p>Start with a room, pick one idea, and give it a weekend. Every guide here is written to be done, not just admired.</p>
     <div class="actions">
       <a href="/start-here/" class="btn-primary">Start here <span class="arrow" aria-hidden="true">→</span></a>
-      <a href="/blog/" class="btn-secondary">Browse all ${posts.length} ideas</a>
+      <a href="/blog/" class="btn-secondary">Browse all ideas</a>
       ${SITE.pinterest ? `<a href="${SITE.pinterest}" class="btn-secondary" rel="me noopener" target="_blank">Follow on Pinterest</a>` : ""}
     </div>
   </div>
@@ -160,7 +160,6 @@ function writeHome(DIST, posts) {
   const picks = EDITOR_PICKS.map((s) => posts.find((p) => p.slug === s)).filter(Boolean).slice(0, 5);
   const [lead, ...gridPicks] = picks;
   const seasonal = sortNewest(posts.filter((p) => p.categorySlug === "seasonal-holidays")).slice(0, 4);
-  const total = posts.length;
 
   const body = `
   <section class="hero" aria-labelledby="hero-title">
@@ -173,7 +172,7 @@ function writeHome(DIST, posts) {
           <a href="/blog/" class="btn-primary">Explore all ideas <span class="arrow" aria-hidden="true">→</span></a>
           <a href="/start-here/" class="btn-text">Start here</a>
         </div>
-        <p class="hero-stats"><span><strong>${total}</strong> decorating guides</span><span><strong>${CATEGORIES.length}</strong> rooms &amp; topics</span><span><strong>Free</strong> to read, always</span></p>
+        <p class="hero-stats"><span><strong>${CATEGORIES.length}</strong> rooms &amp; topics</span><span><strong>Room-by-room</strong> guides</span><span><strong>Free</strong> to read, always</span></p>
       </div>
       <div class="hero-image reveal">
         <div class="deco-circle" aria-hidden="true"></div>
@@ -349,7 +348,7 @@ function writeBlog(DIST, posts) {
 ${pageHero({
   eyebrow: "From the blog",
   heading: "All decorating ideas",
-  lede: `${plural(all.length, "guide")}, newest first — decor, color, and seasonal inspiration for making your home feel like you.`,
+  lede: "Every guide, newest first — decor, color, and seasonal inspiration for making your home feel like you.",
   extra: chipBar("blog"),
 })}
 <section class="section latest">
@@ -362,7 +361,7 @@ ${pageHero({
     "blog",
     page({
       title: "All Decorating Ideas — Khizra Shahroz",
-      description: `Every home decor article from Khizra Shahroz — ${all.length} decorating guides, color palettes, and seasonal ideas, sorted newest first.`,
+      description: "Every home decor article from Khizra Shahroz — decorating guides, color palettes, and seasonal ideas, sorted newest first.",
       canonical: `${SITE.url}/blog/`,
       current: "/blog/",
       body,
@@ -446,7 +445,7 @@ function writeSearch(DIST, posts) {
 ${pageHero({
   eyebrow: "Search",
   heading: "Find an idea",
-  lede: `Search ${plural(posts.length, "decorating guide")} by room, color, style, or season.`,
+  lede: "Search every decorating guide by room, color, style, or season.",
   extra: searchForm("q", { autofocus: true }),
 })}
 <section class="section latest" data-search-page data-index="/search-index.json">
@@ -512,7 +511,7 @@ ${aboutBand({ asH1: true })}
 <section class="section prose">
   <div class="wrap-1240">
     <h2>What you'll find here</h2>
-    <p>${plural(posts.length, "decorating guide")}, organized room by room and idea by idea. Most posts are numbered lists you can skim in a few minutes and act on over a weekend; the rest are longer how-tos for the projects that need a plan.</p>
+    <p>Decorating guides organized room by room and idea by idea. Most posts are numbered lists you can skim in a few minutes and act on over a weekend; the rest are longer how-tos for the projects that need a plan.</p>
     <ul class="link-columns">
         ${rooms}
     </ul>

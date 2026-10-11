@@ -13,93 +13,163 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0F8Q2FXY5", title: "Fall Outdoor Throw Pillow Covers 18x18, 2pcs, Thanksgiving Autumn Decor", w: 1500, h: 1500 },
+    { asin: "B0D2GWGH6H", title: "AVOIN colorlife Fall Pumpkin Leaves Throw Pillow Covers, 18x18 In, Set of 4", w: 1411, h: 1406 },
+  ],
+  throw: [
+    { asin: "B0DZHGYV4D", title: "Chunky Knit Throw Blanket for Couch, 100% Knitted Thick Chenille Yarn, Beige", w: 1500, h: 827 },
+    { asin: "B0H38PWZHK", title: "Cream Chunky Knit Throw Blanket for Couch, 50\" x 60\", Fall Crochet Throw", w: 1500, h: 1500 },
+  ],
+  pumpkins: [
+    { asin: "B0H29B98PK", title: "Bucherry 3 Pcs Velvet Pumpkin Decor Set, 3D Foam Pumpkin, Brown", w: 1500, h: 1500 },
+    { asin: "B0H28C5Y5R", title: "Velvet Fall Pumpkin Decor, 6 Pcs, Artificial Fake Plastic Mini Pumpkins", w: 1500, h: 1472 },
+  ],
+  candleHolders: [
+    { asin: "B0BV9XJF8Q", title: "Antique Brass Iron Taper Candle Holder, Set of 3 Decorative Candle Stand", w: 1500, h: 1500 },
+    { asin: "B0GZVD9N6S", title: "6Pcs Brass Gold Metal Taper Candle Holders, Vintage Modern Centerpiece", w: 1254, h: 1254 },
+  ],
+  wovenBaskets: [
+    { asin: "B0D31SM7FS", title: "Beautiful Storage Basket Set of 4, Natural Jute Rope Bins for Shelves", w: 1500, h: 1500 },
+    { asin: "B0GJSH9M99", title: "StorageWorks Wicker Basket with Lids, Seagrass Wicker Storage Bins", w: 1500, h: 1030 },
+  ],
+  fauxGreenery: [
+    { asin: "B0G57TVLWK", title: "25Pcs Artificial Eucalyptus Stems, Realistic Fake Eucalyptus Branches", w: 1500, h: 1412 },
+    { asin: "B0G2LXVJML", title: "10pcs Eucalyptus Stems, Artificial Eucalyptus Leaves, Fake Greenery Branches", w: 1320, h: 1500 },
+  ],
+  layeredRugs: [
+    { asin: "B0GL7QMW11", title: "Handspun Jute Area Rug, Natural Reversible, 24x36 Inch", w: 1410, h: 919 },
+    { asin: "B0B74SR4VQ", title: "Jute Cotton Hand Woven Area Rug, 8' x 10', Natural", w: 1254, h: 1254 },
+  ],
+  goldAccents: [
+    { asin: "B0G4RGL48F", title: "Round Brass Tray, Small Gold Decorative Tray, Matte Brass Finish", w: 735, h: 737 },
+    { asin: "B08RCK1P7K", title: "Oval Vintage Decorative Mirror Tray, 14.6\" x 9.8\", Jewelry Dresser Organizer", w: 1500, h: 1186 },
+  ],
+  cozyLighting: [
+    { asin: "B0HFTBBDNM", title: "Warm & Cozy Bedside Table Lamp, Linen Shade, Wood Grain Metal Base", w: 1500, h: 1500 },
+    { asin: "B0G3LSP5PX", title: "Small Table Lamp Set of 2, Bedside Nightstand Lamp, Boho Vintage", w: 1500, h: 1500 },
+  ],
+  artPrints: [
+    { asin: "B0FH53R96T", title: "Framed Neutral Abstract Wall Art for Living Room, Set of 6 Canvas Prints", w: 1500, h: 1500 },
+    { asin: "B0FG7YT7QR", title: "Large Abstract Paintings Framed Neutral Canvas Prints, Mid Century Modern, 3 Piece", w: 1400, h: 1400 },
+  ],
+  tableSettings: [
+    { asin: "B075YRG42X", title: "Solino Home 100% Pure Linen Table Runner, Natural, 14 x 90 In", w: 1243, h: 1500 },
+    { asin: "B0D4Z6CVXZ", title: "Fall Table Runner, Cow Pumpkin Linen Seasonal, 13x72 Inch", w: 1500, h: 1472 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "affordable-fall-decor-luxe-look-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "affordable-fall-decor-luxe-look", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
 <p>A luxe-looking fall refresh doesn't require a luxury budget.</p>
 <p>A handful of affordable categories, chosen well, consistently outperform a few expensive pieces scattered around.</p>
 <p>These 10 categories deliver the most visual impact for the least cost, without pointing to any specific product that might be out of stock by the time anyone goes looking.</p>
-${photo("hero.png", "Cozy fall living room styled with affordable luxe-looking decor", 574, 1024)}
+${photo("hero.png", "Cozy fall living room styled with affordable luxe-looking decor", 574, 1024, "hero")}
 
 <h2>1. A Genuinely Plush Throw Blanket</h2>
 <p>A thick faux fur or chunky knit throw instantly upgrades a sofa or chair for relatively little money.</p>
 <p>The trick is prioritizing texture and visible thickness over brand name &mdash; a budget throw with real loft reads as expensive from across the room.</p>
 <p>Draping it loosely rather than folding it perfectly adds to the relaxed, luxe feel.</p>
 <p>One of the highest-impact, lowest-cost items on this entire list.</p>
-${photo("throw-blankets.png", "Plush throw blanket draped elegantly over furniture", 574, 1024)}
+${photo("throw-blankets.png", "Plush throw blanket draped elegantly over furniture", 574, 1024, "throw")}
 
 <h2>2. Velvet Pumpkins</h2>
 <p>Velvet pumpkins read as boutique-made even at a modest price point, since the fabric itself does most of the visual work.</p>
 <p>Grouping a few different sizes together on a mantel or table creates more impact than a single pumpkin alone.</p>
 <p>Deep jewel tones &mdash; burgundy, forest green, mustard &mdash; tend to look more intentional than a bright orange.</p>
 <p>A small, inexpensive detail that photographs disproportionately well.</p>
-${photo("velvet-pumpkins.png", "Velvet pumpkins styled as elegant fall decor accents", 574, 1024)}
+${photo("velvet-pumpkins.png", "Velvet pumpkins styled as elegant fall decor accents", 574, 1024, "pumpkins")}
 
 <h2>3. Candles in Statement Holders</h2>
 <p>Swapping a plain candle for one in an interesting holder &mdash; brass, ceramic, carved wood &mdash; elevates the look without changing the candle itself.</p>
 <p>Varying the holder heights across a small grouping adds visual interest a single candle can't achieve alone.</p>
 <p>This is a cheap, reversible upgrade &mdash; the holders can be reused well beyond fall.</p>
 <p>A small swap with a real return on investment.</p>
-${photo("candle-holders.png", "Candles displayed in elegant statement holders", 574, 1024)}
+${photo("candle-holders.png", "Candles displayed in elegant statement holders", 574, 1024, "candleHolders")}
 
 <h2>4. Woven Baskets</h2>
 <p>A woven basket adds texture and warmth while also solving a real storage need.</p>
 <p>This works for blankets, firewood, or general living room catch-all storage.</p>
 <p>Natural materials &mdash; rattan, seagrass, jute &mdash; read as considerably more expensive than their actual cost.</p>
 <p>A functional purchase that also does genuine styling work.</p>
-${photo("woven-baskets.png", "Natural woven baskets adding warmth and storage to a room", 574, 1024)}
+${photo("woven-baskets.png", "Natural woven baskets adding warmth and storage to a room", 574, 1024, "wovenBaskets")}
 
 <h2>5. Realistic Faux Greenery</h2>
 <p>Quality faux stems have improved enough that a well-chosen one is hard to distinguish from the real thing at a glance.</p>
 <p>This solves the real problem with seasonal greenery &mdash; it doesn't wilt, and it can be reused year after year.</p>
 <p>Choosing stems with some natural color variation, rather than a uniform single tone, helps sell the realism.</p>
 <p>A one-time purchase that pays off repeatedly across future seasons.</p>
-${photo("faux-greenery.png", "Realistic faux greenery arranged as natural-looking decor", 574, 1024)}
+${photo("faux-greenery.png", "Realistic faux greenery arranged as natural-looking decor", 574, 1024, "fauxGreenery")}
 
 <h2>6. Layered Rugs</h2>
 <p>A smaller patterned or textured rug layered over a larger neutral one creates a designer-style look for a fraction of the cost of one large statement rug.</p>
 <p>This technique also lets a smaller, cheaper rug make a bigger visual impact than it would on its own.</p>
 <p>Natural fiber rugs (jute, sisal) work especially well as the base layer underneath a smaller accent rug.</p>
 <p>A clever budget trick that reads as intentional, not improvised.</p>
-${photo("layered-rugs.png", "Layered area rugs creating a designer-inspired living room look", 574, 1024)}
+${photo("layered-rugs.png", "Layered area rugs creating a designer-inspired living room look", 574, 1024, "layeredRugs")}
 
 <h2>7. Gold Accents in Small Doses</h2>
 <p>A gold-finished tray, picture frame, or small decorative object adds a sense of luxury without the cost of gold hardware throughout the room.</p>
 <p>A little goes a long way here &mdash; two or three gold accents read as elegant, while too many start to feel like overkill.</p>
 <p>This works especially well paired with warm, neutral tones elsewhere in the room.</p>
 <p>One of the cheapest ways to add a touch of glamour to an otherwise simple space.</p>
-${photo("gold-accents.png", "Gold decorative accents adding subtle luxury to a room", 574, 1024)}
+${photo("gold-accents.png", "Gold decorative accents adding subtle luxury to a room", 574, 1024, "goldAccents")}
 
 <h2>8. Warm, Layered Lighting</h2>
 <p>Swapping a harsh overhead bulb for warm-toned lamps and candlelight changes a room's entire mood for very little cost.</p>
 <p>Layering a few different light sources &mdash; a floor lamp, a table lamp, candles &mdash; creates the cozy, moody feel associated with a more expensive space.</p>
 <p>This is one of the fastest changes on this entire list, since it often just means repositioning what's already owned.</p>
 <p>Lighting does more for a room's perceived cost than almost any single decorative object.</p>
-${photo("cozy-lighting.png", "Warm layered lighting creating a cozy atmospheric mood", 574, 1024)}
+${photo("cozy-lighting.png", "Warm layered lighting creating a cozy atmospheric mood", 574, 1024, "cozyLighting")}
 
 <h2>9. Affordable Art Prints</h2>
 <p>A well-chosen print in a simple frame can read as an original piece from across a room.</p>
 <p>Scale matters more than cost here &mdash; one appropriately sized print beats several small, cheap ones scattered around.</p>
 <p>A matte finish and a clean frame both help a budget print avoid looking obviously mass-produced.</p>
 <p>One of the easiest ways to add a focal point to a room without a major purchase.</p>
-${photo("art-prints.png", "Affordable art print styled to look like an original piece", 574, 1024)}
+${photo("art-prints.png", "Affordable art print styled to look like an original piece", 574, 1024, "artPrints")}
 
 <h2>10. A Styled Seasonal Table Setting</h2>
 <p>A simple table setting &mdash; a runner, a few natural elements, coordinated place settings &mdash; impresses guests without needing an expensive dinnerware set.</p>
 <p>Repeating two or three colors throughout the setting creates cohesion that reads as considered, not thrown together.</p>
 <p>This is more about arrangement and restraint than about spending more on individual pieces.</p>
 <p>A good final touch that pulls the whole room's seasonal look together.</p>
-${photo("table-settings.png", "Beautifully styled seasonal table setting for fall entertaining", 574, 1024)}
+${photo("table-settings.png", "Beautifully styled seasonal table setting for fall entertaining", 574, 1024, "tableSettings")}
 
 <h2>Final Thoughts</h2>
 <p>None of these 10 categories require a significant budget to pull off well.</p>

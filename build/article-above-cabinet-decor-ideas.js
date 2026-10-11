@@ -70,6 +70,22 @@ const PRODUCTS = {
     { asin: "B0GL15LP75", title: "2 Pcs Black and White Ceramic Vase, Mid Century Modern Striped & Checkered Vases", w: 1500, h: 1466 },
     { asin: "B0GR428NXJ", title: "Matte Black Ceramic Vase Set of 3, Modern Farmhouse Boho Home Decor", w: 1172, h: 1500 },
   ],
+  glassVessels: [
+    { asin: "B0H4VVFQ23", title: "Clear Glass Vase Wide, Premium Decor Flower Vase, Cylinder Vases for Centerpieces", w: 1326, h: 1500 },
+    { asin: "B009ANZ2YC", title: "WGVI Quality Thick Weighted Tall Clear Cylinder Glass Vase, 4\" W x 14\" H", w: 392, h: 1500 },
+  ],
+  cookbooks: [
+    { asin: "B0H5886B7D", title: "Beautiful Decorative Books for Modern Home Decor, Set of 2 Stack Fake Books for Shelf & Mantel Decoration", w: 1254, h: 1254 },
+    { asin: "B0FG1YS2P2", title: "9 Faux Books Neutral, Decorative Box with Hidden Storage, Bookshelf Accent, Home Staging Accessory", w: 1488, h: 1500 },
+  ],
+  statementLighting: [
+    { asin: "B0F9KYJP4D", title: "20 Inch Large Black Chandelier Dome, Bold Matte Black and Gold Pendant Light, Hanging Fixture", w: 1500, h: 1500 },
+    { asin: "B09ZP4RT5H", title: "Black Pendant Light for Kitchen Island, Farmhouse Metal Cage Hanging Light", w: 1468, h: 1500 },
+  ],
+  emptySpace: [
+    { asin: "B0GY1D33YK", title: "Ceramic Vase, Modern Sculptural Textured Vase, Beige Abstract Flower Vase for Home Decor", w: 1254, h: 1254 },
+    { asin: "B0GYLZVB5D", title: "DOWAN 5.7\" Rustic Vintage Ceramic Vase, Distressed Textured Minimalist Farmhouse Pottery, Gray", w: 1500, h: 1500 },
+  ],
 };
 
 function productGrid(productsKey) {
@@ -149,6 +165,7 @@ const ideas = [
       "Go bigger than feels natural &mdash; a few larger glass vessels read as considered, while a cluster of small ones starts to look like clutter fast.",
       "It's also one of the lowest-risk choices on this entire list. Glass never really goes out of style the way more decorative materials can.",
     ],
+    productsKey: "glassVessels",
   },
   {
     n: "05",
@@ -168,6 +185,7 @@ const ideas = [
       "Stack them horizontally, limit the color palette to neutrals, and add one single object on top to finish the look.",
       "If the cookbook collection currently looks like a rainbow exploded, it belongs on a regular shelf instead &mdash; this spot only works with real color discipline.",
     ],
+    productsKey: "cookbooks",
   },
   {
     n: "07",
@@ -207,6 +225,7 @@ const ideas = [
       "The effect pulls the eye upward and makes standard-height cabinets read as considerably taller than they actually are.",
       "It solves more problems than people expect from a single fixture &mdash; filling dead space, adding style, and improving the actual lighting all at once.",
     ],
+    productsKey: "statementLighting",
   },
   {
     n: "11",
@@ -256,16 +275,17 @@ const ideas = [
       "Not every cabinet run needs styling. Strategic emptiness actually makes the sections that are styled stand out more by comparison.",
       "A clean, open kitchen like the one shown here, with nothing at all above the cabinets, proves that restraint can look just as finished as a fully styled shelf. If the kitchen already feels busy, stepping back is often the right move.",
     ],
-    photo: pinPhoto("empty-space.jpg", "Open white kitchen with bare cabinets and no decor above them, with woven pendant lights and a dining area nearby", 736, 882, "https://www.pinterest.com/pin/351912464203596/", "Empty Space Above Kitchen Cabinets"),
+    photo: pinPhoto("empty-space.jpg", "Open white kitchen with bare cabinets and no decor above them, with woven pendant lights and a dining area nearby", 736, 882, "https://www.pinterest.com/pin/351912464203596/", "Empty Space Above Kitchen Cabinets", "emptySpace"),
   },
 ];
 
 function ideaBlock(idea) {
   const paras = idea.paras.map((p) => `<p>${p}</p>`).join("\n      ");
+  const media = idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${media}`;
 }
 
 const body = `

@@ -14,24 +14,87 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B08THFF1CN", title: "YJYart Bathroom Wall Decor Sea Turtle Canvas Wall Art, Blue Coastal", w: 1500, h: 1111 },
+    { asin: "B0FZ894YTN", title: "Framed Boho Botanical Flower Wall Art, Set of 3, Minimalist Neutral Floral", w: 1500, h: 889 },
+  ],
+  why: [
+    { asin: "B0D6VP916S", title: "2 Pack Minimalist Neutral Boho Line Art Framed Canvas Wall Art, 12\"x16\"", w: 1340, h: 993 },
+    { asin: "B0FCMF14ST", title: "Floating Framed Sage Green Wall Art, Bathroom Picture Wall Decor, 12x16 In", w: 1500, h: 1139 },
+  ],
+  choose: [
+    { asin: "B0GRF83PV1", title: "Framed Abstract Floral Wall Art, Neutral Line Flower Canvas Wall Decor", w: 1172, h: 1479 },
+    { asin: "B0F2DGYGDX", title: "InSimSea Gold Bamboo Framed Wall Art, Retro Blue Hydrangea Prints, 11x14 In", w: 1302, h: 1423 },
+  ],
+  where: [
+    { asin: "B0H54741GF", title: "Botanical Bathroom Wall Art Framed, Sage Green, Eucalyptus Leaf Canvas Print", w: 774, h: 933 },
+    { asin: "B0FK2LM57R", title: "LLEEMPI Framed Funny Bathroom Wall Art, Cat Quote Canvas Painting, 12x16 In", w: 917, h: 1406 },
+  ],
+  oversized: [
+    { asin: "B0H419LNG8", title: "HUADAOART Abstract Canvas Wall Art, Neutral Beige Gray Framed, 20x40 Inch", w: 1500, h: 1001 },
+    { asin: "B0DHNZ6FWZ", title: "Large Framed Boho Black White Abstract Wall Art for Living Room, 24x36 In", w: 1500, h: 1500 },
+  ],
+  vintage: [
+    { asin: "B0GRR96L7P", title: "Vintage Gold Framed Floral Vine Wall Art, Retro Beige Botanical Painting", w: 1500, h: 1335 },
+    { asin: "B0G3WWVP3B", title: "3D Textured Canvas Wall Art, Vintage Carved Gold Frame, Farmhouse Wildflower", w: 1235, h: 1500 },
+  ],
+  gallery: [
+    { asin: "B086YWCYJN", title: "ArtbyHannah Gallery Wall Frame Set, 8 Pack Neutral Wall Decor, Beige, Large", w: 1500, h: 1088 },
+    { asin: "B0DWSJHC1C", title: "Venusmiles 15 Pack Picture Frames Collage Wall Decor, Gallery Frame Set, Oak", w: 1500, h: 1500 },
+  ],
+  nature: [
+    { asin: "B0G4CLKT1N", title: "AVECCO 3 Piece Vintage Wildflower Botanical Framed Canvas Wall Art, 12x16 In", w: 1500, h: 909 },
+    { asin: "B0FLCHLHXS", title: "ARSNINE Framed Botanical Wall Art, Set of 3, Sage Green Leaf Canvas Prints", w: 1500, h: 1500 },
+  ],
+  sculptural: [
+    { asin: "B0DJS7839L", title: "montresor 5 PCS Animals Head Wall Art Sculptures, 17 Inches, Gold", w: 1280, h: 1488 },
+    { asin: "B0B63GVLYV", title: "CDDUOLA 3D Room Wall Decor, Metal Round Golden Ginkgo Leaf Sculpture, 2 Pack", w: 1431, h: 1316 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "bathroom-art-ideas-unique-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "bathroom-art-ideas-unique", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "bathroom-art-ideas-unique", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}">Pinterest &mdash; ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
@@ -39,13 +102,13 @@ const body = `
 <p>That's a missed opportunity &mdash; a bathroom with the right piece on the wall reads as considered, not just functional.</p>
 <p>The most common mistake is either skipping art entirely or hanging something too small and generic for the space.</p>
 <p>These five approaches cover a real range of style, budget and bathroom size.</p>
-${photo("hero.jpg", "Stylish bathroom featuring unique wall art as a focal point", 1400, 934)}
+${photo("hero.jpg", "Stylish bathroom featuring unique wall art as a focal point", 1400, 934, "hero")}
 
 <h2>Why Bathroom Art Actually Matters</h2>
 <p>A bathroom without any art on the walls tends to feel unfinished, even when everything else about it is styled well.</p>
 <p>Art is also one of the cheapest ways to add personality to a room that's otherwise defined by fixed tile, fixtures and paint.</p>
 <p>Humidity-safe framing and placement away from direct water exposure are the two practical considerations that separate bathroom art from art anywhere else in the home.</p>
-${pinPhoto("intro-why.jpg", "Bathroom styled with thoughtful wall art adding personality", 736, 1024, "https://www.pinterest.com/pin/61220876181880556/", "thoughtfully styled bathroom art")}
+${pinPhoto("intro-why.jpg", "Bathroom styled with thoughtful wall art adding personality", 736, 1024, "https://www.pinterest.com/pin/61220876181880556/", "thoughtfully styled bathroom art", "why")}
 
 <h2>Choosing Art That Matches the Room</h2>
 <p>The art should respond to what's already fixed in the room &mdash; tile pattern, fixture finish, wall color &mdash; rather than fighting against it.</p>
@@ -53,7 +116,7 @@ ${pinPhoto("intro-why.jpg", "Bathroom styled with thoughtful wall art adding per
 <p>Scale matters as much as style &mdash; a piece that's too small for the wall looks like an afterthought no matter how nice it is.</p>
 ${pinPhoto("intro-choose-1.jpg", "Bathroom art chosen to complement the room's existing style", 736, 1024, "https://www.pinterest.com/pin/563018699297782/", "coordinated bathroom art styling")}
 ${pinPhoto("intro-choose-2.jpg", "Wall art selected to match bathroom tile and fixtures", 682, 1024, "https://www.pinterest.com/pin/775463629631487286/", "bathroom art matching fixtures")}
-${pinPhoto("intro-choose-3.jpg", "Bathroom art scaled appropriately to the wall space", 683, 1024, "https://www.pinterest.com/pin/1056657131334567699/", "well-scaled bathroom art")}
+${pinPhoto("intro-choose-3.jpg", "Bathroom art scaled appropriately to the wall space", 683, 1024, "https://www.pinterest.com/pin/1056657131334567699/", "well-scaled bathroom art", "choose")}
 
 <h2>Where Bathroom Art Actually Works</h2>
 <p>Above the toilet is the most common spot, but it's not the only one &mdash; a blank wall opposite the shower or beside the vanity both work just as well.</p>
@@ -61,14 +124,14 @@ ${pinPhoto("intro-choose-3.jpg", "Bathroom art scaled appropriately to the wall 
 <p>A small powder room can actually handle bolder, larger art than a big bathroom, since there's less competing visual space to fill.</p>
 ${pinPhoto("intro-where-1.jpg", "Bathroom art placed strategically away from moisture", 683, 1024, "https://www.pinterest.com/pin/362610207519163285/", "strategic bathroom art placement")}
 ${pinPhoto("intro-where-2.jpg", "Powder room featuring bold art in a compact space", 819, 1024, "https://www.pinterest.com/pin/4600286398085229184/", "bold powder room art")}
-${pinPhoto("intro-where-3.jpg", "Bathroom wall art positioned for maximum visual impact", 736, 1024, "https://www.pinterest.com/pin/528117493826194347/", "high-impact bathroom art placement")}
+${pinPhoto("intro-where-3.jpg", "Bathroom wall art positioned for maximum visual impact", 736, 1024, "https://www.pinterest.com/pin/528117493826194347/", "high-impact bathroom art placement", "where")}
 
 <h2>1. Oversized Abstract Art</h2>
 <p>A single large abstract piece does more for a bathroom's presence than several smaller prints combined.</p>
 <p>In a small bathroom especially, one big piece actually makes the room feel larger by giving the eye one clear focal point instead of several competing ones.</p>
 <p>This style mixes easily with existing decor, since abstract work doesn't need to match a specific theme the way representational art does.</p>
 <p>Worth prioritizing in any bathroom that currently has blank walls and nothing else planned.</p>
-${pinPhoto("oversized-abstract.jpg", "Oversized abstract art elevating a bathroom's visual presence", 575, 1024, "https://www.pinterest.com/pin/357965870404104852/", "oversized abstract bathroom art")}
+${pinPhoto("oversized-abstract.jpg", "Oversized abstract art elevating a bathroom's visual presence", 575, 1024, "https://www.pinterest.com/pin/357965870404104852/", "oversized abstract bathroom art", "oversized")}
 
 <h2>2. Vintage-Inspired Pieces</h2>
 <p>An antique print, a found illustration, or art with an intentionally aged quality brings real character to a bathroom.</p>
@@ -79,7 +142,7 @@ ${pinPhoto("vintage-1.jpg", "Vintage-inspired bathroom art with distinctive char
 ${pinPhoto("vintage-2.jpg", "Bathroom styled with antique-inspired wall art", 736, 1024, "https://www.pinterest.com/pin/1110911433106791236/", "antique-style bathroom art")}
 ${pinPhoto("vintage-3.jpg", "Vintage art piece bringing personality to a bathroom wall", 683, 1024, "https://www.pinterest.com/pin/14566398793902176/", "vintage bathroom wall decor")}
 ${pinPhoto("vintage-cozy.jpg", "Cozy bathroom atmosphere created through vintage art", 683, 1024, "https://www.pinterest.com/pin/351912467221586/", "cozy vintage bathroom styling")}
-${pinPhoto("vintage-modern-mix.jpg", "Vintage art paired with modern bathroom fixtures", 683, 1024, "https://www.pinterest.com/pin/1110911433099562387/", "vintage and modern bathroom mix")}
+${pinPhoto("vintage-modern-mix.jpg", "Vintage art paired with modern bathroom fixtures", 683, 1024, "https://www.pinterest.com/pin/1110911433099562387/", "vintage and modern bathroom mix", "vintage")}
 
 <h2>3. A Curated Gallery Wall</h2>
 <p>A collection of smaller framed pieces reads as personal and creative in a way a single print can't.</p>
@@ -91,7 +154,7 @@ ${pinPhoto("gallery-wall-2.jpg", "Creative gallery wall arrangement in a bathroo
 ${pinPhoto("gallery-wall-3.jpg", "Personal gallery wall display adding character to a bathroom", 736, 1024, "https://www.pinterest.com/pin/19984792093520771/", "personal bathroom art collection")}
 ${pinPhoto("gallery-tips-1.jpg", "Well-organized gallery wall avoiding visual chaos", 683, 1024, "https://www.pinterest.com/pin/486599934778410628/", "organized bathroom gallery wall")}
 ${pinPhoto("gallery-tips-2.jpg", "Thoughtfully planned gallery wall layout in a bathroom", 512, 1024, "https://www.pinterest.com/pin/992199361681071285/", "planned gallery wall layout")}
-${pinPhoto("gallery-tips-3.jpg", "Cohesive gallery wall with a consistent visual thread", 683, 1024, "https://www.pinterest.com/pin/992199361681071285/", "cohesive gallery wall styling")}
+${pinPhoto("gallery-tips-3.jpg", "Cohesive gallery wall with a consistent visual thread", 683, 1024, "https://www.pinterest.com/pin/992199361681071285/", "cohesive gallery wall styling", "gallery")}
 
 <h2>4. Nature-Inspired Pieces</h2>
 <p>Botanical prints, landscape photography, or abstract pieces in natural tones all bring a calm, spa-like quality to a bathroom.</p>
@@ -103,13 +166,14 @@ ${pinPhoto("nature-2.jpg", "Botanical art bringing a calming presence to a bathr
 ${pinPhoto("nature-3.jpg", "Landscape-inspired art adding tranquility to a bathroom wall", 683, 1024, "https://www.pinterest.com/pin/1110911433099263241/", "landscape bathroom art")}
 ${pinPhoto("nature-4.jpg", "Modern take on nature-inspired bathroom wall art", 575, 1024, "https://www.pinterest.com/pin/919438080175007888/", "modern nature-inspired art")}
 ${pinPhoto("lighting-1.jpg", "Bathroom art paired thoughtfully with warm lighting", 683, 1024, "https://www.pinterest.com/pin/844493676620464/", "bathroom art and lighting pairing")}
-${pinPhoto("lighting-2.jpg", "Warm lighting enhancing nature-inspired bathroom art", 736, 1024, "https://www.pinterest.com/pin/79798224644196975/", "warm-lit bathroom art display")}
+${pinPhoto("lighting-2.jpg", "Warm lighting enhancing nature-inspired bathroom art", 736, 1024, "https://www.pinterest.com/pin/79798224644196975/", "warm-lit bathroom art display", "nature")}
 
 <h2>5. Unexpected Sculptural Pieces</h2>
 <p>A sculptural object, mounted or displayed on a ledge, reads as high-end in a way flat art alone can't replicate.</p>
 <p>This works especially well paired with one or two of the flatter art styles above, rather than as the only piece in the room.</p>
 <p>Mixing multiple art styles, rather than sticking to just one category from this list, is actually what the most well-designed bathrooms tend to do.</p>
 <p>A single interesting object can make an otherwise simple bathroom look considerably more expensive without a big budget behind it.</p>
+${productGrid("sculptural")}
 
 <h2>Final Thoughts</h2>
 <p>None of these five styles require redoing the bathroom to try.</p>

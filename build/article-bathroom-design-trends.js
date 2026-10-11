@@ -8,24 +8,115 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0GV2S2ZKG", title: "Ralbay No Tile Needed Shower Niche, 12\" x 18\" Black Recessed Wall Niche", w: 787, h: 1234 },
+    { asin: "B075G4C2QS", title: "eModernDecor Shower Cube Recessed Shower Niche Organizer, 25\" x 17\", Black", w: 1033, h: 1500 },
+  ],
+  retreats: [
+    { asin: "B0G6KR4K1G", title: "Modern Bathroom Light Fixtures Over Mirror, 32 Inch Brown Wood Finish Vanity Light Bar", w: 1500, h: 1500 },
+    { asin: "B0FMYQ95ZM", title: "LED Natural Wood Vanity Light with 3 Travertine Stone Shades, 360° Rotatable", w: 1500, h: 1500 },
+  ],
+  walkInShowers: [
+    { asin: "B0F7HH1CT1", title: "12-Inch High Pressure Rain Shower Head with Handheld Spray Combo, Magnetic", w: 1412, h: 1500 },
+    { asin: "B0DZNQS89Q", title: "Extra Large Rain Shower Head, High Flow Stainless Steel, 16 x 12 Inch, Chrome", w: 1495, h: 1500 },
+  ],
+  warmNeutrals: [
+    { asin: "B0FRFNX1L3", title: "XLHOMO Bathroom Accessories Set, Gorgeous 10PC Beige Bathroom Set", w: 1468, h: 1500 },
+    { asin: "B0F91V4KPX", title: "Sand Beige Hand Soap Dispenser with Matte Gold Pump for Bathroom, 11 oz", w: 567, h: 1500 },
+  ],
+  matteBlackBrass: [
+    { asin: "B0GCFKH84F", title: "5 Pieces Bathroom Hardware Accessories Set, Brushed Gold, 24 Inch Towel Rack", w: 1500, h: 1491 },
+    { asin: "B08QZKCM3R", title: "KOKOSIRI 24-Inch Single Towel Bar, Wall Mounted Stainless Steel, Brushed Gold", w: 1353, h: 1275 },
+  ],
+  naturalMaterials: [
+    { asin: "B0FX35DVZ4", title: "Wooden Bathroom Vanity Tray, 9.9\" Small Decorative Wood Tray", w: 1231, h: 1351 },
+    { asin: "B0F66TVNTN", title: "Edgeless Travertine Bathroom Vanity Tray, Decorative Rectangular Marble Tray", w: 1500, h: 1059 },
+  ],
+  openShelving: [
+    { asin: "B094V67LWY", title: "Wall Mounted Floating Shelves with Industrial Pipe Brackets, Set of 2, Rustic Wood", w: 1389, h: 957 },
+    { asin: "B0F4P45GZ4", title: "Towel Rack with Wall Mounted Bathroom Shelves, Set of 3, Solid Wood, Farmhouse", w: 1500, h: 1484 },
+  ],
+  spaInspired: [
+    { asin: "B086JYLWQW", title: "Temple Spring Bamboo Bathtub Tray Caddy, Expandable, Luxury Spa Gift Set", w: 1500, h: 1429 },
+    { asin: "B0DSVTJR3B", title: "Acacia Wood Bathtub Tray Caddy with Adjustable Legs for Standard Tub", w: 1500, h: 1468 },
+  ],
+  statementTile: [
+    { asin: "B079DCJMMB", title: "FloorPops Fontaine Peel & Stick Floor Tiles, Blue", w: 1500, h: 1500 },
+    { asin: "B096L2JY2J", title: "FloorPops Black Biscotto Peel & Stick Floor Tiles", w: 1400, h: 1410 },
+  ],
+  freestandingTub: [
+    { asin: "B0GCM4JK4H", title: "Bamboo Bathtub Side Table, Height Adjustable Bath Caddy Tray", w: 1500, h: 1500 },
+    { asin: "B0BXKR6RNX", title: "Yumkfoi Bamboo Bathtub Tray Table with Adjustable Height", w: 1500, h: 1500 },
+  ],
+  texturedWalls: [
+    { asin: "B0DP7FMK3B", title: "Nuanchu 32 Pcs 3D Wall Panels, 12\"x12\" PVC Fluted Tiles, Black", w: 1500, h: 1500 },
+    { asin: "B0FNMN64P5", title: "Nuanchu 32 Pcs 3D Wall Panels, 12\"x12\" PVC Fluted Tiles, Natural Oak", w: 1500, h: 1500 },
+  ],
+  smartTech: [
+    { asin: "B077Z9512X", title: "Automatic Touchless Bathroom Sink Faucet, Commercial Sensor Motion Activated", w: 1500, h: 1447 },
+    { asin: "B0F53WP8SV", title: "Touchless Bathroom Faucet with Automatic Sensor Function", w: 1226, h: 1500 },
+  ],
+  moodyPalette: [
+    { asin: "B0D2D217CB", title: "Haturi Glass Bathroom Accessories Set, Sage Green Bathroom Set, 4 Pcs", w: 1490, h: 1500 },
+    { asin: "B0FC6QJS8X", title: "ZCCZ Black Stone Bathroom Accessories Set, 6 Pieces, Countertop Organizer", w: 1500, h: 1113 },
+  ],
+  floatingVanity: [
+    { asin: "B0DNZ7WT6P", title: "48 Inch Floating Bathroom Vanity, Single Sink, Anti-Fog LED Mirror Cabinet, Dark Gray", w: 1500, h: 1500 },
+    { asin: "B0BY91JMLY", title: "TACIDON Mirrored Floating Shelves, Crystal Crushed Diamond, Set of 2, Silver", w: 1389, h: 1389 },
+  ],
+  personalized: [
+    { asin: "B0G35G8J6R", title: "Besdomus Vintage Gold Arched Mirror, 36\"x29\", Antique Vanity Mirror", w: 1500, h: 1500 },
+    { asin: "B0DPQJFC3M", title: "OIGUMR Medium Oval Wall Mirror, Resin Frame, 20.4 x 14.5 Inch", w: 1087, h: 1500 },
+  ],
+  sustainable: [
+    { asin: "B004UA5EHK", title: "Niagara Conservation Tri-Max Water-Saving Shower Head, 0.5-1.5 GPM, Chrome", w: 1418, h: 1500 },
+    { asin: "B0089CGG9K", title: "Niagara Conservation 1.5 GPM Sava Fixed-Mount Wide Spray Showerhead, Chrome", w: 1500, h: 1103 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "bathroom-design-trends-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "bathroom-design-trends", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "bathroom-design-trends", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -37,7 +128,7 @@ const ideas = [
       "The best versions skip the glass-everywhere look in favor of one clean panel, a wide rain showerhead, and a bench or niche built right into the wall instead of added on later.",
       "A curbless entry, like the one shown here, makes the whole bathroom read as larger, since there's no visual break between the shower floor and the rest of the room.",
     ],
-    photo: pinPhoto("walk-in-showers.jpg", "Walk-in glass shower with a wide rain showerhead and tiled bench built into the wall", 464, 745, "https://www.pinterest.com/pin/442267625929370895/", "Walk-In Shower Trend"),
+    photo: pinPhoto("walk-in-showers.jpg", "Walk-in glass shower with a wide rain showerhead and tiled bench built into the wall", 464, 745, "https://www.pinterest.com/pin/442267625929370895/", "Walk-In Shower Trend", "walkInShowers"),
   },
   {
     n: "02",
@@ -47,7 +138,7 @@ const ideas = [
       "The shift comes down to how the room actually feels to stand in. Warm tones read as calmer and more inviting, where gray can start to feel clinical the moment the lighting isn't perfect.",
       "A small bathroom in warm beige, like the one shown here, proves the palette doesn't sacrifice any of that crisp, clean feeling gray used to own.",
     ],
-    photo: pinPhoto("warm-neutrals.jpg", "Small bathroom in warm beige tile with matching beige walls and brass fixtures", 559, 1024, "https://www.pinterest.com/pin/117164027801555130/", "Warm Neutral Bathroom"),
+    photo: pinPhoto("warm-neutrals.jpg", "Small bathroom in warm beige tile with matching beige walls and brass fixtures", 559, 1024, "https://www.pinterest.com/pin/117164027801555130/", "Warm Neutral Bathroom", "warmNeutrals"),
   },
   {
     n: "03",
@@ -57,7 +148,7 @@ const ideas = [
       "Matte black works especially well as an anchor &mdash; a black tub, black fixtures, or a black-framed mirror grounds a mostly white or neutral bathroom instantly.",
       "A matte black freestanding tub against white subway tile, like the one shown here, with a built-in dark niche and a single black pendant overhead, shows exactly how far one finish choice can carry a whole room.",
     ],
-    photo: pinPhoto("matte-black-brass.jpg", "Matte black freestanding tub against white subway tile with a dark built-in niche shelf and black pendant light", 735, 689, "https://www.pinterest.com/pin/8444318044916843/", "Matte Black Bathroom Fixtures"),
+    photo: pinPhoto("matte-black-brass.jpg", "Matte black freestanding tub against white subway tile with a dark built-in niche shelf and black pendant light", 735, 689, "https://www.pinterest.com/pin/8444318044916843/", "Matte Black Bathroom Fixtures", "matteBlackBrass"),
   },
   {
     n: "04",
@@ -67,7 +158,7 @@ const ideas = [
       "A wood vanity, a stone-look countertop, or even a single woven basket softens a room that would otherwise read as entirely hard surfaces.",
       "The goal isn't to recreate a spa brochure. It's picking one or two natural materials and letting them do real work instead of scattering small touches everywhere.",
     ],
-    photo: pinPhoto("natural-materials.jpg", "Bathroom vanity in natural wood tones paired with stone-look tile and warm lighting", 736, 904, "https://www.pinterest.com/pin/2111131072398562/", "Natural Materials in Bathroom Design"),
+    photo: pinPhoto("natural-materials.jpg", "Bathroom vanity in natural wood tones paired with stone-look tile and warm lighting", 736, 904, "https://www.pinterest.com/pin/2111131072398562/", "Natural Materials in Bathroom Design", "naturalMaterials"),
   },
   {
     n: "05",
@@ -77,7 +168,7 @@ const ideas = [
       "Stick to a tight color palette &mdash; folded towels, a plant, one or two ceramic pieces &mdash; and resist the urge to fill every inch of the shelf.",
       "A simple open shelf like the one shown here, with rolled towels and a small plant kept to a clean, consistent palette, proves restraint reads as far more expensive than a fully loaded shelf ever does.",
     ],
-    photo: pinPhoto("open-shelving.jpg", "Open bathroom shelf styled with rolled towels and a small plant in a neutral palette", 720, 960, "https://www.pinterest.com/pin/28077197665448151/", "Styled Open Bathroom Shelving"),
+    photo: pinPhoto("open-shelving.jpg", "Open bathroom shelf styled with rolled towels and a small plant in a neutral palette", 720, 960, "https://www.pinterest.com/pin/28077197665448151/", "Styled Open Bathroom Shelving", "openShelving"),
   },
   {
     n: "06",
@@ -87,7 +178,7 @@ const ideas = [
       "The real formula is warm lighting, soft rounded edges, natural materials, and a genuinely restrained color palette &mdash; not an all-white room with nothing in it.",
       "A few plants, a stack of folded towels, and one or two considered objects, like the setup shown here, make the difference between a bathroom that feels like a retreat and one that just feels empty.",
     ],
-    photo: pinPhoto("spa-inspired.jpg", "Spa-style bathroom with warm lighting, rounded tub edges and a few styled accessories on the tub ledge", 736, 919, "https://www.pinterest.com/pin/703756188754675/", "Spa-Inspired Bathroom Styling"),
+    photo: pinPhoto("spa-inspired.jpg", "Spa-style bathroom with warm lighting, rounded tub edges and a few styled accessories on the tub ledge", 736, 919, "https://www.pinterest.com/pin/703756188754675/", "Spa-Inspired Bathroom Styling", "spaInspired"),
   },
   {
     n: "07",
@@ -97,7 +188,7 @@ const ideas = [
       "The trick is containing it &mdash; one statement wall, a shower surround, or a floor pattern reads as intentional, while covering every surface starts to compete with itself.",
       "Pick one statement moment and let everything else in the room stay quiet. That contrast is what makes the tile actually stand out.",
     ],
-    photo: pinPhoto("statement-tile.jpg", "Bathroom wall with bold patterned statement tile against otherwise simple white fixtures", 576, 1024, "https://www.pinterest.com/pin/1548181186210626/", "Statement Bathroom Tile"),
+    photo: pinPhoto("statement-tile.jpg", "Bathroom wall with bold patterned statement tile against otherwise simple white fixtures", 576, 1024, "https://www.pinterest.com/pin/1548181186210626/", "Statement Bathroom Tile", "statementTile"),
   },
   {
     n: "08",
@@ -107,7 +198,7 @@ const ideas = [
       "A freestanding tub also frees up the floor plan. Without a surround to build around, the whole layout gets more flexible.",
       "An all-white freestanding tub like the one shown here, kept simple against equally simple walls, shows how much presence the shape alone can add without needing a single other design move.",
     ],
-    photo: pinPhoto("freestanding-tub.jpg", "White freestanding acrylic bathtub positioned as the centerpiece of a simple, uncluttered bathroom", 736, 736, "https://www.pinterest.com/pin/981151468829265643/", "Freestanding Bathtub Trend"),
+    photo: pinPhoto("freestanding-tub.jpg", "White freestanding acrylic bathtub positioned as the centerpiece of a simple, uncluttered bathroom", 736, 736, "https://www.pinterest.com/pin/981151468829265643/", "Freestanding Bathtub Trend", "freestandingTub"),
   },
   {
     n: "09",
@@ -117,7 +208,7 @@ const ideas = [
       "Texture adds depth without adding color or pattern, which makes it one of the lowest-risk ways to make a neutral bathroom feel considerably more expensive.",
       "It works especially well paired with a tight, neutral palette, letting the texture itself become the main visual interest instead of competing with busy color choices.",
     ],
-    photo: pinPhoto("textured-walls.jpg", "Bathroom wall with ribbed textured tile catching light at an angle", 736, 981, "https://www.pinterest.com/pin/14918242508328191/", "Textured Bathroom Wall Trend"),
+    photo: pinPhoto("textured-walls.jpg", "Bathroom wall with ribbed textured tile catching light at an angle", 736, 981, "https://www.pinterest.com/pin/14918242508328191/", "Textured Bathroom Wall Trend", "texturedWalls"),
   },
   {
     n: "10",
@@ -127,7 +218,7 @@ const ideas = [
       "The best smart upgrades disappear into the design instead of announcing themselves. A touchless faucet looks like any other faucet until you actually use it.",
       "It's worth being selective here. A bathroom overloaded with gadgets ages faster than one with just one or two features that genuinely make the daily routine easier.",
     ],
-    photo: pinPhoto("smart-tech.jpg", "Touchless brass bathroom faucet with a built-in LED temperature display", 736, 736, "https://www.pinterest.com/pin/4600638232316242688/", "Smart Touchless Bathroom Faucet"),
+    photo: pinPhoto("smart-tech.jpg", "Touchless brass bathroom faucet with a built-in LED temperature display", 736, 736, "https://www.pinterest.com/pin/4600638232316242688/", "Smart Touchless Bathroom Faucet", "smartTech"),
   },
   {
     n: "11",
@@ -137,7 +228,7 @@ const ideas = [
       "Charcoal walls, deep green cabinetry, or even a fully black shower surround all work, especially paired with warm lighting that keeps the space from feeling like a cave.",
       "A moody bathroom with a wood vanity and a walk-in shower, like the one shown here, proves dark doesn't have to mean small-feeling &mdash; good lighting and a few lighter materials keep it balanced.",
     ],
-    photo: pinPhoto("moody-palette.jpg", "Moody dark bathroom with a wood vanity, walk-in shower and warm lighting", 683, 1024, "https://www.pinterest.com/pin/955889089674602389/", "Moody Dark Bathroom Palette"),
+    photo: pinPhoto("moody-palette.jpg", "Moody dark bathroom with a wood vanity, walk-in shower and warm lighting", 683, 1024, "https://www.pinterest.com/pin/955889089674602389/", "Moody Dark Bathroom Palette", "moodyPalette"),
   },
   {
     n: "12",
@@ -147,7 +238,7 @@ const ideas = [
       "Beyond the size trick, they're genuinely easier to clean around and give small bathrooms a cleaner, more modern feel almost instantly.",
       "A simple floating vanity like the one shown here, left open underneath with just a woven basket for storage, shows how much lighter the whole room can feel with one swap.",
     ],
-    photo: pinPhoto("floating-vanity.jpg", "Floating bathroom vanity with open space underneath and a woven storage basket", 683, 1024, "https://www.pinterest.com/pin/740912576240586377/", "Floating Vanity Bathroom Trend"),
+    photo: pinPhoto("floating-vanity.jpg", "Floating bathroom vanity with open space underneath and a woven storage basket", 683, 1024, "https://www.pinterest.com/pin/740912576240586377/", "Floating Vanity Bathroom Trend", "floatingVanity"),
   },
   {
     n: "13",
@@ -157,7 +248,7 @@ const ideas = [
       "It's a reaction to how easy it's become to copy a Pinterest board exactly. A bathroom with a few genuinely personal choices stands out specifically because it doesn't look mass-produced.",
       "A bathroom styled with personal touches like the one shown here, mixing in real art and objects instead of matching sets, is the clearest sign of where bathroom design is actually headed.",
     ],
-    photo: pinPhoto("personalized.jpg", "Bathroom styled with personal touches including framed art and mixed decor objects instead of a matching set", 720, 960, "https://www.pinterest.com/pin/103019910221474995/", "Personalized Bathroom Styling"),
+    photo: pinPhoto("personalized.jpg", "Bathroom styled with personal touches including framed art and mixed decor objects instead of a matching set", 720, 960, "https://www.pinterest.com/pin/103019910221474995/", "Personalized Bathroom Styling", "personalized"),
   },
   {
     n: "14",
@@ -167,26 +258,28 @@ const ideas = [
       "It's not just about water bills, either. Materials that hold up well over time mean fewer renovations down the line, which ends up being the more sustainable choice either way.",
       "Even small swaps add up &mdash; an efficient showerhead or a better-sealed window does real work without changing how the bathroom looks or feels day to day.",
     ],
+    productsKey: "sustainable",
   },
 ];
 
 function ideaBlock(idea) {
   const paras = idea.paras.map((p) => `<p>${p}</p>`).join("\n      ");
+  const media = idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${media}`;
 }
 
 const body = `
 <p>Bathrooms have quietly become one of the most redesigned rooms in the house, and it's not just about chasing a trend for its own sake. People are spending real time in there &mdash; morning routines, long showers after a hard day &mdash; and the design is finally starting to reflect that.</p>
 <p>What's changing isn't just the finishes. It's the whole approach: comfort and real function now matter as much as how a bathroom photographs, and the best examples this year come from actual homes, not just showroom displays.</p>
-${photo("hero.jpg", "Matte black freestanding tub against white subway tile with a dark built-in niche and black pendant light", 735, 689)}
+${photo("hero.jpg", "Matte black freestanding tub against white subway tile with a dark built-in niche and black pendant light", 735, 689, "hero")}
 
 <h2>What's Actually Driving Bathroom Design This Year</h2>
 <p>Every trend below shares one thing in common: it makes the bathroom feel more like a retreat and less like a utility room. Warm materials, intentional lighting, and genuinely useful technology are replacing the cold, catalog-perfect look that dominated for years.</p>
 <p>None of these require a full gut renovation, either. A finish swap, a styled shelf, or one statement material can shift the whole feel of the room without touching the layout.</p>
-${pinPhoto("intro-retreats.jpg", "Bathroom styled as a personal retreat with warm lighting and natural textures", 683, 1024, "https://www.pinterest.com/pin/377880225007021914/", "Bathroom as a Personal Retreat")}
+${pinPhoto("intro-retreats.jpg", "Bathroom styled as a personal retreat with warm lighting and natural textures", 683, 1024, "https://www.pinterest.com/pin/377880225007021914/", "Bathroom as a Personal Retreat", "retreats")}
 
 <h2>14 Bathroom Trends Worth Following This Year</h2>
 ${ideas.map(ideaBlock).join("\n")}

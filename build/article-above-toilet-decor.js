@@ -1,9 +1,129 @@
 // Body content for the "20 Ways to Style Above Toilet" post. Images
 // sourced from Pinterest pins the user selected and provided directly;
-// each is credited back to its pin per their request. Photos only — no
-// Amazon product grids on this one.
+// each is credited back to its pin per their request.
 
 const { picture } = require("./picture-helper.js");
+
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0H93YMKQF", title: "Arched Bathroom Wall Cabinet with Glass Doors, Modern Medicine Cabinet", w: 1500, h: 1500 },
+    { asin: "B08PDNWY4P", title: "Kate and Laurel Mezzeta Decorative Coastal 2-Door Wall Cabinet, Natural Wood", w: 1500, h: 901 },
+  ],
+  whyStyle: [
+    { asin: "B0H335D5XQ", title: "HOOBRO 3-Tier Solid Wood Ladder Shelf, Freestanding Storage Display Organizer", w: 1500, h: 1500 },
+    { asin: "B0FFND4SNP", title: "PJ Wood 5 Tier Ladder Shelf, Wooden Display, Espresso", w: 587, h: 1500 },
+  ],
+  whatLooksGood: [
+    { asin: "B0FGHPYK43", title: "3-Tier Bathroom Ladder Shelf Freestanding, 15.7\" W x 27.6\" H", w: 813, h: 1500 },
+    { asin: "B0CY8T6W6J", title: "3-Tier Bookshelf, Ladder Shelf for Small Spaces, Industrial Short Bookshelf", w: 950, h: 1500 },
+  ],
+  howToLookExpensive: [
+    { asin: "B09T2XWMXW", title: "WELLAND 16\" Live Edge Cedar Floating Shelves, Set of 2", w: 1500, h: 1500 },
+    { asin: "B0F8HWBPD6", title: "Wavy Edge Floating Shelves with Hidden Brackets, 2 Pack, 24 In", w: 1468, h: 1500 },
+  ],
+  floatingShelves: [
+    { asin: "B0FQ798VV2", title: "Floating Shelves Set of 3, Easy Install, 15.7 Inch Brown Wall Mount Shelf", w: 1024, h: 1024 },
+    { asin: "B0CNYCKWBD", title: "PHPH Wood Floating Shelves for Wall, Set of 6, Light Brown, 17 Inch", w: 1124, h: 1500 },
+  ],
+  galleryWall: [
+    { asin: "B0DFW4XNT7", title: "WRFON Framed Sage Green Botanical Wall Art Set of 3, Watercolor Eucalyptus", w: 1477, h: 894 },
+    { asin: "B0FS157JBD", title: "Framed 3 Piece Neutral Vintage Botanical Wall Art for Dining Room, 16x24 In", w: 1500, h: 1500 },
+  ],
+  largePrint: [
+    { asin: "B0CM5BJGV2", title: "VIYYIEA Vintage Landscape Large Framed Wall Art, 24x36 Inch Canvas Print", w: 1500, h: 914 },
+    { asin: "B0GRG49C3V", title: "3 Piece Large Framed Mountain Landscape Wall Art for Living Room, 24x36 In", w: 1500, h: 1500 },
+  ],
+  mirror: [
+    { asin: "B0H6XB11Y8", title: "WallBeyond 24 Inch Gold Round Wall Mirror, Circle Mirror with Bamboo Texture", w: 1350, h: 1500 },
+    { asin: "B0G6M4SY4H", title: "30\" Round Bathroom Mirror, Antique Gold Bold Beaded Frame", w: 1498, h: 1500 },
+  ],
+  recessedCabinet: [
+    { asin: "B07GPWPMT2", title: "16” x 22” White Recessed Medicine Cabinet with Non-Adjustable Shelves", w: 1264, h: 843 },
+    { asin: "B0B14KGLM4", title: "14 x 24 Black Aluminum Medicine Cabinet with Mirror, Recessed/Surface Mount", w: 1083, h: 1425 },
+  ],
+  wovenBaskets: [
+    { asin: "B0HCH174VC", title: "2 Pcs Woven Wall Hanging Basket, Bathroom Storage Organizer for Toiletries", w: 1500, h: 1371 },
+    { asin: "B0GVQD8JBZ", title: "Dahey 3 Pcs Woven Hanging Wall Baskets for Bathroom Plant Organizing, S/M/L", w: 1500, h: 1437 },
+  ],
+  smallPlant: [
+    { asin: "B08ZSXD1BR", title: "Coferset 2 Pack Small Fake Plants Eucalyptus Potted, Sage Green", w: 1500, h: 1396 },
+    { asin: "B08RSCRPVV", title: "4 Pack Small Fake Plants in White Pulp Pots for Home, Shelf & Desk Decor", w: 1500, h: 864 },
+  ],
+  ladderShelf: [
+    { asin: "B0HC3598YP", title: "Mufico 3 Tier Bamboo Bathroom Ladder Shelves, 29.5\" x 11.8\" x 15.7\"", w: 769, h: 1467 },
+    { asin: "B0FPK84BCB", title: "4-Tier Bathroom Ladder Shelf Freestanding, 15.7\" W x 38.6\" H, PVC", w: 644, h: 1500 },
+  ],
+  vintageFrame: [
+    { asin: "B0H5Q45DNR", title: "Pinkunn 18 Pcs Vintage Picture Frames, Mixed Size Ornate French Country", w: 1500, h: 1500 },
+    { asin: "B0D633WZJZ", title: "Vintage Picture Frames 8x10, Antique Victorian Gold Bronze, Tabletop and Wall", w: 1222, h: 1500 },
+  ],
+  wallpaper: [
+    { asin: "B0F3XGJQ9Z", title: "Orainege Vintage Floral Peel and Stick Wallpaper, Boho Floral Contact Paper", w: 1500, h: 1500 },
+    { asin: "B0FXXM1YD2", title: "Sage Green Floral Peel and Stick Wallpaper, 17.7\" x 118\"", w: 1500, h: 1500 },
+  ],
+  slimShelf: [
+    { asin: "B08523F1VL", title: "HOMWOO Floating Shelves, Walnut Natural Wood, Small Picture Ledge, 12 Inches", w: 1478, h: 1228 },
+    { asin: "B0GFCWF9RN", title: "Floating Shelves, 3-Pack Brown Wood with Removable Metal Rails", w: 1455, h: 1500 },
+  ],
+  spaDisplay: [
+    { asin: "B0FC6PTP4B", title: "ZCCZ Beige Bathroom Accessories Set, 6 Pieces, Countertop Organizer Décor Set", w: 1473, h: 1095 },
+    { asin: "B0GX1X8NW8", title: "3pc Bathroom Decor Set, Wood Tray & Ceramic Soap Dispenser & Scented Candle", w: 1200, h: 1500 },
+  ],
+  narrowCabinet: [
+    { asin: "B0G43R75XP", title: "ANWBROAD Slim Bathroom Storage Cabinet with 2 Doors and Adjustable Shelf", w: 1034, h: 1500 },
+    { asin: "B0GZVKJRLW", title: "DreamDashio 72.8\" H Tall Arched Bathroom Storage Cabinet, 15.7\" W, White", w: 1129, h: 1500 },
+  ],
+  candles: [
+    { asin: "B0HCN9273K", title: "Stoneware Handmade Pillar Candle Holder Tray, Rustic Ceramic Candle Plate Holder", w: 1125, h: 1500 },
+    { asin: "B081YZW95T", title: "Scented Candle Holder Mosaic Glass Tea Light Holder, Handmade Romantic Decor", w: 1500, h: 1500 },
+  ],
+  ceramicVases: [
+    { asin: "B0FR4DJX2F", title: "Small Neutral Ceramic Vase Set, 5 Matte Earth-Tone Vases for Japandi Decor", w: 1500, h: 1358 },
+    { asin: "B0G1TVZN56", title: "Small Ceramic Vase Set of 3, Neutral Pottery Vases for Bookshelf Decor", w: 1500, h: 1500 },
+  ],
+  blackWhite: [
+    { asin: "B0GYSFMPMV", title: "Black Floating Shelves for Bathroom, 3 Tier Pine Wood Wall Mounted Shelf", w: 1254, h: 1254 },
+    { asin: "B0F6CYZM9P", title: "STWWO Bathroom Shelves Wall Mounted, 3 Tier Black Bathroom Shelf with Bar", w: 1500, h: 1500 },
+  ],
+  pictureLedge: [
+    { asin: "B08T631SJG", title: "Rustic State Ted Picture Ledge Shelf with Lip, Varied Sizes, Set of 3", w: 1500, h: 1110 },
+    { asin: "B083G5NYFP", title: "Rustic State Ted 60\" Wall Mount Extra Long Narrow Picture Ledge Shelf", w: 1500, h: 789 },
+  ],
+  littleColor: [
+    { asin: "B0FLF4C7FL", title: "Notakia Wood Look Ceramic Bird Figurines, Set of 2 Small Bird Statues", w: 1500, h: 992 },
+    { asin: "B0CXJ6MZQ2", title: "Etlemonde Coastal Beach Blue Coral Reef Statue Home Decor", w: 1460, h: 1500 },
+  ],
+  statementDecor: [
+    { asin: "B0DZT7HLFW", title: "TRAHOME Vintage Gold Mirror for Wall, 24\"x36\" Antique Ornate Baroque Mirror", w: 1500, h: 1500 },
+    { asin: "B0CDCP82BB", title: "Kelly Miller 24\"x36\" Gold Foil Scalloped Edge Decorative Vanity Wall Mirror", w: 1500, h: 1500 },
+  ],
+  keepMinimal: [
+    { asin: "B0FB337TVT", title: "Carrot's Den Small White Ceramic Round Vase for Greenery, Short Modern", w: 992, h: 1056 },
+    { asin: "B0DCC8N4C9", title: "Small White Vase, 7.4 Inch Ceramic Flower Vase, Minimalism Style", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "above-toilet-decor-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
 
 const PIN = {
   hero: { src: "hero", w: 1174, h: 1769, alt: "White arched wall cabinet with glass doors and brass hardware above a toilet, styled with a trailing plant on top", url: "https://www.pinterest.com/pin/267330927877319505/", label: "Arched Cabinet Above the Toilet" },
@@ -41,7 +161,8 @@ function photo(key) {
   return `<figure>
       ${picture({ dir: "above-toilet-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(key)}`;
 }
 
 const ideas = [

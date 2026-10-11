@@ -70,14 +70,6 @@ const PRODUCTS = {
     { asin: "B0GL15LP75", title: "2 Pcs Black and White Ceramic Vase, Mid Century Modern Striped & Checkered Vases", w: 1500, h: 1466 },
     { asin: "B0GR428NXJ", title: "Matte Black Ceramic Vase Set of 3, Modern Farmhouse Boho Home Decor", w: 1172, h: 1500 },
   ],
-  glassVessels: [
-    { asin: "B0H4VVFQ23", title: "Clear Glass Vase Wide, Premium Decor Flower Vase, Cylinder Vases for Centerpieces", w: 1326, h: 1500 },
-    { asin: "B009ANZ2YC", title: "WGVI Quality Thick Weighted Tall Clear Cylinder Glass Vase, 4\" W x 14\" H", w: 392, h: 1500 },
-  ],
-  cookbooks: [
-    { asin: "B0H5886B7D", title: "Beautiful Decorative Books for Modern Home Decor, Set of 2 Stack Fake Books for Shelf & Mantel Decoration", w: 1254, h: 1254 },
-    { asin: "B0FG1YS2P2", title: "9 Faux Books Neutral, Decorative Box with Hidden Storage, Bookshelf Accent, Home Staging Accessory", w: 1488, h: 1500 },
-  ],
   statementLighting: [
     { asin: "B0F9KYJP4D", title: "20 Inch Large Black Chandelier Dome, Bold Matte Black and Gold Pendant Light, Hanging Fixture", w: 1500, h: 1500 },
     { asin: "B09ZP4RT5H", title: "Black Pendant Light for Kitchen Island, Farmhouse Metal Cage Hanging Light", w: 1468, h: 1500 },
@@ -85,6 +77,14 @@ const PRODUCTS = {
   emptySpace: [
     { asin: "B0GY1D33YK", title: "Ceramic Vase, Modern Sculptural Textured Vase, Beige Abstract Flower Vase for Home Decor", w: 1254, h: 1254 },
     { asin: "B0GYLZVB5D", title: "DOWAN 5.7\" Rustic Vintage Ceramic Vase, Distressed Textured Minimalist Farmhouse Pottery, Gray", w: 1500, h: 1500 },
+  ],
+  heroLanterns: [
+    { asin: "B09NC1VGTW", title: "Rustic Farmhouse Lantern Decor, Set of 2 Stylish Decorative Lanterns", w: 1451, h: 1500 },
+    { asin: "B0FDW6BBRL", title: "12.5\" & 16.5\" Timeless Cozy Decorative Lanterns Set of 2, Handcrafted Metal Iron Candle Holders", w: 1500, h: 1500 },
+  ],
+  introLanterns: [
+    { asin: "B0DYN2DXRR", title: "Rustic Farmhouse Lantern Decor, Set of 3 Lanterns, Indoor and Outdoor", w: 1254, h: 1254 },
+    { asin: "B0BNKF1L2K", title: "Romadedi Lantern Rustic Farmhouse Decor, Set of 2", w: 1250, h: 1500 },
   ],
 };
 
@@ -110,11 +110,12 @@ function splitExt(filename) {
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "above-cabinet-decor-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
@@ -165,7 +166,6 @@ const ideas = [
       "Go bigger than feels natural &mdash; a few larger glass vessels read as considered, while a cluster of small ones starts to look like clutter fast.",
       "It's also one of the lowest-risk choices on this entire list. Glass never really goes out of style the way more decorative materials can.",
     ],
-    productsKey: "glassVessels",
   },
   {
     n: "05",
@@ -185,7 +185,6 @@ const ideas = [
       "Stack them horizontally, limit the color palette to neutrals, and add one single object on top to finish the look.",
       "If the cookbook collection currently looks like a rainbow exploded, it belongs on a regular shelf instead &mdash; this spot only works with real color discipline.",
     ],
-    productsKey: "cookbooks",
   },
   {
     n: "07",
@@ -225,7 +224,6 @@ const ideas = [
       "The effect pulls the eye upward and makes standard-height cabinets read as considerably taller than they actually are.",
       "It solves more problems than people expect from a single fixture &mdash; filling dead space, adding style, and improving the actual lighting all at once.",
     ],
-    productsKey: "statementLighting",
   },
   {
     n: "11",
@@ -291,16 +289,16 @@ function ideaBlock(idea) {
 const body = `
 <p>Standing in a kitchen staring at that awkward empty space above the cabinets, wondering why it always looks either boring or painfully outdated, is a genuinely common moment. That space confuses more homeowners than almost any other kitchen styling detail, and it's rarely for lack of ideas &mdash; it's choosing ideas that don't age the kitchen overnight.</p>
 <p>That space is not a dumping ground for whatever baskets happen to be around. Styled with intention, it makes a kitchen look taller, warmer, and genuinely more custom. Ignored or decorated wrong, it reads as builder-grade louder than almost anything else in the room.</p>
-${photo("hero.jpg", "Above-cabinet decor styling with a woven basket, lantern and framed signs above white kitchen cabinets near a window", 736, 552)}
+${photo("hero.jpg", "Above-cabinet decor styling with a woven basket, lantern and framed signs above white kitchen cabinets near a window", 736, 552, "heroLanterns")}
 
 <h2>Why This Space Actually Matters</h2>
 <p>Does anyone consciously notice the space above kitchen cabinets? Yes &mdash; everyone does, they just don't register it as a deliberate decision. The eye naturally travels upward in a kitchen, especially when upper cabinets stop short of the ceiling. Left empty, the kitchen looks unfinished. Left cluttered, it looks chaotic. Styled well, it quietly elevates the entire room the same way throw pillows finish off a living room.</p>
 <p>The decor that dates this space fastest: tiny knickknacks that disappear from view, fake grapes and trailing ivy vines, matching word signs scattered everywhere, and dust-catching clutter with no real visual rhythm. Dated decor almost always comes from filling space instead of actually styling it &mdash; and those are two very different things.</p>
-${pinPhoto("intro-matters-1.jpg", "Above-cabinet decor with a woven basket, greenery, framed signs and a lantern above cream kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/68744802382/", "Above-Cabinet Decor Styling")}
+${pinPhoto("intro-matters-1.jpg", "Above-cabinet decor with a woven basket, greenery, framed signs and a lantern above cream kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/68744802382/", "Above-Cabinet Decor Styling", "introLanterns")}
 
 <h2>Choosing the Right Approach for Your Kitchen</h2>
 <p>Three questions settle most of the decisions here. What's the kitchen's actual style &mdash; a modern kitchen calls for different above-cabinet decor than a farmhouse or transitional one, and staying consistent is what makes the space feel intentional. How high are the cabinets &mdash; short cabinets need taller decor, tall cabinets need more breathing room, and scale matters more here than almost anywhere else in the kitchen. And finally, contrast or continuity &mdash; contrast tends to work better in neutral kitchens, continuity in already-colorful ones, and mixing the two without a plan is what creates visual chaos.</p>
-${pinPhoto("intro-choose.jpg", "Above-cabinet styling with mirrors, candlesticks and trailing plants above white kitchen cabinets around a kitchen island with a chandelier", 720, 960, "https://www.pinterest.com/pin/844493674948355/", "Choosing Above-Cabinet Decor")}
+${pinPhoto("intro-choose.jpg", "Above-cabinet styling with mirrors, candlesticks and trailing plants above white kitchen cabinets around a kitchen island with a chandelier", 720, 960, "https://www.pinterest.com/pin/844493674948355/", "Choosing Above-Cabinet Decor", "statementLighting")}
 
 <h2>15 Above-the-Cabinet Decor Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

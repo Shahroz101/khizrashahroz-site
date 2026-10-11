@@ -20,6 +20,75 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  tallVases: [
+    { asin: "B0FKPWXHGM", title: "Tall Off-White Ceramic Vase Set of 3 - Modern Farmhouse Decor Vases for Living Room, Coffee Table & Shelf Styling", w: 1500, h: 1500 },
+    { asin: "B0G6D9PGWW", title: "Ceramic Vase Set of 6, Flower Vases, Small Vases for Pampas Grass", w: 1500, h: 1500 },
+  ],
+  minimalGreenery: [
+    { asin: "B09P8CNBJ3", title: "SHACOS 3 PCS 39\" Fake Olive Tree Branches, Large Tall Artificial Greenery Stems for Vase", w: 988, h: 1500 },
+    { asin: "B0CM8R33YN", title: "Faux Eucalyptus Stems, Willow Eucalyptus Leaves 34\" Long, 3 Pcs Artificial Greenery Stems", w: 1500, h: 1424 },
+  ],
+  wovenBaskets: [
+    { asin: "B00YGFQJG4", title: "Deco 79 Seagrass Handmade Decorative Storage Basket, Large Woven Basket Organizer with Metal Handles, 21\" x 17\" x 19\"", w: 1500, h: 1405 },
+    { asin: "B0081STHQQ", title: "Vintiquewise Natural Wicker Picnic Basket with Handle, Handcrafted Decorative Wicker Storage Basket", w: 1500, h: 1186 },
+  ],
+  vintageFinds: [
+    { asin: "B00JZMUI9W", title: "Creative Co-Op 87-Ounce Embossed Stripe Ceramic Pitcher, Distressed White", w: 1186, h: 1500 },
+    { asin: "B0DP4R75B4", title: "Vintage Country Metal Flower Vase, Farmhouse Decorative Milk Can Pot, Rustic Pitcher Jug", w: 1386, h: 1500 },
+  ],
+  sculpturalObjects: [
+    { asin: "B0CZPLQ4LF", title: "Fitz and Floyd Ceramic Rooster and Hen Figurine, Sicily Blue, Rooster 12.75-Inch and Hen 10.5-Inch", w: 1500, h: 1271 },
+    { asin: "B00C9IMZ2M", title: "StealStreet 15.75\" Porcelain Painted Colorful Rooster Bird Figurine Statue", w: 1213, h: 1500 },
+  ],
+  framedSigns: [
+    { asin: "B0CMZ5LPCD", title: "Heiple Set of 3 Framed Farmhouse Signs, Kitchen Wall Decor for Dining Room, Wood Signs 11\"x14\"", w: 1500, h: 1500 },
+    { asin: "B0CP1N5KKX", title: "Houmury Set of 3 Framed Wall Art, Farmhouse Wall Decor 11\"x14\", Kitchen Wall Decor Wood Signs", w: 1500, h: 1133 },
+  ],
+  woodenCrates: [
+    { asin: "B0B9CLPCFN", title: "FANDOS Wooden Dough Bowl for Decor, 17¾ in Long Hand Carved Paulownia, Large Rustic Decorative Bowl", w: 1500, h: 1112 },
+    { asin: "B0HCVN1FKF", title: "16 Inch Wavy-Edge Wooden Dough Bowl, Large Decorative Bowl for Home Decor", w: 1500, h: 1253 },
+  ],
+  seasonalTouches: [
+    { asin: "B0BWTD2RR4", title: "Sggvecsy 6 Pcs Fall Artificial Eucalyptus Stems, Long Silver Dollar Leaves, Dark Brown", w: 1500, h: 1427 },
+    { asin: "B0CFXQTLK3", title: "Briful 5 PCS Fall Leaves Artificial Magnolia Leaf Branches, 26\" Autumn Fake Plant Stems for Vase", w: 1500, h: 1467 },
+  ],
+  tallStems: [
+    { asin: "B0C6X2C3Y2", title: "10 Stems 30\" Dried Pampas Grass Decor, Tall Boho Neutral Home Decor Bouquet for Floor Vase", w: 1500, h: 1424 },
+    { asin: "B09KV1VX3P", title: "Smtyle Black Candlestick Holders for Taper Candles, Set of 5", w: 1500, h: 1071 },
+  ],
+  neutralPitchers: [
+    { asin: "B0773J45VD", title: "D'vine Dev 10 Inch White Ceramic Pitcher Vase for Home Decor", w: 1181, h: 1500 },
+    { asin: "B0CRHM62GP", title: "Domensi 2 Pcs 34oz White Ceramic Pitcher Vase, Farmhouse Jug Vase, Rustic Ceramic Pitchers with Handle", w: 1500, h: 1445 },
+  ],
+  monochrome: [
+    { asin: "B0GL15LP75", title: "2 Pcs Black and White Ceramic Vase, Mid Century Modern Striped & Checkered Vases", w: 1500, h: 1466 },
+    { asin: "B0GR428NXJ", title: "Matte Black Ceramic Vase Set of 3, Modern Farmhouse Boho Home Decor", w: 1172, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "above-cabinet-decor-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
@@ -32,12 +101,13 @@ function photo(src, alt, w, h) {
     </figure>`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "above-cabinet-decor-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -49,7 +119,7 @@ const ideas = [
       "Matte finishes genuinely age better than glossy ones &mdash; soft whites, warm taupes, and muted charcoal tend to hold up the longest without feeling trendy.",
       "For it to read as intentional rather than random: stick to odd numbers like three or five, vary the heights slightly, and keep the color palette tight, the way the grouped pitchers shown here do.",
     ],
-    photo: pinPhoto("tall-vases.jpg", "Row of tall matte white ceramic vases and pitchers lined up above white kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/281543726327128/", "Tall Ceramic Vases Above Cabinets"),
+    photo: pinPhoto("tall-vases.jpg", "Row of tall matte white ceramic vases and pitchers lined up above white kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/281543726327128/", "Tall Ceramic Vases Above Cabinets", "tallVases"),
   },
   {
     n: "02",
@@ -59,7 +129,7 @@ const ideas = [
       "Skip trailing vines entirely. Faux olive branches, eucalyptus stems, or a single sculptural plant do far more with far less.",
       "It doesn't need to stand alone, either. A single potted sprig can hold its own inside a fuller, more collected display &mdash; like the mix of signage, a monogram letter and mugs shown here &mdash; as long as it isn't competing for attention with everything else up there.",
     ],
-    photo: pinPhoto("minimal-greenery.jpg", "Collected above-cabinet display with a wood-framed home sign, a monogram letter, mugs, an arched mirror and a small potted plant above white kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/211174976960626/", "Collected Above-Cabinet Display"),
+    photo: pinPhoto("minimal-greenery.jpg", "Collected above-cabinet display with a wood-framed home sign, a monogram letter, mugs, an arched mirror and a small potted plant above white kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/211174976960626/", "Collected Above-Cabinet Display", "minimalGreenery"),
   },
   {
     n: "03",
@@ -69,7 +139,7 @@ const ideas = [
       "Large-scale woven baskets with clean, simple shapes read as architectural and calm, while small baskets scream clutter immediately.",
       "These work especially well in farmhouse kitchens, transitional spaces, and warm neutral color schemes, like the basket paired with ceramic vases shown here. As a bonus, they hide dust far better than shiny decor ever does.",
     ],
-    photo: pinPhoto("woven-baskets.jpg", "Large woven basket and neutral ceramic vases arranged above white kitchen cabinets with a trailing plant", 683, 1024, "https://www.pinterest.com/pin/526287906469115616/", "Oversized Woven Basket Above Cabinets"),
+    photo: pinPhoto("woven-baskets.jpg", "Large woven basket and neutral ceramic vases arranged above white kitchen cabinets with a trailing plant", 683, 1024, "https://www.pinterest.com/pin/526287906469115616/", "Oversized Woven Basket Above Cabinets", "wovenBaskets"),
   },
   {
     n: "04",
@@ -88,7 +158,7 @@ const ideas = [
       "Restraint is the key. One or two pieces per section read as collected; a full shelf of antique finds starts to feel like a flea market display instead.",
       "A pair of vintage lanterns flanking glass vessels and trailing greenery, like the arrangement shown here, proves how much warmth a few well-chosen old pieces can add.",
     ],
-    photo: pinPhoto("vintage-finds.jpg", "Vintage lanterns, clear glass vases and trailing greenery arranged above dark wood kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/19844054604962826/", "Vintage Finds Above Kitchen Cabinets"),
+    photo: pinPhoto("vintage-finds.jpg", "Vintage lanterns, clear glass vases and trailing greenery arranged above dark wood kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/19844054604962826/", "Vintage Finds Above Kitchen Cabinets", "vintageFinds"),
   },
   {
     n: "06",
@@ -107,7 +177,7 @@ const ideas = [
       "Stone-inspired decor, abstract ceramic forms, and matte resin objects all work well here, but so does something with a little more personality.",
       "A single sculptural figure, like the ceramic rooster anchoring the pitcher and greenery shown here, can carry an entire section on its own.",
     ],
-    photo: pinPhoto("sculptural-objects-2.jpg", "White ceramic rooster figure, a pitcher and greenery with string lights arranged above white kitchen cabinets", 736, 490, "https://www.pinterest.com/pin/27936460194077298/", "Sculptural Decor Above Cabinets"),
+    photo: pinPhoto("sculptural-objects-2.jpg", "White ceramic rooster figure, a pitcher and greenery with string lights arranged above white kitchen cabinets", 736, 490, "https://www.pinterest.com/pin/27936460194077298/", "Sculptural Decor Above Cabinets", "sculpturalObjects"),
   },
   {
     n: "08",
@@ -117,7 +187,7 @@ const ideas = [
       "Sit them upright along the shelf instead of hanging a single centered piece. Letting a run of frames overlap slightly with the decor around them reads as collected and current in a way one perfectly hung frame doesn't.",
       "A run of framed signs mixed with a woven wreath, a lantern and a small windmill accent, like the grouping shown here, instantly removes any lingering showroom-kitchen feeling.",
     ],
-    photo: pinPhoto("statement-art.jpg", "Framed signs, a woven wreath, a lantern and a windmill accent displayed above white kitchen cabinets near a window", 736, 552, "https://www.pinterest.com/pin/2111131072146904/", "Framed Signs Above Kitchen Cabinets"),
+    photo: pinPhoto("statement-art.jpg", "Framed signs, a woven wreath, a lantern and a windmill accent displayed above white kitchen cabinets near a window", 736, 552, "https://www.pinterest.com/pin/2111131072146904/", "Framed Signs Above Kitchen Cabinets", "framedSigns"),
   },
   {
     n: "09",
@@ -127,7 +197,7 @@ const ideas = [
       "Stacked wooden crates do similar work while adding genuine storage &mdash; tucking jars, tins, and smaller vessels inside keeps the look rustic without looking cluttered.",
       "Style either option with almost nothing, a few neutral spheres, or one sculptural object. Sometimes, like the crate stack shown here, the wood texture alone is enough to carry the whole section.",
     ],
-    photo: pinPhoto("dough-bowls.jpg", "Stacked wooden crates filled with jars and tins arranged above cream kitchen cabinets with a trailing plant nearby", 640, 1024, "https://www.pinterest.com/pin/138626494776107280/", "Wooden Crates Above Kitchen Cabinets"),
+    photo: pinPhoto("dough-bowls.jpg", "Stacked wooden crates filled with jars and tins arranged above cream kitchen cabinets with a trailing plant nearby", 640, 1024, "https://www.pinterest.com/pin/138626494776107280/", "Wooden Crates Above Kitchen Cabinets", "woodenCrates"),
   },
   {
     n: "10",
@@ -146,7 +216,7 @@ const ideas = [
       "Dried branches in fall, light greenery in spring, and neutral stems in winter all keep the seasonal nod subtle rather than overwhelming.",
       "A tasteful holiday arrangement like the one shown here &mdash; garland, warm lights, a single festive sign &mdash; proves seasonal styling can still look put-together rather than like a decoration explosion. If a piece says something as specific as \"Pumpkin Spice,\" it doesn't belong up there.",
     ],
-    photo: pinPhoto("seasonal-decor.jpg", "Christmas garland, pinecones, candles and a sign reading Today Is a Good Day arranged above white kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/33495590973507454/", "Seasonal Decor Above Cabinets"),
+    photo: pinPhoto("seasonal-decor.jpg", "Christmas garland, pinecones, candles and a sign reading Today Is a Good Day arranged above white kitchen cabinets", 736, 552, "https://www.pinterest.com/pin/33495590973507454/", "Seasonal Decor Above Cabinets", "seasonalTouches"),
   },
   {
     n: "12",
@@ -156,7 +226,7 @@ const ideas = [
       "These work especially well in classic or traditional kitchens, where a little formality above the cabinets matches the rest of the room.",
       "The height does real work here &mdash; tall stems in matching vases, like the ones shown here, draw the eye upward the same way a taller piece of furniture would.",
     ],
-    photo: pinPhoto("architectural.jpg", "Tall dried pampas grass stems in vases, a round wall clock and black candlesticks arranged above white kitchen cabinets", 736, 982, "https://www.pinterest.com/pin/4785143351413207/", "Architectural Details Above Cabinets"),
+    photo: pinPhoto("architectural.jpg", "Tall dried pampas grass stems in vases, a round wall clock and black candlesticks arranged above white kitchen cabinets", 736, 982, "https://www.pinterest.com/pin/4785143351413207/", "Architectural Details Above Cabinets", "tallStems"),
   },
   {
     n: "13",
@@ -166,7 +236,7 @@ const ideas = [
       "Stoneware pitchers in neutral glazes, with a little visible imperfection in the finish, work best &mdash; they feel collected rather than purchased as a matching set.",
       "Paired with a trailing plant, like the setup shown here, pitchers and bowls read as effortless and considerably more expensive than they actually were.",
     ],
-    photo: pinPhoto("pitchers.jpg", "Trailing green plant and neutral ceramic pitchers and bowls arranged above cream kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/70650287900983592/", "Neutral Pitchers Above Cabinets"),
+    photo: pinPhoto("pitchers.jpg", "Trailing green plant and neutral ceramic pitchers and bowls arranged above cream kitchen cabinets", 683, 1024, "https://www.pinterest.com/pin/70650287900983592/", "Neutral Pitchers Above Cabinets", "neutralPitchers"),
   },
   {
     n: "14",
@@ -176,7 +246,7 @@ const ideas = [
       "All-white ceramics, all-wood tones, or all-black accents each work on their own &mdash; the trick is picking one lane and staying in it rather than mixing several.",
       "A black-and-white palette like the one shown here, carried through pitchers, greenery, and even the window treatment below, shows exactly how far one consistent color story can stretch.",
     ],
-    photo: pinPhoto("monochrome.jpg", "Black and white buffalo check styling above kitchen cabinets with white pitchers, greenery and a Joy sign", 683, 1024, "https://www.pinterest.com/pin/5840674511726860/", "Monochrome Above-Cabinet Styling"),
+    photo: pinPhoto("monochrome.jpg", "Black and white buffalo check styling above kitchen cabinets with white pitchers, greenery and a Joy sign", 683, 1024, "https://www.pinterest.com/pin/5840674511726860/", "Monochrome Above-Cabinet Styling", "monochrome"),
   },
   {
     n: "15",

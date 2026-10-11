@@ -6,16 +6,94 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0BVY2MFY5", title: "Black Pendant Light, Clear Glass Cylinder, Modern Hanging Lights, 2 Pack", w: 752, h: 1500 },
+    { asin: "B0H6MB4FR6", title: "CNRATYE Modern Black Pendant Lights, 2-Pack, Clear Glass Shade", w: 955, h: 1500 },
+  ],
+  stone: [
+    { asin: "B092V79ZP7", title: "Marble Contact Paper, White, Peel and Stick Wallpaper, 15.8\"x118\"", w: 1493, h: 1488 },
+    { asin: "B0G8CGYSZZ", title: "Brown and White Marble Wallpaper Mural, Peel and Stick, 82\"x57\"", w: 1500, h: 1289 },
+  ],
+  herringbone: [
+    { asin: "B0F6Y7P8BX", title: "STICKGOO Herringbone Peel and Stick Backsplash, Pure White, 10 Sheets", w: 1500, h: 1500 },
+    { asin: "B0BLYTGF3B", title: "STICKGOO Herringbone Tile Peel and Stick Backsplash, Beige Mixed Metal Gold", w: 1457, h: 1459 },
+  ],
+  paint: [
+    { asin: "B0F2HSYQMS", title: "Livelynine Bold Black Wallpaper, Peel and Stick, Mid Century Modern Geometric", w: 1500, h: 1500 },
+    { asin: "B0DM5Z7TPN", title: "BOKEBEVE Floral Wallpaper, Peel and Stick, Boho Teal Blue", w: 1500, h: 1500 },
+  ],
+  garden: [
+    { asin: "B0FJRGTNYD", title: "Yangrass Faux Grass Wall Panels with Money Tree Leaves, 6pcs 20\"x20\"", w: 1500, h: 1416 },
+    { asin: "B0DHZH55KH", title: "Yangrass Fake Fern Grass Wall Panels, UV-Anti Backdrop, 12pcs 20\"x20\"", w: 1500, h: 1492 },
+  ],
+  boldTile: [
+    { asin: "B0DBY9GKY6", title: "48Pcs Moroccan and Boho Tile Sticker, Peel and Stick Wall Tiles, 4\"x4\"", w: 1090, h: 1500 },
+    { asin: "B0G57JQ7HR", title: "24 PCS Moroccan Boho Mandala Wall Tile Stickers, Peel and Stick, 6x6 Inch", w: 1500, h: 1500 },
+  ],
+  wood: [
+    { asin: "B0DQ8SD2G6", title: "3D Wood Slat Panel for Walls, Peel and Stick PVC Slat Wall Paneling", w: 1484, h: 1500 },
+    { asin: "B0FDLCG4H8", title: "YU LI 3DH Peel and Stick PVC Slat Wall Panel, Faux Oak Wood Grain", w: 1500, h: 1500 },
+  ],
+  mirror: [
+    { asin: "B07K3SG1GY", title: "Murrey Home Full Length Mirror Tiles, Frameless, 12\" x 12 PCS", w: 1500, h: 1500 },
+    { asin: "B092746858", title: "Delma Glass Full Length Wall Mirror Tiles, 14\" x 12\", 4PCS", w: 447, h: 1500 },
+  ],
+  mosaic: [
+    { asin: "B0CBVB86J7", title: "Glass Linear Wall Tile, Teal Blue White Mosaic Sheets, Set of 5", w: 1500, h: 1373 },
+    { asin: "B0C6Q3X8XW", title: "The Tiles Plaza Peel and Stick Backsplash, Blue Cement Long Hexagon, 10-Sheet", w: 1500, h: 1403 },
+  ],
+  shiplap: [
+    { asin: "B0B12KMF5B", title: "Real Wood Wall Planks, 5\" White Shiplap Panel, Peel and Stick, 10 Pack", w: 1500, h: 1405 },
+    { asin: "B0G4MD5M7Q", title: "Peel and Stick Wall Panels, Farmhouse Wood Grain Shiplap, Natural Oak", w: 1500, h: 1500 },
+  ],
+  concrete: [
+    { asin: "B09CYDV3W5", title: "BAYYA Gray Concrete Wallpaper Roll, Peel Stick, Textured Industrial", w: 1500, h: 1500 },
+    { asin: "B0BHVQKS8X", title: "TOTIO Extra Wide Concrete Peel Stick Wallpaper, Grey, 3D Cement Look", w: 1500, h: 1500 },
+  ],
+  wallpaper: [
+    { asin: "B0DTHLPGFS", title: "Erfoni Vintage Floral Peel and Stick Wallpaper, Dark Floral and Birds", w: 1148, h: 1312 },
+    { asin: "B0FM3YZ5WL", title: "Dark Green Oak Leaves Acorns Peel and Stick Wallpaper", w: 1219, h: 1500 },
+  ],
+  gallery: [
+    { asin: "B0GZV96RT9", title: "Lineshading Gold, Black Vintage Gallery Wall Frame Set of 9", w: 1500, h: 1206 },
+    { asin: "B0G4DK5951", title: "Venusmiles 12 Pack Picture Frames Collage Wall Decor, Black+White+Gold", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "bathroom-accent-wall-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "bathroom-accent-wall-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -27,7 +105,7 @@ const ideas = [
       "A single stone feature wall does more visual work than an entire room full of smaller finishing touches &mdash; it reads as deliberate, expensive, and calm all at once.",
       "Behind a freestanding tub, like the dramatic veined marble shown here, stone turns an ordinary bath into the kind of moment you'd expect from a boutique hotel rather than a regular bathroom.",
     ],
-    photo: photo("natural-stone.png", "Luxurious bathroom with a dramatic veined marble accent wall behind a freestanding soaking tub and chrome floor-mount faucet", 576, 1024),
+    photo: photo("natural-stone.png", "Luxurious bathroom with a dramatic veined marble accent wall behind a freestanding soaking tub and chrome floor-mount faucet", 576, 1024, "stone"),
   },
   {
     n: "02",
@@ -37,7 +115,7 @@ const ideas = [
       "The classic version uses white subway tile set at the herringbone angle, with a contrasting grout line that makes the zigzag pattern pop instead of blending into the wall.",
       "Carried from the wall onto the floor, like the matching herringbone treatment shown here, the whole room feels intentionally designed rather than just tiled.",
     ],
-    photo: photo("herringbone.png", "White herringbone subway tile accent wall in a bathroom with a matching herringbone tile floor, wood vanity and brass fixtures", 576, 1024),
+    photo: photo("herringbone.png", "White herringbone subway tile accent wall in a bathroom with a matching herringbone tile floor, wood vanity and brass fixtures", 576, 1024, "herringbone"),
   },
   {
     n: "03",
@@ -47,7 +125,7 @@ const ideas = [
       "It's genuinely one of the easiest DIY upgrades on this list. A weekend, a roller, and one bold can of paint is all it takes to completely change how the room feels.",
       "A textured, almost hand-brushed emerald finish like the one shown here against brass fixtures proves that paint alone, applied with a little intention, can look every bit as rich as a more expensive material.",
     ],
-    photo: photo("statement-paint.png", "Small bathroom with a textured brushed emerald green painted accent wall behind a white pedestal sink with brass fixtures", 576, 1024),
+    photo: photo("statement-paint.png", "Small bathroom with a textured brushed emerald green painted accent wall behind a white pedestal sink with brass fixtures", 576, 1024, "paint"),
   },
   {
     n: "04",
@@ -57,7 +135,7 @@ const ideas = [
       "A living wall does more than add color &mdash; it brings the whole room to life in a way tile or paint never quite manages, and it turns an ordinary bath into something closer to a private jungle.",
       "Framed in rustic stone, like the ferns and trailing greenery shown here behind a wood-clad tub, a vertical garden wall becomes the single most memorable thing about the room.",
     ],
-    photo: photo("vertical-garden.png", "Lush vertical garden wall of ferns and greenery above a wood-clad bathtub, framed by rough stone walls", 576, 1024),
+    photo: photo("vertical-garden.png", "Lush vertical garden wall of ferns and greenery above a wood-clad bathtub, framed by rough stone walls", 576, 1024, "garden"),
   },
   {
     n: "05",
@@ -67,7 +145,7 @@ const ideas = [
       "The impact comes from contrast. A busy, graphic tile wall paired with simple white fixtures and neutral accessories lets the pattern do all the talking.",
       "A navy-and-white zigzag running floor to ceiling, like the one shown here, is the kind of detail that makes a bathroom feel expensive the second you walk in.",
     ],
-    photo: photo("bold-tile.png", "Bold navy and white zigzag patterned tile covering the walls and floor of a small bathroom with a white toilet and vanity", 576, 1024),
+    photo: photo("bold-tile.png", "Bold navy and white zigzag patterned tile covering the walls and floor of a small bathroom with a white toilet and vanity", 576, 1024, "boldTile"),
   },
   {
     n: "06",
@@ -77,7 +155,7 @@ const ideas = [
       "The texture and grain do a lot of the visual work on their own &mdash; you don't need much else happening in the room once a wood wall is the focal point.",
       "Backlit wood paneling behind a tub, like the warm plank wall shown here glowing from hidden under-shelf lighting, turns a simple material into a genuinely elevated feature.",
     ],
-    photo: photo("wood-panels.png", "Warm wood plank accent wall in a bathroom with hidden under-shelf lighting, a built-in tub and potted plants on the vanity", 576, 1024),
+    photo: photo("wood-panels.png", "Warm wood plank accent wall in a bathroom with hidden under-shelf lighting, a built-in tub and potted plants on the vanity", 576, 1024, "wood"),
   },
   {
     n: "07",
@@ -87,7 +165,7 @@ const ideas = [
       "This is one of the single best tricks for a small bathroom specifically. A full mirrored panel wall visually doubles the space without a single inch of actual renovation.",
       "Floor-to-ceiling mirror behind a floating vanity, like the setup shown here reflecting the whole room back at itself, is proof that this trick looks as polished as it is functional.",
     ],
-    photo: photo("mirrored-wall.png", "Floor-to-ceiling mirrored accent wall behind a black floating double vanity in a contemporary bathroom with marble tile", 576, 1024),
+    photo: photo("mirrored-wall.png", "Floor-to-ceiling mirrored accent wall behind a black floating double vanity in a contemporary bathroom with marble tile", 576, 1024, "mirror"),
   },
   {
     n: "08",
@@ -97,7 +175,7 @@ const ideas = [
       "The scale is what makes it work. A mosaic covering an entire wall reads as a real art installation rather than a decorative accent, and it holds up beautifully in a wet, reflective space.",
       "An intricate blue-and-gold mosaic like the one shown here, caught in the mirror behind the sink, turns a simple vanity wall into the most striking thing in the entire house.",
     ],
-    photo: photo("mosaic-art.png", "Intricate blue and gold mosaic tile art wall behind a white floating sink in a modern bathroom", 576, 1024),
+    photo: photo("mosaic-art.png", "Intricate blue and gold mosaic tile art wall behind a white floating sink in a modern bathroom", 576, 1024, "mosaic"),
   },
   {
     n: "09",
@@ -107,7 +185,7 @@ const ideas = [
       "Soft colors do the most work here. White, gray, or a muted pastel blue on shiplap planks create a warm, welcoming feel that tile alone rarely achieves.",
       "Paired with a round antique mirror and a few plants, like the sage-green shiplap wall shown here, the effect is cozy enough to make you forget you're standing in a bathroom at all.",
     ],
-    photo: photo("shiplap.png", "Sage green shiplap accent wall in a bathroom with a round antique mirror, brass sconce and potted plants beside a pedestal sink", 576, 1024),
+    photo: photo("shiplap.png", "Sage green shiplap accent wall in a bathroom with a round antique mirror, brass sconce and potted plants beside a pedestal sink", 576, 1024, "shiplap"),
   },
   {
     n: "10",
@@ -117,7 +195,7 @@ const ideas = [
       "The texture pairs beautifully with matte black or brushed metal fixtures and genuinely minimalist decor &mdash; concrete does best when the rest of the room stays quiet around it.",
       "A full concrete treatment from floor to wall, like the one shown here framing an open glass shower, makes a small bathroom feel like a design statement instead of an afterthought.",
     ],
-    photo: photo("concrete.png", "Raw concrete accent wall in a minimalist bathroom with a glass-enclosed shower, brushed brass vanity and floor tile", 576, 1024),
+    photo: photo("concrete.png", "Raw concrete accent wall in a minimalist bathroom with a glass-enclosed shower, brushed brass vanity and floor tile", 576, 1024, "concrete"),
   },
   {
     n: "11",
@@ -127,7 +205,7 @@ const ideas = [
       "Metallics, florals, faux brick &mdash; the options go far beyond what paint or tile can offer, and a patterned wallpaper wall reads as considerably more custom than it actually costs to install.",
       "A dark botanical print like the one shown here, glowing under a backlit mirror in a walk-in shower, proves wallpaper can hold up beautifully even in a genuinely wet space.",
     ],
-    photo: photo("textured-wallpaper.png", "Dark green and gold botanical patterned wallpaper accent wall in a walk-in shower with a backlit mirror and floating vanity", 576, 1024),
+    photo: photo("textured-wallpaper.png", "Dark green and gold botanical patterned wallpaper accent wall in a walk-in shower with a backlit mirror and floating vanity", 576, 1024, "wallpaper"),
   },
   {
     n: "12",
@@ -137,7 +215,7 @@ const ideas = [
       "The trick is embracing variety &mdash; mix frame sizes, finishes, and a few mirrors into the arrangement rather than hanging a single uniform grid. It should feel collected, not ordered.",
       "Black and gold frames against a neutral brick wall, like the eclectic mix shown here layered with small decorative mirrors, look genuinely chic without needing a single matching piece.",
     ],
-    photo: photo("gallery-wall.png", "Eclectic black and gold framed gallery wall mixing artwork and small mirrors on a painted brick wall above a bathtub", 576, 1024),
+    photo: photo("gallery-wall.png", "Eclectic black and gold framed gallery wall mixing artwork and small mirrors on a painted brick wall above a bathtub", 576, 1024, "gallery"),
   },
 ];
 
@@ -152,7 +230,7 @@ function ideaBlock(idea) {
 const body = `
 <p>A bathroom doesn't have to stay boring and purely functional. It can be your personal spa, your design playground, or just a quiet retreat from everything else going on in the house &mdash; and the fastest way to get there is one genuinely good accent wall.</p>
 <p>A single wall, done right, can completely change the mood of the whole room. These twelve ideas cover everything from a five-minute paint refresh to a full stone or mosaic statement, so there's an entry point here no matter your budget or how adventurous you're feeling.</p>
-${photo("hero.jpg", "Modern minimalist bathroom with a textured concrete-look accent wall, glass shower enclosure and pendant lights over a floating vanity", 1280, 720)}
+${photo("hero.jpg", "Modern minimalist bathroom with a textured concrete-look accent wall, glass shower enclosure and pendant lights over a floating vanity", 1280, 720, "hero")}
 
 <h2>12 Bathroom Accent Wall Ideas Worth Stealing</h2>
 ${ideas.map(ideaBlock).join("\n")}

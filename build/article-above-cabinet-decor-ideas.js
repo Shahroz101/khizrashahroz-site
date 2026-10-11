@@ -86,6 +86,18 @@ const PRODUCTS = {
     { asin: "B0DYN2DXRR", title: "Rustic Farmhouse Lantern Decor, Set of 3 Lanterns, Indoor and Outdoor", w: 1254, h: 1254 },
     { asin: "B0BNKF1L2K", title: "Romadedi Lantern Rustic Farmhouse Decor, Set of 2", w: 1250, h: 1500 },
   ],
+  glassVessels: [
+    { asin: "B0H4VVFQ23", title: "Clear Glass Vase Wide, Premium Decor Flower Vase, Cylinder Vases for Centerpieces", w: 1326, h: 1500 },
+    { asin: "B009ANZ2YC", title: "WGVI Quality Thick Weighted Tall Clear Cylinder Glass Vase, 4\" W x 14\" H", w: 392, h: 1500 },
+  ],
+  cookbooks: [
+    { asin: "B0H5886B7D", title: "Beautiful Decorative Books for Modern Home Decor, Set of 2 Stack Fake Books for Shelf & Mantel Decoration", w: 1254, h: 1254 },
+    { asin: "B0FG1YS2P2", title: "9 Faux Books Neutral, Decorative Box with Hidden Storage, Bookshelf Accent, Home Staging Accessory", w: 1488, h: 1500 },
+  ],
+  statementLightingAlt: [
+    { asin: "B0D8J2W66Z", title: "Farmhouse Chandelier, 3-Light Rattan Boho Hand Woven Wicker Pendant Light, 24\"", w: 1500, h: 1500 },
+    { asin: "B0H2D2HHXB", title: "Large Black Dome Pendant Light, 23.6 Inch, Gold Leaf Interior", w: 1500, h: 1500 },
+  ],
 };
 
 function productGrid(productsKey) {
@@ -166,6 +178,7 @@ const ideas = [
       "Go bigger than feels natural &mdash; a few larger glass vessels read as considered, while a cluster of small ones starts to look like clutter fast.",
       "It's also one of the lowest-risk choices on this entire list. Glass never really goes out of style the way more decorative materials can.",
     ],
+    productsKey: "glassVessels",
   },
   {
     n: "05",
@@ -185,6 +198,7 @@ const ideas = [
       "Stack them horizontally, limit the color palette to neutrals, and add one single object on top to finish the look.",
       "If the cookbook collection currently looks like a rainbow exploded, it belongs on a regular shelf instead &mdash; this spot only works with real color discipline.",
     ],
+    productsKey: "cookbooks",
   },
   {
     n: "07",
@@ -224,6 +238,7 @@ const ideas = [
       "The effect pulls the eye upward and makes standard-height cabinets read as considerably taller than they actually are.",
       "It solves more problems than people expect from a single fixture &mdash; filling dead space, adding style, and improving the actual lighting all at once.",
     ],
+    productsKey: "statementLightingAlt",
   },
   {
     n: "11",

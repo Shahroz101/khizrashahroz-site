@@ -5,12 +5,9 @@
   var header = document.querySelector(".site-header");
   if (header) {
     var setScrolled = function () {
-      var scrolled = window.scrollY > 24;
-      header.classList.toggle("is-scrolled", scrolled);
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
     };
     window.addEventListener("scroll", setScrolled, { passive: true });
-    // Defer the initial read to the next frame instead of forcing a
-    // synchronous layout during script execution (Lighthouse: forced reflow).
     requestAnimationFrame(setScrolled);
   }
 
@@ -21,18 +18,15 @@
 
   if (hamburger && drawer) {
     var lastFocused = null;
-
-    var focusableSelector = 'a[href], button:not([disabled])';
-
+    var focusableSelector = "a[href], button:not([disabled])";
     var closeTimer = null;
 
     var openDrawer = function () {
       if (closeTimer) { window.clearTimeout(closeTimer); closeTimer = null; }
       lastFocused = document.activeElement;
       drawer.classList.add("is-open");
-      // Force layout with display:block applied before triggering the
-      // transform transition, otherwise the browser collapses both into
-      // one frame and the panel just appears with no slide-in.
+      // Force layout with display:block applied before the transform
+      // transition starts, otherwise the panel just appears with no slide.
       drawer.getBoundingClientRect();
       requestAnimationFrame(function () {
         drawer.setAttribute("data-open", "true");
@@ -56,49 +50,22 @@
     };
 
     var onKeydown = function (e) {
-      if (e.key === "Escape") {
-        closeDrawer();
-        return;
-      }
+      if (e.key === "Escape") { closeDrawer(); return; }
       if (e.key === "Tab") {
         var focusables = Array.prototype.slice.call(drawer.querySelectorAll(focusableSelector));
         if (!focusables.length) return;
         var firstEl = focusables[0];
         var lastEl = focusables[focusables.length - 1];
-        if (e.shiftKey && document.activeElement === firstEl) {
-          e.preventDefault();
-          lastEl.focus();
-        } else if (!e.shiftKey && document.activeElement === lastEl) {
-          e.preventDefault();
-          firstEl.focus();
-        }
+        if (e.shiftKey && document.activeElement === firstEl) { e.preventDefault(); lastEl.focus(); }
+        else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); firstEl.focus(); }
       }
     };
 
     hamburger.addEventListener("click", function () {
-      var isOpen = drawer.getAttribute("data-open") === "true";
-      if (isOpen) closeDrawer(); else openDrawer();
+      if (drawer.getAttribute("data-open") === "true") closeDrawer(); else openDrawer();
     });
     if (drawerClose) drawerClose.addEventListener("click", closeDrawer);
-    drawer.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", closeDrawer);
-    });
-  }
-
-  /* Scroll-spy active nav item */
-  var sections = Array.prototype.slice.call(document.querySelectorAll("main [id]"));
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav-links a, .mobile-drawer-links a"));
-  if (sections.length && navLinks.length && "IntersectionObserver" in window) {
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var id = "#" + entry.target.id;
-        navLinks.forEach(function (link) {
-          link.classList.toggle("is-active", link.getAttribute("href") === id);
-        });
-      });
-    }, { rootMargin: "-45% 0px -50% 0px" });
-    sections.forEach(function (s) { spy.observe(s); });
+    drawer.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", closeDrawer); });
   }
 
   /* Scroll reveal */
@@ -118,45 +85,111 @@
     revealEls.forEach(function (el) { reveal.observe(el); });
   }
 
-  /* Newsletter form */
-  var form = document.querySelector("[data-newsletter-form]");
-  if (form) {
-    var button = form.querySelector("button[type=submit]");
-    var message = form.querySelector("[data-newsletter-message]");
-    var buttonDefaultLabel = button ? button.textContent : "";
+  /* Site search (client-side, against the build-time index) */
+  var searchPage = document.querySelector("[data-search-page]");
+  if (searchPage) {
+    var input = document.getElementById("q");
+    var results = searchPage.querySelector("[data-search-results]");
+    var status = searchPage.querySelector("[data-search-status]");
+    var indexUrl = searchPage.getAttribute("data-index");
+    var index = null;
+    var loading = null;
+    var debounce = null;
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      var input = form.querySelector("input[type=email]");
-      if (!input || !input.checkValidity()) {
-        if (message) {
-          message.textContent = "Please enter a valid email address.";
-          message.setAttribute("data-state", "error");
-        }
+    var esc = function (s) {
+      return String(s).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    };
+
+    var picture = function (src, alt) {
+      var dot = src.lastIndexOf(".");
+      var base = src.slice(0, dot);
+      return '<picture><source srcset="' + base + '.avif" type="image/avif"><source srcset="' + base + '.webp" type="image/webp">' +
+        '<img src="' + src + '" alt="' + esc(alt) + '" loading="lazy" decoding="async"></picture>';
+    };
+
+    var card = function (p) {
+      return '<article class="compact-card">' +
+        '<a href="/' + p.s + '/" class="photo-link" tabindex="-1" aria-hidden="true"><div class="photo-slot photo-slot--img">' + picture(p.i, p.t) + '</div></a>' +
+        '<div><div class="post-meta-row"><a class="cat-link" href="/' + p.cs + '/">' + esc(p.c) + '</a><span class="divider" aria-hidden="true">/</span><span class="time">' + esc(p.r) + '</span></div>' +
+        '<h3><a href="/' + p.s + '/">' + esc(p.t) + '</a></h3><p class="excerpt">' + esc(p.e) + '</p></div></article>';
+    };
+
+    var tokenize = function (q) {
+      return q.toLowerCase().replace(/[^a-z0-9\s-]/g, " ").split(/\s+/).filter(function (t) { return t.length > 1; });
+    };
+
+    var score = function (p, terms) {
+      var t = p.t.toLowerCase(), e = p.e.toLowerCase(), c = p.c.toLowerCase(), s = p.s;
+      var total = 0;
+      for (var i = 0; i < terms.length; i++) {
+        var term = terms[i];
+        var hit = false;
+        if (t.indexOf(term) !== -1) { total += 6; hit = true; }
+        if (s.indexOf(term) !== -1) { total += 3; hit = true; }
+        if (c.indexOf(term) !== -1) { total += 3; hit = true; }
+        if (e.indexOf(term) !== -1) { total += 1; hit = true; }
+        if (!hit) return 0;
+      }
+      return total;
+    };
+
+    var render = function (q) {
+      var terms = tokenize(q);
+      if (!terms.length) {
+        results.innerHTML = "";
+        status.textContent = "Start typing, or try one of the rooms below.";
         return;
       }
-      if (button) {
-        button.disabled = true;
-        button.textContent = "Signing you up…";
+      var matches = index
+        .map(function (p) { return { p: p, s: score(p, terms) }; })
+        .filter(function (m) { return m.s > 0; })
+        .sort(function (a, b) { return b.s - a.s; })
+        .slice(0, 60);
+      results.innerHTML = matches.map(function (m) { return card(m.p); }).join("");
+      status.textContent = matches.length
+        ? matches.length + (matches.length === 1 ? " result" : " results") + " for “" + q.trim() + "”"
+        : "No results for “" + q.trim() + "” — try a shorter word, or browse a room below.";
+    };
+
+    var run = function (q) {
+      if (index) { render(q); return; }
+      if (!loading) {
+        status.textContent = "Loading…";
+        loading = fetch(indexUrl, { credentials: "same-origin" })
+          .then(function (r) { return r.json(); })
+          .then(function (data) { index = data; })
+          .catch(function () { status.textContent = "Search isn't available right now — browse a room below instead."; });
       }
-      if (message) {
-        message.textContent = "";
-        message.removeAttribute("data-state");
+      loading.then(function () { if (index) render(input.value); });
+    };
+
+    var syncUrl = function (q) {
+      var url = new URL(window.location.href);
+      if (q.trim()) url.searchParams.set("q", q.trim()); else url.searchParams.delete("q");
+      window.history.replaceState(null, "", url.toString());
+    };
+
+    var initial = new URL(window.location.href).searchParams.get("q") || "";
+    if (initial && input) input.value = initial;
+    if (initial) run(initial);
+
+    if (input) {
+      input.addEventListener("input", function () {
+        var q = input.value;
+        window.clearTimeout(debounce);
+        debounce = window.setTimeout(function () { syncUrl(q); run(q); }, 160);
+      });
+      var form = input.closest("form");
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          window.clearTimeout(debounce);
+          syncUrl(input.value);
+          run(input.value);
+        });
       }
-      window.setTimeout(function () {
-        if (button) button.textContent = "You're in ♡";
-        if (message) {
-          message.textContent = "Thank you! Check your inbox to confirm your subscription.";
-          message.setAttribute("data-state", "success");
-        }
-        input.value = "";
-        window.setTimeout(function () {
-          if (button) {
-            button.disabled = false;
-            button.textContent = buttonDefaultLabel;
-          }
-        }, 4000);
-      }, 500);
-    });
+    }
   }
 })();

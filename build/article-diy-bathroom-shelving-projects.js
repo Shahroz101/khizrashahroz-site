@@ -7,23 +7,77 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0BWMLC9BJ", title: "QEEIG Over the Toilet Wall Mounted Shelves, Brown, Set of 3, 15.7 Inch", w: 960, h: 1500 },
+    { asin: "B09F6JW2BD", title: "SPACELEAD Slim 4 Tier Rolling Storage Cart, Utility Organizer", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0FC67K432", title: "Heavy Duty Hidden Floating Shelf Brackets, 8 Pcs, Black", w: 1439, h: 1500 },
+    { asin: "B09FYXV3ZY", title: "Onlytak Unfinished Paulownia Wood Boards, 3 Pack, Carbonized Black", w: 1404, h: 1133 },
+  ],
+  idea2: [
+    { asin: "B0FKZPG1V3", title: "L-Shaped Industrial Pipe Shelf Brackets, Black Metal, Wall-Mounted", w: 1500, h: 1406 },
+    { asin: "B09Q58V8Q7", title: "Industrial Wall Mount Iron Pipe Shelving Bracket Kit, Black", w: 1082, h: 1138 },
+  ],
+  idea3: [
+    { asin: "B0H7JCNDXG", title: "WOPITUES 3-Tier Wood Over-the-Toilet Ladder Shelf", w: 1500, h: 1500 },
+    { asin: "B0CPSYHP5K", title: "HITNET 4-Tier Bamboo Ladder Shelf, Freestanding Open Display Rack", w: 684, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0DKFMHGH6", title: "Set of 5 Large Wooden Crates, Nesting Storage Crates with Handles", w: 1401, h: 1105 },
+    { asin: "B0FXBDCBYF", title: "Weysat 3 Pack Large Wood Crates for Storage, 16 Inch, Brown", w: 1500, h: 1355 },
+  ],
+  idea5: [
+    { asin: "B07HSTHJ8C", title: "Mkono Wood Hanging Rope Swing Shelves, Rustic Boho Decor, Set of 3", w: 1330, h: 1428 },
+    { asin: "B0FF31DRTB", title: "Heavy Duty Thick Jute Rope, 8 mm x 50 ft, for Crafts and Projects", w: 776, h: 1015 },
+  ],
+  drilling: [
+    { asin: "B0GYP8QX4F", title: "JAXWQ Stud Finder, Wood and Metal Stud Detector, Live Wire Detection", w: 1165, h: 1500 },
+    { asin: "B0H4WNBCSG", title: "Coatez Water Based Polyurethane Acrylic Wood Varnish with Tools", w: 1232, h: 954 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "diy-bathroom-shelving-projects-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "diy-bathroom-shelving-projects", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
 <p>Bathroom storage gets solved with a cabinet purchase more often than it needs to.</p>
 <p>A DIY shelf, built specifically for the space available, usually costs less and fits better than anything bought off the shelf.</p>
 <p>This covers five actual builds, plus what matters before drilling into a bathroom wall specifically.</p>
-${photo("hero.png", "Minimalist bathroom shelving adding both style and function", 1312, 736)}
+${photo("hero.png", "Minimalist bathroom shelving adding both style and function", 1312, 736, "hero")}
 
 <h2>Why Bathroom Shelving Matters</h2>
 <p>A bathroom accumulates more small items &mdash; toiletries, towels, decor &mdash; than almost any other room its size, which makes real storage less optional than it is elsewhere.</p>
@@ -36,27 +90,33 @@ ${photo("hero.png", "Minimalist bathroom shelving adding both style and function
 <h2>1. Floating Wood Shelves</h2>
 <p>A simple wood plank mounted on hidden brackets creates a clean, minimal look that suits almost any bathroom style.</p>
 <p>This is one of the most approachable builds on this list, requiring basic tools and a single afternoon.</p>
+${productGrid("idea1")}
 
 <h2>2. Industrial Pipe Shelving</h2>
 <p>Metal pipe fittings paired with wood shelving bring a sturdy, industrial-chic look that also happens to be genuinely durable in a humid room.</p>
 <p>This project takes a bit more planning than a simple floating shelf, but the hardware itself requires no special skill to assemble.</p>
+${productGrid("idea2")}
 
 <h2>3. An Over-the-Toilet Ladder Shelf</h2>
 <p>A ladder-style shelf claims the awkward, usually wasted space directly above the toilet, which is often the single biggest unused storage opportunity in a small bathroom.</p>
 <p>This design also doesn't require drilling into the wall at all in most cases, making it one of the more rental-friendly projects on this list.</p>
+${productGrid("idea3")}
 
 <h2>4. Crate Shelves</h2>
 <p>Wooden crates mounted directly to the wall create instant cubby storage with real visual character, especially using reclaimed or vintage crates.</p>
 <p>This is one of the more budget-friendly projects here, especially if the crates themselves are sourced secondhand.</p>
+${productGrid("idea4")}
 
 <h2>5. Rope Hanging Shelves</h2>
 <p>Shelves suspended by thick rope bring a relaxed, slightly bohemian look that a rigid bracket-mounted shelf can't replicate.</p>
 <p>This project also tends to be one of the easier ones to adjust after installation, since the rope length can be modified without starting over.</p>
+${productGrid("idea5")}
 
 <h2>What to Know Before Drilling</h2>
 <p>Finding the actual wall studs, rather than relying on drywall anchors alone, matters more for a shelf that will hold any real weight, including everyday bathroom items.</p>
 <p>Bathroom humidity affects material choice more than in any other room &mdash; untreated wood and certain metals need a protective finish to avoid warping or rust over time.</p>
 <p>Balancing genuine function with the look matters too; a beautiful shelf that can't hold what it needs to isn't actually solving the storage problem.</p>
+${productGrid("drilling")}
 
 <h2>Common Mistakes to Avoid</h2>
 <p>Skipping the stud-finding step is the most common and most consequential mistake, risking a shelf that pulls away from the wall under real weight.</p>

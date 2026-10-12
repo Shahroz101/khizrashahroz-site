@@ -11,24 +11,115 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0DPWPMWTZ", title: "Rustic Wooden Tray with 8 Brown Glass Votive Candle Holders", w: 1500, h: 1500 },
+    { asin: "B0CQKZ4CCB", title: "Realistic Mini Pumpkin Decor with Maple Leaves, 16 Pcs", w: 1500, h: 1255 },
+  ],
+  idea1: [
+    { asin: "B0FN7QBW8J", title: "Ceramic Rustic Farmhouse Vase, Small Short Pottery Flower Vase", w: 1500, h: 1500 },
+    { asin: "B0G58PMTGH", title: "Dahey Hydrangea Faux Flowers in Small Vase for Table Centerpiece", w: 1500, h: 1388 },
+  ],
+  idea2: [
+    { asin: "B0GYCM5D1K", title: "Novabright Large Rustic Pine Wood Long Tray, 30 Inch", w: 1500, h: 1500 },
+    { asin: "B0D3GCXYW5", title: "Glass Bud Vase Set, 32 Pcs, Mini Clear Vases for Flowers", w: 1500, h: 1479 },
+  ],
+  idea3: [
+    { asin: "B0FJCQHK5B", title: "Vanselia Large Tall Ceramic Farmhouse Flower Vase, Rustic Vintage", w: 1500, h: 1500 },
+    { asin: "B0DZ1WXH84", title: "Artificial Ficus and Eucalyptus Branches, 4 Pcs, Faux Stems", w: 1500, h: 1494 },
+  ],
+  idea4: [
+    { asin: "B0GGB6FWR2", title: "Set of 2 Hurricane Candle Holders with Glass Dome and Iron Base", w: 1500, h: 1500 },
+    { asin: "B07D26KQZ7", title: "antizer Flameless LED Candles, Pack of 9, Real Wax, Battery Operated", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0CNLL2R7L", title: "NIRMAN Mango Wood Round Serving Bowl for Fruit", w: 1215, h: 656 },
+    { asin: "B0H1HDKNKH", title: "1DOT2 Handmade Ceramic Pedestal Bowl, Matte Creamy Off-White, 11.3 Inch", w: 1499, h: 965 },
+  ],
+  idea6: [
+    { asin: "B0CLNGJPR9", title: "Artificial Eucalyptus Garland, 2 Pack, Hanging Greenery Vines", w: 1151, h: 1500 },
+    { asin: "B094MY5HH4", title: "DearHouse Faux Eucalyptus Garland, 6 Pack, Artificial Hanging Vines", w: 1485, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B09DF8WZMD", title: "Rool Wood Knot Decor Chain Link for Coffee Table and Bookshelf", w: 1500, h: 1500 },
+    { asin: "B0GJCHK6LF", title: "WUBIANJIE Modern Abstract Mobius Knot Sculpture, Resin Decor", w: 722, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0GCZPT8D8", title: "Decorative Books for Coffee Table Decor, Set of 3", w: 1500, h: 1500 },
+    { asin: "B0F82QBYNC", title: "JARLINK Aesthetic Decorative Books, Set of 3 Linen Faux Book Boxes, Sage", w: 1500, h: 1333 },
+  ],
+  idea9: [
+    { asin: "B0HCVH4TNX", title: "16 Inch Wavy-Edge Wooden Dough Bowl, Large Decorative Bowl", w: 1280, h: 1057 },
+    { asin: "B0C4F7Y47S", title: "Decorative Moss and Wicker Rattan Balls for Centerpiece Bowls, 18 Pcs", w: 1500, h: 1204 },
+  ],
+  idea10: [
+    { asin: "B0DGH4TDWQ", title: "Creative Co-Op Glass Cloche with Metal Tray, Clear and Antique Brass", w: 1054, h: 1500 },
+    { asin: "B0C8S6JNZF", title: "Preserved Reindeer Moss, Natural Green, DIY Kit for Decor", w: 1485, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B005JTGGU0", title: "Saro Lifestyle Poly and Linen Blend Hemstitched Table Runner", w: 1500, h: 1500 },
+    { asin: "B0CRR1HLHS", title: "Vitalizart Beige Slub Cotton Linen Table Runner, 14 x 90 Inch", w: 1293, h: 1500 },
+  ],
+  idea12: [
+    { asin: "B0H7RN4MR7", title: "Farmhouse Fall Tiered Tray Decor Set, 8 Pcs", w: 1226, h: 1500 },
+    { asin: "B0C2P7HBKV", title: "Artgar Pumpkin Decor Set, 23 Pcs Fall Harvest Bowl Fillers", w: 1500, h: 1499 },
+  ],
+  idea13: [
+    { asin: "B0GFF1X8B1", title: "10 Inch Classic Taper Candles, Gold Marble Black, 4 Pack", w: 1000, h: 1500 },
+    { asin: "B0H771SBTH", title: "Gold Taper Candle Holders, 24 Pcs, Vintage Candlestick Set", w: 1500, h: 1429 },
+  ],
+  idea14: [
+    { asin: "B08DNW6SKD", title: "Serene Spaces Living Lightweight Antique Brass Decorative Bowl", w: 636, h: 317 },
+    { asin: "B0H4KZZ36V", title: "Retro Japanese Style Ceramic Bowls, 10 oz, 6 Pack Gift Set", w: 1464, h: 1483 },
+  ],
+  idea15: [
+    { asin: "B0FZTB6PXS", title: "Acacia Wood Salt and Pepper Grinder Set with Matching Tray", w: 1500, h: 1500 },
+    { asin: "B071RFLQDW", title: "Mikasa Gourmet Basics Hanover Condiment Caddy with Rotating Organizer", w: 1182, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "dining-table-centerpiece-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "dining-table-centerpiece-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "dining-table-centerpiece-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -40,7 +131,7 @@ const ideas = [
       "A neutral vase lets the flowers themselves do the visual work, rather than competing with a patterned or brightly colored container.",
       "It suits both everyday meals and formal dinners equally well &mdash; no real drama involved, just consistent beauty.",
     ],
-    photo: pinPhoto("low-floral.jpg", "Low floral arrangement in a neutral vase as a dining table centerpiece", 683, 1024, "https://www.pinterest.com/pin/2251868558672155/", "Low Floral Dining Table Centerpiece"),
+    photo: pinPhoto("low-floral.jpg", "Low floral arrangement in a neutral vase as a dining table centerpiece", 683, 1024, "https://www.pinterest.com/pin/2251868558672155/", "Low Floral Dining Table Centerpiece", "idea1"),
   },
   {
     n: "02",
@@ -50,7 +141,7 @@ const ideas = [
       "Styled once with candles, small vases and a bit of greenery, the whole arrangement can be tweaked in minutes rather than rebuilt from scratch.",
       "The tray also keeps everything visually contained, which solves the common problem of centerpiece items looking scattered across the table.",
     ],
-    photo: pinPhoto("wooden-tray.jpg", "Long wooden tray with layered decor as a dining table centerpiece", 683, 1024, "https://www.pinterest.com/pin/243264817368509282/", "Wooden Tray Dining Table Centerpiece"),
+    photo: pinPhoto("wooden-tray.jpg", "Long wooden tray with layered decor as a dining table centerpiece", 683, 1024, "https://www.pinterest.com/pin/243264817368509282/", "Wooden Tray Dining Table Centerpiece", "idea2"),
   },
   {
     n: "03",
@@ -60,7 +151,7 @@ const ideas = [
       "One confident, striking piece consistently outperforms five smaller, less memorable ones.",
       "It's one of the lowest-effort ideas on this list in terms of actual assembly, while still making a genuine visual statement.",
     ],
-    photo: photo("statement-vase.jpg", "Single statement vase with branches as a minimal dining table centerpiece", 683, 1024),
+    photo: photo("statement-vase.jpg", "Single statement vase with branches as a minimal dining table centerpiece", 683, 1024, "idea3"),
   },
   {
     n: "04",
@@ -70,7 +161,7 @@ const ideas = [
       "Even an ordinary weeknight meal starts to feel a little more intentional once a cluster of lit candles is on the table.",
       "It's worth noticing how reliably restaurants lean on candlelight &mdash; there's a reason it shows up on nearly every table.",
     ],
-    photo: pinPhoto("candle-cluster.jpg", "Candle cluster centerpiece with greenery for cozy dining", 736, 552, "https://www.pinterest.com/pin/418834834110299301/", "Candle Cluster Dining Table Centerpiece"),
+    photo: pinPhoto("candle-cluster.jpg", "Candle cluster centerpiece with greenery for cozy dining", 736, 552, "https://www.pinterest.com/pin/418834834110299301/", "Candle Cluster Dining Table Centerpiece", "idea4"),
   },
   {
     n: "05",
@@ -80,7 +171,7 @@ const ideas = [
       "It works year-round, simply by swapping whatever fruit is in season into the same bowl.",
       "It also happens to encourage healthier snacking, which is a small but genuine bonus beyond the visual appeal.",
     ],
-    photo: pinPhoto("fruit-bowl.jpg", "Bowl of seasonal fruit as a practical dining table centerpiece", 683, 1024, "https://www.pinterest.com/pin/51158145761395154/", "Seasonal Fruit Bowl Centerpiece"),
+    photo: pinPhoto("fruit-bowl.jpg", "Bowl of seasonal fruit as a practical dining table centerpiece", 683, 1024, "https://www.pinterest.com/pin/51158145761395154/", "Seasonal Fruit Bowl Centerpiece", "idea5"),
   },
   {
     n: "06",
@@ -90,7 +181,7 @@ const ideas = [
       "Faux greenery works just as well as real, especially for anyone who'd rather skip the maintenance &mdash; from across the table, the difference is rarely noticeable.",
       "Keeping the runner low and loose, rather than tightly arranged, reads as more natural and less staged.",
     ],
-    photo: pinPhoto("greenery-runner.jpg", "Greenery runner centerpiece down a dining table", 683, 1024, "https://www.pinterest.com/pin/5277724559211088/", "Greenery Runner Dining Table Centerpiece"),
+    photo: pinPhoto("greenery-runner.jpg", "Greenery runner centerpiece down a dining table", 683, 1024, "https://www.pinterest.com/pin/5277724559211088/", "Greenery Runner Dining Table Centerpiece", "idea6"),
   },
   {
     n: "07",
@@ -100,7 +191,7 @@ const ideas = [
       "A ceramic form, an abstract wood carving, or a metal sculpture all work well for anyone who wants the centerpiece to feel a little more unexpected.",
       "This option reads as confident the moment someone walks into the room, in a way a floral arrangement rarely manages on its own.",
     ],
-    photo: pinPhoto("sculptural-object.jpg", "Sculptural object used as a modern dining table centerpiece", 683, 1024, "https://www.pinterest.com/pin/193654852720568678/", "Sculptural Dining Table Centerpiece"),
+    photo: pinPhoto("sculptural-object.jpg", "Sculptural object used as a modern dining table centerpiece", 683, 1024, "https://www.pinterest.com/pin/193654852720568678/", "Sculptural Dining Table Centerpiece", "idea7"),
   },
   {
     n: "08",
@@ -110,7 +201,7 @@ const ideas = [
       "A small stack, topped with a candle or a small object, builds height and interest without requiring any floral arrangement at all.",
       "Keeping the stack minimal matters here; overdoing it undercuts the charm that makes this idea work in the first place.",
     ],
-    photo: photo("stacked-books.jpg", "Stacked coffee table books with decor as a dining table centerpiece", 683, 1024),
+    photo: photo("stacked-books.jpg", "Stacked coffee table books with decor as a dining table centerpiece", 683, 1024, "idea8"),
   },
   {
     n: "09",
@@ -120,7 +211,7 @@ const ideas = [
       "Filled with pinecones, dried florals, faux fruit or seasonal greenery, it builds a warm, layered look with very little actual effort.",
       "It's a strong choice for anyone drawn to cozy, textured decor over anything too sleek or minimal.",
     ],
-    photo: photo("dough-bowl.jpg", "Rustic dough bowl filled with seasonal decor as a centerpiece", 683, 1024),
+    photo: photo("dough-bowl.jpg", "Rustic dough bowl filled with seasonal decor as a centerpiece", 683, 1024, "idea9"),
   },
   {
     n: "10",
@@ -130,7 +221,7 @@ const ideas = [
       "Moss, a small floral arrangement, or a decorative object placed underneath the glass reads as considered and a little precious, in the best sense.",
       "It's a centerpiece that feels thoughtful without ever becoming loud or overdone.",
     ],
-    photo: photo("glass-cloche.jpg", "Glass cloche with a decorative accent as a subtle dining table centerpiece", 683, 1024),
+    photo: photo("glass-cloche.jpg", "Glass cloche with a decorative accent as a subtle dining table centerpiece", 683, 1024, "idea10"),
   },
   {
     n: "11",
@@ -140,7 +231,7 @@ const ideas = [
       "A neutral linen or cotton runner laid down the center of the table does most of the visual work on its own.",
       "Adding just one small object in the middle, then stopping, is the real trick here &mdash; restraint matters more than it might seem.",
     ],
-    photo: photo("minimal-runner.jpg", "Neutral table runner with minimal decor as a dining table centerpiece", 683, 1024),
+    photo: photo("minimal-runner.jpg", "Neutral table runner with minimal decor as a dining table centerpiece", 683, 1024, "idea11"),
   },
   {
     n: "12",
@@ -150,7 +241,7 @@ const ideas = [
       "Pumpkins and foliage in fall, fresh blooms in spring, pinecones and candles in winter &mdash; the base styling stays largely the same, with just the seasonal elements rotating in and out.",
       "Using a tray as the base makes these seasonal swaps considerably easier, since the whole arrangement can be lifted and replaced at once.",
     ],
-    photo: pinPhoto("seasonal-swap.jpg", "Seasonal centerpiece styled on a tray for easy swapping", 683, 1024, "https://www.pinterest.com/pin/40321359162301662/", "Seasonal Dining Table Centerpiece"),
+    photo: pinPhoto("seasonal-swap.jpg", "Seasonal centerpiece styled on a tray for easy swapping", 683, 1024, "https://www.pinterest.com/pin/40321359162301662/", "Seasonal Dining Table Centerpiece", "idea12"),
   },
   {
     n: "13",
@@ -160,7 +251,7 @@ const ideas = [
       "Candlesticks, small trays or vases in contrasting metal finishes build visual interest through material alone, without needing much else.",
       "This combination suits a contemporary dining room particularly well, where a sleeker overall aesthetic is already in play.",
     ],
-    photo: photo("mixed-metals.jpg", "Mixed metal accents in a modern dining table centerpiece", 683, 1024),
+    photo: photo("mixed-metals.jpg", "Mixed metal accents in a modern dining table centerpiece", 683, 1024, "idea13"),
   },
   {
     n: "14",
@@ -170,7 +261,7 @@ const ideas = [
       "Thrifted or inherited pieces, with a bit of visible age or patina, bring genuine character and a sense of history to the table.",
       "A single old piece tends to make an entire room feel more layered and collected, rather than freshly furnished.",
     ],
-    photo: photo("vintage-piece.jpg", "Vintage or antique piece used as a dining table centerpiece", 683, 1024),
+    photo: photo("vintage-piece.jpg", "Vintage or antique piece used as a dining table centerpiece", 683, 1024, "idea14"),
   },
   {
     n: "15",
@@ -180,7 +271,7 @@ const ideas = [
       "A salt and pepper set paired with a small vase, or a condiment tray that doubles as decor, keeps the table styled even during an ordinary weeknight dinner.",
       "Functional centerpieces hold up to daily use in a way purely decorative ones often don't, which makes them worth prioritizing for a table that gets used every day.",
     ],
-    photo: photo("everyday-function.jpg", "Everyday functional dining table centerpiece combining style and use", 683, 1024),
+    photo: photo("everyday-function.jpg", "Everyday functional dining table centerpiece combining style and use", 683, 1024, "idea15"),
   },
 ];
 
@@ -195,7 +286,7 @@ function ideaBlock(idea) {
 const body = `
 <p>A dining table centerpiece does more than fill empty space in the middle of the table &mdash; it anchors the whole room and sets the tone before anyone even sits down. The right one works for both an everyday dinner and a more formal occasion, without needing to be swapped out every time.</p>
 <p>None of the ideas below require a florist or a big budget. Most come down to one strong focal point, kept simple enough to stay out of the way of actual conversation across the table.</p>
-${photo("hero.jpg", "Candle cluster centerpiece with greenery and mini pumpkins on a dining table", 736, 552)}
+${photo("hero.jpg", "Candle cluster centerpiece with greenery and mini pumpkins on a dining table", 736, 552, "hero")}
 
 <h2>Why Centerpieces Matter More Than You'd Think</h2>
 <p>A centerpiece does real work anchoring the whole dining space, pulling the table together the way a rug pulls together a living room. Function still matters here too &mdash; a centerpiece that's too tall or too wide gets in the way of actually passing dishes and seeing across the table.</p>

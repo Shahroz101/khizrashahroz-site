@@ -35,7 +35,7 @@ const PRODUCTS = {
   ],
   lighting: [
     { asin: "B0CTFMRF7M", title: "HOLITS Fairy Curtain Lights, Tangle-Free Warm White, USB Plug-in, 8 Modes with Remote", w: 1500, h: 1500 },
-    { asin: "B0C4P2TTTJ", title: "LumBelle 6.6 x 6.6Ft 400 LED Smart Curtain Lights with APP Remote Control", w: 1500, h: 1500 },
+    { asin: "B085Y1J85P", title: "HXWEIYE 300LED Fairy Curtain Lights, 9.8x9.8Ft USB, Remote, 8 Modes &amp; Timer", w: 1024, h: 1024 },
   ],
   mirror: [
     { asin: "B0B87C791T", title: "NEUWEABY Arched Full Length Floor Mirror with Stand", w: 1500, h: 1500 },

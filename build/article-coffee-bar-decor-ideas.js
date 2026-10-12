@@ -10,6 +10,127 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0DJSL5GPT", title: "Sage Green Botanical Peel and Stick Wallpaper", w: 1500, h: 1498 },
+    { asin: "B0DQWC47JN", title: "De'Longhi Classic Signature Espresso Machine with Milk Frother", w: 1500, h: 1373 },
+  ],
+  goodBar: [
+    { asin: "B08L4TBSST", title: "36-Capacity Coffee Pod Carousel Holder for K-Cup Pods", w: 781, h: 1447 },
+    { asin: "B0916RQVTX", title: "KIMIUP Coffee Pod Holder for K-Cups, 36 Pods", w: 780, h: 1447 },
+  ],
+  decorate: [
+    { asin: "B0B23WC3LB", title: "Manspdier 3-Tier Wood Serving Tray and Cupcake Stand", w: 1174, h: 994 },
+    { asin: "B0G2W5ZNFQ", title: "Manspdier Extra Large Wood 3-Tier Serving Tray", w: 1171, h: 1369 },
+  ],
+  idea1: [
+    { asin: "B0GXSNC9LR", title: "White Porcelain Coffee Mugs, Set of 6, 13 oz", w: 1500, h: 1125 },
+    { asin: "B0F8MPHXPX", title: "vancasso Porcelain Coffee Mugs Set, 16 oz", w: 1500, h: 1402 },
+  ],
+  idea2: [
+    { asin: "B0FMRXNMNS", title: "HLXRAE Sage Green Botanical Wall Art, Wood Framed, 12 x 16", w: 1482, h: 954 },
+    { asin: "B0FH29G793", title: "LLEEMPI Sage Green Botanical Wall Art, Set of 3, Wood Framed, 12 x 16", w: 1482, h: 953 },
+  ],
+  idea3: [
+    { asin: "B0DQKDJVBK", title: "Smuxee Walnut Sideboard Cabinet with Line Groove Design", w: 1500, h: 1500 },
+    { asin: "B07T1CH2HH", title: "Cosori Gooseneck Electric Kettle with Temperature Control, 0.8L, Black", w: 1327, h: 1222 },
+  ],
+  idea4: [
+    { asin: "B0DYRZXWHR", title: "Amazon Basics Acacia Wood Serving Tray, 17 x 12 Inch", w: 1500, h: 554 },
+    { asin: "B0H4G4N3LV", title: "Solidith Acacia Wooden Serving Tray with Handles", w: 1332, h: 1331 },
+  ],
+  idea5: [
+    { asin: "B0GJ4DP4R6", title: "Bamboo Mug Holder Tree with 8 Hooks", w: 1224, h: 1422 },
+    { asin: "B0F4R6LRFK", title: "MyLifeUNIT Mug Holder Tree with 6 Hooks, Reddish Brown", w: 752, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B01MRN3VLG", title: "DOKOT Seagrass Basket with Handles, Woven Storage Basket", w: 1162, h: 1397 },
+    { asin: "B0FX1WZ83N", title: "Small Seagrass Storage Baskets, Natural Woven, Set of 3", w: 1500, h: 1437 },
+  ],
+  idea7: [
+    { asin: "B0B1J1GN7Q", title: "NIKKY HOME Farmhouse Coffee Bar Sign", w: 1411, h: 716 },
+    { asin: "B09V4R3XHJ", title: "Rustic Wood Grain Coffee Bar Sign, 6 x 17", w: 1071, h: 502 },
+  ],
+  idea8: [
+    { asin: "B09NVN4R6F", title: "Dimmable Plug-in Wall Sconces, Set of Two, White Fabric Shade", w: 1405, h: 1500 },
+    { asin: "B0B214J361", title: "LASENCHOO Plug-in Gold Wall Sconces, Set of Two", w: 1229, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0FWBMDDWD", title: "Peel and Stick Subway Tile Backsplash, 10 Sheets", w: 1500, h: 1500 },
+    { asin: "B0DPKPSWNQ", title: "STICKGOO Peel and Stick Subway Tile Backsplash, 12 x 12", w: 1500, h: 1497 },
+  ],
+  idea10: [
+    { asin: "B09WCTL9WN", title: "Goo-Ki 5 Inch Antique Brass Cabinet Pulls", w: 1500, h: 1375 },
+    { asin: "B0BWN6VGY9", title: "Plustool Brushed Brass Gold Cabinet Pulls, 3 Inch Hole Centers, 30 Pack", w: 1500, h: 1482 },
+  ],
+  idea11: [
+    { asin: "B0G395TVML", title: "Joaxswe 2-Tier Gold Bar Cart with Lockable Wheels", w: 1500, h: 1500 },
+    { asin: "B0D6G55VCK", title: "Joaxswe Gold Bar Cart with Wheels and Storage Shelves", w: 1303, h: 1447 },
+  ],
+  idea12: [
+    { asin: "B087BTG177", title: "HOMCOM 72 Inch Kitchen Pantry Cabinet with Hutch, Off White", w: 700, h: 1500 },
+    { asin: "B087BTHTJ3", title: "HOMCOM 72 Inch Kitchen Pantry Cabinet with Hutch, Black", w: 700, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B0D17DLRBD", title: "Glass Canisters with Airtight Bamboo Lids and Pantry Labels, 3 Pack", w: 1194, h: 1101 },
+    { asin: "B08YQYX6HB", title: "Aoeoe Glass Storage Jars with Airtight Bamboo Lids, 27 oz, 4 Pack", w: 1500, h: 1463 },
+  ],
+  idea14: [
+    { asin: "B0CZKQQLBD", title: "Live Pothos Plants, 4 Pack", w: 998, h: 902 },
+    { asin: "B0GGYYTNBP", title: "Artificial Pothos Plant with Pulp Pot", w: 1434, h: 1067 },
+  ],
+  idea15: [
+    { asin: "B09WVCVXX6", title: "JUMMICO 3-Piece Wooden Round Bistro Table and Chair Set, Walnut/Black", w: 1500, h: 1194 },
+    { asin: "B0C76CF42W", title: "Best Choice Products 3-Piece Modern Dining Set, Space Saving Dinette", w: 1500, h: 1500 },
+  ],
+  idea16: [
+    { asin: "B0H8SF1ZBN", title: "Livelynine Vintage Floral Peel and Stick Wallpaper, Sage Green", w: 1500, h: 1500 },
+    { asin: "B0DXDX3F7P", title: "Livelynine Sage Green and Gold Botanical Peel and Stick Wallpaper", w: 1500, h: 1500 },
+  ],
+  idea17: [
+    { asin: "B0CCXSX412", title: "Vervida Black Rustic Floating Wall Shelves, 15 Inch, Set of 3", w: 1125, h: 1500 },
+    { asin: "B0DRVYTF55", title: "Homeforia 12 Inch Solid Pine Floating Shelves, Set of 2", w: 1500, h: 1500 },
+  ],
+  idea18: [
+    { asin: "B08R66Z71S", title: "ASOKO Dimmable LED Under Cabinet Lights, 2700K, 3 Piece", w: 1154, h: 1500 },
+    { asin: "B0CSJQMVYZ", title: "MCGOR Rechargeable Motion Sensor Under Cabinet Lights, 14.7 Inch, 2 Pack", w: 1134, h: 1500 },
+  ],
+  idea19: [
+    { asin: "B0B5X1JTJP", title: "DOWAN Boho Mosaic Coffee Mugs, 16 oz, Set of 6", w: 1500, h: 1080 },
+    { asin: "B0F7X26WFF", title: "vancasso SIMI Large Coffee Mugs, 16 oz, Set of 6", w: 1500, h: 1394 },
+  ],
+  clutter: [
+    { asin: "B0CFLP9T77", title: "Cordless Touch Table Lamp, Rechargeable, Classic Edition", w: 1500, h: 1500 },
+    { asin: "B07TBBWNPN", title: "10 Strawberry Street Embossed Ceramic Canister Set of 3, Hampton White", w: 1500, h: 1074 },
+  ],
+  whatToPut: [
+    { asin: "B0CKQNP26P", title: "LE TAUCI Ceramic Kitchen Utensil Holder for Counter, White", w: 1281, h: 1500 },
+    { asin: "B0BW5NJYBS", title: "Large Ceramic Spoon Rest for Stove Top", w: 1500, h: 1342 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "coffee-bar-decor-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1080, h: 1350, alt: "Arched alcove coffee bar with floral wallpaper, sage green cabinets, an espresso machine and light wood shelving", id: "657877458109314712", label: "Arched Coffee Bar Alcove" },
   goodBar: { src: "pod-station-subway-tile", w: 1200, h: 1799, alt: "Countertop coffee station with a pod carousel, pod drawer, black coffee machine and a coffee station sign in front of white subway tile", id: "245727723416367698", label: "Organized Coffee Pod Station" },
@@ -40,12 +161,13 @@ const PIN = {
   finalThoughts: { src: "fall-mug-rail-copper-mugs", w: 600, h: 750, alt: "Two brass mug rails with copper and white mugs, a basket and an orange gingham towel above an espresso machine on a small wood stool", id: "14496030044904439", label: "Cozy Coffee Station" },
 };
 
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "coffee-bar-decor-ideas", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="https://www.pinterest.com/pin/${p.id}/" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 function quote(text, cite) {
@@ -55,6 +177,7 @@ function quote(text, cite) {
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Create a Warm Wood Coffee Bar",
     photoKeys: ["idea1"],
     paras: [
@@ -66,6 +189,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Style a Coffee Bar With Open Shelves",
     photoKeys: ["idea2"],
     paras: [
@@ -79,6 +203,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Turn a Small Corner Into a Coffee Bar",
     photoKeys: ["idea3"],
     paras: [
@@ -91,6 +216,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Add a Coffee Bar Tray",
     photoKeys: ["idea4"],
     paras: [
@@ -102,6 +228,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Display Your Favorite Mugs",
     photoKeys: ["idea5"],
     paras: [
@@ -115,6 +242,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Make a Neutral Coffee Bar",
     photoKeys: ["idea6"],
     paras: [
@@ -126,6 +254,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Create a Farmhouse Coffee Bar",
     photoKeys: ["idea7a", "idea7b"],
     paras: [
@@ -140,6 +269,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Try a Modern Coffee Bar",
     photoKeys: ["idea8"],
     paras: [
@@ -152,6 +282,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Add a Coffee Bar Backsplash",
     photoKeys: ["idea9"],
     paras: [
@@ -163,6 +294,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Build a Coffee Bar Inside a Cabinet",
     photoKeys: ["idea10"],
     paras: [
@@ -176,6 +308,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Use a Rolling Coffee Bar Cart",
     photoKeys: ["idea11"],
     paras: [
@@ -188,6 +321,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Create a Coffee Bar With Vintage Furniture",
     photoKeys: ["idea12"],
     paras: [
@@ -200,6 +334,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Add Glass Canisters to Your Coffee Bar",
     photoKeys: ["idea13"],
     paras: [
@@ -215,6 +350,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Create a Cozy Coffee Bar With Greenery",
     photoKeys: ["idea14"],
     paras: [
@@ -226,6 +362,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Make Your Coffee Bar Feel Like a Café",
     photoKeys: ["idea15"],
     paras: [
@@ -238,6 +375,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Use Wallpaper Behind Your Coffee Bar",
     photoKeys: ["idea16"],
     paras: [
@@ -250,6 +388,7 @@ const ideas = [
   },
   {
     n: "17",
+    productsKey: "idea17",
     title: "Create a Small Apartment Coffee Bar",
     photoKeys: ["idea17"],
     paras: [
@@ -262,6 +401,7 @@ const ideas = [
   },
   {
     n: "18",
+    productsKey: "idea18",
     title: "Add Under-Cabinet Lighting to Your Coffee Bar",
     photoKeys: ["idea18"],
     paras: [
@@ -273,6 +413,7 @@ const ideas = [
   },
   {
     n: "19",
+    productsKey: "idea19",
     title: "Create a Beautiful Coffee Bar With Your Favorite Colors",
     photoKeys: ["idea19a", "idea19b"],
     paras: [
@@ -291,7 +432,7 @@ function ideaBlock(idea) {
   const afterList = idea.afterList ? idea.afterList.map((p) => `<p>${p}</p>`).join("\n      ") : "";
   const q = idea.quote ? quote(idea.quote.text, idea.quote.cite) : "";
   const afterQuote = idea.afterQuote ? idea.afterQuote.map((p) => `<p>${p}</p>`).join("\n      ") : "";
-  const photos = idea.photoKeys.map(photo).join("\n    ");
+  const photos = idea.photoKeys.map((k, i) => photo(k, i === idea.photoKeys.length - 1 ? idea.productsKey : undefined)).join("\n    ");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
@@ -308,7 +449,7 @@ const body = `
 <p>A well-planned coffee bar brings the machine, mugs, coffee and everyday accessories together in one convenient zone. Designers also recommend choosing the location around your actual coffee routine, particularly access to an outlet, water and storage.</p>
 <p>So let&rsquo;s talk about how to make yours look beautiful without turning your countertop into a coffee equipment showroom.</p>
 ${quote("A home coffee station makes the morning routine much easier.", "HGTV, Home Coffee Bar Ideas")}
-${photo("hero")}
+${photo("hero", "hero")}
 
 <h2>What Makes a Good Coffee Bar?</h2>
 <p>Before we get to the pretty stuff, let&rsquo;s talk about what actually makes a coffee bar work.</p>
@@ -318,7 +459,7 @@ ${photo("hero")}
 <p>I also recommend keeping the things you use every morning within easy reach and storing backups elsewhere. That simple change can make a coffee station look dramatically cleaner.</p>
 ${quote("The best setup is not the biggest or most expensive one.", "Absolute Home Design, Home Coffee Bar Ideas")}
 <p>And honestly, I agree. You don&rsquo;t need a marble counter, commercial espresso machine and enough syrups to open a Starbucks franchise.</p>
-${photo("goodBar")}
+${photo("goodBar", "goodBar")}
 
 <h2>How Do You Decorate a Coffee Bar?</h2>
 <p>Start with one visual anchor.</p>
@@ -328,7 +469,7 @@ ${photo("goodBar")}
 <p>A tray also helps tremendously. It gives your coffee essentials a defined boundary, which prevents mugs, sugar jars, spoons and coffee containers from slowly conquering the entire countertop. A tiered wooden tray can be even better in a corner because it stacks mugs, plates and syrups upward instead of outward.</p>
 <p>For smaller kitchens, designers increasingly recommend using vertical space, floating shelves, carts, cabinets and other compact solutions instead of sacrificing valuable preparation space.</p>
 <p>Now let&rsquo;s get into the fun part.</p>
-${photo("decorate")}
+${photo("decorate", "decorate")}
 
 <h2>19 Coffee Bar Decor Ideas to Try at Home</h2>
 ${ideas.map(ideaBlock).join("\n")}
@@ -349,7 +490,7 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>Everything else can go inside a drawer or cabinet.</p>
 <p>Southern Living similarly recommends keeping frequently used kitchen items accessible while moving unnecessary countertop clutter into storage.</p>
 <p>And if your kitchen feels crowded, don&rsquo;t force a huge coffee station into it. Even a small 18 to 24 inch section can work when you organize it properly.</p>
-${photo("clutter")}
+${photo("clutter", "clutter")}
 
 <h2>What Should You Put on a Coffee Bar?</h2>
 <p>Think about your actual morning routine rather than copying someone else&rsquo;s setup.</p>
@@ -362,7 +503,7 @@ ${photo("clutter")}
 <p><strong>Napkins:</strong> Keep a small stack nearby for spills.</p>
 <p><strong>Decor:</strong> Add one plant, artwork, candle or decorative object.</p>
 <p>The goal involves creating a coffee station that looks beautiful while supporting your routine.</p>
-${photo("whatToPut")}
+${photo("whatToPut", "whatToPut")}
 
 <h2>Final Thoughts on These Coffee Bar Decor Ideas</h2>
 <p>The best coffee bar decor ideas don&rsquo;t necessarily require a large kitchen, expensive furniture or a renovation.</p>

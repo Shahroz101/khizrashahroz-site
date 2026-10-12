@@ -17,39 +17,136 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0B4NQ1QSJ", title: "Extra Large Round Acacia Wood Serving Tray, 20 Inch, Heavy Duty", w: 1472, h: 1500 },
+    { asin: "B0C5HRS6SQ", title: "Mfacoy Ceramic Dipping Bowls, 3 oz, 6 Pack", w: 1478, h: 1500 },
+  ],
+  whyTheme: [
+    { asin: "B0D4PJX7GM", title: "Jungle Culture Round Rattan Tray, 14 Inch, Woven Wicker, Natural", w: 1500, h: 1374 },
+    { asin: "B074NC5HWS", title: "Hershey's Milk Chocolate Dipped Pretzels, 4.25 oz Peg Bag", w: 1089, h: 1500 },
+  ],
+  planning: [
+    { asin: "B0C6TRSDPF", title: "NIRMAN Acacia Wood Rectangular Platters for Charcuterie and Appetizers", w: 1276, h: 1025 },
+    { asin: "B09D77M6SZ", title: "WLWNWFT Large Slate Cheese Boards, 16 x 12 Inch, 2 Pack", w: 1018, h: 712 },
+  ],
+  idea1: [
+    { asin: "B003EMQFOQ", title: "GHIRARDELLI Premium Dark Chocolate Bar, 86% Cacao, 3.17 oz, 12 Pack", w: 1500, h: 1500 },
+    { asin: "B0F4TS1TWJ", title: "Lindt LINDOR Assorted Chocolate Truffles Gift Box", w: 1500, h: 1059 },
+  ],
+  idea2: [
+    { asin: "B0H7YTWSCK", title: "Concord Foods Caramel Apple Kit, Makes 10 Caramel Apples", w: 1500, h: 1500 },
+    { asin: "B0F6TZ6R27", title: "Realistic Mini Artificial Pumpkins Fall Decor, 16 Pcs", w: 1500, h: 1182 },
+  ],
+  idea3: [
+    { asin: "B0C4DHXLQ8", title: "Pink Twisty Lollipops, 24 Count, Individually Wrapped", w: 1500, h: 1500 },
+    { asin: "B0CW7D72NC", title: "Bauducco Strawberry Wafer Cookies, 9 oz, Pack of 2", w: 1080, h: 1080 },
+  ],
+  idea4: [
+    { asin: "B082VW9CK4", title: "DOWAN 9.25 Inch Large Oval White Serving Bowls", w: 1500, h: 1221 },
+    { asin: "B0HLX3877W", title: "Mrs Crimbles Coconut Chocolate Macaroons, 7.8 oz", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0GLHWRCKS", title: "Skittles Gummies Variety Fun Size Pouch, 100 Count", w: 1000, h: 1000 },
+    { asin: "B0FN3YJ72Q", title: "Cake Pop Display Stand Holder, 35 Holes, with 100 Sticks", w: 1500, h: 1479 },
+  ],
+  idea6: [
+    { asin: "B07KDGF8QT", title: "Merci Assorted European Chocolates, 23.8 oz", w: 1500, h: 1118 },
+    { asin: "B0GXZJJ73T", title: "Christmas Cookie Cutters Set, 11 Pcs, Gingerbread Men and Holiday Shapes", w: 1092, h: 1057 },
+  ],
+  idea7: [
+    { asin: "B0FY5QGV1H", title: "Black Slate Charcuterie Boards, 12 x 8 Inch, 6 Pack", w: 1499, h: 1500 },
+    { asin: "B0G2WPBZ1L", title: "Ferrero Collection Gourmet Gift Box, 16 Assorted Confections", w: 1500, h: 1287 },
+  ],
+  idea8: [
+    { asin: "B0FFSH3LBL", title: "Macaron Boxes with Window, Pack of 20, Holds 6 to 8 Macarons", w: 1500, h: 1486 },
+    { asin: "B0DGPX9261", title: "Albanese World's Best Mixed Gummi Berries, 5 lb Bulk Candy", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0DFLTMB91", title: "Divided Serving Tray with Lid and Handle for Fruit and Snacks", w: 1492, h: 1140 },
+    { asin: "B08SW8GMZT", title: "Round Acacia Wood Cutting Board for Charcuterie", w: 1404, h: 1487 },
+  ],
+  idea10: [
+    { asin: "B09TFF1HWH", title: "WHJY Pink Heart Shaped Ceramic Bowl Set of 6", w: 1475, h: 907 },
+    { asin: "B0DRDHBH9G", title: "Tiny Conversation Hearts Candy Value Pack, 8 Pack", w: 1024, h: 1024 },
+  ],
+  idea11: [
+    { asin: "B0FHDNGKFS", title: "Homrelaxy Popcorn Boxes for Party, 24 Pcs", w: 1500, h: 1500 },
+    { asin: "B0GHCXQC3W", title: "M&amp;M'S Milk Chocolate Movie Theater Box, 3.1 oz, Pack of 24", w: 1500, h: 1500 },
+  ],
+  idea12: [
+    { asin: "B0B3NJ8ZZ7", title: "Sanders Milk Chocolate Sea Salt Caramels, 32 oz Tub", w: 1500, h: 1500 },
+    { asin: "B0FBZXSWW8", title: "GHIRARDELLI Premium Sea Salt Caramel Sauce, 16 oz, Pack of 4", w: 577, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B0GZLLQ31T", title: "Dash Mini Waffle Maker, 4 Inch, Ceramic Nonstick, Aqua", w: 1063, h: 882 },
+    { asin: "B0DFQ7CY42", title: "Havawish Mini Glass Maple Syrup Bottles with Handle, 1.7 oz, 24 Pcs", w: 1500, h: 1484 },
+  ],
+  idea14: [
+    { asin: "B0C1GMFYP8", title: "La Dolce Vita Classic Italian Almond Biscotti, 40 oz, Pack of 2", w: 1500, h: 840 },
+    { asin: "B0H8R3GYFJ", title: "Cerez Pazari Turkish Delight with Hazelnut, Gourmet Gift Box, 7.4 oz", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "dessert-board-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "dessert-board-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "dessert-board-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Classic Chocolate Lover's Board",
     paras: [
       "If chocolate had a fan club, this board would run it. It's the one theme that's never once drawn a complaint &mdash; and if a group exists that would complain about too much chocolate, they're simply not getting an invite.",
       "Build it in layers of chocolate intensity: dark, milk, and white chocolate bars, brownies and chocolate cake squares, chocolate-dipped pretzels, mini chocolate chip cookies, and a few cocoa-dusted truffles.",
       "Add strawberries or raspberries somewhere to cut the richness &mdash; people genuinely appreciate the break, and it keeps the whole board from feeling like a single long sugar crash.",
     ],
-    photo: pinPhoto("chocolate-lovers.jpg", "Round chocolate dessert board with chocolate bars, strawberries, Oreos, chocolate chip cookies and chocolate wafer rolls", 735, 739, "https://www.pinterest.com/pin/1829656095332152/", "Classic Chocolate Lover's Board"),
+    photo: pinPhoto("chocolate-lovers.jpg", "Round chocolate dessert board with chocolate bars, strawberries, Oreos, chocolate chip cookies and chocolate wafer rolls", 735, 739, "https://www.pinterest.com/pin/1829656095332152/", "Classic Chocolate Lover's Board", "idea1"),
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Fall-Inspired Dessert Board",
     paras: [
       "Fall desserts feel cozy, nostalgic, and almost impossible to resist. This theme reliably gets more compliments than most others on this list.",
@@ -59,16 +156,18 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Pink Party Dessert Board",
     paras: [
       "This one feels playful, joyful, and completely unapologetic about it. It's a natural fit for birthdays, bachelorette parties, or any just-because gathering that wants to feel a little celebratory.",
       "Frosted pink sugar cookies, pink wafer bars, fresh strawberries and raspberries, and candy in assorted pink shades all build toward the same cheerful look.",
       "Keep the flavors genuinely balanced even as the color goes all-in &mdash; pink looks cute, but flavor still has to carry its weight, as the strawberry-and-raspberry mix shown here proves.",
     ],
-    photo: pinPhoto("pink-party.jpg", "Pink dessert board with frosted pink sugar cookies, pink wafer bars, fresh strawberries, raspberries and pink heart marshmallows", 736, 981, "https://www.pinterest.com/pin/1759287348627967/", "Pink Party Dessert Board"),
+    photo: pinPhoto("pink-party.jpg", "Pink dessert board with frosted pink sugar cookies, pink wafer bars, fresh strawberries, raspberries and pink heart marshmallows", 736, 981, "https://www.pinterest.com/pin/1759287348627967/", "Pink Party Dessert Board", "idea3"),
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Minimalist White Dessert Board",
     paras: [
       "This one surprises people. It looks effortless, but a true white-on-white board actually takes more intention than a colorful one, since there's nowhere for sloppy choices to hide.",
@@ -78,103 +177,113 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Kids Birthday Candy Explosion",
     paras: [
       "Yes, it's chaotic. Yes, it's completely worth it. This board exists purely to generate joy, so lean all the way into the madness rather than fighting it.",
       "Colorful candies and gummies, cupcakes with bold frosting, cake pops, marshmallows, and chocolate coins or fun-sized bars all belong here in generous quantity.",
       "Organize loosely by color zone to keep it from reading as a candy store explosion &mdash; organized chaos is still chaos, just considerably prettier, like the sprinkle cake and sour gummies shown here.",
     ],
-    photo: pinPhoto("kids-birthday-candy.jpg", "Colorful kids birthday dessert board with a sprinkle-covered mini cake, frosted sugar cookies, chocolate bark, gummy worms and candy", 736, 981, "https://www.pinterest.com/pin/422281210889054/", "Kids Birthday Candy Dessert Board"),
+    photo: pinPhoto("kids-birthday-candy.jpg", "Colorful kids birthday dessert board with a sprinkle-covered mini cake, frosted sugar cookies, chocolate bark, gummy worms and candy", 736, 981, "https://www.pinterest.com/pin/422281210889054/", "Kids Birthday Candy Dessert Board", "idea5"),
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Holiday-Themed Board",
     paras: [
       "Holiday dessert boards feel genuinely magical without much effort, mostly because the theme already exists on its own. The job is simply to lean into the season rather than fight it.",
       "Start with seasonal colors and flavors and the board tends to build itself from there &mdash; winter holidays lean chocolate, peppermint, and spice, while the red-and-green mix shown here goes all in on candy canes, chocolate kisses, and reindeer cookies.",
       "People expect certain flavors at certain times of year. Meeting that expectation, then adding one small unexpected detail on top, is really the entire strategy.",
     ],
-    photo: pinPhoto("holiday-themed.jpg", "Christmas dessert board with reindeer and snowman cookies, candy canes, red and green M&Ms, Oreos and foil-wrapped chocolate kisses", 576, 1024, "https://www.pinterest.com/pin/422281211192293/", "Holiday Christmas Dessert Board"),
+    photo: pinPhoto("holiday-themed.jpg", "Christmas dessert board with reindeer and snowman cookies, candy canes, red and green M&Ms, Oreos and foil-wrapped chocolate kisses", 576, 1024, "https://www.pinterest.com/pin/422281211192293/", "Holiday Christmas Dessert Board", "idea6"),
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Elegant Black and Gold Board",
     paras: [
       "This one reads as grown-up celebration instantly. It works beautifully for anniversaries, engagement parties, New Year's Eve, or any milestone that calls for something a little more polished.",
       "Focus on rich flavors and clean presentation: chocolate truffles, Ferrero Rocher, chocolate-covered pretzels, wafer bars, and a few decorative touches in gold foil.",
       "A dark slate board or black tray makes gold accents genuinely pop, like the celebration board shown here. Negative space matters more here than anywhere else on this list &mdash; crowding it kills the luxury effect fast.",
     ],
-    photo: pinPhoto("black-gold.jpg", "Elegant black and gold New Year's dessert board with Ferrero Rocher, chocolate-covered pretzels, wafer bars and chocolate truffles on a dark wood board", 736, 736, "https://www.pinterest.com/pin/277675133271462859/", "Black and Gold Dessert Board"),
+    photo: pinPhoto("black-gold.jpg", "Elegant black and gold New Year's dessert board with Ferrero Rocher, chocolate-covered pretzels, wafer bars and chocolate truffles on a dark wood board", 736, 736, "https://www.pinterest.com/pin/277675133271462859/", "Black and Gold Dessert Board", "idea7"),
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Pastel Party Board",
     paras: [
       "This is the go-to for baby showers and spring gatherings. Soft colors make everything feel instantly cheerful without requiring much else from the rest of the room.",
       "Macarons in soft pinks and golds, sugar cookies, mini frosted treats, and marshmallows all work together once the palette stays consistent.",
       "Stick to two or three soft shades at most, like the pink-and-gold board shown here. Go beyond that and the effect tips from curated into chaotic fast.",
     ],
-    photo: pinPhoto("pastel-party.jpg", "Pastel pink and gold dessert board with frosted donuts, macarons, meringues and candy on a woven tray", 736, 736, "https://www.pinterest.com/pin/2111131073190448/", "Pastel Party Dessert Board"),
+    photo: pinPhoto("pastel-party.jpg", "Pastel pink and gold dessert board with frosted donuts, macarons, meringues and candy on a woven tray", 736, 736, "https://www.pinterest.com/pin/2111131073190448/", "Pastel Party Dessert Board", "idea8"),
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Summer Fruit Board",
     paras: [
       "When it's hot outside, heavy desserts stop sounding appealing fast. This board solves that by leaning almost entirely into fresh, cold fruit instead.",
       "Fresh berries, sliced stone fruit, a yogurt or honey dip, and a few light cookies keep the whole thing feeling bright rather than indulgent &mdash; pairing the fruit with a little cheese and crackers, like the spread shown here, stretches it even further.",
       "Keep everything chilled until the very last minute. A melted, warm fruit board loses its entire appeal in about ten minutes flat.",
     ],
-    photo: pinPhoto("summer-fruit.jpg", "Summer fruit board with fresh cherries, sliced peaches, strawberries, cheese slices, crackers and walnuts on a round wood board", 683, 1024, "https://www.pinterest.com/pin/6192518232467701/", "Summer Fruit Dessert Board"),
+    photo: pinPhoto("summer-fruit.jpg", "Summer fruit board with fresh cherries, sliced peaches, strawberries, cheese slices, crackers and walnuts on a round wood board", 683, 1024, "https://www.pinterest.com/pin/6192518232467701/", "Summer Fruit Dessert Board", "idea9"),
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "A Valentine's Sweetheart Board",
     paras: [
       "Nothing says the occasion quite like heart shapes everywhere you look. This is the board to build for Valentine's Day, an engagement, or any celebration that wants a little romance built in.",
       "Heart-shaped jam cookies, chocolate-dipped strawberries, pink and red macarons, conversation hearts, and fresh raspberries and cherries all lean into the theme without needing much explanation.",
       "Serving pieces matter here &mdash; small heart-shaped bowls scattered across the board, like the ones shown here, repeat the motif without saying a word.",
     ],
-    photo: pinPhoto("strawberry-shortcake.jpg", "Pink and red Valentine's dessert board with heart-shaped jam cookies, chocolate-covered strawberries, macarons and cherries in heart-shaped bowls", 683, 1024, "https://www.pinterest.com/pin/1688918606929510/", "Valentine's Sweetheart Dessert Board"),
+    photo: pinPhoto("strawberry-shortcake.jpg", "Pink and red Valentine's dessert board with heart-shaped jam cookies, chocolate-covered strawberries, macarons and cherries in heart-shaped bowls", 683, 1024, "https://www.pinterest.com/pin/1688918606929510/", "Valentine's Sweetheart Dessert Board", "idea10"),
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Movie Night Board",
     paras: [
       "This one feels cozy, nostalgic, and reliably popular. People genuinely hover around it the way moths hover around a porch light.",
       "Mix sweet treats with movie-night classics: chocolate-covered popcorn, candy bars broken into chunks, brownie bites, mini donuts, and gummy candies.",
       "Small paper cups or popcorn boxes, like the ones shown here, add an interactive element people love &mdash; and as a bonus, fewer sticky fingers end up on the shared desserts.",
     ],
-    photo: pinPhoto("movie-night.jpg", "Movie night dessert board with popcorn in paper boxes, gummy bears, chocolate pretzels, cookies, M&Ms and licorice", 736, 981, "https://www.pinterest.com/pin/774124930445908/", "Movie Night Dessert Board"),
+    photo: pinPhoto("movie-night.jpg", "Movie night dessert board with popcorn in paper boxes, gummy bears, chocolate pretzels, cookies, M&Ms and licorice", 736, 981, "https://www.pinterest.com/pin/774124930445908/", "Movie Night Dessert Board", "idea11"),
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Chocolate and Caramel Board",
     paras: [
       "This one feels indulgent and comforting at the same time &mdash; genuinely rich, but balanced enough that it doesn't tip into overwhelming.",
       "Build the flavor layers with caramel brownies, chocolate cookies, pretzels for dipping, chocolate squares, and sea salt caramels.",
       "Add sea salt somewhere on the board, no exceptions. It makes everything taste sharper and more complete, the way the caramel dip and chocolate-dipped strawberries shown here prove on their own.",
     ],
-    photo: pinPhoto("chocolate-caramel.jpg", "Dark dessert board with chocolate-dipped strawberries, caramel dip, brownies, macarons and coconut-dusted chocolate truffles", 683, 1024, "https://www.pinterest.com/pin/837458493249405707/", "Chocolate and Caramel Dessert Board"),
+    photo: pinPhoto("chocolate-caramel.jpg", "Dark dessert board with chocolate-dipped strawberries, caramel dip, brownies, macarons and coconut-dusted chocolate truffles", 683, 1024, "https://www.pinterest.com/pin/837458493249405707/", "Chocolate and Caramel Dessert Board", "idea12"),
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Breakfast-for-Dessert Board",
     paras: [
       "This one feels a little rebellious in the best way. Who actually decided dessert has to wait until after dinner, anyway?",
       "Mix breakfast classics with a sweeter twist: mini pancakes or waffles, small jars of maple syrup, fresh berries, chocolate spread, and cinnamon rolls or pastries.",
       "Arrange everything so guests can build their own plate, the way the waffle-and-berry spread shown here is laid out. Interactive boards always end up feeling more fun than a pre-plated one.",
     ],
-    photo: pinPhoto("breakfast-dessert.jpg", "Breakfast dessert board with powdered sugar waffles, fresh strawberries, blueberries, maple syrup and chocolate dipping sauce", 736, 981, "https://www.pinterest.com/pin/5559199537801245/", "Breakfast-for-Dessert Board"),
+    photo: pinPhoto("breakfast-dessert.jpg", "Breakfast dessert board with powdered sugar waffles, fresh strawberries, blueberries, maple syrup and chocolate dipping sauce", 736, 981, "https://www.pinterest.com/pin/5559199537801245/", "Breakfast-for-Dessert Board", "idea13"),
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "International Dessert Board",
     paras: [
       "This theme feels adventurous without being intimidating &mdash; a genuinely good choice whenever the goal is something that doesn't look like every other board on Instagram.",
       "Choose desserts from different regions but keep every portion small: French macarons, Italian biscotti, Turkish delight, churro bites, and mini baklava pieces all work in miniature.",
       "Label items with small cards if you can manage it. People genuinely enjoy learning while they eat, and it makes a varied board like this one feel curated rather than random.",
     ],
-    photo: pinPhoto("international.jpg", "Elegant dessert board with macarons, chocolate truffles, meringues, caramel dip, fresh berries and assorted chocolates on a wood board", 683, 1024, "https://www.pinterest.com/pin/251638697929468063/", "International Dessert Board"),
+    photo: pinPhoto("international.jpg", "Elegant dessert board with macarons, chocolate truffles, meringues, caramel dip, fresh berries and assorted chocolates on a wood board", 683, 1024, "https://www.pinterest.com/pin/251638697929468063/", "International Dessert Board", "idea14"),
   },
 ];
 
@@ -183,22 +292,22 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>Something that looks impressive, tastes genuinely good, and doesn't require six hours of baking is exactly why themed dessert boards have quietly become the move for parties, family nights, and every "I should probably bring something" moment in between.</p>
 <p>The first dessert board doesn't have to be perfect. Cookies, brownies, and chocolate thrown on a wooden board with a little confidence go a surprisingly long way &mdash; dessert boards were never really about precision. They're about theme, balance, and committing to the bit.</p>
-${photo("hero.jpg", "Round dessert board with cookies, brownies, strawberries, macarons, pretzel sticks and caramel dip arranged by color", 736, 920)}
+${photo("hero.jpg", "Round dessert board with cookies, brownies, strawberries, macarons, pretzel sticks and caramel dip arranged by color", 736, 920, "hero")}
 
 <h2>Why a Theme Changes Everything</h2>
 <p>Food genuinely tastes better when it looks put together, and that's not imagination &mdash; a theme gives a dessert board real structure, and structure is what makes the whole thing feel elevated instead of thrown together. A real theme shows up everywhere on the board, not just in one fancy centerpiece dessert. The consistency matters more than the quantity: aim for a tight, intentional mix built around one flavor profile, a repeating color palette, and enough texture variety that nothing feels flat. Balance matters just as much &mdash; something crunchy, something soft, something creamy, something fresh. Skip one of those categories and people notice, even if they can't quite say why.</p>
-${pinPhoto("intro-why-themed.jpg", "Round dessert board with chocolate pretzels, strawberries, Nutella dip, marshmallows and cinnamon sticks on a wicker tray", 735, 866, "https://www.pinterest.com/pin/248823948158215047/", "Why Themed Dessert Boards Work")}
+${pinPhoto("intro-why-themed.jpg", "Round dessert board with chocolate pretzels, strawberries, Nutella dip, marshmallows and cinnamon sticks on a wicker tray", 735, 866, "https://www.pinterest.com/pin/248823948158215047/", "Why Themed Dessert Boards Work", "whyTheme")}
 
 <h2>Planning One Without the Stress</h2>
 <p>Pick the occasion first. A kids' birthday board looks nothing like a bridal shower board, and fighting that instinct never works out. Figure out who's eating it, whether the mood is casual or fancy, and whether it should feel playful or polished &mdash; half the remaining decisions disappear once those three things are settled. From there, choose one hero dessert &mdash; a frosted cake, decorated cupcakes, chocolate-dipped strawberries, a showstopper pie &mdash; and build everything else around it.</p>
 <p>The two mistakes worth avoiding from the start: overcrowding the board, which just makes people hesitant to grab anything (leave breathing room; empty space actually makes desserts look more tempting), and forgetting dietary options, since a gorgeous board half your guests can't eat isn't actually a win. A gluten-free option, a nut-free dessert, and plenty of fruit-based sweets cover most of it.</p>
-${pinPhoto("intro-consistency.jpg", "Dark tray dessert board with chocolate-dipped wafer rolls, shortbread cookies, strawberries, chocolate Nutella dip and chocolate cupcakes", 736, 981, "https://www.pinterest.com/pin/2814818512749746/", "Consistent Dessert Board Styling")}
+${pinPhoto("intro-consistency.jpg", "Dark tray dessert board with chocolate-dipped wafer rolls, shortbread cookies, strawberries, chocolate Nutella dip and chocolate cupcakes", 736, 981, "https://www.pinterest.com/pin/2814818512749746/", "Consistent Dessert Board Styling", "planning")}
 
 <h2>14 Themed Dessert Boards Worth Building</h2>
 ${ideas.map(ideaBlock).join("\n")}

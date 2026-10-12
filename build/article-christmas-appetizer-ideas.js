@@ -12,24 +12,159 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0DSC8LQ53", title: "eleganlife Bamboo Charcuterie Board Set with Knives", w: 1500, h: 1181 },
+    { asin: "B0G64NL1RX", title: "Renmxj Charcuterie Board with Lid, Carbonized Bamboo, Knives and Bowls", w: 1500, h: 1476 },
+  ],
+  introBuffet: [
+    { asin: "B0D7SDQFWZ", title: "Mfacoy 3-Tier Serving Tray Set, 12 Inch", w: 1500, h: 1475 },
+    { asin: "B0G4MLCVDM", title: "3-Tier White Plastic Serving Tray, 12 Inch", w: 1500, h: 1400 },
+  ],
+  introTablescape: [
+    { asin: "B0C9T9GJ2K", title: "Softalker Christmas Tartan Table Runner, Red, 13 x 70 Inch", w: 1500, h: 1481 },
+    { asin: "B0DBKSP33Z", title: "AQOTHES Red and White Plaid Christmas Table Runner, 72 Inches", w: 1500, h: 1500 },
+  ],
+  crostini: [
+    { asin: "B0D81L84G5", title: "Ocean Spray Whole Berry Cranberry Sauce, 14 oz Can, Pack of 6", w: 937, h: 1500 },
+    { asin: "B0DF32CPNP", title: "365 by Whole Foods Market Jellied Organic Cranberry Sauce, 14 oz, Pack of 4", w: 1500, h: 1500 },
+  ],
+  cheeseBall: [
+    { asin: "B09YLMFPY1", title: "Exquisite 4-Piece Stainless Steel Cheese Knife Set", w: 1194, h: 1186 },
+    { asin: "B01HS7MW0I", title: "Lunar 6-Piece Premium Stainless Steel Cheese Knife Set", w: 1451, h: 1455 },
+  ],
+  mushrooms: [
+    { asin: "B079RNYSWD", title: "STAUB Ceramic Oval Baking Dish Set, 2 Piece, Cherry", w: 1500, h: 886 },
+    { asin: "B0FS1H7T61", title: "Dafuceramic Ceramic Oval Casserole Dishes, Set of 3", w: 1500, h: 802 },
+  ],
+  baconDates: [
+    { asin: "B0H8QNLD3D", title: "Terrasoul Organic Medjool Dates, 4 lb", w: 1500, h: 731 },
+    { asin: "B09DRJL1M7", title: "Organic Pitted Deglet Noor Dates, California Grown", w: 466, h: 466 },
+  ],
+  caprese: [
+    { asin: "B008L0X0SA", title: "Roland Foods Balsamic Glaze of Modena, 27 oz", w: 431, h: 1500 },
+    { asin: "B001VTNB6Y", title: "Roland Balsamic Glaze, 5.07 fl oz", w: 409, h: 1500 },
+  ],
+  spinachDip: [
+    { asin: "B00006JSUA", title: "Lodge Pre-Seasoned Cast Iron Skillet, 10.25 Inch", w: 1004, h: 1500 },
+    { asin: "B00WTSCXIS", title: "Lodge Cast Iron Skillet with Hot Handle Holder, 10.25 Inch", w: 1500, h: 661 },
+  ],
+  goatCheese: [
+    { asin: "B0H26Y54NV", title: "Acacia Wood Christmas Tree Charcuterie Board", w: 1500, h: 1500 },
+    { asin: "B0CFLFKP7Q", title: "Umigy Christmas Charcuterie Boards, Acacia Wood, Reindeer and Tree, 2 Pack", w: 1500, h: 1272 },
+  ],
+  sausageRolls: [
+    { asin: "B0049C2S32", title: "Nordic Ware Naturals Aluminum Half Sheet Pan", w: 703, h: 853 },
+    { asin: "B076736W8H", title: "USA Pan Aluminized Steel Half Sheet Pans, Set of 2", w: 1500, h: 1153 },
+  ],
+  shrimp: [
+    { asin: "B08GM53XZ7", title: "Shrimp Cocktail Serving Dish with Ice Bowl", w: 1500, h: 1245 },
+    { asin: "B0G51SFXGD", title: "Shrimp Cocktail Serving Dish with Ice Tray, 2 Set", w: 1500, h: 1399 },
+  ],
+  prosciuttoMelon: [
+    { asin: "B00004OCM4", title: "OXO Good Grips Melon Baller", w: 201, h: 1500 },
+    { asin: "B0H7WWWH5C", title: "Double-Headed Stainless Steel Melon Baller Scoop, 2 Pack", w: 1316, h: 1269 },
+  ],
+  camembert: [
+    { asin: "B0CD82G15B", title: "Muldale Brie Baker with Lid and Spreader, White", w: 1500, h: 1483 },
+    { asin: "B079ZT8ZGS", title: "Twine Ceramic Brie Baker with Acacia Wood Spreader", w: 1500, h: 870 },
+  ],
+  charcuterie: [
+    { asin: "B0BGVTKG31", title: "Large Acacia Serving Board with Handles, 36 x 12 Inch", w: 1154, h: 1500 },
+    { asin: "B0B1VZHCFS", title: "Acacia Wood Cutting and Cheese Board with Handle", w: 1142, h: 1500 },
+  ],
+  pomegranateCrostini: [
+    { asin: "B06Y2GZWCJ", title: "Hamilton Beach 3 Cup Electric Vegetable Chopper and Mini Food Processor", w: 840, h: 1500 },
+    { asin: "B0000645YL", title: "Cuisinart Mini-Prep Plus 3 Cup Food Processor", w: 1490, h: 1500 },
+  ],
+  meatballs: [
+    { asin: "B004P2NG0K", title: "Crock-Pot 6 Quart Cook and Carry Programmable Slow Cooker", w: 1500, h: 1237 },
+    { asin: "B00EZI26GO", title: "Hamilton Beach Portable 6 Quart Programmable Slow Cooker", w: 1500, h: 1280 },
+  ],
+  salmonBites: [
+    { asin: "B08VDMK4BK", title: "Piping Bags and Tips Set, Cake Decorating Kit", w: 1500, h: 1373 },
+    { asin: "B0H1NMSFQS", title: "Icing Piping Bags and Tips Set, Pastry Piping Kit", w: 1201, h: 1119 },
+  ],
+  pastryTwists: [
+    { asin: "B0BJNPQ2XC", title: "GUANCI Silicone Baking Mat Set of 6", w: 1484, h: 1500 },
+    { asin: "B0D8LD23R8", title: "Non-Stick Reusable Silicone Baking Mat Set of 6", w: 1006, h: 1012 },
+  ],
+  jalapenoDip: [
+    { asin: "B096R9TB6C", title: "LE TAUCI Chip and Dip Bowls", w: 1465, h: 1491 },
+    { asin: "B0F1ZWW59W", title: "MALACASA 2-Tier Chip and Dip Serving Set with Metal Stand", w: 1479, h: 1500 },
+  ],
+  deviledEggs: [
+    { asin: "B0FKN685K8", title: "Renmxj Deviled Egg Container with Lid, Acacia Wood Base, 24 Slots", w: 1455, h: 1500 },
+    { asin: "B07X3KN3XV", title: "Foraineam Porcelain Deviled Egg Platter, 25 Compartments", w: 1399, h: 1500 },
+  ],
+  brieApple: [
+    { asin: "B08S7NJLMG", title: "LIIGEMI Heavy Duty 12-Blade Apple Cutter Corer", w: 1341, h: 1049 },
+    { asin: "B07Q2W18KS", title: "KitchenAid Classic Fruit Slicer, Red", w: 1500, h: 1017 },
+  ],
+  hummus: [
+    { asin: "B091GNZRYZ", title: "TableCraft Pulito Round White Melamine Platter", w: 1500, h: 1500 },
+    { asin: "B0F5V4DWXZ", title: "Extra Large White Melamine Serving Trays, 17.5 Inch, 2 Pack", w: 1500, h: 1307 },
+  ],
+  crabCakes: [
+    { asin: "B0FNR5LYH7", title: "Bumble Bee Lump Crab Meat, 6 oz, Pack of 3", w: 1500, h: 1500 },
+    { asin: "B0FYKM9QHF", title: "Chicken of the Sea Lump Crab Meat, 6 oz, Pack of 2", w: 1500, h: 1500 },
+  ],
+  sweetPotato: [
+    { asin: "B01IW6ORDY", title: "Gramercy Mandoline Slicer with 12 Slice Settings", w: 1500, h: 1500 },
+    { asin: "B0B1DHTRWJ", title: "BINGBING 7-in-1 Adjustable Mandoline Slicer", w: 1498, h: 1500 },
+  ],
+  mozzProsciutto: [
+    { asin: "B0GS748GH7", title: "8 Inch Round Marble Cheese Board with Non-Slip Feet", w: 1500, h: 776 },
+    { asin: "B01DPLTJVG", title: "Creative Co-Op 11 Inch Round White Marble Charcuterie Board", w: 1500, h: 1162 },
+  ],
+  treePastry: [
+    { asin: "B0FGXP8MT3", title: "FUSOTO Christmas Tree Cookie Cutter Set, 6 Piece", w: 1477, h: 1500 },
+    { asin: "B0CKBQHG5Q", title: "Stainless Steel Christmas Tree Cookie Cutters, 3 Piece", w: 1456, h: 1388 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "christmas-appetizer-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "christmas-appetizer-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "christmas-appetizer-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -41,7 +176,7 @@ const ideas = [
       "A scatter of chopped pecans and a tiny rosemary sprig finishes it off &mdash; the creamy cheese, tart cranberry, crunchy nuts and crisp bread hit a genuinely good texture combination.",
       "Serving these slightly warm lets the brie soften beautifully; swapping the pecans for walnuts and tucking in a thin pear slice is an easy variation worth trying.",
     ],
-    photo: pinPhoto("cranberry-brie-crostini.jpg", "Cranberry brie crostini topped with pecans and rosemary", 736, 1104, "https://www.pinterest.com/pin/165999936261346717/", "Cranberry Brie Crostini"),
+    photo: pinPhoto("cranberry-brie-crostini.jpg", "Cranberry brie crostini topped with pecans and rosemary", 736, 1104, "https://www.pinterest.com/pin/165999936261346717/", "Cranberry Brie Crostini", "crostini"),
   },
   {
     n: "02",
@@ -51,7 +186,7 @@ const ideas = [
       "Mixing cream cheese with shredded cheddar, herbs, garlic and seasonings, then covering the shaped mixture with chopped parsley, pistachios, cranberries or pomegranate seeds, builds the look. Crackers arranged around the base finish the display.",
       "For a version without any shaping required, the same cream cheese and cranberry filling baked into individual puff pastry cups delivers identical flavor with none of the molding.",
     ],
-    photo: pinPhoto("cheese-ball.jpg", "Christmas tree shaped cheese ball with crackers", 736, 1104, "https://www.pinterest.com/pin/314900198970857971/", "Christmas Tree Cheese Ball"),
+    photo: pinPhoto("cheese-ball.jpg", "Christmas tree shaped cheese ball with crackers", 736, 1104, "https://www.pinterest.com/pin/314900198970857971/", "Christmas Tree Cheese Ball", "cheeseBall"),
   },
   {
     n: "03",
@@ -61,7 +196,7 @@ const ideas = [
       "Filling mushroom caps with breadcrumbs, Parmesan, garlic, parsley and a little olive oil, then baking until the tops turn golden, is the entire process.",
       "They're especially useful for a dinner party since the filling can be prepared well ahead of time, with the mushrooms assembled and baked just before guests arrive.",
     ],
-    photo: pinPhoto("stuffed-mushrooms.jpg", "Garlic Parmesan stuffed mushrooms fresh from the oven", 736, 1104, "https://www.pinterest.com/pin/11188699075797776/", "Garlic Parmesan Stuffed Mushrooms"),
+    photo: pinPhoto("stuffed-mushrooms.jpg", "Garlic Parmesan stuffed mushrooms fresh from the oven", 736, 1104, "https://www.pinterest.com/pin/11188699075797776/", "Garlic Parmesan Stuffed Mushrooms", "mushrooms"),
   },
   {
     n: "04",
@@ -71,7 +206,7 @@ const ideas = [
       "Stuffing Medjool dates with goat cheese or cream cheese, wrapping each in bacon, and baking until the bacon crisps up is the whole process. A small almond tucked inside the date before wrapping adds a noticeable bit of crunch.",
       "Securing each one with a toothpick and a small rosemary sprig makes them look like they came from a caterer rather than a home oven.",
     ],
-    photo: pinPhoto("bacon-dates.jpg", "Bacon-wrapped dates garnished with rosemary", 736, 1104, "https://www.pinterest.com/pin/126382333289752789/", "Bacon-Wrapped Dates"),
+    photo: pinPhoto("bacon-dates.jpg", "Bacon-wrapped dates garnished with rosemary", 736, 1104, "https://www.pinterest.com/pin/126382333289752789/", "Bacon-Wrapped Dates", "baconDates"),
   },
   {
     n: "05",
@@ -81,7 +216,7 @@ const ideas = [
       "Threading cherry tomatoes, mozzarella balls and fresh basil onto small skewers, then drizzling lightly with balsamic glaze, is the entire recipe.",
       "The red, white and green color combination reads as Christmas instantly, without requiring any extra decoration &mdash; sometimes the simplest presentation wins.",
     ],
-    photo: pinPhoto("caprese-skewers.jpg", "Caprese Christmas skewers with balsamic drizzle", 736, 1104, "https://www.pinterest.com/pin/344314334031186556/", "Caprese Christmas Skewers"),
+    photo: pinPhoto("caprese-skewers.jpg", "Caprese Christmas skewers with balsamic drizzle", 736, 1104, "https://www.pinterest.com/pin/344314334031186556/", "Caprese Christmas Skewers", "caprese"),
   },
   {
     n: "06",
@@ -91,7 +226,7 @@ const ideas = [
       "Combining spinach, artichokes, cream cheese, sour cream, Parmesan, mozzarella and garlic, then baking until hot and bubbling, builds a dip that works with toasted bread, crackers or vegetables.",
       "Placing it near the center of the table practically guarantees guests keep returning for \"just one more\" scoop &mdash; serving it straight from the skillet, ringed with colorful tortilla chips, makes it the table's centerpiece on its own.",
     ],
-    photo: pinPhoto("spinach-artichoke-dip.jpg", "Baked spinach artichoke dip served with tortilla chips", 736, 1104, "https://www.pinterest.com/pin/1083467622886880407/", "Baked Spinach Artichoke Dip"),
+    photo: pinPhoto("spinach-artichoke-dip.jpg", "Baked spinach artichoke dip served with tortilla chips", 736, 1104, "https://www.pinterest.com/pin/1083467622886880407/", "Baked Spinach Artichoke Dip", "spinachDip"),
   },
   {
     n: "07",
@@ -101,7 +236,7 @@ const ideas = [
       "A few pomegranate seeds scattered around the platter push the presentation further without requiring much actual effort.",
       "A charcuterie-style cheese and fruit tree pulls from the exact same flavor palette &mdash; cubes of cheese, dried cranberries and walnuts clustered together &mdash; just scaled up into a full board instead of an individual bite.",
     ],
-    photo: pinPhoto("goat-cheese-bites.jpg", "Christmas charcuterie trees made with cheese, salami and fruit sharing the cranberry and walnut palette", 736, 1104, "https://www.pinterest.com/pin/1098596902886280236/", "Charcuterie Christmas Trees"),
+    photo: pinPhoto("goat-cheese-bites.jpg", "Christmas charcuterie trees made with cheese, salami and fruit sharing the cranberry and walnut palette", 736, 1104, "https://www.pinterest.com/pin/1098596902886280236/", "Charcuterie Christmas Trees", "goatCheese"),
   },
   {
     n: "08",
@@ -111,7 +246,7 @@ const ideas = [
       "Wrapping seasoned sausage meat in puff pastry, cutting it into bite-sized pieces, and baking until golden produces a roll that pairs well with mustard, cranberry dipping sauce or sweet chili sauce.",
       "Keeping them small lets guests grab one without committing to a full pastry before dinner &mdash; a poppy-seed glaze and a small pot of cranberry sauce alongside is all the extra presentation they need.",
     ],
-    photo: photo("sausage-rolls.jpg", "Mini sausage rolls with a poppy-seed glaze and cranberry sauce", 736, 1103),
+    photo: photo("sausage-rolls.jpg", "Mini sausage rolls with a poppy-seed glaze and cranberry sauce", 736, 1103, "sausageRolls"),
   },
   {
     n: "09",
@@ -121,7 +256,7 @@ const ideas = [
       "Chilled shrimp served with cocktail sauce and lemon wedges, arranged over crushed ice or on a chilled platter, covers the basics; keeping cold foods at 40°F or colder is worth paying attention to when guests linger around the table for hours.",
       "Arranging the shrimp in a ring around the sauce, with a few cranberries and sprigs of dill tucked in, reads as a wreath before anyone even registers it's dinner.",
     ],
-    photo: photo("shrimp-cocktail.jpg", "Shrimp cocktail arranged in a wreath shape with cranberries and dill", 736, 1104),
+    photo: photo("shrimp-cocktail.jpg", "Shrimp cocktail arranged in a wreath shape with cranberries and dill", 736, 1104, "shrimp"),
   },
   {
     n: "10",
@@ -131,7 +266,7 @@ const ideas = [
       "Cutting melon into small cubes or wedges, wrapping each with prosciutto, and securing with a cocktail pick is the whole process; a bit of basil or a light balsamic drizzle rounds it out.",
       "A scatter of chopped basil and a drizzle of glaze over the cantaloupe and prosciutto turns a simple two-ingredient bite into something that looks genuinely composed.",
     ],
-    photo: pinPhoto("prosciutto-melon.jpg", "Prosciutto-wrapped melon bites with basil and balsamic glaze", 736, 1104, "https://www.pinterest.com/pin/211880357467267048/", "Prosciutto-Wrapped Melon"),
+    photo: pinPhoto("prosciutto-melon.jpg", "Prosciutto-wrapped melon bites with basil and balsamic glaze", 736, 1104, "https://www.pinterest.com/pin/211880357467267048/", "Prosciutto-Wrapped Melon", "prosciuttoMelon"),
   },
   {
     n: "11",
@@ -141,7 +276,7 @@ const ideas = [
       "Serving it with toasted baguette slices gives guests something to actually scoop the warm, creamy center with.",
       "People tend to gather around a baked cheese dish immediately &mdash; a rosemary sprig on top and a ring of olive-oil-brushed baguette around the dish, served beside a glass of red wine, completes the moment.",
     ],
-    photo: pinPhoto("baked-camembert.jpg", "Baked Camembert with cranberries and rosemary", 736, 1104, "https://www.pinterest.com/pin/2533343539432843/", "Baked Camembert With Cranberries"),
+    photo: pinPhoto("baked-camembert.jpg", "Baked Camembert with cranberries and rosemary", 736, 1104, "https://www.pinterest.com/pin/2533343539432843/", "Baked Camembert With Cranberries", "camembert"),
   },
   {
     n: "12",
@@ -151,7 +286,7 @@ const ideas = [
       "Arranging cured meats, cheeses, crackers, nuts, dried fruit and fresh berries onto a large wooden board in small clusters, rather than spreading everything evenly, is the real trick &mdash; a little visual mess actually makes the board feel more abundant.",
       "A Christmas-tree-shaped board does that clustering automatically, building cheese, salami, walnuts and sugared cranberries up toward a star on top.",
     ],
-    photo: pinPhoto("charcuterie-board.jpg", "Christmas tree shaped charcuterie board with cheese and salami", 736, 1104, "https://www.pinterest.com/pin/57491332741604860/", "Christmas Charcuterie Board"),
+    photo: pinPhoto("charcuterie-board.jpg", "Christmas tree shaped charcuterie board with cheese and salami", 736, 1104, "https://www.pinterest.com/pin/57491332741604860/", "Christmas Charcuterie Board", "charcuterie"),
   },
   {
     n: "13",
@@ -161,7 +296,7 @@ const ideas = [
       "The creamy white base against the jewel-toned red seeds creates a gorgeous presentation with very little actual effort &mdash; a bit of mint or parsley finishes it.",
       "A scatter of toasted walnuts underneath the pomegranate adds the crunch that keeps every bite interesting.",
     ],
-    photo: photo("pomegranate-crostini.jpg", "Pomegranate and whipped feta crostini with toasted walnuts", 736, 1104),
+    photo: photo("pomegranate-crostini.jpg", "Pomegranate and whipped feta crostini with toasted walnuts", 736, 1104, "pomegranateCrostini"),
   },
   {
     n: "14",
@@ -171,7 +306,7 @@ const ideas = [
       "Serving them with toothpicks and a cranberry barbecue sauce works particularly well for Christmas, combining sweet, tart and savory in one glaze; keeping them warm in a slow cooker lets guests grab one throughout the evening.",
       "A sticky, sesame-flecked glaze finished with sesame seeds and fresh parsley works just as well for anyone who'd rather skip the cranberry sauce for something more savory.",
     ],
-    photo: photo("mini-meatballs.jpg", "Mini Christmas meatballs with a sesame-flecked glaze", 564, 845),
+    photo: photo("mini-meatballs.jpg", "Mini Christmas meatballs with a sesame-flecked glaze", 564, 845, "meatballs"),
   },
   {
     n: "15",
@@ -181,7 +316,7 @@ const ideas = [
       "Most of the components can be prepared well ahead of time, with the final bites assembled just before guests arrive.",
       "A herbed cream cheese swirl, a ribbon of smoked salmon and a small dill sprig on each round is the entire assembly, and it looks considerably more composed than the effort it actually took.",
     ],
-    photo: photo("smoked-salmon-bites.jpg", "Smoked salmon cucumber bites with dill garnish", 736, 1104),
+    photo: photo("smoked-salmon-bites.jpg", "Smoked salmon cucumber bites with dill garnish", 736, 1104, "salmonBites"),
   },
   {
     n: "16",
@@ -191,7 +326,7 @@ const ideas = [
       "Served upright in a glass or arranged in a basket, they make excellent party food since guests can grab one without needing a plate or fork.",
       "Laid flat on a board next to a wheel of herbed cheese and a bowl of cranberries, the twists double as their own dipper.",
     ],
-    photo: photo("parmesan-pastry-twists.jpg", "Parmesan puff pastry twists arranged with herbed cheese", 736, 1104),
+    photo: photo("parmesan-pastry-twists.jpg", "Parmesan puff pastry twists arranged with herbed cheese", 736, 1104, "pastryTwists"),
   },
   {
     n: "17",
@@ -201,7 +336,7 @@ const ideas = [
       "Spreading softened cream cheese onto a serving dish, then topping it with cranberry sauce, chopped jalapeños, green onions and fresh herbs, builds a dip with a real sweet-and-spicy contrast.",
       "Spreading it in one even layer, with the jalapeño slices arranged visibly on top, lets guests see exactly how much heat they're signing up for before diving in.",
     ],
-    photo: photo("cranberry-jalapeno-dip.jpg", "Cranberry jalapeño cream cheese dip with crackers", 736, 1104),
+    photo: photo("cranberry-jalapeno-dip.jpg", "Cranberry jalapeño cream cheese dip with crackers", 736, 1104, "jalapenoDip"),
   },
   {
     n: "18",
@@ -211,7 +346,7 @@ const ideas = [
       "The classic creamy filling &mdash; egg yolks, mayonnaise, mustard, seasonings &mdash; piped into the whites, then garnished with paprika, chives, dill or tiny pomegranate seeds, keeps the recipe familiar while adding seasonal color.",
       "A few flecks of diced red pepper and a small rosemary sprig tucked under each half reads as festive without requiring any special equipment.",
     ],
-    photo: photo("deviled-eggs.jpg", "Deviled eggs with Christmas garnishes of paprika and herbs", 736, 1104),
+    photo: photo("deviled-eggs.jpg", "Deviled eggs with Christmas garnishes of paprika and herbs", 736, 1104, "deviledEggs"),
   },
   {
     n: "19",
@@ -221,7 +356,7 @@ const ideas = [
       "A tart apple variety tends to give the best contrast against the sweetness of the honey and richness of the brie.",
       "A thin drizzle of honey pulled straight off the dipper, right over the warm brie and apple, is a small table-side finishing touch worth doing.",
     ],
-    photo: photo("brie-apple-crostini.jpg", "Brie and apple crostini with honey drizzle", 736, 1104),
+    photo: photo("brie-apple-crostini.jpg", "Brie and apple crostini with honey drizzle", 736, 1104, "brieApple"),
   },
   {
     n: "20",
@@ -231,7 +366,7 @@ const ideas = [
       "Spreading hummus onto a large platter, then building a festive arrangement with cucumber, cherry tomatoes, olives, carrots, peppers, pita triangles and fresh herbs, turns a simple dip into a real centerpiece &mdash; the vegetables can even be shaped into a tree or wreath.",
       "Ringing the hummus with cherry tomatoes, olives, cucumber and feta turns a plain bowl into a wreath shape without any extra effort.",
     ],
-    photo: pinPhoto("hummus-platter.jpg", "Holiday hummus platter arranged in a wreath shape", 736, 1104, "https://www.pinterest.com/pin/105482816270675293/", "Holiday Hummus Platter"),
+    photo: pinPhoto("hummus-platter.jpg", "Holiday hummus platter arranged in a wreath shape", 736, 1104, "https://www.pinterest.com/pin/105482816270675293/", "Holiday Hummus Platter", "hummus"),
   },
   {
     n: "21",
@@ -241,7 +376,7 @@ const ideas = [
       "Crab meat, breadcrumbs, herbs, seasonings and a little mayonnaise, shaped into small patties and pan-fried or baked, pair well with lemon aioli or another creamy dipping sauce.",
       "Keeping the cakes small lets guests enjoy one or two without filling up before dinner &mdash; a small bowl of herbed aioli on the side is really all the dipping sauce these need.",
     ],
-    photo: pinPhoto("mini-crab-cakes.jpg", "Mini crab cakes with herbed aioli dipping sauce", 736, 1104, "https://www.pinterest.com/pin/770960029995705514/", "Mini Crab Cakes"),
+    photo: pinPhoto("mini-crab-cakes.jpg", "Mini crab cakes with herbed aioli dipping sauce", 736, 1104, "https://www.pinterest.com/pin/770960029995705514/", "Mini Crab Cakes", "crabCakes"),
   },
   {
     n: "22",
@@ -251,7 +386,7 @@ const ideas = [
       "Toasted baguette works just as well in place of sweet potato for a more traditional base.",
       "The warm orange color, creamy cheese and toasted nuts feel naturally seasonal, and a simple dollop of herbed cheese with a few flecks of rosemary keeps the whole thing easy to assemble.",
     ],
-    photo: photo("sweet-potato-crostini.jpg", "Sweet potato crostini topped with goat cheese and pecans", 736, 1104),
+    photo: photo("sweet-potato-crostini.jpg", "Sweet potato crostini topped with goat cheese and pecans", 736, 1104, "sweetPotato"),
   },
   {
     n: "23",
@@ -261,7 +396,7 @@ const ideas = [
       "Basil leaves, cherry tomatoes or roasted peppers add color, and arranging the bites in rows with a light balsamic drizzle finishes the presentation.",
       "The same pairing scales up well on a full board, too &mdash; ribbons of prosciutto curled next to cubes of cheese is the exact combination this bite is built on, just in a larger format.",
     ],
-    photo: pinPhoto("mozzarella-prosciutto-bites.jpg", "Round charcuterie board featuring prosciutto and cheese, the same pairing used in mozzarella-prosciutto bites", 736, 1104, "https://www.pinterest.com/pin/4593390266645772160/", "Prosciutto and Cheese Charcuterie Board"),
+    photo: pinPhoto("mozzarella-prosciutto-bites.jpg", "Round charcuterie board featuring prosciutto and cheese, the same pairing used in mozzarella-prosciutto bites", 736, 1104, "https://www.pinterest.com/pin/4593390266645772160/", "Prosciutto and Cheese Charcuterie Board", "mozzProsciutto"),
   },
   {
     n: "24",
@@ -271,7 +406,7 @@ const ideas = [
       "Serving it with marinara, cheese dip or another favorite sauce rounds out the dish.",
       "Guests can pull apart individual pieces while admiring the shape &mdash; a few pomegranate seeds scattered on as ornaments and a star-shaped cracker on top finishes the look.",
     ],
-    photo: photo("tree-puff-pastry.jpg", "Christmas tree shaped puff pastry bites with pomegranate seeds", 736, 1104),
+    photo: photo("tree-puff-pastry.jpg", "Christmas tree shaped puff pastry bites with pomegranate seeds", 736, 1104, "treePastry"),
   },
 ];
 
@@ -286,15 +421,15 @@ function ideaBlock(idea) {
 const body = `
 <p>A good Christmas appetizer spread does more to set the mood of a party than almost anything else on the table. It gives guests something to do with their hands the moment they walk in, and it buys time before the main meal without anyone standing around hungry.</p>
 <p>None of the ideas below require professional catering skills. Most come down to a handful of good ingredients, arranged with a bit of intention, rather than anything technically difficult.</p>
-${photo("hero.jpg", "Full Christmas appetizer spread with charcuterie, skewers and dips on a holiday table", 683, 1024)}
+${photo("hero.jpg", "Full Christmas appetizer spread with charcuterie, skewers and dips on a holiday table", 683, 1024, "hero")}
 
 <h2>What Makes a Good Christmas Appetizer</h2>
 <p>The strongest holiday appetizers tend to balance rich and light options side by side &mdash; a baked cheese dish next to something fresh like shrimp or a vegetable platter keeps the whole spread from feeling heavy after the first hour. A few seasonal colors or shapes, without going overboard, signal "Christmas" more effectively than an entirely red-and-green menu.</p>
-${pinPhoto("intro-buffet.jpg", "Christmas appetizer buffet with a variety of festive dishes", 736, 1104, "https://www.pinterest.com/pin/1099722802792499315/", "Christmas Appetizer Buffet Favorites")}
+${pinPhoto("intro-buffet.jpg", "Christmas appetizer buffet with a variety of festive dishes", 736, 1104, "https://www.pinterest.com/pin/1099722802792499315/", "Christmas Appetizer Buffet Favorites", "introBuffet")}
 
 <h2>How Many to Plan For</h2>
 <p>As a general guide, planning for four to six different appetizers covers a typical holiday gathering well, assuming a mix of make-ahead and last-minute dishes. A spread that's too varied becomes stressful to prepare, while too few options leaves guests circling the same plate all night.</p>
-${pinPhoto("intro-tablescape.jpg", "Christmas appetizer tablescape styled for a holiday party", 736, 1104, "https://www.pinterest.com/pin/1110207745672728856/", "Christmas Appetizer Tablescape")}
+${pinPhoto("intro-tablescape.jpg", "Christmas appetizer tablescape styled for a holiday party", 736, 1104, "https://www.pinterest.com/pin/1110207745672728856/", "Christmas Appetizer Tablescape", "introTablescape")}
 
 <h2>24 Christmas Appetizer Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

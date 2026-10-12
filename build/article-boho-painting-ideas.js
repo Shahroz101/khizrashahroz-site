@@ -5,16 +5,86 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0DX1SLJWJ", title: "48 Colors Professional Acrylic Paint Set, Artist Paint Supplies", w: 1500, h: 1473 },
+    { asin: "B0CY2JF2CQ", title: "ESRICH Stretched Canvas, 24x36 Inch, 3 Pack", w: 1500, h: 1499 },
+  ],
+  abstractArches: [
+    { asin: "B0B9VJ331C", title: "Sculpd Heavy Body Acrylic Paint Set, Earth Tones, 8 x 22 ml", w: 1500, h: 795 },
+    { asin: "B095M9LKPN", title: "Paint Brushes Set of 24 Pieces with Canvas Brush Case", w: 1442, h: 1493 },
+  ],
+  lineArt: [
+    { asin: "B0GT28DSMZ", title: "Pinturale Arts Ultra Fine Tip Black Acrylic Paint Pens, Set of 2", w: 1418, h: 1500 },
+    { asin: "B0G2TGXYR6", title: "ARTISTRO Black &amp; White Acrylic Paint Pens, 0.7mm Extra Fine, 6 Pack", w: 1500, h: 1500 },
+  ],
+  celestial: [
+    { asin: "B0H34CZXW5", title: "ARTME Metallic Acrylic Paint Set, 6 Colors x 4 oz", w: 1500, h: 1187 },
+    { asin: "B099DLSFRW", title: "milo Metallic Acrylic Paint Set, 6 Metallic Colors, 4 oz Bottles", w: 1500, h: 785 },
+  ],
+  mandala: [
+    { asin: "B08CV2W819", title: "Insnug Mandala Dotting Tools Painting Kit with Stencils", w: 1200, h: 1196 },
+    { asin: "B0H2XK5JHX", title: "Novabright Mandala Dotting Tools Set, 24 Pieces with 15 Stencils", w: 1500, h: 1500 },
+  ],
+  botanical: [
+    { asin: "B0FLDGNG6W", title: "PHOENIX Professional Watercolor Paint Tube Set, 36 Colors x 14 ml", w: 1500, h: 1270 },
+    { asin: "B07FYG3BBV", title: "MeiLiang Watercolor Paint Set, 36 Colors, Pocket Box", w: 1500, h: 1438 },
+  ],
+  geometric: [
+    { asin: "B01GWF7194", title: "FrogTape Multi-Surface Painting Tape", w: 500, h: 500 },
+    { asin: "B0B7DHPC11", title: "Large Reusable Geometric Painting Stencils, 12 Inch", w: 1500, h: 1500 },
+  ],
+  arches: [
+    { asin: "B0DZXFCVCZ", title: "ESRICH Stretched Canvas, 24x36 Inch, 5 Pack", w: 1364, h: 1335 },
+    { asin: "B0H1SPJR9Z", title: "PINKIPO Marrakesh Bloom XL Wall and Floor Stencil, 2 Pieces", w: 1500, h: 1500 },
+  ],
+  dreamcatcher: [
+    { asin: "B0DXPZVKQ1", title: "Grabie Black &amp; White Acrylic Paint Markers, 0.7 mm, 6 Pack", w: 1095, h: 1280 },
+    { asin: "B0F2MRZVCY", title: "PHOENIX Flat Paint Brush Set, 3 Sizes", w: 1272, h: 1500 },
+  ],
+  desert: [
+    { asin: "B0DHWFND34", title: "DecoArt Crafter's Acrylic Fall Colors Paint Set, 18 x 2 fl oz", w: 1313, h: 1350 },
+    { asin: "B086BNG4DY", title: "Chalkola Watercolor Paint Set, 36 Colors", w: 1500, h: 1494 },
+  ],
+  quote: [
+    { asin: "B01M71S9DU", title: "Tombow Fudenosuke Brush Pens, Soft and Hard Tip, 2 Pack", w: 582, h: 1500 },
+    { asin: "B0995FNMKW", title: "WRITECH Sign Brush Pens, Vintage Assorted Colors, 12 Count", w: 1484, h: 1409 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "boho-painting-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "boho-painting-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -26,7 +96,7 @@ const ideas = [
       "Pick three or four earthy tones &mdash; terracotta, olive, mustard, a dusty pink if you're feeling it &mdash; and paint loose arches, blobs, and curved shapes freehand. The less you plan it, the better it tends to look.",
       "Hang it above a sofa or lean it against the wall on a shelf. Either way, it reads like something you'd find in a much more expensive catalog than you'd expect.",
     ],
-    photo: photo("abstract-shapes.png", "Textured plaster wall mural of layered terracotta, olive and mustard arch shapes with a macrame hanging in front", 576, 1024),
+    photo: photo("abstract-shapes.png", "Textured plaster wall mural of layered terracotta, olive and mustard arch shapes with a macrame hanging in front", 576, 1024, "abstractArches"),
   },
   {
     n: "02",
@@ -36,7 +106,7 @@ const ideas = [
       "One continuous line, a face, maybe a botanical sprig tangled into the hair &mdash; all you really need is a neutral wall or canvas and a steady-ish hand with a paint pen.",
       "It's an especially good fit for a Scandinavian-leaning or minimalist bedroom, where you want personality without adding visual noise.",
     ],
-    photo: photo("minimalist-line-art.png", "Large single-line mural of overlapping faces and botanical leaves in black ink on a warm beige bedroom wall", 576, 1024),
+    photo: photo("minimalist-line-art.png", "Large single-line mural of overlapping faces and botanical leaves in black ink on a warm beige bedroom wall", 576, 1024, "lineArt"),
   },
   {
     n: "03",
@@ -46,7 +116,7 @@ const ideas = [
       "Lean into navy, gold, dusty lilac, or a soft marbled background like the one shown here. It works especially well in a bedroom, where the whole point is winding down.",
       "Add a string of fairy lights nearby and the effect practically does itself.",
     ],
-    photo: photo("celestial.png", "Framed canvas painting of a gold sun and lavender crescent moon on a marbled orange and gray background above a dresser with crystal clusters", 576, 1024),
+    photo: photo("celestial.png", "Framed canvas painting of a gold sun and lavender crescent moon on a marbled orange and gray background above a dresser with crystal clusters", 576, 1024, "celestial"),
   },
   {
     n: "04",
@@ -56,7 +126,7 @@ const ideas = [
       "Keep it small and contained on a canvas, or go big and treat an entire wall or alcove as your canvas the way this one does.",
       "Don't aim for perfect symmetry on your first attempt. Boho was never about precision &mdash; the slightly imperfect version usually looks more alive than the flawless one would have.",
     ],
-    photo: photo("mandala.png", "Large vibrant teal, coral and gold mandala mural painted in an arched alcove above rattan furniture and a round patterned rug", 576, 1024),
+    photo: photo("mandala.png", "Large vibrant teal, coral and gold mandala mural painted in an arched alcove above rattan furniture and a round patterned rug", 576, 1024, "mandala"),
   },
   {
     n: "05",
@@ -66,7 +136,7 @@ const ideas = [
       "Muted sage and soft coral keep it calm; deeper jungle greens push it more dramatic. Both directions work.",
       "A floor-to-ceiling version like this one turns an entire wall into the room's focal point, but the same idea scales down nicely as a few smaller framed pieces over a reading nook too.",
     ],
-    photo: photo("botanical.png", "Oversized watercolor-style mural of layered green tropical leaves and pale botanical blooms covering a living room wall behind a rattan bench", 576, 1024),
+    photo: photo("botanical.png", "Oversized watercolor-style mural of layered green tropical leaves and pale botanical blooms covering a living room wall behind a rattan bench", 576, 1024, "botanical"),
   },
   {
     n: "06",
@@ -76,7 +146,7 @@ const ideas = [
       "This works especially well in a hallway or entryway &mdash; the kind of transitional space that benefits from one bold, grounding moment rather than a dozen small decisions.",
       "These patterns usually draw on real cultural traditions, so it's worth spending a little time learning where the motifs come from before you paint them. Understanding the symbolism makes the finished piece feel more considered, not just decorative.",
     ],
-    photo: photo("tribal-patterns.png", "Bold black, white and rust geometric zigzag and diamond pattern painted across a large hallway wall", 576, 1024),
+    photo: photo("tribal-patterns.png", "Bold black, white and rust geometric zigzag and diamond pattern painted across a large hallway wall", 576, 1024, "geometric"),
   },
   {
     n: "07",
@@ -86,7 +156,7 @@ const ideas = [
       "Painter's tape makes this one surprisingly approachable &mdash; mask off your arch shapes, fill with two or three colors, and you've got a piece that looks far more complicated than it was to make.",
       "It reads as cheerful without being childish, which makes it a genuinely good fit for a nursery, playroom, or guest room that needs a little lift.",
     ],
-    photo: photo("arches.png", "Soft terracotta, rose and sage arch shapes painted across a playroom wall behind a canvas teepee and floor cushions", 576, 1024),
+    photo: photo("arches.png", "Soft terracotta, rose and sage arch shapes painted across a playroom wall behind a canvas teepee and floor cushions", 576, 1024, "arches"),
   },
   {
     n: "08",
@@ -96,7 +166,7 @@ const ideas = [
       "Keep the palette soft: taupe, ivory, dusty blue, a little gold. The muted tones are what make it feel calming instead of costume-y.",
       "This one belongs over a bed or in a reading corner. Add a few fairy lights woven through it, and it becomes the kind of piece that makes a whole room feel a little more peaceful.",
     ],
-    photo: photo("dreamcatcher.png", "Large painted dreamcatcher artwork with teal geometric webbing and layered feathers framed by string lights above a bed with patterned pillows", 576, 1024),
+    photo: photo("dreamcatcher.png", "Large painted dreamcatcher artwork with teal geometric webbing and layered feathers framed by string lights above a bed with patterned pillows", 576, 1024, "dreamcatcher"),
   },
   {
     n: "09",
@@ -106,7 +176,7 @@ const ideas = [
       "You don't need to render it with total precision &mdash; a handful of confident strokes reads as a desert scene far more easily than you'd expect.",
       "It's a great fit for a hallway, reading nook, or any spot that could use a little warmth without committing to a loud color on the walls themselves.",
     ],
-    photo: photo("desert-landscape.png", "Large canvas painting of a desert sunset with layered sand dunes and tall cacti in warm orange and pink tones above a cream sofa", 576, 1024),
+    photo: photo("desert-landscape.png", "Large canvas painting of a desert sunset with layered sand dunes and tall cacti in warm orange and pink tones above a cream sofa", 576, 1024, "desert"),
   },
   {
     n: "10",
@@ -116,7 +186,7 @@ const ideas = [
       "Pair the lettering with soft florals, feathers, or a loose geometric frame, and keep the palette calm so the words stay the focus rather than competing with the illustration around them.",
       "Hang it near an entryway or workspace, somewhere you'll actually glance at it on your way past &mdash; that's the whole point of a quote piece, after all.",
     ],
-    photo: photo("quote-art.png", "Large hand-lettered canvas reading Embrace the journey for it is adventure that defines us surrounded by painted feathers and florals, flanked by hanging plants", 576, 1024),
+    photo: photo("quote-art.png", "Large hand-lettered canvas reading Embrace the journey for it is adventure that defines us surrounded by painted feathers and florals, flanked by hanging plants", 576, 1024, "quote"),
   },
 ];
 
@@ -132,7 +202,7 @@ const body = `
 <p>Blank walls have a way of just sitting there, waiting. If you've got even a little bit of an itch to pick up a paintbrush, boho painting is the most forgiving place to start &mdash; it's built around expression over precision, which means there's genuinely no wrong way to do most of these.</p>
 <p>Earthy tones, dreamy motifs, a bit of tribal influence, a lot of imperfect freehand energy &mdash; that's the whole aesthetic in a sentence. You don't need an art degree or even particularly steady hands.</p>
 <p>Here are ten approachable ways to bring that energy onto your own walls, whether you're starting completely from scratch or just looking for the next weekend project.</p>
-${photo("hero.jpg", "Black line-art mural of faces and botanical leaves painted across a bedroom wall behind a neatly made bed", 1280, 720)}
+${photo("hero.jpg", "Black line-art mural of faces and botanical leaves painted across a bedroom wall behind a neatly made bed", 1280, 720, "hero")}
 
 <h2>10 Boho Painting Ideas to Try</h2>
 ${ideas.map(ideaBlock).join("\n")}

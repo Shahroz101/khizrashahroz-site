@@ -12,24 +12,143 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0H28Y9ZVQ", title: "9 ft Norfolk Pine Christmas Garland, Real Touch", w: 1254, h: 1254 },
+    { asin: "B0HBPJM6VQ", title: "9 ft Cedar Christmas Garland for Mantel and Fireplace, Real Touch", w: 1500, h: 1500 },
+  ],
+  neutral: [
+    { asin: "B07PHFVRM2", title: "DearHouse Faux Eucalyptus Garlands, 2 Pack", w: 927, h: 1500 },
+    { asin: "B0GTT5W9K6", title: "WENYAN Eucalyptus Garland, 6 ft, 2 Pack", w: 1500, h: 1347 },
+  ],
+  wreathBed: [
+    { asin: "B0FKBT525F", title: "24 Inch Artificial Pine Christmas Wreath", w: 1500, h: 1472 },
+    { asin: "B00LKRMNWK", title: "National Tree Company 24 Inch Pre-Lit Crestwood Spruce Wreath", w: 1500, h: 1494 },
+  ],
+  plaid: [
+    { asin: "B0D72HXH99", title: "EverGrace Chenille Christmas Throw Blanket, Red Stewart Plaid, 50 x 60", w: 1500, h: 1500 },
+    { asin: "B09D1B5HV4", title: "Eddie Bauer Sherpa Reverse Plaid Throw Blanket, 50 x 60", w: 1420, h: 1444 },
+  ],
+  dresser: [
+    { asin: "B0H5KDTFZM", title: "RattanView Wooden Christmas Gingerbread Couple Decor, 2 Piece", w: 1500, h: 1500 },
+    { asin: "B0BD7PM599", title: "Jolik Wooden Nutcracker Ornament Set, 12 Piece", w: 1000, h: 997 },
+  ],
+  rustic: [
+    { asin: "B0D922TTWS", title: "Artificial Pine Branch Stems, 40 Piece", w: 1500, h: 1500 },
+    { asin: "B0H3TLYLJZ", title: "lovemoon Christmas Pine Stems with Red Berries, 70 Piece", w: 1500, h: 1464 },
+  ],
+  bedding: [
+    { asin: "B0FMXNVMSR", title: "Vaulia Christmas Duvet Cover Set, Queen, Plaid Tree, Red and Green", w: 1500, h: 1500 },
+    { asin: "B0FDWLQWZ7", title: "Lekesky Reversible Red Plaid Reindeer Christmas Duvet Cover, Queen", w: 1050, h: 1050 },
+  ],
+  lights: [
+    { asin: "B0FV3NRXHP", title: "Plug-in Fairy Lights, 66 ft, 200 LED, with Remote", w: 1500, h: 1500 },
+    { asin: "B08J7DYHLG", title: "suddus Plug-in Warm White String Lights, 200 LED", w: 1080, h: 1080 },
+  ],
+  mirror: [
+    { asin: "B0F9KT263V", title: "Mini Christmas Cedar Wreaths, 12 Inch, 6 Piece", w: 1401, h: 1500 },
+    { asin: "B0F9KWGG6K", title: "Mini Christmas Cedar Wreaths, 12 Inch, 4 Piece", w: 1434, h: 1500 },
+  ],
+  miniTree: [
+    { asin: "B00NAW56MC", title: "National Tree Company 2 ft Pre-Lit Flocked Mini Christmas Tree", w: 871, h: 1500 },
+    { asin: "B00ED79PDY", title: "National Tree Company 24 Inch Pre-Lit Majestic Fir Mini Christmas Tree", w: 972, h: 1500 },
+  ],
+  treeCorner: [
+    { asin: "B0H94WYG2S", title: "Hykolity 6 ft Pre-Lit Pencil Christmas Tree, 300 Warm White LEDs", w: 1500, h: 1500 },
+    { asin: "B0CB8KD3M5", title: "Hykolity 6 ft Pre-Lit Slim Pencil Christmas Tree, Color Changing LEDs", w: 590, h: 1500 },
+  ],
+  velvet: [
+    { asin: "B0FT821LF3", title: "Bunliuys Velvet Pillow Covers, 18 x 18, 2 Pack", w: 1500, h: 1500 },
+    { asin: "B0BLM15XMW", title: "JIAHANNHA Green Velvet Throw Pillow Covers, 18 x 18, 2 Pack", w: 1500, h: 1500 },
+  ],
+  stockings: [
+    { asin: "B0B41T74ZX", title: "Fesciory Cable Knit Christmas Stockings for Fireplace", w: 1500, h: 1468 },
+    { asin: "B0DF7HGPT2", title: "Classic Cable Knit Christmas Stockings, 18 Inch, Set", w: 1147, h: 844 },
+  ],
+  nightstand: [
+    { asin: "B08HR2TKW9", title: "20 Inch Pre-Lit Battery Operated Mini Christmas Tree", w: 1052, h: 1500 },
+    { asin: "B08HR239BY", title: "12 Inch Pre-Lit Battery Operated Mini Christmas Tree", w: 1286, h: 1500 },
+  ],
+  elegant: [
+    { asin: "B0FBW7CVPN", title: "Shatterproof Christmas Ball Ornaments, 30 Piece", w: 1208, h: 1500 },
+    { asin: "B0H656JNH7", title: "Red, Green and Gold Shatterproof Christmas Ornament Set, 50 Count", w: 780, h: 1495 },
+  ],
+  window: [
+    { asin: "B0F4X72YQS", title: "Christmas Window Candle Lights, Battery Operated, 10 Pack", w: 1500, h: 1500 },
+    { asin: "B0BDRTRSJT", title: "Homemory Window Candles with Dusk to Dawn Sensor, 6 Piece", w: 1500, h: 1500 },
+  ],
+  readingCorner: [
+    { asin: "B01HTQQGHS", title: "Eddie Bauer Sherpa Reverse Throw Blanket, 50 x 60", w: 1403, h: 1381 },
+    { asin: "B07VSMP62P", title: "PAVILIA Checkered Sherpa Throw Blanket, Red Black, 50 x 60", w: 1500, h: 1150 },
+  ],
+  candles: [
+    { asin: "B0D8F9DJC3", title: "1OAK Fresh Pine Soy Wax Candle", w: 1500, h: 1429 },
+    { asin: "B0FBKGSX72", title: "M&amp;SENSE Evergreen Pine Soy Candle, 8.1 oz Gilded Glass", w: 1148, h: 1500 },
+  ],
+  artwork: [
+    { asin: "B0FKN1B2H1", title: "TWNSLLA Vintage Christmas Wall Art, Set of 7", w: 1500, h: 1186 },
+    { asin: "B0FR7TYXX8", title: "Vintage Christmas Canvas Wall Art, Set of 9, Santa and Snow Scenes", w: 1390, h: 1500 },
+  ],
+  smallBedroom: [
+    { asin: "B0FMF2W44J", title: "WEMADE 15.4 ft Pre-Lit Christmas Garland with Lights", w: 1500, h: 1277 },
+    { asin: "B0GST5WCTN", title: "9 ft Pre-Lit Cedar Christmas Garland with Lights", w: 1500, h: 1500 },
+  ],
+  layered: [
+    { asin: "B0DG88139G", title: "multiwins Christmas Pillow Covers, 18 x 18, 4 Piece", w: 996, h: 1293 },
+    { asin: "B0HCNFB3PV", title: "Heritage Christmas Throw Pillow Covers, 18 x 18, Set of 4", w: 1500, h: 1261 },
+  ],
+  bedsideWreath: [
+    { asin: "B0BMB4N8ZD", title: "Boxwood Candle Rings, 6 Inch, 2 Pack", w: 1134, h: 534 },
+    { asin: "B0GDW2JMZY", title: "Boxwood Candle Rings, 6 Inch, 4 Pack", w: 1500, h: 1415 },
+  ],
+  headboard: [
+    { asin: "B0FP4NBGK1", title: "Christmas Pine Cones on Wired Picks, 24 Piece", w: 1500, h: 1496 },
+    { asin: "B0DJGJ662C", title: "Christmas Floral Picks with Pine Cones and Holly Berries, 30 Piece", w: 1500, h: 1456 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "christmas-bedroom-decor-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "christmas-bedroom-decor-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "christmas-bedroom-decor-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -41,7 +160,7 @@ const ideas = [
       "A neutral palette &mdash; cream bedding, beige textiles, natural wood, soft white lights, and eucalyptus or pine greenery &mdash; can look genuinely sophisticated while still feeling seasonal.",
       "A touch of brass or aged gold adds warmth, and this direction works especially well in a bedroom that's already built around a neutral palette, since it avoids needing a full redesign.",
     ],
-    photo: pinPhoto("neutral-bedroom.jpg", "Neutral Christmas bedroom with cream bedding and natural greenery", 736, 1308, "https://www.pinterest.com/pin/33636328462081302/", "Neutral Christmas Bedroom"),
+    photo: pinPhoto("neutral-bedroom.jpg", "Neutral Christmas bedroom with cream bedding and natural greenery", 736, 1308, "https://www.pinterest.com/pin/33636328462081302/", "Neutral Christmas Bedroom", "neutral"),
   },
   {
     n: "02",
@@ -51,7 +170,7 @@ const ideas = [
       "A simple evergreen wreath leans traditional, while eucalyptus, dried branches, bells or muted berries push the look toward something more contemporary.",
       "For a rental, a damage-free hanging solution avoids putting unnecessary holes in the wall while still achieving the same effect.",
     ],
-    photo: pinPhoto("wreath-above-bed.jpg", "Christmas wreath hung above a bed as a focal point", 736, 954, "https://www.pinterest.com/pin/1688918607667912/", "Christmas Wreath Above the Bed"),
+    photo: pinPhoto("wreath-above-bed.jpg", "Christmas wreath hung above a bed as a focal point", 736, 954, "https://www.pinterest.com/pin/1688918607667912/", "Christmas Wreath Above the Bed", "wreathBed"),
   },
   {
     n: "03",
@@ -61,7 +180,7 @@ const ideas = [
       "A tartan throw across the foot of the bed, or plaid pillow covers against neutral bedding, brings the pattern in without overwhelming the room. Red and black buffalo check leans farmhouse, while a muted green tartan feels more traditional and refined.",
       "Matching every pattern precisely isn't necessary &mdash; keeping the color family consistent while letting the textures vary creates plenty of interest on its own.",
     ],
-    photo: pinPhoto("plaid-throw.jpg", "Plaid throw blanket layered on a Christmas bedroom bed", 575, 1022, "https://www.pinterest.com/pin/563794447125094661/", "Plaid Christmas Bedroom Decor"),
+    photo: pinPhoto("plaid-throw.jpg", "Plaid throw blanket layered on a Christmas bedroom bed", 575, 1022, "https://www.pinterest.com/pin/563794447125094661/", "Plaid Christmas Bedroom Decor", "plaid"),
   },
   {
     n: "04",
@@ -71,7 +190,7 @@ const ideas = [
       "A small tree, a bit of greenery, a framed seasonal print and a few ornaments build a simple arrangement, and a garland along the top works well if the dresser has enough depth.",
       "For a more elegant feel, cream, gold, greenery and warm wood read as considerably more refined than traditional bright red.",
     ],
-    photo: pinPhoto("dresser-nutcrackers.jpg", "Christmas decor styled on a dresser with nutcrackers and greenery", 736, 1104, "https://www.pinterest.com/pin/13370130139277744/", "Christmas Dresser Decor"),
+    photo: pinPhoto("dresser-nutcrackers.jpg", "Christmas decor styled on a dresser with nutcrackers and greenery", 736, 1104, "https://www.pinterest.com/pin/13370130139277744/", "Christmas Dresser Decor", "dresser"),
   },
   {
     n: "05",
@@ -81,7 +200,7 @@ const ideas = [
       "Plaid blankets, pine branches, woven baskets, wood accents, chunky knits and vintage-style ornaments all build toward that look. A small wooden Christmas tree adds another layer without tipping into overly festive territory.",
       "The goal here isn't precision &mdash; a slightly relaxed, imperfect arrangement actually reads as more inviting than a meticulously staged one.",
     ],
-    photo: pinPhoto("rustic-bedroom.jpg", "Rustic Christmas bedroom with pine branches and chunky knit textures", 736, 1104, "https://www.pinterest.com/pin/917749230396958875/", "Rustic Christmas Bedroom"),
+    photo: pinPhoto("rustic-bedroom.jpg", "Rustic Christmas bedroom with pine branches and chunky knit textures", 736, 1104, "https://www.pinterest.com/pin/917749230396958875/", "Rustic Christmas Bedroom", "rustic"),
   },
   {
     n: "06",
@@ -91,7 +210,7 @@ const ideas = [
       "Deep green, burgundy, red, cream or a classic plaid all work well for an everyday duvet cover swap. If a full Christmas print feels like too much, sticking to plain seasonal colors is an easy alternative.",
       "Keeping most of the bedding simple, with just one patterned layer, tends to read as more intentional than a fully mixed-pattern approach.",
     ],
-    photo: pinPhoto("red-green-bedding.jpg", "Cozy red and green Christmas bedding on a bed", 575, 1026, "https://www.pinterest.com/pin/3518505955128425/", "Red and Green Christmas Bedding"),
+    photo: pinPhoto("red-green-bedding.jpg", "Cozy red and green Christmas bedding on a bed", 575, 1026, "https://www.pinterest.com/pin/3518505955128425/", "Red and Green Christmas Bedding", "bedding"),
   },
   {
     n: "07",
@@ -101,7 +220,7 @@ const ideas = [
       "Warm white fairy lights wrapped around the headboard, draped around a mirror, or framed around a window all add a genuinely festive glow.",
       "Warm white specifically matters here &mdash; cool blue-white bulbs tend to work against the cozy feeling the rest of the room is building, making the space feel clinical rather than warm.",
     ],
-    photo: pinPhoto("warm-white-lights.jpg", "Warm white Christmas lights wrapped around a bedroom headboard", 736, 736, "https://www.pinterest.com/pin/4609786185065010240/", "Warm White Christmas Lights in a Bedroom"),
+    photo: pinPhoto("warm-white-lights.jpg", "Warm white Christmas lights wrapped around a bedroom headboard", 736, 736, "https://www.pinterest.com/pin/4609786185065010240/", "Warm White Christmas Lights in a Bedroom", "lights"),
   },
   {
     n: "08",
@@ -111,7 +230,7 @@ const ideas = [
       "A small garland draped across the top, a tiny wreath attached to the center, or a few eucalyptus or pine branches placed around the frame all work well.",
       "This trick is especially useful in a bedroom without enough space for a full tree, since it adds festive character without taking up any floor space at all.",
     ],
-    photo: pinPhoto("wreath-over-mirror.jpg", "Christmas greenery and wreath decorating a bedroom mirror", 736, 1103, "https://www.pinterest.com/pin/2322237303505428/", "Christmas Greenery on a Mirror"),
+    photo: pinPhoto("wreath-over-mirror.jpg", "Christmas greenery and wreath decorating a bedroom mirror", 736, 1103, "https://www.pinterest.com/pin/2322237303505428/", "Christmas Greenery on a Mirror", "mirror"),
   },
   {
     n: "09",
@@ -121,7 +240,7 @@ const ideas = [
       "A small tabletop tree works well on a dresser, nightstand, bench or corner table, decorated with tiny ornaments and a short string of lights.",
       "A simple evergreen tree in a woven basket is a strong alternative for anyone leaning farmhouse or Scandinavian in their overall bedroom style.",
     ],
-    photo: pinPhoto("mini-tree.jpg", "Mini Christmas tree decorated on a dresser in a bedroom", 736, 849, "https://www.pinterest.com/pin/13370130139236052/", "Mini Christmas Tree for a Bedroom"),
+    photo: pinPhoto("mini-tree.jpg", "Mini Christmas tree decorated on a dresser in a bedroom", 736, 849, "https://www.pinterest.com/pin/13370130139236052/", "Mini Christmas Tree for a Bedroom", "miniTree"),
   },
   {
     n: "10",
@@ -131,7 +250,7 @@ const ideas = [
       "A slim tree placed beside a dresser or reading chair, with a basket tucked underneath, works well &mdash; keeping the surrounding area simple gives the tree room to actually stand out.",
       "In a smaller bedroom, a narrow tree is the better choice over a wide one, since floor space is already competing with existing furniture.",
     ],
-    photo: pinPhoto("tree-corner.jpg", "Small Christmas tree styled in a bedroom corner", 736, 1308, "https://www.pinterest.com/pin/1086212003919444466/", "Christmas Tree Corner in a Bedroom"),
+    photo: pinPhoto("tree-corner.jpg", "Small Christmas tree styled in a bedroom corner", 736, 1308, "https://www.pinterest.com/pin/1086212003919444466/", "Christmas Tree Corner in a Bedroom", "treeCorner"),
   },
   {
     n: "11",
@@ -141,7 +260,7 @@ const ideas = [
       "Burgundy velvet pillows, forest green cushions, a cream velvet throw, or even a velvet ribbon tied around a wreath all bring that same quality in different forms.",
       "Texture matters as much as color here &mdash; velvet catches warm light beautifully, which makes it especially effective when paired with string lights or candles nearby.",
     ],
-    photo: pinPhoto("velvet-decor.jpg", "Velvet pillows and throw adding richness to Christmas bedroom decor", 736, 1097, "https://www.pinterest.com/pin/1109715164519430568/", "Velvet Christmas Bedroom Decor"),
+    photo: pinPhoto("velvet-decor.jpg", "Velvet pillows and throw adding richness to Christmas bedroom decor", 736, 1097, "https://www.pinterest.com/pin/1109715164519430568/", "Velvet Christmas Bedroom Decor", "velvet"),
   },
   {
     n: "12",
@@ -151,7 +270,7 @@ const ideas = [
       "Hanging one from the footboard, or attaching a lightweight stocking to a nearby decorative ladder, brings a bit of holiday charm directly into the bedroom. Personalized stockings can make a guest room feel especially welcoming over the holidays.",
       "Choosing stockings that echo the colors already present in the bedding keeps the whole look feeling cohesive rather than randomly added.",
     ],
-    photo: pinPhoto("stockings-footboard.jpg", "Christmas stockings hung from a bed footboard", 736, 1177, "https://www.pinterest.com/pin/964333338957842187/", "Christmas Stockings at the Foot of the Bed"),
+    photo: pinPhoto("stockings-footboard.jpg", "Christmas stockings hung from a bed footboard", 736, 1177, "https://www.pinterest.com/pin/964333338957842187/", "Christmas Stockings at the Foot of the Bed", "stockings"),
   },
   {
     n: "13",
@@ -161,7 +280,7 @@ const ideas = [
       "A small evergreen branch in a vase, a candle, a tiny ornament and a mini Christmas tree are usually enough, as long as everyday essentials still have room to stay functional nearby.",
       "This kind of small-scale styling creates a genuinely festive moment without sacrificing the nightstand's actual usefulness.",
     ],
-    photo: pinPhoto("nightstand-styling.jpg", "Christmas-styled nightstand with greenery and a small tree", 736, 1312, "https://www.pinterest.com/pin/12314598977856742/", "Christmas Nightstand Styling"),
+    photo: pinPhoto("nightstand-styling.jpg", "Christmas-styled nightstand with greenery and a small tree", 736, 1312, "https://www.pinterest.com/pin/12314598977856742/", "Christmas Nightstand Styling", "nightstand"),
   },
   {
     n: "14",
@@ -171,7 +290,7 @@ const ideas = [
       "Cream, deep green, burgundy, champagne gold and warm white, combined with velvet, linen, brushed metal, glass and soft lighting, build real depth without needing dozens of individual decorations.",
       "A handful of genuinely beautiful details consistently creates more impact than a large volume of smaller, less considered ones.",
     ],
-    photo: pinPhoto("elegant-red-gold.jpg", "Elegant Christmas bedroom in red and gold tones", 736, 1308, "https://www.pinterest.com/pin/1012324822505402412/", "Elegant Christmas Bedroom"),
+    photo: pinPhoto("elegant-red-gold.jpg", "Elegant Christmas bedroom in red and gold tones", 736, 1308, "https://www.pinterest.com/pin/1012324822505402412/", "Elegant Christmas Bedroom", "elegant"),
   },
   {
     n: "15",
@@ -181,7 +300,7 @@ const ideas = [
       "A delicate strand of warm white lights wrapped around the frame, or a small wreath hung from the center, brings the window into the overall look. Miniature trees on the windowsill work well if there's enough space.",
       "This kind of window decor is especially effective at night, when the lights reflect against the glass and add a second layer of glow to the room.",
     ],
-    photo: pinPhoto("window-lights.jpg", "Christmas lights decorating a bedroom window at night", 736, 1308, "https://www.pinterest.com/pin/14847873767387644/", "Christmas Bedroom Window Lights"),
+    photo: pinPhoto("window-lights.jpg", "Christmas lights decorating a bedroom window at night", 736, 1308, "https://www.pinterest.com/pin/14847873767387644/", "Christmas Bedroom Window Lights", "window"),
   },
   {
     n: "16",
@@ -191,7 +310,7 @@ const ideas = [
       "A chunky knit blanket, a plaid pillow, a small side table and a warm lamp turn it into a genuine winter retreat. A mini tree or a basket of greenery placed nearby finishes the look.",
       "It's a small addition that gives an actual reason to sit somewhere in the bedroom besides the bed itself.",
     ],
-    photo: pinPhoto("reading-nook.jpg", "Cozy Christmas reading corner with a knit blanket and warm lamp", 736, 1100, "https://www.pinterest.com/pin/7107311908986841/", "Cozy Christmas Reading Corner"),
+    photo: pinPhoto("reading-nook.jpg", "Cozy Christmas reading corner with a knit blanket and warm lamp", 736, 1100, "https://www.pinterest.com/pin/7107311908986841/", "Cozy Christmas Reading Corner", "readingCorner"),
   },
   {
     n: "17",
@@ -201,7 +320,7 @@ const ideas = [
       "Candles or diffusers with notes like pine, cedar, cinnamon, orange, vanilla or clove all capture the season well.",
       "Keeping the scent subtle matters more in a bedroom than anywhere else in the house &mdash; the goal is a room that feels cozy, not one that feels like several candles are competing with each other.",
     ],
-    photo: pinPhoto("candles-styling.jpg", "Christmas candles styled on a bedroom dresser for seasonal scent", 736, 1311, "https://www.pinterest.com/pin/80501912085847474/", "Christmas Candles and Seasonal Scents"),
+    photo: pinPhoto("candles-styling.jpg", "Christmas candles styled on a bedroom dresser for seasonal scent", 736, 1311, "https://www.pinterest.com/pin/80501912085847474/", "Christmas Candles and Seasonal Scents", "candles"),
   },
   {
     n: "18",
@@ -211,7 +330,7 @@ const ideas = [
       "Swapping just one or two existing prints for seasonal artwork &mdash; vintage Christmas illustrations, botanical prints, snowy landscapes, bells, stars or simple typography &mdash; works just as well.",
       "Vintage-inspired prints in particular tend to bring real personality to a wall without adding visual clutter.",
     ],
-    photo: pinPhoto("wall-art.jpg", "Christmas-themed artwork hung above a bedroom bed", 736, 1104, "https://www.pinterest.com/pin/4598104959837329280/", "Christmas Artwork Above the Bed"),
+    photo: pinPhoto("wall-art.jpg", "Christmas-themed artwork hung above a bedroom bed", 736, 1104, "https://www.pinterest.com/pin/4598104959837329280/", "Christmas Artwork Above the Bed", "artwork"),
   },
   {
     n: "19",
@@ -221,7 +340,7 @@ const ideas = [
       "Using vertical space instead of adding floor decorations &mdash; a wreath above the bed, decorated headboard, lights around the window, new bedding &mdash; adds plenty of festive character without crowding the room.",
       "A small footprint can still deliver real visual impact, as long as the decor choices lean intentional rather than scattered.",
     ],
-    photo: pinPhoto("small-bedroom.jpg", "Small bedroom decorated for Christmas with minimal floor-space decor", 390, 646, "https://www.pinterest.com/pin/1101341283912428754/", "Small Bedroom Christmas Decor"),
+    photo: pinPhoto("small-bedroom.jpg", "Small bedroom decorated for Christmas with minimal floor-space decor", 390, 646, "https://www.pinterest.com/pin/1101341283912428754/", "Small Bedroom Christmas Decor", "smallBedroom"),
   },
   {
     n: "20",
@@ -231,7 +350,7 @@ const ideas = [
       "Starting with neutral bedding, then adding a plaid throw, a couple of festive pillows, a greenery garland, warm white lights and a wreath builds the look in layers rather than all at once.",
       "Once everything is in place, it's worth stepping back and checking whether the whole arrangement feels connected &mdash; Christmas decor has a way of quietly multiplying past the point of actually improving the room.",
     ],
-    photo: pinPhoto("layered-decor.jpg", "Layered Christmas bedroom decor combining bedding, lights and a wreath", 736, 1104, "https://www.pinterest.com/pin/4598104986680874880/", "Layered Christmas Bedroom Decor"),
+    photo: pinPhoto("layered-decor.jpg", "Layered Christmas bedroom decor combining bedding, lights and a wreath", 736, 1104, "https://www.pinterest.com/pin/4598104986680874880/", "Layered Christmas Bedroom Decor", "layered"),
   },
   {
     n: "21",
@@ -241,7 +360,7 @@ const ideas = [
       "Mini evergreen wreaths, eucalyptus wreaths, berry wreaths or simple twig designs all work well, whether hung from the front of a nightstand, leaned against the wall, or placed around a candle.",
       "This idea suits anyone who prefers a more subtle approach to Christmas bedroom decor, since it adds personality without overwhelming the room.",
     ],
-    photo: pinPhoto("bedside-wreath.jpg", "Small bedside wreath styled on a nightstand for Christmas", 736, 1075, "https://www.pinterest.com/pin/4604367747879418496/", "Bedside Wreath for Christmas"),
+    photo: pinPhoto("bedside-wreath.jpg", "Small bedside wreath styled on a nightstand for Christmas", 736, 1075, "https://www.pinterest.com/pin/4604367747879418496/", "Bedside Wreath for Christmas", "bedsideWreath"),
   },
   {
     n: "22",
@@ -251,6 +370,7 @@ const ideas = [
       "Draping a faux pine garland across the top, with a few branches left to hang naturally, builds the base look &mdash; small pinecones, berries or a simple velvet ribbon add extra detail for anyone who wants it.",
       "A slightly imperfect, asymmetrical garland tends to look more natural than one arranged with perfect symmetry, which can read as a little too staged.",
     ],
+    productsKey: "headboard",
   },
 ];
 
@@ -259,13 +379,13 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>A bedroom rarely gets the same holiday attention as a living room or entryway, even though it's where the day actually starts and ends. A few considered touches &mdash; a wreath, some warm lighting, a seasonal throw &mdash; can turn it into a genuine holiday retreat without any major overhaul.</p>
 <p>The goal isn't to recreate a department store display. A handful of well-chosen pieces, layered thoughtfully, will always read as more intentional than a bedroom covered in every seasonal item available.</p>
-${photo("hero.jpg", "Christmas bedroom with a greenery and string light headboard", 736, 1311)}
+${photo("hero.jpg", "Christmas bedroom with a greenery and string light headboard", 736, 1311, "hero")}
 
 <h2>22 Christmas Bedroom Decor Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

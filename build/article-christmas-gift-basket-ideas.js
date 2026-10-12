@@ -15,24 +15,155 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0FT2GL798", title: "UBBCARE Wicker Gift Basket, Water Hyacinth, Empty", w: 1500, h: 1500 },
+    { asin: "B0H6QMYLZ5", title: "Empty Bamboo Gift Baskets with Handle, Foldable, Set of 3", w: 1500, h: 1475 },
+  ],
+  introSpecial: [
+    { asin: "B0D4138XBQ", title: "WIKDAY Clear Cellophane Gift Basket Bags, 24 x 30 Inch, 10 Pack", w: 1342, h: 1500 },
+    { asin: "B0DP2P9G2S", title: "Yuiicaov Extra Large Clear Cellophane Basket Bags, 30 x 40 Inch, 6 Pack", w: 1481, h: 1500 },
+  ],
+  introBuild: [
+    { asin: "B0H3VP27GR", title: "Airuisike 5-Piece Nested Kraft Gift Boxes with Lids", w: 1170, h: 1500 },
+    { asin: "B0CCDH2Z78", title: "Giftilious Gift Boxes with Lids, Set of 6", w: 1479, h: 1500 },
+  ],
+  cozy: [
+    { asin: "B0158EQJSY", title: "Bedsure GentleSoft Sherpa Fleece Throw Blanket", w: 1500, h: 1374 },
+    { asin: "B0H1PM1FM8", title: "Fleece Throw Blankets, 50 x 60, 6 Pack", w: 1499, h: 1500 },
+  ],
+  coffee: [
+    { asin: "B0GZMVVNWH", title: "Amazon Fresh Just Bright Light Roast Whole Bean Coffee, 32 oz, Pack of 2", w: 1500, h: 971 },
+    { asin: "B000LKVSMS", title: "The Organic Coffee Co. Hurricane Espresso Whole Bean Coffee, 2 lb", w: 1300, h: 1300 },
+  ],
+  hotChocolate: [
+    { asin: "B0DPNNR913", title: "Ghirardelli Double Chocolate Hot Cocoa Mix Packets, Concession Essentials", w: 1500, h: 1500 },
+    { asin: "B07HFVYCXM", title: "Nestle Milk Chocolate Hot Cocoa Mix Packets", w: 1201, h: 1500 },
+  ],
+  baking: [
+    { asin: "B085VQDL5T", title: "KEGOUU Oven Mitts and Pot Holders, 6 Piece Set", w: 1467, h: 1500 },
+    { asin: "B0DWSBZM26", title: "Heat Resistant Oven Mitts and Pot Holders, 4 Piece Set", w: 1500, h: 1500 },
+  ],
+  selfCare: [
+    { asin: "B0FLXCF1VJ", title: "Epsom Salt Spa Gift Set, 9 Piece", w: 1500, h: 1500 },
+    { asin: "B0DCHV9TSP", title: "Epsom Bath Salts Gift Set for Women, 4 Piece", w: 1475, h: 1500 },
+  ],
+  movieNight: [
+    { asin: "B0DY61PGCN", title: "Movie Night Popcorn Love Bundle Gift Set", w: 1500, h: 1500 },
+    { asin: "B07Z8S7Q2B", title: "Bob's Red Mill White Popcorn, 30 oz, Pack of 4", w: 1500, h: 1017 },
+  ],
+  breakfast: [
+    { asin: "B009PAYNRC", title: "Hawaiian Sun Pineapple Coconut Pancake Mix", w: 909, h: 1500 },
+    { asin: "B00WJ4BRA2", title: "Hawaiian Sun Banana Macadamia Nut Pancake Mix, 6 oz, Pack of 3", w: 1000, h: 1001 },
+  ],
+  tea: [
+    { asin: "B00SBTK5KW", title: "Tea Forte Single Steeps Tea Sampler, 15 Loose Leaf Pouches", w: 1500, h: 1500 },
+    { asin: "B0CYR1M9JM", title: "Pure and Easy Loose Leaf Tea Gift Set with Glass Infuser Mug", w: 1254, h: 1254 },
+  ],
+  cookie: [
+    { asin: "B0FPDBTT82", title: "David's Cookies Happy Holidays Shortbread Sampler Tin", w: 1500, h: 1500 },
+    { asin: "B0CW57NRTD", title: "David's Cookies Fresh-Baked Assorted Mini Cookie Gift Basket", w: 1500, h: 1500 },
+  ],
+  gourmet: [
+    { asin: "B00FBGL0CK", title: "Broadway Basketeers Towering Gift Boxes with Snacks and Treats, 6 Boxes", w: 1402, h: 1500 },
+    { asin: "B0C5G6SH6X", title: "Broadway Basketeers Gourmet Gift Basket", w: 1500, h: 1500 },
+  ],
+  breakfastInBed: [
+    { asin: "B0DN6HH7TQ", title: "Fibogollo Bamboo Bed Tray Tables with Folding Legs, 2 Pack", w: 1399, h: 1500 },
+    { asin: "B0DK6QV48D", title: "Artmeer Bamboo Bed Tray with Folding Legs, Large, Natural", w: 1500, h: 1259 },
+  ],
+  bookLover: [
+    { asin: "B0C3BC4QG2", title: "Gritin 19 LED Rechargeable Clip-On Book Light", w: 1500, h: 1500 },
+    { asin: "B08GG42WXY", title: "Gritin 9 LED Rechargeable Clip-On Book Light", w: 1500, h: 1500 },
+  ],
+  spa: [
+    { asin: "B09MHRFGDW", title: "VALITIC Aromatherapy Shower Steamers, 4 Scents", w: 1432, h: 999 },
+    { asin: "B09VTHB39V", title: "Cleverfy Aromatherapy Shower Steamers, 18 Pack", w: 1000, h: 1500 },
+  ],
+  candleCozy: [
+    { asin: "B0H338CHBD", title: "YINUO LIGHT Scented Soy Candle Gift Set, 12 Candles, 3.5 oz", w: 1500, h: 1187 },
+    { asin: "B0FQBZ26YN", title: "Scented Candle Gift Set, 4 Tins", w: 1500, h: 1481 },
+  ],
+  bakingCooking: [
+    { asin: "B0FH6YL3XC", title: "Astercook Carbonized Bamboo Cutting Boards with Storage Stand", w: 1500, h: 1500 },
+    { asin: "B0GFL2Y7QD", title: "Wooden Cutting Board Set with Utensils and Napkin, Housewarming Gift", w: 1496, h: 1500 },
+  ],
+  familyMorning: [
+    { asin: "B01M4QF730", title: "India Tree Mulling Spices for Cider and Wine, 4 oz", w: 1254, h: 1254 },
+    { asin: "B0FS4ZC1Z1", title: "Mulling Spices for Apple Cider and Mulled Wine", w: 1500, h: 888 },
+  ],
+  personalized: [
+    { asin: "B0FR48WS8L", title: "MBBEST Personalized Christmas Gift Basket, Cotton Rope with Name", w: 1500, h: 1329 },
+    { asin: "B0H38J3T43", title: "Yungyan Merry Christmas Basket with Handles", w: 1500, h: 1500 },
+  ],
+  movieSnack: [
+    { asin: "B0GHCXQC3W", title: "M&amp;M'S Milk Chocolate Candy Movie Theater Boxes, 3.1 oz, Pack of 24", w: 1500, h: 1500 },
+    { asin: "B0D9NTQG9R", title: "Toes Home Fuzzy Socks for Women, 6 Pairs", w: 1498, h: 1398 },
+  ],
+  garden: [
+    { asin: "B09576Y41Z", title: "Bamllum Leather Gardening Gloves for Women", w: 1458, h: 1278 },
+    { asin: "B0B3X3PLPV", title: "Leather Thorn-Proof Gardening Gloves for Women", w: 1417, h: 1487 },
+  ],
+  homebody: [
+    { asin: "B0F8HF9NVV", title: "OOW Memory Foam House Slippers for Women", w: 1500, h: 914 },
+    { asin: "B0BYNYWKC7", title: "EverFoams Women's Fuzzy Memory Foam Slippers", w: 1356, h: 1500 },
+  ],
+  brunch: [
+    { asin: "B0D14VSYM4", title: "Mrs. Butterworth's Complete Buttermilk Pancake and Waffle Mix, 32 oz, Pack of 2", w: 1500, h: 1500 },
+    { asin: "B0FZMTPFD6", title: "Stonewall Kitchen Farmhouse Pancake and Waffle Mix, 16 oz, Pack of 2", w: 1500, h: 1500 },
+  ],
+  friendTreats: [
+    { asin: "B0DYDM71MN", title: "TIMRIS Rustic Distressed Wood Nesting Crates, Set of 3", w: 1500, h: 1457 },
+    { asin: "B0DGG6P777", title: "Rustic Wooden Crates with Handles, 2 Pack Nesting", w: 1500, h: 1146 },
+  ],
+  luxury: [
+    { asin: "B08GNXSP8Q", title: "EP Mode 100% Pure Cashmere Throw Blanket, Whisper White", w: 998, h: 1500 },
+    { asin: "B08GP48SMV", title: "EP Mode 100% Pure Cashmere Throw Blanket, Rugby Tan", w: 998, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "christmas-gift-basket-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "christmas-gift-basket-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "christmas-gift-basket-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -44,7 +175,7 @@ const ideas = [
       "A soft throw blanket, fuzzy socks, a scented candle, hot chocolate, marshmallows and a Christmas mug cover the basics, with a small paperback or journal as an optional addition. Neutral packaging in cream, red, green or warm brown keeps the look classic.",
       "A woven basket spilling over with plaid and knit pillows, a red tartan throw draped over the side, and a small pine wreath tied to the handle captures the cozy, lived-in look this basket is going for.",
     ],
-    photo: photo("cozy.jpg", "Cozy Christmas gift basket with plaid pillows and a tartan throw", 683, 1024),
+    photo: photo("cozy.jpg", "Cozy Christmas gift basket with plaid pillows and a tartan throw", 683, 1024, "cozy"),
   },
   {
     n: "02",
@@ -54,7 +185,7 @@ const ideas = [
       "A good bag of coffee, a mug, flavored syrup and biscotti form the core, and a French press or reusable tumbler makes a strong centerpiece for a more premium version. Choosing a coffee they already enjoy matters more than reaching for the strongest roast available.",
       "A kraft box with a scarf wrapped around the mug, a bag of biscotti and a jar of cinnamon sugar tucked beside a pine sprig reads as considered without much actual effort.",
     ],
-    photo: photo("coffee-lover.jpg", "Coffee lover Christmas gift basket with mug and biscotti", 736, 1104),
+    photo: photo("coffee-lover.jpg", "Coffee lover Christmas gift basket with mug and biscotti", 736, 1104, "coffee"),
   },
   {
     n: "03",
@@ -64,7 +195,7 @@ const ideas = [
       "Hot chocolate mix, mini marshmallows, peppermint sticks, chocolate squares and a cute mug build the base. Colorful toppings and a holiday movie card work well for kids, while gourmet chocolate and a more refined mug suit an adult recipient.",
       "Two mugs, a bag of cocoa mix, a twine-tied jar of marshmallows and a few candy canes poking out, finished with a big red bow, hits the mark almost every time.",
     ],
-    photo: pinPhoto("hot-chocolate.jpg", "Hot chocolate Christmas gift basket with mugs and marshmallows", 736, 1051, "https://www.pinterest.com/pin/219480181838057912/", "Hot Chocolate Christmas Gift Basket"),
+    photo: pinPhoto("hot-chocolate.jpg", "Hot chocolate Christmas gift basket with mugs and marshmallows", 736, 1051, "https://www.pinterest.com/pin/219480181838057912/", "Hot Chocolate Christmas Gift Basket", "hotChocolate"),
   },
   {
     n: "04",
@@ -74,7 +205,7 @@ const ideas = [
       "Building the basket around baking supplies and a few homemade treats gives it a genuinely useful feel. One homemade cookie included alongside the supplies makes the whole gift feel more personal than a straight shopping haul.",
       "A wire basket filled with oven mitts, colorful spatulas, a whisk, cookie cutters and small jars of sprinkles looks genuinely useful the moment it's opened.",
     ],
-    photo: photo("baking.jpg", "Christmas baking gift basket with supplies and treats", 736, 1308),
+    photo: photo("baking.jpg", "Christmas baking gift basket with supplies and treats", 736, 1308, "baking"),
   },
   {
     n: "05",
@@ -84,7 +215,7 @@ const ideas = [
       "Bath salts, body lotion, a candle, face masks, fuzzy socks, lip balm and herbal tea build a small escape. Sticking to one calming scent family &mdash; lavender, vanilla, eucalyptus, rose &mdash; keeps the whole basket feeling coordinated.",
       "A handwritten note tucked in alongside everything else often adds more warmth than one more product would.",
     ],
-    photo: photo("self-care.jpg", "Self-care Christmas gift basket with candles and bath products", 735, 1105),
+    photo: photo("self-care.jpg", "Self-care Christmas gift basket with candles and bath products", 735, 1105, "selfCare"),
   },
   {
     n: "06",
@@ -94,7 +225,7 @@ const ideas = [
       "Popcorn, chocolate, candy, cozy socks, hot chocolate and a soft blanket cover the essentials, with a small card listing a few recommended Christmas movies as the finishing touch.",
       "A basket loaded with popcorn, a few classic candy bars, canned soda and a pair of headphones, wrapped in a soft throw, communicates \"cancel your plans\" better than any card could.",
     ],
-    photo: photo("movie-night.jpg", "Christmas movie night basket with popcorn and cozy blanket", 600, 800),
+    photo: photo("movie-night.jpg", "Christmas movie night basket with popcorn and cozy blanket", 600, 800, "movieNight"),
   },
   {
     n: "07",
@@ -104,7 +235,7 @@ const ideas = [
       "Pancake mix, maple syrup, jam, coffee, tea, biscuits, honey and a kitchen towel build a solid breakfast basket, and a handwritten recipe card for a favorite Christmas breakfast adds a more personal touch.",
       "This version works especially well as a family gift, since everyone in the house can enjoy it together the same morning.",
     ],
-    photo: photo("breakfast.jpg", "Christmas breakfast gift basket with pancake mix and jam", 736, 736),
+    photo: photo("breakfast.jpg", "Christmas breakfast gift basket with pancake mix and jam", 736, 736, "breakfast"),
   },
   {
     n: "08",
@@ -114,7 +245,7 @@ const ideas = [
       "Several tea flavors, honey, lemon candies, biscuits and a pretty mug form the base, and loose-leaf tea with a glass or ceramic infuser pushes the whole basket toward something more luxurious.",
       "A soft, natural palette &mdash; cream, sage, brown, muted red &mdash; keeps the basket looking genuinely beautiful rather than like a holiday-aisle grab bag.",
     ],
-    photo: pinPhoto("hot-tea.jpg", "Hot tea Christmas gift basket with honey and a ceramic mug", 448, 800, "https://www.pinterest.com/pin/1266706142289614/", "Hot Tea Christmas Gift Basket"),
+    photo: pinPhoto("hot-tea.jpg", "Hot tea Christmas gift basket with honey and a ceramic mug", 448, 800, "https://www.pinterest.com/pin/1266706142289614/", "Hot Tea Christmas Gift Basket", "tea"),
   },
   {
     n: "09",
@@ -124,7 +255,7 @@ const ideas = [
       "A basket filled with homemade or specialty Christmas cookies, plus chocolate, caramel, peppermint treats and a festive mug, covers the essentials. Packaging different cookies in small clear bags tied with ribbon makes the basket feel like a collection of individual little gifts.",
       "This idea suits neighbors, teachers, coworkers and extended family particularly well, since it doesn't require knowing someone's specific preferences.",
     ],
-    photo: pinPhoto("cookie.jpg", "Christmas cookie gift basket with assorted holiday treats", 736, 1349, "https://www.pinterest.com/pin/133771051427774979/", "Christmas Cookie Gift Basket"),
+    photo: pinPhoto("cookie.jpg", "Christmas cookie gift basket with assorted holiday treats", 736, 1349, "https://www.pinterest.com/pin/133771051427774979/", "Christmas Cookie Gift Basket", "cookie"),
   },
   {
     n: "10",
@@ -134,7 +265,7 @@ const ideas = [
       "Choosing several elevated snacks and focusing on quality over quantity matters most here &mdash; six genuinely excellent items tend to look and feel better than fifteen random ones. Any refrigerated or perishable items should be delivered and stored carefully, kept cold and handled promptly.",
       "A red tin stamped with a festive phrase and filled with English muffins, preserves, coffee and banana bread reads like something from an actual bakery gift shop rather than a quick grocery run.",
     ],
-    photo: photo("gourmet-snack.jpg", "Gourmet snack Christmas gift basket with coffee and preserves", 690, 755),
+    photo: photo("gourmet-snack.jpg", "Gourmet snack Christmas gift basket with coffee and preserves", 690, 755, "gourmet"),
   },
   {
     n: "11",
@@ -144,7 +275,7 @@ const ideas = [
       "Coffee, tea, pastries, jam, honey, chocolate, a small tray and a handwritten note build the core gift, and a small vase of flowers or greenery adds a finishing touch. The tray itself is the clever part, since it gets genuine reuse long after the holiday ends.",
       "Tartan napkins, a jar of golden syrup, cranberry preserves, a stack of pancakes and a cinnamon stick or two, arranged in a woven basket with a sprig of pine, sums up the whole idea in one image.",
     ],
-    photo: pinPhoto("breakfast-in-bed.jpg", "Christmas breakfast in bed basket with pastries and a tray", 736, 1104, "https://www.pinterest.com/pin/133771051427693712/", "Christmas Breakfast in Bed Basket"),
+    photo: pinPhoto("breakfast-in-bed.jpg", "Christmas breakfast in bed basket with pastries and a tray", 736, 1104, "https://www.pinterest.com/pin/133771051427693712/", "Christmas Breakfast in Bed Basket", "breakfastInBed"),
   },
   {
     n: "12",
@@ -154,7 +285,7 @@ const ideas = [
       "A reading light, bookmark, cozy socks, tea, hot chocolate and chocolate round it out. Choosing the book around their actual interests &mdash; a thriller for a mystery reader, a love story for a romance fan, a cookbook for someone who loves cooking &mdash; matters more than picking a personal favorite.",
       "A basket of wrapped books nestled in pine branches and pinecones by the tree does the job without a single visible title needed.",
     ],
-    photo: photo("book-lover.jpg", "Book lover Christmas gift basket with wrapped books and pine branches", 736, 1104),
+    photo: photo("book-lover.jpg", "Book lover Christmas gift basket with wrapped books and pine branches", 736, 1104, "bookLover"),
   },
   {
     n: "13",
@@ -164,7 +295,7 @@ const ideas = [
       "Bath salts, shower steamers, hand cream, body scrub, face masks, a candle and a soft headband all work well together, kept inside simple, coordinated packaging. A restrained color palette keeps the basket from looking like a random assortment of beauty products.",
       "Amber glass bottles of oil and lotion, small gold-lid jars, and a few dried berries tucked into a woven basket, with one small personal touch added, reads as genuinely boutique.",
     ],
-    photo: photo("spa.jpg", "Christmas spa basket with amber glass bottles and dried berries", 736, 1104),
+    photo: photo("spa.jpg", "Christmas spa basket with amber glass bottles and dried berries", 736, 1104, "spa"),
   },
   {
     n: "14",
@@ -174,7 +305,7 @@ const ideas = [
       "One beautiful candle works as the centerpiece, with matches, fuzzy socks, tea, chocolate and a small decorative object filling in around it. Sticking to a single scent profile matters here &mdash; combining several competing scents can turn the basket into the olfactory equivalent of a crowded department store.",
       "A lit candle, a festive mug, a tin of shortbread, foil-wrapped chocolates, fuzzy socks and hand cream, tied with a deep red bow, brings the whole idea together.",
     ],
-    photo: pinPhoto("candle-cozy.jpg", "Christmas candle and cozy basket with shortbread and fuzzy socks", 736, 1104, "https://www.pinterest.com/pin/1086282372653027754/", "Christmas Candle and Cozy Basket"),
+    photo: pinPhoto("candle-cozy.jpg", "Christmas candle and cozy basket with shortbread and fuzzy socks", 736, 1104, "https://www.pinterest.com/pin/1086282372653027754/", "Christmas Candle and Cozy Basket", "candleCozy"),
   },
   {
     n: "15",
@@ -184,7 +315,7 @@ const ideas = [
       "Real baking and cooking tools, rather than one-off gimmicks, make up the core of this basket. A small cutting board can even replace the traditional basket itself, giving the recipient something they'll keep using long after the food is gone.",
       "Even scaled back to just a few wrapped items tucked into pine branches with a pinecone underneath, it still reads as a finished, considered gift.",
     ],
-    photo: pinPhoto("baking-cooking.jpg", "Christmas baking and cooking basket with kitchen tools", 736, 1104, "https://www.pinterest.com/pin/618189486388892847/", "Christmas Baking and Cooking Basket"),
+    photo: pinPhoto("baking-cooking.jpg", "Christmas baking and cooking basket with kitchen tools", 736, 1104, "https://www.pinterest.com/pin/618189486388892847/", "Christmas Baking and Cooking Basket", "bakingCooking"),
   },
   {
     n: "16",
@@ -194,7 +325,7 @@ const ideas = [
       "A curated spread of gourmet treats &mdash; preserves, mulled wine spices, artisan cookies, dried fruit &mdash; wrapped with greenery and ribbon reads as something to gather around on Christmas morning rather than individually wrapped presents.",
       "This approach works particularly well when giving one gift to a household feels more appropriate than buying something separate for every family member.",
     ],
-    photo: photo("family-morning.jpg", "Christmas morning family gift basket with gourmet preserves and cookies", 736, 1308),
+    photo: photo("family-morning.jpg", "Christmas morning family gift basket with gourmet preserves and cookies", 736, 1308, "familyMorning"),
   },
   {
     n: "17",
@@ -204,7 +335,7 @@ const ideas = [
       "Starting with the recipient's actual favorite things works better &mdash; seeds, gloves and a small planter for a gardener, a kitchen-themed basket for a cook, a reading-focused basket for someone who loves books.",
       "A basket embroidered with someone's actual name, holding a small plush toy, a candy cane, boxed chocolates and a scented candle, is about as personal as a gift basket gets.",
     ],
-    photo: photo("personalized.jpg", "Personalized Christmas gift baskets embroidered with names", 736, 736),
+    photo: photo("personalized.jpg", "Personalized Christmas gift baskets embroidered with names", 736, 736, "personalized"),
   },
   {
     n: "18",
@@ -214,7 +345,7 @@ const ideas = [
       "Popcorn, candy, chocolate, hot chocolate, cozy socks and a blanket form the base, with three handwritten movie recommendations added on top. Labeling the recommendations by mood &mdash; funny, classic, romantic &mdash; lets the recipient choose based on how they're feeling that night.",
       "A ribbon-tied basket filled with a gingerbread cookie, peppermint-dusted candies and a few snowflake picks works well for anyone who'd rather lean sweet than salty.",
     ],
-    photo: photo("movie-snack.jpg", "Christmas movie and snack basket with gingerbread cookies", 736, 981),
+    photo: photo("movie-snack.jpg", "Christmas movie and snack basket with gingerbread cookies", 736, 981, "movieSnack"),
   },
   {
     n: "19",
@@ -224,7 +355,7 @@ const ideas = [
       "Gardening gloves, seeds, plant markers, a small pot, hand cream, gardening scissors and a gardening journal build a genuinely useful basket. Choosing seeds and plants suited to the recipient's actual climate and experience level matters more than picking something purely because it looks charming.",
       "A poinsettia, a few succulents wrapped in burlap, heirloom seed packets, pruning shears and gardening gloves, with string lights wound around the base, makes for a genuinely thoughtful gift for anyone who gardens.",
     ],
-    photo: pinPhoto("garden-lover.jpg", "Christmas garden lover basket with succulents and gardening tools", 736, 1166, "https://www.pinterest.com/pin/922323198814606307/", "Christmas Garden Lover Basket"),
+    photo: pinPhoto("garden-lover.jpg", "Christmas garden lover basket with succulents and gardening tools", 736, 1166, "https://www.pinterest.com/pin/922323198814606307/", "Christmas Garden Lover Basket", "garden"),
   },
   {
     n: "20",
@@ -234,7 +365,7 @@ const ideas = [
       "A soft blanket, candle, slippers, tea, cookies, a mug and a small book or journal cover the essentials. A neutral basket in cream, beige, soft green and warm brown instantly makes the whole gift feel more coordinated and luxurious.",
       "Even a small wicker basket with one wrapped gift, a snowflake pick and a sprig of greenery by a sunny window captures the quiet, unhurried feeling this basket is going for.",
     ],
-    photo: photo("homebody.jpg", "Christmas homebody basket with neutral blanket and candle", 736, 1104),
+    photo: photo("homebody.jpg", "Christmas homebody basket with neutral blanket and candle", 736, 1104, "homebody"),
   },
   {
     n: "21",
@@ -244,7 +375,7 @@ const ideas = [
       "Pancake or waffle mix, maple syrup, coffee, tea, jam, honey, biscuits, chocolate and a small serving board cover the essentials, with a handwritten brunch recipe as an optional personal touch. This version also works well as a shared family gift.",
       "Pancake mix, maple syrup, breakfast sausage links, a loaf of bread and a few Santa-shaped chocolates, tied with a striped ribbon, make a brunch basket that genuinely gets used the next morning.",
     ],
-    photo: photo("brunch.jpg", "Christmas breakfast and brunch basket with pancake mix and syrup", 680, 680),
+    photo: photo("brunch.jpg", "Christmas breakfast and brunch basket with pancake mix and syrup", 680, 680, "brunch"),
   },
   {
     n: "22",
@@ -254,7 +385,7 @@ const ideas = [
       "A simple friendship basket built around their favorite snacks, chocolate, coffee or tea, cozy socks, a candle and a handwritten card covers it. The personal note matters most here &mdash; a specific, genuine sentence about the friendship can make an otherwise modest basket feel considerably more meaningful.",
       "A wooden crate stamped with a festive phrase and stacked with cookies, mugs, a marshmallow jar and a gingerbread man by the fire is exactly the kind of basket a friend actually wants to dig into.",
     ],
-    photo: photo("friend-treats.jpg", "Christmas treats basket for a friend with cookies and mugs", 736, 1308),
+    photo: photo("friend-treats.jpg", "Christmas treats basket for a friend with cookies and mugs", 736, 1308, "friendTreats"),
   },
   {
     n: "23",
@@ -264,7 +395,7 @@ const ideas = [
       "Choosing one premium centerpiece &mdash; a cashmere throw, a high-end candle, a quality bottle of something &mdash; and building the rest of the basket around it keeps the presentation clean and intentional.",
       "Sometimes luxury simply means one good centerpiece &mdash; a plush keepsake, a tin of treats, a cozy candle, tied together simply &mdash; rather than a basket packed with ten different premium items competing for attention.",
     ],
-    photo: pinPhoto("luxury.jpg", "Luxury Christmas gift basket with a premium centerpiece", 736, 1104, "https://www.pinterest.com/pin/621004236161881709/", "Luxury Christmas Gift Basket"),
+    photo: pinPhoto("luxury.jpg", "Luxury Christmas gift basket with a premium centerpiece", 736, 1104, "https://www.pinterest.com/pin/621004236161881709/", "Luxury Christmas Gift Basket", "luxury"),
   },
 ];
 
@@ -279,15 +410,15 @@ function ideaBlock(idea) {
 const body = `
 <p>A Christmas gift basket works because it says more than a single gift card ever could, without demanding the planning a fully custom gift requires. The best ones feel curated rather than assembled &mdash; a handful of genuinely good items, chosen with a specific person in mind, rather than a pile of random extras.</p>
 <p>Keeping the color palette coordinated, picking one clear theme, and resisting the urge to add "just one more thing" are what separate a basket that reads as thoughtful from one that reads as cluttered.</p>
-${photo("hero.jpg", "Cozy Christmas gift basket filled with plaid pillows and a tartan throw", 683, 1024)}
+${photo("hero.jpg", "Cozy Christmas gift basket filled with plaid pillows and a tartan throw", 683, 1024, "hero")}
 
 <h2>What Makes a Gift Basket Feel Special</h2>
 <p>A basket feels genuinely personal the moment it reflects something specific about the recipient, rather than a generic holiday assortment. A coordinated color story, a single scent family, and a small handwritten note usually do more for that feeling than adding extra items ever could.</p>
-${photo("intro-special.jpg", "Christmas gift basket with a personal, thoughtful presentation", 736, 1308)}
+${photo("intro-special.jpg", "Christmas gift basket with a personal, thoughtful presentation", 736, 1308, "introSpecial")}
 
 <h2>How to Build One</h2>
 <p>Starting with one strong centerpiece &mdash; a candle, a mug, a book, a cozy blanket &mdash; and layering a handful of smaller matching items around it creates a far more polished result than filling a basket to the brim. Simple, coordinated packaging usually reads as more expensive than it actually was.</p>
-${pinPhoto("intro-build.jpg", "Christmas gift basket built around one strong centerpiece item", 736, 1104, "https://www.pinterest.com/pin/1086282372653027754/", "Building a Christmas Gift Basket")}
+${pinPhoto("intro-build.jpg", "Christmas gift basket built around one strong centerpiece item", 736, 1104, "https://www.pinterest.com/pin/1086282372653027754/", "Building a Christmas Gift Basket", "introBuild")}
 
 <h2>23 Christmas Gift Basket Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

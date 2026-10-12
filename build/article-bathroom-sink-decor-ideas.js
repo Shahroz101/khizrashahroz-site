@@ -71,7 +71,7 @@ const PRODUCTS = {
     { asin: "B0G5K91VXB", title: "12.6 inch Tall Handmade Large White Ceramic Vase for Flowers, Home Decor", w: 1492, h: 1500 },
   ],
   palette: [
-    { asin: "B0CCJS363D", title: "ZCCZ Matte Black Bathroom Accessories Set, 4-Piece with Soap Dispenser and Vanity Tray", w: 1500, h: 1100 },
+    { asin: "B0CCJS363D", title: "ZCCZ 4-Piece Bathroom Accessories Set with Soap Dispenser and Vanity Tray, Beige", w: 1500, h: 1100 },
     { asin: "B0CGX7WHFM", title: "KASUNTING Matte Black Bathroom Accessories Set, 4 Pcs Glass Bathroom Accessory Set", w: 1500, h: 1114 },
   ],
   glass: [

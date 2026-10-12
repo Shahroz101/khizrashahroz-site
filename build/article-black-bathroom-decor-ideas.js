@@ -24,7 +24,7 @@ const PRODUCTS = {
   ],
   intro: [
     { asin: "B0GCMRSYZX", title: "CASA COPENHAGEN Solitaire 6 Pieces Towel Set- Bright Black", w: 865, h: 960 },
-    { asin: "B0CCJS363D", title: "ZCCZ Bathroom Accessory Sets, 4 Pieces Bathroom Accessories Complete Set Vanity", w: 1500, h: 1100 },
+    { asin: "B0CGX7WHFM", title: "KASUNTING Matte Black Bathroom Accessories Set, 4 Pcs Glass Bathroom Accessory Set", w: 1500, h: 1114 },
   ],
   walls: [
     { asin: "B079535PND", title: "THE ONE All-In-One Paint &amp; Primer, Black Matte, 33.8 Fl Oz/1 Liter, 1 Coat Formula", w: 1290, h: 1236 },

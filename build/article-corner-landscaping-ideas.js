@@ -9,23 +9,81 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0F8GZH2CK", title: "Worth Large Outdoor Planters, Beige Round Plastic Pots, Set of 2", w: 1500, h: 1500 },
+    { asin: "B09W9H1V63", title: "DenicMic Solar Pathway Lights, Cool White, 10 Pack", w: 1499, h: 1500 },
+  ],
+  startSmall: [
+    { asin: "B0HGXKCDDH", title: "Usocik Large Tall Round Terracotta Outdoor Planters, Set of 4", w: 940, h: 1017 },
+    { asin: "B0G4H2C41Y", title: "Bluepro Landscape Edging, 2 Inch, 100 ft", w: 1181, h: 1483 },
+  ],
+  sit: [
+    { asin: "B09W8FKKY4", title: "3-Piece Cast Aluminum Anti-Rust Bistro Patio Set", w: 1500, h: 1500 },
+    { asin: "B01LDMXXK2", title: "Sunnydaze Crossweave 36 Inch Wood Burning Round Fire Pit", w: 1500, h: 1275 },
+  ],
+  flowers: [
+    { asin: "B0H9116PND", title: "Butterfly and Hummingbird Wildflower Seed Mix, 1 oz, 7,500+ Seeds", w: 1202, h: 1500 },
+    { asin: "B09C8HR4Z9", title: "Land Guard Galvanized Raised Garden Bed Kit", w: 1452, h: 668 },
+  ],
+  job: [
+    { asin: "B079SQRL46", title: "Keter Urban Bloomer 12.7 Gallon Raised Garden Bed and Herb Planter", w: 1288, h: 1500 },
+    { asin: "B0C6LG87B5", title: "Garden Tool Organizer for Garage and Yard", w: 666, h: 1500 },
+  ],
+  function: [
+    { asin: "B0GD6NPP5M", title: "30 Inch Large Metal Plant Trellis for Climbing Plants", w: 1393, h: 1500 },
+    { asin: "B07GXN1SB3", title: "Heavy Duty Privacy Screen Fence Cover, 6 x 50 ft, with Brass Grommets", w: 1500, h: 1500 },
+  ],
+  lighting: [
+    { asin: "B0H11W4T1Q", title: "RGB Solar Landscape Spotlights, 4 Pack", w: 1500, h: 1500 },
+    { asin: "B0F8YNHPQM", title: "100 ft Warm White Outdoor Waterproof LED String Lights, Green Wire", w: 1500, h: 1500 },
+  ],
+  personal: [
+    { asin: "B0GHVXWTL2", title: "Solar Turtle Garden Statue with 7 Succulent LED Lights", w: 1500, h: 1500 },
+    { asin: "B0G5JH6JHF", title: "Metal Flower Garden Stakes, 24 Inch, 3 Piece", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "corner-landscaping-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "corner-landscaping-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
 <p>Almost every yard has one — a corner that never quite got a purpose.</p>
 <p>It's not big enough for a real garden bed, not central enough for furniture, so it sits there empty or collects whatever doesn't fit anywhere else.</p>
 <p>That corner is actually one of the easiest spots in the whole yard to transform, precisely because expectations for it are so low.</p>
-${photo("hero.png", "Charming garden corner transformed with thoughtful landscaping", 1248, 832)}
+${photo("hero.png", "Charming garden corner transformed with thoughtful landscaping", 1248, 832, "hero")}
 
 <h2>Start Small and Let It Grow</h2>
 <p>A corner doesn't need a full landscaping plan to go from empty to intentional.</p>
@@ -33,7 +91,7 @@ ${photo("hero.png", "Charming garden corner transformed with thoughtful landscap
 <p>This also means a corner project can expand gradually — there's no need to finish it all in one weekend.</p>
 ${photo("intro.png", "Small garden corner showing the start of a thoughtful landscaping project", 683, 1024)}
 ${photo("start-small-1.png", "Cozy corner garden idea that works in a compact space", 683, 1024)}
-${photo("start-small-2.png", "Simple corner garden transformation with minimal effort", 683, 1024)}
+${photo("start-small-2.png", "Simple corner garden transformation with minimal effort", 683, 1024, "startSmall")}
 
 <h2>Turn It Into a Place to Sit</h2>
 <p>A single chair, a small bistro set, or a built-in bench instantly gives a corner a reason to exist.</p>
@@ -41,37 +99,39 @@ ${photo("start-small-2.png", "Simple corner garden transformation with minimal e
 <p>Adding a small side table or a few cushions turns "a chair in the corner" into an actual spot someone wants to sit in.</p>
 ${photo("chill-zone-1.png", "Relaxing seating area tucked into a garden corner", 683, 1024)}
 ${photo("chill-zone-2.png", "Cozy corner seating nook surrounded by greenery", 683, 1024)}
-${photo("chill-zone-3.png", "Fire pit nestled into a garden corner for evening gatherings", 683, 1024)}
+${photo("chill-zone-3.png", "Fire pit nestled into a garden corner for evening gatherings", 683, 1024, "sit")}
 
 <h2>Use Flowers to Fix a Boring Corner</h2>
 <p>A corner with nothing going on visually is often just missing color, not structure.</p>
 <p>A cluster of flowering plants in varying heights — tall in the back, shorter toward the front — fills the space without needing any hardscaping at all.</p>
 <p>This is one of the lowest-cost, lowest-effort ways to transform a corner, and one of the most forgiving if the first plant choice doesn't work out.</p>
 ${photo("flower-power-1.png", "Vibrant corner garden bursting with colorful flowers", 683, 1024)}
-${photo("flower-power-2.png", "Meticulously designed flower corner adding brightness to the yard", 683, 1024)}
+${photo("flower-power-2.png", "Meticulously designed flower corner adding brightness to the yard", 683, 1024, "flowers")}
 
 <h2>Give the Corner an Actual Job</h2>
 <p>A corner with a defined purpose — a small herb garden, a compost spot, a tool storage nook — reads as intentional even without much decor.</p>
 <p>This works well for the corner that's awkward specifically because nothing else in the yard fits there; giving it a job solves two problems at once.</p>
 <p>A bit of edging or a low border helps visually separate the purposeful corner from the rest of the lawn.</p>
 ${photo("add-structure-1.png", "Serene garden corner given a clear sense of purpose", 683, 1024)}
-${photo("add-structure-2.png", "Defined garden corner with clear structural boundaries", 683, 1024)}
+${photo("add-structure-2.png", "Defined garden corner with clear structural boundaries", 683, 1024, "job")}
 
 <h2>Combine Function and Style</h2>
 <p>The best corner transformations usually do more than one job at once — a seating spot that's also shaded by a trellis, or a planting bed that also screens a view.</p>
 <p>Thinking about what the corner could solve, not just how it could look, tends to produce a more satisfying result than styling alone.</p>
 <p>This is where a corner stops feeling like leftover space and starts feeling like a planned part of the yard.</p>
-${photo("functional-pretty.png", "Garden corner combining function and beauty seamlessly", 683, 1024)}
+${photo("functional-pretty.png", "Garden corner combining function and beauty seamlessly", 683, 1024, "function")}
 
 <h2>Don't Forget Lighting</h2>
 <p>A corner that disappears after dark loses half its value, no matter how well it's planted or furnished during the day.</p>
 <p>A few solar stake lights, a string of warm bulbs, or a single lantern extend the corner's use well past sunset.</p>
 <p>This is one of the cheapest additions on this whole list and one of the easiest to skip — worth doing last, after the planting and seating are settled.</p>
+${productGrid("lighting")}
 
 <h2>Let Personal Style Lead</h2>
 <p>A corner done according to someone else's exact plan rarely feels as good as one shaped around what the homeowner actually likes.</p>
 <p>A favorite color, a specific plant, a found object with sentimental value — personal touches are what separate a generic corner fix from one that feels like it belongs to the rest of the home.</p>
 <p>There's no single correct way to do this; the goal is a corner that gets used, not one that matches a template exactly.</p>
+${productGrid("personal")}
 
 <h2>Final Thoughts</h2>
 <p>An awkward corner isn't a problem to hide — it's one of the easiest wins in the whole yard.</p>

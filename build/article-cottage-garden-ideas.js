@@ -10,24 +10,111 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0H16QD6SQ", title: "Peggy Martin Live Rose, XXL Premium, 3 Gallon", w: 1125, h: 1500 },
+    { asin: "B0F6Q2RKQ1", title: "HOME GROWN Wildflower &amp; Dandelion Seeds Bundle, 63,200+ Seeds", w: 1272, h: 1500 },
+  ],
+  whatIs: [
+    { asin: "B098PDM4CZ", title: "Seed Needs Blanket Flower Seeds for Planting, Gaillardia aristata", w: 1093, h: 1500 },
+    { asin: "B0F7ZBXY15", title: "Mandarin Honeysuckle Vine, Perennial Lonicera, 2.5 Inch Pot", w: 827, h: 993 },
+  ],
+  vs: [
+    { asin: "B0F1MBZ4XN", title: "Worth Garden Large Urn Planter, 14 Inch, Lightweight Magnesium Oxide", w: 1413, h: 1500 },
+    { asin: "B0H931YMH1", title: "Zinnia Seeds, California Giants Mix, 1 Ounce Packet, 3,000 Seeds", w: 1500, h: 1496 },
+  ],
+  idea1: [
+    { asin: "B0H1LRDCFM", title: "RedCrocus Eden's Climbing Rose, Fragrant Flowering Rose for Trellises &amp; Arbors", w: 1500, h: 1500 },
+    { asin: "B089FKQDZ1", title: "Espoma Organic Rose-Tone 4-3-2 Fertilizer for All Types of Roses", w: 724, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0B9WFTG1H", title: "iDavosic.ly 5 Tier Metal Corner Plant Stand, Indoor Outdoor, Black", w: 778, h: 1456 },
+    { asin: "B0F4DBKJ5J", title: "Worth 20 Inch Tall Planters, Set of 2, Black, Indoor Outdoor", w: 1500, h: 1280 },
+  ],
+  idea3: [
+    { asin: "B0HB1YPV9N", title: "Perennial Species Mix, 1 Ounce Packet, 15,000 Flower Seeds", w: 1500, h: 745 },
+    { asin: "B0D2VVRBN9", title: "Live Aromatic Herb Assortment, Rosemary, Lavender, Mint, 6 Plants", w: 970, h: 478 },
+  ],
+  idea4: [
+    { asin: "B09QLX1KSS", title: "YKSY &amp; YKSY Cast Aluminum Patio Garden Park Bench with Floral Design", w: 1230, h: 1134 },
+    { asin: "B0GWMBD3MS", title: "Outdoor Bench Cushion Pad, 48 x 18 Inch, Navy Blue", w: 1389, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0CVD1MGCJ", title: "Ferry-Morse Wildflower Seeds Shaker Bag, Pollinator Mix", w: 875, h: 1500 },
+    { asin: "B0H92VK7VG", title: "Cosmos Seeds Wildflower Mixture, Bulk 1 Ounce Packet, 5,000+ Seeds", w: 1500, h: 743 },
+  ],
+  idea6: [
+    { asin: "B0GVDTB3KL", title: "WORTH 8-Pack Short Plastic Garden Fence, White Decorative Border", w: 1500, h: 1500 },
+    { asin: "B0FZSB6YJ9", title: "Endless Summer Bloomstruck Hydrangea Plant, Pink and Purple Blooms", w: 1500, h: 1469 },
+  ],
+  idea7: [
+    { asin: "B09783K1YC", title: "VINGLI 85 Inch Wooden Arbor Garden Arch, Wedding Arch", w: 586, h: 939 },
+    { asin: "B0D44C1D96", title: "Garden Obelisk Trellis for Climbing Plants, 6 ft, Rustproof Coated Metal", w: 1397, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0CGZ435FY", title: "Garden Stepping Stones, 10 Inch Round Cement Pavers, 2 Pack", w: 1500, h: 1500 },
+    { asin: "B00CADRRPQ", title: "Outsidepride Magic Carpet Creeping Thyme Seeds, 1,000 Seeds, Perennial", w: 1500, h: 1002 },
+  ],
+  idea9: [
+    { asin: "B08P2B7HTP", title: "Fairy Door for Tree Kit, 2 Glow Windows &amp; Lantern", w: 1500, h: 1481 },
+    { asin: "B09GF7WSWK", title: "JOIEDOMI Solar Hanging Lantern Lights, Waterproof, 2 Pack", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B07M5BQ4DN", title: "Perennial Farm Marketplace Hardy Rosemary, ARP Variety, Live Perennial", w: 1000, h: 1251 },
+    { asin: "B0HC79Y26R", title: "Rosemary Grow Kit, All-in-One Indoor Herb Garden Kit with Planter", w: 1500, h: 1409 },
+  ],
+  idea11: [
+    { asin: "B06Y42W7Y7", title: "Glitzhome Hanging Bird House for Outside, 9.7 Inch Tall", w: 400, h: 699 },
+    { asin: "B0B2PF4YBH", title: "Garutom Galvanized Watering Can for Outdoor and Indoor Plants", w: 1500, h: 1465 },
+  ],
+  idea12: [
+    { asin: "B0HG48TLFZ", title: "Mixed Color Crocus Bulbs for Planting, Hardy Perennial Spring Bulbs", w: 1254, h: 1249 },
+    { asin: "B0BT6ZC8MB", title: "Long Lasting Mix Daffodil Bulbs for Planting, Value Bag", w: 500, h: 500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "cottage-garden-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "cottage-garden-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function creditedPhoto(src, alt, w, h, name, url) {
+function creditedPhoto(src, alt, w, h, name, url, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "cottage-garden-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo by ${name} via <a href="${url}" target="_blank" rel="nofollow noopener">Unsplash</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -39,7 +126,7 @@ const ideas = [
       "Old-fashioned varieties are the move here &mdash; they tend to be hardier and less fussy than modern hybrid teas, and they bloom in that slightly looser, fuller shape that reads as cottage rather than formal.",
       "Train a climber over an arbor or along a fence and you get an entrance that feels like stepping through a doorway into somewhere else entirely. A single well-placed rose near a gate will get more compliments than almost anything else you plant.",
     ],
-    photo: creditedPhoto("roses.jpg", "Dense rose bushes in bloom with orange, yellow and pale pink flowers against a backdrop of evergreen trees", 684, 1024, "Danica Stradecke", "https://unsplash.com/photos/OlTjLyIqW58"),
+    photo: creditedPhoto("roses.jpg", "Dense rose bushes in bloom with orange, yellow and pale pink flowers against a backdrop of evergreen trees", 684, 1024, "Danica Stradecke", "https://unsplash.com/photos/OlTjLyIqW58", "idea1"),
   },
   {
     n: "02",
@@ -49,7 +136,7 @@ const ideas = [
       "Tall spires at the back, mid-height bloomers filling the middle, and trailing or low plants softening the front edge. That structure is what makes a bed look intentional instead of scattered.",
       "A mix of pots and plantings at different heights, like the layered greenery shown here, does the same job even in a tight courtyard or side yard &mdash; you don't need a sprawling border to get the effect.",
     ],
-    photo: creditedPhoto("layered-heights.jpg", "Courtyard garden filled with potted plants at varying heights, from tall palms and shrubs down to low ferns and ground plants", 683, 1024, "Roger Ce", "https://unsplash.com/@roger_ce77"),
+    photo: creditedPhoto("layered-heights.jpg", "Courtyard garden filled with potted plants at varying heights, from tall palms and shrubs down to low ferns and ground plants", 683, 1024, "Roger Ce", "https://unsplash.com/@roger_ce77", "idea2"),
   },
   {
     n: "03",
@@ -59,7 +146,7 @@ const ideas = [
       "Mix tall bloomers toward the back, roses and classic mid-height flowers through the center, and low groundcovers softening the front. The layering is what creates that lush, just-slightly-wild look.",
       "Plant closer together than feels natural at first. Properly spaced plants leave gaps that kill the romantic effect &mdash; crowding them in is actually what makes a border feel alive instead of sparse.",
     ],
-    photo: creditedPhoto("overflowing-borders.jpg", "Narrow stone garden path lined with dense overflowing greenery, flowering shrubs and trees leading to a wooden gate", 768, 1024, "Christina Boon", "https://unsplash.com/@christinaboon"),
+    photo: creditedPhoto("overflowing-borders.jpg", "Narrow stone garden path lined with dense overflowing greenery, flowering shrubs and trees leading to a wooden gate", 768, 1024, "Christina Boon", "https://unsplash.com/@christinaboon", "idea3"),
   },
   {
     n: "04",
@@ -69,7 +156,7 @@ const ideas = [
       "The best spots are corners surrounded by flowers rather than open lawn &mdash; a vintage iron bench half-enclosed by greenery, like the one shown here, feels like a genuine secret escape rather than patio furniture.",
       "Add a cushion and maybe a candle or two, but keep it a little imperfect. A seating nook that looks too styled stops feeling like a retreat and starts feeling like a showroom.",
     ],
-    photo: creditedPhoto("cozy-seating-nook.jpg", "Ornate white wrought iron garden bench tucked into dense greenery beside a small draped table with brass candlesticks", 1024, 684, "Aleks M", "https://unsplash.com/photos/r2wDLWueSW4"),
+    photo: creditedPhoto("cozy-seating-nook.jpg", "Ornate white wrought iron garden bench tucked into dense greenery beside a small draped table with brass candlesticks", 1024, 684, "Aleks M", "https://unsplash.com/photos/r2wDLWueSW4", "idea4"),
   },
   {
     n: "05",
@@ -79,7 +166,7 @@ const ideas = [
       "A mix of poppies, daisies, cornflowers, and cosmos swaying together captures exactly the kind of organized chaos a cottage garden is built on.",
       "Scatter the seeds, water occasionally, and let nature do the actual designing. Within a few weeks you'll have something that looks carefully planned and is genuinely buzzing with bees and butterflies the whole season.",
     ],
-    photo: creditedPhoto("wildflower-meadow.jpg", "Close-up of a wildflower meadow with tall purple loosestrife spikes and small pink and white blooms scattered through tall grass", 1024, 683, "Annie Spratt", "https://unsplash.com/@anniespratt"),
+    photo: creditedPhoto("wildflower-meadow.jpg", "Close-up of a wildflower meadow with tall purple loosestrife spikes and small pink and white blooms scattered through tall grass", 1024, 683, "Annie Spratt", "https://unsplash.com/@anniespratt", "idea5"),
   },
   {
     n: "06",
@@ -89,7 +176,7 @@ const ideas = [
       "Climbing roses are the classic choice, but anything that spills generously over the top works &mdash; the hydrangeas tumbling over the fence shown here make the same case for a slightly different plant.",
       "If keeping a fence painted white sounds like more upkeep than you want, a weathered wood version does the job just as well once vines and flowering shrubs start softening its edges.",
     ],
-    photo: creditedPhoto("picket-fence.jpg", "Dense blue hydrangea blooms cascading over a white picket fence", 768, 1024, "Kier in Sight Archives", "https://unsplash.com/@kierinsightarchives"),
+    photo: creditedPhoto("picket-fence.jpg", "Dense blue hydrangea blooms cascading over a white picket fence", 768, 1024, "Kier in Sight Archives", "https://unsplash.com/@kierinsightarchives", "idea6"),
   },
   {
     n: "07",
@@ -99,7 +186,7 @@ const ideas = [
       "A wooden structure, like the vine-draped pergola shown here, tends to feel softer and more cottage-appropriate than a sleek metal one, though either works once clematis, honeysuckle, or wisteria takes over.",
       "Walking under one in full bloom, with flowers hanging overhead like chandeliers, is the kind of moment that makes a garden feel genuinely magical rather than just nicely planted.",
     ],
-    photo: creditedPhoto("arbor.jpg", "White wooden garden arbor pergola covered in climbing green vines with a white bench underneath", 683, 1024, "Adam Przeniewski", "https://unsplash.com/@greemsky"),
+    photo: creditedPhoto("arbor.jpg", "White wooden garden arbor pergola covered in climbing green vines with a white bench underneath", 683, 1024, "Adam Przeniewski", "https://unsplash.com/@greemsky", "idea7"),
   },
   {
     n: "08",
@@ -109,7 +196,7 @@ const ideas = [
       "Pea gravel gives you that satisfying crunch underfoot, while stepping stones surrounded by thyme or moss lean dreamier. Either way, a path lets you actually walk through your flowers without trampling them.",
       "Curve it, even slightly. A straight line reads as a modern backyard; a curve reads as an escape &mdash; it's a small design choice that changes the entire feeling of the space.",
     ],
-    photo: creditedPhoto("gravel-pathway.jpg", "Light gravel garden pathway flanked by lush greenery and ferns leading toward a glass entryway", 731, 1024, "Aditya Citratama", "https://unsplash.com/@additif"),
+    photo: creditedPhoto("gravel-pathway.jpg", "Light gravel garden pathway flanked by lush greenery and ferns leading toward a glass entryway", 731, 1024, "Aditya Citratama", "https://unsplash.com/@additif", "idea8"),
   },
   {
     n: "09",
@@ -119,7 +206,7 @@ const ideas = [
       "This is honestly what separates a nice garden from a magical one. A single small, unexpected detail does more than any amount of careful planting.",
       "Keep it to one or two touches, like the tiny painted door tucked into tree bark shown here. Whimsy works because it's a surprise &mdash; overdo it and it stops feeling like a discovery.",
     ],
-    photo: creditedPhoto("touch-of-whimsy.jpg", "Tiny whimsical painted fairy door and wood-slice details tucked into the base of a tree trunk surrounded by ivy and fallen leaves", 1024, 683, "Phil Hearing", "https://unsplash.com/photos/Y239IG-ppOo"),
+    photo: creditedPhoto("touch-of-whimsy.jpg", "Tiny whimsical painted fairy door and wood-slice details tucked into the base of a tree trunk surrounded by ivy and fallen leaves", 1024, 683, "Phil Hearing", "https://unsplash.com/photos/Y239IG-ppOo", "idea9"),
   },
   {
     n: "10",
@@ -129,7 +216,7 @@ const ideas = [
       "A patch of lavender or rosemary, or even a small raised bed of salad greens, feels both true to the style and genuinely useful. Herbs also smell incredible and pull in pollinators without any extra effort.",
       "Edging a path with herbs is a particularly good trick &mdash; it looks intentional and means your garden smells amazing every time you brush past it.",
     ],
-    photo: creditedPhoto("herb-patch.jpg", "Brick cottage surrounded by dense green shrubs, climbing vines and a stone pathway leading toward the entrance", 1024, 768, "Tony Fitzpatrick", "https://unsplash.com/@peoplemattertv"),
+    photo: creditedPhoto("herb-patch.jpg", "Brick cottage surrounded by dense green shrubs, climbing vines and a stone pathway leading toward the entrance", 1024, 768, "Tony Fitzpatrick", "https://unsplash.com/@peoplemattertv", "idea10"),
   },
   {
     n: "11",
@@ -139,7 +226,7 @@ const ideas = [
       "A vintage watering can tucked into a border, a painted birdhouse hanging from a tree, weathered terracotta pots stacked by the fence, an old wheelbarrow repurposed as a planter &mdash; any of it works.",
       "The playful little camper-shaped birdhouse shown here is exactly the kind of detail that keeps a garden from feeling too designed. Find something you genuinely love at a flea market and just work it in &mdash; that's what makes the space feel like yours.",
     ],
-    photo: photo("garden-accessories.jpg", "Whimsical hand-painted blue camper-van-shaped birdhouse hanging from a tree branch surrounded by purple flowers", 1024, 683),
+    photo: photo("garden-accessories.jpg", "Whimsical hand-painted blue camper-van-shaped birdhouse hanging from a tree branch surrounded by purple flowers", 1024, 683, "idea11"),
   },
   {
     n: "12",
@@ -149,6 +236,7 @@ const ideas = [
       "Tulips, daffodils, and forget-me-nots carry spring; roses, foxgloves, and lavender take over for summer; asters, chrysanthemums, and ornamental grasses bring fall its own character. Evergreens and structural plants keep winter from feeling empty.",
       "Think of it less like a one-time planting plan and more like planning outfits for every season &mdash; different each time, same underlying charm running through all of it.",
     ],
+    productsKey: "idea12",
   },
 ];
 
@@ -157,24 +245,24 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>There's a particular kind of happiness that comes from walking past a cottage garden in full bloom &mdash; roses spilling over a fence, lavender swaying in the breeze, wildflowers acting like they own the place. A cottage garden doesn't just decorate a yard. It tells a story, and most of us secretly want our own outdoor space to feel like it belongs in one.</p>
 <p>People assume the look is effortless, but it actually takes a bit of planning. You can't just scatter plants and hope for the best &mdash; that path usually ends in something closer to a weed patch than a storybook scene. Here are twelve ideas that deliver the real thing.</p>
-${photo("hero.jpg", "Storybook Victorian cottage with a turret roof and wraparound porch surrounded by overflowing pink, purple and white garden flowers", 2560, 1920)}
+${photo("hero.jpg", "Storybook Victorian cottage with a turret roof and wraparound porch surrounded by overflowing pink, purple and white garden flowers", 2560, 1920, "hero")}
 
 <h2>What Actually Makes a Garden Read as Cottage Style</h2>
 <p>Cottage gardens trace back to English countryside homes, where flowers, herbs, and vegetables all grew together in a mix that was functional as much as it was charming. The goal was never perfection &mdash; it was abundance. The beauty comes from an unstructured, layered look: plants grow close together, colors mingle freely, and textures overlap in a way that feels natural rather than planned.</p>
 <p>That's exactly why a small yard or an imperfect eye for design isn't actually a barrier here. Cottage gardens thrive on a little chaos. They feel alive in a way manicured, symmetrical gardens rarely do &mdash; closer to a conversation with nature than a design statement.</p>
 ${creditedPhoto("intro-definition.jpg", "English stone cottage with wisteria climbing the facade, surrounded by a layered informal garden with a stone path leading to the front door", 1024, 683, "Darren Richardson", "https://unsplash.com/@campfire_guy")}
-${creditedPhoto("intro-alive.jpg", "Victorian cottage with a turret and wraparound porch framed by dense pink and purple flower borders in full summer bloom", 1024, 768, "Ian Kirkland", "https://unsplash.com/@jean_luc")}
+${creditedPhoto("intro-alive.jpg", "Victorian cottage with a turret and wraparound porch framed by dense pink and purple flower borders in full summer bloom", 1024, 768, "Ian Kirkland", "https://unsplash.com/@jean_luc", "whatIs")}
 
 <h2>Cottage Style vs. Every Other Garden Style</h2>
 <p>A cottage garden is overflowing, layered, informal, and a little unpredictable by design. Compare that to a formal garden &mdash; symmetrical, neat, geometric, usually with trimmed hedges &mdash; or a modern garden, which leans minimalist with clean lines and lots of hardscape. Cottage style wins if what you actually want is warmth over structure.</p>
 <p>The essentials worth keeping in mind as you plan: abundance over minimalism, a genuine mix of plant heights and types, natural winding pathways instead of straight lines, and at least a few vintage or rustic touches. None of it needs to be perfect. If you love something quirky &mdash; an old statue, a weathered bench &mdash; work it in. That's what makes the space unmistakably yours.</p>
-${creditedPhoto("intro-essentials.jpg", "Large weathered terracotta garden urn surrounded by orange marigolds and red zinnias along a gravel path", 1024, 683, "David Clode", "https://unsplash.com/@davidclode")}
+${creditedPhoto("intro-essentials.jpg", "Large weathered terracotta garden urn surrounded by orange marigolds and red zinnias along a gravel path", 1024, 683, "David Clode", "https://unsplash.com/@davidclode", "vs")}
 
 <h2>12 Cottage Garden Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

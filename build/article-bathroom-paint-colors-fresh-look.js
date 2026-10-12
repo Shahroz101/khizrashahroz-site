@@ -25,8 +25,8 @@ const PRODUCTS = {
     { asin: "B07BDTVN4W", title: "Glidden Interior Paint + Primer: White/Off White, One Coat, Eggshell, 1 Quart", w: 1500, h: 1470 },
   ],
   gray: [
-    { asin: "B07BK7WLXD", title: "Glidden Interior Paint + Primer: Gray/Stone's Throw, One Coat, Eggshell, 1 Gallon", w: 1500, h: 1473 },
     { asin: "B07BDTT3FB", title: "Glidden Interior Paint + Primer: Gray/Thin Ice, One Coat, Eggshell, 1-Quart", w: 1500, h: 1472 },
+    { asin: "B07BK778KZ", title: "Glidden Interior Paint + Primer: Gray/Elephant Gray, One Coat, Eggshell, 1-Gallon", w: 1500, h: 1473 },
   ],
   paleBlue: [
     { asin: "B07BDSG3QR", title: "Glidden Interior Paint + Primer: Blue/Blue Fjord, One Coat, Eggshell, 1-Gallon", w: 1500, h: 1473 },
@@ -46,7 +46,7 @@ const PRODUCTS = {
   ],
   charcoal: [
     { asin: "B0CPYGNG9J", title: "EVOLVE Signature Collection Luxury Interior Paint &amp; Primer, Flat Sheen, Slate Gray", w: 1470, h: 1500 },
-    { asin: "B07BK778KZ", title: "Glidden Interior Paint + Primer: Gray/Elephant Gray, One Coat, Eggshell, 1-Gallon", w: 1500, h: 1473 },
+    { asin: "B07BK7WLXD", title: "Glidden Interior Paint + Primer: Gray/Stone's Throw, One Coat, Eggshell, 1 Gallon", w: 1500, h: 1473 },
   ],
   mint: [
     { asin: "B0B5LZ69VG", title: "Glidden Total Interior Wall Paint &amp; Primer All-in-One, Mint Wafer/Green, Eggshell", w: 1500, h: 1471 },

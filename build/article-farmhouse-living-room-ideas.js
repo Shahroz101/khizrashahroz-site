@@ -13,16 +13,86 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B09NC1VGTW", title: "Rustic Farmhouse Decorative Lanterns, Set of 2", w: 1451, h: 1500 },
+    { asin: "B0DPWXFVV3", title: "Live Edge Natural Wood Coffee Table for Living Room", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0D93LQ8V6", title: "LANANAS Decorative Corduroy Throw Pillow Covers, 18 x 18 Inch, Neutral Brown", w: 1254, h: 1254 },
+    { asin: "B0CYT2LXHC", title: "Soalmost Washable Area Rug, 8 x 10, Large Soft Beige", w: 1500, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0CCVFSVSM", title: "Rustic Reclaimed Driftwood Coffee Table, Natural Wood", w: 820, h: 478 },
+    { asin: "B0HHPJ7YY2", title: "CAMILSON Easy Jute Natural Fiber Area Rug, 8 x 10, Indoor Outdoor", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0HFK2H26B", title: "GRUSIGN 141 Inch Oversized Boneless Cloud Couch Sectional", w: 1500, h: 1000 },
+    { asin: "B07KVV8RFF", title: "Easy-Going Stretch Couch Cover for Sofa, Washable, Large, Dark Gray", w: 1500, h: 696 },
+  ],
+  idea4: [
+    { asin: "B0C1MJR8J4", title: "Brosisincorp Real Wood Shiplap Peel and Stick Wall Panels, White, 10 Pcs", w: 1500, h: 1500 },
+    { asin: "B0026SUA1S", title: "Graham and Brown Superfresco Paintable Pre-Pasted Beadboard Wallpaper", w: 1500, h: 1013 },
+  ],
+  idea5: [
+    { asin: "B0DPVRJJB7", title: "20 Inch Lantern Pendant Light, Bubble Saucer, White Imitation Silk", w: 1500, h: 1500 },
+    { asin: "B07P16YZWT", title: "Licperron Industrial Black Wall Sconces, Antique Wall Light Fixtures", w: 1180, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B0H391HSVR", title: "23.6 Inch Distressed White Rustic Farmhouse Floating Wall Shelf", w: 1500, h: 1500 },
+    { asin: "B0FDWXQKCL", title: "AZSKY 36 Inch Floating Fireplace Mantel Shelf, Black, Handcrafted", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B09LGVGD49", title: "Decotalk Wood Grain Contact Paper, Peel and Stick, Brown", w: 1500, h: 1500 },
+    { asin: "B09VD27L7Y", title: "5 ft Faux Wood Beam Strap, Flexible Gap Hiding Strap, Metal Look", w: 1500, h: 1421 },
+  ],
+  idea8: [
+    { asin: "B0H6PZTHWF", title: "Garvee 8 x 10 Washable Easy Jute Area Rug, Scalloped, Tan", w: 1024, h: 1024 },
+    { asin: "B0CS6JGXBS", title: "RELEANY Washable Area Rug, 8 x 10 Ft, Brick Brown Green", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0CYZQYP1D", title: "SMARTSTANDARD 6.8 FT Heavy Duty Sliding Barn Door Hardware Kit, Black", w: 1455, h: 1500 },
+    { asin: "B0F7PNZZP3", title: "6 FT Heavy Duty Sliding Barn Door Hardware Kit with Floor Guide and Pull Handle", w: 1372, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0GKBDGQ3N", title: "Best Choice Products 2-Piece Round Nesting Baskets with Handles, Water Hyacinth", w: 1500, h: 1364 },
+    { asin: "B0D31SM7FS", title: "Natural Jute Rope Storage Basket Set of 4 for Shelves", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "farmhouse-living-room-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "farmhouse-living-room-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -34,7 +104,7 @@ const ideas = [
       "Shades of white, beige, taupe and soft gray build a laid-back, harmonious environment while still giving rustic wood tones, vintage decor and comfortable textiles a place to stand out.",
       "Layering a few varying neutral tones and materials across the room keeps the space feeling open and spacious rather than flat.",
     ],
-    photo: photo("neutral-palette.jpg", "Serene farmhouse living room with a neutral color palette", 683, 1024),
+    photo: photo("neutral-palette.jpg", "Serene farmhouse living room with a neutral color palette", 683, 1024, "idea1"),
   },
   {
     n: "02",
@@ -44,7 +114,7 @@ const ideas = [
       "Built from salvaged wood, these tables highlight rustic appeal through natural imperfections that a factory-made table simply can't replicate, while also giving old material a meaningful second life.",
       "Set on a woven jute rug or paired with cozy linen upholstery, a reclaimed wood table reinforces the farmhouse look without needing anything else in the room to match it.",
     ],
-    photo: photo("coffee-table-a.jpg", "Reclaimed wood coffee table in a warm farmhouse living room", 683, 1024) + photo("coffee-table-b.jpg", "Reclaimed wood coffee table styled with a woven rug and linen seating", 683, 1024),
+    photo: photo("coffee-table-a.jpg", "Reclaimed wood coffee table in a warm farmhouse living room", 683, 1024) + photo("coffee-table-b.jpg", "Reclaimed wood coffee table styled with a woven rug and linen seating", 683, 1024, "idea2"),
   },
   {
     n: "03",
@@ -54,7 +124,7 @@ const ideas = [
       "Soft textiles, deep seats and fluffy cushions invite actual use rather than just display, and neutral-toned linen or cotton slipcovers reinforce the farmhouse feel.",
       "Large throw pillows and a knit blanket layered on top add warmth and texture, making the sofa the room's natural gathering point.",
     ],
-    photo: photo("oversized-sofas.jpg", "Oversized cozy sofa in a farmhouse-style living room", 683, 1024),
+    photo: photo("oversized-sofas.jpg", "Oversized cozy sofa in a farmhouse-style living room", 683, 1024, "idea3"),
   },
   {
     n: "04",
@@ -64,7 +134,7 @@ const ideas = [
       "The simple lines and soft grooves create a lived-in effect that works equally well alongside modern or vintage furniture.",
       "Painted a clean white for a fresh, airy feel, or left in its natural wood tone for something more rustic, shiplap also makes an ideal backdrop for displaying art or a fireplace.",
     ],
-    photo: photo("shiplap-wall-a.jpg", "Shiplap accent wall in a cozy farmhouse living room", 683, 1024) + photo("shiplap-wall-b.jpg", "Shiplap accent wall as a backdrop for a fireplace", 683, 1024),
+    photo: photo("shiplap-wall-a.jpg", "Shiplap accent wall in a cozy farmhouse living room", 683, 1024) + photo("shiplap-wall-b.jpg", "Shiplap accent wall as a backdrop for a fireplace", 683, 1024, "idea4"),
   },
   {
     n: "05",
@@ -74,7 +144,7 @@ const ideas = [
       "Industrial-style sconces, lantern-style pendant lights and rustic chandeliers all bring a bit of history and craftsmanship into the room, while mason jar lights or wrought iron fixtures push the character even further.",
       "Paired with shiplap walls and exposed wood beams, warm, soft lighting pulls the whole room together into something that feels both considered and genuinely welcoming.",
     ],
-    photo: photo("vintage-lighting-a.jpg", "Vintage-inspired lighting fixture in a farmhouse living room", 683, 1024) + photo("vintage-lighting-b.jpg", "Vintage-inspired chandelier glowing warmly in a farmhouse living room", 683, 1024),
+    photo: photo("vintage-lighting-a.jpg", "Vintage-inspired lighting fixture in a farmhouse living room", 683, 1024) + photo("vintage-lighting-b.jpg", "Vintage-inspired chandelier glowing warmly in a farmhouse living room", 683, 1024, "idea5"),
   },
   {
     n: "06",
@@ -84,7 +154,7 @@ const ideas = [
       "The worn, imperfect surface gives the space a sense of history and character that a smooth, new mantel can't replicate, and it pairs well with brick, stone or shiplap as a backdrop.",
       "Arranged with seasonal decor, a few candles, or simple styled objects, a distressed mantel reinforces the farmhouse look without requiring much else in the room to work around it.",
     ],
-    photo: photo("distressed-mantel-a.jpg", "Distressed wood mantel in a cozy farmhouse living room", 683, 1024) + photo("distressed-mantel-b.jpg", "Distressed wood mantel styled with seasonal decor above a fireplace", 683, 1024),
+    photo: photo("distressed-mantel-a.jpg", "Distressed wood mantel in a cozy farmhouse living room", 683, 1024) + photo("distressed-mantel-b.jpg", "Distressed wood mantel styled with seasonal decor above a fireplace", 683, 1024, "idea6"),
   },
   {
     n: "07",
@@ -94,7 +164,7 @@ const ideas = [
       "The natural texture and imperfections in these beams, whether original to the house or added later, add genuine character overhead.",
       "Paired with shiplap walls, a neutral palette and vintage-inspired decor, exposed beams give a ceiling depth it would otherwise be missing entirely.",
     ],
-    photo: photo("wooden-beams.jpg", "Rustic wooden beams adding character to a farmhouse living room", 683, 1024),
+    photo: photo("wooden-beams.jpg", "Rustic wooden beams adding character to a farmhouse living room", 683, 1024, "idea7"),
   },
   {
     n: "08",
@@ -104,7 +174,7 @@ const ideas = [
       "Starting with a large natural-fiber rug like sisal or jute as a base, then layering a softer, patterned rug on top &mdash; a Persian or a plush wool piece &mdash; builds real visual richness underfoot.",
       "The combination feels both comfortable and considered, turning a plain floor into one of the room's quieter design features.",
     ],
-    photo: photo("layered-rugs.jpg", "Layered rugs with varied textures in a farmhouse living room", 683, 1024),
+    photo: photo("layered-rugs.jpg", "Layered rugs with varied textures in a farmhouse living room", 683, 1024, "idea8"),
   },
   {
     n: "09",
@@ -114,7 +184,7 @@ const ideas = [
       "A sliding design, exposed hardware and worn wood make them a stylish substitute for a conventional door, whether used decoratively or to actually separate the living room from an adjacent space.",
       "Reclaimed wood leans toward an authentic, well-worn look, while a smoother painted finish suits a more modern farmhouse direction.",
     ],
-    photo: photo("barn-doors.jpg", "Rustic barn door in a cozy farmhouse living room entrance", 683, 1024),
+    photo: photo("barn-doors.jpg", "Rustic barn door in a cozy farmhouse living room entrance", 683, 1024, "idea9"),
   },
   {
     n: "10",
@@ -124,7 +194,7 @@ const ideas = [
       "Made from wicker, seagrass or rattan, they add warmth without looking purely utilitarian &mdash; large baskets hold throw blankets and cushions, while smaller ones work well for books, magazines or everyday items.",
       "Placed beside the sofa, tucked under a console table, or set on open shelves, they give the room simple, good-looking storage that doesn't need to be hidden away.",
     ],
-    photo: photo("woven-baskets-a.jpg", "Woven storage baskets in a cozy farmhouse living room", 683, 1024) + photo("woven-baskets-b.jpg", "Woven baskets styled beside a sofa in a farmhouse living room", 683, 1024),
+    photo: photo("woven-baskets-a.jpg", "Woven storage baskets in a cozy farmhouse living room", 683, 1024) + photo("woven-baskets-b.jpg", "Woven baskets styled beside a sofa in a farmhouse living room", 683, 1024, "idea10"),
   },
 ];
 
@@ -139,7 +209,7 @@ function ideaBlock(idea) {
 const body = `
 <p>A farmhouse living room works because it balances two things that don't always go together easily: genuine comfort and real character. The best versions feel lived-in rather than staged, built from natural materials and a bit of history rather than anything too polished.</p>
 <p>None of the ideas below require a full renovation to bring into a room. Most work as individual additions &mdash; a rug, a set of baskets, a lighting swap &mdash; layered in one piece at a time.</p>
-${photo("hero.jpg", "Neutral farmhouse living room with shiplap walls and a reclaimed wood coffee table", 1152, 768)}
+${photo("hero.jpg", "Neutral farmhouse living room with shiplap walls and a reclaimed wood coffee table", 1152, 768, "hero")}
 
 <h2>10 Farmhouse Living Room Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

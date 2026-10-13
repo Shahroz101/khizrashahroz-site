@@ -13,16 +13,78 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0D5BMFK9S", title: "Lufeiya 47 Inch Reversible Computer Desk with File Drawers and Cabinet", w: 1500, h: 1298 },
+    { asin: "B00FS3VJAO", title: "BestOffice Ergonomic Office Chair, Mid-Back Swivel Desk Chair, Black", w: 1019, h: 1496 },
+  ],
+  idea1: [
+    { asin: "B08LDGT4TK", title: "QLLY Adjustable Metal Desk Legs, 27.5 Inch, Heavy Duty, Set of 4 with Leveling Feet", w: 713, h: 824 },
+    { asin: "B0CLRLGY4N", title: "PayLessHere 32 Inch Computer Desk, Brown, Sturdy Office Desk", w: 1363, h: 1483 },
+  ],
+  idea2: [
+    { asin: "B0DJ261M77", title: "Solid Wood Computer Desk with Drawers, Mid-Century Modern Writing Desk", w: 1500, h: 1500 },
+    { asin: "B08G46J76G", title: "IOTXY Solid Wood Writing Desk, Home Office Laptop Table, Walnut", w: 1000, h: 1000 },
+  ],
+  idea3: [
+    { asin: "B0DX6PLLFM", title: "ODK 53 Inch L-Shaped Gaming Desk with Shelves, LED Lights and Outlets, Black", w: 1500, h: 1316 },
+    { asin: "B0DK13ZHNJ", title: "Univivi No-Drill Under Desk Cable Management Tray, 36 Inch", w: 1500, h: 1447 },
+  ],
+  idea4: [
+    { asin: "B0FTTKMDQZ", title: "VEVOR Clear Acrylic Laptop Study Desk with Storage Shelf", w: 1252, h: 1500 },
+    { asin: "B0G48RMMJY", title: "HUANUO Glass Electric Standing Desk with Drawers, 35 x 20 Inch, Height Adjustable", w: 1365, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0FNRNWT88", title: "53.5 Inch Executive Desk with Power Outlet and Drawers, Wooden Home Office Desk", w: 1500, h: 1500 },
+    { asin: "B0BVR3RKLZ", title: "QZMDSM Portable Rolling Desk on Wheels, Height Adjustable", w: 1223, h: 1427 },
+  ],
+  idea6: [
+    { asin: "B0H2XFR5KP", title: "Furinno Simplistic 31 Inch Compact Computer Desk, Black Espresso", w: 1500, h: 1500 },
+    { asin: "B0C2DSS43Y", title: "Furinno Simplistic Easy Assembly Computer Desk with Keyboard Tray, White", w: 1248, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0GMPQVMF3", title: "LIVELYGLOW White Makeup Vanity Desk with Charging Station and 4 Drawers", w: 1500, h: 1500 },
+    { asin: "B0HB9V894P", title: "31.5 Inch Floating Vanity Desk, Wall Mounted with Drawer and Power Outlet", w: 1500, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B09W2HKC37", title: "Furmax 55 Inch Electric Height Adjustable Standing Desk, Black", w: 1500, h: 1458 },
+    { asin: "B0H5HTBTY6", title: "Grandder 63 x 32 Inch Electric Standing Desk, Curved Oak Desktop", w: 1500, h: 1424 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "home-office-desk-budget-tiers-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "home-office-desk-budget-tiers", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
@@ -30,55 +92,63 @@ const body = `
 <p>What actually matters is matching the right type to the right price point &mdash; a simple laminate top works just as hard as an expensive one in the right setup.</p>
 <p>These 8 desk types are organized by budget tier, from the cheapest functional option to a genuine long-term investment.</p>
 <p>None of them require guessing at a specific product that might not even be in stock by the time anyone goes looking.</p>
-${photo("hero.jpg", "Stylish home office desk setup suited for any budget", 1400, 934)}
+${photo("hero.jpg", "Stylish home office desk setup suited for any budget", 1400, 934, "hero")}
 
 <h2>1. The Basic Tabletop-and-Legs Desk</h2>
 <p>A simple flat surface paired with A-frame or straight legs is the cheapest real desk option available.</p>
 <p>This category covers the vast majority of entry-level desks sold at big-box and furniture retailers.</p>
 <p>It won't win design awards, but it's sturdy, easy to assemble, and genuinely functional for daily use.</p>
 <p>Worth it for a first home office, a dorm room, or anyone who isn't ready to commit to a bigger purchase yet.</p>
+${productGrid("idea1")}
 
 <h2>2. The Mid-Century Writing Desk</h2>
 <p>Tapered wood legs, a clean rectangular top and a warm wood tone define this style.</p>
 <p>This sits a step above the basic tabletop option in both material quality and visual presence.</p>
 <p>It suits a home office that's meant to be seen, not just used &mdash; a living room corner or a shared space.</p>
 <p>A reliable middle-ground choice that photographs well without a steep price jump.</p>
+${productGrid("idea2")}
 
 <h2>3. The Functional Gaming-Style Desk</h2>
 <p>Built for heavier daily use, this type often comes with cable management, a sturdier frame and sometimes a larger surface area.</p>
 <p>Despite the gaming branding this style usually carries, it works just as well for anyone running multiple monitors or heavier equipment for work.</p>
 <p>This category tends to offer more functional features per dollar than a purely style-focused desk at the same price.</p>
 <p>Worth considering for anyone whose desk needs to support real hardware, not just a laptop.</p>
+${productGrid("idea3")}
 
 <h2>4. The Acrylic or Glass Desk</h2>
 <p>A clear or glass-topped desk visually disappears in a room, which makes it a strong choice for a smaller space.</p>
 <p>This sits in a higher price bracket than wood or laminate options, since the material and construction cost more.</p>
 <p>It reads as a genuine style statement rather than a purely practical choice.</p>
 <p>Worth it for anyone prioritizing visual lightness in a tight room over maximum durability.</p>
+${productGrid("idea4")}
 
 <h2>5. The Storage-Focused Desk</h2>
 <p>Built-in drawers and shelving solve the storage problem a simple tabletop desk leaves unaddressed.</p>
 <p>This type costs more than a basic desk because of the added materials and construction, but it replaces a separate filing cabinet or storage unit.</p>
 <p>Worth it for anyone who needs real storage at the desk itself, not just surface space.</p>
 <p>A practical mid-to-upper budget choice that earns its price through function.</p>
+${productGrid("idea5")}
 
 <h2>6. The Compact Mini Desk</h2>
 <p>A smaller footprint version of the mid-century style, built specifically for tight corners and small rooms.</p>
 <p>This sacrifices some surface area in exchange for fitting into a space a full-size desk simply couldn't.</p>
 <p>Pricing typically runs close to the full-size version of the same style, since the smaller size doesn't necessarily mean a lower cost.</p>
 <p>Worth it for anyone working with a genuinely small room where every inch counts.</p>
+${productGrid("idea6")}
 
 <h2>7. The Versatile Vanity-Style Desk</h2>
 <p>A desk that doubles as a vanity &mdash; often with a mirror or a more decorative design &mdash; serves double duty in a smaller home.</p>
 <p>This suits a bedroom or a multi-use room where a dedicated office desk isn't practical.</p>
 <p>It tends to prioritize style and dual function over maximum work surface, which matters for anyone choosing this type.</p>
 <p>A smart choice for anyone who needs one piece of furniture to do two jobs.</p>
+${productGrid("idea7")}
 
 <h2>8. The Sit-to-Stand Investment Desk</h2>
 <p>An adjustable-height desk represents the biggest investment on this list, but it also delivers the most genuine daily functional value.</p>
 <p>The ability to switch between sitting and standing throughout the day is a real ergonomic benefit, not just a style choice.</p>
 <p>This is worth the higher price for anyone spending many hours a day at a desk.</p>
 <p>The one category on this list where the higher cost buys a meaningfully different daily experience, not just a nicer look.</p>
+${productGrid("idea8")}
 
 <h2>Choosing the Right Type for the Space</h2>
 <p>Start with how the desk actually gets used &mdash; heavy equipment, storage needs, or just a laptop and a notebook &mdash; before worrying about style.</p>

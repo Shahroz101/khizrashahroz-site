@@ -9,59 +9,146 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0FXR6C72G", title: "Fixwal Floating Shelves for Wall Decor, Black, Set of 2, 15.7 Inch", w: 1499, h: 1500 },
+    { asin: "B09WVZMKWG", title: "Guitar Wall Mount Hangers, 2 Pack, Black Walnut Wood", w: 1480, h: 1399 },
+  ],
+  why: [
+    { asin: "B004J2HR4M", title: "Quartet Cork Tiles Bulletin Board Panels, 12 x 12 Inch, 8 Pack", w: 1441, h: 1428 },
+    { asin: "B07X1NV55V", title: "litogo 33 FT Photo Clip String Lights, 60 Clear Clips, Battery Fairy Lights", w: 1500, h: 1500 },
+  ],
+  direction: [
+    { asin: "B0B4F5PXW1", title: "Command Assorted Picture Hanging Strips, 15 lb and 10 lb, 28 Pairs", w: 1500, h: 1500 },
+    { asin: "B0C9M64RPD", title: "640 Pcs Aesthetic Vinyl Stickers for Water Bottles and Laptops", w: 1200, h: 1196 },
+  ],
+  layer: [
+    { asin: "B0DJKW4MX4", title: "Vintage Botanical Wall Art Set of 6, Neutral Floral Canvas Wildflower Prints", w: 1500, h: 1419 },
+    { asin: "B07C7LYCC7", title: "Mkono Hanging Air Plant Holder, 16 Inch Wooden Wall Display Frame", w: 920, h: 1322 },
+  ],
+  idea1: [
+    { asin: "B0F97B55BD", title: "Camden Reed Arcadia Gallery Wall Frame Set, Matted, 8 Piece, Antique Gold", w: 1500, h: 827 },
+    { asin: "B0DDL28SGL", title: "TwoDays Vintage Eclectic Wall Art Prints, Colorful Maximalist Room Decor", w: 1500, h: 1488 },
+  ],
+  idea2: [
+    { asin: "B0HDYR51Q6", title: "Ombre Green Macrame Wall Hanging, Yarn Tapestry Boho Wall Art", w: 1500, h: 1500 },
+    { asin: "B00KIO7HG8", title: "Command Spring Clips, Quartz, 8 Pack, for Dorm Decor", w: 863, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0H72CM5S3", title: "litogo Battery Operated Fairy Lights with Timer, 10 FT, 4 Pack", w: 1500, h: 1051 },
+    { asin: "B09V366BDY", title: "KSIPZE 100 FT RGB LED Strip Lights, Music Sync, Smart App Control", w: 1403, h: 1499 },
+  ],
+  idea4: [
+    { asin: "B0BVYG3SVD", title: "decalmile Botanical Green Leaves Eucalyptus Wall Decals", w: 1500, h: 1500 },
+    { asin: "B0GGGQ2DS7", title: "Boho Mid-Century Abstract Geometric Arch and Leaf Wall Decals", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B098T3SKM8", title: "RICHER HOUSE 3-Set Small Floating Wall Shelves, No Drill, Black", w: 1145, h: 1281 },
+    { asin: "B0C8917GJ5", title: "Fixwal Small Floating Shelves, Dark Carbonized, Set of 4, 5 Inch", w: 1500, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B0C9LCFR1L", title: "KBKBART Vintage Wall Collage Kit, 70 Pcs, Aesthetic Pictures", w: 1500, h: 1424 },
+    { asin: "B0007LHJ88", title: "Scotch Removable Double Sided Tape, 1/2 Inch x 300 Inch", w: 1225, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0C9C9XLMC", title: "LUXFURNI Arched Hollywood Vanity Mirror with Lights, Gold", w: 1500, h: 1500 },
+    { asin: "B0CRH6R91H", title: "Eorbow Boho Round Wall Mirror with Wooden Beads, 12 Inch", w: 1385, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0CWNH73GG", title: "This Is My Happy Place Neon Sign for Wall Decor, LED", w: 1500, h: 1500 },
+    { asin: "B0B65GDFF4", title: "Hello Gorgeous Pink LED Neon Sign for Wall Decor", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0C695VG79", title: "upsimples 24 x 36 Inch Poster Frames, Black, 3 Pack", w: 1499, h: 1500 },
+    { asin: "B0751VFF2X", title: "Command Poster Strips, 64 Strips", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B08HVZ2LHS", title: "Keepo Pegboard Wall Organizer, Plastic Peg Board Panels", w: 1345, h: 1469 },
+    { asin: "B0B7BK7DPP", title: "INCLY 278 Pcs Pegboard Accessories Organizer Kit with Hooks and Bins", w: 1495, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "dorm-wall-decor-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "dorm-wall-decor-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function creditedPhoto(src, alt, w, h, name, url) {
+function creditedPhoto(src, alt, w, h, name, url, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "dorm-wall-decor-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo by ${name} via <a href="${url}" target="_blank" rel="nofollow noopener">Unsplash</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "A Gallery Wall That's Actually About You",
     paras: [
       "A gallery wall is still the fastest way to make a dorm wall look designed, even with zero design background.",
       "Treat it like a visual diary rather than a strict grid. Mix art prints, postcards, a motivational quote, whatever actually means something to you. Varying the frame sizes and finishes keeps it feeling curated instead of accidental, whether you arrange everything symmetrically or let it sprawl a little.",
       "Stick to three or four colors so it reads as one collection, include at least one genuinely personal object, and use removable strips for every single piece. Future you, packing up at the end of the semester, will be grateful.",
     ],
-    photo: creditedPhoto("gallery-wall.jpg", "Framed black-and-white art prints and photos arranged in a gallery wall on an exposed brick wall above a white iron bed frame", 768, 1024, "Daria Doroshenko", "https://unsplash.com/photos/8FzQn08ukM8"),
+    photo: creditedPhoto("gallery-wall.jpg", "Framed black-and-white art prints and photos arranged in a gallery wall on an exposed brick wall above a white iron bed frame", 768, 1024, "Daria Doroshenko", "https://unsplash.com/photos/8FzQn08ukM8", "idea1"),
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "A Tapestry That Covers the Boring Stuff Fast",
     paras: [
       "Nothing covers dull cinderblock faster than a tapestry, which is exactly why they've become dorm-room royalty.",
       "A boho pattern brings instant warmth; an abstract one leans more modern. Either way, a tapestry is light enough to hang with a couple of removable hooks &mdash; no drilling, no drama, no losing your deposit.",
       "Drape a string of fairy lights around the edges once it's up, like the one shown here, and it stops looking like a dorm wall and starts looking like somewhere you'd actually want to study.",
     ],
-    photo: photo("tapestry.png", "Patterned tapestry hung above a bed framed with warm fairy lights, layered with gray linen bedding and a woven side table", 574, 1024, "png"),
+    photo: photo("tapestry.png", "Patterned tapestry hung above a bed framed with warm fairy lights, layered with gray linen bedding and a woven side table", 574, 1024, "idea2"),
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Fairy Lights, Used With a Little Intention",
     paras: [
       "Harsh overhead dorm lighting has never done anyone's mood any favors. Fairy lights fix that in about ten minutes.",
       "Warm-toned strands make a room feel instantly cozier, while color-changing LEDs bring a more playful, late-night-study-session energy. My honest recommendation is to use both &mdash; fairy lights for ambient glow, an LED strip tucked behind the bed or desk for accent color.",
       "Hang a strand behind a sheer curtain for a soft, diffused glow, or run one along the ceiling line. A remote-controlled color setting is a small splurge that earns its keep fast.",
     ],
-    photo: creditedPhoto("fairy-lights.jpg", "Fairy lights draped around a person's arms in a dorm room with a dense photo and postcard collage covering the wall behind them", 1024, 683, "Sarah Brown", "https://unsplash.com/photos/q4wBEb5HVLg"),
+    photo: creditedPhoto("fairy-lights.jpg", "Fairy lights draped around a person's arms in a dorm room with a dense photo and postcard collage covering the wall behind them", 1024, 683, "Sarah Brown", "https://unsplash.com/photos/q4wBEb5HVLg", "idea3"),
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Peel-and-Stick Decals for Zero-Commitment Style",
     paras: [
       "If you want a design moment without a single hole in the wall, decals are the most underrated option on this list.",
@@ -71,16 +158,18 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Floating Shelves That Do Double Duty",
     paras: [
       "Mini wall shelves are the rare dorm item that's both decorative and genuinely useful, which is why I reach for them constantly.",
       "Use them to display a few framed prints, a small plant, or a candle &mdash; or treat them as overflow storage if your desk is already maxed out.",
       "Keep two or three shelves in a matching finish, vary the height of what's on them, and resist the urge to fill every inch. A shelf that's half-empty often looks more intentional than one that's packed.",
     ],
-    photo: creditedPhoto("wall-shelves.jpg", "Two black floating shelves mounted above a desk holding books, small plants and mugs, with a guitar hung on the wall beside them", 1600, 900, "Bradley Lembach", "https://unsplash.com/photos/76RsgeCiekY"),
+    photo: creditedPhoto("wall-shelves.jpg", "Two black floating shelves mounted above a desk holding books, small plants and mugs, with a guitar hung on the wall beside them", 1600, 900, "Bradley Lembach", "https://unsplash.com/photos/76RsgeCiekY", "idea5"),
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "A Photo Collage That Grows With the Semester",
     paras: [
       "Photo collage walls cycle back into style every single year for a reason &mdash; they're personal, cheap, and never really finished, which is part of the appeal.",
@@ -90,43 +179,47 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "A Mirror That Pulls Double Duty as Art",
     paras: [
       "Decorative mirrors are quietly one of the smartest moves for a small dorm room &mdash; they bounce light around and make the whole space read bigger.",
       "Pick an interesting shape &mdash; an arch, an irregular curve, a sunburst &mdash; and it stops being purely functional and starts counting as wall art too.",
       "A small round mirror above a desk creates an easy focal point. A larger one, like the arched version here, looks great simply propped against the wall. Either way, ringing it with lights turns it into the room's actual centerpiece.",
     ],
-    photo: photo("mirrors.png", "Large arched mirror ringed with warm bulb lights leaning against a bedroom wall beside framed photos, a hanging plant and a woven basket of blankets", 574, 1024, "png"),
+    photo: photo("mirrors.png", "Large arched mirror ringed with warm bulb lights leaning against a bedroom wall beside framed photos, a hanging plant and a woven basket of blankets", 574, 1024, "idea7"),
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "A Neon Sign for Instant Personality",
     paras: [
       "Few things say \"this is a dorm room\" as fast as a neon sign, and that's exactly the appeal &mdash; it's bold, a little cheeky, and entirely a mood.",
       "A single word in a minimalist script does plenty of work on its own. A full custom phrase in your favorite font goes a step further if you want something more specific to you.",
       "The one rule: balance it against everything else in the room. If your gallery wall is already busy, let the neon sign be the one quiet exception. If your walls are otherwise simple, let it be the whole statement.",
     ],
-    photo: photo("neon-sign.png", "Red neon sign reading DREAM glowing above a bed with white and mustard-toned pillows in a dimly lit bedroom", 574, 1024, "png"),
+    photo: photo("neon-sign.png", "Red neon sign reading DREAM glowing above a bed with white and mustard-toned pillows in a dimly lit bedroom", 574, 1024, "idea8"),
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "One Statement Poster, Properly Sized",
     paras: [
       "A single oversized print is the low-effort cousin of the gallery wall &mdash; one strong piece can anchor an entire room without you hanging a dozen smaller ones.",
       "Band posters, movie prints, a framed album cover &mdash; whatever genuinely reflects your taste works better here than something generic. The wall shown here leans into exactly that: a cluster of posters that clearly belongs to one specific person's taste, not a showroom.",
       "Keep the surrounding wall fairly neutral so the piece actually pops, use removable poster strips, and don't be afraid to swap it out whenever your taste shifts.",
     ],
-    photo: creditedPhoto("decals.jpg", "Bedroom doorway opening onto a wall covered in framed and printed band posters, paper lanterns and a small shelf of collectibles", 768, 1024, "Stella St. Clair", "https://unsplash.com/photos/7frDyOl1Rfg"),
+    photo: creditedPhoto("decals.jpg", "Bedroom doorway opening onto a wall covered in framed and printed band posters, paper lanterns and a small shelf of collectibles", 768, 1024, "Stella St. Clair", "https://unsplash.com/photos/7frDyOl1Rfg", "idea9"),
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "A Pegboard That Looks Good and Actually Works",
     paras: [
       "This is the one that gets filed under decor and organization at the same time. A pegboard holds everything from photos to keys to a tiny plant, and somehow looks styled while doing it.",
       "Think of it as a command center for your wall: clip notes, hang a small basket for odds and ends, display a postcard or two. It's function and personality sharing one spot, which is exactly what a dorm wall needs to be doing.",
       "Go with black, white, or a warmer metal tone depending on your room's palette, and don't skip the fairy lights along the bottom edge &mdash; it's a small touch that makes the whole setup look finished.",
     ],
-    photo: photo("pegboard.png", "White pegboard mounted above a desk holding a notepad, small hanging baskets with plants, keys and a clipboard, strung with fairy lights", 574, 1024, "png"),
+    photo: photo("pegboard.png", "White pegboard mounted above a desk holding a notepad, small hanging baskets with plants, keys and a clipboard, strung with fairy lights", 574, 1024, "idea10"),
   },
 ];
 
@@ -135,32 +228,32 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>A dorm room starts out as a blank box with fluorescent lighting and a whole lot of beige, and it is genuinely wild how fast that can change with the right wall decor. You don't need a design degree or a big budget &mdash; just a handful of ideas that actually hold up to a full semester of use.</p>
 <p>I've helped style more dorm rooms than I can count at this point, and the ones that work aren't necessarily the most expensive. They're the ones that feel specific to the person living there.</p>
 <p>Here are ten approaches worth trying, from the five-minute fixes to the ones worth a little more planning.</p>
-${creditedPhoto("hero.jpg", "Two black floating shelves styled with books, plants and small decor above a desk, with a pale blue electric guitar mounted on the wall nearby", 1600, 900, "Bradley Lembach", "https://unsplash.com/photos/76RsgeCiekY")}
+${creditedPhoto("hero.jpg", "Two black floating shelves styled with books, plants and small decor above a desk, with a pale blue electric guitar mounted on the wall nearby", 1600, 900, "Bradley Lembach", "https://unsplash.com/photos/76RsgeCiekY", "hero")}
 
 <h2>Why Your Walls Deserve the Effort</h2>
 <p>You spend a huge amount of time staring at these four walls &mdash; studying, scrolling, having late-night conversations about your major. There's no good reason they shouldn't look like you.</p>
 <p>Good wall decor does three specific things: it sets the tone of the room (cozy, artsy, minimal, whatever you're going for), it affects your actual mood through color and texture, and it shows off your personality even when your half of the room is five feet wide.</p>
 <p>The dorm itself is temporary. How the room makes you feel while you're in it isn't.</p>
-${creditedPhoto("intro.jpg", "Student sitting at a desk with a laptop and mug, backed by a large personal mood board wall with photos, a straw hat, a dreamcatcher and handwritten notes", 819, 1024, "Jovan Vasiljević", "https://unsplash.com/photos/PcoCm-F0K_o")}
+${creditedPhoto("intro.jpg", "Student sitting at a desk with a laptop and mug, backed by a large personal mood board wall with photos, a straw hat, a dreamcatcher and handwritten notes", 819, 1024, "Jovan Vasiljević", "https://unsplash.com/photos/PcoCm-F0K_o", "why")}
 
 <h2>Finding Your Direction Before You Buy Anything</h2>
 <p>Before the shopping cart fills up with fairy lights and posters, it helps to actually name your style first. Cozy and boho leans into woven hangings and soft palettes. Clean and minimal wants abstract line art and monochrome frames. Bold and maximalist &mdash; closer to the sticker-covered wall below &mdash; wants mixed prints, color, and zero hesitation about covering every inch.</p>
 <p>None of these are wrong. Knowing which one you're going for before you buy anything is what prevents the dreaded "my wall looks like a mood board that lost an argument with itself" situation.</p>
 <p>Two practical rules no matter which direction you pick: use removable everything (command strips, lightweight hooks), and let a little of the decor be functional &mdash; a pegboard or cork strip above a desk looks just as good as it works.</p>
-${creditedPhoto("how-to-choose.jpg", "Wall densely covered edge to edge with band stickers, patches and punk show flyers in a dorm room", 808, 1024, "Oleg Zarevennyi", "https://unsplash.com/photos/w21fxZv2sDo")}
+${creditedPhoto("how-to-choose.jpg", "Wall densely covered edge to edge with band stickers, patches and punk show flyers in a dorm room", 808, 1024, "Oleg Zarevennyi", "https://unsplash.com/photos/w21fxZv2sDo", "direction")}
 
 <h2>Layer It, Don't Pile It On</h2>
 <p>The difference between "aesthetic" and "chaotic" usually comes down to one thing: layering with intention instead of just adding more.</p>
 <p>Start with one anchor piece &mdash; a tapestry, a large print, a neon sign &mdash; and build outward from there. A workable formula is three layers: one large focal item as your base, medium pieces like framed art or a small shelf in the middle, and small accents like fairy lights or mini prints on top.</p>
 <p>And don't skip lighting. Warm string lights or a soft LED strip do roughly half the work of making a plain dorm wall feel considered rather than just filled in.</p>
-${creditedPhoto("layer-not-clutter.jpg", "Minimalist bedroom corner with two small framed prints, a hanging air plant and a straw hat styled above a narrow shelf beside a bed", 768, 1024, "Sincerely Media", "https://unsplash.com/photos/ET1MWsGIAYI")}
+${creditedPhoto("layer-not-clutter.jpg", "Minimalist bedroom corner with two small framed prints, a hanging air plant and a straw hat styled above a narrow shelf beside a bed", 768, 1024, "Sincerely Media", "https://unsplash.com/photos/ET1MWsGIAYI", "layer")}
 
 <h2>10 Dorm Wall Decor Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

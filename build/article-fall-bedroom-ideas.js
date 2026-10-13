@@ -8,31 +8,103 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0DNSV34LB", title: "Boho Fluffy Dried Pampas Grass Bundles, 60 Pcs, Natural", w: 1500, h: 1500 },
+    { asin: "B0FCFHBG26", title: "Vintage Chinoiserie Ceramic Flower Vase Set of 3", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0F4X26Q1V", title: "Rust Velvet Throw Pillow Covers, Set of 2, 18 x 18 Inch", w: 1500, h: 1500 },
+    { asin: "B0D69ZCT2L", title: "Mustard Yellow Velvet Throw Pillow Covers, Set of 2, 18 x 18 Inch", w: 1400, h: 1300 },
+  ],
+  idea2: [
+    { asin: "B0CC98RMFT", title: "Auelife Fall Scented Soy Candle Set, 4 Pack", w: 1485, h: 1500 },
+    { asin: "B0GX81YZ9F", title: "Gold Taper Candlestick Holders, 12 Pcs, Vintage Metal", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B09MV19TJK", title: "Flannel Sheet Set, Deep Pocket, Breathable All Season Bedding", w: 1500, h: 1500 },
+    { asin: "B0C2TZK93H", title: "Berkshire Blanket Classic VelvetLoft Solid Throw Blanket", w: 1500, h: 739 },
+  ],
+  idea4: [
+    { asin: "B0GKZJPK7Z", title: "Natural Eucalyptus Stems, 18 Pcs, 17 Inch, Fragrant", w: 1500, h: 1500 },
+    { asin: "B098LDB7CB", title: "Rustic Pine Cone Decorations, 40 Pcs, Large, Medium and Mini Sizes", w: 1165, h: 858 },
+  ],
+  idea5: [
+    { asin: "B0D9VDW7N8", title: "Ultra Soft Cozy Faux Fur Throw Blanket, Fuzzy Plush Bubble Blanket", w: 1500, h: 1500 },
+    { asin: "B0D9D1QNZZ", title: "Ultra Soft Fuzzy Faux Fur Throw Blanket, 50 x 60 Inch, Brown Tie Dye", w: 1500, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B0C2PJF8VF", title: "Artgar Mini White Pumpkins Harvest Set, 10 Pcs", w: 1500, h: 1500 },
+    { asin: "B0BJGXKD9H", title: "Kate Aspen Vintage Glass Tealight and Amber Votive Candle Holders, Set of 6", w: 1388, h: 1073 },
+  ],
+  idea7: [
+    { asin: "B0GVY88D85", title: "Sage Green Botanical Wall Art Set of 9, Watercolor Poster Prints", w: 1256, h: 1500 },
+    { asin: "B0CSXBP9V2", title: "uniro Vintage French Country Farmhouse Wall Art Prints, Canvas", w: 1500, h: 1157 },
+  ],
+  idea8: [
+    { asin: "B01MR4Y0CZ", title: "ASAKUKI 500 ml Essential Oil Diffuser, Aromatherapy Humidifier", w: 1500, h: 1394 },
+    { asin: "B09NQRHYC9", title: "Muse Apothecary Linen Ritual Soothing Linen Spray for Bedding", w: 522, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B07D3GK8JK", title: "7 Inch Himalayan Salt Lamp with Dimmer Cord, Natural Crystal Rock", w: 1201, h: 1479 },
+    { asin: "B0CFGK7HMG", title: "suddus 33 FT 100 LED Pothos Vine Fairy Lights, Battery Operated", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B08R3QZ99Q", title: "Hausattire Jute Braided Woven Round Area Rug, 4 Feet, Natural", w: 1500, h: 1367 },
+    { asin: "B0GCDJZQLT", title: "Kuden 2 x 3 Small Washable Vintage Area Rug, Non-Slip", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "fall-bedroom-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "fall-bedroom-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Let the Walls Go Moody",
     paras: [
       "If your bedroom still reads like a beach house in late October, it's time for a color shift.",
       "Fall colors are cozy colors by nature &mdash; burnt orange, rust, mustard, olive, and a deep moody navy if you want real drama. You don't have to repaint anything to get there, either.",
       "Swap your pillow covers, bring in a statement rug, hang a seasonal print, or just add a few warm-toned vases and lamps. Small changes, bold shift.",
     ],
-    photo: photo("color-palette.png", "Bedroom with a dark navy accent wall, rust and mustard velvet pillows, an olive quilt and an abstract art print in warm tones", 640, 1024),
+    photo: photo("color-palette.png", "Bedroom with a dark navy accent wall, rust and mustard velvet pillows, an olive quilt and an abstract art print in warm tones", 640, 1024, "idea1"),
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Lean Into Candles",
     paras: [
       "Candles might be the cheapest, easiest way to make a bedroom feel like autumn arrived overnight.",
@@ -42,16 +114,18 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Swap In Plush Bedding",
     paras: [
       "This is where the real transformation happens &mdash; your bed, obviously.",
       "Summer wants light and airy. Fall wants thick, plush, and genuinely snuggle-worthy. Flannel sheets, a chunky knit throw, a duvet in a deep jewel tone or warm neutral, and more pillows than is strictly necessary &mdash; that's the formula.",
       "There's a reason everyone's Pinterest board for this season is just bedding. A good velvet throw during a rainy October evening is genuinely one of life's better small pleasures.",
     ],
-    photo: photo("plush-bedding.png", "Bed with burgundy and mustard velvet pillows, a deep red duvet and a chunky cream knit throw folded across the foot", 640, 1024),
+    photo: photo("plush-bedding.png", "Bed with burgundy and mustard velvet pillows, a deep red duvet and a chunky cream knit throw folded across the foot", 640, 1024, "idea3"),
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Bring in a Few Natural Elements",
     paras: [
       "Fall is already nature's best aesthetic, so borrow from it directly instead of reaching for anything plastic.",
@@ -61,63 +135,69 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Add Texture Everywhere You Can",
     paras: [
       "Texture is the most underrated part of fall decorating. You can nail every color on this list and still end up with a room that feels flat without it.",
       "Woven baskets hold extra blankets while adding warmth. Linen curtains stay soft and airy but still feel seasonal. A faux fur throw is worth trying even if it sounds like a lot &mdash; it isn't. And yes, rugs layered on rugs is very much a real, very good idea.",
       "Texture is the detail that makes a space feel finished instead of just decorated.",
     ],
-    photo: photo("texture.png", "Bedroom corner with a macrame wall hanging, a faux fur striped throw on the bed, linen curtains and a woven jute storage basket", 640, 1024),
+    photo: photo("texture.png", "Bedroom corner with a macrame wall hanging, a faux fur striped throw on the bed, linen curtains and a woven jute storage basket", 640, 1024, "idea5"),
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Style the Nightstand for the Season",
     paras: [
       "Your nightstand is prime decor real estate that most people completely ignore.",
       "A small stack of books in warm cover tones, a mini pumpkin (real or faux, no judgment either way), a ceramic mug for bedtime tea, and a candle in an amber or gold holder cover the whole seasonal mood in one small surface.",
       "Keep it intentional rather than crowded, though. One styled vignette beats five random objects competing for attention.",
     ],
-    photo: photo("natural-elements.png", "Nightstand styled with a ceramic lamp, a small white pumpkin, a lit amber candle, an open book and a mug of tea beside a bed with mustard pillows", 640, 1024),
+    photo: photo("natural-elements.png", "Nightstand styled with a ceramic lamp, a small white pumpkin, a lit amber candle, an open book and a mug of tea beside a bed with mustard pillows", 640, 1024, "idea6"),
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Refresh the Wall Art",
     paras: [
       "If your walls are still showing off a 2021 beach trip, it might be time for an update.",
       "Fall art doesn't have to mean literal pumpkins or cursive signage. Look for pressed autumn leaves, moody florals, abstract shapes in warm tones, or a vintage-style landscape print instead &mdash; something with more range than seasonal cliché.",
       "Even swapping one or two pieces in an existing gallery wall for something warmer-toned shifts the whole room's mood more than you'd expect.",
     ],
-    photo: photo("wall-art.png", "Framed botanical leaf print, a floral still life and a landscape painting hung above a bed with cream and rust-colored bedding", 640, 1024),
+    photo: photo("wall-art.png", "Framed botanical leaf print, a floral still life and a landscape painting hung above a bed with cream and rust-colored bedding", 640, 1024, "idea7"),
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Make the Room Smell Like the Season",
     paras: [
       "Walk into a room and feel instantly calm? That's almost always the scent doing the work before you've even clocked it consciously.",
       "A diffuser with clove, cinnamon, or orange oil covers the basics. Wax warmers are a lower-risk alternative to an open flame, linen spray in apple or vanilla works directly on the bedding itself, and scented sachets tucked into a drawer handle the spaces you don't think about.",
       "Combine a good scent with warm lighting and genuinely plush bedding, and the whole room starts to feel like it belongs in a different season entirely.",
     ],
-    photo: photo("fall-scent.png", "Bed with rust and plaid pillows lit warmly by a floor lamp, with a lit candle and stacked books on the nightstand and a vintage lantern on the floor", 640, 1024),
+    photo: photo("fall-scent.png", "Bed with rust and plaid pillows lit warmly by a floor lamp, with a lit candle and stacked books on the nightstand and a vintage lantern on the floor", 640, 1024, "idea8"),
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Fix the Lighting Before Anything Else",
     paras: [
       "Overhead lighting is genuinely the enemy of cozy. Flip that ceiling light on and no amount of styling elsewhere is going to save the mood.",
       "Fairy lights draped along a headboard or window do a lot of quiet work. Table and floor lamps with warm-toned bulbs (skip anything labeled daylight) keep the glow soft rather than clinical, and a salt lamp adds a gentle amber tone that somehow always ends up looking cuter than expected.",
       "Good lighting is the difference between a room that glows and one that feels like it's under interrogation. It's worth getting right before anything else on this list.",
     ],
-    photo: photo("warm-lighting.png", "Dark bedroom lit warmly by string fairy lights along the headboard and a glowing salt lamp on a nightstand, with plaid and velvet pillows", 640, 1024),
+    photo: photo("warm-lighting.png", "Dark bedroom lit warmly by string fairy lights along the headboard and a glowing salt lamp on a nightstand, with plaid and velvet pillows", 640, 1024, "idea9"),
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Layer the Rugs",
     paras: [
       "This one sounds unnecessary until you try it, and then it becomes very hard to go back.",
       "Start with a large neutral base rug &mdash; jute, sisal, or wool all work. Layer a smaller statement rug on top, something with pattern like plaid, a vintage Persian style, or faux cowhide. Push it slightly off-center under the bed or in a reading corner for a relaxed, unstyled-looking finish.",
       "It's a small move that adds real depth underfoot, and it solves the cold-floor problem that comes standard with fall. Both wins matter.",
     ],
-    photo: photo("layered-rugs.png", "Round woven jute rug layered with a smaller patterned vintage-style rug beside a rust accent chair with a knit throw and a round side table", 640, 1024),
+    photo: photo("layered-rugs.png", "Round woven jute rug layered with a smaller patterned vintage-style rug beside a rust accent chair with a knit throw and a round side table", 640, 1024, "idea10"),
   },
 ];
 
@@ -126,14 +206,14 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>Fall has a way of sneaking back in every year, and with it comes the realization that your bedroom still looks ready for July. Swap the sweaty sheets for something plush, trade the breezy palette for something warmer, and suddenly the whole room catches up to the season.</p>
 <p>Fall decorating was never really about pumpkins on every surface. It's about layers, mood, and texture &mdash; the kind of room you genuinely don't want to climb out of on a cold morning.</p>
 <p>Here are ten ways to get there without turning your bedroom into a haunted hayride.</p>
-${photo("intro.png", "Warm fall bedroom with tan linen bedding, dried pampas grass and branches in ceramic vases, and a bowl of pinecones on a side table", 640, 1024)}
+${photo("intro.png", "Warm fall bedroom with tan linen bedding, dried pampas grass and branches in ceramic vases, and a bowl of pinecones on a side table", 640, 1024, "hero")}
 
 <h2>10 Ways to Make Your Bedroom Feel Like Fall</h2>
 ${ideas.map(ideaBlock).join("\n")}

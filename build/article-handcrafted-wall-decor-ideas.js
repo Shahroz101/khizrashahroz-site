@@ -8,21 +8,120 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0GWJTY3G2", title: "3D Textured Neutral Abstract Plant Wall Art with Vase and Shelf, 22 x 28 Inch", w: 1500, h: 1500 },
+    { asin: "B08937GNKR", title: "Heavy Duty Picture Hanging Kit, 125 Pcs, with Nails for Wood and Drywall", w: 867, h: 977 },
+  ],
+  idea1: [
+    { asin: "B0DNHXSFZG", title: "Macrame Cord, 4mm x 328 Yards, Soft Natural Cotton Rope", w: 1500, h: 1493 },
+    { asin: "B083W31VLV", title: "Easy Macrame Kit for Adults and Beginners, with Instruction Book", w: 954, h: 983 },
+  ],
+  idea2: [
+    { asin: "B09YLT8RBP", title: "Stretched Canvases for Painting, 14 Pack, Multi Size 4 x 4 to 11 x 14 Inch", w: 1500, h: 1456 },
+    { asin: "B09TWQD5ZL", title: "Artkey Acrylic Paint Set, 24 Colors, 2 Oz Each, Professional Kit", w: 1500, h: 1245 },
+  ],
+  idea3: [
+    { asin: "B0D46Z986K", title: "SOUJAP Natural Wood Slices, 100 Pcs, 3.5 to 4 Inch, Unfinished with Bark", w: 1500, h: 1462 },
+    { asin: "B08X1WWC5B", title: "Cedar Wood Wall Decor, 16 x 16 Inch, Natural Live Edge Wall Art", w: 1485, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0FNDPNCZF", title: "Lily and Oak Weaving Loom Kit for Adults and Kids", w: 1500, h: 1488 },
+    { asin: "B0GZYRD2NM", title: "LATETOMT Antique European Tapestry Wall Decor, 78.7 x 56 Inch", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0G3PDRNTS", title: "Pressed Flower Frames, 6 Pcs, Double Glass Hanging Picture Frames", w: 1476, h: 1500 },
+    { asin: "B0D2KRPBCW", title: "Wakhow Large Wooden Flower Press Kit, 11 x 11 Inch", w: 1446, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B0BXDFNQGT", title: "Round Plastic Embroidery Hoops, 6 Pcs, 3.6 to 10.7 Inch, with 16 Needles", w: 1394, h: 1500 },
+    { asin: "B0B762JW55", title: "Bradove Classic Embroidery Learning Kit for Adults and Kids", w: 1500, h: 1492 },
+  ],
+  idea7: [
+    { asin: "B089T7PX27", title: "Crayola Air Dry Clay, 5 Lb, Natural White Modeling Clay", w: 962, h: 1027 },
+    { asin: "B0BZ7GMCST", title: "Clay Sculpting Tools, 18 Pcs, Polymer Clay and Pottery Carving Kit", w: 1437, h: 1453 },
+  ],
+  idea8: [
+    { asin: "B09JVM1DBP", title: "Hapinest String Art Craft Kit for Kids and Teens, 3D", w: 1500, h: 1496 },
+    { asin: "B0D59N4WZY", title: "Small Nails Assortment Set, 1200 Pcs, 19 mm, Tri-Color for Wall Art and Framing", w: 1500, h: 1475 },
+  ],
+  idea9: [
+    { asin: "B0CJV14377", title: "Unfinished Natural Wooden Beads for Crafts, 950 Pcs, 7 Sizes, 6mm to 20mm", w: 1500, h: 1369 },
+    { asin: "B08D99M7JJ", title: "YaoYue Beaded Door String Curtain, 39 x 79 Inch, Brown", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B07R4HT35P", title: "TUPARKA Paper Quilling Kit, 19 Pcs, 45 Colors, 900 Strips", w: 1462, h: 1426 },
+    { asin: "B01DVYWU36", title: "IMISNO Paper Quilling Strips Set, 1040 Strips, 26 Colors", w: 765, h: 1000 },
+  ],
+  idea11: [
+    { asin: "B0GDXBYJC3", title: "Canvas Stretcher Bars, 4 Pack, 16 x 20 Inch, DIY Frame Kit with Wooden Frames", w: 1500, h: 1494 },
+    { asin: "B0DCVT23SV", title: "Feelyou Retro Hippie Flower Fabric, 1 Yard, Soft Flannel, Groovy 60s 70s Print", w: 1200, h: 1200 },
+  ],
+  idea12: [
+    { asin: "B08XYSWBBB", title: "majoywoo Natural Driftwood Pieces for Decor and Crafts", w: 1456, h: 1500 },
+    { asin: "B01DFK57HM", title: "Creative Co-Op Driftwood Sitting Mermaid Wall Decoration, Brown Finish", w: 1263, h: 759 },
+  ],
+  idea13: [
+    { asin: "B0CHB1M4G2", title: "KARASU Sashiko XL Wall Stencil, 23.6 x 39.4 Inch, Vintage Allover Pattern", w: 1500, h: 1500 },
+    { asin: "B09XQQR223", title: "FSWCCK Unfinished Wood Canvas Panels, 6 x 6 Inch, 10 Pack, for Crafts and Painting", w: 1275, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0G48L52GC", title: "Coastal Vintage Ceramic Wall Plates Set, 5 Pcs, Blue and White, Hanging", w: 1500, h: 1500 },
+    { asin: "B0DJXXN3YQ", title: "Invisible Plate Hangers for Wall, 14 Pcs, 4 to 12 Inch, Decorative", w: 1500, h: 1486 },
+  ],
+  idea15: [
+    { asin: "B091Y4X1HK", title: "Genuine Full Grain Leather Tooling Sheet, 1.8 to 2.0mm, Oil Tan", w: 1500, h: 1478 },
+    { asin: "B09VBWYHQY", title: "PLANTIONAL Leather Working Tools for Beginners, Professional Kit", w: 1193, h: 1500 },
+  ],
+  idea16: [
+    { asin: "B07T88F8B2", title: "Lanyani Glass Mosaic Tiles for Crafts, 1050 Pcs, Mixed Shapes, Stained Glass", w: 1500, h: 1426 },
+    { asin: "B08X45ZWXT", title: "Round Mirror Mosaic Tiles, 200 Pcs, 10mm, Real Glass Circles for DIY Crafts", w: 1000, h: 986 },
+  ],
+  idea17: [
+    { asin: "B0DZ2RTY3P", title: "Tongfushop 72 Colors Acrylic Paint Markers, Dual Tip Pens", w: 1463, h: 1500 },
+    { asin: "B0G4R25Q7S", title: "Smooth Natural River Rocks for Painting, 36 Pcs, 2.05 to 3.25 Inch", w: 1500, h: 1074 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "handcrafted-wall-decor-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "handcrafted-wall-decor-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Macramé Wall Hangings",
     paras: [
       "Macramé brings genuine texture and a relaxed, boho quality to a wall in a way few other crafts manage.",
@@ -32,6 +131,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Hand-Painted Canvas Art",
     paras: [
       "A hand-painted canvas is the most direct route to a wall piece that's genuinely one of a kind.",
@@ -41,6 +141,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Wood Slice Wall Art",
     paras: [
       "Wood slice art brings the outdoors directly onto a wall, using the material's own natural grain as the main visual interest.",
@@ -50,6 +151,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Woven Tapestries",
     paras: [
       "A woven tapestry adds color and real adaptability to a wall, whether it's a classic pattern or something made entirely from scratch on a loom.",
@@ -59,6 +161,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Pressed Flower Frames",
     paras: [
       "Pressed flower art captures something genuinely delicate and turns it into a lasting piece of decor.",
@@ -68,6 +171,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Hand-Embroidered Hoops",
     paras: [
       "Embroidery hoops display beautifully on a wall, whether the design inside is a detailed floral pattern or a short, meaningful phrase.",
@@ -77,6 +181,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Clay Wall Sculptures",
     paras: [
       "Air-dry clay, shaped by hand or with simple molds, builds genuine three-dimensional pieces that dry naturally without needing a kiln.",
@@ -86,6 +191,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "DIY String Art",
     paras: [
       "String art is approachable and still manages to look genuinely striking once it's finished.",
@@ -95,6 +201,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Beaded Wall Hangings",
     paras: [
       "Beads, sorted into either an intricate pattern or a loose fringe design, bring real shimmer and color onto a wall.",
@@ -104,6 +211,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Handmade Paper Quilling Art",
     paras: [
       "Paper quilling turns small rolled and cut strips of paper into surprisingly intricate designs.",
@@ -113,6 +221,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Fabric Wall Art",
     paras: [
       "Stretching a bold or patterned fabric over a simple wooden frame creates an instant, striking focal point for very little cost.",
@@ -122,6 +231,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Driftwood Wall Sculptures",
     paras: [
       "Driftwood, arranged into an abstract shape, a heart, or a star, brings a naturally beachy quality to a wall without any extra styling needed.",
@@ -131,6 +241,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Hand-Stenciled Wall Panels",
     paras: [
       "Stencils and paint make it simple to build a repeating pattern directly onto a canvas or wooden panel.",
@@ -140,6 +251,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Ceramic Wall Plates",
     paras: [
       "Hand-painted or textured ceramic plates double easily as wall art, repurposing something functional into something decorative.",
@@ -149,6 +261,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "DIY Leather Wall Art",
     paras: [
       "Leather, cut and shaped into leaves, feathers, or clean geometric forms, brings a modern, tactile quality to a wall that paper and fabric can't quite match.",
@@ -158,6 +271,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Handmade Mirror Mosaics",
     paras: [
       "Broken tiles, seashells, or small pieces of glass, arranged around a simple mirror, build a mosaic frame that's genuinely one of a kind.",
@@ -167,6 +281,7 @@ const ideas = [
   },
   {
     n: "17",
+    productsKey: "idea17",
     title: "Painted Rock Art",
     paras: [
       "Smooth stones, hand-painted with detailed patterns, turn into a genuinely original piece once arranged together.",
@@ -180,13 +295,14 @@ function ideaBlock(idea) {
   const paras = idea.paras.map((p) => `<p>${p}</p>`).join("\n      ");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
-    ${paras}`;
+    ${paras}
+    ${idea.productsKey ? productGrid(idea.productsKey) : ""}`;
 }
 
 const body = `
 <p>Store-bought wall art has its place, but a handmade piece brings something that mass production never quite replicates &mdash; genuine texture, an unrepeatable pattern, and a story behind how it actually got made.</p>
 <p>None of these require formal art training. What they require is a willingness to try, and a wall that's currently a little too empty for its own good.</p>
-${photo("hero.jpg", "Dramatic handcrafted sculptural wall art installation behind a desk", 1152, 768)}
+${photo("hero.jpg", "Dramatic handcrafted sculptural wall art installation behind a desk", 1152, 768, "hero")}
 
 <h2>17 Handcrafted Wall Decor Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

@@ -6,6 +6,147 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  intro: [
+    { asin: "B0D2DV2GJ1", title: "The Elf on the Shelf 24-Day Ultimate Daily Scene Kit", w: 1500, h: 1464 },
+    { asin: "B0BWRQBGW9", title: "Cute Elephant Toothbrush Holder for Kids and Toddlers", w: 1295, h: 1500 },
+  ],
+  whatIs: [
+    { asin: "B07TQV2NH6", title: "The Elf on the Shelf Box Set, Girl Scout Elf with Blue Eyes", w: 1150, h: 1445 },
+    { asin: "B07BJM7VKW", title: "Let It Snow Instant Fake Snow Powder, Made in USA", w: 1431, h: 1500 },
+  ],
+  howEasy: [
+    { asin: "B01D8F5FKS", title: "Post-it Super Sticky Notes, 3 x 3 Inch, Supernova Neons, 24 Pads", w: 1500, h: 1353 },
+    { asin: "B0FKKKQQX7", title: "The Elf on the Shelf Polar Props Official Elf Ideas Fun and Games Kit", w: 1500, h: 1436 },
+  ],
+  idea1: [
+    { asin: "B0D14X5485", title: "Cheerios Heart Healthy Breakfast Cereal, Giant Size, 20 oz, Pack of 4", w: 1500, h: 1500 },
+    { asin: "B07DPGGKFY", title: "Demitasse Espresso Spoons, 4.7 Inch Stainless Steel Coffee Spoons", w: 1191, h: 1037 },
+  ],
+  idea2: [
+    { asin: "B0DCNWXM2F", title: "Battery Operated Fairy Lights, 6 Pack, 7 ft 20 LED Twinkle Lights, 3 Modes", w: 1402, h: 1500 },
+    { asin: "B0FLJMMYWB", title: "Whaline 50 Pcs Christmas Elf Note Cards, 4 x 6 Inch, Blank Stationery", w: 1392, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0FKNL1V3Y", title: "Campfire Mini Marshmallows, Vanilla Flavored, Gluten Free, 1 lb Bag", w: 1500, h: 1500 },
+    { asin: "B0F4ZDNV58", title: "Aurora Festive Palm Pals Freeze Snowman Stuffed Animal", w: 1092, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B00LGLHUA0", title: "Pyrex Essentials 3-Piece Glass Mixing Bowls Set", w: 1420, h: 954 },
+    { asin: "B0BKTS5R34", title: "JOYIN 30 Pcs Mini Rubber Ducks with Mesh Carry Bag", w: 1500, h: 1447 },
+  ],
+  idea5: [
+    { asin: "B0CML8Z7DG", title: "Starburst Candy Canes, Green Apple, Lemon and Strawberry, 5.3 oz Box", w: 960, h: 1018 },
+    { asin: "B0BVW43CNF", title: "RAZ Imports Vintage Traditional Glass Christmas Ornaments, 2 Inch, Set of 12", w: 1358, h: 1316 },
+  ],
+  idea6: [
+    { asin: "B0H6JPWQMF", title: "Snowman Face Stickers, 72 Pcs, 2 Sizes, for Crafts", w: 1500, h: 1022 },
+    { asin: "B09NW7ZP8H", title: "Angel Soft Toilet Paper, 4 Mega Rolls, 2-Ply", w: 1500, h: 1199 },
+  ],
+  idea7: [
+    { asin: "B08H593JZG", title: "Eastern Wolf Sticky Notes, 3 x 3 Inch, 8 Bright Colors, 85 Sheets per Pad", w: 1071, h: 1426 },
+    { asin: "B0FK293FG9", title: "Sticky Notes, 3 x 3 Inch, 24 Pads, 12 Bright Colors, Self-Stick", w: 1500, h: 1472 },
+  ],
+  idea8: [
+    { asin: "B0DGRDSXKC", title: "The Elf on the Shelf Bundle: Official Elf Ideas Super Set and Santa's Activity Book", w: 1413, h: 1404 },
+    { asin: "B0F2GKTVK9", title: "Mini Stuffed Animals Bulk, 12 Pack, 5 Inch Plush Keychain Toys", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0BWL2K157", title: "Mega Pop Popcorn Portion Packs, 10.6 oz, 6 Count", w: 1500, h: 1500 },
+    { asin: "B0BCGVTH4Q", title: "The Complete Rankin/Bass Christmas Collection, DVD", w: 1074, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0B9Y2XHMZ", title: "Karenhi Large Christmas Candy Canes Tree Ornaments, 15.7 Inch, 4 Pcs", w: 1500, h: 1465 },
+    { asin: "B0BCK98LLG", title: "PerkHomy Natural Jute Twine, 600 Feet, for Crafts and Gift Wrapping", w: 643, h: 1090 },
+  ],
+  idea11: [
+    { asin: "B07GZ76ZZ6", title: "Folinstall Wide Mouth Glass Cookie Jar with Airtight Lid, 1/2 Gallon", w: 676, h: 987 },
+    { asin: "B0BQB4G693", title: "LUSHYUM Cookie Decorating Kit, 118 Pcs, with Storage Case", w: 1494, h: 1500 },
+  ],
+  idea12: [
+    { asin: "B09497R2CN", title: "Amazon Essentials Cotton Balls, 200 Count", w: 1038, h: 1500 },
+    { asin: "B0B7JBPG6K", title: "Toddmomy Mini Red Plastic Shopping Baskets, 10 Pcs, Dollhouse Accessories", w: 1276, h: 1266 },
+  ],
+  idea13: [
+    { asin: "B0CW73KY5Z", title: "Dr. Oetker Whipped Cream Stabilizer, 0.35 oz, Pack of 6", w: 1500, h: 1500 },
+    { asin: "B0CBTZWYV5", title: "Skylety Christmas Elf Tiny Elves Miniature Toys, 6 Pcs, Classic Style", w: 1497, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0FG865RW8", title: "Youdepot Silver Mirror Disco Balls, 4 Inch, 2 Pack, with Hanging Strings", w: 1482, h: 1500 },
+    { asin: "B0FJTL63J6", title: "Barbie Rainbow Sparkle Hair Doll and Accessories", w: 1500, h: 1497 },
+  ],
+  idea15: [
+    { asin: "B00000DMF5", title: "Hasbro Gaming Candy Land Kingdom of Sweet Adventures Board Game", w: 1500, h: 945 },
+    { asin: "B0084DS9EE", title: "Bedtime Originals Plush Monkey Ollie, Brown, 8 Inch", w: 381, h: 500 },
+  ],
+  idea16: [
+    { asin: "B09SX7V2YD", title: "SweetGourmet Toasted Coconut Marshmallow Cubes, Vanilla, 1 lb Bag", w: 1000, h: 920 },
+    { asin: "B0D182VR8N", title: "Amazon Fresh Mini Marshmallows, 10 oz, Pack of 3", w: 1500, h: 801 },
+  ],
+  idea17: [
+    { asin: "B0H5C2QJQ7", title: "woric Gingham Ribbon Set, 5 Rolls, 3/8 Inch, 50 Yards Total", w: 1429, h: 1500 },
+    { asin: "B0F8VD6BSR", title: "LaRibbons Christmas Ribbon for Crafts, 10 Rolls, 47 Yards Total", w: 1492, h: 1500 },
+  ],
+  idea18: [
+    { asin: "B07PBXRJ7G", title: "Melissa and Doug Dust Sweep Mop 6-Piece Wooden Cleaning Toy Set", w: 1495, h: 1500 },
+    { asin: "B08GWWWSWG", title: "Youngever 300 Pack Motivational Quote Cards, 100 Unique Designs", w: 1457, h: 1500 },
+  ],
+  idea19: [
+    { asin: "B07FSZ7NS5", title: "Mini Chalkboard Signs with Easel Stands, 20 Pack, Small Food Labels", w: 1435, h: 1500 },
+    { asin: "B0FRFSKR19", title: "TNDOOR Snowman Fake Snowball Fight Set, 28 Pcs, with Metal Buckets", w: 1500, h: 1449 },
+  ],
+  idea20: [
+    { asin: "B013RQPB5C", title: "Crayola Ultra Clean Washable Markers, 40 Count", w: 1500, h: 1362 },
+    { asin: "B01AW5V7PE", title: "Melissa and Doug 9 x 12 Inch Drawing Paper Pad, 3 Pack", w: 1500, h: 1053 },
+  ],
+  idea21: [
+    { asin: "B0FM3C288W", title: "Christmas Elf Doll Costume Set, 4 Pcs, with Hat, Collar, Gloves and Ears", w: 1500, h: 1478 },
+    { asin: "B0CN2V1S6Q", title: "Thin Felt Fabric Sheets, Assorted Colors, for Crafts and DIY", w: 1499, h: 1500 },
+  ],
+  idea22: [
+    { asin: "B0B49BS7GH", title: "Robo Alive Robo Fish Robotic Swimming Fish by ZURU, Teal and Orange", w: 1500, h: 1286 },
+    { asin: "B09YTXVY9S", title: "Cotton Twine String, 500 Feet, for Crafts and Gift Wrapping", w: 680, h: 1200 },
+  ],
+  idea23: [
+    { asin: "B0H7GM1ZK8", title: "Crtiin 1000 Sheet Christmas Paper Chain Garland Strips, 1.77 x 8.27 Inch", w: 1500, h: 1500 },
+    { asin: "B00MJ8JSFE", title: "Crayola Construction Paper Bulk Pack, 480 Sheets, 10 Assorted Colors", w: 1103, h: 788 },
+  ],
+  idea24: [
+    { asin: "B0H2HK4T6G", title: "TwoDays Santa and Mrs. Claus Resin Figurines, 5.9 Inch", w: 1036, h: 1500 },
+    { asin: "B0F27G2496", title: "Lovelfstory Santa's Letter Elf Doll Accessories Clothes", w: 894, h: 1302 },
+  ],
+  keep: [
+    { asin: "B0CSHNRB37", title: "The Elf on the Shelf Polar Props Super Daily Scene Kit", w: 1500, h: 1175 },
+    { asin: "B0DGN9C8QF", title: "Ziploc Gallon Freezer Bags, Stand-Up Bottom, 66 Count", w: 1397, h: 1500 },
+  ],
+  busy: [
+    { asin: "B0043P0IAK", title: "Scotch-Brite Zero Scratch Scrub Sponge, 6 Pack", w: 1256, h: 1000 },
+    { asin: "B000B6MKMO", title: "Hot Wheels 10-Pack Toy Cars, Styles May Vary", w: 1500, h: 977 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "elf-on-the-shelf-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 const PIN = {
   intro: { src: "hero", w: 612, h: 816, alt: "Elf on the Shelf sitting on a bathroom sink beside a toothpaste smiley face doodle", url: "https://www.pinterest.com/pin/good-morning-message-from-our-elf--5770305746404560/", label: "Good Morning Elf Surprise" },
   whatIsTradition: { src: "what-is-the-tradition", w: 852, h: 1136, alt: "Elf on the Shelf sitting on a kitchen counter beside a pile of flour and mini marshmallows made to look like snow", url: "https://www.pinterest.com/pin/elf-on-the-shelf-north-pole-breakfast--45669383712459656/", label: "Elf Brings Snow From the North Pole" },
@@ -39,17 +180,19 @@ const PIN = {
   conclusion: { src: "final-thoughts", w: 1108, h: 736, alt: "A TV screen showing a cracked glass effect around a tiny animated elf beside a lit Christmas tree in a cozy living room", url: "https://www.pinterest.com/pin/funny-elf-on-the-shelf-prank--914862419309553/", label: "Elf on the Shelf Prank Scene" },
 };
 
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "elf-on-the-shelf-ideas", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Elf Makes a Cereal Breakfast",
     photoKey: "idea1",
     paras: [
@@ -61,6 +204,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Elf Gets Tangled in Christmas Lights",
     photoKey: "idea2",
     paras: [
@@ -72,6 +216,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Elf Has a Marshmallow Snowball Fight",
     photoKey: "idea3",
     paras: [
@@ -83,6 +228,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Elf Takes a Bubble Bath",
     photoKey: "idea4",
     paras: [
@@ -96,6 +242,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Elf Hides in the Christmas Tree",
     photoKey: "idea5",
     paras: [
@@ -107,6 +254,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Elf Creates a Toilet Paper Snowman",
     photoKey: "idea6",
     paras: [
@@ -118,6 +266,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Elf Writes a Christmas Note",
     photoKey: "idea7",
     paras: [
@@ -130,6 +279,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Elf Reads a Book",
     photoKey: "idea8",
     paras: [
@@ -141,6 +291,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Elf Has a Movie Night",
     photoKey: "idea9",
     paras: [
@@ -152,6 +303,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Elf Makes a Candy Cane Swing",
     photoKey: "idea10",
     paras: [
@@ -162,6 +314,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Elf Gets Into the Cookie Jar",
     photoKey: "idea11",
     paras: [
@@ -173,6 +326,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Elf Makes a Paper Snow Angel",
     photoKey: "idea12",
     paras: [
@@ -184,6 +338,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Elf Hides in the Fridge",
     photoKey: "idea13",
     paras: [
@@ -196,6 +351,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Elf Has a Dance Party",
     photoKey: "idea14",
     paras: [
@@ -207,6 +363,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Elf Plays a Board Game",
     photoKey: "idea15",
     paras: [
@@ -218,6 +375,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Elf Builds a Marshmallow Tower",
     photoKey: "idea16",
     paras: [
@@ -228,6 +386,7 @@ const ideas = [
   },
   {
     n: "17",
+    productsKey: "idea17",
     title: "Elf Gets Wrapped Like a Present",
     photoKey: "idea17",
     paras: [
@@ -240,6 +399,7 @@ const ideas = [
   },
   {
     n: "18",
+    productsKey: "idea18",
     title: "Elf Makes a Kindness Challenge",
     photoKey: "idea18",
     paras: ["Have your elf model the challenge instead of just announcing it. Sit it in the sink with a tiny scrub brush, as if it already got started on today&rsquo;s kind deed.", "Prop a small card nearby with a simple challenge, like:", "&ldquo;Do one kind thing today.&rdquo;", "You can make the challenge age appropriate:"],
@@ -248,6 +408,7 @@ const ideas = [
   },
   {
     n: "19",
+    productsKey: "idea19",
     title: "Elf Has a Snowball Fight With Stuffed Animals",
     photoKey: "idea19",
     paras: [
@@ -259,6 +420,7 @@ const ideas = [
   },
   {
     n: "20",
+    productsKey: "idea20",
     title: "Elf Makes a Tiny Art Studio",
     photoKey: "idea20",
     paras: [
@@ -271,6 +433,7 @@ const ideas = [
   },
   {
     n: "21",
+    productsKey: "idea21",
     title: "Elf Has a Pizza Party",
     photoKey: "idea21",
     paras: [
@@ -281,6 +444,7 @@ const ideas = [
   },
   {
     n: "22",
+    productsKey: "idea22",
     title: "Elf Goes Fishing",
     photoKey: "idea22",
     paras: [
@@ -293,6 +457,7 @@ const ideas = [
   },
   {
     n: "23",
+    productsKey: "idea23",
     title: "Elf Creates a Christmas Countdown",
     photoKey: "idea23",
     paras: [
@@ -303,6 +468,7 @@ const ideas = [
   },
   {
     n: "24",
+    productsKey: "idea24",
     title: "Elf Leaves a Christmas Eve Goodbye",
     photoKey: "idea24",
     paras: [
@@ -322,7 +488,7 @@ function ideaBlock(idea) {
   const after = idea.after ? idea.after.map((p) => `<p>${p}</p>`).join("\n      ") : "";
   const quote = idea.quote ? `<blockquote><p>&ldquo;${idea.quote.text}&rdquo;</p><cite>&mdash; ${idea.quote.cite}</cite></blockquote>` : "";
   const afterQuote = idea.afterQuote ? idea.afterQuote.map((p) => `<p>${p}</p>`).join("\n      ") : "";
-  const photoHtml = idea.photoKey ? photo(idea.photoKey) : "";
+  const photoHtml = idea.photoKey ? photo(idea.photoKey, idea.productsKey) : (idea.productsKey ? productGrid(idea.productsKey) : "");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
@@ -338,7 +504,7 @@ const body = `
 <p>I love Elf on the Shelf because the best setups rarely need much. A few cereal pieces, some toilet paper, a favorite toy, or a handwritten note can turn an ordinary morning into something your kids talk about all day.</p>
 <p>And honestly, that matters. You do not need to spend an hour creating an elaborate elf scene at 11:47 p.m. when you already have tomorrow&rsquo;s lunch boxes waiting for you.</p>
 <p>The trick? Choose ideas that look magical but take very little effort.</p>
-${photo("intro")}
+${photo("intro", "intro")}
 
 <h2>What Is the Elf on the Shelf Tradition?</h2>
 <p>The Elf on the Shelf tradition centers around a Scout Elf who visits a family during the Christmas season. According to the official story, the elf watches what happens during the day, returns to the North Pole at night, and comes back to a different hiding spot the next morning.</p>
@@ -348,7 +514,7 @@ ${photo("intro")}
 <p>The basic tradition also gives parents plenty of flexibility. You can create simple hiding spots, funny scenes, little surprises, or activities depending on your family&rsquo;s personality.</p>
 <p>The official site describes elf ideas as photos or instructions that inspire new landing spots and playful setups.</p>
 <p>So don&rsquo;t feel like you need to recreate an elaborate Pinterest scene every single night. The elf works best when you make the tradition fit your family.</p>
-${photo("whatIsTradition")}
+${photo("whatIsTradition", "whatIs")}
 
 <h2>How Do You Make Elf on the Shelf Easy?</h2>
 <p>The biggest mistake parents make with Elf on the Shelf involves making every setup too complicated.</p>
@@ -371,7 +537,7 @@ ${photo("whatIsTradition")}
 <p>The official Elf on the Shelf site also groups ideas into quick five-minute ideas, crafts, printables, recipes, classroom activities, and other categories.</p>
 <p>That tells you something important: you don&rsquo;t need complicated props to keep the tradition interesting.</p>
 <p>Now let&rsquo;s get to the fun part.</p>
-${photo("howToMakeEasy")}
+${photo("howToMakeEasy", "howEasy")}
 
 <h2>24 Elf on the Shelf Ideas for Christmas</h2>
 ${ideas.map(ideaBlock).join("\n")}
@@ -395,7 +561,7 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>You can also prepare several scenes in advance. Put the materials into separate bags and label each bag with a date.</p>
 <p>That tiny bit of preparation can save your sanity later.</p>
 <p>The official Elf on the Shelf site encourages families to choose ideas that match their own family and offers categories ranging from quick setups to crafts and recipes.</p>
-${photo("keepFromExhausting")}
+${photo("keepFromExhausting", "keep")}
 
 <h2>Easy Elf on the Shelf Ideas for Busy Parents</h2>
 <p>If you only have five minutes, don&rsquo;t panic.</p>
@@ -413,7 +579,7 @@ ${photo("keepFromExhausting")}
 <p>Your child doesn&rsquo;t know how long you spent arranging the scene.</p>
 <p>They just know the elf moved.</p>
 <p>And that alone can create a pretty exciting morning.</p>
-${photo("busyParents5min")}
+${photo("busyParents5min", "busy")}
 
 <h2>A Few Elf on the Shelf Safety Tips</h2>
 <p>Fun comes first, but safety matters too.</p>

@@ -5,16 +5,98 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0FHQ3JQ9C", title: "Govee Smart Pendant Light, Three-Layer RGBIC Lighting for Kitchen Island", w: 1483, h: 1500 },
+    { asin: "B0HDVLYK7C", title: "Gold Single Crystal Pendant Light, Adjustable Height, Bulb Included", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0B5LZ69VG", title: "Glidden Total Interior Wall Paint and Primer, Mint Wafer Green, Eggshell", w: 1500, h: 1471 },
+    { asin: "B0G1XDS9XX", title: "Paint Roller Kit with Extension Pole, 13 Pcs, 9 Inch Rollers", w: 1500, h: 1481 },
+  ],
+  idea2: [
+    { asin: "B0CT2TKZTF", title: "Yaheetech 56.5 Inch Small 2 Seater Sofa with Gold-Tone Legs, Green", w: 1500, h: 802 },
+    { asin: "B0GCJR7GR2", title: "ROWHY 112 Inch Modular Sectional Cloud Couch with Movable Ottoman", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0CLP2CSJS", title: "Foindtower Linen Fringe Throw Pillow Covers, 20 x 20 Inch, Olive Green", w: 1500, h: 1500 },
+    { asin: "B0CNFZ8FWP", title: "EverGrace Chenille Knit Throw Blanket for Couch, 50 x 60 Inch, Sage Green", w: 1500, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0H3PYNWVH", title: "Artificial Fiddle Leaf Fig Tree, 4 Ft, with Black Pot", w: 671, h: 1500 },
+    { asin: "B0GKJ634WP", title: "Moss Pole Monstera Plant Support, 16 Inch, 4 Pack, Stackable up to 48 Inch", w: 1495, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0FFLHPSKB", title: "Vintage Floral Botanical Wall Art Prints, Antique Sketch Flower Canvas Decor", w: 1500, h: 1225 },
+    { asin: "B0FVRH9PV6", title: "Large Framed Green Abstract Wall Art Set of 2, 24 x 36 Inch, for Living Room", w: 1500, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B0DG5QZ5ZJ", title: "Furlide Rattan Accent Chair, Compact Low-Profile Bamboo Chair, Walnut", w: 1500, h: 1500 },
+    { asin: "B0HC9YQ74M", title: "YANPU Round Coffee Table, 2-Tier Wood with Storage Shelf", w: 1500, h: 1466 },
+  ],
+  idea7: [
+    { asin: "B0FJFL82HP", title: "GarveeHome Velvet Accent Club Chair, Upholstered Barrel Chair with Soft Padded Arms", w: 1200, h: 1500 },
+    { asin: "B0D7P5QLHK", title: "VINGLI Chenille Upholstered Accent Chair, 380 lb Capacity", w: 1339, h: 1206 },
+  ],
+  idea8: [
+    { asin: "B0C57FB518", title: "Emerald Green Velvet Curtains, 84 Inch Long, 80% Blackout, Luxury", w: 1500, h: 1500 },
+    { asin: "B0D7VQ53PJ", title: "Simplebrand Ava Sage Green Blackout Curtains, 63 Inch Length", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0DSB9GH9L", title: "Vintage Dark Green Area Rug, 5 x 7 Ft, Traditional Distressed Medallion", w: 1500, h: 1500 },
+    { asin: "B0GGGN5D7M", title: "Olive Green Area Rug, 5 x 7 Ft, Modern Washable Rug", w: 1500, h: 1499 },
+  ],
+  idea10: [
+    { asin: "B075X25RP5", title: "Rust-Oleum Painter's Touch Latex Brush-On Paint, Satin Hunt Club Green", w: 1193, h: 1500 },
+    { asin: "B089NYWHJ5", title: "ScotchBlue Original Multi-Surface Painters Tape, 0.94 Inch x 60 Yds, 3 Rolls", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0GBXFR6B7", title: "Green Ribbed Ceramic Vase for Flowers, Modern Textured, 10 Inch Tall", w: 550, h: 1467 },
+    { asin: "B0BYSFC5S4", title: "Rtteri Green Glass Candle Holders, 3 Pcs, Candlestick Set", w: 1500, h: 1500 },
+  ],
+  idea12: [
+    { asin: "B0B5LZXLWM", title: "Glidden Total Interior Wall Paint and Primer, Light Sage Green, Semi-Gloss", w: 1500, h: 1473 },
+    { asin: "B07YSXX7SB", title: "Pro Grade Paint Roller Kit with Paint Brushes, 4 Inch and 9 Inch Roller Covers", w: 948, h: 782 },
+  ],
+  idea13: [
+    { asin: "B0G6YV9K3Z", title: "VAKADO Olive Green Velvet Throw Pillow Covers, 18 x 18 Inch, Set of 2", w: 1200, h: 1200 },
+    { asin: "B0DBYRVKR8", title: "BEDELITE Mint Green Throw Blanket for Couch, 50 x 60 Inch, Soft", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "green-living-room-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "green-living-room-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -26,7 +108,7 @@ const ideas = [
       "Deep emerald or forest green reads instantly luxurious, soft sage or mint keeps things calm and airy, and olive brings warmth without overwhelming the room. The shade you pick really does set the whole mood.",
       "If painting all four walls feels like too much commitment, a single accent wall gets you most of the drama with a fraction of the risk &mdash; it's the easiest way to test the color before fully committing.",
     ],
-    photo: photo("green-walls.png", "Living room with deep forest green paneled walls, a cream curved armchair and green throw blanket beside a wood coffee table", 1024, 574),
+    photo: photo("green-walls.png", "Living room with deep forest green paneled walls, a cream curved armchair and green throw blanket beside a wood coffee table", 1024, 574, "idea1"),
   },
   {
     n: "02",
@@ -36,7 +118,7 @@ const ideas = [
       "A velvet emerald sofa brings instant glam, especially paired with brass accents. A deep olive sectional leans warm and slightly boho. A sage linen couch feels light and airy, perfect for a modern farmhouse look.",
       "The trick is keeping everything else neutral &mdash; beige rugs, white walls, natural wood accents &mdash; so the sofa gets all the attention it's earned. As a bonus, green upholstery hides minor stains far better than cream ever will.",
     ],
-    photo: photo("green-sofa.png", "Emerald green velvet sofa with white and gray patterned pillows between two cream accent chairs in a bright living room", 1024, 574),
+    photo: photo("green-sofa.png", "Emerald green velvet sofa with white and gray patterned pillows between two cream accent chairs in a bright living room", 1024, 574, "idea2"),
   },
   {
     n: "03",
@@ -46,7 +128,7 @@ const ideas = [
       "Mix different shades of green pillows on a neutral sofa for depth without flatness. A green patterned rug ties the room together. A chunky knitted green throw adds texture and genuine coziness.",
       "This is honestly the best way to test whether you actually like green in your space. Get bored of it, or decide it's not for you? Swap the pillows and throws back out without spending much at all.",
     ],
-    photo: photo("green-textiles.png", "Neutral gray sofa layered with olive and sage green velvet pillows and a chunky knit sage throw blanket, beside a round wood coffee table", 1024, 574),
+    photo: photo("green-textiles.png", "Neutral gray sofa layered with olive and sage green velvet pillows and a chunky knit sage throw blanket, beside a round wood coffee table", 1024, 574, "idea3"),
   },
   {
     n: "04",
@@ -56,7 +138,7 @@ const ideas = [
       "A fiddle leaf fig is bold and sculptural in a corner. A snake plant is low-maintenance with a modern edge. Pothos drapes beautifully from a shelf. A monstera adds a tropical, playful touch with its oversized leaves.",
       "Even without a green thumb, high-quality faux versions mixed in with real plants go completely unnoticed. Sometimes you just want the look without the watering guilt, and that's a completely fair trade.",
     ],
-    photo: photo("plants.png", "Sunlit living room corner with a fiddle leaf fig, snake plant and hanging pothos beside a beige sofa with patterned pillows", 1024, 574),
+    photo: photo("plants.png", "Sunlit living room corner with a fiddle leaf fig, snake plant and hanging pothos beside a beige sofa with patterned pillows", 1024, 574, "idea4"),
   },
   {
     n: "05",
@@ -66,7 +148,7 @@ const ideas = [
       "Botanical prints in sleek black or wood frames, abstract pieces with bold green brushstrokes, or photography featuring lush landscapes all work beautifully and can be swapped out any time your style shifts.",
       "There's something almost automatic about feeling calmer in a room with green artwork &mdash; it subconsciously connects back to nature. A pair of oversized botanical prints above a neutral sofa does more than most people expect.",
     ],
-    photo: photo("green-artwork.png", "Pair of framed botanical leaf prints above a cream sofa with a live-edge wood coffee table and potted plants on either side", 1024, 574),
+    photo: photo("green-artwork.png", "Pair of framed botanical leaf prints above a cream sofa with a live-edge wood coffee table and potted plants on either side", 1024, 574, "idea5"),
   },
   {
     n: "06",
@@ -76,7 +158,7 @@ const ideas = [
       "Olive walls with an oak coffee table feel earthy and cozy. Sage pillows with rattan chairs feel fresh and airy. An emerald velvet sofa with marble side tables feels luxe with a natural twist.",
       "Green already connects to nature on its own, so pairing it with raw, organic textures just makes intuitive sense &mdash; a green throw pillow genuinely reads richer sitting on a woven chair than a plain one.",
     ],
-    photo: photo("natural-materials.png", "Olive green living room with two rattan accent chairs, a live-edge wood coffee table and a jute rug beside a green built-in shelf", 1024, 574),
+    photo: photo("natural-materials.png", "Olive green living room with two rattan accent chairs, a live-edge wood coffee table and a jute rug beside a green built-in shelf", 1024, 574, "idea6"),
   },
   {
     n: "07",
@@ -86,7 +168,7 @@ const ideas = [
       "A pair of emerald velvet chairs adds instant symmetry and elegance. A sage armchair tucked into a corner feels cozy immediately. A green leather chair leans more masculine and sophisticated.",
       "Accent chairs are the perfect balance of functional and stylish, and they're considerably easier to swap out than a sofa whenever you're ready for a change.",
     ],
-    photo: photo("accent-chairs.png", "Two dark green velvet accent chairs flanking a cream sofa and wood coffee table in a neutral living room with framed art", 1024, 574),
+    photo: photo("accent-chairs.png", "Two dark green velvet accent chairs flanking a cream sofa and wood coffee table in a neutral living room with framed art", 1024, 574, "idea7"),
   },
   {
     n: "08",
@@ -96,7 +178,7 @@ const ideas = [
       "Light sage or mint curtains soften a room and filter natural light beautifully. Deep emerald velvet drapes read as genuinely luxurious, boutique-hotel territory. Patterned curtains with green accents tie in the rest of the room's palette.",
       "Curtains work best when they complement rather than compete with your walls and furniture. Against neutral walls, bold green curtains can be the star; against already-green walls, something lighter keeps the look layered instead of heavy.",
     ],
-    photo: photo("green-curtains.png", "Floor-to-ceiling emerald green curtains framing large windows in a bright living room with a cream sectional sofa and dark green throw pillows", 1024, 574),
+    photo: photo("green-curtains.png", "Floor-to-ceiling emerald green curtains framing large windows in a bright living room with a cream sectional sofa and dark green throw pillows", 1024, 574, "idea8"),
   },
   {
     n: "09",
@@ -106,7 +188,7 @@ const ideas = [
       "A dark green Persian-inspired rug leans classic and timeless. A light green geometric rug feels modern and minimalist. A distressed sage rug feels casual and cozy, great for a farmhouse or rustic room.",
       "If committing feels risky, start with a patterned rug that mixes green with cream, beige, or navy &mdash; it blends in naturally while still adding that fresh pop of color.",
     ],
-    photo: photo("green-rugs.png", "Gray sofa with olive and striped pillows on a green and cream diamond-patterned rug, beside a live-edge wood coffee table and woven pouf", 1024, 574),
+    photo: photo("green-rugs.png", "Gray sofa with olive and striped pillows on a green and cream diamond-patterned rug, beside a live-edge wood coffee table and woven pouf", 1024, 574, "idea9"),
   },
   {
     n: "10",
@@ -116,7 +198,7 @@ const ideas = [
       "Green trim around windows and doors adds subtle interest without taking over. A deep green fireplace mantel becomes a striking focal point on its own. Green built-in shelves layered with books instantly add personality.",
       "Small details like trim do a disproportionate amount of work &mdash; guests may not clock it immediately, but they'll leave thinking the room felt unusually put-together. That's the quiet power of a subtle green accent.",
     ],
-    photo: photo("accent-walls-trim.png", "Living room with dark green crown molding, door and fireplace mantel trim against white walls, with a round mirror above the mantel", 1024, 574),
+    photo: photo("accent-walls-trim.png", "Living room with dark green crown molding, door and fireplace mantel trim against white walls, with a round mirror above the mantel", 1024, 574, "idea10"),
   },
   {
     n: "11",
@@ -126,7 +208,7 @@ const ideas = [
       "Green ceramic vases on a coffee table, emerald glass candle holders for a subtle glow, a green throw folded neatly in a basket, even books with green spines stacked for color &mdash; it all adds up.",
       "Balance is the key here. Mix green accessories with metallics, neutrals, and natural textures so the room reads as curated rather than overdone, and swap them out freely whenever your mood shifts.",
     ],
-    photo: photo("decorative-accessories.png", "Living room with built-in shelves styled with green vases, books and ceramics, a neutral sofa with green pillows and a green throw in a woven basket", 1024, 574),
+    photo: photo("decorative-accessories.png", "Living room with built-in shelves styled with green vases, books and ceramics, a neutral sofa with green pillows and a green throw in a woven basket", 1024, 574, "idea11"),
   },
   {
     n: "12",
@@ -136,7 +218,7 @@ const ideas = [
       "A sage or olive ceiling feels cozy and enveloping in a way a white ceiling never does. Green tile paired with neutral walls gives an artsy, unexpected twist. A painted green wood floor adds instant charm to a cottage or farmhouse space.",
       "Everyone expects green walls. Almost nobody expects a green ceiling or floor &mdash; which is exactly why flipping the script here makes the room memorable instead of merely nice.",
     ],
-    photo: photo("ceiling-floors.png", "Cottage living room with a sage green beam ceiling and matching trim, pale yellow walls and a green diamond-patterned rug", 1024, 574),
+    photo: photo("ceiling-floors.png", "Cottage living room with a sage green beam ceiling and matching trim, pale yellow walls and a green diamond-patterned rug", 1024, 574, "idea12"),
   },
   {
     n: "13",
@@ -146,7 +228,7 @@ const ideas = [
       "Pair deep forest green furniture with sage walls for contrast. Add olive pillows on a mint-toned couch for subtle depth. Mix dark green artwork with lighter green curtains for balance.",
       "This technique is honestly what separates a flat, one-note room from one that feels genuinely designed &mdash; the same reason layering different textures of the same color in an outfit looks better than wearing one shade head to toe.",
     ],
-    photo: photo("mixed-shades.png", "Living room with deep olive green walls and built-in shelving, a sage green sectional sofa with mixed green pillows and a patterned rug", 1024, 574),
+    photo: photo("mixed-shades.png", "Living room with deep olive green walls and built-in shelving, a sage green sectional sofa with mixed green pillows and a patterned rug", 1024, 574, "idea13"),
   },
 ];
 
@@ -161,7 +243,7 @@ function ideaBlock(idea) {
 const body = `
 <p>Most of us have stared at our own living room at some point and thought, this feels kind of flat. The fastest way to fix that is almost always a touch of green &mdash; the one color that reads as fresh, calm, and stylish all at once, with enough range to fit nearly any room.</p>
 <p>Whether you want a bold, statement-making moment or just a whisper of natural calm, there's a shade of green that works. From rich emerald walls to soft sage accessories, it manages to feel both timeless and current without requiring a full renovation.</p>
-${photo("hero.jpg", "Bright living room with a cream sofa, two framed botanical leaf prints, hanging pendant lights and potted plants on either side", 1312, 736)}
+${photo("hero.jpg", "Bright living room with a cream sofa, two framed botanical leaf prints, hanging pendant lights and potted plants on either side", 1312, 736, "hero")}
 
 <h2>13 Green Living Room Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

@@ -7,16 +7,110 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0GS4RKHLR", title: "LED Desk Lamp for Home Office, Flexible Gooseneck, Eye-Caring Study Lamp", w: 1500, h: 1500 },
+    { asin: "B0FJ1XX2BM", title: "Scalloped Bulletin Board, 24 x 18 Inch, Decorative Felt Pin Board for Wall", w: 1500, h: 1231 },
+  ],
+  idea1: [
+    { asin: "B0GVQTWLL2", title: "PRAISUN 55 Inch Computer Desk, Spacious Desktop, White", w: 1500, h: 1195 },
+    { asin: "B0BRMX3SWH", title: "Monitor Memo Board Office Desk Accessories, 2 Pcs", w: 1500, h: 1455 },
+  ],
+  idea2: [
+    { asin: "B0GXV2F2VW", title: "Bestier 47 Inch Computer Desk with 2 Drawers, Modern Wood Writing Desk, Oak", w: 1500, h: 1500 },
+    { asin: "B0G13ZG8HK", title: "Ergonomic Armless Office Desk Chair, Mid-Century Modern, Black Faux Leather, Diamond Stitch", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0F99DDS3M", title: "Sweetcrispy Office Desk Chair, Small Vanity Chair with Lumbar Support", w: 1500, h: 1500 },
+    { asin: "B0FQP3NQDQ", title: "OLIXIS Criss Cross Chair with Wheels, Vanity Chair for Home Office", w: 1500, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0HKG1ZN21", title: "47 Inch Industrial Computer Desk with Drawers and Keyboard Tray", w: 1500, h: 1500 },
+    { asin: "B09W2Y51TC", title: "Amazon Basics 4-Shelf Steel Wire Storage Shelving Unit", w: 787, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0GTVBXMFF", title: "39 Inch Vintage Solid Wood Writing Desk with Drawers, White", w: 1500, h: 1500 },
+    { asin: "B0H9M77M55", title: "Pink Wood Base Table Lamp, Country Style Desk Lamp with Pleated Shade", w: 1150, h: 1150 },
+  ],
+  idea6: [
+    { asin: "B0CCSXQXYP", title: "VIVO Electric Standing Desk, 60 x 24 Inch, Real Bamboo Top", w: 1306, h: 1500 },
+    { asin: "B0GD5S2TKY", title: "Artificial Hanging Plants and Small Potted Faux Eucalyptus and Ivy, 5 Pack", w: 1499, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0D5CSVWG7", title: "Warmiehomy Velvet Vanity Chair, Comfy Ergonomic Home Office Desk Chair", w: 1500, h: 1500 },
+    { asin: "B0CKTSW6ZJ", title: "Globe Electric 32 Inch Multi-Joint Desk Lamp with Metal Clamp, Matte Brass", w: 835, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B09HJRGVHT", title: "SHW Mission 32 Inch Home Office Computer Desk, Walnut", w: 1361, h: 1500 },
+    { asin: "B0CN23QR9Z", title: "Glidden Total Interior Paint and Primer, Cavalry Navy Blue, Flat, 1 Gallon", w: 1500, h: 1473 },
+  ],
+  idea9: [
+    { asin: "B0DZXMXDXB", title: "Pastel Sticky Notes, 3 x 3 Inch, 8 Pads, Self-Adhesive, 80 Sheets Each", w: 1156, h: 1429 },
+    { asin: "B0DRYD9F8D", title: "Sweetcrispy Ergonomic Home Office Chair with Flip-Up Arms, Pink", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0FYPJJPHY", title: "Acrylic Office Desk, Modern Laptop Writing Table with Open Storage, Orange", w: 1325, h: 1500 },
+    { asin: "B0CQ51K48Z", title: "Eclectic Wall Art Prints, Unframed, Mid Century Retro Decor", w: 1476, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0HB9V894P", title: "31.5 Inch Floating Vanity Desk, Wall Mounted with Drawer and Power Outlet", w: 1500, h: 1500 },
+    { asin: "B0GGH8NL39", title: "31 Inch Wall Mounted Folding Desk with Storage and Monitor Mount", w: 1500, h: 1500 },
+  ],
+  idea12: [
+    { asin: "B0GSZDS86M", title: "Garvee 60 Inch Wooden Home Office Desk with File Drawers", w: 1500, h: 1500 },
+    { asin: "B0DDCVZYYH", title: "O'Bright Astrum LED Desk Lamp with Dual USB Charging Ports, All Metal", w: 806, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B07GPFDL1K", title: "Delamu Cord Hider, 157 Inch Wall Cord Cover Raceway Kit", w: 1500, h: 1489 },
+    { asin: "B0H8769Y5Q", title: "Acer 13-in-1 USB-C Laptop Docking Station, Triple Display, 2 HDMI and 1 DP", w: 1340, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0HFW9GZFQ", title: "Garvee Farmhouse Executive Desk with Drawers, Wood, Brown", w: 1500, h: 1500 },
+    { asin: "B08G46J76G", title: "IOTXY Solid Wood Writing Desk, Home Office Laptop Table, Walnut", w: 1000, h: 1000 },
+  ],
+  idea15: [
+    { asin: "B0F43TL3GT", title: "Huuger Folding Desk for Small Spaces, 31.5 Inch Foldable Computer Table", w: 1500, h: 1490 },
+    { asin: "B0C89STMFK", title: "JARLINK Over the Door Organizer, 5 Shelf, Grey, for Bedroom, Pantry and Bathroom", w: 1098, h: 1500 },
+  ],
+  idea16: [
+    { asin: "B0DZ23S19S", title: "GRUSIGN 71 Inch Tall 6-Tier Bookshelf, Large Open Display Bookcase", w: 1500, h: 1500 },
+    { asin: "B0D6GC9PKH", title: "YFO Home Office Desk Chair, Ergonomic Computer Chair with Lumbar Support and Rubber Casters", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "home-office-aesthetic-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "home-office-aesthetic-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -28,7 +122,7 @@ const ideas = [
       "A single neutral color family, clean surfaces, and furniture kept to the essentials make the whole room feel calm the moment it's entered.",
       "A calmer space tends to translate into a calmer mind &mdash; it's hard to focus in a room that's visually fighting for attention.",
     ],
-    photo: photo("minimalist-monochrome.png", "Minimalist monochrome home office with clean lines and neutral tones", 683, 1024),
+    photo: photo("minimalist-monochrome.png", "Minimalist monochrome home office with clean lines and neutral tones", 683, 1024, "idea1"),
   },
   {
     n: "02",
@@ -38,7 +132,7 @@ const ideas = [
       "This look makes an office feel like somewhere worth spending time, rather than just a spot to grind through emails.",
       "The warmth of the wood keeps it from reading as cold or sterile, even with such a restrained color palette throughout.",
     ],
-    photo: photo("scandinavian.png", "Scandinavian-style home office with blonde wood furniture and soft lighting", 683, 1024),
+    photo: photo("scandinavian.png", "Scandinavian-style home office with blonde wood furniture and soft lighting", 683, 1024, "idea2"),
   },
   {
     n: "03",
@@ -48,7 +142,7 @@ const ideas = [
       "Layered textures, warm colors, and a slightly wild mix of patterns and plants build a space that feels genuinely lived-in.",
       "It has a way of making the whole room feel like a curated mood board brought to life, rather than a standard desk setup.",
     ],
-    photo: photo("boho-chic.png", "Boho chic home office with layered textures, warm colors and plants", 683, 1024),
+    photo: photo("boho-chic.png", "Boho chic home office with layered textures, warm colors and plants", 683, 1024, "idea3"),
   },
   {
     n: "04",
@@ -58,7 +152,7 @@ const ideas = [
       "Exposed metal, concrete or brick textures, and simple black hardware all add real character without tipping into messy.",
       "The result reads as capable and a little edgy &mdash; a workspace that looks like serious work actually happens there.",
     ],
-    photo: photo("industrial-edge.png", "Industrial-style home office with exposed metal and concrete textures", 683, 1024),
+    photo: photo("industrial-edge.png", "Industrial-style home office with exposed metal and concrete textures", 683, 1024, "idea4"),
   },
   {
     n: "05",
@@ -68,7 +162,7 @@ const ideas = [
       "Vintage furniture, soft textiles, dried flowers and warm lamp lighting build a space that feels pulled straight from a quiet countryside novel.",
       "It makes the whole workday feel a little less like a grind and a little more like settling into a favorite reading corner.",
     ],
-    photo: photo("cottagecore.png", "Cozy cottagecore home office with vintage furniture and warm lighting", 683, 1024),
+    photo: photo("cottagecore.png", "Cozy cottagecore home office with vintage furniture and warm lighting", 683, 1024, "idea5"),
   },
   {
     n: "06",
@@ -78,7 +172,7 @@ const ideas = [
       "Natural materials, soft greenery, and an intentionally minimal layout create a genuinely peaceful space to sit down in.",
       "The calmer the room feels, the less intimidating even a long to-do list ends up reading on a Monday morning.",
     ],
-    photo: photo("nature-zen.png", "Nature-inspired zen home office with natural materials and greenery", 683, 1024),
+    photo: photo("nature-zen.png", "Nature-inspired zen home office with natural materials and greenery", 683, 1024, "idea6"),
   },
   {
     n: "07",
@@ -88,7 +182,7 @@ const ideas = [
       "A velvet chair, a gold-accented lamp, and a mirrored or lacquered surface or two all add real glamour without sacrificing function.",
       "There's no rule that a productive office has to look purely utilitarian &mdash; serious work and a little shine aren't mutually exclusive.",
     ],
-    photo: photo("modern-glam.png", "Modern glam home office with velvet furniture and metallic accents", 683, 1024),
+    photo: photo("modern-glam.png", "Modern glam home office with velvet furniture and metallic accents", 683, 1024, "idea7"),
   },
   {
     n: "08",
@@ -98,7 +192,7 @@ const ideas = [
       "Charcoal or deep navy walls, rich wood furniture, and warm, low lighting all contribute to a space that feels distinctly grown-up.",
       "It reads as a room where real decisions get made &mdash; composed and in control, even on days that don't actually feel that way.",
     ],
-    photo: photo("dark-moody.png", "Dark and moody home office with deep wall color and warm lighting", 683, 1024),
+    photo: photo("dark-moody.png", "Dark and moody home office with deep wall color and warm lighting", 683, 1024, "idea8"),
   },
   {
     n: "09",
@@ -108,7 +202,7 @@ const ideas = [
       "Blush pinks, pale blues, and soft lavender tones keep the whole room feeling airy, dreamy and easy to sit in for hours.",
       "It's the kind of space that feels like a quiet exhale the moment the door closes behind someone sitting down to work.",
     ],
-    photo: photo("soft-pastel.png", "Soft pastel home office in blush and lavender tones", 683, 1024),
+    photo: photo("soft-pastel.png", "Soft pastel home office in blush and lavender tones", 683, 1024, "idea9"),
   },
   {
     n: "10",
@@ -118,7 +212,7 @@ const ideas = [
       "Mismatched furniture, bold art, and a mix of colors and patterns that technically shouldn't work together &mdash; but somehow do &mdash; define this style.",
       "It's a space built to fuel creativity rather than contain it, treating most design rules as loose suggestions rather than requirements.",
     ],
-    photo: photo("artistic-eclectic.png", "Artistic eclectic home office with mismatched furniture and bold art", 683, 1024),
+    photo: photo("artistic-eclectic.png", "Artistic eclectic home office with mismatched furniture and bold art", 683, 1024, "idea10"),
   },
   {
     n: "11",
@@ -128,7 +222,7 @@ const ideas = [
       "Mounted directly to the wall, it fits a bedroom corner, a small apartment, or any awkward nook that wasn't doing much else before.",
       "It proves that form and function can coexist even in the tightest footprint &mdash; no massive office required to get a real setup.",
     ],
-    photo: photo("floating-desk.png", "Floating desk home office setup mounted on the wall in a small space", 683, 1024),
+    photo: photo("floating-desk.png", "Floating desk home office setup mounted on the wall in a small space", 683, 1024, "idea11"),
   },
   {
     n: "12",
@@ -138,7 +232,7 @@ const ideas = [
       "Rich wood furniture, polished brass details, and a refined, restrained color palette all contribute to that quiet sophistication.",
       "It reads as the office of someone running their own quiet operation &mdash; composed, deliberate, and never trying too hard to prove it.",
     ],
-    photo: photo("classic-elegance.png", "Classic elegant home office with rich wood furniture and brass details", 683, 1024),
+    photo: photo("classic-elegance.png", "Classic elegant home office with rich wood furniture and brass details", 683, 1024, "idea12"),
   },
   {
     n: "13",
@@ -148,7 +242,7 @@ const ideas = [
       "Clean cable management, integrated charging, and sleek, purpose-built furniture turn the workspace into a genuinely well-oiled machine.",
       "The right gear removes friction from the actual workday &mdash; the only real downside is that even the smartest setup can't fix a cranky printer.",
     ],
-    photo: photo("smart-tech.png", "Smart tech home office with sleek furniture and integrated technology", 683, 1024),
+    photo: photo("smart-tech.png", "Smart tech home office with sleek furniture and integrated technology", 683, 1024, "idea13"),
   },
   {
     n: "14",
@@ -158,7 +252,7 @@ const ideas = [
       "Reclaimed wood, warm neutral tones, and simple, sturdy furniture build a space that feels welcoming rather than purely functional.",
       "It turns the start of a workday into something closer to lighting a fire and settling in with a journal &mdash; just with spreadsheets instead.",
     ],
-    photo: photo("rustic-farmhouse.png", "Rustic farmhouse home office with reclaimed wood and warm neutral tones", 683, 1024),
+    photo: photo("rustic-farmhouse.png", "Rustic farmhouse home office with reclaimed wood and warm neutral tones", 683, 1024, "idea14"),
   },
   {
     n: "15",
@@ -168,7 +262,7 @@ const ideas = [
       "A compact desk that folds away, furniture that pulls double duty, and smart vertical storage all make a tiny footprint genuinely workable.",
       "A massive dedicated room was never actually required &mdash; smart, considered design does more for a small space than square footage ever could.",
     ],
-    photo: photo("compact-multifunctional.png", "Compact multi-functional home office with space-saving furniture", 683, 1024),
+    photo: photo("compact-multifunctional.png", "Compact multi-functional home office with space-saving furniture", 683, 1024, "idea15"),
   },
   {
     n: "16",
@@ -178,7 +272,7 @@ const ideas = [
       "Built-in or floor-to-ceiling shelving, a leather chair, and warm, focused lighting all build that sophisticated, book-lined atmosphere.",
       "It's a strong fit for anyone who genuinely loves their work but loves their book collection just a little bit more.",
     ],
-    photo: photo("luxurious-library.png", "Luxurious library-style home office with floor-to-ceiling bookshelves", 683, 1024),
+    photo: photo("luxurious-library.png", "Luxurious library-style home office with floor-to-ceiling bookshelves", 683, 1024, "idea16"),
   },
 ];
 
@@ -193,7 +287,7 @@ function ideaBlock(idea) {
 const body = `
 <p>Working from home sounds great right up until the "office" turns out to be a wobbly laptop balanced on the kitchen counter next to last night's dishes. Not exactly the productivity palace most people picture when they imagine remote work.</p>
 <p>The workspace matters more than it gets credit for &mdash; not the generic corporate-cubicle kind of matters, but a space that actually feels good to sit down in. Something that sparks focus instead of dread, whatever the rest of the day looks like.</p>
-${photo("hero.jpg", "Serene and sophisticated home office styled with intention", 1152, 768)}
+${photo("hero.jpg", "Serene and sophisticated home office styled with intention", 1152, 768, "hero")}
 
 <h2>16 Home Office Aesthetic Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

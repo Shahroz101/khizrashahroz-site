@@ -5,21 +5,116 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0HBPX8C9P", title: "Graduation Party Table Centerpiece Star Sprays, 6 Pack, Black and Gold", w: 1500, h: 1361 },
+    { asin: "B0GGLPZRFQ", title: "Black Gold Wooden 2026 Graduation Centerpieces, 5 Pcs, Class Party Decorations", w: 1454, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0DTQ6GKBK", title: "Breling Graduation Centerpiece Felt Cap Sticks, 12 Pcs, Black and Gold", w: 1500, h: 1454 },
+    { asin: "B0GMHFR17B", title: "SVKN Mini Graduation Caps with Tassel, 9 Pcs, for Mason Jars and Small Plush", w: 1493, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B000YQJQKU", title: "Jolee's Boutique Large Grad Cap and Scroll Sticker Embellishment", w: 997, h: 549 },
+    { asin: "B0DM2BSPFQ", title: "Blank Scroll Paper with Wood Rods, 3 Pcs, 7 x 15.75 Inch, Vintage Style", w: 1500, h: 1494 },
+  ],
+  idea3: [
+    { asin: "B0FH6NGVVF", title: "Picture Centerpieces for Table, 12 Pcs, Photo Display Boxes, Black", w: 1500, h: 1486 },
+    { asin: "B01FSBDZW0", title: "MCS Clear Plastic 6-Sided Photo Cube, 3.25 x 3.25 Inch, 4 Pack", w: 1309, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0GWCRN8RX", title: "Graduation Bouquet Accessory Set, 4 Pcs Grad Cap and Diploma Centerpiece Toppers", w: 1500, h: 1490 },
+    { asin: "B0G24BYJQ9", title: "Artificial Silk Flowers Bouquet, Realistic Faux Centerpiece", w: 1316, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0H5W3VYLF", title: "Decorative Faux Book Boxes, Set of 3, Linen, Sage", w: 1500, h: 1500 },
+    { asin: "B08DL2R1W7", title: "Burlap Lace Ribbons, 8 Rolls, Natural Jute Wedding Ribbon and Twine", w: 915, h: 995 },
+  ],
+  idea6: [
+    { asin: "B0DKC1XPQ3", title: "AWIZOM Wooden Charcuterie Board Numbers 2027, Pine Serving Trays", w: 1500, h: 1499 },
+    { asin: "B077W1B73L", title: "Pooqla Decorative LED Light Up Number Letters, White Marquee Sign", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B07SJSSSMN", title: "Mason Jar Solar Lights for Outside, 12 Pack, 30 LED Fairy Lights, Jars Not Included", w: 1500, h: 1378 },
+    { asin: "B0H6B8RK4F", title: "White Mason Jar Vases, 12 Pack, 16 Oz Glass Jars for Flowers", w: 1500, h: 1458 },
+  ],
+  idea8: [
+    { asin: "B0H1SGT7LS", title: "Memory Jar Sign for Graduation Party, Class of 2026, Wooden Table Decor", w: 1093, h: 1168 },
+    { asin: "B07P9QVT9K", title: "Graduation Wish Cards, 50 Pcs, Advice Cards for High School or College Grads", w: 1274, h: 992 },
+  ],
+  idea9: [
+    { asin: "B08X8JF6CB", title: "Crown Awards Gold Starburst Recognition Trophy, 5.25 Inch, Custom Engraving", w: 694, h: 1066 },
+    { asin: "B0BYND5X9G", title: "Mini Gold Trophies, 24 Pack, Plastic Award Cups for Kids", w: 1449, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0FSR2PV6M", title: "Decorative Ivory Pillar Candles Set, Rustic Unscented, Bulk", w: 1500, h: 1500 },
+    { asin: "B0CMM4T6XV", title: "YOROXRG Waterproof Outdoor Flameless Candles, Set of 24, with Remote and Timer", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0CHNHJHY3", title: "Red Pennant Flags on Sticks, 12 Pack, Small Mini Hand Held", w: 1500, h: 1245 },
+    { asin: "B0BGNY4TKB", title: "Black Pennant Flags on Sticks, 25 Pack, Small Mini Hand Held", w: 1500, h: 924 },
+  ],
+  idea12: [
+    { asin: "B08R91D777", title: "Annova Mini Antique Globe, 4 Inch, Swivels in All Directions", w: 1137, h: 1289 },
+    { asin: "B078YR3ZZK", title: "SLPR Small Vintage Suitcase Boxes, Set of 3, Travel Themed Party Decor", w: 1291, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B07YNN93X7", title: "newnewshow Acrylic Sign Holder, 8.5 x 11 Inch, 3 Pack, Vertical Double-Sided", w: 1269, h: 1407 },
+    { asin: "B0BDQ4MF6G", title: "Bercoor Blank Clear Arch Acrylic Signs with Wooden Stands, 5 x 7 Inch, 10 Pack", w: 1389, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0F83VXCW1", title: "Woozettn Plastic Candy Jars, 4 Pcs, 71 Oz Clear Hexagonal Containers with Lids", w: 1500, h: 1497 },
+    { asin: "B0DY7L39W9", title: "Graduation Candy Buffet Labels and Signs for Grad Party Decorations", w: 1500, h: 1455 },
+  ],
+  idea15: [
+    { asin: "B0BVLZ337J", title: "4x6 Picture Frames, Set of 6, with Real Glass", w: 1361, h: 1500 },
+    { asin: "B0DHKRQCM7", title: "SHECIPIN White Ceramic Succulent Pots, 2.5 Inch, with Bamboo Trays", w: 1500, h: 1273 },
+  ],
+  idea16: [
+    { asin: "B0FQJ66QSZ", title: "Black Balloon Weights, 12 Pieces, 0.36 Lb Each", w: 1467, h: 1500 },
+    { asin: "B01M4N8D0H", title: "Creative Balloons Cube Weight, 65 g, White, for Helium Balloon Bouquets", w: 1025, h: 1155 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "graduation-party-centerpiece-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "graduation-party-centerpiece-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Graduation Cap Centerpieces",
     paras: [
       "If graduation centerpieces had a hall of fame, this one would headline it. It works for every age, every theme, and every budget.",
@@ -29,6 +124,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Diploma Scroll Centerpieces",
     paras: [
       "For a centerpiece that actually means something rather than just looking good, a rolled diploma scroll delivers an emotional note most other options miss.",
@@ -38,6 +134,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Photo Cube Centerpieces",
     paras: [
       "Photo cubes earn real engagement at a party &mdash; guests end up walking table to table just to look at the pictures displayed on each one.",
@@ -47,6 +144,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Floral Centerpieces With a Graduation Twist",
     paras: [
       "Flowers almost always work, but a graduation centerpiece needs more than just a vase on its own to feel occasion-specific.",
@@ -56,6 +154,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Book Stack Centerpieces",
     paras: [
       "This one leans academic, and it's a strong fit for a graduate heading into law, medicine, teaching, or any other books-heavy field.",
@@ -65,6 +164,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Graduation Year Number Centerpieces",
     paras: [
       "For something bold, a large graduation year number anchors a table visually in a way nothing subtle can match.",
@@ -74,6 +174,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Mason Jar Centerpieces",
     paras: [
       "Mason jars keep showing up for a reason &mdash; they're versatile, affordable, and genuinely charming once styled with intention.",
@@ -83,6 +184,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Memory Jar Centerpieces",
     paras: [
       "Some centerpieces just sit there looking nice. A memory jar actually invites guests to participate, which makes it stand out immediately.",
@@ -92,6 +194,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Trophy-Inspired Centerpieces",
     paras: [
       "Graduation deserves a little applause, and a trophy-style centerpiece leans into celebrating the achievement without tipping into cheesy.",
@@ -101,6 +204,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Candle Centerpieces With Graduation Details",
     paras: [
       "Candles create instant atmosphere on their own, and a few graduation-specific details turn them into something clearly purposeful rather than generic decor.",
@@ -110,6 +214,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "School Pride Centerpieces",
     paras: [
       "School pride never really goes out of style, and a centerpiece built around school colors and logos feels relevant no matter the overall party theme.",
@@ -119,6 +224,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Travel-Themed Centerpieces",
     paras: [
       "For a graduate heading off to college or a new city, a travel-themed centerpiece captures that forward-looking excitement well.",
@@ -128,6 +234,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Minimal Acrylic Sign Centerpieces",
     paras: [
       "When louder decor risks overwhelming the space, a minimal acrylic sign keeps things clean, modern and genuinely stylish.",
@@ -137,6 +244,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Candy-Filled Centerpieces",
     paras: [
       "Decor that doubles as a snack earns automatic bonus points, and a candy-filled centerpiece solves two problems at once.",
@@ -146,6 +254,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Personalized Keepsake Centerpieces",
     paras: [
       "For a centerpiece that genuinely lives on past the party, a keepsake design is worth the extra planning it takes.",
@@ -155,6 +264,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Balloon Weight Centerpieces",
     paras: [
       "For something with real energy, a balloon weight centerpiece brings instant height, color and movement to a table.",
@@ -168,13 +278,14 @@ function ideaBlock(idea) {
   const paras = idea.paras.map((p) => `<p>${p}</p>`).join("\n      ");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
-    ${paras}`;
+    ${paras}
+    ${idea.productsKey ? productGrid(idea.productsKey) : ""}`;
 }
 
 const body = `
 <p>A graduation party can look thoughtfully styled or thrown together in the last five minutes, and the centerpieces are usually what decide which one it reads as. They anchor the tables, guide the color scheme, and quietly signal that the whole event was actually planned.</p>
 <p>A party with simple food and minimal decor can still feel polished if the centerpieces look intentional. An expensive party can fall flat if the tables look empty and awkward. The centerpiece is doing more work than it gets credit for.</p>
-${photo("hero.jpg", "Graduation party table styled with centerpieces celebrating the occasion", 1400, 930)}
+${photo("hero.jpg", "Graduation party table styled with centerpieces celebrating the occasion", 1400, 930, "hero")}
 
 <h2>Choosing Without Overthinking It</h2>
 <p>Starting with the graduate settles most of the decision &mdash; bold colors or neutral tones, something fun or more sentimental, proud of their school or their next chapter. A centerpiece that reflects the actual person feels more meaningful than a generic pick. Size matters too: oversized pieces block conversation, while tiny ones disappear entirely, so eye-catching without being in-your-face is the right target. And it's worth keeping cleanup in mind from the start &mdash; anything that becomes a chore the next morning isn't worth the trouble it saves on party day.</p>

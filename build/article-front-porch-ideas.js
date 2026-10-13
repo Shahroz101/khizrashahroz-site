@@ -9,24 +9,111 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B08TPGXW5B", title: "Nearly Natural 36 Inch Artificial Triple Ball Boxwood Topiary Tree with Pot", w: 440, h: 1500 },
+    { asin: "B0FW46PGZP", title: "35.5 Inch Weatherproof 2-Person Backless Wooden Outdoor Garden Bench", w: 1500, h: 1500 },
+  ],
+  why: [
+    { asin: "B09J4DV34G", title: "BesLowe Modern Black Exterior Outdoor Wall Lantern Light Fixtures", w: 1475, h: 1500 },
+    { asin: "B0GTLHGW45", title: "28 Inch Large Artificial Boxwood Wreath for Front Door with Sash", w: 1449, h: 1500 },
+  ],
+  rules: [
+    { asin: "B0CXS5NSSR", title: "Homydecor Buffalo Plaid Outdoor Rug, 28 x 43 Inch, Coffee and White", w: 1500, h: 1500 },
+    { asin: "B0866GZY9J", title: "All Smiles Outdoor Patio Throw Pillow Covers, 18 x 18 Inch, Set of 4, Garden Flowers", w: 1112, h: 994 },
+  ],
+  idea1: [
+    { asin: "B0GC3HVH88", title: "Seagrass Plant Baskets with Liner, 2 Pcs, Wicker Planters for 6 Inch Pots", w: 1500, h: 1470 },
+    { asin: "B0FYFKLKXN", title: "27.5 Inch Artificial Boxwood Topiary Ball Trees, Set of 2, UV Resistant", w: 1500, h: 1271 },
+  ],
+  idea2: [
+    { asin: "B07C31JVS2", title: "Rust-Oleum Simply Home Interior Wall Paint, Eggshell, Smoked Navy, 1 Gallon", w: 1147, h: 1200 },
+    { asin: "B00E8301X6", title: "Modern Masters Serene Front Door Paint, 1 Quart", w: 652, h: 1102 },
+  ],
+  idea3: [
+    { asin: "B08TWJG8R4", title: "C/G 3 Piece Cast Aluminum Anti-Rust Bistro Set for Porch and Patio", w: 1277, h: 894 },
+    { asin: "B0BBPKT28J", title: "Best Choice Products 2-Person Wicker Outdoor Garden Bench with Cushion", w: 1500, h: 1324 },
+  ],
+  idea4: [
+    { asin: "B09234GQXV", title: "Bamworld Wood Plant Stand Rack for Indoor and Outdoor Plants", w: 1264, h: 1500 },
+    { asin: "B0BKZK44DD", title: "Metal Hanging Planter Baskets with Coco Liner, 12 Inch, 4 Pack", w: 1500, h: 1483 },
+  ],
+  idea5: [
+    { asin: "B09JWBQ2PQ", title: "SAND MINE Waterproof Outdoor Rug, 4 x 6 Ft, Plastic Straw Area Rug", w: 1500, h: 1500 },
+    { asin: "B0GPWH3JJB", title: "MontVoo Outdoor Rug, 4 x 6 Ft, Polypropylene Patio Rug", w: 1500, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B00EGPQEB4", title: "DESIGNERS FOUNTAIN Preston 8 Inch Outdoor Wall Light, Black", w: 1219, h: 1500 },
+    { asin: "B0CQXP923Q", title: "Tenmiro 200 FT Outdoor String Lights, Ultra Long LED Patio Lights, Shatterproof", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0DLJZWNG9", title: "BesLowe Modern Black Outdoor Hanging Pendant Lantern Light for Porch", w: 597, h: 1500 },
+    { asin: "B0GTRD8JKV", title: "Farmhouse Outdoor Hanging Pendant Lantern Light Fixture", w: 1153, h: 1254 },
+  ],
+  idea8: [
+    { asin: "B0DQ1G2D3P", title: "Damei Folding Camping Chairs for Beach, Lawn and Yard, 2 Pack", w: 1480, h: 1490 },
+    { asin: "B0C986BHT5", title: "RooTrimmer Multi Size Blue Plant Pots with Saucers and Drain Holes", w: 1052, h: 1069 },
+  ],
+  idea9: [
+    { asin: "B0D3HFKF93", title: "35.5 Inch Weatherproof Backless Carbonized Outdoor Garden Wood Bench", w: 1500, h: 1500 },
+    { asin: "B01HMWRNUS", title: "Flash Furniture Lila Modern Rattan Indoor Outdoor Stackable Bistro Chairs", w: 1500, h: 1228 },
+  ],
+  idea10: [
+    { asin: "B0D5QFPX33", title: "Devoko 80 Gallon Waterproof Lockable Deck Box Storage Bench", w: 1500, h: 1168 },
+    { asin: "B09N3QWBLK", title: "Homode Wall Mounted Wood Coat Rack with Shelf and 5 Metal Hooks", w: 1450, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0932PHLKV", title: "5 Inch Stainless Steel Floating House Numbers, Modern Metal, Number 6", w: 1423, h: 1500 },
+    { asin: "B000M85000", title: "HY-KO AK-300 Wood House Number Plaque, 6 x 17 Inch, Brown", w: 947, h: 347 },
+  ],
+  idea12: [
+    { asin: "B0B5T2HXDT", title: "Worown Natural Grapevine Wreaths, 10 Inch, 6 Pcs, for DIY Crafts", w: 1192, h: 1199 },
+    { asin: "B09X9H6Y1T", title: "Land Guard Galvanized Oval Raised Garden Bed Kit, 2 Pcs, Large Metal Planter", w: 873, h: 698 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "front-porch-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "front-porch-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "front-porch-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -38,7 +125,7 @@ const ideas = [
       "Go vertical here &mdash; boxwoods, slim topiaries, snake plants, or tall ornamental grasses all work, and tall shapes draw the eye upward instead of letting it stop at ground level.",
       "The one rule: keep everything trimmed. An overgrown planter does the opposite of what you want on a small porch &mdash; it shrinks the space instead of framing it.",
     ],
-    photo: pinPhoto("frame-greenery.jpg", "Front door flanked by two matching woven wicker planters filled with lavender, a grapevine wreath and a wall lantern beside the door", 576, 1024, "https://www.pinterest.com/pin/68749293594/", "Greenery Framing a Small Front Porch"),
+    photo: pinPhoto("frame-greenery.jpg", "Front door flanked by two matching woven wicker planters filled with lavender, a grapevine wreath and a wall lantern beside the door", 576, 1024, "https://www.pinterest.com/pin/68749293594/", "Greenery Framing a Small Front Porch", "idea1"),
   },
   {
     n: "02",
@@ -48,7 +135,7 @@ const ideas = [
       "Deep navy, forest green, charcoal, warm terracotta &mdash; any of these reads as intentional rather than loud, especially against a neutral exterior.",
       "Here's the honest math: a can of paint versus five separate decor purchases trying to achieve the same effect. The door wins every time, and the soft teal-blue shown here next to warm wood crates and a few plants proves the point on its own.",
     ],
-    photo: pinPhoto("front-door-color.jpg", "Soft teal front door with a greenery wreath, flanked by wood crates holding potted flowers and blue mason jars on a checkerboard-tile porch floor", 1024, 1024, "https://www.pinterest.com/pin/344595809009388239/", "Front Door Color for a Small Porch"),
+    photo: pinPhoto("front-door-color.jpg", "Soft teal front door with a greenery wreath, flanked by wood crates holding potted flowers and blue mason jars on a checkerboard-tile porch floor", 1024, 1024, "https://www.pinterest.com/pin/344595809009388239/", "Front Door Color for a Small Porch", "idea2"),
   },
   {
     n: "03",
@@ -58,7 +145,7 @@ const ideas = [
       "The test is simple: can someone knock on the door and step back comfortably without bumping a chair? If yes, your scale is right.",
       "Dress it up with a couple of weathered pillows and a throw draped over the arm, like the warm wood bench shown here, and the whole setup reads as a real sitting spot instead of an afterthought.",
     ],
-    photo: pinPhoto("cozy-seating.jpg", "String lights strung under a covered porch ceiling above two wood slat chairs with cream pillows around a small round table and patterned rug", 512, 1024, "https://www.pinterest.com/pin/4362930884151330/", "Cozy Seating on a Small Front Porch"),
+    photo: pinPhoto("cozy-seating.jpg", "String lights strung under a covered porch ceiling above two wood slat chairs with cream pillows around a small round table and patterned rug", 512, 1024, "https://www.pinterest.com/pin/4362930884151330/", "Cozy Seating on a Small Front Porch", "idea3"),
   },
   {
     n: "04",
@@ -69,7 +156,7 @@ const ideas = [
       "Hanging baskets add a second, higher layer again &mdash; ferns and trailing blooms suspended from the porch roof fill the space overhead that most small porches leave completely empty.",
     ],
     photo: `${pinPhoto("vertical-planters.jpg", "Wooden tiered plant ladder shelf beside a front door holding ferns and potted plants on a covered porch", 683, 1024, "https://www.pinterest.com/pin/21181060743833678/", "Vertical Planters on a Small Front Porch")}
-    ${pinPhoto("hanging-baskets.jpg", "Hanging fern and flower baskets suspended from a porch roof above a bench and potted plants near a blue front door", 576, 1024, "https://www.pinterest.com/pin/936889528734681985/", "Hanging Baskets on a Small Front Porch")}`,
+    ${pinPhoto("hanging-baskets.jpg", "Hanging fern and flower baskets suspended from a porch roof above a bench and potted plants near a blue front door", 576, 1024, "https://www.pinterest.com/pin/936889528734681985/", "Hanging Baskets on a Small Front Porch", "idea4")}`,
   },
   {
     n: "05",
@@ -80,7 +167,7 @@ const ideas = [
       "Pattern earns its keep here too. A striped or geometric rug, layered over a plain jute one like the pairing shown here, hides dirt, adds personality, and can make a narrow porch read as noticeably wider.",
     ],
     photo: `${pinPhoto("rug-plain.jpg", "Neutral woven seagrass outdoor rug under two wicker-cushioned chairs with white boxwood planters on a covered porch", 768, 1024, "https://www.pinterest.com/pin/1196337405214229/", "Small Front Porch Rug Ideas")}
-    ${pinPhoto("rug-pattern.jpg", "Black and white striped outdoor rug layered over a jute doormat on a porch with potted greenery and a wood bench", 576, 1024, "https://www.pinterest.com/pin/335096028548318101/", "Patterned Rug on a Small Front Porch")}`,
+    ${pinPhoto("rug-pattern.jpg", "Black and white striped outdoor rug layered over a jute doormat on a porch with potted greenery and a wood bench", 576, 1024, "https://www.pinterest.com/pin/335096028548318101/", "Patterned Rug on a Small Front Porch", "idea5")}`,
   },
   {
     n: "06",
@@ -91,7 +178,7 @@ const ideas = [
       "Then layer in soft accent lighting on top &mdash; string lights along the porch ceiling, like the warm glow shown here, do more to make a small space feel cozy at night than almost any decor item could.",
     ],
     photo: `${pinPhoto("lighting-lantern.jpg", "Black metal wall lantern sconces flanking a wood front door at dusk, with small lanterns lighting the front steps", 681, 1024, "https://www.pinterest.com/pin/2251868558865873/", "Small Front Porch Lantern Fixtures")}
-    ${pinPhoto("lighting-sconce.jpg", "Warm string lights strung across a covered porch ceiling above wood chairs, a small table and potted plants in the evening", 683, 1024, "https://www.pinterest.com/pin/633387444242272/", "Small Front Porch Accent Lighting")}`,
+    ${pinPhoto("lighting-sconce.jpg", "Warm string lights strung across a covered porch ceiling above wood chairs, a small table and potted plants in the evening", 683, 1024, "https://www.pinterest.com/pin/633387444242272/", "Small Front Porch Accent Lighting", "idea6")}`,
   },
   {
     n: "07",
@@ -101,7 +188,7 @@ const ideas = [
       "A modern lantern pendant, a rustic farmhouse fixture, or a sleek black metal shade all do the job &mdash; the one shown here glows warm against a dark exterior and instantly reads as custom rather than builder-basic.",
       "Scale is the only thing to watch. Measure your porch width before you shop; a pendant that's too small looks timid, and one that's too large overwhelms the space it's meant to anchor.",
     ],
-    photo: pinPhoto("statement-fixture.jpg", "Black metal caged pendant light hanging from a dark porch ceiling beside a wood front door and white-trimmed window", 681, 1024, "https://www.pinterest.com/pin/737957088979385738/", "Statement Pendant on a Front Porch"),
+    photo: pinPhoto("statement-fixture.jpg", "Black metal caged pendant light hanging from a dark porch ceiling beside a wood front door and white-trimmed window", 681, 1024, "https://www.pinterest.com/pin/737957088979385738/", "Statement Pendant on a Front Porch", "idea7"),
   },
   {
     n: "08",
@@ -111,7 +198,7 @@ const ideas = [
       "The easiest version is what I'd call the two-and-two rule &mdash; two matching planters, two matching chairs, two matching sconces, positioned evenly on either side of the door.",
       "Keep the center walkway completely clear, like the mirrored chairs and potted topiaries shown here. The moment clutter creeps into that middle space, the symmetry stops working and the porch goes back to feeling accidental.",
     ],
-    photo: pinPhoto("symmetry.jpg", "Covered porch entry with two matching folding chairs, striped pillows and black planters with yellow flowers mirrored on either side of a white front door", 576, 1024, "https://www.pinterest.com/pin/116601077857075530/", "Symmetrical Small Front Porch"),
+    photo: pinPhoto("symmetry.jpg", "Covered porch entry with two matching folding chairs, striped pillows and black planters with yellow flowers mirrored on either side of a white front door", 576, 1024, "https://www.pinterest.com/pin/116601077857075530/", "Symmetrical Small Front Porch", "idea8"),
   },
   {
     n: "09",
@@ -121,7 +208,7 @@ const ideas = [
       "The swap doesn't need to be dramatic. Trading metal chairs for simple wooden ones, or adding a weathered wood bench like the one shown here, changes the entire feel of the space without changing the layout at all.",
       "Texture genuinely does emotional work in a space most people underestimate &mdash; it's the difference between a porch that looks staged and one that feels lived-in.",
     ],
-    photo: pinPhoto("natural-materials.jpg", "Weathered wood bench with patterned pillows on a porch surrounded by assorted ceramic planters, a wreath on a dark door and rustic wood shutters", 683, 1024, "https://www.pinterest.com/pin/181340322492115019/", "Natural Materials on a Small Front Porch"),
+    photo: pinPhoto("natural-materials.jpg", "Weathered wood bench with patterned pillows on a porch surrounded by assorted ceramic planters, a wreath on a dark door and rustic wood shutters", 683, 1024, "https://www.pinterest.com/pin/181340322492115019/", "Natural Materials on a Small Front Porch", "idea9"),
   },
   {
     n: "10",
@@ -131,7 +218,7 @@ const ideas = [
       "A slim bench with hidden storage, a row of woven baskets under a wall shelf, or a few hooks for bags and towels all handle the clutter without adding visual noise.",
       "Keep it edited, like the single wall-mounted shelf and basket row shown here. The second storage starts looking like more storage than decor, it's defeated its own purpose.",
     ],
-    photo: pinPhoto("smart-storage.jpg", "Wall-mounted shelf with hooks holding a bag and towel above three matching woven storage baskets and a patterned doormat on a porch", 704, 1024, "https://www.pinterest.com/pin/245024035973300711/", "Smart Storage on a Small Front Porch"),
+    photo: pinPhoto("smart-storage.jpg", "Wall-mounted shelf with hooks holding a bag and towel above three matching woven storage baskets and a patterned doormat on a porch", 704, 1024, "https://www.pinterest.com/pin/245024035973300711/", "Smart Storage on a Small Front Porch", "idea10"),
   },
   {
     n: "11",
@@ -141,7 +228,7 @@ const ideas = [
       "Bold, modern numbers in matte black or brushed brass read as polished immediately, especially mounted on a wood backing like the one shown here instead of straight against siding.",
       "Keep every metal finish consistent across the porch &mdash; hardware, light fixtures, house numbers, mailbox. That one small consistency is what makes a porch feel designed instead of assembled piece by piece.",
     ],
-    photo: pinPhoto("house-numbers.jpg", "Modern black house numbers reading 42 mounted on a wood plaque beside a dark front door, with a small plant below", 701, 1024, "https://www.pinterest.com/pin/20829217022234457/", "House Numbers on a Small Front Porch"),
+    photo: pinPhoto("house-numbers.jpg", "Modern black house numbers reading 42 mounted on a wood plaque beside a dark front door, with a small plant below", 701, 1024, "https://www.pinterest.com/pin/20829217022234457/", "House Numbers on a Small Front Porch", "idea11"),
   },
   {
     n: "12",
@@ -151,7 +238,7 @@ const ideas = [
       "Pick one seasonal anchor piece and let it lead: a statement wreath, a single oversized pumpkin, or one tall holiday lantern, like the wreath and seasonal blooms shown here.",
       "And actually remove last season's pieces before adding new ones. Rotating beats stacking every time &mdash; a welcoming porch isn't the same thing as an overwhelming one.",
     ],
-    photo: pinPhoto("seasonal-decor.jpg", "Grapevine wreath hanging on a black front door above a galvanized metal planter filled with yellow tulips beside a wood bench with plaid pillows", 736, 981, "https://www.pinterest.com/pin/3588874698055725/", "Seasonal Decor on a Small Front Porch"),
+    photo: pinPhoto("seasonal-decor.jpg", "Grapevine wreath hanging on a black front door above a galvanized metal planter filled with yellow tulips beside a wood bench with plaid pillows", 736, 981, "https://www.pinterest.com/pin/3588874698055725/", "Seasonal Decor on a Small Front Porch", "idea12"),
   },
 ];
 
@@ -166,17 +253,17 @@ function ideaBlock(idea) {
 const body = `
 <p>A front porch sets the tone before anyone even reaches your door, and when the square footage is tight, every design choice carries more weight. The good news is that size was never really the obstacle. A tiny porch styled with intention beats a sprawling one styled without it, every time.</p>
 <p>You don't need a wraparound farmhouse porch to pull this off. You need scale, one real focal point, and a few deliberate moves that make the space feel welcoming instead of cramped.</p>
-${photo("hero.jpg", "Small covered front porch with a black door, warm lantern sconce, potted topiary trees and a wood bench with cream pillows", 1312, 736)}
+${photo("hero.jpg", "Small covered front porch with a black door, warm lantern sconce, potted topiary trees and a wood bench with cream pillows", 1312, 736, "hero")}
 
 <h2>Why Small Porches Need More Intention, Not Less</h2>
 <p>A small porch doesn't leave room to hide behind oversized furniture or scattered decor &mdash; every single piece shows, which sounds risky but actually works in your favor. The most common failure mode is overcrowding: two chairs, a bench, three plants, and a basket crammed into a space built for half of that, until nobody can open the door all the way.</p>
 <p>The second most common failure is the opposite problem &mdash; a porch with no focal point at all, nothing for the eye to land on. And the third is ignoring vertical space entirely. Walls, ceilings, and door frames are real design opportunities that flat, floor-only decorating leaves on the table.</p>
-${pinPhoto("intro-first-impression.jpg", "Covered porch corner with a sage green door, wreath, wall lantern and wood bench with pillows surrounded by potted florals and stone steps", 705, 1024, "https://www.pinterest.com/pin/114982596733789325/", "Small Front Porch First Impression")}
+${pinPhoto("intro-first-impression.jpg", "Covered porch corner with a sage green door, wreath, wall lantern and wood bench with pillows surrounded by potted florals and stone steps", 705, 1024, "https://www.pinterest.com/pin/114982596733789325/", "Small Front Porch First Impression", "why")}
 
 <h2>Three Rules That Actually Make Small Porches Work</h2>
 <p>Scale everything down on purpose. A full-size patio sofa overwhelms a small entry instantly &mdash; slim-profile chairs, narrow benches, and wall-mounted lighting leave the movement space a porch actually needs.</p>
 <p>Add exactly one statement element &mdash; a bold door color, an oversized planter, a patterned rug &mdash; and let it anchor the whole space rather than competing with five smaller ones. Then layer texture instead of adding bulk: woven baskets, natural fiber rugs, and wood accents build richness without taking up a single extra inch of floor.</p>
-${pinPhoto("intro-texture.jpg", "Small front porch with a seasonal wreath, layered pillows on a wood bench, a patterned rug and a lit lantern on a tree stump side table", 575, 1024, "https://www.pinterest.com/pin/114982596733789325/", "Layering Texture on a Small Porch")}
+${pinPhoto("intro-texture.jpg", "Small front porch with a seasonal wreath, layered pillows on a wood bench, a patterned rug and a lit lantern on a tree stump side table", 575, 1024, "https://www.pinterest.com/pin/114982596733789325/", "Layering Texture on a Small Porch", "rules")}
 
 <h2>12 Small Porch Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

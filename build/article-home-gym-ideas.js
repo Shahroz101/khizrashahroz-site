@@ -11,139 +11,242 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0DB1FDJ9C", title: "Adjustable Dumbbell Set, 20 to 90 lb, Free Weights Set with Upgraded Nut", w: 1477, h: 1500 },
+    { asin: "B0DNMNZC6Y", title: "Amazon Basics 3-Tier Dumbbell Weight Rack, Sturdy Steel Stand, Black", w: 1500, h: 1354 },
+  ],
+  whatSep: [
+    { asin: "B097DTNTD1", title: "Mythinglogic Home Gym Rack for Dumbbells, Yoga Mats and Workout Equipment", w: 1410, h: 1500 },
+    { asin: "B0GLQH4453", title: "EVA Foam Floor Tiles, 18 Pcs, Puzzle Exercise Mat Set for Gym", w: 1500, h: 1435 },
+  ],
+  idea1: [
+    { asin: "B00A21NRNO", title: "PowerBlock Elite EXP 90 Adjustable Dumbbells, Stage 1, Set of 2, 5 to 50 lb", w: 1500, h: 1256 },
+    { asin: "B01AVDVHTI", title: "Fit Simplify Resistance Loop Exercise Bands, Set of 5, with Guide and Carry Bag", w: 1404, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0CS6Y9QP8", title: "JNIHEEP Olympic Barbell Hanger, Vertical Wall Mount Bar Rack for Garage Gym", w: 1500, h: 1500 },
+    { asin: "B0CDLKXK4N", title: "TRAHOME Home Gym Mirror Tiles for Wall, 14 x 12 Inch, 12 Pcs", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B07DNYSJ8W", title: "FLYBIRD WB5 Adjustable Weight Bench, ASTM-Certified, 800 lb Capacity", w: 1461, h: 1500 },
+    { asin: "B0CQKQMZN8", title: "BalanceFrom Neoprene Dumbbell Set with Rack, Non-Slip Strength Training Weights", w: 1500, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B099JZT1WR", title: "YOLEO Adjustable Weight Bench, ASTM-Certified, 827 lb Capacity", w: 1408, h: 1500 },
+    { asin: "B0016BQFSS", title: "Sunny Health and Fitness Mini Stair Stepper with Resistance Bands", w: 1500, h: 1473 },
+  ],
+  idea5: [
+    { asin: "B0DGTJGFPQ", title: "Yaheetech Curl Bar with Weights, Adjustable W-Shaped Barbell Home Gym Set", w: 1500, h: 1145 },
+    { asin: "B0FP4SZGX1", title: "FitinOne Adjustable Folding Weight Bench for Home Gym, 660 lb Capacity", w: 1500, h: 1472 },
+  ],
+  idea6: [
+    { asin: "B0HD6HLNLR", title: "Wenoker Magnetic Rowing Machine for Home, Quiet and Smooth, Full Body Workout", w: 1500, h: 1378 },
+    { asin: "B0BVHN3D72", title: "YOSUDA Magnetic Exercise Bike with App Training, Stationary Indoor Bike", w: 1362, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0GGY44DW4", title: "Ragebby Adjustable Dumbbell Set of 2, for Men and Women at Home", w: 1493, h: 1500 },
+    { asin: "B07H9PZDQW", title: "Gaiam Thick Yoga Mat, Exercise and Fitness Mat with Easy-Cinch Carrying Strap", w: 1500, h: 991 },
+  ],
+  idea8: [
+    { asin: "B002OOYIOY", title: "CAP A-Frame Dumbbell Weight Rack", w: 929, h: 1500 },
+    { asin: "B0H25WYHF5", title: "RGB Hexagon LED Garage Lights, 5 Grid, Smart App Control with Music Sync", w: 1200, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0F62F3KDD", title: "Adjustable Foldable Weight Bench for Home Gym, Full Body Workout Bench", w: 1445, h: 1500 },
+    { asin: "B07JQ22YYS", title: "SONGMICS 30 Inch Folding Storage Ottoman Bench, 660 lb Load", w: 1500, h: 803 },
+  ],
+  idea10: [
+    { asin: "B00U398RDU", title: "VIZ-PRO Magnetic Dry Erase Board, 36 x 24 Inch, Silver Aluminium Frame", w: 1430, h: 1350 },
+    { asin: "B0HJSW1G3J", title: "BassBloom Roar 3 Portable Bluetooth Speaker, 20W, IPX6 Waterproof", w: 1348, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0CG2GZB5P", title: "Hey! Play! Kids Exercise Equipment Collection, Strength Training and Cardio", w: 1500, h: 1488 },
+    { asin: "B0G4RLM8B7", title: "KEEP Extra Thick NBR Yoga Mat, 10mm, for Women and Men", w: 1500, h: 1429 },
+  ],
+  idea12: [
+    { asin: "B096Y3H6BK", title: "Serious Steel Fitness 32 Inch Resistance Training Band", w: 1450, h: 424 },
+    { asin: "B0FP2DP7WH", title: "BARWING 5-in-1 Foldable Stationary Exercise Bike for Home Workout", w: 1288, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B07X64MXBS", title: "BowFlex SelectTech 840 Adjustable Kettlebell", w: 1114, h: 1251 },
+    { asin: "B0FR4VLWSN", title: "DP01 Power Cage, 2000 lb Squat Rack with Cable Crossover and Dual Pulley System", w: 1492, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0F1Z3LQ65", title: "Tangle-Free Rapid Speed Jump Rope with Ball Bearings, Adjustable", w: 1491, h: 1500 },
+    { asin: "B0731FCS7T", title: "Amazon Basics Cast Iron Kettlebell, Textured Wide Handle, Black", w: 1181, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "home-gym-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "home-gym-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "home-gym-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Go Minimal to Remove Decision Fatigue",
     paras: [
       "A minimal setup works precisely because it removes choices. When there's nothing to decide, there's nothing standing between showing up and actually training.",
       "A pair of adjustable dumbbells, a mat, resistance bands and a jump rope cover strength, mobility and conditioning without needing anything else.",
       "This setup fits beginners and busy people equally well &mdash; when complexity disappears, so does the excuse to skip it.",
     ],
-    photo: pinPhoto("minimal-equipment.jpg", "Minimal home gym setup with adjustable dumbbells, a mat and resistance bands", 736, 981, "https://www.pinterest.com/pin/9640586696511543/", "Minimal Equipment Home Gym"),
+    photo: pinPhoto("minimal-equipment.jpg", "Minimal home gym setup with adjustable dumbbells, a mat and resistance bands", 736, 981, "https://www.pinterest.com/pin/9640586696511543/", "Minimal Equipment Home Gym", "idea1"),
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Fit a Real Gym Into a Small Space",
     paras: [
       "A dedicated room isn't required &mdash; a corner that barely fits a yoga mat is enough space to train effectively.",
       "Wall-mounted hooks and shelves clear the floor instantly, keeping resistance bands, mats and smaller equipment off the ground and the room feeling organized instead of chaotic.",
       "A mirror does more than help with form here &mdash; it also makes a small space read as larger than it actually is, which matters more than it sounds like it should.",
     ],
-    photo: photo("small-space.jpg", "Small home gym corner fitted with an elliptical, weight bench, dumbbell rack and wall mirror", 540, 720),
+    photo: photo("small-space.jpg", "Small home gym corner fitted with an elliptical, weight bench, dumbbell rack and wall mirror", 540, 720, "idea2"),
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Build a Budget-Friendly Gym That Still Delivers",
     paras: [
       "Money shouldn't be the thing blocking a real fitness setup. Smart choices matter more than spending power here.",
       "Put the budget toward a few genuinely versatile pieces &mdash; an adjustable bench, a solid set of dumbbells &mdash; rather than single-use machines that only do one thing.",
       "Price doesn't equal effectiveness. Programming and movement quality drive results far more than how much the equipment cost.",
     ],
-    photo: pinPhoto("budget-friendly.jpg", "Budget-friendly home gym with an adjustable bench and a compact dumbbell set", 683, 1024, "https://www.pinterest.com/pin/140806234587813/", "Budget-Friendly Home Gym Setup"),
+    photo: pinPhoto("budget-friendly.jpg", "Budget-friendly home gym with an adjustable bench and a compact dumbbell set", 683, 1024, "https://www.pinterest.com/pin/140806234587813/", "Budget-Friendly Home Gym Setup", "idea3"),
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Set Up an Apartment-Friendly Gym",
     paras: [
       "Apartments come with their own constraints &mdash; noise limits and tight square footage chief among them.",
       "Quiet equipment solves most of it: resistance bands, a yoga mat, and dumbbells instead of anything involving jumping or dropped weights that travel straight through a floor.",
       "A foldable bench or a vertical rack that tucks gear away after each session keeps the apartment feeling like an apartment again once the workout's done.",
     ],
-    photo: pinPhoto("apartment-friendly.jpg", "Compact apartment home gym nook with foldable equipment and vertical storage in a tight space", 575, 1024, "https://www.pinterest.com/pin/7036943162480743/", "Apartment-Friendly Home Gym"),
+    photo: pinPhoto("apartment-friendly.jpg", "Compact apartment home gym nook with foldable equipment and vertical storage in a tight space", 575, 1024, "https://www.pinterest.com/pin/7036943162480743/", "Apartment-Friendly Home Gym", "idea4"),
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Prioritize Strength With Free Weights",
     paras: [
       "Strength training builds confidence quickly, and free weights consistently outperform machines for that purpose.",
       "Free weights force real control and coordination in a way a guided machine never has to &mdash; compound movements with a barbell or dumbbells deliver more in less time than a circuit of isolated machines.",
       "Safety matters just as much as intensity here. Collars, a proper rack and controlled reps keep training sustainable instead of ending progress with an injury.",
     ],
-    photo: pinPhoto("strength-focused.jpg", "Strength-focused home gym corner with a barbell rack, weight plates and a squat setup", 736, 981, "https://www.pinterest.com/pin/24629129207689882/", "Strength-Focused Home Gym"),
+    photo: pinPhoto("strength-focused.jpg", "Strength-focused home gym corner with a barbell rack, weight plates and a squat setup", 736, 981, "https://www.pinterest.com/pin/24629129207689882/", "Strength-Focused Home Gym", "idea5"),
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Make Cardio a Setup You Actually Enjoy",
     paras: [
       "Cardio shouldn't feel like a punishment, and the equipment choice has more influence over that than most people expect.",
       "A treadmill, rowing machine or stationary bike all work &mdash; the right pick is whichever one someone will actually return to, not whichever burns the most calories on paper.",
       "Mixing styles across sessions prevents the boredom that kills consistency faster than any single workout ever could.",
     ],
-    photo: photo("cardio-focused.jpg", "Cardio-focused home gym with a stationary bike and rowing machine set up near a window", 720, 900),
+    photo: photo("cardio-focused.jpg", "Cardio-focused home gym with a stationary bike and rowing machine set up near a window", 720, 900, "idea6"),
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Start Simple as a Beginner",
     paras: [
       "An overcomplicated setup scares beginners off before they even get started. Simplicity is what actually gets someone through the first few months.",
       "Resistance bands, a mat and a light set of dumbbells cover everything needed to build real consistency before intensity ever becomes the priority.",
       "Training at home also removes the social pressure of a crowded gym floor, which tends to speed up how fast confidence actually builds.",
     ],
-    photo: photo("beginner-friendly.jpg", "Beginner-friendly home gym setup with resistance bands, a mat and light dumbbells", 473, 631),
+    photo: photo("beginner-friendly.jpg", "Beginner-friendly home gym setup with resistance bands, a mat and light dumbbells", 473, 631, "idea7"),
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Design a Gym That's Both Aesthetic and Practical",
     paras: [
       "Style and function aren't actually at odds here, whatever the usual advice says. A space that looks intentional gets used more often than one that looks thrown together.",
       "Matching equipment finishes, a clean storage rack, and good lighting turn a workout corner into a space worth walking into.",
       "The goal is a room that invites movement instead of avoidance &mdash; this approach works especially well for anyone who responds to visual motivation.",
     ],
-    photo: pinPhoto("aesthetic-practical.jpg", "Aesthetic home gym for a small space with coordinated equipment and clean styling", 683, 1024, "https://www.pinterest.com/pin/68749494749/", "Aesthetic Home Gym for Small Spaces"),
+    photo: pinPhoto("aesthetic-practical.jpg", "Aesthetic home gym for a small space with coordinated equipment and clean styling", 683, 1024, "https://www.pinterest.com/pin/68749494749/", "Aesthetic Home Gym for Small Spaces", "idea8"),
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Make It Multifunctional for a Shared Space",
     paras: [
       "Not everyone gets a dedicated room, and a living room or bedroom corner can still do the job with the right equipment choices.",
       "Gear that folds, stacks or rolls away &mdash; a foldable bench, a storage ottoman doubling as weight storage &mdash; lets the room switch roles without any stress.",
       "Speed matters most here. The faster the setup, the less likely the workout gets skipped because the room wasn't ready.",
     ],
-    photo: pinPhoto("multifunctional.jpg", "Multifunctional home gym corner set up inside a shared living space with a relaxed, calm vibe", 576, 1024, "https://www.pinterest.com/pin/281543726263500/", "Multifunctional Home Gym for Shared Spaces"),
+    photo: pinPhoto("multifunctional.jpg", "Multifunctional home gym corner set up inside a shared living space with a relaxed, calm vibe", 576, 1024, "https://www.pinterest.com/pin/281543726263500/", "Multifunctional Home Gym for Shared Spaces", "idea9"),
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Build in Visual Motivation",
     paras: [
       "Motivation fades fast on its own, but a few visual cues in the space help a system take over where motivation runs out.",
       "A whiteboard with weekly goals, a progress tracker, or even just gear left visible rather than stored away all reinforce the habit simply by being seen.",
       "Sound matters too &mdash; music changes training intensity almost instantly, while a quieter space suits anything slower like yoga or stretching.",
     ],
-    photo: pinPhoto("motivation-driven.jpg", "Motivation-driven home gym setup with a styled, feminine aesthetic and visible goal tracking", 576, 1024, "https://www.pinterest.com/pin/3588874698070115/", "Motivation-Driven Home Gym"),
+    photo: pinPhoto("motivation-driven.jpg", "Motivation-driven home gym setup with a styled, feminine aesthetic and visible goal tracking", 576, 1024, "https://www.pinterest.com/pin/3588874698070115/", "Motivation-Driven Home Gym", "idea10"),
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Create a Family-Friendly Setup",
     paras: [
       "Fitness gets easier to stick with once it feels normal, and a family-friendly gym is one of the fastest ways to build that in.",
       "Kid-safe equipment, a shared mat area, and gear sized for different ages let everyone join in at their own level instead of training separately.",
       "Safety still comes first &mdash; heavy equipment secured properly and basic respect for the gear taught early keeps the whole setup genuinely safe to share.",
     ],
-    photo: pinPhoto("family-friendly.jpg", "Family-friendly home gym transformation with equipment suited to multiple age groups", 735, 977, "https://www.pinterest.com/pin/341147740544171280/", "Family-Friendly Home Gym"),
+    photo: pinPhoto("family-friendly.jpg", "Family-friendly home gym transformation with equipment suited to multiple age groups", 735, 977, "https://www.pinterest.com/pin/341147740544171280/", "Family-Friendly Home Gym", "idea11"),
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Protect Joints With a Low-Impact Setup",
     paras: [
       "Not every workout needs to be high intensity to actually work, and a low-impact setup proves that especially well during recovery phases.",
@@ -153,6 +256,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Design for Long-Term, Scalable Growth",
     paras: [
       "A gym built with only today's fitness level in mind gets outgrown fast. Designing with room to scale avoids that problem entirely.",
@@ -162,6 +266,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Remove Every Excuse, Completely",
     paras: [
       "This setup exists for one purpose: eliminating every possible reason a workout gets skipped.",
@@ -176,18 +281,18 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>Most people who quit on a home workout habit aren't quitting on fitness &mdash; they're quitting on a setup that made training harder than it needed to be. A practical home gym removes friction instead of just adding equipment, and that distinction is what actually keeps a habit alive past the first few weeks.</p>
 <p>Driving to a gym costs time, waiting for equipment costs patience, and both of those disappear the moment a workout space exists at home. Consistency reliably beats motivation &mdash; motivation fades fast, but a setup that's already there stops workouts from ever feeling optional.</p>
-${photo("hero.jpg", "Home gym corner with weight equipment set up against a wall", 735, 490)}
+${photo("hero.jpg", "Home gym corner with weight equipment set up against a wall", 735, 490, "hero")}
 
 <h2>What Separates a Gym People Use From One That Collects Dust</h2>
 <p>A good setup supports the habit. A bad one just creates guilt every time it's walked past. Equipment placement matters more than style &mdash; when gear stays visible and within reach, workouts actually happen, and when it's buried in a closet, they quietly stop.</p>
 <p>Comfort plays a bigger role than people give it credit for, too. Flooring, lighting and airflow all affect whether a space feels good to be in, and that feeling is often the difference between a five-minute session and a skipped one.</p>
-${pinPhoto("intro-organization.jpg", "Organized home workout room with equipment stored neatly along the wall", 736, 552, "https://www.pinterest.com/pin/68749225092/", "Organized Home Workout Room")}
+${pinPhoto("intro-organization.jpg", "Organized home workout room with equipment stored neatly along the wall", 736, 552, "https://www.pinterest.com/pin/68749225092/", "Organized Home Workout Room", "whatSep")}
 
 <h2>14 Practical Home Gym Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

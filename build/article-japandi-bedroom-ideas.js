@@ -8,93 +8,179 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B09TK1MTCV", title: "Sandstone Resin Thinker Statue, Abstract Sculpture, Left Facing", w: 842, h: 1400 },
+    { asin: "B0H94RF8TK", title: "IDEALHOUSE Full Size Wood Platform Bed Frame with Low Profile Design", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0FNCQSXBY", title: "Full Size Low Profile Platform Bed Frame, 3 Inch, Heavy Duty, No Box Spring Needed", w: 1500, h: 1500 },
+    { asin: "B0HHQKWBCR", title: "Japanese-Inspired Low Profile Wood Platform Bed Frame with Wavy Edge", w: 1500, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0FQPFWKX6", title: "HomeStock Solid Wood Panel Headboard, Adjustable Height, Angled Design", w: 722, h: 1020 },
+    { asin: "B0HCVMGWTH", title: "HMstone Queen Headboard with Storage Shelves, Wooden Bookcase Style", w: 1254, h: 1254 },
+  ],
+  idea3: [
+    { asin: "B0CM327PZ1", title: "Furinno JUST Toolless 3-Tier Nightstand with Open Storage, Americano", w: 1500, h: 1500 },
+    { asin: "B0B18NB7ZF", title: "VASAGLE Round Side Table with Lower Shelf, End Table for Small Spaces", w: 986, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0F1Y7XCZN", title: "AJAZZ 100% Blackout Sliding Door Curtains for Doorways, Magnetic", w: 1500, h: 1500 },
+    { asin: "B0DSLB1G7Q", title: "Folding Privacy Screen, Hand-Made Natural Bamboo Room Divider", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0BCVFGN7M", title: "Lifewit 95L Under Bed Storage Containers, 4 Pack, Blanket Organizer, Gray", w: 1448, h: 1500 },
+    { asin: "B0H4LGPCTX", title: "Queen Bed Frame with 2 Storage Drawers, Beige Velvet Upholstered", w: 1200, h: 1200 },
+  ],
+  idea6: [
+    { asin: "B0FKH6G1LB", title: "Queen Comforter Set, 7 Piece Bed in a Bag, Seersucker, Linen Green", w: 1500, h: 1500 },
+    { asin: "B0DSG7PSD1", title: "MooMee Striped Duvet Cover Set, Queen, 100% Washed Cotton, Linen-Like", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0CKT83J9K", title: "HOMEMONDE Braided Jute Area Rug, 6 x 9 Ft, Natural", w: 1500, h: 1500 },
+    { asin: "B00C78TRG6", title: "Seville Classics Handwoven Water Hyacinth Storage Cube Baskets, 2 Pack", w: 1500, h: 794 },
+  ],
+  idea8: [
+    { asin: "B07BDWC1TQ", title: "Glidden Interior Paint and Primer, Greige Oatmeal, One Coat, Eggshell, 1 Quart", w: 1500, h: 1471 },
+    { asin: "B07BZKM696", title: "Rust-Oleum Simply Home Interior Wall Paint, Soft Beige, Eggshell, 1 Gallon", w: 726, h: 774 },
+  ],
+  idea9: [
+    { asin: "B0HC1Z529F", title: "Framed Black and White Textured Abstract Canvas Wall Art, 3 Pcs, 12 x 16 Inch", w: 1254, h: 1254 },
+    { asin: "B0BBSKBXQ2", title: "LEGO Art Hokusai The Great Wave Framed Japanese Wall Art Building Set", w: 1500, h: 1479 },
+  ],
+  idea10: [
+    { asin: "B0DZ5SYRYF", title: "Small Rice Paper Lantern Table Lamp, Japanese Style", w: 1500, h: 1500 },
+    { asin: "B0DKJB9629", title: "Cream Semi Sheer Linen Curtains, 96 Inch Long, 2 Panels", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0FC2CD87C", title: "Craft911 29 Inch Moss Pole Monstera Plant Support, Indoor Plant Stakes", w: 1341, h: 1390 },
+    { asin: "B0893GQKGN", title: "Gepege Ceramic Plant Pots, 6 Inch, with Drainage Holes and Saucers", w: 1500, h: 1335 },
+  ],
+  idea12: [
+    { asin: "B0FNCSGJVK", title: "MAXYOYO Accent Chair with Ottoman, Lounge Chair with Adjustable Backrest", w: 1500, h: 1500 },
+    { asin: "B0H757JHSN", title: "Mid-Century Orange Mushroom Floor Lamp, 63 Inch, Standing Lamp", w: 1500, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B0FFGQDKXQ", title: "Wabi Sabi Rusty Vintage Vase, 6.3 Inch Tall, Rustic Pottery", w: 1500, h: 1500 },
+    { asin: "B0F993CLZT", title: "Handmade Large Round Vase for Centerpieces, White Farmhouse Rustic", w: 1500, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0DT45ZH77", title: "iThird Battery Operated Wall Sconces, Set of 2, 10000mAh, Black", w: 1500, h: 1500 },
+    { asin: "B0CQT7S9JF", title: "NIORSUN Rechargeable Battery Operated Wall Sconces, Set of 2, Black, Dimmable", w: 1484, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "japandi-bedroom-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "japandi-bedroom-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
 <p>Japandi takes the calm of Japanese minimalism and the warmth of Scandinavian design, and applies both to a bedroom specifically built for rest.</p>
 <p>Done right, it reads as genuinely peaceful rather than just sparse.</p>
 <p>These 14 ideas cover how to get there.</p>
-${photo("hero.png", "Minimalist Japandi bedroom with a calm, peaceful atmosphere", 1248, 832)}
+${photo("hero.png", "Minimalist Japandi bedroom with a calm, peaceful atmosphere", 1248, 832, "hero")}
 
 <h2>1. Start With a Low-Profile Bed Frame</h2>
 <p>A bed sitting close to the ground is one of the most recognizable Japandi signatures, echoing traditional Japanese floor-level sleeping without going all the way to a floor mattress.</p>
 <p>This also visually opens up the room, since a lower bed takes up less vertical space than a standard frame.</p>
-${photo("low-bed.png", "Low-profile bed frame grounding a Japandi bedroom", 683, 1024)}
+${photo("low-bed.png", "Low-profile bed frame grounding a Japandi bedroom", 683, 1024, "idea1")}
 
 <h2>2. Add a Statement Wooden Headboard</h2>
 <p>A simple, solid wood headboard brings warmth and a natural focal point without any unnecessary ornamentation.</p>
 <p>This is often the one piece of furniture allowed to stand out in an otherwise restrained room.</p>
-${photo("wooden-headboard.png", "Statement wooden headboard anchoring a Japandi bedroom", 683, 1024)}
+${photo("wooden-headboard.png", "Statement wooden headboard anchoring a Japandi bedroom", 683, 1024, "idea2")}
 
 <h2>3. Use Functional Furniture Only</h2>
 <p>Every piece in a Japandi bedroom should earn its place through genuine use, not just decoration &mdash; a side table that only holds a lamp and a book, nothing more.</p>
 <p>This restraint is part of what gives the style its calm, uncluttered feeling.</p>
-${photo("functional-furniture.png", "Purely functional furniture keeping the room uncluttered", 683, 1024)}
+${photo("functional-furniture.png", "Purely functional furniture keeping the room uncluttered", 683, 1024, "idea3")}
 
 <h2>4. Opt for Sliding Doors Where Possible</h2>
 <p>A sliding closet or room door, inspired by traditional Japanese shoji screens, saves floor space that a swinging door would otherwise require.</p>
 <p>This is a bigger commitment than most ideas on this list, but a genuinely authentic nod to the style's Japanese half.</p>
-${photo("sliding-doors.png", "Sliding doors saving space with authentic Japandi character", 683, 1024)}
+${photo("sliding-doors.png", "Sliding doors saving space with authentic Japandi character", 683, 1024, "idea4")}
 
 <h2>5. Use Hidden Storage</h2>
 <p>Built-in or under-bed storage keeps daily clutter out of sight entirely, which matters more in Japandi than almost any other style given how central uncluttered surfaces are to the whole look.</p>
 <p>This is worth planning for early, since retrofitting hidden storage is harder than designing it in from the start.</p>
-${photo("hidden-storage.png", "Hidden storage keeping the Japandi bedroom free of visible clutter", 683, 1024)}
+${photo("hidden-storage.png", "Hidden storage keeping the Japandi bedroom free of visible clutter", 683, 1024, "idea5")}
 
 <h2>6. Embrace Neutral Bedding</h2>
 <p>Soft whites, warm beiges and muted earth tones on the bed itself reinforce the room's calm palette more directly than any other single element.</p>
 <p>Natural fiber bedding &mdash; linen, cotton &mdash; also fits the style's emphasis on genuine, unprocessed materials.</p>
-${photo("neutral-bedding.png", "Neutral bedding reinforcing a calm Japandi color palette", 683, 1024)}
+${photo("neutral-bedding.png", "Neutral bedding reinforcing a calm Japandi color palette", 683, 1024, "idea6")}
 
 <h2>7. Bring in Natural Textures</h2>
 <p>Woven baskets, a jute rug, raw wood grain &mdash; texture does the visual work that pattern and color would do in a less restrained style.</p>
 <p>This is what keeps an all-neutral room from feeling flat or sterile.</p>
-${photo("natural-textures.png", "Natural textures adding depth to a neutral Japandi palette", 683, 1024)}
+${photo("natural-textures.png", "Natural textures adding depth to a neutral Japandi palette", 683, 1024, "idea7")}
 
 <h2>8. Keep Walls Clean and Neutral</h2>
 <p>A soft white, warm gray or muted earth tone on the walls supports the room's overall calm rather than competing with it.</p>
 <p>This is the foundation everything else in the room gets layered onto, which makes it worth settling early.</p>
-${photo("clean-walls.png", "Clean, neutral walls supporting a calm Japandi atmosphere", 683, 1024)}
+${photo("clean-walls.png", "Clean, neutral walls supporting a calm Japandi atmosphere", 683, 1024, "idea8")}
 
 <h2>9. Add a Single Piece of Art</h2>
 <p>One considered piece, rather than a gallery wall or several smaller prints, fits Japandi's less-is-more philosophy directly.</p>
 <p>Scale and placement matter more here than in a busier room, since there's nothing else competing for visual attention.</p>
-${photo("single-art.png", "A single considered art piece fitting the room's minimal philosophy", 683, 1024)}
+${photo("single-art.png", "A single considered art piece fitting the room's minimal philosophy", 683, 1024, "idea9")}
 
 <h2>10. Use Soft, Diffused Lighting</h2>
 <p>Paper or fabric-shaded fixtures soften light the way traditional Japanese lanterns do, avoiding anything harsh or overly bright.</p>
 <p>This lighting quality does as much for the room's calm feeling as the color palette itself.</p>
-${photo("diffused-lighting.png", "Soft diffused lighting creating a calming Japandi glow", 683, 1024)}
+${photo("diffused-lighting.png", "Soft diffused lighting creating a calming Japandi glow", 683, 1024, "idea10")}
 
 <h2>11. Incorporate Greenery</h2>
 <p>A single well-chosen plant brings life into the room without disrupting its restrained palette or cluttered feeling.</p>
 <p>One plant, placed deliberately, works better here than several scattered around the room.</p>
-${photo("greenery.png", "A single plant bringing life to a minimal Japandi bedroom", 683, 1024)}
+${photo("greenery.png", "A single plant bringing life to a minimal Japandi bedroom", 683, 1024, "idea11")}
 
 <h2>12. Create a Cozy Nook</h2>
 <p>A small reading corner with a simple chair and soft lighting adds a secondary function to the room without crowding the main sleeping area.</p>
 <p>This also gives the room a second mood &mdash; quiet daytime use, not just nighttime rest.</p>
-${photo("cozy-nook.png", "Cozy reading nook adding a secondary calm space to the bedroom", 683, 1024)}
+${photo("cozy-nook.png", "Cozy reading nook adding a secondary calm space to the bedroom", 683, 1024, "idea12")}
 
 <h2>13. Incorporate Wabi-Sabi Imperfection</h2>
 <p>A handmade ceramic, a visibly textured ceramic vase, or an intentionally imperfect ceramic piece brings the Japanese wabi-sabi philosophy into a room that could otherwise feel too polished.</p>
 <p>This embraced imperfection is what keeps Japandi from reading as cold minimalism.</p>
-${photo("wabi-sabi.png", "Wabi-sabi imperfection adding soul to a minimal Japandi room", 683, 1024)}
+${photo("wabi-sabi.png", "Wabi-sabi imperfection adding soul to a minimal Japandi room", 683, 1024, "idea13")}
 
 <h2>14. Add a Touch of Black</h2>
 <p>A black frame, a dark metal fixture, or one small black accent grounds the room's otherwise light, neutral palette.</p>
 <p>This single contrast point keeps the whole room from feeling washed out, without disrupting its overall calm.</p>
-${photo("touch-black.png", "A touch of black grounding the room's light, neutral palette", 683, 1024)}
+${photo("touch-black.png", "A touch of black grounding the room's light, neutral palette", 683, 1024, "idea14")}
 
 <h2>Wrapping It Up</h2>
 <p>None of these 14 ideas require redoing the whole bedroom at once.</p>

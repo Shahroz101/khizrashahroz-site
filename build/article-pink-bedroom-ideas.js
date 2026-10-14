@@ -7,99 +7,178 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0C27P42ZG", title: "Large Round Wall Mirror, 30 Inch, Rose Gold Matte Aluminum Frame", w: 1500, h: 1500 },
+    { asin: "B0D7LXHZMH", title: "Pink Flower Throw Pillows, 2 Pack, Cute Decorative Bed Pillows", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0FFMFH6PZ", title: "EVOLVE Interior Paint and Primer, Eggshell, Pale Pink, 1 Gallon", w: 1500, h: 1494 },
+    { asin: "B0BWT1MQ4K", title: "Spoonflower Blush Pink Faux Gold Peel and Stick Removable Wallpaper", w: 842, h: 910 },
+  ],
+  idea2: [
+    { asin: "B0D5GSHPK5", title: "VEELIKE Minimalist Nude Pink Floral Peel and Stick Wallpaper", w: 1500, h: 1500 },
+    { asin: "B0HBWW6V3X", title: "Laatse Vintage Dark Pink Peony Floral Peel and Stick Wallpaper", w: 1266, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B08DC1BRQZ", title: "PAVILIA Pink Chenille Throw Blanket with Tassels, 50 x 60 Inch", w: 1500, h: 1500 },
+    { asin: "B0GK8BYZ5T", title: "Pink Blackout Curtains with Sheer Overlay, 52 x 84 Inch, 2 Panels", w: 1293, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0DM1FR2KZ", title: "VINGLI Petal Makeup Vanity Chair with Back, Flower Design, No Wheels", w: 1500, h: 1500 },
+    { asin: "B0GCHBFYFT", title: "Hearth and Harbor Wall Mounted Queen Headboard, Pink Velvet", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0DF92XYXL", title: "TUMEI 3 Piece Velvet Duvet Cover Set, Queen Size, Blush Pink", w: 1150, h: 1100 },
+    { asin: "B0HBWKW9VQ", title: "Panelee White Ruffle Pleated Layer Window Curtains, 54 x 84 Inch", w: 1500, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B0GS84PRF7", title: "Pink Floral Peel and Stick Wallpaper, Vintage French Style", w: 1500, h: 1500 },
+    { asin: "B0D971M2QS", title: "KONGSY Pink Abstract Matisse Wall Art Prints, Set of 9", w: 1500, h: 959 },
+  ],
+  idea7: [
+    { asin: "B0H6PK3Z4X", title: "Cinyirong 30 Inch Rose Gold Table Lamps, Set of 2", w: 1500, h: 1500 },
+    { asin: "B0B7RF6ZFG", title: "VINGLI Mirrored Dresser with 6 Storage Drawers, Silver", w: 1500, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0F12V64Z1", title: "Dark Blue Peel and Stick Wallpaper, Removable Self-Adhesive Contact Paper", w: 1500, h: 1500 },
+    { asin: "B08VN6W69N", title: "Yaheetech Queen Metal Platform Bed Frame, Victorian Headboard and Footboard", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0CZD8KX6R", title: "fuqing Natural Wood Floating Shelves, 17 Inch, Set of 3", w: 1500, h: 1500 },
+    { asin: "B0GVMCBF54", title: "Artificial Hanging Spider Plants, 23.6 Inch, 5 Pack", w: 1254, h: 1254 },
+  ],
+  idea10: [
+    { asin: "B0FS6NZ9ZN", title: "Peach Pink Striped Boho Duvet Cover, Queen Size", w: 1500, h: 1500 },
+    { asin: "B0FV7VYLFG", title: "VEELIKE Blush Pink Geometric Art Deco Peel and Stick Wallpaper", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "pink-bedroom-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "pink-bedroom-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function creditedPhoto(src, alt, w, h, name, url) {
+function creditedPhoto(src, alt, w, h, name, url, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "pink-bedroom-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo by ${name} via <a href="${url}" target="_blank" rel="nofollow noopener">Unsplash</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Soft Blush Walls",
     paras: [
       "The easiest way to bring pink into a bedroom without it taking over is a blush wall. Blush has an almost neutral quality to it &mdash; calm and soft, but with more personality than beige ever manages.",
       "It pairs beautifully with crisp white bedding for something clean and minimal, warm wood furniture for balance, or a touch of gold and brass hardware for a little glamour.",
       "A well-chosen blush tone tends to read as cozy and inviting rather than overtly pink. Most people clock the mood of the room before they clock the color.",
     ],
-    photo: photo("blush-walls.png", "Peachy blush pink bedroom wall with white bedding, a tan throw and a mid-century wood nightstand with a brass lamp", 1024, 574),
+    photo: photo("blush-walls.png", "Peachy blush pink bedroom wall with white bedding, a tan throw and a mid-century wood nightstand with a brass lamp", 1024, 574, "idea1"),
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "A Moody Accent Wall",
     paras: [
       "If painting the whole room pink feels like too much, a single statement wall is the middle ground. Deeper tones like dusty rose or muted mauve bring real depth without taking over the space.",
       "A richly colored wall behind the bed instantly becomes the room's anchor. Pair it with white bedding and dark side tables, and the effect reads considerably more polished than the color choice alone would suggest.",
       "Wallpaper works beautifully here too &mdash; a patterned mauve or blush print adds personality without ever tipping into busy, especially when it's confined to just the one wall behind the headboard.",
     ],
-    photo: photo("accent-wall.png", "Moody burgundy headboard wall flanked by mauve pink geometric patterned wallpaper, with a gray upholstered headboard and white bedding", 1024, 574),
+    photo: photo("accent-wall.png", "Moody burgundy headboard wall flanked by mauve pink geometric patterned wallpaper, with a gray upholstered headboard and white bedding", 1024, 574, "idea2"),
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Pink Through Textiles",
     paras: [
       "If you're not ready to commit to paint, textiles are the lowest-risk way to test pink in a bedroom. Bedding, curtains, a throw, or a rug all do the job without a single brushstroke.",
       "This approach also lets you mix several shades of pink in one room &mdash; blush linen sheets for something calm, a velvet rose throw pillow for a little luxury, a dusty pink rug to ground the whole space.",
       "It's also the easiest idea on this list to undo. Swap one piece out and the whole mood shifts, no long-term commitment required.",
     ],
-    photo: creditedPhoto("textiles.jpg", "Shaggy blush pink throw blanket on a bed with neutral textured pillows and a pink curtain visible by the window", 1024, 683, "Marta Filipczyk", "https://unsplash.com/photos/0JgvkiOpIYk"),
+    photo: creditedPhoto("textiles.jpg", "Shaggy blush pink throw blanket on a bed with neutral textured pillows and a pink curtain visible by the window", 1024, 683, "Marta Filipczyk", "https://unsplash.com/photos/0JgvkiOpIYk", "idea3"),
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Pink Furniture as the Star",
     paras: [
       "This is where you can make a real statement without drowning the whole room in color. A blush velvet chair or headboard reads as bold and luxurious, like the kind of piece that makes people assume you hired a designer.",
       "You don't have to stop at one piece, either &mdash; a pink nightstand or a muted coral chair brings in personality too. The trick is restraint elsewhere: let the pink furniture be the obvious focal point while everything around it stays quiet.",
       "A single statement chair or bench is often all it takes to shift the entire mood of a room, even when nothing else in the space has changed.",
     ],
-    photo: creditedPhoto("furniture.jpg", "Pink velvet chair with gold frame legs positioned at a white vanity desk with a large mirror", 819, 1024, "Joshua Lawrence", "https://unsplash.com/photos/wXklWt5O4pQ"),
+    photo: creditedPhoto("furniture.jpg", "Pink velvet chair with gold frame legs positioned at a white vanity desk with a large mirror", 819, 1024, "Joshua Lawrence", "https://unsplash.com/photos/wXklWt5O4pQ", "idea4"),
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Pink Paired With Neutrals",
     paras: [
       "Pink shows up best when it has a calm partner. Pairing it with white, beige, or gray is one of the most reliable ways to land on something that feels both modern and timeless.",
       "The neutral lets the pink take center stage without the room ever tipping into overwhelming. A blush comforter against crisp white sheets, or pale pink curtains next to a gray wall, both do this well.",
       "If you're worried pink reads too girly on its own, a neutral palette tones it down almost instantly &mdash; the earthy balance of beige or gray keeps everything feeling grounded.",
     ],
-    photo: photo("neutrals.png", "Blush pink velvet duvet folded over crisp white bedding against a beige wall with sheer white curtains", 1024, 574),
+    photo: photo("neutrals.png", "Blush pink velvet duvet folded over crisp white bedding against a beige wall with sheer white curtains", 1024, 574, "idea5"),
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "A Little Pink Through Pattern and Print",
     paras: [
       "Artwork and print are the lowest-effort, highest-impact way to bring pink into a room without making any permanent decisions. A blush floral wallpaper moment, a few framed prints, or a soft watercolor piece all shift a room's mood fast.",
       "This works especially well in a space that's otherwise fairly simple &mdash; the pattern or print naturally pulls focus and adds personality on its own.",
       "In a kids' room like this one, a floral wallpaper accent behind the bed does the heavy lifting, while a couple of small framed prints on the opposite wall keep things feeling intentional rather than overdone.",
     ],
-    photo: creditedPhoto("artwork.jpg", "Kids bedroom with pink floral wallpaper on the headboard wall and two small framed animal prints above a built-in desk nook", 1024, 576, "Mahza D'brata", "https://unsplash.com/photos/Nwedoq8v9G8"),
+    photo: creditedPhoto("artwork.jpg", "Kids bedroom with pink floral wallpaper on the headboard wall and two small framed animal prints above a built-in desk nook", 1024, 576, "Mahza D'brata", "https://unsplash.com/photos/Nwedoq8v9G8", "idea6"),
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Pink Layered With Metallics",
     paras: [
       "Pink and metallics were made for each other. Rose gold, brass, or matte gold accents paired with pink take a bedroom from cute to genuinely luxurious almost instantly.",
       "Think blush walls with a gold-framed mirror, or a dusty pink duvet next to brass bedside lamps. Even one mercury glass lamp on a mirrored nightstand can push the whole room toward boutique-hotel territory.",
       "The key is restraint &mdash; metallics should accent the space, not dominate it. A little shimmer goes a long way before it starts reading as a jewelry store instead of a bedroom.",
     ],
-    photo: creditedPhoto("metallics.jpg", "Rose gold mercury glass table lamp and a framed print on a mirrored nightstand against a blush pink wall", 683, 1024, "Arnel Hasanovic", "https://unsplash.com/photos/PKmH4_lj-DU"),
+    photo: creditedPhoto("metallics.jpg", "Rose gold mercury glass table lamp and a framed print on a mirrored nightstand against a blush pink wall", 683, 1024, "Arnel Hasanovic", "https://unsplash.com/photos/PKmH4_lj-DU", "idea7"),
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Pink Against Bold, Dark Contrasts",
     paras: [
       "If neutrals aren't your thing, go the opposite direction entirely. Pink paired with navy, emerald, or matte black creates a rich, dramatic look that reads as genuinely modern rather than soft.",
@@ -109,23 +188,25 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Bring in Natural Texture",
     paras: [
       "Wood, rattan, linen, and greenery all keep a pink bedroom from feeling too polished or artificial. Pink genuinely benefits from earthy company.",
       "A blush throw draped over a rattan chair, pink linen bedding next to a jute rug, open wood shelves against a dusty pink wall &mdash; all of it softens the color and keeps the room feeling lived-in rather than staged.",
       "Don't skip the plants, either. Greenery against pink creates real contrast and life &mdash; even one trailing plant can be the detail that pulls a whole room together.",
     ],
-    photo: creditedPhoto("textures.jpg", "Wood floating shelves with books, dried flowers and a trailing spider plant mounted on a dusty pink wall above a gray sofa", 682, 1024, "Julia", "https://unsplash.com/photos/UYCoey0IImc"),
+    photo: creditedPhoto("textures.jpg", "Wood floating shelves with books, dried flowers and a trailing spider plant mounted on a dusty pink wall above a gray sofa", 682, 1024, "Julia", "https://unsplash.com/photos/UYCoey0IImc", "idea9"),
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Let Pink Show Up in Pattern",
     paras: [
       "Stripes, florals, geometrics &mdash; pink doesn't have to stay solid. Pattern adds real dimension, and pink within a pattern keeps the whole look feeling playful rather than precious.",
       "A pink-and-white striped duvet paired with solid blush curtains feels lighthearted but still put-together. Bolder geometric wallpaper with pink woven through it pushes the room toward something more artsy and considered.",
       "If clashing patterns makes you nervous, stick to one dominant print in pink and keep everything else in the room simple. One well-placed pattern makes more impact than three competing ones ever will.",
     ],
-    photo: photo("patterns.png", "Pink and white striped duvet with a bold pink and white geometric diamond wallpaper accent wall and matching curtains", 1024, 574),
+    photo: photo("patterns.png", "Pink and white striped duvet with a bold pink and white geometric diamond wallpaper accent wall and matching curtains", 1024, 574, "idea10"),
   },
 ];
 
@@ -134,14 +215,14 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>Pink bedrooms get an unfair reputation. Say the words and most people picture cotton-candy walls or a bubblegum explosion left over from someone's childhood room. The truth is pink can be chic, modern, and genuinely sophisticated when it's styled with any intention at all.</p>
 <p>It's one of the most underrated color choices for a bedroom &mdash; warm, a little playful, and far more versatile than it gets credit for. From a quiet blush accent wall to a full statement in fuchsia, the results consistently surprise people who assumed pink wasn't for them.</p>
 <p>Here are ten ways to bring it in, whether you're after something barely-there or something that commits all the way.</p>
-${photo("hero.jpg", "Blush pink bedroom with a round rose gold mirror above the bed, copper wall sconces and layered pink and white pillows", 1312, 736)}
+${photo("hero.jpg", "Blush pink bedroom with a round rose gold mirror above the bed, copper wall sconces and layered pink and white pillows", 1312, 736, "hero")}
 
 <h2>10 Pink Bedroom Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

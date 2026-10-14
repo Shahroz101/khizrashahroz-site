@@ -9,24 +9,123 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0F9NPWTY4", title: "Clear Laundry Pods Containers, 4 Pack, Laundry Room Organization Set", w: 1495, h: 1500 },
+    { asin: "B0B7JGC67R", title: "Lifewit 80L Large Laundry Baskets, 2 Pack, Grey Striped, with Handles", w: 1500, h: 1434 },
+  ],
+  want: [
+    { asin: "B0D12P57GC", title: "OKZEST Slim Laundry Room Organization Cart with Metal Hub Casters", w: 1190, h: 1500 },
+    { asin: "B0DQPSRB1Y", title: "Lifewit 2 Pack Slim Laundry Hampers with Handles, 65L, White", w: 1250, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B08R7BW5H6", title: "Jetec Rustic Wooden Laundry Room Wall Sign, White", w: 1500, h: 643 },
+    { asin: "B0DSBTZSS8", title: "OIASKET Natural Cotton Rope Storage Baskets, 4 Pack, for Toys, Clothes and Towels", w: 1500, h: 1360 },
+  ],
+  idea2: [
+    { asin: "B0GF9VJF4J", title: "Laundry Room Wall Cabinet with Adjustable Shelf and 2 Doors", w: 1500, h: 1491 },
+    { asin: "B0CJNXJ7K1", title: "JOY DECOR Matte Black Cabinet Pulls, 3 Inch Hole Center, 30 Pack", w: 1297, h: 1344 },
+  ],
+  idea3: [
+    { asin: "B00QF5KZCW", title: "PRESTIGE Interior Paint and Primer in One, Blue Sky, Satin, 1 Gallon", w: 965, h: 955 },
+    { asin: "B0D9FQQKSW", title: "ORGIDOL 8 Pack Colorful Stackable Storage Bins with Lids", w: 1500, h: 1268 },
+  ],
+  idea4: [
+    { asin: "B07BFTXQD3", title: "Goldenwarm Brushed Gold Cabinet Handles, 25 Pack, 5 Inch", w: 1468, h: 1213 },
+    { asin: "B0DZWWGZ9K", title: "DLLT 13 Inch Flush Mount LED Ceiling Light, Dimmable, 5 Color Temperatures", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0BFLNYPDH", title: "32000LM LED Garage Ceiling Lights, 6500K Daylight, Deformable Panels", w: 1500, h: 1453 },
+    { asin: "B0CD5WDZWC", title: "DEGNJU 24 Pack LED Light Bulbs, Soft White 2700K, 60 Watt Equivalent A19", w: 1500, h: 1460 },
+  ],
+  idea6: [
+    { asin: "B0FPFHKKBP", title: "Neoaider Wall Mounted Folding Table, 31.5 x 15.7 Inch, White", w: 1484, h: 1500 },
+    { asin: "B077XV9VZG", title: "BoxLegend V3 Shirt Folding Board, Durable T-Shirt and Clothes Folder, Black", w: 1500, h: 1231 },
+  ],
+  idea7: [
+    { asin: "B0D264GGVZ", title: "JILRON 100% Blackout Fabric Folding Door Curtain with Magnetic Closure, Accordion Style", w: 1500, h: 1500 },
+    { asin: "B0CP7NK61C", title: "Vatge Accordion Door Curtain for Closets and Doorways, 1 Panel", w: 1500, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0DM4TX529", title: "Glass Liquid Laundry Detergent Dispensers, 2 Pcs, Half Gallon, with Cup Holders", w: 1152, h: 1414 },
+    { asin: "B0CHJQ1XK7", title: "Artfeel Woven Cotton Rope Laundry Basket, 60L, with Tassel Handles", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B07FCBHZHP", title: "Haotian Wall Cabinet for Laundry Room, Bathroom, Kitchen or Garage, White", w: 1379, h: 654 },
+    { asin: "B07LG4C984", title: "Mkono Wall Mounted Drying Rack with Swing Arm Valet Rod, 2 Pack", w: 1500, h: 1474 },
+  ],
+  idea10: [
+    { asin: "B0CJ83B3D3", title: "FyndraX Laundry Pods Glass Jars, Half Gallon, Airtight with Scoop and Labels", w: 1406, h: 1500 },
+    { asin: "B0CLY9H5DX", title: "Golpart Over the Washer and Dryer Storage Shelf and Organizer", w: 1182, h: 1422 },
+  ],
+  idea11: [
+    { asin: "B0GVF3F4BV", title: "VinBee Dirty and Clean Laundry Basket Label Clips, 10 Pcs", w: 1500, h: 1229 },
+    { asin: "B0BRTRJGTD", title: "ROMOON Laundry Hamper Sorter Cart, 4 Section, with Lockable Wheels", w: 1500, h: 1448 },
+  ],
+  idea12: [
+    { asin: "B0HBPLZC6Y", title: "Rustic Wood Wall Hooks, 4 Pack, Heavy Duty Walnut Hangers", w: 1500, h: 1500 },
+    { asin: "B0DG7XXMV7", title: "Optish Over The Door Hooks, White Door Hanger Rack", w: 1479, h: 1120 },
+  ],
+  idea13: [
+    { asin: "B0D9RHC5PD", title: "Universal Washer Dryer Stacking Kit", w: 1500, h: 1398 },
+    { asin: "B0CZ32LWTP", title: "Furnulem 6-Tier Corner Shelf with LED Light, 67.5 Inch, Black Narrow Bookshelf", w: 1125, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0H44YQFTM", title: "46 Inch Stainless Steel Dog Washing Station, 440 lb, with Side Ramp", w: 1236, h: 1500 },
+    { asin: "B0G2THB3ZJ", title: "SereneLife Foldable Dog Bath Tub with Adjustable Height, 360 Degree Access", w: 1311, h: 1500 },
+  ],
+  idea15: [
+    { asin: "B0016JHHQO", title: "Rev-A-Shelf Large Pullout Clothes Hamper, Steel Frame and Polymer Bin", w: 1384, h: 1500 },
+    { asin: "B0DR1N9PND", title: "Rolling Ironing Board with Storage Cabinet, Folding, White", w: 1500, h: 1432 },
+  ],
+  idea16: [
+    { asin: "B0FJ26KJ5B", title: "Peel and Stick Subway Tile Backsplash, 10 Sheets, Thicker Design, Burgundy", w: 1500, h: 1500 },
+    { asin: "B0H8SXRFRK", title: "Goo-Ki Antique Brass Cabinet Knob with Backplate", w: 1453, h: 1101 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "laundry-room-ideas-effortless-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "laundry-room-ideas-effortless", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "laundry-room-ideas-effortless", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -38,7 +137,7 @@ const ideas = [
       "Wood accents on a shelf or countertop, neutral tones like white, beige and soft gray, and a few woven baskets for texture build the look.",
       "A simple wood countertop laid over the machines can shift the whole room from feeling like a chore zone to feeling like an actual part of the home.",
     ],
-    photo: pinPhoto("farmhouse.jpg", "Farmhouse-inspired laundry room with wood countertop and neutral tones", 609, 1024, "https://www.pinterest.com/pin/58335757668760239/", "Farmhouse Laundry Room"),
+    photo: pinPhoto("farmhouse.jpg", "Farmhouse-inspired laundry room with wood countertop and neutral tones", 609, 1024, "https://www.pinterest.com/pin/58335757668760239/", "Farmhouse Laundry Room", "idea1"),
   },
   {
     n: "02",
@@ -48,7 +147,7 @@ const ideas = [
       "Flat-panel cabinets, minimal hardware, and a monochrome color palette define the look.",
       "A clean-looking room tends to stay clean, too &mdash; less visual clutter naturally means fewer distractions while working through a laundry pile.",
     ],
-    photo: pinPhoto("modern-clean.jpg", "Modern laundry room with flat-panel cabinets and clean lines", 683, 1024, "https://www.pinterest.com/pin/12384967724382083/", "Modern Laundry Room"),
+    photo: pinPhoto("modern-clean.jpg", "Modern laundry room with flat-panel cabinets and clean lines", 683, 1024, "https://www.pinterest.com/pin/12384967724382083/", "Modern Laundry Room", "idea2"),
   },
   {
     n: "03",
@@ -58,7 +157,7 @@ const ideas = [
       "A painted accent wall, colorful storage bins, or a patterned tile or wallpaper all bring that shift in with minimal effort.",
       "Even a soft sage green wall can be enough to make folding laundry feel noticeably less like a punishment.",
     ],
-    photo: pinPhoto("colorful.jpg", "Colorful laundry room with a sage green accent wall", 575, 1024, "https://www.pinterest.com/pin/1020980178041969282/", "Colorful Laundry Room"),
+    photo: pinPhoto("colorful.jpg", "Colorful laundry room with a sage green accent wall", 575, 1024, "https://www.pinterest.com/pin/1020980178041969282/", "Colorful Laundry Room", "idea3"),
   },
   {
     n: "04",
@@ -68,7 +167,7 @@ const ideas = [
       "A marble or quartz countertop, gold or matte black hardware, and a genuine statement light fixture all add that elevated feel.",
       "Even one luxe element goes a long way &mdash; if time's being spent there anyway, it might as well feel nice.",
     ],
-    photo: photo("luxe.jpg", "Luxe laundry room with marble countertop and statement lighting", 609, 1024),
+    photo: photo("luxe.jpg", "Luxe laundry room with marble countertop and statement lighting", 609, 1024, "idea4"),
   },
   {
     n: "05",
@@ -78,7 +177,7 @@ const ideas = [
       "Light paint colors, added LED lighting, and maximizing any available natural light all brighten the space without a renovation.",
       "Switching to soft white lighting alone can make a room feel noticeably larger &mdash; no construction required, just smarter bulbs.",
     ],
-    photo: pinPhoto("bright-airy.jpg", "Bright and airy laundry room with light paint and natural light", 681, 1024, "https://www.pinterest.com/pin/353251164546244227/", "Bright Airy Laundry Room"),
+    photo: pinPhoto("bright-airy.jpg", "Bright and airy laundry room with light paint and natural light", 681, 1024, "https://www.pinterest.com/pin/353251164546244227/", "Bright Airy Laundry Room", "idea5"),
   },
   {
     n: "06",
@@ -88,7 +187,7 @@ const ideas = [
       "A countertop above front-load machines, a pull-out folding table, or a multi-use counter all work well for this.",
       "Keeping that surface genuinely clutter-free matters most &mdash; pile anything on it and it stops getting used as intended within a week.",
     ],
-    photo: pinPhoto("folding-station.jpg", "Built-in folding station countertop above front-load laundry machines", 701, 1024, "https://www.pinterest.com/pin/430516045654553302/", "Laundry Room Folding Station"),
+    photo: pinPhoto("folding-station.jpg", "Built-in folding station countertop above front-load laundry machines", 701, 1024, "https://www.pinterest.com/pin/430516045654553302/", "Laundry Room Folding Station", "idea6"),
   },
   {
     n: "07",
@@ -98,7 +197,7 @@ const ideas = [
       "Sliding doors, a cabinet-enclosed washer and dryer, or a full closet conversion all hide the setup when it's not in use.",
       "A laundry setup hidden fully behind simple doors can go completely unnoticed by guests, which is often exactly the goal in a tight space.",
     ],
-    photo: pinPhoto("hidden-laundry.jpg", "Hidden laundry setup behind sliding doors in a small space", 601, 1024, "https://www.pinterest.com/pin/187532771979328219/", "Hidden Laundry Room"),
+    photo: pinPhoto("hidden-laundry.jpg", "Hidden laundry setup behind sliding doors in a small space", 601, 1024, "https://www.pinterest.com/pin/187532771979328219/", "Hidden Laundry Room", "idea7"),
   },
   {
     n: "08",
@@ -108,7 +207,7 @@ const ideas = [
       "Keeping only the genuine essentials &mdash; detergent, fabric softener, baskets, basic cleaning supplies &mdash; and removing everything else clears both the room and the task.",
       "Less visual clutter tends to mean less mental clutter, too, which can make the actual chore feel faster to get through.",
     ],
-    photo: pinPhoto("minimalist.jpg", "Minimalist laundry room with only essential items kept visible", 683, 1024, "https://www.pinterest.com/pin/12384967724382084/", "Minimalist Laundry Room"),
+    photo: pinPhoto("minimalist.jpg", "Minimalist laundry room with only essential items kept visible", 683, 1024, "https://www.pinterest.com/pin/12384967724382084/", "Minimalist Laundry Room", "idea8"),
   },
   {
     n: "09",
@@ -118,7 +217,7 @@ const ideas = [
       "Wall-mounted cabinets above the washer and dryer, floating shelves, and a hanging rod for air-drying items all put that vertical space to work.",
       "Reaching up for something beats digging through a messy pile every time &mdash; and the floor stays genuinely clear in the process.",
     ],
-    photo: photo("vertical-storage.jpg", "Vertical storage cabinets mounted above a washer and dryer", 683, 1024),
+    photo: photo("vertical-storage.jpg", "Vertical storage cabinets mounted above a washer and dryer", 683, 1024, "idea9"),
   },
   {
     n: "10",
@@ -128,7 +227,7 @@ const ideas = [
       "Matching containers, a neutral color palette, and a few small decorative touches keep open shelving looking considered rather than chaotic.",
       "Swapping plain detergent bottles for a few glass jars alone can make an open-shelf laundry room look genuinely styled.",
     ],
-    photo: photo("open-shelving.jpg", "Styled open shelving in a laundry room with matching containers", 735, 985),
+    photo: photo("open-shelving.jpg", "Styled open shelving in a laundry room with matching containers", 735, 985, "idea10"),
   },
   {
     n: "11",
@@ -138,7 +237,7 @@ const ideas = [
       "Labeled baskets, sorted by color or by family member, with a consistent matching design, make the whole sorting process automatic.",
       "It saves real time later and genuinely looks better in the meantime &mdash; a small system that pays off twice.",
     ],
-    photo: pinPhoto("basket-organization.jpg", "Stylish labeled laundry basket organization system", 683, 1024, "https://www.pinterest.com/pin/422986590024053511/", "Laundry Basket Organization"),
+    photo: pinPhoto("basket-organization.jpg", "Stylish labeled laundry basket organization system", 683, 1024, "https://www.pinterest.com/pin/422986590024053511/", "Laundry Basket Organization", "idea11"),
   },
   {
     n: "12",
@@ -148,7 +247,7 @@ const ideas = [
       "Hanging clothes, laundry bags, and cleaning tools all get a home instead of piling up on the floor or counter.",
       "Fewer things on the floor consistently means less visible chaos &mdash; a simple fix that costs almost nothing to install.",
     ],
-    photo: pinPhoto("wall-hooks.jpg", "Wall hooks and hanging system behind a laundry room door", 575, 1024, "https://www.pinterest.com/pin/923167623635701406/", "Laundry Room Wall Hooks"),
+    photo: pinPhoto("wall-hooks.jpg", "Wall hooks and hanging system behind a laundry room door", 575, 1024, "https://www.pinterest.com/pin/923167623635701406/", "Laundry Room Wall Hooks", "idea12"),
   },
   {
     n: "13",
@@ -158,7 +257,7 @@ const ideas = [
       "Stacking the washer and dryer frees up real floor space, corner shelving uses otherwise-awkward areas, and slim cabinets replace bulkier ones.",
       "A layout that flows well makes the whole task feel easier, with no more bumping into things while moving through the routine.",
     ],
-    photo: photo("compact-layout.jpg", "Compact laundry room layout with stacked washer and dryer", 574, 1024),
+    photo: photo("compact-layout.jpg", "Compact laundry room layout with stacked washer and dryer", 574, 1024, "idea13"),
   },
   {
     n: "14",
@@ -168,7 +267,7 @@ const ideas = [
       "Laundry combined with a mudroom, extra storage, or even a pet-washing station all stretch the room's purpose further.",
       "It maximizes every inch of the space, and there's rarely a downside to a room doing more than one job well.",
     ],
-    photo: photo("multi-functional.jpg", "Multi-functional laundry room doubling as a mudroom and storage space", 683, 1024),
+    photo: photo("multi-functional.jpg", "Multi-functional laundry room doubling as a mudroom and storage space", 683, 1024, "idea14"),
   },
   {
     n: "15",
@@ -178,7 +277,7 @@ const ideas = [
       "A pull-out hamper for easy sorting, a built-in ironing board, and clearly labeled storage zones all cut down on wasted steps.",
       "Fewer steps genuinely means less time spent, and nobody's looking to spend extra time on laundry if it can be avoided.",
     ],
-    photo: pinPhoto("high-efficiency.jpg", "High-efficiency laundry room with pull-out hamper and labeled storage", 585, 1024, "https://www.pinterest.com/pin/129408189289267573/", "High-Efficiency Laundry Room"),
+    photo: pinPhoto("high-efficiency.jpg", "High-efficiency laundry room with pull-out hamper and labeled storage", 585, 1024, "https://www.pinterest.com/pin/129408189289267573/", "High-Efficiency Laundry Room", "idea15"),
   },
   {
     n: "16",
@@ -188,7 +287,7 @@ const ideas = [
       "A peel-and-stick backsplash, a fresh coat of paint, new cabinet handles, and a few affordable baskets all create real visual impact for very little.",
       "Small changes add up to a surprisingly big difference &mdash; sometimes it really is just the lighting or the hardware that was holding the room back.",
     ],
-    photo: pinPhoto("budget-friendly.jpg", "Budget-friendly laundry room upgrade with fresh paint and new hardware", 683, 1024, "https://www.pinterest.com/pin/9781324187145899/", "Budget-Friendly Laundry Room"),
+    photo: pinPhoto("budget-friendly.jpg", "Budget-friendly laundry room upgrade with fresh paint and new hardware", 683, 1024, "https://www.pinterest.com/pin/9781324187145899/", "Budget-Friendly Laundry Room", "idea16"),
   },
 ];
 
@@ -203,11 +302,11 @@ function ideaBlock(idea) {
 const body = `
 <p>Laundry will probably never become anyone's favorite chore, but the room it happens in makes a bigger difference than most people expect. The right setup turns a frustrating, cluttered corner into something that actually functions &mdash; and sometimes even looks good while doing it.</p>
 <p>Function matters first, always. A beautifully styled laundry room that's still a hassle to actually use misses the real point. The best versions start with what's genuinely annoying about the current setup, fix that specific thing, then layer in style on top.</p>
-${photo("hero.jpg", "Effortless laundry room with smart storage and a calm, functional layout", 1400, 934)}
+${photo("hero.jpg", "Effortless laundry room with smart storage and a calm, functional layout", 1400, 934, "hero")}
 
 <h2>What People Actually Want From a Laundry Room</h2>
 <p>Function comes first, every time &mdash; a gorgeous laundry room that still feels like a hassle to use has already failed at its main job. Small spaces aren't a dealbreaker either; the right layout works just as well in a closet-sized room as a sprawling one. And style still matters even in a purely utilitarian space &mdash; nobody said a laundry room has to look like an afterthought.</p>
-${pinPhoto("intro-function.jpg", "Well-designed laundry room balancing function and style", 682, 1024, "https://www.pinterest.com/pin/317926054968229457/", "Functional Laundry Room Design")}
+${pinPhoto("intro-function.jpg", "Well-designed laundry room balancing function and style", 682, 1024, "https://www.pinterest.com/pin/317926054968229457/", "Functional Laundry Room Design", "want")}
 
 <h2>16 Laundry Room Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}

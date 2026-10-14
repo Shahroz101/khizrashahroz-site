@@ -8,21 +8,124 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  idea1: [
+    { asin: "B0DTH8PPQD", title: "Hipiwe Small Natural Rattan Key Basket for Entryway Table", w: 1392, h: 1079 },
+    { asin: "B0CP8QLCPF", title: "Key Holder Wall Mount, Wooden Key and Mail Organizer, Black", w: 1491, h: 1301 },
+  ],
+  idea2: [
+    { asin: "B0HD9M5Z7W", title: "Letaya Metal Storage Lockers, 5 Doors, 66 Inch Tall, Lockable Steel Cabinet", w: 1500, h: 1004 },
+    { asin: "B07C74SML5", title: "VASAGLE Coat Rack, Hall Tree with Shoe Storage Bench, 3-in-1, Steel Frame", w: 715, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0F5GCWLL8", title: "Wood Wall-Mounted Coat Rack with Shelf and Hooks", w: 1298, h: 1500 },
+    { asin: "B0BZVHMLKC", title: "Posprica Woven Storage Baskets for Organizing, 6 Pack", w: 1500, h: 1427 },
+  ],
+  idea4: [
+    { asin: "B07D33ZFN3", title: "SONGMICS Wall-Mounted Coat Rack, 4 Dual Metal Hooks", w: 1500, h: 452 },
+    { asin: "B0CNTG2PD9", title: "Matte Black Wall Hooks for Coats and Robes, 4 Pack", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0FZJLK19Q", title: "Homaxy 2-Tier Shoe Rack Bench, 39 Inch, Walnut and Light Brown", w: 1500, h: 1500 },
+    { asin: "B0DG2ZRKSD", title: "HOOBRO Shoe Bench, Storage Bench with Cushion, Entryway Bench Shoe Shelf", w: 1459, h: 1071 },
+  ],
+  idea6: [
+    { asin: "B0HKJ7S2D4", title: "Garvee 77 Inch 4-in-1 Farmhouse Hall Tree with Bench and Shoe Storage", w: 1500, h: 1500 },
+    { asin: "B0F8BPV3T4", title: "Homleke Farmhouse Shoe Cabinet with 2 Barn Doors and Wood Legs", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0F7LBB549", title: "6-Tier Vertical Narrow Shoe Rack, Stackable Tall Skinny Design", w: 548, h: 1490 },
+    { asin: "B0H942J81D", title: "Solid Wood Wall-Mounted Coat Rack with 2-Tier Shelf, 23 Inch", w: 1500, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0DLFN6J47", title: "BEQHAUSE Dirt Trapper Door Mat, 32 x 48 Inch, Non-Slip, Dark Grey", w: 1500, h: 1500 },
+    { asin: "B0F3V4P4ZP", title: "Garage Tool Organizer Wall Mount, 48 Inch Heavy Duty Garden Tool Organizer Storage", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0DKXSGVCZ", title: "Dog Leash Holder for Wall, Key Holder Wall Mount, Metal Dog Leash Hooks", w: 1500, h: 1415 },
+    { asin: "B09D7DWTVB", title: "KSIIA Washable Dog Bed, Medium, Plush Crate Pad, 35 x 23 Inch, Gray", w: 1500, h: 1058 },
+  ],
+  idea10: [
+    { asin: "B0H9SZ4PFK", title: "Narrow Sculptural Console Table, Minimalist Entryway Table for Hallway", w: 1483, h: 1500 },
+    { asin: "B0D3FV3NRP", title: "Large Fabric Shoe Storage Bin for Entryway and Mudroom", w: 1009, h: 910 },
+  ],
+  idea11: [
+    { asin: "B0H49MQ4WJ", title: "Keehusux Rattan Shoe Cabinet with Doors and Adjustable Shelves, Natural Oak", w: 1250, h: 1500 },
+    { asin: "B0D285W4LG", title: "Amazon Basics 5-Shelf Adjustable Storage Shelving Unit, Tall Tower", w: 514, h: 1500 },
+  ],
+  idea12: [
+    { asin: "B0BCL93L1P", title: "DECOMOMO Storage Bins, Cube Storage Bin with Labels", w: 1500, h: 1021 },
+    { asin: "B0F2F9TZZV", title: "Wicker Storage Baskets for Shelves, 3 Pack, Foldable Rustic Square", w: 1500, h: 1484 },
+  ],
+  idea13: [
+    { asin: "B0CB38QLRG", title: "Madane Washable Hallway Runner Rug, 2 x 8 Ft, Non-Slip, Turmeric and Grey", w: 1500, h: 1500 },
+    { asin: "B00BCIUIPG", title: "Nexus Self-Adhesive Vinyl Floor Tiles, 12 x 12 Inch, 20 Pack", w: 1500, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0CWLLRFTF", title: "Yousoontic Kids Wall Hooks, Rainbow Coat Rack, 2 Pack", w: 1500, h: 1166 },
+    { asin: "B0DZXL2QTQ", title: "SpaceAid Toy Storage Organizer with 12 Bins, Kids Bookshelf", w: 1500, h: 1500 },
+  ],
+  idea15: [
+    { asin: "B0FHVLD4RR", title: "Lifewit 185L 3 Section Laundry Hamper with Lid, Laundry Basket, Beige", w: 1455, h: 1500 },
+    { asin: "B0D62WSSGT", title: "BAKON Wall-Mounted Clothes Drying Rack, 23.6 Inch, Space Saving", w: 1492, h: 1407 },
+  ],
+  idea16: [
+    { asin: "B01MQK1MGC", title: "Alaterre Revive Wall-Mounted Coat Rack with Cubbies, Natural, 36 Inch", w: 1500, h: 1422 },
+    { asin: "B0DGT62GNS", title: "My Fancy Farmhouse Rustic Cast Iron Coat Hooks, 10 Pack", w: 1500, h: 1499 },
+  ],
+  idea17: [
+    { asin: "B0BHNRJV2W", title: "Hall Tree with Bench and Shoe Storage, 3-in-1 Coat Rack Shoe Bench", w: 1500, h: 1500 },
+    { asin: "B0B9H6PVXX", title: "BAMEOS Wall-Mounted Entryway Shelf with 5 Dual Hooks, 28.9 Inch", w: 1500, h: 1500 },
+  ],
+  idea18: [
+    { asin: "B0GH9325VG", title: "Sterilite Industrial Storage Totes with Lids, 27 Gallon, 4 Pack", w: 1500, h: 1372 },
+    { asin: "B0D296K5P4", title: "Clear Adhesive Label Pockets for Storage Bins, 3 x 5 Inch, 44 Pack", w: 1485, h: 1500 },
+  ],
+  idea19: [
+    { asin: "B0CRRV59MT", title: "Customizable A to Z Ceramic Coat Hook, White Decorative", w: 296, h: 905 },
+    { asin: "B09LD8B2C2", title: "Collective Home Monogram Wall Hook, Wall Mounted", w: 452, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "mudroom-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "mudroom-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Drop Zone for Keys and Mail",
     paras: [
       "It sounds like a minor detail, but a dedicated drop zone solves one of the most common daily frustrations a home has.",
@@ -32,6 +135,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Mudroom Lockers for Busy Families",
     paras: [
       "Lockers feel like an upgrade, and in a busy household they genuinely function like one.",
@@ -41,6 +145,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Open Shelving for Grab-and-Go Storage",
     paras: [
       "Closed cabinets can feel heavy and bulky in a smaller mudroom, which makes open shelving a lighter alternative.",
@@ -50,6 +155,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Wall Hooks Instead of Closets",
     paras: [
       "A closet hides clutter, but a row of hooks actually prevents it from building up in the first place.",
@@ -59,16 +165,18 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Built-In Bench With Shoe Storage",
     paras: [
       "A built-in bench is one of the most dependable mudroom upgrades there is, and it rarely disappoints.",
       "It gives everyone a place to actually sit down while putting on or taking off shoes, and storage tucked underneath &mdash; open cubbies or closed drawers, depending on how much visual clutter feels tolerable &mdash; keeps footwear from spreading across the floor.",
       "Closed drawers work well for anyone who prefers a cleaner look, while open cubbies keep everyday shoes faster to grab.",
     ],
-    photo: photo("hero.jpg", "Built-in mudroom bench with open storage cubbies, hooks and a window seat", 1600, 1067),
+    photo: photo("hero.jpg", "Built-in mudroom bench with open storage cubbies, hooks and a window seat", 1600, 1067, "idea5"),
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Hidden Mudroom Behind Cabinet Doors",
     paras: [
       "For a home with an open floor plan, where the entry opens straight into the living space, a hidden mudroom behind cabinet doors keeps the clutter out of view entirely.",
@@ -78,6 +186,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Slim Mudroom Ideas for Narrow Entryways",
     paras: [
       "A narrow entryway doesn't rule out a functional mudroom setup, even when the available depth is limited.",
@@ -87,6 +196,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Garage Mudroom Ideas That Feel Intentional",
     paras: [
       "A garage entry doesn't have to feel like an afterthought just because it's not the home's main entrance.",
@@ -96,6 +206,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Mudroom Ideas for Homes With Pets",
     paras: [
       "Pets bring plenty of joy, and just as reliably, plenty of mud.",
@@ -105,6 +216,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Small Mudroom Ideas for Apartments",
     paras: [
       "Apartment living doesn't rule out a functional mudroom setup, even without the option for a full renovation.",
@@ -114,6 +226,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Vertical Storage to Maximize Wall Space",
     paras: [
       "When floor space runs out, going vertical is usually the easiest fix.",
@@ -123,6 +236,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Mudroom Storage That Doubles as Decor",
     paras: [
       "Storage doesn't have to look purely utilitarian to actually function well.",
@@ -132,6 +246,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Mudroom Flooring That Handles Real Life",
     paras: [
       "Flooring matters more in a mudroom than almost any other room in the house, since it takes the brunt of dirt, water and daily wear.",
@@ -141,6 +256,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Mudroom Ideas for Homes With Kids",
     paras: [
       "Kids come with an outsized amount of gear for their size &mdash; backpacks, shoes, sports equipment, seasonal layers, all needing somewhere to go.",
@@ -150,6 +266,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Multi-Purpose Mudroom and Laundry Combo",
     paras: [
       "Combining a mudroom with a laundry area makes efficient use of a home's square footage, especially in a smaller house where a dedicated room for each isn't realistic.",
@@ -159,6 +276,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Rustic Mudroom Style That Feels Warm",
     paras: [
       "Rustic doesn't have to mean outdated &mdash; in a mudroom, it often reads as genuinely welcoming instead.",
@@ -168,6 +286,7 @@ const ideas = [
   },
   {
     n: "17",
+    productsKey: "idea17",
     title: "Modern Mudroom Ideas With Clean Lines",
     paras: [
       "For anyone who prefers a sleeker, more minimal look, a modern mudroom can hide just as much mess while still keeping everything accessible.",
@@ -177,6 +296,7 @@ const ideas = [
   },
   {
     n: "18",
+    productsKey: "idea18",
     title: "Seasonal Storage Rotation",
     paras: [
       "There's little reason to keep snow boots taking up prime real estate in the middle of summer.",
@@ -186,6 +306,7 @@ const ideas = [
   },
   {
     n: "19",
+    productsKey: "idea19",
     title: "Personalized Mudroom Ideas for Every Home",
     paras: [
       "This idea matters more than any single storage trick on this list.",
@@ -200,7 +321,7 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `

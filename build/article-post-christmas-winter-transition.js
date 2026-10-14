@@ -15,16 +15,138 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0CPJ2FQX8", title: "Carriediosa Chunky Knit Throw Blanket, 50 x 60 Inch, Handmade, Taupe", w: 1500, h: 1500 },
+    { asin: "B0H7C9VLC3", title: "ZYER Small Amber Table Lamp, 8.9 Inch, Touch Control, Vintage Style", w: 1500, h: 1500 },
+  ],
+  why: [
+    { asin: "B0G23W6JYG", title: "Neutral Boho Textured Chenille Throw Pillow Covers, 18 x 18 Inch, Pack of 2", w: 1500, h: 1500 },
+    { asin: "B0F7R6M4LD", title: "Modern Ceramic Vase Set, Neutral Colors, 4 Piece Collection", w: 1200, h: 1200 },
+  ],
+  different: [
+    { asin: "B07X3BX7WM", title: "Bedsure Faux Fur Fluffy Fleece Sherpa Throw Blanket, Grey, 50 x 60 Inch", w: 1385, h: 1500 },
+    { asin: "B0HDCHM42G", title: "Soft Boucle Pillow Covers, 20 x 20 Inch, 2 Pack, Mocha Brown", w: 1500, h: 1500 },
+  ],
+  order: [
+    { asin: "B07R6XLKYW", title: "ZOBER Large Ornament Storage Box with Dividers, Holds 128 Ornaments", w: 1500, h: 1241 },
+    { asin: "B0FDWLX8QP", title: "ukeetap 8 Pack Extra Large Clear Storage Bins with Lids", w: 1208, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0H86LVTWY", title: "Chunky Chenille Knit Throw Blanket, Cable Knit with Openwork Texture", w: 1500, h: 1500 },
+    { asin: "B08BC2MSKW", title: "Bedsure GentleSoft Cream Fleece Throw Blanket for Couch, 300GSM", w: 1500, h: 1280 },
+  ],
+  idea2: [
+    { asin: "B0FVFKYDGB", title: "Small Rechargeable Cordless Ceramic Table Lamp, 13 Inch, Coastal Style", w: 889, h: 1500 },
+    { asin: "B0GL1W2TBT", title: "Glossy Chrome Silver Arc Floor Lamp with 12W LED and Remote Dimming", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0H9S5HKM8", title: "Artificial Eucalyptus Stems, 6 Pack, Faux Greenery for Vases", w: 1500, h: 1438 },
+    { asin: "B0H3BW5H9S", title: "Artificial Norfolk Pine Branches, 20 Pack, Lifelike Greenery for Vases", w: 1500, h: 1160 },
+  ],
+  idea4: [
+    { asin: "B0DPWYDZW7", title: "ZWJD Camel Chenille Throw Pillow Covers, 18 x 18 Inch, Set of 2", w: 1500, h: 1122 },
+    { asin: "B0GT7JW536", title: "Charcoal Grey Moss Knit Throw Blanket, Sweater-Soft, 50 x 60 Inch", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0DR5QQZZV", title: "OKBA Throw Pillow Inserts, Set of 2, 100% Cotton Cover", w: 1280, h: 1223 },
+    { asin: "B0F1KNX9V3", title: "Sasttie Euro Pillow Inserts, 26 x 26 Inch, Set of 2", w: 1332, h: 1336 },
+  ],
+  idea6: [
+    { asin: "B0H5KRHRPN", title: "Vintage Framed Winter Landscape Wall Art, Snowy Mountain Forest", w: 1500, h: 1188 },
+    { asin: "B0FJFJB3YC", title: "Vintage Snowy Pine Forest Framed Canvas Wall Art, 12 x 16 Inch", w: 1500, h: 1144 },
+  ],
+  idea7: [
+    { asin: "B0CYQFQXB4", title: "Ultra Soft Fluffy Shag Area Rug, 5 x 8 Ft, Gray", w: 1024, h: 1024 },
+    { asin: "B0DWKBSTKP", title: "Handwoven Natural Wool Area Rug, 8 x 10 Ft, Ivory", w: 1448, h: 1086 },
+  ],
+  idea8: [
+    { asin: "B0HBHSP81P", title: "Extra Large Acacia Wood Breakfast Tray with Folding Legs and Handles", w: 1500, h: 1163 },
+    { asin: "B0DXPSGBZJ", title: "Kaizen Casa Hand Carved Acacia Wood Decorative Bowl", w: 1104, h: 754 },
+  ],
+  idea9: [
+    { asin: "B0BM6P45FY", title: "Natural Dried Pampas Grass, Small Short Stems, Bulk Pack", w: 1500, h: 1137 },
+    { asin: "B0GTYB8F8V", title: "Dried Pampas Grass and Eucalyptus Bouquet Set, 355 Piece Boho Collection", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B096LX56MD", title: "RYB HOME Blue Velvet Blackout Curtains, 84 Inches Long", w: 1500, h: 1500 },
+    { asin: "B0BZDLT95R", title: "Joydeco 100% Blackout Linen-Look Curtains, 84 Inches Long", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0FNWKGN3F", title: "Cedar Scented Soy Wax Candle, 7 oz Jar", w: 974, h: 1000 },
+    { asin: "B01MXLAFR6", title: "Scentsational Amber and Vanilla Soy Candle", w: 620, h: 846 },
+  ],
+  idea12: [
+    { asin: "B07GWNB3NP", title: "Woven Seagrass Belly Basket with Handles, Large, Storage and Plant Pot", w: 1201, h: 1210 },
+    { asin: "B0GKBVBB87", title: "Best Choice Products 2 Piece Round Nesting Baskets, Handwoven Water Hyacinth", w: 1500, h: 1364 },
+  ],
+  idea13: [
+    { asin: "B0HHZX4NGY", title: "17 Inch Acacia Wood Serving Tray with Gold Handles", w: 1500, h: 1465 },
+    { asin: "B0G8JBV2SW", title: "Rustic Modern Farmhouse Tabletop Decor Set of 6", w: 1254, h: 1254 },
+  ],
+  idea14: [
+    { asin: "B0GZ3S65XL", title: "Artificial Winter Wreath for Front Door, 24 Inch, White Berry and Greenery", w: 1500, h: 1500 },
+    { asin: "B0DR8KC186", title: "Washable Non-Slip Hallway Runner Rug, 2 x 8 Ft, Beige", w: 1500, h: 1500 },
+  ],
+  idea15: [
+    { asin: "B0HK576X54", title: "Luxury Portuguese Flannel Sheet Set, 100% Organic Cotton, Queen, Brown", w: 1500, h: 1489 },
+    { asin: "B07V5G1BDL", title: "ACCURATEX Down Alternative Duvet Insert, Queen, 400GSM, 90 x 90 Inch", w: 1000, h: 1000 },
+  ],
+  idea16: [
+    { asin: "B0GTDVMSK9", title: "Minimal Line White Ceramic Vase Set of 3, Matte Finish", w: 1500, h: 1500 },
+    { asin: "B0DSHTYFV9", title: "DN DECONATION 3 Link Knot Decor, Beige Travertine", w: 1500, h: 1500 },
+  ],
+  idea17: [
+    { asin: "B0H3ZBLQJP", title: "Solid Wood Footed Tray for Coffee Station, 14.2 x 8.3 Inch", w: 1230, h: 1004 },
+    { asin: "B08PP48979", title: "Cosori Electric Kettle, 1.7L, No Plastic Contact with Water, Black", w: 1055, h: 1500 },
+  ],
+  idea18: [
+    { asin: "B0GD8J6BDH", title: "COCORRINA Cedar Wood Reed Diffuser with Sticks, 6.7 fl oz", w: 1361, h: 1500 },
+    { asin: "B0GK2PM9Y7", title: "Sandalwood Reed Diffuser, 5.2 fl oz", w: 743, h: 938 },
+  ],
+  idea19: [
+    { asin: "B0FX4LDJTT", title: "RICHIE Soft Knitted Throw Pillow Covers, 18 x 18 Inch, Cream", w: 1500, h: 1393 },
+    { asin: "B0HCHBFVD9", title: "Knitted Diamond Textured Throw Pillow Covers, 17 x 17 Inch, Set of 2", w: 1254, h: 1254 },
+  ],
+  idea20: [
+    { asin: "B08HC6MKVL", title: "Matte Black Metal Pillar Candle Holders, Set of 3, 6, 8 and 10 Inch", w: 1500, h: 1500 },
+    { asin: "B0D9MK47F7", title: "Artificial Greenery Garland, 6 Pack, 5.57 Ft, Hanging Decor", w: 1404, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "post-christmas-winter-transition-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "post-christmas-winter-transition", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
@@ -32,13 +154,13 @@ const body = `
 <p>All that red, green and sparkle leaves, and what's left underneath often hasn't been styled in weeks.</p>
 <p>The fix isn't redecorating from scratch. It's a deliberate transition &mdash; what comes down first, what gets swapped, what quietly stays.</p>
 <p>These 20 ideas are organized around that process, not just a static winter mood board.</p>
-${photo("hero.jpg", "Cozy winter living room with warm textures after Christmas decor comes down", 2560, 1920)}
+${photo("hero.jpg", "Cozy winter living room with warm textures after Christmas decor comes down", 2560, 1920, "hero")}
 
 <h2>Why the House Feels Empty in January</h2>
 <p>Christmas decor does a lot of visual work &mdash; lights, garland, ornaments all add color and texture to nearly every surface.</p>
 <p>Once it's packed away, a room can look bare even if nothing structural actually changed.</p>
 <p>The goal of a winter transition isn't replacing all of that volume. It's choosing a smaller set of pieces that still carry the room through the cold months.</p>
-${photo("intro-2.jpg", "Living room transitioning from holiday decor to cozy winter styling", 683, 1024)}
+${photo("intro-2.jpg", "Living room transitioning from holiday decor to cozy winter styling", 683, 1024, "why")}
 
 <h2>What Makes Winter Decor Different From Christmas Decor</h2>
 <p>Christmas decor leans bright, festive and temporary by design.</p>
@@ -46,152 +168,154 @@ ${photo("intro-2.jpg", "Living room transitioning from holiday decor to cozy win
 <p>Texture and warmth carry winter decor, rather than color and sparkle.</p>
 <p>That's the real shift: from festive and loud to warm and quiet.</p>
 ${photo("intro-3.jpg", "Warm winter living room styling that feels different from holiday decor", 1024, 682)}
-${photo("intro-4.jpg", "Textured winter home decor with neutral, warm tones", 1024, 1024)}
+${photo("intro-4.jpg", "Textured winter home decor with neutral, warm tones", 1024, 1024, "different")}
 
 <h2>A Simple Transition Order</h2>
 <p>Take down anything explicitly Christmas-coded first &mdash; ornaments, red and green accents, holiday-specific signage.</p>
 <p>Next, assess what's left: furniture, rugs, lighting, art that can stay year-round.</p>
 <p>Then layer in the winter-specific pieces from the list below, one or two at a time rather than all at once.</p>
 <p>This keeps the refresh from feeling like starting over completely.</p>
-${photo("intro-5.jpg", "Simplified winter home interior after holiday decorations are removed", 1024, 1024)}
+${photo("intro-5.jpg", "Simplified winter home interior after holiday decorations are removed", 1024, 1024, "order")}
 
 <h2>1. Layer in Cozy Throw Blankets</h2>
 <p>This is usually the first and easiest winter piece to add back in.</p>
 <p>Mixing knit, fleece and faux fur textures adds warmth without adding color.</p>
 <p>Cream, taupe and charcoal tones keep it calm rather than festive.</p>
 <p>A simple swap that instantly signals the room has moved on from the holidays.</p>
-${photo("throw-blankets.jpg", "Cozy textured throw blankets layered on a sofa", 1024, 768)}
+${photo("throw-blankets.jpg", "Cozy textured throw blankets layered on a sofa", 1024, 768, "idea1")}
 
 <h2>2. Swap to Warm Ambient Lighting</h2>
 <p>String lights and holiday-specific fixtures come down with the rest of the decorations.</p>
 <p>A warm-toned lamp in a darker corner replaces that light without the festive association.</p>
 <p>This matters more in winter than any other season, given how early it gets dark.</p>
 <p>Warm light does more for a room's mood in January than almost anything else on this list.</p>
-${photo("ambient-lighting.jpg", "Warm ambient lamp lighting in a cozy winter room corner", 684, 1024)}
+${photo("ambient-lighting.jpg", "Warm ambient lamp lighting in a cozy winter room corner", 684, 1024, "idea2")}
 
 <h2>3. Keep Some Evergreen, Lose the Rest</h2>
 <p>Not every piece of greenery needs to go when the ornaments come down.</p>
 <p>A simple pine or eucalyptus arrangement, stripped of any ribbon or holiday attachment, reads as winter rather than Christmas.</p>
 <p>Anything with obvious holiday styling attached should go first.</p>
 <p>This is a good example of editing rather than replacing entirely.</p>
-${photo("evergreen-touches.jpg", "Simple evergreen branches styled for a winter look", 748, 1024)}
+${photo("evergreen-touches.jpg", "Simple evergreen branches styled for a winter look", 748, 1024, "idea3")}
 
 <h2>4. Swap Bright Colors for Earthy Neutrals</h2>
 <p>Red and green give way to cream, camel, charcoal and warm brown.</p>
 <p>This doesn't require repainting &mdash; it's mostly about swapping smaller accent pieces like pillows and throws.</p>
 <p>Earthy neutrals read as timeless rather than seasonal, which is the whole point of a winter palette versus a holiday one.</p>
 <p>This shift alone does a lot to make a space feel post-holiday rather than mid-holiday.</p>
+${productGrid("idea4")}
 
 <h2>5. Add Oversized Pillows</h2>
 <p>Larger, softer pillows on a sofa or bed add volume that replaces some of what came down with the holiday decor.</p>
 <p>Neutral tones keep them from reading as festive.</p>
 <p>This is a quick, low-cost way to fill visual space that suddenly feels empty.</p>
 <p>A sofa with the right pillow mix can carry most of a room's winter mood on its own.</p>
-${photo("oversized-pillows.jpg", "Oversized neutral pillows styled on a sofa for winter coziness", 683, 1024)}
+${photo("oversized-pillows.jpg", "Oversized neutral pillows styled on a sofa for winter coziness", 683, 1024, "idea5")}
 
 <h2>6. Display Winter-Themed Artwork</h2>
 <p>Swapping a holiday-specific print for something more generally wintery &mdash; a snowy landscape, an abstract piece in cool tones &mdash; keeps the wall relevant past New Year's.</p>
 <p>This can be as simple as rotating in a different print already owned.</p>
 <p>Art is one of the easiest things to change seasonally without touching furniture at all.</p>
 <p>It's also one of the first things guests notice walking in.</p>
-${photo("winter-artwork.jpg", "Winter-themed artwork displayed on a living room wall", 683, 1024)}
+${photo("winter-artwork.jpg", "Winter-themed artwork displayed on a living room wall", 683, 1024, "idea6")}
 
 <h2>7. Add a Soft, Textured Rug</h2>
 <p>A textured rug underfoot adds warmth in a very literal, physical way during the colder months.</p>
 <p>This is a bigger investment than most ideas on this list, but it's not seasonal &mdash; it works year-round.</p>
 <p>Layering a smaller textured rug over an existing one is a cheaper option if a full replacement isn't in the budget.</p>
 <p>Texture underfoot does as much for a room's feel as anything visible on the walls.</p>
-${photo("textured-rug.jpg", "Soft textured area rug adding warmth to a winter living room", 1024, 682)}
+${photo("textured-rug.jpg", "Soft textured area rug adding warmth to a winter living room", 1024, 682, "idea7")}
 
 <h2>8. Bring In Wood Accents</h2>
 <p>Natural wood &mdash; a tray, a stool, a bowl &mdash; adds warmth that survives well past the holidays.</p>
 <p>This works especially well replacing a Christmas-specific wood piece, like an ornament display stand.</p>
 <p>Wood tones pair naturally with the earthy neutral palette shift above.</p>
 <p>A small, low-cost addition with real staying power.</p>
-${photo("wood-accents.jpg", "Natural wood accent pieces styled for warm winter decor", 682, 1024)}
+${photo("wood-accents.jpg", "Natural wood accent pieces styled for warm winter decor", 682, 1024, "idea8")}
 
 <h2>9. Replace Holiday Centerpieces With Winter Florals</h2>
 <p>A poinsettia or holiday arrangement swaps easily for a more neutral winter floral &mdash; dried stems, pampas grass, a simple evergreen bundle.</p>
 <p>This keeps the table from sitting empty once the holiday centerpiece comes down.</p>
 <p>Dried arrangements in particular last the whole season without maintenance.</p>
 <p>A direct, one-to-one swap that takes minutes.</p>
-${photo("winter-florals.jpg", "Neutral winter floral centerpiece replacing holiday arrangement", 683, 1024)}
+${photo("winter-florals.jpg", "Neutral winter floral centerpiece replacing holiday arrangement", 683, 1024, "idea9")}
 
 <h2>10. Add Soft Curtains or Drapes</h2>
 <p>Heavier, softer curtain fabric adds both warmth and a sense of coziness to a room in winter.</p>
 <p>This is a bigger project than most ideas on this list, involving an actual curtain swap.</p>
 <p>It also helps with insulation in older homes, which is a practical bonus on top of the look.</p>
 <p>Worth prioritizing in whichever room gets used most during the colder months.</p>
-${photo("soft-curtains.jpg", "Soft, heavy curtains adding warmth to a winter room", 1024, 654)}
+${photo("soft-curtains.jpg", "Soft, heavy curtains adding warmth to a winter room", 1024, 654, "idea10")}
 
 <h2>11. Use Scented Candles Strategically</h2>
 <p>Swapping a holiday-scented candle (pine, peppermint) for something more generally wintery (cedar, vanilla, amber) shifts the whole sensory feel of a room.</p>
 <p>This is one of the cheapest changes on the entire list.</p>
 <p>Placement matters as much as scent choice &mdash; an entryway candle creates a first impression every time someone walks in.</p>
 <p>A small, low-effort swap with real impact on how a room feels.</p>
-${photo("scented-candles.jpg", "Scented candles styled for a cozy winter atmosphere", 683, 1024)}
+${photo("scented-candles.jpg", "Scented candles styled for a cozy winter atmosphere", 683, 1024, "idea11")}
 
 <h2>12. Bring In Natural Woven Baskets</h2>
 <p>A woven basket replaces a Christmas gift-wrap station or ornament storage with something textural and useful year-round.</p>
 <p>This works for blankets, firewood, or general living room storage.</p>
 <p>Natural materials like rattan and seagrass pair well with the earthy palette already in play.</p>
 <p>A functional piece that also does real styling work.</p>
-${photo("woven-baskets.jpg", "Natural woven baskets used for cozy winter storage styling", 683, 1024)}
+${photo("woven-baskets.jpg", "Natural woven baskets used for cozy winter storage styling", 683, 1024, "idea12")}
 
 <h2>13. Refresh the Coffee Table</h2>
 <p>A coffee table loaded with holiday books and ornaments needs a reset once the season changes.</p>
 <p>A tray, a candle, and one or two neutral objects is usually enough.</p>
 <p>This is one of the fastest visual resets in the whole home, since it's one small surface.</p>
 <p>Worth doing early in the transition, since it's one of the most-seen surfaces in the house.</p>
-${photo("coffee-table-styling.jpg", "Refreshed coffee table styling with neutral winter decor", 1024, 683)}
+${photo("coffee-table-styling.jpg", "Refreshed coffee table styling with neutral winter decor", 1024, 683, "idea13")}
 
 <h2>14. Style the Entryway for Winter</h2>
 <p>An entryway often carries the heaviest holiday decor load, since it's the first thing guests see.</p>
 <p>Swapping a holiday wreath for a simple winter one, and adding a neutral runner or mat, resets the first impression fast.</p>
 <p>This is a small space, so changes here are quick and low-cost.</p>
 <p>Worth prioritizing early, since it sets the tone for the whole home transition.</p>
+${productGrid("idea14")}
 
 <h2>15. Layer Winter Bedding</h2>
 <p>Flannel sheets, a heavier duvet, and a few extra throw pillows make the bedroom feel as seasonally appropriate as the living room.</p>
 <p>This is one of the few ideas on this list that's purely about comfort rather than visible styling.</p>
 <p>Bedrooms often get overlooked in a seasonal refresh, even though they're used daily.</p>
 <p>Worth including specifically because it's so easy to forget.</p>
-${photo("winter-bedding.jpg", "Winter bedding with warm fabrics and layered textures", 1024, 1024)}
+${photo("winter-bedding.jpg", "Winter bedding with warm fabrics and layered textures", 1024, 1024, "idea15")}
 
 <h2>16. Add Ceramic or Stone Decor</h2>
 <p>A ceramic vase or stone object adds weight and texture that reads as permanent rather than seasonal.</p>
 <p>This works well replacing a lighter, more festive decorative object that came down with the holidays.</p>
 <p>Stone and ceramic both photograph well under the warmer lighting already discussed above.</p>
 <p>A small, durable addition that doesn't need to be swapped out again come spring.</p>
-${photo("ceramic-stone.jpg", "Ceramic and stone decor pieces styled on a coffee table", 1024, 683)}
+${photo("ceramic-stone.jpg", "Ceramic and stone decor pieces styled on a coffee table", 1024, 683, "idea16")}
 
 <h2>17. Set Up a Warm Beverage Station</h2>
 <p>A small station for hot chocolate, tea or coffee gives winter a functional, daily touchpoint beyond just decor.</p>
 <p>This can be as simple as a tray with a kettle and a few mugs on a counter.</p>
 <p>It also doubles as a genuinely useful addition, not just a styling choice.</p>
 <p>A nice way to make the post-holiday slowdown feel a little more intentional.</p>
-${photo("beverage-station.jpg", "Warm beverage station styled for cozy winter mornings", 683, 1024)}
+${photo("beverage-station.jpg", "Warm beverage station styled for cozy winter mornings", 683, 1024, "idea17")}
 
 <h2>18. Add Winter Scents With Diffusers</h2>
 <p>A reed diffuser works alongside the candle idea above for scent that doesn't require a flame.</p>
 <p>This suits a room that needs constant subtle scent rather than an occasional burst.</p>
 <p>Cedar, sandalwood and amber all read as warm without leaning festive.</p>
 <p>A low-maintenance way to keep the sensory side of winter decor consistent.</p>
-${photo("winter-diffusers.jpg", "Reed diffuser adding soft winter scent to a room", 683, 1024)}
+${photo("winter-diffusers.jpg", "Reed diffuser adding soft winter scent to a room", 683, 1024, "idea18")}
 
 <h2>19. Display Cozy Knit Decor</h2>
 <p>A knit throw pillow cover, a chunky knit basket liner, or a woven wall hanging all extend the same texture language as the throw blankets above.</p>
 <p>This works well in smaller doses spread around the home rather than concentrated in one room.</p>
 <p>Knit texture reads as warm and tactile even in a photograph.</p>
 <p>An easy way to round out the winter palette without much additional cost.</p>
-${photo("knit-decor.jpg", "Cozy knit decor pieces styled throughout a winter home", 683, 1024)}
+${photo("knit-decor.jpg", "Cozy knit decor pieces styled throughout a winter home", 683, 1024, "idea19")}
 
 <h2>20. Keep the Mantel Simple</h2>
 <p>A mantel loaded with stockings and garland needs the biggest reset of any surface in the home.</p>
 <p>A few candles, a bit of greenery, and one or two neutral objects is enough once the holiday pieces come down.</p>
 <p>This is often the last thing people get around to, which is exactly why it's worth prioritizing.</p>
 <p>A simple, uncluttered mantel reads as more intentional than an empty or overcrowded one.</p>
-${photo("winter-mantel.jpg", "Simple winter mantel display with candles and natural greenery", 1024, 1024)}
+${photo("winter-mantel.jpg", "Simple winter mantel display with candles and natural greenery", 1024, 1024, "idea20")}
 
 <h2>Final Thoughts</h2>
 <p>A home doesn't need to look like Christmas never happened, and it doesn't need a full redecorate either.</p>

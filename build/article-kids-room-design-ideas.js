@@ -7,31 +7,103 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0GY4XZ9XS", title: "WSOFRLAC Giant Plush Bean Bag Chair with Ottoman, Cozy Fluffy Cloud Couch, White", w: 1500, h: 1500 },
+    { asin: "B098XLJYX1", title: "Tiny Land Teepee Tent for Kids with Star Lights and Campfire Toy", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0DNQ3H5BH", title: "GAMENOTE Magnetic Letter and Number Board, Double Sided, ABC 123 Tracing Set", w: 1500, h: 1483 },
+    { asin: "B0F52WR1MC", title: "Fluxynara Felt Bulletin Board and Cork Board Alternative, 48 x 36 Inch", w: 1303, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0F6VV8X8B", title: "DECOMOMO Cube Storage Bins with Labels, Fabric, Colorful", w: 1500, h: 1020 },
+    { asin: "B0B7RW75WT", title: "Outus Rainbow Plastic Book Bins and Cubby Storage, 36 Pack", w: 1489, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B08SC96H17", title: "Zonon Outer Space Wall Stickers, 6 Sheets, Rocket and Planet Wall Decals", w: 1500, h: 1500 },
+    { asin: "B0H4K2LZQT", title: "Round Outer Space Kids Rug, 3 Ft 3 Inch, for Boys Room and Playroom", w: 1500, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0DSW1XZZN", title: "MeMoreCool Kids Chair, 2-in-1 Corduroy Fold Out Sofa, Foam Seat, Light Grey", w: 1485, h: 1476 },
+    { asin: "B0DJM9JY4J", title: "CHOEZON 66.9 Inch Kids Bookshelf with Reading Nook, 3-in-1 with Cushion and Sling Shelf", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0GWQ9D85F", title: "Garvee Twin Loft Bed with Large Desk and 2-Tier Shelves, White and Brown", w: 1500, h: 1500 },
+    { asin: "B09L5XKVZC", title: "5-in-1 Nesting Leather Ottoman, Stylish Foot Stool with Wheels", w: 1500, h: 1349 },
+  ],
+  idea6: [
+    { asin: "B08RHZX9X6", title: "Topotdor Round ABC Area Rug, 40 Inch, Soft Floor Carpet, Multi Color", w: 1500, h: 1500 },
+    { asin: "B0FDB7RK18", title: "LED Desk Lamp with Pen Holder, Touch Lamp with 3 Color Modes, Eye-Caring", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B089SK6V69", title: "Steel Wall Photo Hanging Display Cable Wire, 5 Ft, 6 Pcs, with Clips", w: 1500, h: 1278 },
+    { asin: "B0HGM172CT", title: "80s Vintage Heart Shelf Set of 2, Solid Pine Wood, Walnut Finish", w: 1500, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0D5HL32BN", title: "Smart Star Fairy Lights, Color Changing String Lights with App Control", w: 1500, h: 1500 },
+    { asin: "B0B4518KC2", title: "Northern Galaxy Light Aurora Projector with 33 Light Effects, Remote Control", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0BXRJ686M", title: "Pickluc Blackout Curtains, 84 Inches Long, 2 Panels, Mustard Yellow", w: 1500, h: 1500 },
+    { asin: "B0DZ5V5GNH", title: "Zentavio 5 x 8 Fluffy Shag Area Rug, Black and White Striped, Soft", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0DJTH6ZXC", title: "L'AGRATY Chunky Knit Throw Blanket for Couch, 60 x 80 Inch, Ivory", w: 1500, h: 1500 },
+    { asin: "B0BKJNQ94D", title: "Sweet Home Collection Large Square Tufted Floor Pillow, Faux Velvet", w: 1500, h: 1473 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "kids-room-design-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "kids-room-design-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Give the Walls a Job to Do",
     paras: [
       "Blank walls are wasted space in a kid's room &mdash; give them something to interact with instead of just something to stare at.",
       "A magnetic pegboard loaded with letters turns into a word game without you planning a single activity. Add a cork panel underneath for rotating their latest drawings, and a height chart decal nearby so growth spurts get documented instead of penciled onto your good doorframe.",
       "None of this requires a renovation. It's command hooks, a sheet of pegboard, and twenty minutes on a Saturday.",
     ],
-    photo: photo("interactive-wall.png", "Pegboard with colorful letters, a corkboard pinned with kids' drawings and a growth height chart decal mounted on a bedroom wall", 574, 1024),
+    photo: photo("interactive-wall.png", "Pegboard with colorful letters, a corkboard pinned with kids' drawings and a growth height chart decal mounted on a bedroom wall", 574, 1024, "idea1"),
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Storage That Doesn't Look Like Storage",
     paras: [
       "Nobody wins the fight against LEGO pieces by throwing everything into one giant bin and hoping for the best.",
@@ -41,16 +113,18 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Let Their Current Obsession Take Over (Within Reason)",
     paras: [
       "Every kid has a phase. Dinosaurs, space, mermaids &mdash; whatever it is this month, it's real to them, so work with it instead of around it.",
       "A full mural is one option, like the galaxy scene here with its own rocket, planets, and a round rug that keeps the theme going underfoot. If that's more commitment than you're ready for, removable decals and a themed rug get you most of the magic without the multi-weekend paint job.",
       "Keep the big-ticket furniture neutral and let the smaller, swappable pieces carry the theme. When the obsession shifts from rockets to something else in a year, you're not repainting a ceiling.",
     ],
-    photo: photo("themed-room.png", "Boy's bedroom with a hand-painted galaxy mural, rocket ship and planets on the walls and ceiling, a loft railing, a white desk and a round space-themed rug", 574, 1024),
+    photo: photo("themed-room.png", "Boy's bedroom with a hand-painted galaxy mural, rocket ship and planets on the walls and ceiling, a loft railing, a white desk and a round space-themed rug", 574, 1024, "idea3"),
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Hand Them a Little Bit of Control",
     paras: [
       "I get the hesitation. Handing a kid design authority over their own room sounds like a recipe for neon everything.",
@@ -60,63 +134,69 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Furniture That Earns Its Square Footage",
     paras: [
       "Kids accumulate things at a rate that defies physics, so the furniture needs to pull more than one job.",
       "A bunk bed with a built-in desk and drawers underneath, like the one shown here, turns one footprint into a sleep zone, a study zone, and storage all at once. Stacked ottomans in mixed colors double as extra seating and a toy chest the second guests leave.",
       "Before buying anything for a kid's room, I ask what else it could be doing besides the one obvious thing. Usually there's an answer.",
     ],
-    photo: photo("multi-functional-furniture.png", "White bunk bed with built-in drawers and desk underneath, colorful stacked ottomans and open shelving in a kids bedroom", 574, 1024),
+    photo: photo("multi-functional-furniture.png", "White bunk bed with built-in drawers and desk underneath, colorful stacked ottomans and open shelving in a kids bedroom", 574, 1024, "idea5"),
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Split the Room Into Zones",
     paras: [
       "Kids actually do better with structure, even the ones who'd insist otherwise. A room with clear zones quietly teaches organization without ever using that word.",
       "Picture it split three ways: a sleep zone with soft bedding and warm lighting and nothing else, a play zone with open floor space and durable storage, and a study zone with a small desk and good task lighting.",
       "Once the zones are visually distinct, kids generally know what belongs where &mdash; which means fewer snacks turning up inside the homework folder.",
     ],
-    photo: photo("zones.png", "Kids bedroom split into three zones shown side by side: a pillow-piled bed, a bookshelf and desk study area, and an open play area with a round rug and toy storage", 574, 1024),
+    photo: photo("zones.png", "Kids bedroom split into three zones shown side by side: a pillow-piled bed, a bookshelf and desk study area, and an open play area with a round rug and toy storage", 574, 1024, "idea6"),
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Display Their Art Like It Matters",
     paras: [
       "Skip the expensive wall art they'll be over in six months. A rotating display costs almost nothing and updates itself as their interests do.",
       "String a length of wire or twine along a wall and clip artwork to it with clothespins &mdash; drawings, photos, whatever they're proud of that week. Add a small shelf above for books or a few favorite objects.",
       "It takes thirty seconds to swap a piece out, which means the display always looks current instead of like a museum exhibit from two grades ago.",
     ],
-    photo: photo("diy-decor.png", "Kids' drawings and family photos clipped with clothespins to lengths of wire strung across a bedroom wall, with a small wood shelf holding books above", 574, 1024),
+    photo: photo("diy-decor.png", "Kids' drawings and family photos clipped with clothespins to lengths of wire strung across a bedroom wall, with a small wood shelf holding books above", 574, 1024, "idea7"),
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Don't Underestimate Lighting",
     paras: [
       "Lighting gets skipped in most kids-room plans, which is a shame because it does more mood-setting work than almost anything else on this list.",
       "A string of warm fairy lights along a headboard or bookshelf turns an ordinary bedtime into something that feels a little magical, especially paired with a soft star-shaped nightlight. A dimmable lamp handles the transition from playtime to wind-down without one harsh overhead switch.",
       "If you want to skip climbing out of bed to kill the lights after a stalling tactic disguised as \"one more story,\" a smart bulb you can control from your phone is worth the small upgrade.",
     ],
-    photo: photo("mood-lighting.png", "Warmly lit kids bedroom at night with string fairy lights along the wall, a star-shaped light fixture, a wood bookshelf and a stuffed bear on the bed", 574, 1024),
+    photo: photo("mood-lighting.png", "Warmly lit kids bedroom at night with string fairy lights along the wall, a star-shaped light fixture, a wood bookshelf and a stuffed bear on the bed", 574, 1024, "idea8"),
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Go Bold, Just Not Everywhere at Once",
     paras: [
       "Kids gravitate toward color, and that instinct doesn't need to be talked out of them &mdash; it just needs a frame.",
       "Pick one or two bold hues, like the mustard and navy combination here, and let them show up in bedding, curtains, and a patterned rug while the walls stay calm. Mixing in one pattern &mdash; stripes, polka dots, whatever &mdash; adds energy without tipping into visual chaos.",
       "The walls doing the quiet work is what keeps a colorful room feeling intentional instead of accidental.",
     ],
-    photo: photo("bold-colors.png", "Kids bedroom with mustard yellow and navy color-blocked curtains, a yellow polka-dot and navy striped bed, and a black-and-white striped rug", 574, 1024),
+    photo: photo("bold-colors.png", "Kids bedroom with mustard yellow and navy color-blocked curtains, a yellow polka-dot and navy striped bed, and a black-and-white striped rug", 574, 1024, "idea9"),
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Make Comfort the Actual Priority",
     paras: [
       "It's easy to get so focused on how a kids room photographs that you forget the room also has to feel good to flop down in.",
       "Oversized shaped cushions &mdash; clouds, stars, whatever shape they're into &mdash; a squashy bean bag, and a shaggy rug underfoot do more for how a room gets used than almost any amount of styling. A small tent or teepee corner loaded with pillows gives them a spot that's entirely their own scale.",
       "A kid who naps in their own room instead of migrating to the couch is really the whole point of a comfort-first bedroom. Everything else is a bonus.",
     ],
-    photo: photo("soft-furnishings.png", "Cloud-shaped cushion and star pillows on a bench beside a fabric teepee tent filled with plaid cushions and a stuffed bear on a shaggy rug", 574, 1024),
+    photo: photo("soft-furnishings.png", "Cloud-shaped cushion and star pillows on a bench beside a fabric teepee tent filled with plaid cushions and a stuffed bear on a shaggy rug", 574, 1024, "idea10"),
   },
 ];
 
@@ -125,14 +205,14 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>If your kid's room currently looks like a toy store lost a fight with a laundry basket, you are extremely not alone. The good news is you don't need a full renovation or a design degree to turn it around &mdash; you need a handful of ideas that actually survive contact with a seven-year-old.</p>
 <p>I've put together more kids' rooms than I can count at this point, and the pattern is always the same: the spaces that work aren't the most expensive ones, they're the ones built around how kids actually use a room. Play happens on the floor. Art gets made constantly. Phases come and go fast.</p>
 <p>Here are ten ideas that balance a little bit of imagination with a lot of real-world practicality &mdash; the kind that still looks good after a week of actual use.</p>
-${photo("hero.jpg", "Cozy neutral kids playroom corner with a cloud-shaped bean bag, star cushions, a fabric teepee tent, a knit pouf and a shaggy white rug", 1312, 736, "jpg")}
+${photo("hero.jpg", "Cozy neutral kids playroom corner with a cloud-shaped bean bag, star cushions, a fabric teepee tent, a knit pouf and a shaggy white rug", 1312, 736, "hero")}
 
 <h2>10 Kids Room Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

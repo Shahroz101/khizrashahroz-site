@@ -10,6 +10,131 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0GJSJ2JPJ", title: "Sintuff Half Round Flexible Wood Slat 3D Wall Panels, MDF, 6 Pcs", w: 1500, h: 1500 },
+    { asin: "B0H8SK1GKX", title: "Modern Beige Pleated Fabric Pendant Light, 19.7 Inch Scalloped Shape", w: 1500, h: 1500 },
+  ],
+  whatIs: [
+    { asin: "B0GHXYK8X8", title: "DICOFUN Sandstone Peel and Stick Backsplash Wall Tiles, 10 Sheets, 12 x 12 Inch", w: 1500, h: 1500 },
+    { asin: "B01CEBRM1W", title: "DOWAN White Ceramic Bowls, Set of 4, 22 Oz, for Soup and Cereal", w: 1093, h: 1339 },
+  ],
+  howTo: [
+    { asin: "B0D3KWLPKX", title: "Lingkai 23.6 Inch Woven Rattan Dome Chandelier, Hand Woven Pendant", w: 1500, h: 1500 },
+    { asin: "B0CK8MFX9D", title: "Modway Saoirse Woven Rope Wood Counter Stool, Set of 2, Walnut Natural", w: 921, h: 600 },
+  ],
+  idea1: [
+    { asin: "B0DSBKRQQ1", title: "GarveeHome Modern 35.4 Inch Sideboard Buffet Cabinet with Glass Doors, Oak", w: 1500, h: 1500 },
+    { asin: "B001PD2HHA", title: "SamaN Interior Water-Based Wood Stain, Natural, for Furniture and Paneling", w: 1131, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B07BK7T82K", title: "Glidden Interior Paint and Primer, White Navajo White, One Coat, Eggshell, 1 Quart", w: 1500, h: 1471 },
+    { asin: "B07PW3D8Y4", title: "Rust-Oleum Simply Home Interior Wall Paint, Linen White, Eggshell, 1 Gallon", w: 1294, h: 1404 },
+  ],
+  idea3: [
+    { asin: "B0G6X4WDBC", title: "Italian Calacatta Viola Marble Cutting Board, Natural Stone, 15 x 12 Inch", w: 1484, h: 1500 },
+    { asin: "B0F939L96K", title: "Marble Cutting Board for Kitchen, 16 x 12 Inch, Italian Carrara White", w: 1500, h: 1206 },
+  ],
+  idea4: [
+    { asin: "B07BDWC1TQ", title: "Glidden Interior Paint and Primer, Greige Oatmeal, One Coat, Eggshell, 1 Quart", w: 1500, h: 1471 },
+    { asin: "B07BZKM696", title: "Rust-Oleum Simply Home Interior Wall Paint, Soft Beige, Eggshell, 1 Gallon", w: 726, h: 774 },
+  ],
+  idea5: [
+    { asin: "B0GSXWK81D", title: "Cinnvoice Unfinished Pine Kitchen Cabinet Doors, 2 Pcs, 12 x 18 Inch", w: 1500, h: 1419 },
+    { asin: "B0CB61LRLJ", title: "Black Square Recessed Flush Door Pulls, 2 Pcs, 4.53 x 1.77 Inch", w: 1500, h: 1260 },
+  ],
+  idea6: [
+    { asin: "B0HFZ8322L", title: "Marsui Large Solid Walnut Floating Shelves, Set of 2, 21.65 and 14.97 Inch", w: 1500, h: 1500 },
+    { asin: "B0GVS2WVMH", title: "Quatish Ceramic Cereal Bowls, Set of 6, 24 Oz Soup Bowls", w: 1500, h: 1242 },
+  ],
+  idea7: [
+    { asin: "B0H72GF57P", title: "Besmeety Stoneware Cereal Bowls, Set of 4, 18 Oz, Handmade Style", w: 1493, h: 1378 },
+    { asin: "B01N5JTAAD", title: "suyika Japanese Tetsubin Cast Iron Teapot with Stainless Steel Infuser", w: 1492, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0CJNXJ7K1", title: "JOY DECOR Matte Black Cabinet Pulls, 3 Inch Hole Center, 30 Pack", w: 1297, h: 1344 },
+    { asin: "B0G8SXXZ43", title: "Ceramic Flower Vase, 7.4 Inch, Farmhouse Table Vase, Retro Black", w: 1320, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0C5WSDCY2", title: "Large White Oblate Paper Lantern Pendant Lamp Shade, 21.85 Inch", w: 1125, h: 1500 },
+    { asin: "B09NLXFWCG", title: "DiCUNO Pendant Light Cord for Paper Lanterns, 20 Ft, White", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0GYNHRZGY", title: "Rolling Kitchen Island Cart with Storage, 35.4 Inch, 2 Drawers and Doors", w: 1500, h: 1500 },
+    { asin: "B0H2VG1HD4", title: "Modern White Ceramic Pendant Light, 14 Inch, Minimalist Round", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B08VDVW3LB", title: "Dujust Japanese Style White Porcelain Tea Set with Tray", w: 1084, h: 776 },
+    { asin: "B0HCN9QG9F", title: "Small Wooden Cutting Board, Mini Walnut, for Kitchen Counter", w: 1500, h: 1192 },
+  ],
+  idea12: [
+    { asin: "B091647KGL", title: "Whonline Artificial Hanging Plants, Faux Small Potted Greenery", w: 595, h: 1500 },
+    { asin: "B0D6KL94Z9", title: "Coferset 2 Pack Small Fake Herb Plants in Pots, Gray Green", w: 1500, h: 1407 },
+  ],
+  idea13: [
+    { asin: "B0GWZFSKD7", title: "Commomy Matte 3D Peel and Stick Backsplash, Sage Green, 10 Pcs, 11.8 Inch", w: 1368, h: 1368 },
+    { asin: "B0GQMF7FH3", title: "Peel and Stick 3D Wall Panels, 21 Pcs, Fluted Wood Slat, Walnut", w: 1500, h: 1484 },
+  ],
+  idea14: [
+    { asin: "B07KLB8WZD", title: "Giani Brick Transformations Whitewash Paint for Brick Walls and Fireplaces", w: 628, h: 819 },
+    { asin: "B0GGHP52X6", title: "Meoded Limewash Brush, Professional Crosshatch Brush for Mineral Paints", w: 666, h: 974 },
+  ],
+  idea15: [
+    { asin: "B0048VGMEU", title: "Linon Natural Wood Barstool with Round Seat, 24 Inch", w: 900, h: 1500 },
+    { asin: "B0H11Y1K4Q", title: "XUDREZ Rattan Counter Height Bar Stools, Set of 2, Farmhouse Wood with Cane Back", w: 1500, h: 1500 },
+  ],
+  idea16: [
+    { asin: "B0DT6MBP23", title: "Smart FENDEE Sideboard Cabinet, 31.5 Inch, Farmhouse Buffet with Slatted Doors", w: 1500, h: 1500 },
+    { asin: "B0CSNM3MSD", title: "Solid Elm Wood Floating Shelves for Wall, 24 Inch, Set of 2, Natural", w: 1493, h: 1500 },
+  ],
+  idea17: [
+    { asin: "B001QFYDSI", title: "Sharp KB6524PSY 24 Inch Built-In Microwave Drawer Oven, 1.2 Cu Ft", w: 1198, h: 762 },
+    { asin: "B0H3Z316YV", title: "Garvee 24 Inch Built-In Single Wall Oven, 2.5 Cu Ft, Electric, 5 Cooking Functions", w: 1500, h: 1441 },
+  ],
+  idea18: [
+    { asin: "B0DXF2JGRS", title: "baibu Non-Slip Indoor Bench Cushion with Ties, 59 x 16 x 1.5 Inch, Beige", w: 1500, h: 721 },
+    { asin: "B0DT26T1G7", title: "Modway Amish Wood Rope Dining Chair, Natural, Solid Elm", w: 672, h: 921 },
+  ],
+  idea19: [
+    { asin: "B0F9SVL9X4", title: "Dobbyby Ceramic Flower Vase, 7.6 Inch, Rustic Terracotta Pottery", w: 1500, h: 1500 },
+    { asin: "B001GS8NPO", title: "Lipper International Acacia Round Flair Bowl", w: 1500, h: 1209 },
+  ],
+  idea20: [
+    { asin: "B0FDG5MXPM", title: "Abalter Expandable Pull-Out Cabinet Organizer, 2-Tier Slide-Out Drawer", w: 1500, h: 1500 },
+    { asin: "B0C3QZ7SNF", title: "Cisily Sponge Holder for Kitchen Sink, Organizer with Brush Holder", w: 1500, h: 1500 },
+  ],
+  warm: [
+    { asin: "B075YRG42X", title: "Solino Home 100% Pure Linen Table Runner, Natural, 14 x 90 Inch", w: 1243, h: 1500 },
+    { asin: "B0H15PVHXN", title: "Natural Travertine Stone Pendant Light with Wood Accent, Farmhouse Rustic", w: 1009, h: 1500 },
+  ],
+  mistakes: [
+    { asin: "B0CZCVPX41", title: "TJOY 6 Pack A19 LED Light Bulbs, Soft Warm White 2700K, 60 Watt Equivalent", w: 1500, h: 1500 },
+    { asin: "B08R66Z71S", title: "ASOKO Dimmable LED Under Cabinet Lights, 2700K, 3 Pcs, 12 Inch, Linkable", w: 1154, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "japandi-kitchen-decor-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1024, h: 1536, alt: "Japandi kitchen island with fluted wood panels, wood bar stools, pleated linen pendant lights and a ceramic vase of dried branches", url: "https://www.pinterest.com/pin/13862711351190873/", label: "Warm Wood Japandi Kitchen" },
   whatIsJapandi: { src: "what-is-japandi", w: 683, h: 1024, alt: "Dramatic natural stone slab backsplash and hood beside open wood shelving styled with white ceramics", url: "https://www.pinterest.com/pin/646548090302295818/", label: "Natural Stone and Craftsmanship in a Japandi Kitchen" },
@@ -39,17 +164,19 @@ const PIN = {
   finalThoughts: { src: "final-thoughts", w: 1200, h: 1800, alt: "Sculptural wood slatted pendant lights over an open wood shelf styled with ceramics and trailing plants", url: "https://www.pinterest.com/pin/221661612905490424/", label: "Finished Japandi Kitchen Styling" },
 };
 
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "japandi-kitchen-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Choose Warm Wood Cabinets for a Japandi Kitchen",
     photoKey: "idea1",
     paras: [
@@ -61,6 +188,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Pair Japandi Kitchen Cabinets With Warm White Walls",
     photoKey: "idea2",
     paras: [
@@ -72,6 +200,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Add a Natural Stone Countertop",
     photoKey: "idea3",
     paras: [
@@ -83,6 +212,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Use a Soft Greige Color Palette",
     photoKey: "idea4",
     paras: ["Not ready to commit to an entirely wood kitchen? Try greige.", "A combination of beige and gray creates a soft neutral backdrop that works particularly well with natural wood.", "For a Japandi kitchen, I would build the palette around three or four related shades rather than throwing ten neutrals into the mix.", "Try:"],
@@ -91,6 +221,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Install Flat-Panel Japandi Kitchen Cabinets",
     photoKey: "idea5",
     paras: [
@@ -103,6 +234,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Add Open Wood Shelving to Your Japandi Kitchen",
     photoKey: "idea6",
     paras: [
@@ -114,6 +246,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Bring in Handmade Ceramics",
     photoKey: "idea7",
     paras: [
@@ -126,6 +259,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Use Black Accents Sparingly",
     photoKey: "idea8",
     paras: [
@@ -138,6 +272,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Choose Organic Pendant Lights",
     photoKey: "idea9",
     paras: [
@@ -149,6 +284,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Add a Japandi Kitchen Island With Rounded Details",
     photoKey: "idea10",
     paras: [
@@ -161,6 +297,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Style the Countertops With Intention",
     photoKey: "idea11",
     paras: [
@@ -173,6 +310,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Bring Greenery Into Your Japandi Kitchen",
     photoKey: "idea12",
     paras: [
@@ -185,6 +323,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Use Textured Japandi Kitchen Backsplash Tiles",
     photoKey: "idea13",
     paras: [
@@ -197,6 +336,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Try a Limewash or Plaster-Inspired Wall Finish",
     photoKey: "idea14",
     paras: [
@@ -209,6 +349,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Add Natural Wood Bar Stools",
     photoKey: "idea15",
     paras: [
@@ -221,6 +362,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Mix Light and Dark Wood in Your Japandi Kitchen",
     photoKey: "idea16",
     paras: [
@@ -233,6 +375,7 @@ const ideas = [
   },
   {
     n: "17",
+    productsKey: "idea17",
     title: "Hide Appliances Behind Japandi Kitchen Cabinetry",
     photoKey: "idea17",
     paras: [
@@ -245,6 +388,7 @@ const ideas = [
   },
   {
     n: "18",
+    productsKey: "idea18",
     title: "Create a Cozy Japandi Kitchen Breakfast Nook",
     photoKey: "idea18",
     paras: [
@@ -257,6 +401,7 @@ const ideas = [
   },
   {
     n: "19",
+    productsKey: "idea19",
     title: "Add One Statement Handmade Piece",
     photoKey: "idea19",
     paras: [
@@ -269,6 +414,7 @@ const ideas = [
   },
   {
     n: "20",
+    productsKey: "idea20",
     title: "Keep Your Japandi Kitchen Decor Clutter-Free",
     photoKey: "idea20",
     paras: [
@@ -290,7 +436,7 @@ function ideaBlock(idea) {
   const after = idea.after ? idea.after.map((p) => `<p>${p}</p>`).join("\n      ") : "";
   const quote = idea.quote ? `<blockquote><p>&ldquo;${idea.quote.text}&rdquo;</p><cite>&mdash; ${idea.quote.cite}</cite></blockquote>` : "";
   const afterQuote = idea.afterQuote ? idea.afterQuote.map((p) => `<p>${p}</p>`).join("\n      ") : "";
-  const photoHtml = idea.photoKey ? photo(idea.photoKey) : "";
+  const photoHtml = idea.photoKey ? photo(idea.photoKey, idea.productsKey) : (idea.productsKey ? productGrid(idea.productsKey) : "");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
@@ -305,7 +451,7 @@ const body = `
 <p>A beautiful kitchen does not need to shout for attention. Japandi kitchen decor ideas work because they create a space that feels calm, warm, practical, and quietly beautiful. Think natural wood, soft neutrals, simple cabinetry, handmade ceramics, and just enough texture to keep everything from looking flat.</p>
 <p>I&rsquo;ve always liked kitchens that look collected rather than decorated within an inch of their lives. Japandi gets that balance right. You can keep the counters fairly clear without ending up with a kitchen that feels cold or completely personality-free.</p>
 <p>And honestly, who wants a kitchen that looks like nobody actually cooks in it?</p>
-${photo("hero")}
+${photo("hero", "hero")}
 
 <h2>What Is Japandi Kitchen Design?</h2>
 <p>Japandi combines Japanese design principles with Scandinavian design. Japanese interiors bring simplicity, natural materials, craftsmanship, and an appreciation for imperfection, while Scandinavian design contributes warmth, comfort, functionality, and approachable minimalism.</p>
@@ -314,7 +460,7 @@ ${photo("hero")}
 <p>For a kitchen, that combination makes a lot of sense. Kitchens already need to work hard, so the Japandi approach keeps the design functional while making the room feel peaceful.</p>
 <p>You will usually see warm wood, earthy neutrals, clean lines, natural stone, simple lighting, organic shapes, and limited decoration.</p>
 <p>The important part involves balance. You do not need to make every surface beige and remove every decorative object from the room. Japandi should feel intentional, not empty.</p>
-${photo("whatIsJapandi")}
+${photo("whatIsJapandi", "whatIs")}
 
 <h2>How Do You Make a Kitchen Look Japandi?</h2>
 <p>Start with the big visual elements before you worry about accessories. Your cabinetry, flooring, countertops, walls, and lighting will create most of the atmosphere.</p>
@@ -330,7 +476,7 @@ ${photo("whatIsJapandi")}
 <blockquote><p>&ldquo;The common love for craftsmanship is also found in Japandi style interiors.&rdquo;</p><cite>&mdash; Laila Rietbergen, author of Japandi Living, quoted by Architectural Digest</cite></blockquote>
 <p>That last point matters more than people realize. If you simply install flat beige cabinets and call the kitchen Japandi, you will probably end up with a room that looks unfinished.</p>
 <p>The magic comes from contrast, texture, craftsmanship, and restraint.</p>
-${photo("howToMake")}
+${photo("howToMake", "howTo")}
 
 <h2>20 Japandi Kitchen Decor Ideas</h2>
 <p>Now for the fun part. These Japandi kitchen decor ideas range from larger design choices to small styling details, so you can use them whether you are planning a full renovation or simply refreshing your existing kitchen.</p>
@@ -354,7 +500,7 @@ ${ideas.map(ideaBlock).join("\n")}
 </ul>
 <p>The combination creates visual warmth without requiring bright colors.</p>
 <p>And remember, Japandi does not mean boring. It means intentional.</p>
-${photo("howToWarm")}
+${photo("howToWarm", "warm")}
 
 <h2>Common Mistakes to Avoid With Japandi Kitchen Design</h2>
 <p>You can get the overall concept right and still miss the feeling.</p>
@@ -371,7 +517,7 @@ ${photo("howToWarm")}
   <li>Mixing too many competing patterns</li>
 </ul>
 <p>The best Japandi kitchen decor usually feels quiet, tactile, functional, and personal.</p>
-${photo("mistakes")}
+${photo("mistakes", "mistakes")}
 
 <h2>Final Thoughts on Japandi Kitchen Decor Ideas</h2>
 <p>The beauty of these Japandi kitchen decor ideas comes from how naturally they combine practicality with warmth. You do not need to completely remodel your kitchen to get the feeling.</p>

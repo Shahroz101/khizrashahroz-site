@@ -11,64 +11,132 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0G8JG6TVY", title: "Solid Wood 3-Tier Small End Table, Mid-Century Brown Accent Table", w: 1500, h: 1500 },
+    { asin: "B0HJGNP248", title: "BELLEZE Simms 35 Inch Sideboard Buffet Cabinet, Brown Walnut", w: 1500, h: 1500 },
+  ],
+  why: [
+    { asin: "B07P6NJVYJ", title: "Lexicon Mid Century Modern Accent Chair with Walnut Wood Frame, Orange", w: 1485, h: 1500 },
+    { asin: "B0BLN33BCJ", title: "Yaheetech Mid-Century Accent Chairs, Set of 2, Light Brown", w: 1500, h: 973 },
+  ],
+  defines: [
+    { asin: "B0FXVRF985", title: "Solid Wood Triangle Coffee Table, 35.4 Inch, Walnut Center Table", w: 1024, h: 1024 },
+    { asin: "B0GWHV78VF", title: "VASAGLE Accent Chair, PU Leather Armchair, Button Tufted, Thick Cushion", w: 1500, h: 1500 },
+  ],
+  fits: [
+    { asin: "B0DFCLN1FF", title: "Smuxee Fluted Sideboard Cabinet, Freestanding Walnut Buffet with Adjustable Shelf", w: 1500, h: 1500 },
+    { asin: "B0GJYW2LC1", title: "MOFFE Mid Century Modern Real Wood Floor Lamp with 2 Shade Looks", w: 1500, h: 1500 },
+  ],
+  identify: [
+    { asin: "B07T1CP2BM", title: "Solid Wood Replacement Furniture Sofa Legs, 8 Inch, Set of 4, Heavy Duty", w: 1500, h: 1285 },
+    { asin: "B07ZKNKXRS", title: "Poly and Bark Dorsey Mid-Century Modern Nightstand, Solid Wood, 2 Drawers", w: 1270, h: 1500 },
+  ],
+  designers: [
+    { asin: "B09PHCHVRC", title: "Hans Wegner Style Three-Legged Shell Chair, Ash Plywood, White Faux Leather", w: 1228, h: 1324 },
+    { asin: "B0DVMKC3HC", title: "Mid-Century Mood: The Concise Decor Guide, Handbook for Mid-Century Modern Style", w: 940, h: 1500 },
+  ],
+  retro: [
+    { asin: "B0GVJKNPSG", title: "IDEALHOUSE 65 Inch Mid Century Modern Loveseat Sofa, Green", w: 1500, h: 1500 },
+    { asin: "B0BWJ2FMSZ", title: "Orange Arc Floor Lamp for Living Room, Mid Century Modern, Marble Base", w: 1254, h: 1254 },
+  ],
+  secrets: [
+    { asin: "B0FJFR8NJ4", title: "DCX 5 x 7 Washable Modern Area Rug, Blue and Yellow Geometric", w: 1500, h: 1500 },
+    { asin: "B0855SMWT1", title: "Infinity Instruments Orb Spoke Midcentury Modern 15 Inch Retro Starburst Wall Clock", w: 1480, h: 1500 },
+  ],
+  personalizing: [
+    { asin: "B0DXBP78MY", title: "Framed Colorful Mid Century Abstract Wall Art for Living Room, 16 x 24 Inch", w: 1500, h: 1500 },
+    { asin: "B0C7WFZZ7D", title: "Lvases Snuggle Hollow Ceramic Vase Set of 2, Boho Nordic Modern Decor", w: 1500, h: 1500 },
+  ],
+  finishing: [
+    { asin: "B0DHCHJ3DB", title: "Portable LED Mushroom Table Lamp, Cordless Gold, 3 Color Dimming, Touch Control", w: 1500, h: 1500 },
+    { asin: "B0GKWSDMNG", title: "Thalasse Large 3-Piece 3D Textured Wall Art for Living Room, 24 x 36 Inch", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "mid-century-authenticity-guide-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "mid-century-authenticity-guide", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
 <p>Mid-century is one of the most imitated styles in home design, which also makes it one of the easiest to get wrong without realizing it.</p>
 <p>A lot of what's sold as "mid-century" today misses the actual design logic behind the style entirely.</p>
 <p>This is about telling the real thing from the imitation, and why that distinction actually matters.</p>
-${photo("hero.jpg", "Authentic mid-century living room with genuine design character", 1600, 1067)}
+${photo("hero.jpg", "Authentic mid-century living room with genuine design character", 1600, 1067, "hero")}
 
 <h2>Why the Style Keeps Getting Imitated</h2>
 <p>Mid-century's combination of warmth and clean geometry is genuinely difficult to fake convincingly, which is exactly why so many imitations end up feeling slightly off without buyers knowing why.</p>
 <p>Understanding what makes it work is the first step to recognizing when a piece or a room misses that mark.</p>
-${photo("why-obsessed.jpg", "The genuine appeal that makes mid-century design so widely copied", 1024, 576)}
+${photo("why-obsessed.jpg", "The genuine appeal that makes mid-century design so widely copied", 1024, 576, "why")}
 
 <h2>What Actually Defines the Style</h2>
 <p>Function-first design, organic curves paired with clean lines, and an honest use of materials are the real principles &mdash; not just a general "retro" look.</p>
 <p>A piece can look vaguely vintage and still completely miss these underlying principles, which is the core of why so much "mid-century" furniture isn't really.</p>
 ${photo("what-defines.jpg", "True mid-century principles of function and honest materials", 1024, 683)}
-${photo("key-principles.jpg", "The key design principles underlying authentic mid-century style", 1024, 600)}
+${photo("key-principles.jpg", "The key design principles underlying authentic mid-century style", 1024, 600, "defines")}
 
 <h2>Why It Still Fits Modern Homes</h2>
 <p>The style's inherent minimalism complements modern architecture without feeling sparse, and its emphasis on genuine materials gives it a "lived-in" quality mass-produced furniture rarely achieves.</p>
 <p>This is also why it mixes so easily with other styles &mdash; its fundamentals are strong enough to anchor a room without needing to dominate it.</p>
-${photo("fits-modern-homes.jpg", "Mid-century design complementing contemporary architecture", 683, 1024)}
+${photo("fits-modern-homes.jpg", "Mid-century design complementing contemporary architecture", 683, 1024, "fits")}
 
 <h2>How to Identify the Real Thing</h2>
 <p>Checking the legs is the fastest tell &mdash; genuine mid-century furniture uses tapered, often angled legs with real structural purpose, not just a vaguely similar shape applied to a generic frame.</p>
 <p>Real materials matter just as much: solid wood, genuine leather or wool, and honest joinery distinguish authentic pieces from veneer-over-particleboard imitations.</p>
 <p>Simplicity itself is a tell &mdash; genuinely mid-century pieces rarely over-ornament, so an elaborately detailed "mid-century" piece is usually a sign it isn't.</p>
-${photo("identify-true-furniture.jpg", "Genuine mid-century furniture identified by legs, materials and simplicity", 768, 1024)}
+${photo("identify-true-furniture.jpg", "Genuine mid-century furniture identified by legs, materials and simplicity", 768, 1024, "identify")}
 
 <h2>Designer Names Worth Knowing</h2>
 <p>Familiarity with a handful of the era's actual designers helps separate genuine vintage and licensed reproductions from pieces borrowing the aesthetic without any real connection to the design lineage.</p>
 <p>This knowledge matters more when buying secondhand or vintage specifically, where the gap between genuine and imitation has real financial stakes, not just aesthetic ones.</p>
+${productGrid("designers")}
 
 <h2>The "Updated Retro" Approach</h2>
 <p>Choosing a genuine statement mid-century piece and layering modern comfort and materials around it keeps a room feeling authentic rather than like a period recreation.</p>
 <p>This blend &mdash; old materials with new comfort standards, vintage shapes with contemporary technology kept subtle &mdash; is itself a form of authenticity, not a compromise of it.</p>
-${photo("updated-retro.jpg", "An updated retro approach blending authentic pieces with modern comfort", 1024, 729)}
+${photo("updated-retro.jpg", "An updated retro approach blending authentic pieces with modern comfort", 1024, 729, "retro")}
 
 <h2>Insider Secrets About Getting It Right</h2>
 <p>Balance matters more than matching &mdash; a room where everything matches too precisely often reads as less authentic than one with genuine variation.</p>
 <p>Vintage doesn't mean old-fashioned, and conflating the two is a common reason people avoid a style that would actually suit their home.</p>
 <p>Authenticity over perfection is the single most repeated principle among people who've actually lived with this style for years, not just styled it for a photo.</p>
+${productGrid("secrets")}
 
 <h2>Personalizing Without Losing the Core</h2>
 <p>A modern twist, personal art or meaningful objects, and a deliberate mix of vintage finds with new favorites keep the room feeling like it belongs to someone specific.</p>
 <p>This personalization is what separates a genuinely lived-in mid-century room from one that reads as a showroom recreation of the era.</p>
-${photo("personalizing.jpg", "Personal touches keeping an authentic mid-century room feeling genuine", 1024, 683)}
+${photo("personalizing.jpg", "Personal touches keeping an authentic mid-century room feeling genuine", 1024, 683, "personalizing")}
 
 <h2>Mistakes That Break the Authenticity</h2>
 <p>Overdoing the "retro" vibe with too many literal era references is the most common way a room tips from authentic into costume-like.</p>
@@ -77,7 +145,7 @@ ${photo("personalizing.jpg", "Personal touches keeping an authentic mid-century 
 <h2>Finishing Touches That Respect the Style</h2>
 <p>A touch of warm brass or gold, texture introduced on the walls, and symmetry applied with a deliberate twist all finish a room without tipping it into over-styled territory.</p>
 <p>These small choices are where genuine attention to the style's real character shows up most clearly.</p>
-${photo("finishing-touches.jpg", "Finishing touches that respect mid-century's authentic character", 683, 1024)}
+${photo("finishing-touches.jpg", "Finishing touches that respect mid-century's authentic character", 683, 1024, "finishing")}
 
 <h2>Your Mid-Century Living Room, Your Way</h2>
 <p>None of this is about gatekeeping the style or requiring an all-vintage room.</p>

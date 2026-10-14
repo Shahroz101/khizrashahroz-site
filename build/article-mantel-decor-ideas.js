@@ -8,6 +8,127 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0H2DJDYTY", title: "Vintage Iron Candlestick Holders, Set of 3, Brass Gold Taper Candle Holders", w: 1377, h: 1377 },
+    { asin: "B0BJ1M4HBF", title: "NIKKY HOME Botanical Wall Art Set of 2, Vintage Wood Framed Prints, 10 x 10 Inch", w: 1403, h: 929 },
+  ],
+  whatToPut: [
+    { asin: "B0F93YX6S6", title: "Rattan Rectangular Wall Mirror, 24 x 36 Inch, Boho Farmhouse Decorative Mirror", w: 997, h: 1446 },
+    { asin: "B0FXB216LL", title: "Artificial Pampas Grass Decor, 21.7 Inch Fluffy Faux Pampas, 30 Pcs, Bohemian Style", w: 1500, h: 1450 },
+  ],
+  howToStyle: [
+    { asin: "B0C7WH88W7", title: "Lvases Snuggle Hollow Ceramic Vase Set of 2, Boho Tabletop Decor", w: 1500, h: 1500 },
+    { asin: "B0D78P6XCG", title: "Rattan Serving Tray, Rectangle Wicker Storage Basket for Organizing", w: 1500, h: 937 },
+  ],
+  idea1: [
+    { asin: "B09W5VC59L", title: "TokeShimi Brushed Gold Round Mirror, 30 Inch, Aluminum Frame", w: 1500, h: 1500 },
+    { asin: "B0BZFNRHN4", title: "Torre and Tagus Solid Color Round Art Glass Vase, 5 Inch Tall, Amber", w: 683, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0HCP6BZ5X", title: "HHIOAXXIQ Botanical Sketch Canvas Wall Art Set of 3, Wildflower Line Prints", w: 1500, h: 1026 },
+    { asin: "B0H1M9L4N8", title: "Lineshading 8 Pcs Vintage Gold Gallery Wall Frame Set, 5 Sizes", w: 1440, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0GRGN77MV", title: "VIYYIEA Large Framed Landscape Canvas Wall Art, Vintage Style, 24 x 36 Inch", w: 1477, h: 923 },
+    { asin: "B0GY1D33YK", title: "Modern Sculptural Textured Ceramic Vase, Beige Abstract Flower Vase", w: 1254, h: 1254 },
+  ],
+  idea4: [
+    { asin: "B0GKP7YYQ3", title: "Sweetcrispy 24 Inch Round Wall Mirror, Gold Metal Frame", w: 1500, h: 1500 },
+    { asin: "B09X34SFQF", title: "8 Inch Clear Glass Vase for Flowers, Modern Boho Table Decor", w: 770, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0H6ZPZ1DR", title: "Gold Abstract Meditating Woman Statue, Figurine Sculpture", w: 879, h: 1472 },
+    { asin: "B0DCC8N4C9", title: "Small White Ceramic Flower Vase, 7.4 Inch, Minimalist Style", w: 1500, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B0GMG94DXZ", title: "BEBE BASK Scalloped Wicker Wall Baskets, Set of 2, 16 x 10 x 7 Inch", w: 1304, h: 1500 },
+    { asin: "B0FD3TH6BG", title: "Sukh Dried Wheat Stalks, 50 Stems, Golden Wheat Straw for Vases, 13.3 Inch", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B075X3CCGW", title: "Stonebriar Unscented White Tall Pillar Candles, 65 Hour Burn Time", w: 1500, h: 1373 },
+    { asin: "B0FQJTRG64", title: "Romadedi Gold Candlestick Holders, Set of 2, Brass Color, Vintage Style", w: 1139, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0FG7THH2J", title: "Modern Ceramic Vase Set of 5, Rustic Farmhouse Decorative Vases", w: 1500, h: 1500 },
+    { asin: "B0FR4DJX2F", title: "Small Neutral Ceramic Vase Set, 5 Matte Earth-Tone Vases for Japandi Decor", w: 1500, h: 1358 },
+  ],
+  idea9: [
+    { asin: "B0GV3KYYW8", title: "TwoDays Vintage Picture Frame Set, Antique Gold and Brass, 12 Pieces", w: 1500, h: 1413 },
+    { asin: "B0DP4R75B4", title: "Vintage Country Metal Flower Vase, Farmhouse Milk Can Style Rustic Pitcher", w: 1386, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0FGJ6MG13", title: "Decorative Books Set of 2, Linen Faux Coffee Table Books with Gold Bird", w: 1155, h: 1155 },
+    { asin: "B0G8DYWK3Z", title: "JARLINK Decorative Books, Set of 3, Stackable Fake Book Storage Boxes, Brown", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0BJCPTVP9", title: "CQURE Artificial Eucalyptus Garland, 12 Pack, 84 Ft Total, Table Greenery", w: 1500, h: 1500 },
+    { asin: "B0HCZYNDSL", title: "Natural Marble Vase, Calacatta Viola Stone Decorative Flower Vase", w: 1254, h: 1254 },
+  ],
+  idea12: [
+    { asin: "B0D44X8K39", title: "YOROXRG Black Taper Candles, 24 Pack, 7 to 8 Hour Burn, Unscented, Dripless", w: 1491, h: 1231 },
+    { asin: "B07XPRNSPX", title: "Lawrence Frames Classic Bead Picture Frame, 8x10, Gold", w: 1234, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B0874RK22D", title: "upsimples 16x20 Gallery Wall Frames Set of 5, Black, Matted to 11x14", w: 1500, h: 1500 },
+    { asin: "B0CCV5VKRK", title: "upsimples 11x14 Picture Frame, Gold, Matted to 8x10", w: 1199, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0BN6XSL4X", title: "WELLAND Irregular Cedar Wood Sculpture on Stand, Natural Edge Tabletop Statue", w: 1500, h: 1500 },
+    { asin: "B0C3HLMG41", title: "Faux Olive Leaves Stems, 10 Pcs, 10 Inch, Artificial Branches for Vases", w: 1500, h: 1153 },
+  ],
+  idea15: [
+    { asin: "B0GKXY24FG", title: "Vintage Faux Book Box Set of 3, Brown Linen Decorative Books, Rustic Farmhouse Decor", w: 1500, h: 1500 },
+    { asin: "B0FFLHPSKB", title: "Vintage Floral Sketch Wall Art Prints, Antique Botanical Canvas Decor", w: 1500, h: 1225 },
+  ],
+  idea16: [
+    { asin: "B0FM87KCRZ", title: "Framed Vintage Neutral Rustic Botanical Bird Chinoiserie Wall Art, 24 x 36 Inch", w: 1500, h: 1500 },
+    { asin: "B0F4C4XNJB", title: "Large Wood Abstract Wall Art for Living Room, Modern 3D Artwork", w: 1500, h: 1500 },
+  ],
+  idea17: [
+    { asin: "B0GR428NXJ", title: "Matte Black Ceramic Vase Set of 3, Modern Farmhouse Boho Decor", w: 1172, h: 1500 },
+    { asin: "B0DWMV5Z71", title: "DARJEN Gold Ribbed Tealight Votive Candle Holders, Set of 10", w: 1500, h: 1500 },
+  ],
+  idea18: [
+    { asin: "B0GZYZXHHC", title: "13 Inch Fall Pumpkin Wreath for Front Door, Artificial Pumpkin and Maple Leaves", w: 1500, h: 1500 },
+    { asin: "B09V2RYPLY", title: "Terracotta Vases, Set of 3, Farmhouse Decor Ceramic Vases for Flowers", w: 1488, h: 1500 },
+  ],
+  idea19: [
+    { asin: "B09KV3BJFX", title: "Norrclp 11 Inch Greek Statue of David, Classic Roman Head Bust", w: 940, h: 1478 },
+    { asin: "B0F18SF9H4", title: "Retro Rustic Large Ceramic Pitcher Vase, Distressed Farmhouse Style", w: 1301, h: 1500 },
+  ],
+  balance: [
+    { asin: "B0F4D674PY", title: "Modern Wall Clock for Living Room Decor, Pendulum Design, Silent", w: 1500, h: 1500 },
+    { asin: "B0GYMP5WS4", title: "Rustic Wooden Candlestick Holders, Farmhouse Taper Candle Holder Set", w: 1254, h: 1254 },
+  ],
+  mistakes: [
+    { asin: "B07S6R7SDW", title: "Coitak Artificial Succulent Plants Potted, 5 Pcs, Indoor Faux Plants", w: 1200, h: 1136 },
+    { asin: "B0B1CNJL7N", title: "upsimples 8x10 Picture Frame, Black, Matted to 5x7", w: 1220, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "mantel-decor-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1200, h: 1800, alt: "Rustic wood mantel with a framed pressed botanical print, three graduated brass candlesticks, a stoneware vase of flowers and a firewood basket beside a lit fireplace", url: "https://www.pinterest.com/pin/834362268514893545/", label: "Cozy Rustic Mantel Styling" },
   whatToPutOn: { src: "what-to-put-on-a-mantel", w: 896, h: 1200, alt: "Boho mantel with pampas grass, eucalyptus, a rattan mirror, sculptural candle, books and woven baskets beside a fiddle leaf fig", url: "https://www.pinterest.com/pin/4594164325167433856/", label: "What to Put on a Mantel" },
@@ -36,17 +157,19 @@ const PIN = {
   finalThoughts: { src: "final-thoughts", w: 512, h: 768, alt: "Layered black and white framed art leaning on a wood mantel with eucalyptus, a lit fireplace and a woven basket of candles on the floor", url: "https://www.pinterest.com/pin/22940279347740609/", label: "Finished Mantel Styling" },
 };
 
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "mantel-decor-ideas", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Create a Classic Mantel With a Large Mirror",
     photoKey: "idea1",
     paras: [
@@ -58,6 +181,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Layer Artwork for a Collected Mantel",
     photoKey: "idea2",
     paras: [
@@ -69,6 +193,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Try a Minimalist Mantel With One Statement Piece",
     photoKey: "idea3",
     paras: [
@@ -80,6 +205,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Add Symmetry With Matching Vases",
     photoKey: "idea4",
     paras: [
@@ -91,6 +217,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Use Asymmetrical Mantel Decor",
     photoKey: "idea5",
     paras: [
@@ -102,6 +229,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Bring in Natural Elements",
     photoKey: "idea6",
     paras: [
@@ -113,6 +241,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Style a Cozy Mantel With Candlesticks",
     photoKey: "idea7",
     paras: [
@@ -125,6 +254,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Create a Neutral Mantel With Ceramic Vases",
     photoKey: "idea8",
     paras: [
@@ -136,6 +266,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Make a Rustic Mantel With Vintage Finds",
     photoKey: "idea9",
     paras: [
@@ -147,6 +278,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Use Books to Add Height and Texture",
     photoKey: "idea10",
     paras: [
@@ -158,6 +290,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Try Greenery for an Organic Mantel",
     photoKey: "idea11",
     paras: [
@@ -169,6 +302,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Create a Moody Mantel With Dark Colors",
     photoKey: "idea12",
     paras: [
@@ -180,6 +314,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Use Family Photos for a Personal Mantel",
     photoKey: "idea13",
     paras: [
@@ -191,6 +326,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Add Sculptural Decor to a Modern Mantel",
     photoKey: "idea14",
     paras: [
@@ -203,6 +339,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Make a Cottage-Style Mantel With Soft Layers",
     photoKey: "idea15",
     paras: ["For a cozy cottage fireplace, combine:"],
@@ -211,6 +348,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Use One Oversized Artwork",
     photoKey: "idea16",
     paras: [
@@ -223,6 +361,7 @@ const ideas = [
   },
   {
     n: "17",
+    productsKey: "idea17",
     title: "Decorate a Mantel With a TV",
     photoKey: "idea17",
     paras: [
@@ -234,6 +373,7 @@ const ideas = [
   },
   {
     n: "18",
+    productsKey: "idea18",
     title: "Change Your Mantel Decor With the Seasons",
     photoKey: "idea18",
     paras: [
@@ -250,6 +390,7 @@ const ideas = [
   },
   {
     n: "19",
+    productsKey: "idea19",
     title: "Create a Collected Mantel With Meaningful Objects",
     photoKey: "idea19",
     paras: [
@@ -272,7 +413,7 @@ function ideaBlock(idea) {
   const after3 = idea.after3 ? idea.after3.map((p) => `<p>${p}</p>`).join("\n      ") : "";
   const quote = idea.quote ? `<blockquote><p>&ldquo;${idea.quote.text}&rdquo;</p><cite>&mdash; ${idea.quote.cite}</cite></blockquote>` : "";
   const afterQuote = idea.afterQuote ? idea.afterQuote.map((p) => `<p>${p}</p>`).join("\n      ") : "";
-  const photoHtml = idea.photoKey ? photo(idea.photoKey) : "";
+  const photoHtml = idea.photoKey ? photo(idea.photoKey, idea.productsKey) : (idea.productsKey ? productGrid(idea.productsKey) : "");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
@@ -290,7 +431,7 @@ function ideaBlock(idea) {
 const body = `
 <p>A good mantel can completely change the feeling of a room. These 19 mantel decor ideas help you create a fireplace that feels intentional, cozy, and personal without making it look like you emptied an entire home decor aisle onto one shelf. I&rsquo;ve styled fireplaces in different ways over the years, and I&rsquo;ve learned that the trick usually comes down to scale, layering, texture, and restraint.</p>
 <p>The best part? You don&rsquo;t need expensive decor. A beautiful mirror, a thrifted vase, a few books, or even branches from your yard can create a surprisingly polished look.</p>
-${photo("hero")}
+${photo("hero", "hero")}
 
 <h2>What Should You Put on a Mantel?</h2>
 <p>Before choosing individual pieces, think about what you want your fireplace to communicate. Do you want it to feel warm and traditional, clean and modern, rustic and relaxed, or collected and eclectic?</p>
@@ -311,7 +452,7 @@ ${photo("hero")}
   <li>Baskets and woven accents</li>
 </ul>
 <p>The secret lies in choosing a few pieces that relate to each other rather than trying to display everything you own.</p>
-${photo("whatToPutOn")}
+${photo("whatToPutOn", "whatToPut")}
 
 <h2>How Do You Style a Mantel Without Making It Look Cluttered?</h2>
 <p>Start with one strong focal point. Then build around it.</p>
@@ -321,7 +462,7 @@ ${photo("whatToPutOn")}
 <blockquote><p>&ldquo;Symmetry can be safe, but design comes alive when you mix heights, angles, and layers that tell a story.&rdquo;</p><cite>&mdash; Designer Tara McDonough, quoted by Architectural Digest</cite></blockquote>
 <p>That idea works especially well if you want your mantel to feel collected rather than overly coordinated.</p>
 <p>Now that we&rsquo;ve covered the basics, let&rsquo;s get into the fun part.</p>
-${photo("howToStyle")}
+${photo("howToStyle", "howToStyle")}
 
 <h2>19 Mantel Decor Ideas to Try</h2>
 ${ideas.map(ideaBlock).join("\n")}
@@ -334,7 +475,7 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>For example, you could combine a large mirror, two ceramic vases, three candlesticks, and a few branches.</p>
 <p>That gives you enough variation without creating visual chaos.</p>
 <p>And don&rsquo;t forget the fireplace itself. HGTV recommends considering the mantel, overmantel, firebox, and hearth as one complete composition rather than treating the shelf as a separate decorating zone.</p>
-${photo("howIBalance")}
+${photo("howIBalance", "balance")}
 
 <h2>Common Mantel Decorating Mistakes to Avoid</h2>
 <p>Even beautiful decor can look awkward when the scale doesn&rsquo;t work.</p>
@@ -342,7 +483,7 @@ ${photo("howIBalance")}
 <p>Also avoid using accessories that all have the same height. Mix tall, medium, and low pieces to create movement.</p>
 <p>Another common mistake involves choosing too many unrelated colors. Pick a small palette and repeat those colors across the mantel and surrounding room.</p>
 <p>Finally, don&rsquo;t copy a Pinterest arrangement piece for piece. Use it as inspiration, then adapt the idea to your fireplace, your furniture, and your personality.</p>
-${photo("mistakes")}
+${photo("mistakes", "mistakes")}
 
 <h2>Final Thoughts on Mantel Decor Ideas</h2>
 <p>The best mantel decor ideas don&rsquo;t rely on expensive accessories or complicated styling rules. They rely on balance, scale, texture, and a few pieces that genuinely fit the room.</p>

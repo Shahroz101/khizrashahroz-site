@@ -8,67 +8,133 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0GF84BX29", title: "SATINIOR 5 x 7 Ft Lemon Area Rug, Blue and Yellow Mediterranean Style, Non-Slip", w: 1500, h: 1500 },
+    { asin: "B0FVS9F1MV", title: "Dobbyby 12 Inch Tall Ceramic Flower Vase, Rustic Terracotta Farmhouse Pottery", w: 1500, h: 1500 },
+  ],
+  palette: [
+    { asin: "B0FFSH3VV1", title: "Jeneoo Terracotta Chenille Decorative Throw Pillow Covers, Soft Square Cushion Cases", w: 1315, h: 1313 },
+    { asin: "B089WG5SD3", title: "BEAUTEX Fleece Throw Blanket for Couch, Soft Fuzzy Plush, Olive Green", w: 1500, h: 1500 },
+  ],
+  materials: [
+    { asin: "B0F6C9L2S6", title: "Furlide Mid-Century Accent Chairs, Set of 2, Low Rattan Chairs, Walnut", w: 1500, h: 1347 },
+    { asin: "B0H73KGHFZ", title: "Natural Travertine Tray, 15 x 10 Inch, with Non-Slip Pads", w: 1500, h: 939 },
+  ],
+  tiles: [
+    { asin: "B0H1RHJQ27", title: "Peel and Stick Tile Stickers, 24 Pcs, 4 x 4 Inch, Mexican Talavera Backsplash", w: 1500, h: 1500 },
+    { asin: "B0CBCTDS14", title: "FloorPops x Chris Loves Julia Bonneville Grey and White Marble Peel and Stick Floor Tiles", w: 1500, h: 1500 },
+  ],
+  iron: [
+    { asin: "B0CN2KHFMY", title: "Black Modern Metal Wall Candle Holder, Set of 2, Taper Candle Sconces", w: 1500, h: 1500 },
+    { asin: "B0DQDN1622", title: "HavenlyYouth 47.2 Inch Vintage Console Table with Tempered Glass Top and Metal Frame", w: 1363, h: 1304 },
+  ],
+  furniture: [
+    { asin: "B0F3H6NB81", title: "2-Tier Round Wood Nesting Coffee Table, Walnut, 28 x 28 x 18 Inch", w: 1500, h: 1500 },
+    { asin: "B0DRPML38B", title: "Modway Langford Faux Leather Upholstered Mid-Century Modern Armchair with Wood Frame", w: 891, h: 917 },
+  ],
+  light: [
+    { asin: "B0FLCCKF6S", title: "Glass Mushroom Lamp, Dimmable Bedside Table Lamp, White", w: 1500, h: 1500 },
+    { asin: "B0CW1R212H", title: "Linkind Smart Light Bulbs, Works with Alexa and Google Home, Dimmable", w: 1500, h: 1416 },
+  ],
+  vintage: [
+    { asin: "B0CLG1C7ZC", title: "cotiled 5 x 7 Washable Traditional Area Rug for Living Room, Beige", w: 1500, h: 1500 },
+    { asin: "B0D4QN5J75", title: "OIGUMR Small Oval Wall Mirror, Vintage Resin Frame, 15 x 10.7 Inch", w: 1026, h: 1458 },
+  ],
+  plants: [
+    { asin: "B0F3CQCVW3", title: "Realead 6 Ft Artificial Olive Tree with Tall Planter", w: 741, h: 1500 },
+    { asin: "B0B8HDQYN7", title: "INGOFIN Terracotta Pots Set with Saucers, 5, 6 and 7 Inch, Drainage Holes", w: 1125, h: 987 },
+  ],
+  simple: [
+    { asin: "B0GSNTNK4Q", title: "Handmade Ceramic Decorative Bowl, Blue-Gray Glaze, Organic Shape, Footed Base", w: 1500, h: 817 },
+    { asin: "B0CNPKYNZS", title: "HouseJoy Wood Beaded Decorative Tray for Coffee Table, 16 x 11.8 Inch", w: 1500, h: 1214 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "modern-spanish-interior-design-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "modern-spanish-interior-design", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
 <p>Modern Spanish interior design carries a whole-home logic, not just a bathroom or kitchen treatment.</p>
 <p>The same warm materials and restrained styling that work in one room should carry through the rest of the house for the look to actually read as a coherent style, not a single styled corner.</p>
-${photo("hero.png", "Elegant modern Spanish interior with warm, natural styling", 1248, 832)}
+${photo("hero.png", "Elegant modern Spanish interior with warm, natural styling", 1248, 832, "hero")}
 
 <h2>Start With an Earthy Palette</h2>
 <p>Warm terracottas, sandy neutrals and deep olive or rust accents form the base the rest of the home gets built on.</p>
 <p>Carrying this palette consistently from room to room, rather than confined to just one space, is what makes the whole home read as intentionally styled.</p>
-${photo("earthy-palette.png", "Warm earthy color palette forming the home's design foundation", 683, 1024)}
+${photo("earthy-palette.png", "Warm earthy color palette forming the home's design foundation", 683, 1024, "palette")}
 
 <h2>Use Natural Materials Everywhere</h2>
 <p>Stone, wood, rattan and other genuine materials should show up throughout the home, not concentrated in just one statement room.</p>
 <p>This consistency across spaces is more important to the style's success than any single material choice in isolation.</p>
-${photo("natural-materials.png", "Natural materials like stone and wood used consistently throughout", 683, 1024)}
+${photo("natural-materials.png", "Natural materials like stone and wood used consistently throughout", 683, 1024, "materials")}
 
 <h2>Use Statement Tile With Restraint</h2>
 <p>One bold tile moment &mdash; a kitchen backsplash, an entryway floor &mdash; makes a real statement; several competing tile moments throughout the home dilute each other.</p>
 <p>Choosing just one or two rooms for a genuine tile statement keeps the whole home feeling considered rather than overdone.</p>
-${photo("statement-tiles.png", "A bold statement tile moment chosen with deliberate restraint", 683, 1024)}
+${photo("statement-tiles.png", "A bold statement tile moment chosen with deliberate restraint", 683, 1024, "tiles")}
 
 <h2>Bring In Wrought Iron and Curves</h2>
 <p>Wrought iron fixtures and furniture with genuine curves bring an authentically Spanish architectural detail into the home that straight-lined modern furniture can't replicate.</p>
 <p>This works especially well in railings, light fixtures and a few key furniture pieces rather than attempting it everywhere at once.</p>
-${photo("wrought-iron.png", "Wrought iron details bringing authentic Spanish architectural character", 683, 1024)}
+${photo("wrought-iron.png", "Wrought iron details bringing authentic Spanish architectural character", 683, 1024, "iron")}
 
 <h2>Choose Furniture That's Low-Key but Luxe</h2>
 <p>Simple silhouettes in genuinely good materials read as more sophisticated than ornate furniture in lesser materials.</p>
 <p>This furniture philosophy carries the restraint-over-ornamentation principle central to the whole style into the biggest pieces in any room.</p>
-${photo("furniture.png", "Simple, luxe furniture silhouettes in genuinely quality materials", 683, 1024)}
+${photo("furniture.png", "Simple, luxe furniture silhouettes in genuinely quality materials", 683, 1024, "furniture")}
 
 <h2>Light It Moodier Than Usual</h2>
 <p>Warm, slightly dim ambient lighting throughout the home, rather than bright and even, supports the style's relaxed Mediterranean feel.</p>
 <p>This is a whole-home lighting philosophy, not just a single-room choice &mdash; consistency here matters as much as the palette does.</p>
-${photo("moody-light.png", "Moody, warm lighting supporting a relaxed Mediterranean atmosphere", 683, 1024)}
+${photo("moody-light.png", "Moody, warm lighting supporting a relaxed Mediterranean atmosphere", 683, 1024, "light")}
 
 <h2>Add Vintage Touches Without the Dust</h2>
 <p>A genuinely aged piece &mdash; a vintage rug, an antique mirror, a weathered side table &mdash; brings real character that new furniture alone can't provide.</p>
 <p>This doesn't require an entirely vintage-furnished home; one or two considered pieces per room do the job.</p>
-${photo("vintage-touches.png", "Vintage pieces adding authentic character throughout the home", 683, 1024)}
+${photo("vintage-touches.png", "Vintage pieces adding authentic character throughout the home", 683, 1024, "vintage")}
 
 <h2>Let Plants Carry the Mediterranean Mood</h2>
 <p>Indoor plants throughout the home extend the style's outdoor connection into every room, not just one.</p>
 <p>This is one of the lowest-cost, highest-consistency ways to carry the look from room to room.</p>
-${photo("plants.png", "Indoor plants carrying the Mediterranean mood throughout the home", 683, 1024)}
+${photo("plants.png", "Indoor plants carrying the Mediterranean mood throughout the home", 683, 1024, "plants")}
 
 <h2>Keep It Simple and Intentional</h2>
 <p>Fewer, better-chosen pieces throughout the home outperform a fully decorated house trying to include every element of the style at once.</p>
 <p>This restraint is the thread that ties every other choice on this list together into one coherent whole-home style.</p>
-${photo("keep-simple.png", "Simple, intentional styling tying the whole home together", 683, 1024)}
+${photo("keep-simple.png", "Simple, intentional styling tying the whole home together", 683, 1024, "simple")}
 
 <h2>Final Thoughts</h2>
 <p>None of these 9 elements need to be applied to every room immediately.</p>

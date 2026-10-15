@@ -13,16 +13,118 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0FNMQF1RY", title: "FUTEI Faux Wool Throw Pillow Covers, 18 x 18 Inch, Beige, Pack of 2", w: 1500, h: 1500 },
+    { asin: "B0HDCYS3C7", title: "Ultra-Soft Velvet Throw Pillow Covers, 18 x 18 Inch, Set of 2", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0CG3M9T4P", title: "Hausattire Natural Jute Braided Woven Rug, 3 x 5 Feet", w: 1500, h: 1500 },
+    { asin: "B0GH72W6LV", title: "Bedsure Faux Wool Area Rug, 9 x 12 Ft, Machine Washable, Beige", w: 1500, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0DRPMZR3P", title: "Modway Langford Stain-Resistant Performance Velvet Armchair, Mid Century Modern", w: 890, h: 915 },
+    { asin: "B081HXBX34", title: "Yaheetech Small Velvet Barrel Accent Chair, 25.5 Inch Wide, Gray", w: 1418, h: 1488 },
+  ],
+  idea3: [
+    { asin: "B0FC2BJFJ1", title: "5-Pack Small Woven Rope Storage Baskets, 2 Sizes, Organizer Bins", w: 1500, h: 1140 },
+    { asin: "B07GWMNTZ3", title: "Woven Seagrass Belly Basket for Storage, Plant Pot and Laundry, Medium", w: 1201, h: 1210 },
+  ],
+  idea4: [
+    { asin: "B0D5Y3MPHD", title: "OMERAI Faux Fur Blanket, Ultra Soft Luxury Fuzzy Throw, Long Pile Plush", w: 1500, h: 1500 },
+    { asin: "B083J5CC4M", title: "EasyJoy Ultra Soft Fluffy Shaggy Faux Fur Rug, Beige, 2 x 6 Ft", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0HDN8X7QT", title: "100% Linen Flax Striped Window Curtain Panel with Rod Pocket, 52 x 84 Inch", w: 1500, h: 1500 },
+    { asin: "B0FV878PBZ", title: "Cream Beige Geometric Jacquard Semi Sheer Curtains, 84 Inches Long, Back Tab", w: 1500, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B07SLVBHZG", title: "LSKYTOP 60 Inch Wood Bead Garland with Tassels, Farmhouse Boho Decor", w: 800, h: 1001 },
+    { asin: "B0GVBJ639R", title: "Small Acacia Wood Decorative Bowl, Entryway Key Tray and Countertop Organizer", w: 1500, h: 1106 },
+  ],
+  idea7: [
+    { asin: "B01L8BZIMO", title: "Simple and Opulence 100% French Flax Linen Duvet Cover Set with Embroidery, 3 Piece", w: 1500, h: 1500 },
+    { asin: "B0D529MTRK", title: "100% Cotton Waffle Weave Blanket for Bed, Lightweight Summer Blanket", w: 1466, h: 976 },
+  ],
+  idea8: [
+    { asin: "B0GXZJLKCN", title: "Nordic Sculptural White Pendant Light, Metal and Wood Kitchen Island Fixture", w: 1500, h: 1500 },
+    { asin: "B0HFVRRDF8", title: "Boho Rattan Drum Chandelier, 23.6 Inch, 6-Light Pendant Fixture", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0HFR9F7H4", title: "Boho Macrame Corner Wall Shelf with Multi Tier Plant Hanger", w: 1500, h: 1500 },
+    { asin: "B0H1KQ49HX", title: "Achart Extra Large Macrame Wall Hanging, 71 x 32 Inch, Boho Wall Decor", w: 1500, h: 1399 },
+  ],
+  idea10: [
+    { asin: "B0FCFNKB2G", title: "Glazed Green Subway Tile Peel and Stick Backsplash, 10 Sheets, Thicker Design", w: 1500, h: 1500 },
+    { asin: "B0D472W75W", title: "STICKGOO Copper Hexagon Mosaic Peel and Stick Backsplash Tiles, 8 Sheets", w: 1500, h: 1470 },
+  ],
+  idea11: [
+    { asin: "B0C2DZ6Z75", title: "Round Hammered Metal Bowl, Oxidized Silver", w: 1500, h: 998 },
+    { asin: "B00NO4EV72", title: "Hosley 10 Inch Hammered Iron Vase, Handcrafted by Artisans", w: 883, h: 1367 },
+  ],
+  idea12: [
+    { asin: "B01K6CG3PM", title: "Unique Loom Solid Shag Collection Area Rug, 3 x 5 Ft, Terracotta", w: 1160, h: 1491 },
+    { asin: "B01F521PC4", title: "COTTON CRAFT Jute Chindi Braid Rag Rug, 2 x 3 Ft Oval, Multi Color", w: 1075, h: 704 },
+  ],
+  idea13: [
+    { asin: "B0CGXW4XRR", title: "Live Snake Plant and Easy to Grow Houseplants, 6 Pack", w: 961, h: 955 },
+    { asin: "B07HKX149W", title: "Costa Farms Live Indoor Fern Plant, Easy Care, in Decor Planter", w: 1301, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B0GWQ51DF2", title: "AVOIN Pastel Poppy Flowers Embroidered Throw Pillow Covers, 18 x 18 Inch", w: 1500, h: 1500 },
+    { asin: "B0DC6ZQQH4", title: "Creative Co-Op Embroidered Tiger and Flowers Cotton Slub Pillow, Multicolor", w: 1500, h: 1496 },
+  ],
+  idea15: [
+    { asin: "B0FW4CPJ1Z", title: "Natural Marble Oval Tray, Calacatta Viola, 10 x 5 Inch", w: 1454, h: 1018 },
+    { asin: "B0GCBF37SM", title: "OAKOA Large Decorative Stone Bowl for Fruit and Home Decor", w: 1500, h: 745 },
+  ],
+  idea16: [
+    { asin: "B0BLN5S31Y", title: "Yaheetech Mid-Century Faux Leather Accent Armchair, Light Brown", w: 1368, h: 1500 },
+    { asin: "B0BXYBB2ND", title: "Lifestyle Solutions Wentworth 19 Inch Round Faux Leather Ottoman Bench", w: 1500, h: 1500 },
+  ],
+  idea17: [
+    { asin: "B09Y91H4H7", title: "Anytime Double Layer Curtains with Sheer Overlay, 2 Panels, 52 x 84 Inch", w: 1500, h: 1500 },
+    { asin: "B0H1MT8VVJ", title: "1 Inch Boho Wood Double Curtain Rods, 36 to 120 Inch Adjustable", w: 1439, h: 1465 },
+  ],
+  idea18: [
+    { asin: "B0DHL83NPP", title: "LOMOHOO Set of 9 Boho Woven Wicker Wall Basket Decor", w: 1500, h: 1491 },
+    { asin: "B07CZZ9FHM", title: "Primitives by Kathy Cotton Woven Wall Hanging, Free Spirit", w: 651, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "texture-in-home-decor-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "texture-in-home-decor", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -34,7 +136,7 @@ const ideas = [
       "Starting with a large jute base, then layering a softer wool or a colorful Persian rug on top, builds a natural-meets-refined mix that a single rug can't achieve on its own.",
       "The layered look also adds genuine warmth underfoot, which matters more than most people expect once it's actually there.",
     ],
-    photo: photo("layered-rugs.png", "Layered jute and wool rugs in a warm living room", 576, 1024),
+    photo: photo("layered-rugs.png", "Layered jute and wool rugs in a warm living room", 576, 1024, "idea1"),
   },
   {
     n: "02",
@@ -44,7 +146,7 @@ const ideas = [
       "A velvet armchair, a sofa, or even just a few throw pillows adds immediate richness &mdash; deep jewel tones like emerald or sapphire lean dramatic, while dusty pastels keep things calmer.",
       "Beyond the look, velvet also genuinely feels good to sit in, which gives it a practical edge over some of the flashier texture options.",
     ],
-    photo: photo("velvet-furniture.png", "Velvet armchair adding glam texture to a contemporary living room", 576, 1024),
+    photo: photo("velvet-furniture.png", "Velvet armchair adding glam texture to a contemporary living room", 576, 1024, "idea2"),
   },
   {
     n: "03",
@@ -54,7 +156,7 @@ const ideas = [
       "Beyond hiding clutter, they bring a natural, earthy quality wherever they're placed &mdash; firewood, blankets, magazines or toys all have a home inside one.",
       "They also tend to look effortlessly styled even when they're just holding whatever needed somewhere to go.",
     ],
-    photo: photo("baskets.png", "Woven baskets adding natural texture to a bohemian-style living room", 576, 1024),
+    photo: photo("baskets.png", "Woven baskets adding natural texture to a bohemian-style living room", 576, 1024, "idea3"),
   },
   {
     n: "04",
@@ -64,7 +166,7 @@ const ideas = [
       "A faux fur throw draped over a bed or a few fluffy pillows added to a couch instantly makes a space feel snuggly.",
       "White or gray leans into a Scandinavian-chic look, while darker tones bring more richness and moodiness to the same idea.",
     ],
-    photo: photo("faux-fur.png", "Faux fur throw adding cozy texture to a warm bedroom", 576, 1024),
+    photo: photo("faux-fur.png", "Faux fur throw adding cozy texture to a warm bedroom", 576, 1024, "idea4"),
   },
   {
     n: "05",
@@ -74,7 +176,7 @@ const ideas = [
       "Textured curtains catch and diffuse light differently depending on the material, which changes the whole feel of a room throughout the day.",
       "Linen in particular has a way of making a room feel softer the moment a breeze moves through it.",
     ],
-    photo: photo("curtains.png", "Textured linen curtains in a beautifully lit living room", 576, 1024),
+    photo: photo("curtains.png", "Textured linen curtains in a beautifully lit living room", 576, 1024, "idea5"),
   },
   {
     n: "06",
@@ -84,7 +186,7 @@ const ideas = [
       "Even a minimalist space tends to benefit from a bit of wood somewhere in the mix, since it warms up an otherwise cool palette almost instantly.",
       "It's one of the easiest textures to introduce without committing to a full redesign.",
     ],
-    photo: photo("wood-details.png", "Natural wood details bringing warmth to a tranquil bedroom", 576, 1024),
+    photo: photo("wood-details.png", "Natural wood details bringing warmth to a tranquil bedroom", 576, 1024, "idea6"),
   },
   {
     n: "07",
@@ -94,7 +196,7 @@ const ideas = [
       "Mixing textures like linen, waffle-weave and velvet across pillows and throws adds depth without needing to change the color palette at all.",
       "A well-layered bed also tends to make the whole bedroom feel more finished, even if nothing else in the room has changed.",
     ],
-    photo: photo("bedding.png", "Layered textured bedding in a luxurious inviting bedroom", 576, 1024),
+    photo: photo("bedding.png", "Layered textured bedding in a luxurious inviting bedroom", 576, 1024, "idea7"),
   },
   {
     n: "08",
@@ -104,7 +206,7 @@ const ideas = [
       "The shadows and reflections these fixtures throw change the mood of a room instantly, in a way a plain bulb simply can't.",
       "It's an easy upgrade for a space that otherwise relies entirely on flat, even light.",
     ],
-    photo: photo("light-fixtures.jpeg", "Sculptural textured light fixtures in a sophisticated dining area", 576, 1024),
+    photo: photo("light-fixtures.jpeg", "Sculptural textured light fixtures in a sophisticated dining area", 576, 1024, "idea8"),
   },
   {
     n: "09",
@@ -114,7 +216,7 @@ const ideas = [
       "Hung above a bed, in a hallway, or layered into a gallery wall, it adds softness and handmade texture that flat art can't replicate.",
       "A single well-placed macrame piece can anchor an entire wall on its own.",
     ],
-    photo: photo("macrame.png", "Macrame wall hanging adding boho texture to an eclectic living room", 576, 1024),
+    photo: photo("macrame.png", "Macrame wall hanging adding boho texture to an eclectic living room", 576, 1024, "idea9"),
   },
   {
     n: "10",
@@ -124,7 +226,7 @@ const ideas = [
       "These are exactly the rooms where a bit of extra texture tends to go unnoticed as an afterthought and appreciated as a genuine design choice.",
       "It's a relatively small surface area to commit to, which makes it a lower-risk way to try something bolder.",
     ],
-    photo: photo("tile-backsplash.png", "Textured tile backsplash in a sleek contemporary kitchen", 576, 1024),
+    photo: photo("tile-backsplash.png", "Textured tile backsplash in a sleek contemporary kitchen", 576, 1024, "idea10"),
   },
   {
     n: "11",
@@ -134,7 +236,7 @@ const ideas = [
       "Used in hardware, light fixtures or small decor accents, these finishes add a slightly industrial, lived-in feel.",
       "It works especially well in a room that's already leaning toward high contrast between materials.",
     ],
-    photo: photo("metal-accents.png", "Hammered metal accents adding personality to a modern living room", 576, 1024),
+    photo: photo("metal-accents.png", "Hammered metal accents adding personality to a modern living room", 576, 1024, "idea11"),
   },
   {
     n: "12",
@@ -144,7 +246,7 @@ const ideas = [
       "A shag rug, a chunky braided jute piece, or a textured wool option all bring real comfort to a room beyond their visual appeal.",
       "It's one of the easiest changes to make that guests actually notice without being able to pinpoint exactly why the room feels cozier.",
     ],
-    photo: photo("high-pile-rugs.png", "High-pile textured rug in a serene cozy living room", 576, 1024),
+    photo: photo("high-pile-rugs.png", "High-pile textured rug in a serene cozy living room", 576, 1024, "idea12"),
   },
   {
     n: "13",
@@ -154,7 +256,7 @@ const ideas = [
       "Placing them in terra cotta, matte ceramic or woven baskets pushes the tactile appeal even further.",
       "The combination ends up feeling lush and intentional rather than like a single repeated houseplant.",
     ],
-    photo: photo("plants.png", "Varied textured houseplants styled together in a chic interior", 576, 1024),
+    photo: photo("plants.png", "Varied textured houseplants styled together in a chic interior", 576, 1024, "idea13"),
   },
   {
     n: "14",
@@ -164,7 +266,7 @@ const ideas = [
       "Mixing patterns and textures &mdash; a bouclé pillow next to an embroidered one, a woven texture beside a smooth velvet &mdash; adds genuine depth.",
       "Pillows also offer a low-risk way to test out a texture or color before investing in something larger, like a piece of furniture.",
     ],
-    photo: photo("embroidered-pillows.png", "Embroidered throw pillows adding texture to a luxurious living room", 576, 1024),
+    photo: photo("embroidered-pillows.png", "Embroidered throw pillows adding texture to a luxurious living room", 576, 1024, "idea14"),
   },
   {
     n: "15",
@@ -174,7 +276,7 @@ const ideas = [
       "A slate serving tray, a marble countertop, or a small stone sculpture all bring that same quality into a room, whatever the scale.",
       "Stone reads as visually warm despite being cool to the touch, which is part of what makes it such an effective texture choice.",
     ],
-    photo: photo("stone-accents.png", "Natural stone accents in a pristine modern kitchen", 576, 1024),
+    photo: photo("stone-accents.png", "Natural stone accents in a pristine modern kitchen", 576, 1024, "idea15"),
   },
   {
     n: "16",
@@ -184,7 +286,7 @@ const ideas = [
       "It also ages well over time, developing a patina that makes a space feel more lived-in and layered rather than simply worn down.",
       "A leather armchair, ottoman or set of accent pillows all bring that same quality without requiring a full furniture overhaul.",
     ],
-    photo: photo("leather.png", "Leather accent furniture adding grown-up texture to a cozy study", 576, 1024),
+    photo: photo("leather.png", "Leather accent furniture adding grown-up texture to a cozy study", 576, 1024, "idea16"),
   },
   {
     n: "17",
@@ -194,7 +296,7 @@ const ideas = [
       "It also gives far more control over light and privacy than a single curtain panel ever could, since each layer can be adjusted independently.",
       "The layered effect reads as considerably more finished than a single flat treatment, even though it uses materials most homes already have somewhere.",
     ],
-    photo: photo("layered-window-treatment.png", "Layered sheer and heavy curtains in a warm inviting bedroom", 576, 1024),
+    photo: photo("layered-window-treatment.png", "Layered sheer and heavy curtains in a warm inviting bedroom", 576, 1024, "idea17"),
   },
   {
     n: "18",
@@ -204,7 +306,7 @@ const ideas = [
       "They bring softness, warmth and a handcrafted quality to a wall that flat framed art can't quite replicate.",
       "They also come in enough shapes and styles to suit almost any room, from a single statement piece to a small cluster.",
     ],
-    photo: photo("woven-wall-art.png", "Woven wall art adding handcrafted texture to a modern living room", 576, 1024),
+    photo: photo("woven-wall-art.png", "Woven wall art adding handcrafted texture to a modern living room", 576, 1024, "idea18"),
   },
 ];
 
@@ -219,7 +321,7 @@ function ideaBlock(idea) {
 const body = `
 <p>Color gets most of the credit in home decor, but texture is often what actually makes a room feel finished. A space built entirely from smooth, flat surfaces can look styled on paper and still feel oddly cold in person &mdash; texture is usually the missing piece.</p>
 <p>None of the ideas below require a full redesign. Most work as layers on top of what's already there &mdash; a rug, a pillow, a lighting swap &mdash; each one adding a bit more depth to a room that might otherwise feel flat.</p>
-${photo("hero.jpg", "Cozy textured living room with layered rugs, faux fur and velvet pillows", 1280, 720)}
+${photo("hero.jpg", "Cozy textured living room with layered rugs, faux fur and velvet pillows", 1280, 720, "hero")}
 
 <h2>18 Unique Ways to Use Texture in Home Decor</h2>
 ${ideas.map(ideaBlock).join("\n")}

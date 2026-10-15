@@ -10,6 +10,155 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0FR23BMP8", title: "Buffalo Plaid Christmas Pillow Covers, 18 x 18 Inch, Set of 4, Red and Black", w: 1500, h: 1466 },
+    { asin: "B0F4JLCS1V", title: "Small 2 Ft Pre-Lit Tabletop Christmas Tree with Ornaments and Lights", w: 763, h: 1500 },
+  ],
+  whatMakesGood: [
+    { asin: "B0F7X5QXSN", title: "24 Inch Boxwood Wreath for Front Door with Sash, Large Artificial Greenery", w: 1387, h: 1500 },
+    { asin: "B08G8CQYXJ", title: "MEEDEE White and Gold Wired Ribbon, 2.5 Inch, 6 Rolls, 36 Yards", w: 1482, h: 1412 },
+  ],
+  idea1: [
+    { asin: "B0FDPB67N8", title: "24 Inch Christmas Wreath with Red Berries, Eucalyptus and Pinecones for Front Door", w: 1280, h: 1280 },
+    { asin: "B0CFLBPBGR", title: "RABUSOFA Merry Christmas Lumbar Pillow Cover, 12 x 20 Inch, Red", w: 933, h: 624 },
+  ],
+  idea2: [
+    { asin: "B0H6J8V99C", title: "36 Inch Large Pre-Lit Christmas Wreath with Lights for Outdoor", w: 1500, h: 1500 },
+    { asin: "B0H8PW9KY4", title: "Large Red Velvet Christmas Bows for Garland, Wreaths and Tree Decor", w: 1431, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B00LKRMWEY", title: "National Tree Company 9 Ft Pre-Lit Crestwood Spruce Christmas Garland", w: 1500, h: 853 },
+    { asin: "B0FP4NBGK1", title: "24 Pieces Natural Pine Cones with Wired Stems, Various Sizes, Christmas Decor", w: 1500, h: 1496 },
+  ],
+  idea4: [
+    { asin: "B00MVAC6FY", title: "National Tree Company 3 Ft Pre-Lit Nordic Spruce Mini Christmas Tree", w: 945, h: 1498 },
+    { asin: "B0C7GRGWQT", title: "Rocinha Rattan Christmas Tree Collar Basket, Rustic Handcrafted Tree Ring", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0H8CRVTLK", title: "GSK 20 Inch Black Tall Taper Garden Planters, Set of 2, All Season", w: 1500, h: 1500 },
+    { asin: "B0FLDP7B25", title: "Artificial Christmas Pine Branches with Red Berry Picks, 45 Greenery Stems and 15 Berries", w: 1500, h: 1478 },
+  ],
+  idea6: [
+    { asin: "B0BM39QXGS", title: "Set of 4 Large Torched Wood Nesting Decorative Crates, Rustic Farmhouse", w: 1500, h: 984 },
+    { asin: "B0D72HXH99", title: "EverGrace Chenille Christmas Throw Blanket, 50 x 60 Inch, Red Stewart Plaid", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0D46TTYXK", title: "24 and 17 Inch Large Black Outdoor Floor Lanterns, Set of 2, Porch Decor", w: 1500, h: 1500 },
+    { asin: "B09J1FK7RK", title: "Tyawon Glass Battery Operated LED Flameless Candles with Remote and Timer", w: 1496, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B07LFDSJYS", title: "Idyllic 22 Inch Greenery Winter Wreath with Snowy Pine Cones and Succulents", w: 1300, h: 1300 },
+    { asin: "B0DFBVR4H1", title: "Faux Rabbit Fur Throw Blanket for Couch, Cream White, 50 x 60 Inch", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0H2VSCGH4", title: "NEEDOMO Set of 2 Red Outdoor Lanterns for Porch, Large Candle Lanterns", w: 1500, h: 1500 },
+    { asin: "B0FLJJDTJR", title: "TRIROCKS Set of 2 Decorative Candle Lanterns, 14 and 10 Inch, Antique Red", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B073YCBNDW", title: "DII Buffalo Check Rustic Farmhouse Throw Blanket with Tassels, 50 x 60, Black and White", w: 1498, h: 1095 },
+    { asin: "B07XFN8LR3", title: "Boao 3 Roll Christmas Buffalo Plaid Wired Ribbon, 2.4 Inch x 26 Yard", w: 1494, h: 1478 },
+  ],
+  idea11: [
+    { asin: "B0CTGFX6FC", title: "30 Pcs Real Dried White Birch Twigs, 17 Inch, Decorative Branches for Vases", w: 1500, h: 1500 },
+    { asin: "B0BCK98LLG", title: "PerkHomy Natural Jute Twine, 600 Feet, for Crafts and Gift Wrapping", w: 643, h: 1090 },
+  ],
+  idea12: [
+    { asin: "B0FSYC2XZ4", title: "Urn Planters, 22 Inch, Set of 2, Tall Stone-Resin Pedestal Planters for Outdoor Plants", w: 1500, h: 1406 },
+    { asin: "B0037XKRRS", title: "American Metalcraft Galvanized Steel Pail with Handle, 1.16 Gallon, 8 Inch", w: 1242, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B0H6BCVVF7", title: "Zeyune Giant Velvet Christmas Bow, 39 x 59 Inch, Burgundy", w: 1500, h: 1500 },
+    { asin: "B0G5QJR39W", title: "White Tulle Fabric Roll, 6 Inch by 100 Yards (300 Feet)", w: 1500, h: 1500 },
+  ],
+  idea14: [
+    { asin: "B01INBBP3I", title: "National Tree Company Pre-Lit Decorative Sisal Gift Boxes, 3-Piece Set", w: 1409, h: 1500 },
+    { asin: "B0D6MXXGS2", title: "2 Ft Snow Flocked Artificial Tabletop Christmas Tree with Plastic Stand", w: 912, h: 1500 },
+  ],
+  idea15: [
+    { asin: "B0FLJJHDVH", title: "Glitzhome Vintage Wooden Hanging Sled Wall Sign, 34 Inch, Rustic Red", w: 1500, h: 1500 },
+    { asin: "B0F4ZDNV58", title: "Aurora Festive Palm Pals Freeze Snowman Stuffed Animal", w: 1092, h: 1500 },
+  ],
+  idea16: [
+    { asin: "B0HHMGSMCW", title: "Set of 3 Pre-Lit Mini Christmas Trees, 22 Inch, Tabletop Artificial Trees", w: 1500, h: 1500 },
+    { asin: "B088LSF8BD", title: "Rectangular Small Seagrass Baskets, Set of 3", w: 1414, h: 1047 },
+  ],
+  idea17: [
+    { asin: "B092JP5KFX", title: "Warm White Icicle Lights for Outside, 66 Ft, 640 LEDs, Outdoor Christmas Lights", w: 1500, h: 1500 },
+    { asin: "B09Z5YT94K", title: "TW SHINE Warm White Outdoor Christmas Lights, 20 Ft, 100 Count", w: 1445, h: 1500 },
+  ],
+  idea18: [
+    { asin: "B0H9L2GP5B", title: "Merry Christmas Doormat, 30 x 17 Inch, Coir Welcome Mat with Non-Slip Backing", w: 1500, h: 927 },
+    { asin: "B0BFDH7835", title: "Christmas Red and White Plaid Door Mat, 28 x 43 Inch, Hand-Woven Cotton", w: 1500, h: 1500 },
+  ],
+  idea19: [
+    { asin: "B0H6LBZCC8", title: "Large Handwoven Wicker Basket with Handle, Scalloped Edge", w: 1103, h: 1347 },
+    { asin: "B0G4M7NLL1", title: "VIVATREES 3 Ft Artificial Topiary Cedar Trees, UV-Resistant Outdoor Evergreens", w: 1500, h: 1493 },
+  ],
+  idea20: [
+    { asin: "B0F9KWGG6K", title: "4 Pcs Mini Christmas Cedar Wreaths with Red Bows and Bells, 12 Inch", w: 1434, h: 1500 },
+    { asin: "B09PV1F8PR", title: "VIS'V Heavy Duty Clear Suction Wreath Hanger, 22 LB, Large, 2 Pcs", w: 1500, h: 1402 },
+  ],
+  idea21: [
+    { asin: "B07WPS4PTV", title: "Sattiyrch 76 Piece Gold Shatterproof Christmas Ball Ornaments Set", w: 853, h: 675 },
+    { asin: "B0HC6YKLS4", title: "Set of 3 Giant Metal Christmas Bells, 7.1, 9.84 and 12.2 Inch", w: 1500, h: 1500 },
+  ],
+  idea22: [
+    { asin: "B0FDBGVLL7", title: "50 Pack Artificial Red Berry Picks and Stems for Christmas Decor", w: 1390, h: 1362 },
+    { asin: "B09GY7WWRB", title: "24 Pieces Frosted Artificial Holly Berry Stems, 9 Inch, Snowy Red Berry Picks", w: 1477, h: 1469 },
+  ],
+  idea23: [
+    { asin: "B0GVNF7RV4", title: "Outdoor Deep-Seat Cushion Set, 24 x 24 Inch, Beige, Set of 4", w: 1500, h: 1451 },
+    { asin: "B08CV97DSX", title: "BEAUTEX Red Sherpa Fleece Throw Blanket, Soft, Fluffy and Cozy", w: 1500, h: 1199 },
+  ],
+  idea24: [
+    { asin: "B0DKNN9WCX", title: "YITAHOME 6 Ft Pre-Lit Snow Flocked Artificial Christmas Tree with Remote", w: 1500, h: 1500 },
+    { asin: "B07ZNJSMCD", title: "kockuu White Snowflake Christmas Ornaments for Tree and Crafts", w: 1500, h: 1500 },
+  ],
+  idea25: [
+    { asin: "B0D17QBQBH", title: "DoubleFill 2 Pcs 32 Inch Wooden Nutcracker Yard Decor, Soldier and Knight", w: 1500, h: 1500 },
+    { asin: "B0CDL7T8L8", title: "Suzile 4 Pcs 12 Inch Christmas Nutcracker Figures, Wooden Soldiers", w: 1500, h: 1218 },
+  ],
+  idea26: [
+    { asin: "B0HCJ7GYR3", title: "Hot Cocoa Bar Supplies Kit, Clear Acrylic 4-Cell Topping Organizer with Lids and Spoons", w: 1500, h: 1481 },
+    { asin: "B0CC2LTM9Q", title: "Maxdot 8 Pcs Christmas Ceramic Coffee Mugs, 12 oz", w: 1500, h: 1484 },
+  ],
+  idea27: [
+    { asin: "B0G8LXN89J", title: "2 Pcs Silver Christmas Reindeer Figurines, Resin Standing and Sitting Statues", w: 1361, h: 1500 },
+    { asin: "B0BHH88STK", title: "COTTON CRAFT Braided Handwoven 100% Jute Door Mat, 22 x 34 Inch", w: 978, h: 1500 },
+  ],
+  idea28: [
+    { asin: "B0CC91TXDV", title: "22 Inch Pre-Lit Be Merry Christmas Wreath with Red Black Buffalo Plaid Bow", w: 1500, h: 1500 },
+    { asin: "B0GVYHM9SX", title: "Hourleey Set of 4 Pre-Lit Christmas Gift Boxes, Warm White, 70 LED", w: 1500, h: 1500 },
+  ],
+  safety: [
+    { asin: "B079N9FW5B", title: "BN-LINK Outdoor 24-Hour Mechanical Timer Outlet, 2 Grounded Outlets", w: 1500, h: 1500 },
+    { asin: "B0G69DJ82M", title: "TiFFCOFiO Waterproof Indoor Outdoor Extension Cord, 25 Feet", w: 1500, h: 1096 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "christmas-porch-decor-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 736, h: 1104, alt: "Cozy porch bench with red and green plaid pillows and throw, a wreath on the window, string lights and mini lit trees", url: "https://www.pinterest.com/pin/4600778950712984640/", label: "Cozy Christmas Porch Bench" },
   idea1: { src: "classic-red-and-green", w: 736, h: 1312, alt: "Front porch with red and white striped curtains, multiple evergreen wreaths with red bows, a rocking chair with a Merry Christmas pillow and a poinsettia", url: "https://www.pinterest.com/pin/74168725107945773/", label: "Classic Red and Green Christmas Porch" },
@@ -48,12 +197,13 @@ const STOCK = {
   whatMakesGood: { src: "what-makes-it-good", w: 3024, h: 4032, alt: "A navy front door on a historic yellow house decorated with a boxwood wreath tied with plaid and gold ribbon", url: "https://commons.wikimedia.org/w/index.php?curid=98332252", label: "M2545", site: "Wikimedia Commons" },
 };
 
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "christmas-porch-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 function stockPhoto(key) {
@@ -67,6 +217,7 @@ function stockPhoto(key) {
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Classic Red and Green Christmas Porch",
     photoKey: "idea1",
     paras: [
@@ -77,6 +228,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Christmas Porch With an Oversized Wreath",
     photoKey: "idea2",
     paras: [
@@ -88,6 +240,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Christmas Porch With Garland Around the Door",
     photoKey: "idea3",
     paras: [
@@ -98,6 +251,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Cozy Christmas Porch With a Mini Tree",
     photoKey: "idea4",
     paras: [
@@ -108,6 +262,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Christmas Porch With Matching Planters",
     photoKey: "idea5",
     paras: [
@@ -118,6 +273,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Rustic Christmas Porch With Pinecones",
     photoKey: "idea6",
     paras: [
@@ -128,6 +284,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Christmas Porch With Lanterns",
     photoKey: "idea7",
     paras: [
@@ -138,6 +295,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Scandinavian Christmas Porch",
     photoKey: "idea8",
     paras: [
@@ -148,6 +306,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Christmas Porch With Red Lanterns",
     photoKey: "idea9",
     paras: [
@@ -158,6 +317,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Christmas Porch With Plaid Accents",
     photoKey: "idea10",
     paras: [
@@ -168,6 +328,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Christmas Porch With Birch Branches",
     photoKey: "idea11",
     paras: [
@@ -178,6 +339,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Elegant Neutral Christmas Porch",
     photoKey: "idea12",
     paras: [
@@ -188,6 +350,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Christmas Porch With Oversized Bows",
     photoKey: "idea13",
     paras: [
@@ -198,6 +361,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Christmas Porch With Wrapped Presents",
     photoKey: "idea14",
     paras: [
@@ -208,6 +372,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Christmas Porch With a Vintage Sled",
     photoKey: "idea15",
     paras: [
@@ -218,6 +383,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Christmas Porch With a Christmas Tree Trio",
     photoKey: "idea16",
     paras: [
@@ -228,6 +394,7 @@ const ideas = [
   },
   {
     n: "17",
+    productsKey: "idea17",
     title: "Christmas Porch With Warm White Lights",
     photoKey: "idea17",
     paras: [
@@ -240,6 +407,7 @@ const ideas = [
   },
   {
     n: "18",
+    productsKey: "idea18",
     title: "Christmas Porch With a Festive Doormat",
     photoKey: "idea18",
     paras: [
@@ -250,6 +418,7 @@ const ideas = [
   },
   {
     n: "19",
+    productsKey: "idea19",
     title: "Christmas Porch With Evergreen Baskets",
     photoKey: "idea19",
     paras: [
@@ -260,6 +429,7 @@ const ideas = [
   },
   {
     n: "20",
+    productsKey: "idea20",
     title: "Christmas Porch With Hanging Wreaths",
     photoKey: "idea20",
     paras: [
@@ -270,6 +440,7 @@ const ideas = [
   },
   {
     n: "21",
+    productsKey: "idea21",
     title: "Christmas Porch With Gold Accents",
     photoKey: "idea21",
     paras: [
@@ -279,6 +450,7 @@ const ideas = [
   },
   {
     n: "22",
+    productsKey: "idea22",
     title: "Christmas Porch With Red Berries",
     photoKey: "idea22",
     paras: [
@@ -288,6 +460,7 @@ const ideas = [
   },
   {
     n: "23",
+    productsKey: "idea23",
     title: "Christmas Porch With a Cozy Seating Area",
     photoKey: "idea23",
     paras: [
@@ -298,6 +471,7 @@ const ideas = [
   },
   {
     n: "24",
+    productsKey: "idea24",
     title: "Christmas Porch With Snowy White Decor",
     photoKey: "idea24",
     paras: [
@@ -308,6 +482,7 @@ const ideas = [
   },
   {
     n: "25",
+    productsKey: "idea25",
     title: "Christmas Porch With Nutcrackers",
     photoKey: "idea25",
     paras: [
@@ -318,6 +493,7 @@ const ideas = [
   },
   {
     n: "26",
+    productsKey: "idea26",
     title: "Christmas Porch With a Hot Cocoa Station",
     photoKey: "idea26",
     paras: [
@@ -328,6 +504,7 @@ const ideas = [
   },
   {
     n: "27",
+    productsKey: "idea27",
     title: "Minimalist Christmas Porch",
     photoKey: "idea27",
     paras: [
@@ -338,6 +515,7 @@ const ideas = [
   },
   {
     n: "28",
+    productsKey: "idea28",
     title: "Layered Christmas Porch With Everything Working Together",
     photoKey: "idea28",
     paras: [
@@ -352,7 +530,7 @@ function ideaBlock(idea) {
   const paras = idea.paras.map((p) => `<p>${p}</p>`).join("\n      ");
   const quote = idea.quote ? `<blockquote><p>&ldquo;${idea.quote.text}&rdquo;</p><cite>&mdash; ${idea.quote.cite}</cite></blockquote>` : "";
   const afterQuote = idea.afterQuote ? idea.afterQuote.map((p) => `<p>${p}</p>`).join("\n      ") : "";
-  const photoHtml = idea.photoKey ? photo(idea.photoKey) : "";
+  const photoHtml = idea.photoKey ? photo(idea.photoKey, idea.productsKey) : (idea.productsKey ? productGrid(idea.productsKey) : "");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
@@ -365,7 +543,7 @@ const body = `
 <p>Your front porch deserves more than one lonely wreath and a string of lights tangled beyond recognition. These 28 Christmas porch decor ideas can help you create an entrance that feels warm, festive, and actually connected to the rest of your home.</p>
 <p>I&rsquo;ve always thought the porch should set the mood before anyone even opens the front door. You don&rsquo;t need a huge porch, an enormous budget, or enough Christmas decorations to fill a storage unit. A few well-chosen layers can do the job beautifully.</p>
 <p>The trick comes down to greenery, lighting, texture, color, and scale. Once you get those five elements working together, decorating becomes much easier.</p>
-${photo("hero")}
+${photo("hero", "hero")}
 
 <h2>What Makes a Christmas Porch Look Good?</h2>
 <p>A beautiful Christmas porch usually has one clear focal point rather than twenty decorations fighting for attention. Your front door often provides the perfect anchor, so start there with a wreath, garland, or another strong seasonal detail.</p>
@@ -375,6 +553,7 @@ ${photo("hero")}
 <p>Ask yourself: What should people notice first?</p>
 <p>If you can answer that question, your decorating decisions become much easier.</p>
 ${stockPhoto("whatMakesGood")}
+${productGrid("whatMakesGood")}
 
 <h2>How Do You Decorate a Front Porch for Christmas?</h2>
 <p>Start with the biggest pieces first. Add a wreath or door decoration, then bring in garland, planters, lanterns, trees, rugs, and smaller accessories.</p>
@@ -415,7 +594,7 @@ ${ideas.map(ideaBlock).join("\n")}
   <li>Choose flameless candles around greenery and other combustible decorations.</li>
 </ul>
 <p>A little caution takes almost no time, so there&rsquo;s really no reason to skip it.</p>
-${photo("safety")}
+${photo("safety", "safety")}
 
 <h2>How to Choose the Right Christmas Porch Decor</h2>
 <p>Before you buy anything, stand outside and look at your porch from the street.</p>

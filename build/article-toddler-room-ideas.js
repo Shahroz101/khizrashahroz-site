@@ -6,16 +6,106 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0H9RQSKPZ", title: "EXPERLAM Twin Montessori Floor Bed for Kids, Removable Rails, Natural Wood", w: 1500, h: 1455 },
+    { asin: "B092LYPBRP", title: "Ramanta Home Jute Braided Reversible Round Rug, 6 Ft", w: 1500, h: 1500 },
+  ],
+  why: [
+    { asin: "B0GSV7ZQK8", title: "Furniture Anchors for Baby Proofing, 12 Pack, White", w: 1500, h: 1500 },
+    { asin: "B0D1V1Y5LM", title: "OOOK Montessori Toy Shelf, 2-Tier Wooden Storage Shelf for Kids", w: 1122, h: 1310 },
+  ],
+  theme: [
+    { asin: "B0FLDN1LGZ", title: "Blue Ocean Peel and Stick Wallpaper Mural for Kids Bedroom, 82 x 57 Inch", w: 1500, h: 1265 },
+    { asin: "B0D9W13VB5", title: "Set of 4 Framed Kids Playroom Wall Art Prints, 12 x 16 Inch, Toddler Nursery Artwork", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0B38YC8CK", title: "Longhui Chunky Cable Knit Throw Blanket, Lightweight Beige, 100% Organic Cotton", w: 1500, h: 1500 },
+    { asin: "B0HDN8X7QT", title: "100% Linen Flax Striped Window Curtain Panel with Rod Pocket, 52 x 84 Inch", w: 1500, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0GX1GL41H", title: "oaskys Toddler Floor Bed, Soft Frameless Foam Design, No Assembly, Ages 3-8", w: 1500, h: 1500 },
+    { asin: "B0F62FD79Y", title: "SpaceAid 3-Tier Scalloped Montessori Bookshelf for Toddlers, Wooden Book Display", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0H1B434VY", title: "Tanlaby Large Dinosaur Wall Decals, Tropical Palm Tree Wall Stickers", w: 1500, h: 1500 },
+    { asin: "B0FBWDGYY3", title: "lishjekee 5 Piece Wild Animal Comforter Set, Twin, Bed in a Bag for Kids", w: 1000, h: 1000 },
+  ],
+  idea4: [
+    { asin: "B0D7CVJPX7", title: "Shario Scalloped Nursery Book Shelves, 4-Pack White Floating Wall Shelves", w: 1160, h: 1500 },
+    { asin: "B00B0DWB7Q", title: "Little Tikes Easy Store Jr. Play Table, Ages 18 Months to 5 Years", w: 1500, h: 1209 },
+  ],
+  idea5: [
+    { asin: "B0F9XQX7PJ", title: "Asweets Kids Table and Chair Set for Toddlers, White", w: 1449, h: 636 },
+    { asin: "B0BZ4D49ZF", title: "HOMORE Kids Educational Area Rug, 4 x 6 Ft, Classroom and Playroom", w: 1500, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B082JGMM2S", title: "Delta Children Canton Toddler Bed, Greenguard Gold Certified, Grey", w: 1500, h: 1500 },
+    { asin: "B0CFZXTRTS", title: "Walnut Picture Ledge Floating Shelves for Wall, 36 Inch, Set of 2", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0CSSN7J4C", title: "Hemway Sage Green Interior Paint, 2.5 Liter, Acrylic Emulsion", w: 1500, h: 1492 },
+    { asin: "B0F2MWCY22", title: "16 PCS Framed Kids Wall Art Set, Colorful Nursery and Playroom Decor", w: 1500, h: 1145 },
+  ],
+  idea8: [
+    { asin: "B07GWMNTZ3", title: "Woven Seagrass Belly Basket for Storage, Plant Pot and Laundry, Medium", w: 1201, h: 1210 },
+    { asin: "B0CYPN8346", title: "NTBAY Toddler Microfiber Bedding Set, 4 Piece, Olive Green", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0GDT42P9B", title: "Large Paper Lantern Pendant Light with Cord and Canopy, 20 Inch, Off-White", w: 803, h: 1437 },
+    { asin: "B0GR5DW41X", title: "KiddoCood Wood Kids Bookshelf and Book Display Organizer, 28.7 Inch, White", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0H9KP66FZ", title: "3-Tier Montessori Scalloped Kids Bookshelf with Drawer", w: 1500, h: 1500 },
+    { asin: "B0DQD8FWHM", title: "MAXYOYO Kids Bean Bag Chair, Stuffed Bean Bag Sofa, Beige", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0F1SY9QVY", title: "Under Bed Storage Containers, 2-Pack, Toy Storage Boxes with Lids", w: 1224, h: 1430 },
+    { asin: "B0744R49LD", title: "Danya B. Cubby Chessboard Wall Shelf, Horizontal or Vertical, White", w: 841, h: 1500 },
+  ],
+  idea12: [
+    { asin: "B0G7T5NFVR", title: "3D Layered Safari Nursery Wooden Letter for Wall Decor, Green Baby Name Sign", w: 1203, h: 1469 },
+    { asin: "B0G3XL95QH", title: "3 Pcs Framed Rainbow Wall Art Prints, Brothers and Sisters Theme, Kids Room Decor", w: 1500, h: 1146 },
+  ],
+  combine: [
+    { asin: "B0D45HSHDF", title: "EXPERLAM Kids Toy Storage Organizer, 3-Tier Bookshelf with 12 Storage Bins", w: 1500, h: 1500 },
+    { asin: "B0D1Y7S5PS", title: "Hemway Peel and Stick Sample for Interior Paint, Aquamarine Blue, A5", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "toddler-room-ideas-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "toddler-room-ideas", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -27,7 +117,7 @@ const ideas = [
       "Layer in a chunky knit blanket, a soft area rug, linen curtains, and a few wood accents. The palette stays flexible enough that you can swap bedding or art anytime without ever touching a paintbrush.",
       "A neutral room also tends to handle bedtime better than a loud one. Calmer colors genuinely seem to take the edge off bedtime battles.",
     ],
-    photo: photo("soft-neutral.jpg", "Cream toddler daybed with soft pillows and a knit throw beneath a floating shelf, next to a tall curtained window with warm afternoon light", 585, 1024),
+    photo: photo("soft-neutral.jpg", "Cream toddler daybed with soft pillows and a knit throw beneath a floating shelf, next to a tall curtained window with warm afternoon light", 585, 1024, "idea1"),
   },
   {
     n: "02",
@@ -37,7 +127,7 @@ const ideas = [
       "That access matters more than it sounds like it should. When a toddler can choose their own toys and grab their own clothes, a lot of the daily power struggles just quietly disappear.",
       "Designing at their actual height, rather than yours, is what turns a cute room into one that genuinely builds independence.",
     ],
-    photo: photo("montessori.jpg", "Wood house-frame floor bed with pillows beside a low open bookshelf, hanging plant and a round multicolor rug in a sunlit room", 683, 1024),
+    photo: photo("montessori.jpg", "Wood house-frame floor bed with pillows beside a low open bookshelf, hanging plant and a round multicolor rug in a sunlit room", 683, 1024, "idea2"),
   },
   {
     n: "03",
@@ -47,7 +137,7 @@ const ideas = [
       "Animal wall decals, safari or woodland bedding, a few plush toys displayed on shelves, and some storybook-style artwork cover the whole look.",
       "The trick is restraint: let one feature wall carry the theme rather than covering every surface. That balance is what keeps it feeling adorable instead of chaotic.",
     ],
-    photo: photo("animal-themed.jpg", "Toddler bedroom with colorful dinosaur wall decals, green bedding, stuffed animal toys and a patterned dinosaur rug", 683, 1024),
+    photo: photo("animal-themed.jpg", "Toddler bedroom with colorful dinosaur wall decals, green bedding, stuffed animal toys and a patterned dinosaur rug", 683, 1024, "idea3"),
   },
   {
     n: "04",
@@ -57,7 +147,7 @@ const ideas = [
       "Wall-mounted bookshelves, under-bed storage drawers, hooks instead of bulky coat racks, and a foldable play table all stretch a small footprint further than you'd expect.",
       "The rule that actually matters here: every item should earn its spot. If something's just taking up floor space without adding real value, it probably doesn't belong.",
     ],
-    photo: photo("small-space.jpg", "Toddler bedroom corner with three floating bookshelves mounted above a low bed, filled with books and toys to maximize wall storage", 574, 1024),
+    photo: photo("small-space.jpg", "Toddler bedroom corner with three floating bookshelves mounted above a low bed, filled with books and toys to maximize wall storage", 574, 1024, "idea4"),
   },
   {
     n: "05",
@@ -67,7 +157,7 @@ const ideas = [
       "Defined spaces genuinely help toddlers focus. Kids tend to bounce between toys less when they understand exactly where each kind of play belongs.",
       "Intentional zones do more for actual play than people expect from something this simple.",
     ],
-    photo: photo("play-corner.jpg", "Toddler playing at a low wooden table with a paper lantern pendant light, garlands, shelving and a colorful geometric rug", 679, 1024),
+    photo: photo("play-corner.jpg", "Toddler playing at a low wooden table with a paper lantern pendant light, garlands, shelving and a colorful geometric rug", 679, 1024, "idea5"),
   },
   {
     n: "06",
@@ -77,7 +167,7 @@ const ideas = [
       "Keep the walls neutral, stick to fewer and higher-quality toys, hang a few simple framed prints, and choose clean-lined furniture over anything fussy.",
       "Rotating toys every few weeks keeps things feeling fresh without adding more stuff. Your toddler stays interested, and the room stays peaceful. Both matter.",
     ],
-    photo: photo("minimalist.jpg", "Minimalist toddler bedroom with a light wood bed, three floating picture-ledge shelves holding books and toys, and a woven pendant light", 683, 1024),
+    photo: photo("minimalist.jpg", "Minimalist toddler bedroom with a light wood bed, three floating picture-ledge shelves holding books and toys, and a woven pendant light", 683, 1024, "idea6"),
   },
   {
     n: "07",
@@ -87,7 +177,7 @@ const ideas = [
       "A single statement wall in sage green, dusty blue, or soft coral, paired with white or light wood furniture and coordinated bedding, keeps even a bright room from tipping into visual chaos.",
       "Color works best when it's controlled. Energize the play areas with it, and keep the zone near the bed a little softer to support actual sleep.",
     ],
-    photo: photo("bold-color.jpg", "Toddler bedroom with color-blocked blue, yellow and pink walls, framed animal art prints, a low bed and a rainbow striped rug", 575, 843),
+    photo: photo("bold-color.jpg", "Toddler bedroom with color-blocked blue, yellow and pink walls, framed animal art prints, a low bed and a rainbow striped rug", 575, 843, "idea7"),
   },
   {
     n: "08",
@@ -97,7 +187,7 @@ const ideas = [
       "Layer in texture instead of leaning on a \"boy\" or \"girl\" theme &mdash; woven baskets, wooden toys, linen bedding, and simple art all do real work here.",
       "Neutral doesn't mean boring, it means flexible. Let your toddler's actual personality show up through toys and art instead of permanent, hard-to-undo choices.",
     ],
-    photo: photo("gender-neutral.jpg", "Sage green toddler bedroom with mustard and olive geometric wall decals, a wood bed with green bedding and a woven storage basket", 683, 1024),
+    photo: photo("gender-neutral.jpg", "Sage green toddler bedroom with mustard and olive geometric wall decals, a wood bed with green bedding and a woven storage basket", 683, 1024, "idea8"),
   },
   {
     n: "09",
@@ -107,7 +197,7 @@ const ideas = [
       "Removable wall decals instead of wallpaper, DIY framed prints, secondhand furniture with a fresh coat of paint, and affordable open shelving all transform a space without a renovation-sized spend.",
       "A simple statement light fixture is one of the highest-impact cheap swaps available. You don't need luxury pricing &mdash; you need smart styling choices.",
     ],
-    photo: photo("budget-friendly.jpg", "Toddler reaching toward a low bookshelf beside a floor cushion, with a soft painted mountain mural on the wall behind", 574, 1024),
+    photo: photo("budget-friendly.jpg", "Toddler reaching toward a low bookshelf beside a floor cushion, with a soft painted mountain mural on the wall behind", 574, 1024, "idea9"),
   },
   {
     n: "10",
@@ -117,7 +207,7 @@ const ideas = [
       "Keep it curated and let the books themselves become decor. Front-facing bookshelves, a cozy reading chair, soft floor cushions, and warm lamp lighting pull the whole look together.",
       "A reading nook does more than look nice. It quietly builds a habit, one bedtime story at a time.",
     ],
-    photo: photo("storybook.jpg", "Toddler reading corner with a tiered front-facing bookshelf, a small upholstered chair, stuffed bears and cloud and star wall decals", 576, 1024),
+    photo: photo("storybook.jpg", "Toddler reading corner with a tiered front-facing bookshelf, a small upholstered chair, stuffed bears and cloud and star wall decals", 576, 1024, "idea10"),
   },
   {
     n: "11",
@@ -127,7 +217,7 @@ const ideas = [
       "Open cubbies with labeled bins, under-bed drawers, toy rotation baskets tucked in a closet, and wall hooks at toddler height all keep clutter manageable &mdash; and simple enough that your toddler will actually use the system.",
       "Complicated organizers tend to get ignored completely. Kids clean up faster when they know exactly where something goes, with zero extra steps involved.",
     ],
-    photo: photo("smart-storage.jpg", "Toddler bed with under-bed storage bins, wall cubby shelving filled with toys, and coat hooks holding bags above a desk with books", 574, 1024),
+    photo: photo("smart-storage.jpg", "Toddler bed with under-bed storage bins, wall cubby shelving filled with toys, and coat hooks holding bags above a desk with books", 574, 1024, "idea11"),
   },
   {
     n: "12",
@@ -137,7 +227,7 @@ const ideas = [
       "A name sign above the bed, framed family photos, handprint art, or a growth chart ruler all create that emotional connection. You don't need to go overboard &mdash; one or two meaningful details genuinely create the magic.",
       "A single simple detail, like a wall sign or a cluster of framed favorites, can be the thing your toddler points to proudly every single night.",
     ],
-    photo: photo("personalized.jpg", "Toddler bedroom with wall lettering, a gallery of framed character prints, a wall clock and a bed with under-bed storage bins", 559, 1024),
+    photo: photo("personalized.jpg", "Toddler bedroom with wall lettering, a gallery of framed character prints, a wall clock and a bed with under-bed storage bins", 559, 1024, "idea12"),
   },
 ];
 
@@ -152,17 +242,17 @@ function ideaBlock(idea) {
 const body = `
 <p>You want a toddler room that looks adorable, but you also want it to survive snack crumbs, toy explosions, and the occasional crayon masterpiece on the wall. Fair. Designing for this age feels exciting and a little terrifying at once &mdash; cute, practical, able to grow with your kid, and ideally not something you'll be repainting again in six months.</p>
 <p>Here's how to land on a room that's genuinely magical, functional, and livable all at once.</p>
-${photo("hero.jpg", "Warm Montessori-style toddler bedroom with a low wood floor bed, open shelf of wooden toys and a round jute rug by a sunny window", 1312, 736)}
+${photo("hero.jpg", "Warm Montessori-style toddler bedroom with a low wood floor bed, open shelf of wooden toys and a round jute rug by a sunny window", 1312, 736, "hero")}
 
 <h2>Why Toddler Room Design Actually Matters</h2>
 <p>A toddler's room does more than look good in photos &mdash; it shapes how they play, sleep, and explore every day. Toddlers crave independence: grabbing their own toys, choosing their own pajamas, feeling like the space genuinely belongs to them. Design with that in mind and you build confidence without even trying.</p>
 <p>Safety has to come first, always. Anchored furniture, rounded corners, soft rugs for inevitable falls, and non-toxic paint create the freedom for a toddler to actually explore. Storage matters just as much &mdash; skip the complicated organizing systems and stick to low cubbies, open baskets, clear bins, and a toy rotation. Kids genuinely play longer and more focused with fewer options in front of them at once.</p>
-${photo("intro-why.jpg", "Gray and sage green toddler playroom with a low play table, open bookshelf filled with toys, a mushroom-shaped lamp and a hanging mobile", 559, 1024)}
+${photo("intro-why.jpg", "Gray and sage green toddler playroom with a low play table, open bookshelf filled with toys, a mushroom-shaped lamp and a hanging mobile", 559, 1024, "why")}
 
 <h2>Choosing a Theme Without Overdoing It</h2>
 <p>Themes are fun right up until they're overwhelming. Start with what your toddler actually loves &mdash; animals, cars, rainbows &mdash; and build from there without turning the whole room into a theme park.</p>
 <p>Keep the foundation simple and add personality through the easy-to-swap stuff: wall art, bedding, throw pillows, toys. You can change any of that in an afternoon. A hand-painted jungle mural, on the other hand, means a full weekend of repainting and a fair amount of regret two years later. Whatever you choose, let the room support actual play, not just how it photographs.</p>
-${photo("intro-theme.jpg", "Toddler bedroom with a soft cloud and mountain wall mural, a gallery of small framed character prints and a floral bed with plush toys", 683, 1024)}
+${photo("intro-theme.jpg", "Toddler bedroom with a soft cloud and mountain wall mural, a gallery of small framed character prints and a floral bed with plush toys", 683, 1024, "theme")}
 
 <h2>12 Toddler Room Ideas Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}
@@ -170,7 +260,7 @@ ${ideas.map(ideaBlock).join("\n")}
 <h2>How to Combine These Without Creating Chaos</h2>
 <p>You don't need all twelve ideas crammed into one room. Pick three or four that actually fit your lifestyle, and follow a simple formula: choose one main theme or direction, pick one accent color, add functional storage, include one personalized element, and keep visual clutter to a minimum.</p>
 <p>If your toddler craves independence, lean into the Montessori direction. If you want calm, go minimalist. If you want energy, use bold color carefully rather than everywhere at once. Design works best when it actually reflects how your family lives, not just what looks good in a photo.</p>
-${photo("hero.jpg", "Warm Montessori-style toddler bedroom with a low wood floor bed, open shelf of wooden toys and a round jute rug by a sunny window", 1312, 736)}
+${photo("hero.jpg", "Warm Montessori-style toddler bedroom with a low wood floor bed, open shelf of wooden toys and a round jute rug by a sunny window", 1312, 736, "combine")}
 
 <h2>Final Thoughts</h2>
 <p>Building a great toddler room was never really about chasing trends. It's about creating a space that supports sleep, play, growth, and independence &mdash; safety first, accessibility prioritized, design kept flexible, personality added thoughtfully.</p>

@@ -11,159 +11,264 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0D3XZB17F", title: "Bigacogo Chunky Knit Throw Blanket for Couch, 51 x 63 Inch, Cold Sea Blue", w: 1500, h: 1500 },
+    { asin: "B0D39S248V", title: "LLB Genuine Sheepskin Throw Pillow Covers, 18 x 18 Inch, Fluffy Beige", w: 1001, h: 1001 },
+  ],
+  intro: [
+    { asin: "B0FR8P7GTP", title: "2 Pcs Natural Wood Arch Decor, Serving Boards and Boho Shelf Decor", w: 1500, h: 1415 },
+    { asin: "B0CKRBWK64", title: "Foindtower Linen Solid Decorative Throw Pillow Covers, 18 x 18 Inch, Natural Beige", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0G1STST24", title: "LONRISWAY Dimmable LED Wood Table Lamp, 3-Color Bedside Lamp", w: 1500, h: 1500 },
+    { asin: "B0BXFS3HW9", title: "Nourison 23 Inch Rustic Farmhouse Ceramic Table Lamp, Greyish Brown", w: 1500, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0BYMLF7KP", title: "Foindtower Textured Boucle Throw Pillow Covers, 18 x 18 Inch, Ivory", w: 1500, h: 1500 },
+    { asin: "B0H6MJX3F8", title: "Aegero Chenille Decorative Throw Pillow Covers, 18 x 18 Inch, Rust, Pack of 2", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0F6Y7MKSR", title: "Sour Lemon 8 x 10 Ft Cream Area Rug for Bedroom and Living Room", w: 1500, h: 1500 },
+    { asin: "B0DGWXG6BT", title: "Beige 8 x 10 Ft Fluffy Shag Area Rug for Living Room and Bedroom", w: 1500, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B08BY9124H", title: "Wio-Mio LED Floor Lamp, 15W, 1000LM, Stepless Dimming with Remote", w: 1476, h: 1500 },
+    { asin: "B0CPS22JVK", title: "Bedsure Sherpa Throw Blanket for Couch, Super Soft Fleece, Thick and Warm", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B07TM25XTC", title: "SBYURE 20 Pack 2.4 Inch Natural Pinecones for Crafts and Home Decor", w: 1500, h: 1487 },
+    { asin: "B0GCKPXXLZ", title: "Sukh 40 Pcs Natural Dried Birch Twigs, 12.8 Inch, for Vase Decor", w: 1267, h: 1500 },
+  ],
+  idea6: [
+    { asin: "B0HFMZP9N2", title: "MR MIRYE Scented Soy Candles Gift Set, 12 Pack, 3 oz Tins", w: 1500, h: 1449 },
+    { asin: "B0HDNRWHGV", title: "12 Pcs Ivory Pillar Candles Bulk Set, Assorted Sizes", w: 1500, h: 1472 },
+  ],
+  idea7: [
+    { asin: "B0C6TTZ5MC", title: "NIRMAN Acacia Wood Bird Statues Set, Modern Sculpture Home Decor", w: 1363, h: 487 },
+    { asin: "B0H6WZ982V", title: "Acacia Wood Serving Trays with Handles, Nested Set", w: 1338, h: 1137 },
+  ],
+  idea8: [
+    { asin: "B0B7JRZ6LX", title: "BEDELITE Fleece Queen Comforter Set, Fluffy Bed Set, Cream White", w: 1500, h: 1500 },
+    { asin: "B086MJJC78", title: "Bare Home Flannel Duvet Cover Set, Queen, Sand", w: 1500, h: 1195 },
+  ],
+  idea9: [
+    { asin: "B07J31L62Z", title: "Yakamok Grey 100% Blackout Thermal Curtain Panels, 84 Inch, 2 Panels", w: 1500, h: 1500 },
+    { asin: "B0881QG5WK", title: "ChrisDowa Blackout Curtains for Bedroom and Living Room, 63 Inch, Black", w: 1402, h: 1415 },
+  ],
+  idea10: [
+    { asin: "B0D2RNVW2R", title: "wemarry Flameless Candles in Amber Acrylic Glass Pillars, 4, 5 and 6 Inch", w: 1500, h: 1319 },
+    { asin: "B07PHFVRM2", title: "DearHouse Faux Eucalyptus Garland, 2 Pack, Artificial Hanging Vines", w: 927, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B075YRG42X", title: "Solino Home 100% Pure Linen Table Runner, Natural, 14 x 90 Inch", w: 1243, h: 1500 },
+    { asin: "B0B9BNC15W", title: "Hanobe Solid Wooden Decorative Bowl for Coffee Table and Entryway, White", w: 1500, h: 773 },
+  ],
+  idea12: [
+    { asin: "B0HC1SW5JN", title: "Tall Ceramic Jar Vase, 11 Inch, Rustic Textured Decorative Vase", w: 1254, h: 1254 },
+    { asin: "B0HDHT6K5D", title: "Decorative Books for Home Decor, 2 Linen Faux Book Boxes, Brown and Beige", w: 1500, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B0DPSLBZ8L", title: "LANANAS Corduroy Throw Pillow Covers, 20 x 20 Inch, Neutral Brown", w: 1254, h: 1254 },
+    { asin: "B0CDB6ZDTR", title: "Rusty Ceramic Wabi Sabi Pottery Flower Vase for Centerpieces and Tables", w: 1500, h: 1499 },
+  ],
+  idea14: [
+    { asin: "B0DK569V4S", title: "Negwoo Chunky Knit Chenille Throw Blanket, 40 x 50 Inch, Brown", w: 1500, h: 1500 },
+    { asin: "B0C7Q93461", title: "Bedsure Beige Knit Throw Blanket for Couch, Super Soft, Cozy and Fuzzy", w: 1500, h: 1114 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "winter-decor-cozy-home-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "winter-decor-cozy-home", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "winter-decor-cozy-home", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Use Warm Lamps Instead of Ceiling Lights",
     paras: [
       "This idea deserves its own spot because it genuinely changes how a room feels.",
       "Replacing harsh overhead lighting with warm table lamps, floor lamps, sconces or portable lights shifts a room's whole mood, especially once the sun goes down.",
       "A single lamp placed beside the sofa tends to create more real warmth than one large ceiling fixture ever could &mdash; switching off the overhead light in the evening and relying on lamps instead makes a room feel noticeably more atmospheric.",
     ],
-    photo: pinPhoto("warm-lamps.jpg", "Warm table lamp lighting a cozy winter living room", 683, 1024, "https://www.pinterest.com/pin/1119003838698929956/", "Warm Lamp Lighting for Winter"),
+    photo: pinPhoto("warm-lamps.jpg", "Warm table lamp lighting a cozy winter living room", 683, 1024, "https://www.pinterest.com/pin/1119003838698929956/", "Warm Lamp Lighting for Winter", "idea1"),
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Add Winter Warmth With Layered Pillows",
     paras: [
       "Pillows can completely shift the personality of a sofa.",
       "Combining different shapes and textures &mdash; velvet, wool, boucle, corduroy, linen, knitted fabric &mdash; tends to work better for winter than simply swapping in matching seasonal covers.",
       "Keeping the color palette connected to the rest of the room, with just one or two cushions introducing a deeper shade like chocolate brown or taupe, is often enough to make a whole room feel warmer.",
     ],
-    photo: pinPhoto("layered-pillows.jpg", "Layered textured pillows in warm winter tones on a sofa", 683, 1024, "https://www.pinterest.com/pin/29343835069219227/", "Layered Winter Pillows"),
+    photo: pinPhoto("layered-pillows.jpg", "Layered textured pillows in warm winter tones on a sofa", 683, 1024, "https://www.pinterest.com/pin/29343835069219227/", "Layered Winter Pillows", "idea2"),
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Bring In a Soft Area Rug",
     paras: [
       "Cold floors kill a cozy mood almost instantly.",
       "A rug visually anchors furniture while adding real softness underfoot, and it's worth considering for a living room, bedroom, reading nook or entryway alike.",
       "Layering a smaller textured rug over a larger neutral one, where the room allows for it, adds even more warmth without overwhelming the space with pattern.",
     ],
-    photo: pinPhoto("area-rug.jpg", "Soft textured area rug layered in a cozy winter living room", 683, 1024, "https://www.pinterest.com/pin/67765169389574742/", "Soft Winter Area Rug"),
+    photo: pinPhoto("area-rug.jpg", "Soft textured area rug layered in a cozy winter living room", 683, 1024, "https://www.pinterest.com/pin/67765169389574742/", "Soft Winter Area Rug", "idea3"),
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Create a Warm Winter Reading Corner",
     paras: [
       "Every home benefits from one small corner built specifically for disappearing into for an hour.",
       "A comfortable chair near a floor lamp or window, with a throw, a small side table and a basket for books nearby, is really the whole setup.",
       "It gives an otherwise empty corner an actual purpose, turning unused space into somewhere genuinely worth sitting.",
     ],
-    photo: pinPhoto("reading-corner.jpg", "Cozy winter reading corner with a throw and floor lamp", 683, 1024, "https://www.pinterest.com/pin/360428776447847950/", "Cozy Winter Reading Corner"),
+    photo: pinPhoto("reading-corner.jpg", "Cozy winter reading corner with a throw and floor lamp", 683, 1024, "https://www.pinterest.com/pin/360428776447847950/", "Cozy Winter Reading Corner", "idea4"),
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Decorate With Natural Winter Elements",
     paras: [
       "Winter decorating doesn't require anything manufactured to feel seasonal.",
       "Branches, dried flowers, pinecones, eucalyptus, evergreen stems, firewood, stone or unfinished wood all bring real texture into a room with very little effort.",
       "A few branches in a large vase, a bowl of pinecones, or a bit of greenery along a mantel keeps the arrangement simple while still balancing a room that leans heavily on glass, metal or smooth furniture.",
     ],
-    photo: pinPhoto("natural-elements.jpg", "Natural winter elements like branches and pinecones styled indoors", 683, 1024, "https://www.pinterest.com/pin/988680924531765709/", "Natural Winter Decor Elements"),
+    photo: pinPhoto("natural-elements.jpg", "Natural winter elements like branches and pinecones styled indoors", 683, 1024, "https://www.pinterest.com/pin/988680924531765709/", "Natural Winter Decor Elements", "idea5"),
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Add Candles for Glow and Atmosphere",
     paras: [
       "Candles can genuinely change the feel of an entire evening.",
       "Placed on a coffee table, dining table, mantel or bedside table, and grouped at a few different heights, they create a noticeably stronger visual effect than a single candle on its own.",
       "Warm, subtle scents &mdash; cedar, vanilla, amber, sandalwood, cinnamon &mdash; suit winter particularly well, as long as the candles stay a layer of atmosphere rather than the room's only light source.",
     ],
-    photo: pinPhoto("candles.jpg", "Grouped candles creating warm atmosphere in a winter home", 683, 1024, "https://www.pinterest.com/pin/719801952987585311/", "Candles for Winter Atmosphere"),
+    photo: pinPhoto("candles.jpg", "Grouped candles creating warm atmosphere in a winter home", 683, 1024, "https://www.pinterest.com/pin/719801952987585311/", "Candles for Winter Atmosphere", "idea6"),
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Add Warm Wood Wherever a Room Feels Cold",
     paras: [
       "When a room leans heavily on white, gray, glass or metal, adding wood softens the whole space.",
       "A wooden stool, side table, cutting board, picture frame, tray or decorative bowl all do this job without needing a full furniture swap.",
       "Mixing slightly different wood tones, rather than matching everything exactly, often reads as more natural &mdash; adding wood in two or three spots is usually enough to make it feel intentional.",
     ],
-    photo: photo("warm-wood.jpg", "Warm wood accents added to soften a winter room", 683, 1024),
+    photo: photo("warm-wood.jpg", "Warm wood accents added to soften a winter room", 683, 1024, "idea7"),
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Make the Bedroom Feel Like a Winter Retreat",
     paras: [
       "A bedroom deserves extra attention during winter, starting with the bed itself since it takes up so much visual space.",
       "A heavier comforter, a textured duvet, soft pillows and a throw at the foot of the bed build real warmth without requiring a repaint.",
       "Soft taupes, creams, muted browns, dusty greens and deep charcoal all suit a winter bedroom well &mdash; the goal isn't to make the room darker, just softer.",
     ],
-    photo: pinPhoto("bedroom-retreat.jpg", "Winter bedroom retreat with a heavy comforter and soft textures", 683, 1024, "https://www.pinterest.com/pin/1141592205578595492/", "Winter Bedroom Retreat"),
+    photo: pinPhoto("bedroom-retreat.jpg", "Winter bedroom retreat with a heavy comforter and soft textures", 683, 1024, "https://www.pinterest.com/pin/1141592205578595492/", "Winter Bedroom Retreat", "idea8"),
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Use Heavier Curtains for Winter Warmth",
     paras: [
       "Curtains often get overlooked when thinking about winter decor, despite how much they actually contribute to a room's feel.",
       "Replacing thin summer curtains with heavier linen, velvet, cotton or thermal panels gives a window more visual weight, making the whole room feel more enclosed and comfortable.",
       "Layering sheer curtains underneath a heavier outer panel keeps the room bright during the day while still allowing a more cocoon-like feeling at night.",
     ],
-    photo: pinPhoto("heavy-curtains.jpg", "Heavy winter curtains layered over sheer panels", 683, 1024, "https://www.pinterest.com/pin/301530137574754354/", "Heavier Curtains for Winter"),
+    photo: pinPhoto("heavy-curtains.jpg", "Heavy winter curtains layered over sheer panels", 683, 1024, "https://www.pinterest.com/pin/301530137574754354/", "Heavier Curtains for Winter", "idea9"),
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Create a Cozy Winter Mantel",
     paras: [
       "A mantel can become the clear visual anchor of a winter living room.",
       "Starting with one larger focal point &mdash; a mirror, a piece of artwork, a wreath &mdash; then layering smaller elements around it, builds the display in a logical order.",
       "Keeping some empty space between objects matters just as much as what gets placed there; a mantel reads better when the eye has room to rest than when every inch is filled.",
     ],
-    photo: pinPhoto("winter-mantel.jpg", "Cozy winter mantel styled with a focal piece and layered decor", 683, 1024, "https://www.pinterest.com/pin/689261918014163844/", "Cozy Winter Mantel"),
+    photo: pinPhoto("winter-mantel.jpg", "Cozy winter mantel styled with a focal piece and layered decor", 683, 1024, "https://www.pinterest.com/pin/689261918014163844/", "Cozy Winter Mantel", "idea10"),
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Give the Dining Table a Softer Winter Look",
     paras: [
       "An elaborate holiday tablescape isn't necessary to make a dining table feel seasonal.",
       "A simple winter centerpiece built from a linen runner, ceramic plates, wooden serving pieces, candles and a bit of greenery reads as approachable rather than overly formal.",
       "A bowl of seasonal fruit &mdash; apples, pears, pomegranates, citrus &mdash; works just as well as an easy centerpiece, adding color without the table feeling over-decorated or crowded.",
     ],
-    photo: pinPhoto("dining-table.jpg", "Dining table styled with a soft winter centerpiece", 683, 1024, "https://www.pinterest.com/pin/10766486607626886/", "Winter Dining Table Styling"),
+    photo: pinPhoto("dining-table.jpg", "Dining table styled with a soft winter centerpiece", 683, 1024, "https://www.pinterest.com/pin/10766486607626886/", "Winter Dining Table Styling", "idea11"),
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Style Shelves With Books and Meaningful Objects",
     paras: [
       "Shelves turn into clutter magnets fast if they're not approached with some intention.",
       "Books, ceramics, framed artwork, baskets, wood and a few seasonal pieces, stacked horizontally with a small object on top and breathing room left around larger pieces, build genuine rhythm.",
       "Using objects that actually hold meaning, rather than items bought purely because they matched, makes the whole shelf feel more personal and considered.",
     ],
-    photo: pinPhoto("styled-shelves.jpg", "Styled shelves with books and meaningful winter decor objects", 683, 1024, "https://www.pinterest.com/pin/561401909823169370/", "Styled Shelves for Winter"),
+    photo: pinPhoto("styled-shelves.jpg", "Styled shelves with books and meaningful winter decor objects", 683, 1024, "https://www.pinterest.com/pin/561401909823169370/", "Styled Shelves for Winter", "idea12"),
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Build a Cozy Winter Color Palette",
     paras: [
       "The final idea ties everything else together.",
       "Rather than decorating each room separately, carrying one consistent winter palette throughout the home &mdash; cream, warm beige, brown and charcoal, or soft white, taupe, muted olive and natural wood &mdash; keeps the whole house feeling connected.",
       "A consistent palette also prevents a home from feeling like several unrelated decorating projects competing for attention room to room.",
     ],
-    photo: pinPhoto("color-palette.jpg", "Cohesive cozy winter color palette carried through a home", 683, 1024, "https://www.pinterest.com/pin/422281212996359/", "Cozy Winter Color Palette"),
+    photo: pinPhoto("color-palette.jpg", "Cohesive cozy winter color palette carried through a home", 683, 1024, "https://www.pinterest.com/pin/422281212996359/", "Cozy Winter Color Palette", "idea13"),
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Layer Chunky Throws Across Seating",
     paras: [
       "Start with the simplest change on this entire list.",
@@ -178,17 +283,17 @@ function ideaBlock(idea) {
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
-    ${idea.photo || ""}`;
+    ${idea.photo || (idea.productsKey ? productGrid(idea.productsKey) : "")}`;
 }
 
 const body = `
 <p>A cozy winter home doesn't require redecorating every room from scratch. Most of what makes a space feel warmer during the colder months comes down to texture, lighting and a handful of consistent colors layered in gradually, rather than a single dramatic overhaul.</p>
 <p>None of the ideas below demand a big budget or a lot of time. Most work as small, individual additions that can be layered in over a weekend or two.</p>
-${photo("hero.jpg", "Cozy living room with chunky knit throws and faux fur pillows styled for winter", 508, 903)}
+${photo("hero.jpg", "Cozy living room with chunky knit throws and faux fur pillows styled for winter", 508, 903, "hero")}
 
 <h2>What Makes a Home Feel Cozy in Winter</h2>
 <p>Texture does most of the heavy lifting in a winter-ready home &mdash; chunky knits, soft rugs, warm wood and layered lighting all contribute more to the feeling of coziness than any single big purchase could. A consistent, warm color palette carried through the house also helps, without requiring every room to be decorated identically.</p>
-${photo("intro-warm-living.jpg", "Warm, layered winter living room with soft lighting and natural textures", 683, 1024)}
+${photo("intro-warm-living.jpg", "Warm, layered winter living room with soft lighting and natural textures", 683, 1024, "intro")}
 
 <h2>14 Winter Decor Ideas for a Cozy Home</h2>
 ${ideas.map(ideaBlock).join("\n")}

@@ -12,110 +12,201 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0C5S23CX1", title: "Kazai Toke Modern Wall-Mounted Coat Rack with Hidden Hooks, Solid Wood Veneer", w: 1304, h: 1500 },
+    { asin: "B0DBYLGMM8", title: "HOOBRO 29.5 Inch Entryway Shoe Bench with Tufted PU Leather Cushion", w: 1500, h: 1074 },
+  ],
+  intro: [
+    { asin: "B0CHFB7NPH", title: "pickpiff Wall-Mount Key Rack with 8 Hooks, Adhesive or Screw Mount", w: 1500, h: 1210 },
+    { asin: "B0CTHFBPNT", title: "Rebee Vision Wall-Mount Key Holder with Drawer Organizer, Brown", w: 1500, h: 1496 },
+  ],
+  step1: [
+    { asin: "B0DTHT3SGN", title: "CHEMPFR Narrow 5-Tier Shoe Rack with Wood Top and Steel Mesh Shelves", w: 766, h: 1500 },
+    { asin: "B0GHY4XNT1", title: "CoBak PU Leather Valet Catch-All Tray for Entryway, Brown", w: 1500, h: 1095 },
+  ],
+  step2: [
+    { asin: "B0CC5G7N6Z", title: "Optish 2 Piece Wall Coat Rack with 12 Metal Hooks", w: 1500, h: 1500 },
+    { asin: "B0HGYPBCNX", title: "3-Tier Solid Wood Wall Shelf with Hooks, Vintage Scalloped Design", w: 1500, h: 1500 },
+  ],
+  step3: [
+    { asin: "B0C75Q9GL6", title: "Nathan James Tamlin Wall-Mounted Plug-In Sconce Light", w: 1500, h: 1500 },
+    { asin: "B0FQBPLX68", title: "Plug-In 2-Tier Linen Drum Pendant Light with 15.7 Ft Woven Cord", w: 1359, h: 1339 },
+  ],
+  step4: [
+    { asin: "B07BDTVN4W", title: "Glidden Interior Paint and Primer, White Off White, Eggshell, 1 Quart", w: 1500, h: 1470 },
+    { asin: "B0FMR9MQH4", title: "Findosom 2 x 8 Hallway Runner Rug, Non-Slip, Washable Textured Floral", w: 1500, h: 1500 },
+  ],
+  step5: [
+    { asin: "B0DYDP46FF", title: "Washable 2 x 8 Hallway Runner Rug, Vintage Style, Water Resistant", w: 1500, h: 1500 },
+    { asin: "B0CSDF3YFB", title: "BEQHAUSE Dirt Trapper Door Mat, 20 x 32 Inch, Non-Slip, Washable, Beige", w: 1500, h: 1500 },
+  ],
+  step6: [
+    { asin: "B0DLZXWZGX", title: "Asymmetrical Wavy Wall Mirror with Irregular Wood Frame", w: 1500, h: 1500 },
+    { asin: "B0GVXNB878", title: "Vintage Hummingbird Small Bronze Oval Picture Frame, Ornate Baroque", w: 1393, h: 1500 },
+  ],
+  step7: [
+    { asin: "B0FQJCP61W", title: "35 Inch Folding Storage Ottoman Bench with Footrest", w: 1500, h: 1161 },
+    { asin: "B0C65GW38C", title: "Boswillon Floating Shelves, Set of 2, 16 Inch, White, with Lip", w: 1500, h: 1123 },
+  ],
+  step8: [
+    { asin: "B0C7C69FPS", title: "eufy Security Smart Lock C220, Fingerprint Keyless Entry Door Lock", w: 1321, h: 1500 },
+    { asin: "B09F3DJNGF", title: "Tuffenough 2500 Lumen Solar Security Lights, 210 LED, Motion Sensor, with Remote", w: 1438, h: 1500 },
+  ],
+  step9: [
+    { asin: "B0CW1Q2MW6", title: "Weenson Small Black Vanity Tray for Keys, Candles and Decor", w: 1500, h: 1271 },
+    { asin: "B0DNSJG1FL", title: "4 Inch Plant Pots with Drainage Holes and Trays, 6 Pack", w: 1447, h: 1500 },
+  ],
+  step10: [
+    { asin: "B0CG3Q4H5Q", title: "CCINPPY Ceramic Cloud Trinket Dish and Key Bowl", w: 1500, h: 1500 },
+    { asin: "B0F6LV6WWK", title: "khtumeware Matte Black Single Prong Wall Hooks, 2 Pack", w: 892, h: 1247 },
+  ],
+  step11: [
+    { asin: "B0GL7L4N5Y", title: "Heavy Duty Woven Rope Coir Doormat, 17 x 30 Inch", w: 1500, h: 955 },
+    { asin: "B0DPHS49RW", title: "COTTON CRAFT Woven Entryway Mat with Fringe, 22 x 34 Inch, Tan Natural", w: 856, h: 1500 },
+  ],
+  step12: [
+    { asin: "B0C65GGQJQ", title: "Boswillon Floating Shelves, Set of 2, 16 Inch, Black, with Lip", w: 1500, h: 1140 },
+    { asin: "B0CZDD2QZZ", title: "Small Gold Knot Decor for Entry Table and Bookshelf", w: 1500, h: 1500 },
+  ],
+  maintenance: [
+    { asin: "B0FFN9NTBR", title: "Expandable Heavy Duty Metal Shoe Rack Organizer", w: 1307, h: 1500 },
+    { asin: "B098D79MQB", title: "HOMEXCEL 12 Pack Microfiber Cleaning Cloths, 11.5 x 11.5 Inch", w: 1447, h: 1396 },
+  ],
+  mistakes: [
+    { asin: "B07TFYBHBQ", title: "Amazon Basics Self-Locking Tape Measure with Belt Clip, 16 Ft", w: 1500, h: 1500 },
+    { asin: "B0DZY3623Y", title: "Juno Slim Basics 4 Inch LED Low Profile Ceiling Downlight", w: 904, h: 646 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "small-flat-entrance-system-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "small-flat-entrance-system", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
 <p>A flat entrance isn't a small version of a house entryway &mdash; it's a different problem entirely.</p>
 <p>No coat closet, often no natural light, and usually just a few square feet between the front door and the rest of the apartment.</p>
 <p>Decorating it like a bigger entryway, console table and all, usually just makes it feel more cramped. The better approach works through function first and style last.</p>
-${photo("hero.png", "Stylish small flat entrance making the most of a tight space", 832, 1248)}
+${photo("hero.png", "Stylish small flat entrance making the most of a tight space", 832, 1248, "hero")}
 
 <h2>Why a Flat Entrance Actually Matters</h2>
 <p>This few square feet sets the tone for the entire apartment, since it's the first and last thing anyone sees on the way in or out.</p>
 <p>It's also the hardest-working spot in a small home &mdash; shoes, keys, mail and bags all pass through it daily, whether or not it's been designed to handle that.</p>
-${photo("intro.jpg", "Compact apartment entrance showing why thoughtful design matters", 683, 1024)}
+${photo("intro.jpg", "Compact apartment entrance showing why thoughtful design matters", 683, 1024, "intro")}
 
 <h2>Step One: Define the Function First</h2>
 <p>Before any decor decision, the entrance needs a clear job: where do shoes go, where do keys land, where does the mail pile up.</p>
 <p>In a space this small, skipping this step means every surface becomes a catch-all instead of a system.</p>
 <p>This single decision shapes every other choice that follows.</p>
-${photo("define-function.png", "Small entrance clearly defined for everyday function", 683, 1024)}
+${photo("define-function.png", "Small entrance clearly defined for everyday function", 683, 1024, "step1")}
 
 <h2>Step Two: Solve Storage Vertically</h2>
 <p>A flat entrance rarely has room for a floor-standing cabinet, which means storage has to go up the wall instead of across the floor.</p>
 <p>Wall-mounted hooks, a slim floating shelf, or an over-the-door organizer all add real storage without eating into the already-tight floor space.</p>
 <p>This is the single biggest sanity-saver on this entire list for anyone dealing with a true no-closet entrance.</p>
-${photo("storage.jpg", "Vertical storage solutions maximizing a small entrance", 583, 1024)}
+${photo("storage.jpg", "Vertical storage solutions maximizing a small entrance", 583, 1024, "step2")}
 
 <h2>Step Three: Light It So It Doesn't Feel Like a Cave</h2>
 <p>Many flat entrances have no window at all, which makes lighting do more work here than in almost any other room.</p>
 <p>A warm wall sconce or a plug-in pendant adds real light without needing an electrician, in a spot where overhead fixtures are often missing entirely.</p>
 <p>Skipping this step is the fastest way to make even a well-organized entrance feel dim and uninviting.</p>
-${photo("lighting.png", "Warm lighting brightening a small, windowless flat entrance", 683, 1024)}
+${photo("lighting.png", "Warm lighting brightening a small, windowless flat entrance", 683, 1024, "step3")}
 
 <h2>Step Four: Choose a Palette That Expands the Space</h2>
 <p>Light, warm neutrals read as more spacious in a tight entrance than a dark or saturated color would.</p>
 <p>A single accent &mdash; a painted door, a bold runner &mdash; still works, as long as the surrounding palette stays light enough to keep the space from feeling boxed in.</p>
 <p>This decision affects how big the whole entrance feels more than almost any furniture choice would.</p>
-${photo("color-palette.png", "Light color palette helping a small entrance feel more spacious", 683, 1024)}
+${photo("color-palette.png", "Light color palette helping a small entrance feel more spacious", 683, 1024, "step4")}
 
 <h2>Step Five: Pick Flooring That Can Take Daily Abuse</h2>
 <p>This spot takes more daily foot traffic, dirt and moisture than almost anywhere else in the home.</p>
 <p>A durable runner or washable mat protects whatever flooring is underneath and gives the space a defined, styled edge at the same time.</p>
 <p>Function matters more here than anywhere else on this list &mdash; this isn't the place to prioritize a delicate material.</p>
-${photo("flooring.png", "Durable flooring and a stylish runner for a hardworking entrance", 683, 1024)}
+${photo("flooring.png", "Durable flooring and a stylish runner for a hardworking entrance", 683, 1024, "step5")}
 
 <h2>Step Six: Add Personality Last, Not First</h2>
 <p>Once function, storage, lighting and flooring are settled, a single piece of art, a small mirror, or a textured object adds personality without crowding the space.</p>
 <p>One considered piece works better here than several competing for the same few square feet.</p>
 <p>This is the step most people want to start with, which is exactly why it causes the most clutter when it comes first.</p>
-${photo("decor.png", "A single personal decor piece adding character to a small entrance", 683, 1024)}
+${photo("decor.png", "A single personal decor piece adding character to a small entrance", 683, 1024, "step6")}
 
 <h2>Step Seven: Furniture Should Earn Its Square Footage</h2>
 <p>A slim bench with storage underneath, or a narrow wall-mounted shelf, does more per square foot than a full console table ever could in this amount of space.</p>
 <p>Multi-purpose furniture is the rule here, not a nice-to-have &mdash; anything that only does one job is a harder sell in a flat entrance.</p>
 <p>Less furniture, chosen more carefully, consistently outperforms more furniture chosen quickly.</p>
-${photo("furniture.png", "Compact multi-purpose furniture suited to a small entrance", 683, 1024)}
+${photo("furniture.png", "Compact multi-purpose furniture suited to a small entrance", 683, 1024, "step7")}
 
 <h2>Step Eight: Let Smart Tech Do Some of the Work</h2>
 <p>A smart lock, a motion-sensor light, or a small smart speaker for quick reminders all add convenience without taking up any physical space at all.</p>
 <p>This matters more in a flat entrance than a larger one, since there's no room to spare for anything that isn't either storage or genuinely useful tech.</p>
 <p>Not a requirement, but a real option for anyone who wants function without adding more objects.</p>
-${photo("smart-tech.png", "Smart tech additions adding convenience to a compact entrance", 683, 1024)}
+${photo("smart-tech.png", "Smart tech additions adding convenience to a compact entrance", 683, 1024, "step8")}
 
 <h2>Step Nine: Accessorize With Restraint</h2>
 <p>A small tray for keys, one hook for a bag, a single plant &mdash; a few well-chosen accessories finish the space without crowding it.</p>
 <p>Every accessory added here should justify the space it takes, more so than in any other room of the home.</p>
 <p>This is where "less is more" actually means something practical, not just a style preference.</p>
-${photo("accessorizing.png", "Thoughtfully chosen accessories finishing a small flat entrance", 683, 1024)}
+${photo("accessorizing.png", "Thoughtfully chosen accessories finishing a small flat entrance", 683, 1024, "step9")}
 
 <h2>Step Ten: Stay Functional Without Losing Style</h2>
 <p>A fully styled entrance that doesn't actually hold shoes, keys and mail will fail within a week of real use.</p>
 <p>Checking that every styled element still does its job &mdash; the tray still catches keys, the hook still holds a bag &mdash; keeps the space from drifting into pure decoration.</p>
 <p>Function and style aren't in competition here; the best version of this space does both at once.</p>
-${photo("functional-style.png", "Small entrance balancing function with genuine style", 683, 1024)}
+${photo("functional-style.png", "Small entrance balancing function with genuine style", 683, 1024, "step10")}
 
 <h2>Step Eleven: Layer in Texture</h2>
 <p>A woven mat, a textured hook rack, or a nubby throw pillow on a bench adds depth that flat surfaces and hard materials can't provide alone.</p>
 <p>This matters more in a small, often low-light entrance, where texture does real work to keep the space from feeling flat or sterile.</p>
 <p>A little texture goes a long way in a space this size.</p>
-${photo("textures.png", "Layered textures adding depth to a compact entrance", 683, 1024)}
+${photo("textures.png", "Layered textures adding depth to a compact entrance", 683, 1024, "step11")}
 
 <h2>Step Twelve: Make It Look Effortless</h2>
 <p>The best small entrances look like they came together naturally, even though every inch was actually considered.</p>
 <p>Keeping surfaces mostly clear, with just one or two intentional objects visible at a time, reads as effortless rather than empty.</p>
 <p>This is the payoff of doing the earlier function-first steps properly.</p>
-${photo("styling-tips.png", "Effortless styling achieved through careful small-space planning", 683, 1024)}
+${photo("styling-tips.png", "Effortless styling achieved through careful small-space planning", 683, 1024, "step12")}
 
 <h2>Keeping It Looking Sharp</h2>
 <p>A quick daily reset &mdash; shoes back on the rack, mail cleared from the tray &mdash; keeps a small entrance from sliding into clutter within days.</p>
 <p>Wiping down flooring and hardware regularly matters more here than in a larger entryway, simply because everything gets touched and walked on more often per square foot.</p>
-${photo("maintenance.png", "Simple maintenance habits keeping a small entrance looking sharp", 683, 1024)}
+${photo("maintenance.png", "Simple maintenance habits keeping a small entrance looking sharp", 683, 1024, "maintenance")}
 
 <h2>Mistakes to Avoid</h2>
 <p>Buying furniture sized for a bigger entryway is the most common mistake &mdash; measure twice before any purchase in a space this tight.</p>
 <p>Skipping lighting because there's "not much room for a fixture" leaves an otherwise well-organized entrance feeling dim and uninviting.</p>
 <p>Starting with decor instead of function is how a small entrance ends up cluttered within the first month.</p>
+${productGrid("mistakes")}
 
 <h2>Your Flat Entrance, Your System</h2>
 <p>None of these steps need to happen in a single weekend.</p>

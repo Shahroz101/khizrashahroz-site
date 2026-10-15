@@ -7,24 +7,111 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0D3C8SVYC", title: "Mighty Board Minis Paint Color Test Panels, 12 x 9 Inch, Set of 5, White", w: 1000, h: 1000 },
+    { asin: "B0F8PZQS5T", title: "Mister Rui 4 Inch Mini Paint Roller Kit, 12 Piece, with Tray, Liners and Brush", w: 1500, h: 1494 },
+  ],
+  why: [
+    { asin: "B0D4B6TG75", title: "FoamPRO Color Tester Sample Boards for Comparing and Matching Paint Colors", w: 932, h: 669 },
+    { asin: "B08FJVZKZG", title: "Amazon Basics A19 LED Light Bulbs, 60W Equivalent, Warm White 3000K, 10 Pack", w: 1371, h: 1378 },
+  ],
+  choose: [
+    { asin: "B0D1Y355JN", title: "Hemway Peel and Stick Interior Paint Sample, Magnolia, A5 Damage-Free", w: 1500, h: 1500 },
+    { asin: "B0D1Y7S5PS", title: "Hemway Peel and Stick Interior Paint Sample, Aquamarine Blue, A5 Damage-Free", w: 1500, h: 1500 },
+  ],
+  idea1: [
+    { asin: "B0CSSNXR31", title: "Hemway Sky Blue Interior Wall Paint, 2.5 Liter, Matt Emulsion", w: 1500, h: 1492 },
+    { asin: "B00QF5KZCW", title: "PRESTIGE Interior Paint and Primer in One, Blue Sky, Satin, 1 Gallon", w: 965, h: 955 },
+  ],
+  idea2: [
+    { asin: "B0B5LZXLWM", title: "Glidden Total Interior Wall Paint and Primer, Light Sage Green, Semi-Gloss", w: 1500, h: 1473 },
+    { asin: "B0CSSN7J4C", title: "Hemway Sage Green Interior Wall Paint, 2.5 Liter, Matt Emulsion", w: 1500, h: 1492 },
+  ],
+  idea3: [
+    { asin: "B0F22L97RP", title: "KILZ TRIBUTE Interior Paint and Primer Color Sample, Art Museum, 8 oz, 2 Pack", w: 1500, h: 747 },
+    { asin: "B07BK7WLXD", title: "Glidden Interior Paint and Primer, Gray Stone's Throw, Eggshell, 1 Gallon", w: 1500, h: 1473 },
+  ],
+  idea4: [
+    { asin: "B07PW3D8Y4", title: "Rust-Oleum Simply Home Interior Wall Paint, Eggshell Linen White, 1 Gallon", w: 1294, h: 1404 },
+    { asin: "B0BQCHYHC1", title: "Rust-Oleum Sure Color Interior Paint and Primer, Antique White, Eggshell, 1 Gallon", w: 1399, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B07BDWC1TQ", title: "Glidden Interior Paint and Primer, Greige Oatmeal, Eggshell, 1 Quart", w: 1500, h: 1471 },
+    { asin: "B07BZKM696", title: "Rust-Oleum Simply Home Interior Wall Paint, Eggshell Soft Beige, 1 Gallon", w: 726, h: 774 },
+  ],
+  idea6: [
+    { asin: "B0FFMFH6PZ", title: "EVOLVE Interior Paint and Primer, Eggshell, Pale Pink, 1 Gallon", w: 1500, h: 1494 },
+    { asin: "B00QCCPP2S", title: "PRESTIGE Interior Paint and Primer in One, Pink Sugar, Eggshell, 1 Gallon", w: 963, h: 955 },
+  ],
+  idea7: [
+    { asin: "B07BDTT3FB", title: "Glidden Interior Paint and Primer, Gray Thin Ice, Eggshell, 1 Quart", w: 1500, h: 1472 },
+    { asin: "B07BK7H2GS", title: "Glidden Interior Paint and Primer, Gray Antique Silver, Eggshell, 1 Gallon", w: 1500, h: 1473 },
+  ],
+  idea8: [
+    { asin: "B0CW9VGH5S", title: "Bedsure Fleece Striped Throw Pillow Covers, Light Purple, 18 x 18 Inch", w: 1500, h: 1500 },
+    { asin: "B0DZNDVWF7", title: "Jeneoo Plum Purple Chenille Throw Pillow Covers, Soft Square Cushion Cases", w: 1328, h: 1327 },
+  ],
+  idea9: [
+    { asin: "B0CPYGNG9J", title: "EVOLVE Signature Collection Luxury Interior Paint and Primer, Flat, Slate Gray", w: 1470, h: 1500 },
+    { asin: "B07BK778KZ", title: "Glidden Interior Paint and Primer, Gray Elephant Gray, Eggshell, 1 Gallon", w: 1500, h: 1473 },
+  ],
+  idea10: [
+    { asin: "B0DRCHR48S", title: "EVERGRACEHOME Chunky Chenille Knit Throw Blanket, 50 x 60 Inch, Olive Green", w: 1500, h: 1500 },
+    { asin: "B0CQT7LQLZ", title: "Maliralt Rattan Plug-In Pendant Light with 16.4 Ft Cord, Hanging Lamp", w: 1499, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B09XQK346S", title: "Dulux Simply Refresh Wall and Ceiling Paint, Sand Beige, 2.5 Litres", w: 1500, h: 1291 },
+    { asin: "B07BK7VBGZ", title: "Glidden Interior Paint and Primer, Beige Almond Cream, Eggshell, 1 Quart", w: 1500, h: 1472 },
+  ],
+  idea12: [
+    { asin: "B07BDTVN4W", title: "Glidden Interior Paint and Primer, White Off White, Eggshell, 1 Quart", w: 1500, h: 1470 },
+    { asin: "B07BK7T82K", title: "Glidden Interior Paint and Primer, White Navajo White, Eggshell, 1 Quart", w: 1500, h: 1471 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "small-bedroom-paint-colors-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 function splitExt(filename) {
   const i = filename.lastIndexOf(".");
   return { base: filename.slice(0, i), ext: filename.slice(i + 1) };
 }
 
-function photo(src, alt, w, h) {
+function photo(src, alt, w, h, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "small-bedroom-paint-colors", src: base, ext, alt, w, h, className: "article-photo" })}
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
-function pinPhoto(src, alt, w, h, pinUrl, label) {
+function pinPhoto(src, alt, w, h, pinUrl, label, productsKey) {
   const { base, ext } = splitExt(src);
   return `<figure>
       ${picture({ dir: "small-bedroom-paint-colors", src: base, ext, alt, w, h, className: "article-photo" })}
       <figcaption>Photo via <a href="${pinUrl}" target="_blank" rel="nofollow noopener">Pinterest — ${label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
@@ -36,7 +123,7 @@ const ideas = [
       "It also happens to be one of the easiest colors to live with. Powder blue pairs naturally with warm wood tones, woven textures, and soft linen bedding without ever competing for attention.",
       "A friend of mine repainted her tiny guest room this shade last spring and swore the room felt a full size bigger by the time the furniture went back in &mdash; which tracks, since cool tones genuinely do recede in a way warm ones don't.",
     ],
-    photo: pinPhoto("powder-blue.jpg", "Small bedroom with soft powder blue walls, a woven pendant light, layered blue and white bedding and a round mirror above the headboard", 683, 1024, "https://www.pinterest.com/pin/15129348745482410/", "Powder Blue Small Bedroom"),
+    photo: pinPhoto("powder-blue.jpg", "Small bedroom with soft powder blue walls, a woven pendant light, layered blue and white bedding and a round mirror above the headboard", 683, 1024, "https://www.pinterest.com/pin/15129348745482410/", "Powder Blue Small Bedroom", "idea1"),
   },
   {
     n: "02",
@@ -46,7 +133,7 @@ const ideas = [
       "What makes sage genuinely useful for tight spaces is how well it photographs in both daylight and lamp light &mdash; it doesn't shift into something murky once the sun goes down, which is a real risk with some deeper greens.",
       "\"Sage is the one color I never get complaints about,\" a designer once told me, \"it's grounding without being heavy.\" Pair it with warm wood and a few trailing plants and the room starts to feel like it was always meant to be this color.",
     ],
-    photo: pinPhoto("soft-sage-green.jpg", "Small bedroom with soft sage green walls, a floating wood shelf with framed botanical art, green throw pillows and a woven area rug", 683, 1024, "https://www.pinterest.com/pin/281543726823171/", "Soft Sage Green Small Bedroom"),
+    photo: pinPhoto("soft-sage-green.jpg", "Small bedroom with soft sage green walls, a floating wood shelf with framed botanical art, green throw pillows and a woven area rug", 683, 1024, "https://www.pinterest.com/pin/281543726823171/", "Soft Sage Green Small Bedroom", "idea2"),
   },
   {
     n: "03",
@@ -56,7 +143,7 @@ const ideas = [
       "The tone also does something clever with light &mdash; it softens harsh daylight in a south-facing room and still looks intentional under warm evening bulbs, so the color stays consistent no matter the hour.",
       "If you've ever repainted a room and immediately regretted the shade once the sun moved across it, taupe is the safer bet. It's forgiving in a way bolder colors simply aren't.",
     ],
-    photo: pinPhoto("light-taupe.jpg", "Small bedroom corner with light taupe walls, framed black and white art, a dark wood nightstand with eucalyptus stems and a sconce lamp", 683, 1024, "https://www.pinterest.com/pin/988821661944903661/", "Light Taupe Small Bedroom"),
+    photo: pinPhoto("light-taupe.jpg", "Small bedroom corner with light taupe walls, framed black and white art, a dark wood nightstand with eucalyptus stems and a sconce lamp", 683, 1024, "https://www.pinterest.com/pin/988821661944903661/", "Light Taupe Small Bedroom", "idea3"),
   },
   {
     n: "04",
@@ -66,7 +153,7 @@ const ideas = [
       "It's also the easiest color to decorate around. Warm ivory walls let textured bedding, woven baskets, and a few candles do the visual work, so the room feels layered and cozy rather than flat.",
       "I'd call it the color equivalent of a good white t-shirt &mdash; unremarkable on its own, but it makes everything else in the room look better by comparison.",
     ],
-    photo: pinPhoto("warm-ivory.jpg", "Small cozy bedroom with warm ivory walls, a floating shelf with candles and dried pampas grass, a round mirror and soft lamp lighting", 683, 1024, "https://www.pinterest.com/pin/3940718421089835/", "Warm Ivory Small Bedroom"),
+    photo: pinPhoto("warm-ivory.jpg", "Small cozy bedroom with warm ivory walls, a floating shelf with candles and dried pampas grass, a round mirror and soft lamp lighting", 683, 1024, "https://www.pinterest.com/pin/3940718421089835/", "Warm Ivory Small Bedroom", "idea4"),
   },
   {
     n: "05",
@@ -76,7 +163,7 @@ const ideas = [
       "It's also one of the few colors that genuinely works with mismatched metals and woods, so if your nightstands and light fixtures don't quite match, greige smooths the whole thing over instead of highlighting the mismatch.",
       "This is the shade I'd recommend to anyone who wants their room to look professionally designed without actually hiring a designer. It does a lot of the heavy lifting on its own.",
     ],
-    photo: pinPhoto("pale-greige.jpg", "Small bedroom with pale greige walls, three framed botanical prints above a tufted headboard, layered beige bedding and a knit throw", 683, 1024, "https://www.pinterest.com/pin/719942690475661152/", "Pale Greige Small Bedroom"),
+    photo: pinPhoto("pale-greige.jpg", "Small bedroom with pale greige walls, three framed botanical prints above a tufted headboard, layered beige bedding and a knit throw", 683, 1024, "https://www.pinterest.com/pin/719942690475661152/", "Pale Greige Small Bedroom", "idea5"),
   },
   {
     n: "06",
@@ -86,7 +173,7 @@ const ideas = [
       "Blush beige also flatters natural light beautifully, picking up a warm glow in the late afternoon that makes the room feel genuinely inviting rather than just decorated.",
       "Keep the rest of the palette simple &mdash; white linens, a little dried pampas grass, maybe one framed print &mdash; and let the wall color carry the mood. Overdecorating against this shade tends to compete rather than complement.",
     ],
-    photo: pinPhoto("blush-beige.jpg", "Small bedroom with blush beige walls, framed botanical art, pampas grass in a vase, pink linen pillows and a pink knit throw", 683, 1024, "https://www.pinterest.com/pin/13159023905757329/", "Blush Beige Small Bedroom"),
+    photo: pinPhoto("blush-beige.jpg", "Small bedroom with blush beige walls, framed botanical art, pampas grass in a vase, pink linen pillows and a pink knit throw", 683, 1024, "https://www.pinterest.com/pin/13159023905757329/", "Blush Beige Small Bedroom", "idea6"),
   },
   {
     n: "07",
@@ -96,7 +183,7 @@ const ideas = [
       "The real advantage of misty gray is how well it handles clutter. Books, throws, and mismatched frames all look intentional against it in a way they might not against a brighter color.",
       "If your small bedroom doubles as a reading nook or a catch-all for everyday life, this is the shade that keeps the chaos looking curated instead of messy.",
     ],
-    photo: pinPhoto("misty-gray.jpg", "Small bedroom with misty gray walls, a white bookshelf, black and white framed photography, a gray patterned rug and white nightstand", 683, 1024, "https://www.pinterest.com/pin/5488830793066368/", "Misty Gray Small Bedroom"),
+    photo: pinPhoto("misty-gray.jpg", "Small bedroom with misty gray walls, a white bookshelf, black and white framed photography, a gray patterned rug and white nightstand", 683, 1024, "https://www.pinterest.com/pin/5488830793066368/", "Misty Gray Small Bedroom", "idea7"),
   },
   {
     n: "08",
@@ -106,7 +193,7 @@ const ideas = [
       "What keeps this shade from feeling precious is pairing it with neutral furniture &mdash; a beige headboard, cream bedding &mdash; so the lavender reads as sophisticated rather than overly sweet.",
       "It's a genuinely good option for anyone who wants their bedroom to feel a little more expressive without sacrificing the calm a small space actually needs to feel restful.",
     ],
-    photo: pinPhoto("dusty-lavender.jpg", "Small bedroom with dusty lavender walls, framed floral art, a tufted beige headboard and purple throw pillows with fresh flowers", 683, 1024, "https://www.pinterest.com/pin/1066579124264431674/", "Dusty Lavender Small Bedroom"),
+    photo: pinPhoto("dusty-lavender.jpg", "Small bedroom with dusty lavender walls, framed floral art, a tufted beige headboard and purple throw pillows with fresh flowers", 683, 1024, "https://www.pinterest.com/pin/1066579124264431674/", "Dusty Lavender Small Bedroom", "idea8"),
   },
   {
     n: "09",
@@ -116,7 +203,7 @@ const ideas = [
       "The trick is restraint elsewhere &mdash; keep the bedding lighter, add warm wood nightstands, and let the dark wall anchor the room rather than swallow it whole.",
       "Done this way, a small bedroom in charcoal doesn't feel smaller at all. It feels intentional, like a boutique hotel room rather than a cramped afterthought.",
     ],
-    photo: pinPhoto("soft-charcoal.jpg", "Small bedroom with soft charcoal walls, black and white framed photography, warm bedside lamps and a rust-colored accent pillow", 683, 1024, "https://www.pinterest.com/pin/281543726371919/", "Soft Charcoal Accent Small Bedroom"),
+    photo: pinPhoto("soft-charcoal.jpg", "Small bedroom with soft charcoal walls, black and white framed photography, warm bedside lamps and a rust-colored accent pillow", 683, 1024, "https://www.pinterest.com/pin/281543726371919/", "Soft Charcoal Accent Small Bedroom", "idea9"),
   },
   {
     n: "10",
@@ -126,7 +213,7 @@ const ideas = [
       "This shade genuinely comes alive with a floating shelf, a little greenery, and warm pendant lighting &mdash; the kind of setup that turns a plain small room into something that actually photographs well.",
       "If your taste runs more earthy and collected than soft and pastel, olive is the paint color on this list most likely to feel like you.",
     ],
-    photo: pinPhoto("muted-olive.jpg", "Small bedroom with muted olive green walls, a floating wood shelf, green throw pillows and warm hanging pendant lights on either side of the bed", 683, 1024, "https://www.pinterest.com/pin/2111131073669460/", "Muted Olive Small Bedroom"),
+    photo: pinPhoto("muted-olive.jpg", "Small bedroom with muted olive green walls, a floating wood shelf, green throw pillows and warm hanging pendant lights on either side of the bed", 683, 1024, "https://www.pinterest.com/pin/2111131073669460/", "Muted Olive Small Bedroom", "idea10"),
   },
   {
     n: "11",
@@ -136,7 +223,7 @@ const ideas = [
       "It leans warmer than greige and softer than beige, which makes it especially good in rooms that don't get much natural light, since it never reads as cold or clinical under lamp light alone.",
       "Add a few candles, a knit throw, and some dried botanicals and the room practically styles itself. This is the color for anyone who wants cozy over polished.",
     ],
-    photo: pinPhoto("soft-sand.jpg", "Small cozy bedroom with soft sand-colored walls, an arched alcove with shelving, candles, warm lamp lighting and a knit blanket on the bed", 683, 1024, "https://www.pinterest.com/pin/59039445112088789/", "Soft Sand Small Bedroom"),
+    photo: pinPhoto("soft-sand.jpg", "Small cozy bedroom with soft sand-colored walls, an arched alcove with shelving, candles, warm lamp lighting and a knit blanket on the bed", 683, 1024, "https://www.pinterest.com/pin/59039445112088789/", "Soft Sand Small Bedroom", "idea11"),
   },
   {
     n: "12",
@@ -146,7 +233,7 @@ const ideas = [
       "The key is choosing a white with a warm undertone rather than a stark, cool one &mdash; the difference between a room that feels inviting and one that feels like a blank box is almost entirely in that undertone.",
       "Layer in plants, woven textures, and a gallery of small framed prints, and warm white stops feeling plain. It becomes the quiet backdrop that lets everything else in the room do the talking.",
     ],
-    photo: pinPhoto("soft-warm-white.jpg", "Small bedroom with warm white walls, hanging plants, a gallery of small framed prints, woven baskets and layered neutral bedding with a knit throw", 683, 1024, "https://www.pinterest.com/pin/5911043262687183/", "Soft Warm White Small Bedroom"),
+    photo: pinPhoto("soft-warm-white.jpg", "Small bedroom with warm white walls, hanging plants, a gallery of small framed prints, woven baskets and layered neutral bedding with a knit throw", 683, 1024, "https://www.pinterest.com/pin/5911043262687183/", "Soft Warm White Small Bedroom", "idea12"),
   },
 ];
 
@@ -161,17 +248,17 @@ function ideaBlock(idea) {
 const body = `
 <p>Paint color does more work in a small bedroom than almost anywhere else in the house. The right shade can make a cramped room feel genuinely open, while the wrong one &mdash; even a color you love in theory &mdash; can make the walls feel like they're closing in by nine at night.</p>
 <p>It's not just about going light to "open things up," either. Lighting, undertone, and how a color handles both morning sun and evening lamp light all matter more in a tight space than they would in a sprawling one.</p>
-${photo("hero.jpg", "Small bedroom with warm neutral walls, a round mirror above a tufted headboard and layered bedding", 683, 1024)}
+${photo("hero.jpg", "Small bedroom with warm neutral walls, a round mirror above a tufted headboard and layered bedding", 683, 1024, "hero")}
 
 <h2>Why Color Hits Differently in a Small Room</h2>
 <p>A color that reads as elegant in a big, bright room can feel completely different boxed into a smaller footprint. Small rooms amplify everything &mdash; undertones get more intense, shadows pool in corners faster, and a shade that looked neutral on a paint chip can suddenly skew warmer or cooler once it's on all four walls.</p>
 <p>Lighting changes the equation just as much as square footage does. A north-facing room pulls cooler and benefits from warm undertones to balance it out, while a sunnier room can handle cooler blues and grays without ever feeling cold. The psychology matters too &mdash; muted, dusty tones tend to feel calming and help a small space feel more like a retreat than a leftover corner of the house.</p>
-${pinPhoto("intro-why.jpg", "Small bedroom with taupe walls, a floating shelf with framed art and dried pampas grass, warm lamp lighting and a woven basket", 1024, 683, "https://www.pinterest.com/pin/1129418412825445783/", "Why Color Matters in a Small Bedroom")}
+${pinPhoto("intro-why.jpg", "Small bedroom with taupe walls, a floating shelf with framed art and dried pampas grass, warm lamp lighting and a woven basket", 1024, 683, "https://www.pinterest.com/pin/1129418412825445783/", "Why Color Matters in a Small Bedroom", "why")}
 
 <h2>Choosing Without the Regret</h2>
 <p>The biggest mistake people make with small-bedroom paint is picking a color straight off a swatch or a screen and skipping the test patch entirely. What looks perfect in a photo can shift completely once it's on your actual wall, under your actual light, next to your actual furniture.</p>
 <p>Paint a sample patch and genuinely live with it for a few days &mdash; check it in the morning, at midday, and again once the lamps are on at night. And resist the instinct to default to stark white just because the room is small. A warm, considered neutral almost always does more for the space than the brightest option available.</p>
-${pinPhoto("intro-choose.jpg", "Small bedroom with soft neutral cream walls, a framed botanical print above the headboard, sheer curtains and layered beige and terracotta bedding", 683, 1024, "https://www.pinterest.com/pin/1089800809853606457/", "Choosing Small Bedroom Paint Colors")}
+${pinPhoto("intro-choose.jpg", "Small bedroom with soft neutral cream walls, a framed botanical print above the headboard, sheer curtains and layered beige and terracotta bedding", 683, 1024, "https://www.pinterest.com/pin/1089800809853606457/", "Choosing Small Bedroom Paint Colors", "choose")}
 
 <h2>12 Paint Colors Worth Trying</h2>
 ${ideas.map(ideaBlock).join("\n")}

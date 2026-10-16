@@ -11,6 +11,139 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0B9CLPCFN", title: "FANDOS Wooden Dough Bowl for Decor, 17.75 Inch Long Hand Carved Paulownia, Large Rustic Decorative Bowl", w: 1500, h: 1112 },
+    { asin: "B07C2NN73C", title: "Homeford Scented Cinnamon Sticks for Decorative Use, 6 Inch, 8 Piece", w: 782, h: 747 },
+  ],
+  howToDecorate: [
+    { asin: "B0CBLDSHWR", title: "Christmas Fake Snow Decor, Fiber Artificial Snow Cotton, Fluffy Indoor Decoration", w: 1500, h: 1500 },
+    { asin: "B0DB1W6FD2", title: "30 Pcs Christmas Realistic Norfolk Stems, 15 Inch Artificial Pine Branches, Faux Evergreen Sprigs", w: 1500, h: 1417 },
+  ],
+  idea1: [
+    { asin: "B0H3BN2JDZ", title: "16 Pcs Artificial Lifelike Touch Christmas Cedar Branches for Vase Decor", w: 1500, h: 1268 },
+    { asin: "B0BHFBG8C5", title: "Billy Buckskin 20 Large Natural Pine Cones for Crafts, 3 to 4 Inch Tall", w: 1500, h: 1495 },
+  ],
+  idea2: [
+    { asin: "B0G439QTQ9", title: "12 Pack White Pillar Candles Bulk Set, 3 x 3, 6 and 8 Inch, 4 of Each Size, Dripless", w: 1212, h: 1212 },
+    { asin: "B0CRZ1D6K5", title: "Flameless Candles 4, 5 and 6 Inch, Battery Operated Flickering Pillar Candles with Remote", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0DDBYL4NB", title: "AXYLEX Large Christmas Pine Cones Picks, 10 Pcs Snow Frosted Ornaments", w: 1421, h: 1500 },
+    { asin: "B0CGNVTG98", title: "Housecret 24 Pack Warm White Unscented Clear Glass Filled Votive Candles", w: 1478, h: 1500 },
+  ],
+  idea4: [
+    { asin: "B0CBMQY9QT", title: "30 Pcs Mini Christmas Trees, Artificial Bottle Brush Snow Trees in 5 Sizes", w: 1500, h: 843 },
+    { asin: "B07ZNJSMCD", title: "kockuu White Snowflake Christmas Ornaments for Tree Decor and Crafts", w: 1500, h: 1500 },
+  ],
+  idea5: [
+    { asin: "B0FW4SRXK5", title: "Seenelling 6 Pcs Neutral Textured Christmas Ornaments, 4 Inch, Ivory White Gold", w: 1500, h: 1500 },
+    { asin: "B088D4MWF7", title: "JINGHONG 6 Pcs Artificial Pip Berry Stems, Cream White Berry Picks for Winter Decor", w: 1000, h: 1000 },
+  ],
+  idea6: [
+    { asin: "B0CRDVGG67", title: "USMOLA Fake Green Moss for Potted Plants, 4 oz Artificial Moss for DIY Crafts", w: 1500, h: 1318 },
+    { asin: "B0FHJC28CS", title: "12 Pcs Woodland Animal Figurines and Wooden Table Signs, Enchanted Forest Tiered Tray Decor", w: 1485, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0CBBM8BJ9", title: "Jenaai 12 Pcs Christmas Silver Glass Ball Ornaments, Vintage Tree Decoration", w: 1500, h: 1494 },
+    { asin: "B0B8DCF2ND", title: "12 Pcs Snowy Artificial Pine Needle Branches, 10.6 Inch Frosted Pine Picks Greenery", w: 1449, h: 1500 },
+  ],
+  idea8: [
+    { asin: "B0GK2CMQSN", title: "40 Pcs Eucalyptus Stems, Artificial Eucalyptus Leaves, Real Touch Faux Greenery", w: 1500, h: 1401 },
+    { asin: "B0FH4S3SXM", title: "MAQIHAN Silver Jingle Bells for Crafts, 100 Pcs Small Christmas Bells", w: 1500, h: 1500 },
+  ],
+  idea9: [
+    { asin: "B0CTGFX6FC", title: "30 Pcs Real Dried Birch Twigs, 17 Inch White Decorative Birch Branches for Vase", w: 1500, h: 1500 },
+    { asin: "B09MRJ392M", title: "Bexdir Lighted Birch Tree Branches, 33 Inch, 180 LED with Timer", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0D9K7RVL6", title: "50 Pcs Dried Orange Slices for Crafts, 5 to 7 cm Natural Orange Slice Ornaments", w: 1172, h: 1331 },
+    { asin: "B001PQOAN6", title: "McCormick Whole Cinnamon Sticks, Rich Cinnamon Flavor, 8 oz", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B09CL9DM28", title: "Canlierr 12 Feet Christmas Wooden Bead Garland with Tassels, Natural Color", w: 1500, h: 1500 },
+    { asin: "B07HSZWKGP", title: "Artificial Pine Branches Green Plants, 30 Pcs, 25 cm", w: 1380, h: 1283 },
+  ],
+  idea12: [
+    { asin: "B0F3H5SGZT", title: "Set of 3 Different Size Ivory Pillar Candles, Unscented, Dripless", w: 823, h: 942 },
+    { asin: "B0D7LY613Q", title: "24 Pcs Large Pine Cones, 4.33 to 5.51 Inches, Unscented Christmas Pinecone Ornaments for Crafts", w: 1500, h: 1491 },
+  ],
+  idea13: [
+    { asin: "B0H1R44HBK", title: "MEETYAMOR 25 Pcs Christmas Village Sets, Lighted Village Houses and Figurines Accessories", w: 1500, h: 1500 },
+    { asin: "B0D9QK64SD", title: "3 x 8 Ft Thick Fluffy Snow Blanket for Christmas Village Winter Scene Decor", w: 1500, h: 1490 },
+  ],
+  idea14: [
+    { asin: "B0H6VYN3BZ", title: "Soulchen 12 Pcs Mercury Glass Christmas Ornaments, Gold, Round Balls", w: 1488, h: 1500 },
+    { asin: "B0FFRTVFXQ", title: "Mercury Glass Christmas Ornaments, Vintage Finial Decorations, Silver, 6 Pc", w: 1500, h: 1500 },
+  ],
+  idea15: [
+    { asin: "B0H4F8RBHX", title: "RattanView 16 Pcs Christmas Red Berry Stem Branches with Cedar Pine, 18.5 and 11 Inch", w: 1500, h: 1500 },
+    { asin: "B0GSJMZ23S", title: "Vlorart 24 Pcs Boxwood Greenery Stems, 13 Inch Faux Boxwoods, UV Resistant", w: 1465, h: 1500 },
+  ],
+  idea16: [
+    { asin: "B0CG33ZG8V", title: "Christmas Decorations, Village Sets of 5 Lighted Ceramic Houses and 9 Trees", w: 1500, h: 1500 },
+    { asin: "B0DCNWXM2F", title: "6 Pack Fairy Lights Battery Operated, 7 ft 20 LED Twinkle Lights, 3 Modes", w: 1402, h: 1500 },
+  ],
+  idea17: [
+    { asin: "B0D1DSQ4Q6", title: "YOROXRG 36 Pack Ivory White Taper Candles, 7 to 8 Hours Burn Time, Unscented", w: 1476, h: 1449 },
+    { asin: "B0HF7H6TCY", title: "Christmas Decorations Set, 46 Pcs Jute Tied Dried Orange, Cinnamon and Pinecone Ornaments", w: 1500, h: 1370 },
+  ],
+  idea18: [
+    { asin: "B0CGHWXYQK", title: "Alpurple 50 Pcs Christmas Snow Frosted Pine Branches, 13.5 Inch Snowy Artificial Pine Needles", w: 1500, h: 1500 },
+    { asin: "B0FMDSYWFS", title: "LLZLL 32 Pack Frosted Berry Stems for Christmas Tree, 6.5 Inch Artificial Red Berries", w: 1500, h: 1275 },
+  ],
+  idea19: [
+    { asin: "B0BXPF5D4T", title: "Bigacogo Chunky Knit Throw Blanket for Couch, 40 x 60 Inches, Beige", w: 1500, h: 1500 },
+    { asin: "B07K7RF81J", title: "Nancia 100 Pack Flameless LED Tea Lights Candles, Battery Powered", w: 1408, h: 1409 },
+  ],
+  idea20: [
+    { asin: "B0DSBL58GN", title: "Rustic Candlestick Holder Decor, Farmhouse Wooden Candle Holders", w: 1173, h: 1500 },
+    { asin: "B0FHQ5557D", title: "24 Pcs Matte Neutral Textured Christmas Ball Ornaments, 2.36 Inch, Brown Vintage Rustic", w: 1500, h: 1500 },
+  ],
+  idea21: [
+    { asin: "B0CBPS4PXB", title: "10 Pcs Miniature Wooden Sleighs Ornament, Mini Christmas Blank Wood Sleigh Adornment", w: 1313, h: 1444 },
+    { asin: "B0F635DZQ3", title: "9 Ft Christmas Artificial Cedar Garland for Mantel", w: 1500, h: 1500 },
+  ],
+  idea22: [
+    { asin: "B0H6PPTXHM", title: "Weysat 6 Pcs 8 Inch Giant Velvet Christmas Ball Ornaments, Cream White", w: 1456, h: 1500 },
+    { asin: "B0GXV4DRTG", title: "JORNOY 47 Ct Christmas Balls Ornaments for Tree, Champagne Gold", w: 1217, h: 1500 },
+  ],
+  idea23: [
+    { asin: "B0FZM62MTZ", title: "Fake Moss Mat Artificial Moss Roll, 12 x 71 Inch, Soft Moss Table Runner for Decor", w: 1500, h: 1244 },
+    { asin: "B0FFSSXTWX", title: "Mini Resin Mushroom Figurines, 6 Pieces, Fairy Garden and Craft Decoration", w: 1500, h: 1397 },
+  ],
+  idea24: [
+    { asin: "B07S3TCC4P", title: "Ariceleo LED Fairy Lights Battery Operated, 2 Packs Mini Copper Wire Starry Lights", w: 1200, h: 1200 },
+    { asin: "B00DKAAK3E", title: "Beistle Sparkling Snow, Iridescent Winter Display Confetti, 2 Ounces", w: 1021, h: 1254 },
+  ],
+  keepFresh: [
+    { asin: "B0GWD12G8C", title: "3 Pcs 43 Inch Artificial White Nandina Berry Stems", w: 1500, h: 1500 },
+    { asin: "B0F248Y9XB", title: "Handmade Decorative Wooden Dough Bowl, 15.7 Inch", w: 1500, h: 1142 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "winter-dough-bowl-decor-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1147, h: 1416, alt: "Glass ornaments, pinecones and cinnamon sticks in a raw-edge dough bowl on a coffee table with a cozy sofa and Christmas tree lights behind it", url: "https://www.pinterest.com/pin/120049146313748813/", label: "Cozy Winter Dough Bowl Centerpiece" },
   idea1: { src: "evergreen-and-pinecone", w: 736, h: 1104, alt: "Dough bowl filled with pine branches, a pinecone, dried orange slices and cinnamon sticks tied with twine on a table runner", url: "https://www.pinterest.com/pin/4362930885184864/", label: "Evergreen and Pinecone Dough Bowl" },
@@ -44,12 +177,13 @@ const STOCK = {
   keepFresh: { src: "keep-fresh-after-christmas", w: 960, h: 640, alt: "White mantel with a garland of small gold ornaments, brass stars, evergreen and plaid stockings", url: "https://stocksnap.io/photo/holiday-decorations-LNP01UMEWR", label: "Kelly Ishmael", site: "StockSnap" },
 };
 
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "winter-dough-bowl-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 function stockPhoto(key) {
@@ -63,6 +197,7 @@ function stockPhoto(key) {
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Evergreen and Pinecone Winter Dough Bowl",
     photoKey: "idea1",
     paras: [
@@ -73,6 +208,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "White Candle Winter Dough Bowl",
     photoKey: "idea2",
     paras: [
@@ -83,6 +219,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Frosted Pinecone Dough Bowl Decor",
     photoKey: "idea3",
     paras: [
@@ -93,6 +230,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Mini Winter Tree Dough Bowl",
     photoKey: "idea4",
     paras: [
@@ -105,6 +243,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Neutral White and Beige Dough Bowl",
     photoKey: "idea5",
     paras: [
@@ -115,6 +254,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Winter Woodland Dough Bowl",
     photoKey: "idea6",
     paras: [
@@ -125,6 +265,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Silver and White Winter Dough Bowl",
     photoKey: "idea7",
     paras: [
@@ -135,6 +276,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Eucalyptus and Silver Bell Dough Bowl",
     photoKey: "idea8",
     paras: [
@@ -145,6 +287,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Birch Branch Winter Dough Bowl",
     photoKey: "idea9",
     paras: [
@@ -155,6 +298,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Dried Orange and Evergreen Dough Bowl",
     photoKey: "idea10",
     paras: [
@@ -165,6 +309,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Winter Dough Bowl With Wooden Beads",
     photoKey: "idea11",
     paras: [
@@ -175,6 +320,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Rustic Candle and Pinecone Arrangement",
     photoKey: "idea12",
     paras: [
@@ -185,6 +331,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Faux Snow Dough Bowl",
     photoKey: "idea13",
     paras: [
@@ -195,6 +342,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Mercury Glass Winter Dough Bowl",
     photoKey: "idea14",
     paras: [
@@ -205,6 +353,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Winter Berry Dough Bowl",
     photoKey: "idea15",
     paras: [
@@ -215,6 +364,7 @@ const ideas = [
   },
   {
     n: "16",
+    productsKey: "idea16",
     title: "Dough Bowl With White Ceramic Houses",
     photoKey: "idea16",
     paras: [
@@ -225,6 +375,7 @@ const ideas = [
   },
   {
     n: "17",
+    productsKey: "idea17",
     title: "Winter Dough Bowl With Candles and Dried Citrus",
     paras: [
       "Combine cream candles with dried oranges, cinnamon sticks, pinecones, and evergreen branches.",
@@ -234,6 +385,7 @@ const ideas = [
   },
   {
     n: "18",
+    productsKey: "idea18",
     title: "Frosted Branch and Berry Centerpiece",
     photoKey: "idea18",
     paras: [
@@ -244,6 +396,7 @@ const ideas = [
   },
   {
     n: "19",
+    productsKey: "idea19",
     title: "Cozy Knit Winter Dough Bowl",
     photoKey: "idea19",
     paras: [
@@ -255,6 +408,7 @@ const ideas = [
   },
   {
     n: "20",
+    productsKey: "idea20",
     title: "Scandinavian-Inspired Winter Dough Bowl",
     photoKey: "idea20",
     paras: [
@@ -265,6 +419,7 @@ const ideas = [
   },
   {
     n: "21",
+    productsKey: "idea21",
     title: "Rustic Sled Winter Dough Bowl",
     photoKey: "idea21",
     paras: [
@@ -275,6 +430,7 @@ const ideas = [
   },
   {
     n: "22",
+    productsKey: "idea22",
     title: "Ornament-Filled Winter Dough Bowl",
     photoKey: "idea22",
     paras: [
@@ -285,6 +441,7 @@ const ideas = [
   },
   {
     n: "23",
+    productsKey: "idea23",
     title: "Moss and Pinecone Winter Dough Bowl",
     photoKey: "idea23",
     paras: [
@@ -295,6 +452,7 @@ const ideas = [
   },
   {
     n: "24",
+    productsKey: "idea24",
     title: "Simple Winter Dough Bowl With Fairy Lights",
     photoKey: "idea24",
     paras: [
@@ -311,7 +469,7 @@ function ideaBlock(idea) {
   const list = idea.list ? `<ul>${idea.list.map((li) => `<li>${li}</li>`).join("")}</ul>` : "";
   const quote = idea.quote ? `<blockquote><p>&ldquo;${idea.quote.text}&rdquo;</p><cite>&mdash; ${idea.quote.cite}</cite></blockquote>` : "";
   const afterQuote = idea.afterQuote ? idea.afterQuote.map((p) => `<p>${p}</p>`).join("\n      ") : "";
-  const photoHtml = idea.photoKey ? photo(idea.photoKey) : "";
+  const photoHtml = idea.photoKey ? photo(idea.photoKey, idea.productsKey) : (idea.productsKey ? productGrid(idea.productsKey) : "");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
@@ -325,7 +483,7 @@ const body = `
 <p>An empty dough bowl can look a little lost in winter. Add the right greenery, candles, pinecones, or tiny trees, though, and suddenly you have a centerpiece that feels warm, collected, and intentional. These winter dough bowl decor ideas give you plenty of ways to style that rustic wooden bowl without making your home look like a Christmas aisle exploded in it.</p>
 <p>I&rsquo;ve always liked dough bowls because they give you a beautiful starting point without demanding perfection. The wood already brings warmth, so you can keep the rest simple. I especially love using mine during that awkward stretch after Christmas when the decorations come down but winter still has several months left to go.</p>
 <p>And honestly, who wants to completely redecorate every few weeks? Not me.</p>
-${photo("hero")}
+${photo("hero", "hero")}
 
 <h2>Why Do Dough Bowls Work So Well for Winter Decor?</h2>
 <p>A dough bowl has a long, shallow shape that makes it perfect for layering. You can spread greenery across the length, cluster candles in the middle, or create a tiny woodland scene without making the arrangement feel too tall.</p>
@@ -344,7 +502,7 @@ ${photo("hero")}
 <p>I also leave some of the wooden bowl visible. That little bit of empty space gives the arrangement room to breathe and lets the character of the bowl actually show.</p>
 <p>A recent winter decorating example from My True Style uses greenery, pinecones, candles, ornaments, and woodland accents in several different dough bowl arrangements.</p>
 <p>Now that we have the basics out of the way, let&rsquo;s get to the fun part.</p>
-${photo("howToDecorate")}
+${photo("howToDecorate", "howToDecorate")}
 
 <h2>24 Winter Dough Bowl Decor Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}
@@ -370,6 +528,7 @@ ${ideas.map(ideaBlock).join("\n")}
 <p>You can also make small changes instead of rebuilding everything. Replace red berries with white ones, remove ornaments, swap Christmas trees for birch branches, or add a few neutral ceramic pieces.</p>
 <p>That saves time and money while keeping your home feeling fresh.</p>
 ${stockPhoto("keepFresh")}
+${productGrid("keepFresh")}
 
 <h2>What Should You Put in a Dough Bowl for Winter?</h2>
 <p>If you want to build your own arrangement instead of copying one idea exactly, start with items you already have.</p>

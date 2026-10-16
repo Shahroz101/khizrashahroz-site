@@ -1,7 +1,8 @@
 // Body content for "24 Winter Dough Bowl Decor Ideas That Make Your Home
 // Feel Instantly Cozier". Images sourced from Pinterest pins the user
 // selected and provided directly; each is credited back to its pin per
-// their request. Photos only — no Amazon product grids on this one. A
+// their request. Amazon product grids were added under every photo on 2026-10-16
+// at the user's request. A
 // handful of supplied pins turned out to be off-topic (fall decor, a
 // product photo) and were dropped; one idea (Candles and Dried Citrus)
 // has no strong dedicated photo left and runs without one rather than

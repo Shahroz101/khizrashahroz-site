@@ -1,7 +1,8 @@
 // Body content for the "How to Style a Tiered Tray: Easy Ideas for a
 // Cozy, Collected Look" post. Images sourced from Pinterest pins the user
 // selected and provided directly; each is credited back to its pin per
-// their request. Photos only — no Amazon product grids on this one.
+// their request. Amazon product grids were added under every photo on 2026-10-16
+// at the user's request.
 
 const { picture } = require("./picture-helper.js");
 

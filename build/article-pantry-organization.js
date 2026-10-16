@@ -1,10 +1,107 @@
 // Body content for "How to Organise Your Pantry Without Making It a Full-Time
 // Job". Photos mix Pinterest pins the user provided (credited back to their
 // pin) with licensed stock photography fetched to fill remaining sections
-// (credited to their original photographer/source). No Amazon products on
-// this one — photos only, per the user's request.
+// (credited to their original photographer/source). Amazon product
+// grids were added under every photo on 2026-10-16 at the user's request.
 
 const { picture } = require("./picture-helper.js");
+
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B08NF1HVKF", title: "ComSaf Glass Pantry Storage Containers, Set of 6, Square, 0.7 to 1.6 Qt", w: 1500, h: 1462 },
+    { asin: "B07XM8Y26Y", title: "Amazon Basics Space-Saving Stackable Metal Kitchen Cabinet Organizer Shelves, White", w: 1500, h: 1309 },
+  ],
+  whyMatters: [
+    { asin: "B0B46NPJY9", title: "SKTEET Set of 8 Clear Plastic Stackable Storage Bins for Pantry Organization", w: 1500, h: 1460 },
+    { asin: "B0CS3FBC6W", title: "LAMU 2 Tier Lazy Susan Turntable Organizer for Cabinet, 9.25 Inch", w: 1119, h: 1415 },
+  ],
+  whatToKeep: [
+    { asin: "B0DGL38TXK", title: "BROWNLILY Handwoven Wicker Storage Baskets, Pack of 4, Brown", w: 1500, h: 1358 },
+    { asin: "B01IIXR2II", title: "Simple Houseware 3-Tier Stackable Can Organizer Rack, Holds 36 Cans, Chrome", w: 1500, h: 1273 },
+  ],
+  checkDates: [
+    { asin: "B01GM1LUGS", title: "Dr. Killigan's Pantry Moth Traps with Pheromones, 6 Pack", w: 1466, h: 1500 },
+    { asin: "B0B68LMPBM", title: "Removable Food Date Labels, 1 x 2 Inch, 2 Rolls of 1000", w: 1200, h: 1373 },
+  ],
+  cleanShelves: [
+    { asin: "B0CFYBBDWT", title: "Beautysaid Non-Adhesive Non-Slip Shelf and Drawer Liner for Kitchen Cabinets", w: 1443, h: 1500 },
+    { asin: "B009FUF6DM", title: "Amazon Basics Microfiber Cleaning Cloths, Lint Free, Streak Free, Reusable", w: 1233, h: 1500 },
+  ],
+  zonesByCategory: [
+    { asin: "B0BWHTDVV1", title: "Moforoco 9-Tier Over The Door Pantry Organizer, Black Metal Hanging Baskets", w: 1200, h: 1500 },
+    { asin: "B00Q7XUUC2", title: "Household Essentials Tall Water Hyacinth Wicker Basket with Handles, Natural", w: 1478, h: 1500 },
+  ],
+  breakfastZone: [
+    { asin: "B09V9YVSVK", title: "Rubbermaid Brilliance Airtight Cereal Food Storage Container, BPA-Free", w: 1500, h: 1483 },
+    { asin: "B00VSCDX8U", title: "Oggi Stainless Steel Coffee Canister, 62 fl oz, Airtight Clamp Lid", w: 883, h: 1500 },
+  ],
+  bakingZone: [
+    { asin: "B0F4LVFQLC", title: "OXO Good Grips 8-Piece Prelabeled Baking POP Container Set", w: 1500, h: 1001 },
+    { asin: "B01LWS0LK9", title: "Progressive ProKeeper Baker's Airtight Storage Canister Set for Flour and Sugar", w: 1079, h: 1065 },
+  ],
+  pastaGrainZone: [
+    { asin: "B077VLC4BD", title: "OXO Good Grips POP Container, 2.3 Qt, for Spaghetti and Pasta", w: 1223, h: 1500 },
+    { asin: "B0BV5YQWHR", title: "Lifewit Rice Container, 25 Lbs, One-Press Dispenser with Measuring Cup", w: 928, h: 1500 },
+  ],
+  snackZone: [
+    { asin: "B0GY7M4HF7", title: "SUNALLY Stackable Wire Storage Baskets for Pantry, 6 Pcs, White", w: 1500, h: 1143 },
+    { asin: "B0DFGXPBZB", title: "Fabric Snack Bar Organizer with Handles, 6 Compartments, Countertop Snack Station", w: 1399, h: 839 },
+  ],
+  eyeLevel: [
+    { asin: "B0FNQRVTFP", title: "ComSaf Glass Spice Jars with Labels, 4 oz, 24 Pack, Square", w: 1484, h: 1488 },
+    { asin: "B07R4H5J2C", title: "3 Tier Bamboo Expandable Spice Rack Cabinet Organizer", w: 1076, h: 619 },
+  ],
+  lowerShelvesHeavy: [
+    { asin: "B08JCRLMTG", title: "Qianfenie 1.1 Gallon Wide Mouth Airtight Glass Storage Jars with Lids, 2 Pack", w: 1500, h: 1498 },
+    { asin: "B0C9WHR4M8", title: "Heavy Duty Pull Out Cabinet Organizer, Slide Out Pantry Shelves Drawer Storage", w: 1500, h: 1500 },
+  ],
+  smallPantry: [
+    { asin: "B0D7VSSN5K", title: "Expandable Kitchen Cabinet Organizer Shelf, 15.5 to 25.5 Inch, 2 Pack, Heavy Duty", w: 1368, h: 1500 },
+    { asin: "B0CBQSPV4C", title: "ReadySpace Medium Stackable Plastic Storage Bins, 8-Pack, Clear", w: 906, h: 1500 },
+  ],
+  containersFunction: [
+    { asin: "B0CGVBBJ5J", title: "Ankou Airtight Food Storage Container Set, 6 Pcs POP Containers for Pantry", w: 1007, h: 942 },
+    { asin: "B07QG3ZXQC", title: "CRAFTSMAN 25-Ft Retractable Tape Measure with Fraction Markings", w: 1500, h: 1500 },
+  ],
+  labelEverything: [
+    { asin: "B0FGWDV7HP", title: "288 Preprinted Waterproof Pantry Labels for Food Containers, Black Minimalist", w: 1500, h: 1500 },
+    { asin: "B00M4L3KLO", title: "DYMO LetraTag 100H Handheld Label Maker with LT Label Tapes", w: 590, h: 1473 },
+  ],
+  fifo: [
+    { asin: "B0F9FCKQXT", title: "2 Tier Bamboo Rolling Can Rack Organizer for Pantry, Holds Up to 27 Cans", w: 1381, h: 1019 },
+    { asin: "B0B93HTY9Y", title: "Clear Pantry Storage Bins with Dividers, Kitchen Organizer, 2 Pack", w: 1500, h: 1217 },
+  ],
+  mealPrep: [
+    { asin: "B013HPU04U", title: "Plastic Pantry Basket with Handle, White", w: 1206, h: 1500 },
+    { asin: "B0DJSQQ1ZW", title: "Electric Salt and Pepper Grinder Set, Battery Operated, Adjustable Coarseness", w: 1197, h: 1366 },
+  ],
+  monthlyReset: [
+    { asin: "B0D6N79HS1", title: "Kitchen Inventory Log Book for Tracking Pantry, Fridge and Freezer Supplies", w: 1000, h: 1293 },
+    { asin: "B0DDC6WF3R", title: "Joyberg 9 Pack Magnetic Notepads for Refrigerator, Grocery List Pads", w: 1500, h: 1500 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "pantry-organization-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
 
 const PIN = {
   zonesByCategory: { src: "zones-by-category", w: 576, h: 1024, alt: "Pantry closet with a door-mounted wire rack of oils and sauces, wicker baskets and a wood utensil crock", url: "https://www.pinterest.com/pin/1688918607594985/", label: "Organized Pantry by Category" },
@@ -31,12 +128,13 @@ const STOCK = {
   finalThoughts: { src: "labeled-spice-rack", w: 960, h: 640, alt: "Close-up of a rotating spice rack with labeled shakers including cinnamon and oregano", url: "https://stocksnap.io/photo/spice-rack-7BFHFRHPUP", label: "Matt Bango", site: "StockSnap" },
 };
 
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "pantry-organization", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 function stockPhoto(key) {
@@ -51,6 +149,7 @@ const body = `
 <p>A messy pantry has a special talent for hiding the one thing you actually need. If you want to learn how to organise your pantry, start with one simple idea: make everything easy to see, easy to reach, and easy to put back. I learned this the hard way after buying the same pasta twice because apparently the pantry had developed its own little Bermuda Triangle.</p>
 <p>A good pantry does not need matching containers, expensive shelving, or a picture-perfect makeover. It needs a system that fits the way you actually cook and shop. Once you organise your pantry around those habits, keeping it tidy feels much easier.</p>
 ${stockPhoto("hero")}
+${productGrid("hero")}
 
 <h2>Why Does Pantry Organisation Matter So Much?</h2>
 <p>A well-organised pantry saves more than space. It saves time, reduces duplicate purchases, and helps you notice food before it gets forgotten at the back of a shelf.</p>
@@ -66,6 +165,7 @@ ${stockPhoto("hero")}
 <blockquote><p>&ldquo;Store canned goods in a cool, clean dry place.&rdquo;</p><cite>&mdash; USDA Food Safety and Inspection Service</cite></blockquote>
 <p>That advice matters even if your pantry looks nothing like those perfectly styled kitchen photos online. Pretty shelves mean very little if flour picks up moisture or cereal goes stale.</p>
 ${stockPhoto("whyMatters")}
+${productGrid("whyMatters")}
 
 <h2>What Should You Keep in a Pantry?</h2>
 <p>Before you start organising, decide what actually belongs there. I prefer to think of a pantry as a working food zone rather than a storage room for every random kitchen item.</p>
@@ -86,6 +186,7 @@ ${stockPhoto("whyMatters")}
 <p>You do not need every category if your pantry does not contain those foods. Why create a &ldquo;baking zone&rdquo; if you bake approximately twice a year?</p>
 <p>The best system reflects your actual grocery habits, not somebody else&rsquo;s dream pantry.</p>
 ${stockPhoto("whatToKeep")}
+${productGrid("whatToKeep")}
 
 <h2>How to Organise Your Pantry Before Buying Containers</h2>
 <p>This part feels less glamorous, but it makes the biggest difference. Do not start by buying twenty acrylic bins because a beautifully organised pantry convinced you that you suddenly need them.</p>
@@ -99,35 +200,37 @@ ${stockPhoto("whatToKeep")}
 <p>For storage guidance on specific foods, the USDA&rsquo;s FoodKeeper tool provides recommended storage information for many foods and beverages.</p>
 <blockquote><p>&ldquo;The FoodKeeper helps you understand food and beverages storage.&rdquo;</p><cite>&mdash; FoodSafety.gov</cite></blockquote>
 ${stockPhoto("checkDates")}
+${productGrid("checkDates")}
 <h3>Clean the Shelves</h3>
 <p>Vacuum crumbs from corners and wipe the shelves before you put anything back. Let the shelves dry completely before adding food.</p>
 <p>This step also gives you a chance to spot leaks, moisture, insects, or damaged packaging. Trust me, discovering a mysterious sticky patch before you reorganise beats discovering it six months later.</p>
 ${stockPhoto("cleanShelves")}
+${productGrid("cleanShelves")}
 
 <h2>How to Organise Your Pantry by Zones</h2>
 <p>Once you know what you have, create zones based on food categories and everyday use.</p>
 <p>I find zones much easier to maintain than organising everything by package size. When I cook, I think &ldquo;Where are my pasta ingredients?&rdquo; rather than &ldquo;Where did I put the tall beige box?&rdquo;</p>
-${photo("zonesByCategory")}
+${photo("zonesByCategory", "zonesByCategory")}
 <h3>Create a Breakfast Zone</h3>
 <p>Keep cereals, oats, pancake mixes, spreads, coffee, and tea together if you use them regularly.</p>
 <p>Place frequently used breakfast items around eye level. Put less frequently used products higher or farther back.</p>
 <p>If several people use the pantry, keep everyday breakfast foods somewhere everyone can reach easily.</p>
-${photo("breakfastZone")}
+${photo("breakfastZone", "breakfastZone")}
 <h3>Create a Baking Zone</h3>
 <p>Keep flour, sugar, baking powder, baking soda, cocoa, chocolate chips, sprinkles, and other baking ingredients together.</p>
 <p>A small bin can keep packets and smaller ingredients from spreading across the shelf. You can also use labels to make the category obvious.</p>
 <p>I especially like this setup because baking ingredients often come in awkward little packets that somehow manage to make one shelf look chaotic within seconds.</p>
-${photo("bakingZone")}
+${photo("bakingZone", "bakingZone")}
 <h3>Create a Pasta and Grain Zone</h3>
 <p>Group pasta, rice, quinoa, couscous, noodles, and similar foods together.</p>
 <p>If you use clear containers, label them clearly. Do not rely on your memory to identify every white powder and grain six months from now.</p>
 <p>Clear containers work particularly well for foods you buy repeatedly, because you can see when supplies run low.</p>
-${photo("pastaGrainZone")}
+${photo("pastaGrainZone", "pastaGrainZone")}
 <h3>Create a Snack Zone</h3>
 <p>Give snacks their own area instead of scattering them throughout the pantry.</p>
 <p>You can use baskets for granola bars, crackers, chips, nuts, and individually packaged snacks. Baskets also make it easier to pull several items forward at once.</p>
 <p>If children use the pantry, place their everyday snacks somewhere they can safely reach.</p>
-${photo("snackZone")}
+${photo("snackZone", "snackZone")}
 
 <h2>How to Organise Your Pantry Shelves</h2>
 <p>The shelves themselves should follow a simple rule: store the things you use most often where you can see and reach them easily.</p>
@@ -135,10 +238,11 @@ ${photo("snackZone")}
 <p>Put breakfast foods, coffee, snacks, pasta, and other regular staples in the easiest-to-reach areas.</p>
 <p>You should not need a step stool to grab the cereal you eat every morning. Save higher shelves for occasional-use ingredients and backup supplies.</p>
 ${stockPhoto("eyeLevel")}
+${productGrid("eyeLevel")}
 <h3>Use Lower Shelves for Heavy Items</h3>
 <p>Cans, large jars, bottles, and bulk ingredients can make shelves unnecessarily difficult to manage.</p>
 <p>Keep heavier items lower whenever possible. This makes them easier to handle and keeps your eye-level shelves available for lighter everyday foods.</p>
-${photo("lowerShelvesHeavy")}
+${photo("lowerShelvesHeavy", "lowerShelvesHeavy")}
 <h3>Use Upper Shelves for Backstock</h3>
 <p>Do you really need three unopened bags of flour sitting at the front?</p>
 <p>Keep extra and rarely used products toward the back or on higher shelves. Just make sure you remember that they exist.</p>
@@ -156,7 +260,7 @@ ${photo("lowerShelvesHeavy")}
   <li>Backup supplies on higher shelves</li>
 </ul>
 <p>The goal does not involve squeezing every possible item into every available inch. Leave enough breathing room to actually remove things without starting a pantry avalanche.</p>
-${photo("smallPantry")}
+${photo("smallPantry", "smallPantry")}
 
 <h2>How to Organise Your Pantry With Containers</h2>
 <p>Containers can make a pantry look dramatically cleaner, but you do not need to transfer everything.</p>
@@ -174,13 +278,13 @@ ${photo("smallPantry")}
 <p>Avoid buying containers before measuring your shelves. That sounds obvious, yet people regularly buy beautiful storage products that fit absolutely nowhere.</p>
 <p>Measure shelf height, depth, and width first.</p>
 <p>Then choose containers that make the most of that space.</p>
-${photo("containersFunction")}
+${photo("containersFunction", "containersFunction")}
 <h3>Label Everything Clearly</h3>
 <p>A clear container does not always need a label, but labels help when ingredients look similar.</p>
 <p>Labels also create a consistent system when multiple people use the pantry.</p>
 <p>You can label by ingredient, category, or both. For example, &ldquo;Rice,&rdquo; &ldquo;Pasta,&rdquo; and &ldquo;Baking&rdquo; keep things simple.</p>
 <p>Do not turn your pantry into a filing cabinet. If you need a spreadsheet to find the cinnamon, something has gone slightly too far.</p>
-${photo("labelEverything")}
+${photo("labelEverything", "labelEverything")}
 
 <h2>How to Organise Your Pantry Using FIFO</h2>
 <p>One of my favourite pantry habits involves first in, first out, often shortened to FIFO.</p>
@@ -190,6 +294,7 @@ ${photo("labelEverything")}
 <blockquote><p>&ldquo;Eat or freeze items before you need to throw them away.&rdquo;</p><cite>&mdash; FoodSafety.gov guidance on reducing food waste</cite></blockquote>
 <p>For frequently purchased foods, I find this system almost effortless once it becomes a habit.</p>
 ${stockPhoto("fifo")}
+${productGrid("fifo")}
 
 <h2>How to Organise Your Pantry for Easy Meal Prep</h2>
 <p>Your pantry should support the way you cook.</p>
@@ -208,6 +313,7 @@ ${stockPhoto("fifo")}
 </ul>
 <p>When dinner feels rushed, that little section can save you from opening every cupboard in the kitchen.</p>
 ${stockPhoto("mealPrep")}
+${productGrid("mealPrep")}
 
 <h2>How to Keep Your Pantry Organised</h2>
 <p>Organising your pantry once feels satisfying. Keeping it organised requires a tiny bit of maintenance.</p>
@@ -226,6 +332,7 @@ ${stockPhoto("mealPrep")}
 </ul>
 <p>A short monthly reset prevents the pantry from slowly returning to chaos.</p>
 ${stockPhoto("monthlyReset")}
+${productGrid("monthlyReset")}
 <h3>Keep a Simple Shopping List</h3>
 <p>When you notice an item running low, add it to your shopping list immediately.</p>
 <p>I find this much more useful than trying to remember everything while standing in the grocery store wondering whether there are three jars of peanut butter hiding somewhere at home.</p>

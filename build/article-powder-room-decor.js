@@ -1,7 +1,8 @@
 // Body content for the "15 Elegant Powder Room Decor Ideas That Make a
 // Small Space Feel Expensive" post. Images sourced from Pinterest pins the
 // user selected and provided directly; each is credited back to its pin
-// per their request. Photos only — no Amazon product grids on this one.
+// per their request. Amazon product grids were added under every photo on 2026-10-16
+// at the user's request.
 
 const { picture } = require("./picture-helper.js");
 
@@ -45,7 +46,7 @@ const ideas = [
   {
     n: "01",
     title: "Use Dramatic Wallpaper for an Elegant Powder Room",
-    photoKey: "wallpaper",
+    photoKeys: ["wallpaper"],
     paras: [
       "Wallpaper can completely transform a powder room, and this remains one of my favorite ways to create instant character.",
       "Because powder rooms usually don't contain showers or tubs, you have fewer moisture concerns than you would in a full bathroom. That makes the walls a fantastic place to introduce pattern.",
@@ -57,7 +58,7 @@ const ideas = [
   {
     n: "02",
     title: "Choose a Sculptural Mirror",
-    photoKey: "mirror",
+    photoKeys: ["mirror"],
     paras: [
       "A mirror does much more than help you check whether your hair survived the morning.",
       "In a small powder room, the mirror often becomes one of the largest visual elements. I prefer a distinctive shape over a completely generic rectangular mirror when the rest of the room has simple lines.",
@@ -73,7 +74,7 @@ const ideas = [
   {
     n: "03",
     title: "Add Warm Brass for Classic Elegance",
-    photoKey: "brass",
+    photoKeys: ["brass"],
     paras: [
       "If you want an easy shortcut toward elegant powder room decor, warm brass deserves your attention.",
       "Brass works particularly well against deep green, navy, charcoal, cream, taupe, and warm white. You can introduce it through the faucet, mirror frame, sconces, cabinet hardware, or towel ring.",
@@ -84,7 +85,7 @@ const ideas = [
   {
     n: "04",
     title: "Paint the Walls in a Deep, Moody Color",
-    photoKey: "moodyColor",
+    photoKeys: ["moodyColor"],
     paras: [
       "Who decided small rooms need white walls?",
       "I've always found that rule far too restrictive. A small powder room can handle saturated colors surprisingly well because you don't spend hours inside it every day.",
@@ -100,7 +101,7 @@ const ideas = [
   {
     n: "05",
     title: "Install Statement Sconces Beside the Mirror",
-    photoKey: "sconces",
+    photoKeys: ["sconces"],
     paras: [
       "Lighting can make or break elegant powder room decor.",
       "A single overhead fixture often creates harsh shadows, especially around the face. Instead, I prefer sconces positioned around the mirror because they create a softer and more balanced glow.",
@@ -115,7 +116,7 @@ const ideas = [
   {
     n: "06",
     title: "Try a Floating Vanity",
-    photoKey: "floatingVanity",
+    photoKeys: ["floatingVanity"],
     paras: [
       "A floating vanity can make a small powder room feel lighter because it leaves some visible floor underneath.",
       "I particularly like this approach when you want a contemporary or transitional look. Choose a simple wood vanity for warmth or a painted vanity for more traditional character.",
@@ -126,7 +127,7 @@ const ideas = [
   {
     n: "07",
     title: "Add a Stone or Marble Countertop",
-    photoKey: "stoneCountertop",
+    photoKeys: ["stoneCountertop"],
     paras: [
       "You don't need to cover the entire room in marble to create an upscale feeling.",
       "A small powder room gives you an excellent opportunity to use a beautiful stone countertop because you need much less material than you would for a large bathroom.",
@@ -138,7 +139,7 @@ const ideas = [
   {
     n: "08",
     title: "Choose an Interesting Sink",
-    photoKey: "sink",
+    photoKeys: ["sink"],
     paras: [
       "Why should the sink disappear into the vanity?",
       "A powder room gives you room to treat the sink as a decorative feature. A vessel sink can add sculptural interest, while an integrated stone basin creates a cleaner contemporary look.",
@@ -150,7 +151,7 @@ const ideas = [
   {
     n: "09",
     title: "Bring in Traditional Wall Paneling",
-    photoKey: "paneling",
+    photoKeys: ["paneling"],
     paras: [
       "If wallpaper feels too busy, architectural wall treatment can give you elegance without relying on pattern.",
       "Try:",
@@ -164,7 +165,7 @@ const ideas = [
   {
     n: "10",
     title: "Hang Art in Your Elegant Powder Room",
-    photoKey: "art",
+    photoKeys: ["art"],
     paras: [
       "A powder room can absolutely hold art.",
       "In fact, I think a small piece of artwork often feels more personal than another generic bathroom print. Look for a vintage landscape, abstract painting, botanical illustration, or black-and-white photograph.",
@@ -175,7 +176,7 @@ const ideas = [
   {
     n: "11",
     title: "Add a Small Chandelier or Pendant",
-    photoKey: "chandelier",
+    photoKeys: ["chandelier"],
     paras: [
       "A tiny chandelier can completely change the personality of an elegant powder room.",
       "This works especially well in rooms with higher ceilings. A decorative fixture draws the eye upward and gives the space a more finished feeling.",
@@ -189,7 +190,7 @@ const ideas = [
   {
     n: "12",
     title: "Use One Strong Accent Color",
-    photoKey: "accentColor",
+    photoKeys: ["accentColor"],
     paras: [
       "A restrained color palette usually creates a more sophisticated room than a rainbow of competing finishes.",
       "Choose one primary color and one accent.",
@@ -204,7 +205,7 @@ const ideas = [
   {
     n: "13",
     title: "Add Natural Wood for Warmth",
-    photoKey: "naturalWood",
+    photoKeys: ["naturalWood"],
     paras: [
       "Elegant rooms can sometimes become too polished.",
       "A little wood solves that problem.",
@@ -216,7 +217,7 @@ const ideas = [
   {
     n: "14",
     title: "Style the Vanity With a Few Beautiful Accessories",
-    photoKey: "vanityAccessories",
+    photoKeys: ["vanityAccessories"],
     paras: [
       "This is where restraint really matters.",
       "I usually recommend choosing only a few useful decorative pieces:",
@@ -231,8 +232,7 @@ const ideas = [
   {
     n: "15",
     title: "Create a Full Monochromatic Powder Room",
-    photoKey: "monochromatic",
-    extraPhotoKey: "monochromatic2",
+    photoKeys: ["monochromatic", "monochromatic2"],
     paras: [
       "If you want something sophisticated but relatively easy to coordinate, try a monochromatic scheme.",
       "Choose one color family and repeat it across several surfaces.",
@@ -250,7 +250,7 @@ function ideaBlock(idea) {
   const list = idea.list ? `<ul>${idea.list.map((li) => `<li>${li}</li>`).join("")}</ul>` : "";
   const quote = idea.quote ? `<blockquote><p>&ldquo;${idea.quote.text}&rdquo;</p><cite>&mdash; ${idea.quote.cite}</cite></blockquote>` : "";
   const after = idea.after ? idea.after.map((p) => `<p>${p}</p>`).join("\n      ") : "";
-  const extraPhoto = idea.extraPhotoKey ? photo(idea.extraPhotoKey) : "";
+  const photos = idea.photoKeys.map(photo).join("\n    ");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
@@ -258,8 +258,7 @@ function ideaBlock(idea) {
     ${list}
     ${quote}
     ${after}
-    ${photo(idea.photoKey)}
-    ${extraPhoto}`;
+    ${photos}`;
 }
 
 const body = `

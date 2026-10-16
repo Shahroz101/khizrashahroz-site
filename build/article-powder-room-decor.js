@@ -6,6 +6,111 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0H1H5JZH2", title: "VEELIKE Dark Moody Navy Blue Floral Peel and Stick Wallpaper, 17.7 x 118 Inch", w: 1500, h: 1500 },
+    { asin: "B0BHDWW16G", title: "ELYONA Vintage Hammered Brass Pendant Light Fixture, 7 Inch, Small Hanging Light", w: 814, h: 1500 },
+  ],
+  whatMakesElegant: [
+    { asin: "B09LXTL42B", title: "BYOLIIMA Modern Gold Globe Wall Sconce Set of 2 for Bathroom Vanity Lighting", w: 1497, h: 1027 },
+    { asin: "B0C2HNL71J", title: "Freestanding Bathroom Console Sink, Bathroom Vanity with Sink", w: 1283, h: 1500 },
+  ],
+  howToMakeExpensive: [
+    { asin: "B07N64YK61", title: "TAOGIFT Victorian Damask Embossed Peel and Stick Wallpaper Mural for Bedroom", w: 1041, h: 641 },
+    { asin: "B003FSI5FG", title: "Renovators Supply Ondine Space-Saving 16 Inch Pedestal Bathroom Sink, Porcelain", w: 1500, h: 1489 },
+  ],
+  idea1: [
+    { asin: "B0F99Y3NM5", title: "Black Vintage Floral Peel and Stick Wallpaper, 17.5 x 393 Inch", w: 1200, h: 1500 },
+    { asin: "B0CQT3PPLV", title: "WRAPXPERT Peel and Stick Wallpaper Tools, Wallpaper Smoothing Tool Kit with Smoother", w: 1488, h: 1500 },
+  ],
+  idea2: [
+    { asin: "B0D4DGVGPL", title: "Round Scalloped Wavy Wall Mirror, 18 Inch Wood Frame, Bathroom and Nursery Mirror", w: 1284, h: 1297 },
+    { asin: "B0H1HN82L9", title: "CIRCUMI Gold Arched Wall Mirror, 24 x 30 Inch, Bathroom and Vanity Mirror", w: 1500, h: 1500 },
+  ],
+  idea3: [
+    { asin: "B0H1G7BG3H", title: "Hicarer 15 Pack Antique Brass Cabinet Hardware Set, 5 Inch Hole Center, Drawer Pulls and Knobs", w: 1500, h: 1477 },
+    { asin: "B0C9QGVP2D", title: "Antique Brass Toilet Paper Holder, Wall Mount Bathroom Tissue Roll Holder", w: 1500, h: 528 },
+  ],
+  idea4: [
+    { asin: "B0FGNPBV35", title: "KILZ TRIBUTE Interior Paint and Primer Color Sample, Oceans Deep, 8 Ounces, Pack of 2", w: 1500, h: 747 },
+    { asin: "B0CN23QR9Z", title: "Glidden Total 1 Gallon Cavalry Navy Blue Flat Interior Paint with Primer", w: 1500, h: 1473 },
+  ],
+  idea5: [
+    { asin: "B0CDGRX6QV", title: "Antique Brass Hardwired Wall Sconce Set of 2, Gold Finish with White Fabric Shades", w: 1493, h: 1500 },
+    { asin: "B0B4X3ZJY6", title: "MWZ Gold Sconces Set of 2, Modern Brass Wall Sconces", w: 1438, h: 1447 },
+  ],
+  idea6: [
+    { asin: "B0CMQWFM48", title: "16 Inch Bathroom Vanity Sink Combo for Small Spaces, Wall-Mounted Cabinet Set", w: 1500, h: 1500 },
+    { asin: "B0HCZCQ1T9", title: "Garvee 30 Inch Floating Bathroom Vanity with Sink, 2 Storage Drawers, White", w: 1500, h: 1500 },
+  ],
+  idea7: [
+    { asin: "B0F3DMZNJK", title: "Bathroom Vanity Backsplash and Sidesplash, Super White Engineered Marble, 4 x 22 Inch", w: 1500, h: 1134 },
+    { asin: "B0H1VHGC2T", title: "Natural Marble Bathroom Tray for Countertop and Home Decor, Decorative Vanity Tray", w: 1500, h: 1288 },
+  ],
+  idea8: [
+    { asin: "B0DR71SB14", title: "16 Inch Natural Stone Round Bathroom Vessel Sink, White Marble", w: 1246, h: 1500 },
+    { asin: "B093RPTCHW", title: "Phiestina Brushed Nickel Tall Bathroom Vessel Sink Faucet", w: 604, h: 1483 },
+  ],
+  idea9: [
+    { asin: "B0DNFKMM3J", title: "3 Sets Peel and Stick Wall Molding Kit, Premade Wainscoting Panels", w: 1500, h: 1500 },
+    { asin: "B0GT8V6Y8V", title: "INMOZATA Arch Wainscoting Panels Kit, MDF Board and Batten Wall Panel Kit", w: 1500, h: 1500 },
+  ],
+  idea10: [
+    { asin: "B0GJF2ZW7R", title: "EisEver Watercolor Botanical Wall Art Set of 3, Sage Green Bathroom Wall Decor", w: 1484, h: 953 },
+    { asin: "B07VQZSLDW", title: "upsimples 11x14 Picture Frame, Gallery Wall Frames Set of 5, Black", w: 1500, h: 1500 },
+  ],
+  idea11: [
+    { asin: "B0H25X99J3", title: "Small Crystal Chandelier, Mini Modern Flush-Mount Crystal Ceiling Light", w: 1500, h: 1500 },
+    { asin: "B0BGRFRX67", title: "Gold Pendant Lights for Kitchen Island and Dining Room, 3 Pack", w: 1341, h: 1482 },
+  ],
+  idea12: [
+    { asin: "B0F1PBL9YP", title: "Clara Clark Navy Blue Bathroom Accessories Set, 6 Piece", w: 1473, h: 1420 },
+    { asin: "B08LBM1ZKF", title: "Tens Towels 6 Piece Hand Towels Set, 16 x 28 Inches, Navy", w: 903, h: 1500 },
+  ],
+  idea13: [
+    { asin: "B0FWB4YTN9", title: "100% Solid Wood 3-Tier Wall Shelf, Rustic Floating Shelves, Wall-Mounted Storage Rack", w: 1500, h: 1500 },
+    { asin: "B07Q68Y6YG", title: "Lavish Home Bathroom Decor Set, Natural, 5 Piece", w: 1500, h: 1186 },
+  ],
+  idea14: [
+    { asin: "B0CW1J5JNF", title: "Weenson Gold Bathroom Vanity Tray for Countertop, Perfume, Makeup and Jewelry Decor", w: 1500, h: 1165 },
+    { asin: "B07C41SYJ7", title: "Amazon Basics Soft and Thick Cotton Hand Towels, 16 x 26 Inches", w: 1500, h: 1028 },
+  ],
+  idea15: [
+    { asin: "B0FB8N4QPZ", title: "vancasso Blue Bathroom Accessories Set, Ceramic Soap Dispenser and Toothbrush Holder", w: 1346, h: 1500 },
+    { asin: "B0FNXBW9H6", title: "Ava Nord Modern Minimalist Ceramic Bathroom Accessories, Set of 4, Green", w: 1024, h: 1024 },
+  ],
+  howToKeepFromCluttered: [
+    { asin: "B0GYSFMPMV", title: "Black Floating Shelves for Bathroom, 3 Tier Pine Wood Wall-Mounted Shelf", w: 1254, h: 1254 },
+    { asin: "B0BKG7FD8T", title: "NETDOT 3 Pack 10L / 2.6 Gallon Small Trash Can with Lid", w: 1386, h: 1500 },
+  ],
+  whatToPrioritize: [
+    { asin: "B0F3C4124T", title: "Gold Circle Mirror, 24 Inch, Round Mirror with Brushed Gold Metal Frame", w: 1500, h: 1500 },
+    { asin: "B08ZCKZ9Z8", title: "WOWOW Gold Bathroom Faucet, 3 Hole Widespread Vanity Sink Faucet, 8 Inch", w: 1500, h: 1355 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "powder-room-decor-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1080, h: 1733, alt: "Dark botanical wallpaper powder room with a brass oval mirror, gold pendant lights and a black fluted floating vanity on hexagon tile", url: "https://www.pinterest.com/pin/1266706141261100/", label: "Dramatic Wallpaper Powder Room" },
   whatMakesElegant: { src: "what-makes-elegant", w: 736, h: 1104, alt: "Tropical palm wallpaper powder room with a round brass mirror, wood console vanity, vessel sink and gold orb sconces", url: "https://www.pinterest.com/pin/2322237302811648/", label: "Elegant Powder Room Styling" },
@@ -34,17 +139,19 @@ const PIN = {
 // No cropping: every image renders at its real, original pixel ratio.
 // Served as AVIF first, WebP second, original JPEG as the final fallback —
 // see picture() in build.js for the shared <picture> markup.
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "powder-room-decor", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const ideas = [
   {
     n: "01",
+    productsKey: "idea1",
     title: "Use Dramatic Wallpaper for an Elegant Powder Room",
     photoKeys: ["wallpaper"],
     paras: [
@@ -57,6 +164,7 @@ const ideas = [
   },
   {
     n: "02",
+    productsKey: "idea2",
     title: "Choose a Sculptural Mirror",
     photoKeys: ["mirror"],
     paras: [
@@ -73,6 +181,7 @@ const ideas = [
   },
   {
     n: "03",
+    productsKey: "idea3",
     title: "Add Warm Brass for Classic Elegance",
     photoKeys: ["brass"],
     paras: [
@@ -84,6 +193,7 @@ const ideas = [
   },
   {
     n: "04",
+    productsKey: "idea4",
     title: "Paint the Walls in a Deep, Moody Color",
     photoKeys: ["moodyColor"],
     paras: [
@@ -100,6 +210,7 @@ const ideas = [
   },
   {
     n: "05",
+    productsKey: "idea5",
     title: "Install Statement Sconces Beside the Mirror",
     photoKeys: ["sconces"],
     paras: [
@@ -115,6 +226,7 @@ const ideas = [
   },
   {
     n: "06",
+    productsKey: "idea6",
     title: "Try a Floating Vanity",
     photoKeys: ["floatingVanity"],
     paras: [
@@ -126,6 +238,7 @@ const ideas = [
   },
   {
     n: "07",
+    productsKey: "idea7",
     title: "Add a Stone or Marble Countertop",
     photoKeys: ["stoneCountertop"],
     paras: [
@@ -138,6 +251,7 @@ const ideas = [
   },
   {
     n: "08",
+    productsKey: "idea8",
     title: "Choose an Interesting Sink",
     photoKeys: ["sink"],
     paras: [
@@ -150,6 +264,7 @@ const ideas = [
   },
   {
     n: "09",
+    productsKey: "idea9",
     title: "Bring in Traditional Wall Paneling",
     photoKeys: ["paneling"],
     paras: [
@@ -164,6 +279,7 @@ const ideas = [
   },
   {
     n: "10",
+    productsKey: "idea10",
     title: "Hang Art in Your Elegant Powder Room",
     photoKeys: ["art"],
     paras: [
@@ -175,6 +291,7 @@ const ideas = [
   },
   {
     n: "11",
+    productsKey: "idea11",
     title: "Add a Small Chandelier or Pendant",
     photoKeys: ["chandelier"],
     paras: [
@@ -189,6 +306,7 @@ const ideas = [
   },
   {
     n: "12",
+    productsKey: "idea12",
     title: "Use One Strong Accent Color",
     photoKeys: ["accentColor"],
     paras: [
@@ -204,6 +322,7 @@ const ideas = [
   },
   {
     n: "13",
+    productsKey: "idea13",
     title: "Add Natural Wood for Warmth",
     photoKeys: ["naturalWood"],
     paras: [
@@ -216,6 +335,7 @@ const ideas = [
   },
   {
     n: "14",
+    productsKey: "idea14",
     title: "Style the Vanity With a Few Beautiful Accessories",
     photoKeys: ["vanityAccessories"],
     paras: [
@@ -231,6 +351,7 @@ const ideas = [
   },
   {
     n: "15",
+    productsKey: "idea15",
     title: "Create a Full Monochromatic Powder Room",
     photoKeys: ["monochromatic", "monochromatic2"],
     paras: [
@@ -250,7 +371,7 @@ function ideaBlock(idea) {
   const list = idea.list ? `<ul>${idea.list.map((li) => `<li>${li}</li>`).join("")}</ul>` : "";
   const quote = idea.quote ? `<blockquote><p>&ldquo;${idea.quote.text}&rdquo;</p><cite>&mdash; ${idea.quote.cite}</cite></blockquote>` : "";
   const after = idea.after ? idea.after.map((p) => `<p>${p}</p>`).join("\n      ") : "";
-  const photos = idea.photoKeys.map(photo).join("\n    ");
+  const photos = idea.photoKeys.map((k, i) => photo(k, i === idea.photoKeys.length - 1 ? idea.productsKey : undefined)).join("\n    ");
   return `
     <div class="idea-heading"><span class="numeral" aria-hidden="true">${idea.n}</span><h2>${idea.title}</h2></div>
     ${paras}
@@ -265,14 +386,14 @@ const body = `
 <p>A powder room doesn't need much space to make a big impression. In fact, elegant powder room decor often works better in a small room because you can take design risks without committing to a massive renovation. I've always thought powder rooms deserve a little more personality than they usually get. Why settle for a basic sink, mirror, and lonely towel when you can create a tiny room that feels genuinely special?</p>
 <p>The trick comes down to choosing a few strong elements and letting them work together. A beautiful mirror, dramatic wallpaper, warm lighting, or an interesting vanity can completely change the room without making it feel cluttered. And yes, you can make a powder room look luxurious without spending your entire renovation budget.</p>
 <p><em>This post also includes Amazon affiliate links. As an Amazon Associate, this site earns from qualifying purchases at no extra cost to you.</em></p>
-${photo("hero")}
+${photo("hero", "hero")}
 
 <h2>What Makes a Powder Room Look Elegant?</h2>
 <p>The best elegant powder room decor doesn't come from filling every inch with expensive accessories. It comes from creating a clear visual direction. When I work through small-space decorating ideas, I usually start with three things: color, lighting, and one standout feature.</p>
 <p>Think about it. A powder room usually contains only a few major pieces, so every choice becomes noticeable. That gives you an opportunity to spend a little more attention on the mirror, faucet, wallpaper, vanity, or lighting instead of trying to upgrade everything at once.</p>
 <p>Interior designer Jay Jeffers describes powder rooms as &ldquo;the jewelry of the house.&rdquo; He recommends having fun with lighting and decorative details because the room doesn't need to perform all the functions of a primary bathroom.</p>
 <p>That idea makes perfect sense to me. A powder room gives you permission to experiment. Want dark green walls? Go for it. Love an oversized mirror? Use it. Found wallpaper that feels slightly dramatic? This might actually be the room for it.</p>
-${photo("whatMakesElegant")}
+${photo("whatMakesElegant", "whatMakesElegant")}
 
 <h2>How Do You Make a Small Powder Room Look Expensive?</h2>
 <p>You don't need marble everywhere or a designer faucet with a price tag that makes you question your life choices. Luxury powder room design usually comes from coordination, not from throwing expensive materials into the room.</p>
@@ -289,7 +410,7 @@ ${photo("whatMakesElegant")}
 <p>Designer Lindsey Putzier takes a similar approach, describing powder rooms as &ldquo;jewel boxes&rdquo; where every finish and detail contributes to the overall experience.</p>
 <p>So, before you start shopping, ask yourself one question: What do I want someone to notice first when they walk through the door?</p>
 <p>That answer should guide the rest of your design.</p>
-${photo("howToMakeExpensive")}
+${photo("howToMakeExpensive", "howToMakeExpensive")}
 
 <h2>15 Elegant Powder Room Decor Ideas</h2>
 ${ideas.map(ideaBlock).join("\n")}
@@ -305,7 +426,7 @@ ${ideas.map(ideaBlock).join("\n")}
 </ul>
 <p>If the answer stays no, skip it.</p>
 <p>The most successful powder rooms often combine a small number of strong decisions rather than dozens of tiny ones.</p>
-${photo("howToKeepFromCluttered")}
+${photo("howToKeepFromCluttered", "howToKeepFromCluttered")}
 
 <h2>What Should You Prioritize When Decorating a Powder Room?</h2>
 <p>If your budget doesn't allow you to change everything, spend your money where people actually notice it.</p>
@@ -320,7 +441,7 @@ ${photo("howToKeepFromCluttered")}
 </ul>
 <p>You can save money on accessories because you can replace those later.</p>
 <p>A beautiful mirror with inexpensive towels can still look fantastic. An expensive towel sitting beneath a boring builder-grade mirror won't magically fix the room.</p>
-${photo("whatToPrioritize")}
+${photo("whatToPrioritize", "whatToPrioritize")}
 
 <h2>Final Thoughts on Elegant Powder Room Decor</h2>
 <p>The best elegant powder room decor doesn't try to make a tiny bathroom behave like a giant primary suite. It embraces the room's size and uses that limitation as an advantage.</p>

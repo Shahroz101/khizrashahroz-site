@@ -6,6 +6,115 @@
 
 const { picture } = require("./picture-helper.js");
 
+const AMAZON_TAG = "dwellingdre0c-20";
+function amazonLink(asin) {
+  return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_TAG}`;
+}
+
+const PRODUCTS = {
+  hero: [
+    { asin: "B0D2CM8L5F", title: "Adjustable 3 Tiered Tray Stand with Interchangeable Handles, White Farmhouse Decorative Tray", w: 1087, h: 1403 },
+    { asin: "B09YLYML27", title: "Farmhouse Decor Large Wood Bead Garland, 50 Inch, 1.6 Inch Natural Wood Beads with Tassels", w: 1500, h: 1500 },
+  ],
+  whatIsTieredTray: [
+    { asin: "B07FRG9ZZM", title: "Round 3-Tier Decorative Wood Tray", w: 918, h: 1500 },
+    { asin: "B0DPNH45GB", title: "Plexon 3 Tiered Tray Stand, Round Metal and Wood Serving Tray, Farmhouse Centerpiece", w: 1129, h: 1420 },
+  ],
+  withoutClutter: [
+    { asin: "B0B2D9Y174", title: "Urban Deco Wooden Decorative Tray, Two Tiered Round Serving Tray with Metal Handle, White", w: 1101, h: 1466 },
+    { asin: "B0DZBMCYT9", title: "6 Pcs Ceramic Bird Figurines, Multi-Color, 2.2 Inch Mini Birds for Home Decor", w: 1500, h: 1500 },
+  ],
+  colorPalette: [
+    { asin: "B0BGLJ7NTK", title: "Woration 16 Pcs Fabric Artificial Pumpkins Set, Lake Green Velvet Decoration", w: 1500, h: 1141 },
+    { asin: "B0G6391R1J", title: "Set of 3 Decorative Books for Home Decor, Faux Books for Bookshelf", w: 1297, h: 1500 },
+  ],
+  surroundings: [
+    { asin: "B0F381D719", title: "SYNCVIBE Wooden Farmhouse Round Black 3 Tiered Decorative Tray Stand", w: 687, h: 1483 },
+    { asin: "B0CWPB4277", title: "Kigley 8 Pcs Custom Wooden Name Sign, 8 Letter Block Set, Wood", w: 1500, h: 1500 },
+  ],
+  differentHeights: [
+    { asin: "B0G5PZ66MR", title: "Daittin 3-Piece Mini Ceramic Bud Vases Set, Small White Matte Vases for Dried Flowers", w: 1000, h: 1000 },
+    { asin: "B0C55DSTMB", title: "Small White Daisy Flowers Artificial, 2 Bouquets, 12 Pcs, 10 Inch Fake Daisies", w: 1200, h: 1200 },
+  ],
+  varyShapes: [
+    { asin: "B0GZWNR6MF", title: "Ceramic Jars with Lids, 5 oz, Airtight White Kitchen Canisters", w: 1116, h: 689 },
+    { asin: "B08TKJWM9R", title: "Primitives by Kathy Simply Blessed Box Sign, Mini, Black", w: 1500, h: 1174 },
+  ],
+  texture: [
+    { asin: "B08L572Z4B", title: "30 Pcs Burlap Hessian Flowers Set with 24 Burlap Flowers, Bowknots and Lace Ribbon Rolls", w: 976, h: 967 },
+    { asin: "B07F1BDV6D", title: "Vela Lanterns Tea Light Candle Holders, Mini Decorative Lanterns, White", w: 1500, h: 1500 },
+  ],
+  kitchenCoffee: [
+    { asin: "B08TKDTNPL", title: "Primitives by Kathy But First Coffee Home Decor Box Sign, White", w: 1500, h: 1226 },
+    { asin: "B0CPHVH6CW", title: "Sugar Container with Bamboo Lid and Spoon, 15 oz Glass Sugar Bowl Jar", w: 1385, h: 1500 },
+  ],
+  kitchenBaking: [
+    { asin: "B0CP92JHQQ", title: "Kang and Chang Mini Unfinished Wood Rolling Pin for Tiered Tray Decor, 6 Pack", w: 1254, h: 1276 },
+    { asin: "B0DYDD1Y12", title: "ComSaf Glass Spice Jars with Labels, 4 oz, 6 Pack, Small Bamboo Lids", w: 1116, h: 1491 },
+  ],
+  springTray: [
+    { asin: "B0GDZN7NT4", title: "25 Pcs White Tulips Artificial Flowers, Real Touch Fake Tulips Bouquet", w: 1393, h: 1345 },
+    { asin: "B0BWPLXRZN", title: "Bird Sized Eggs, Pastel Speckled for Crafts and Spring Decor, Plastic, 12 Pieces", w: 972, h: 995 },
+  ],
+  summerTray: [
+    { asin: "B0D6KGXHLK", title: "20 Pcs Fake Lemons Artificial Fruits with 25 Leaves, Faux Yellow Lifelike Plastic Lemons", w: 1500, h: 1371 },
+    { asin: "B0C73GJY3S", title: "Ceramic Dessert Bowls, Set of 2, Lemon Shape Side Dishes, Snack Bowls", w: 876, h: 943 },
+  ],
+  fallTray: [
+    { asin: "B0H25FGT2Q", title: "RAINFLOW Mini Knitted Pumpkin Cozy, Set of 5 Knit Pumpkins for Fall Decor", w: 1500, h: 1500 },
+    { asin: "B07W62T9TP", title: "Collins Painting Mini Fall Pumpkin Wood Block Sign, Welcome Fall", w: 1500, h: 1296 },
+  ],
+  christmasTray: [
+    { asin: "B0B6145DJJ", title: "30 Pcs Mini Christmas Trees, Artificial Bottle Brush Trees with Wooden Base", w: 1500, h: 1414 },
+    { asin: "B088GD7LCK", title: "Lenox Holiday Christmas Stoneware Mug, 12 oz", w: 1355, h: 1500 },
+  ],
+  greenery: [
+    { asin: "B0DNM4Q6QY", title: "LOYWREE Artificial String of Pearls Plant in Black Pot, Faux Hanging Succulent", w: 594, h: 1500 },
+    { asin: "B0GT4DZVZQ", title: "60 Pcs Eucalyptus Stems, 6 Inch Artificial Greenery Stems for DIY", w: 1493, h: 1500 },
+  ],
+  signsQuotes: [
+    { asin: "B0DSF12RWR", title: "Jetec Mini Wooden Sign Farmhouse Shelf Decor, Retro Color, 4.25 x 2.76 Inch", w: 1500, h: 1500 },
+    { asin: "B09YPSGNTG", title: "GENMOUS Farmhouse Kitchen Tiered Tray Decor Items Mini Set, Rustic Black and White", w: 1289, h: 1500 },
+  ],
+  formula321: [
+    { asin: "B0D4LD78BM", title: "Mini Decorative Books for Home Decor, Small Faux Wood Book Stack, I Still Remember Sign", w: 1500, h: 881 },
+    { asin: "B0GVQDV55X", title: "DS. DISTINCTIVE STYLE 2 Pack Small Decorative Pillow, 11 x 7 Inch, Navy", w: 1432, h: 1211 },
+  ],
+  smallSpace: [
+    { asin: "B093LCN3HM", title: "Giikin 2 Tier Countertop Shelf Organizer, Kitchen Spice Rack, Wood and Metal", w: 1500, h: 1336 },
+    { asin: "B01CK8S4RK", title: "Creative Hobbies Mini 4 Inch Tall Birdhouse, Set of 4 Styles, Unfinished Wood", w: 919, h: 1500 },
+  ],
+  commonMistakes: [
+    { asin: "B0H1HDKNKH", title: "1DOT2 Handmade Ceramic Pedestal Bowl, Matte Creamy Off-White, 11.3 Inch", w: 1499, h: 965 },
+    { asin: "B0F3H5SGZT", title: "Set of 3 Different Size Ivory Pillar Candles, Unscented, Dripless", w: 823, h: 942 },
+  ],
+  likeADesigner: [
+    { asin: "B0DT3VY54Y", title: "Decorative Mini Tin Watering Can, Cute Metal Jug for Crafts and Garden Themes", w: 1207, h: 1419 },
+    { asin: "B0F2HKCW89", title: "6 Bundles Artificial Lavender Stems, 15 Inch Faux Purple Flowers", w: 1176, h: 1500 },
+  ],
+  easyFormula: [
+    { asin: "B0G4R8QD62", title: "Hollowed Ceramic Village House Tealight Candle Holder for Fireplace Mantel and Table", w: 1200, h: 1200 },
+    { asin: "B0GGDDG7YY", title: "15 Natural Pine Cones for Crafts and Rustic Decorating, USA-Grown", w: 1500, h: 1438 },
+  ],
+};
+
+function productGrid(productsKey) {
+  const products = PRODUCTS[productsKey] || [];
+  if (!products.length) return "";
+  const cards = products
+    .map(
+      (item) => `<div class="product-card">
+        ${picture({ dir: "tiered-tray-styling-products", src: item.asin, alt: item.title, w: item.w, h: item.h, className: "product-photo" })}
+        <p class="product-title">${item.title}</p>
+        <a class="shop-cta shop-cta-sm" href="${amazonLink(item.asin)}" target="_blank" rel="nofollow sponsored noopener">Shop on Amazon</a>
+      </div>`
+    )
+    .join("\n      ");
+  return `<div class="product-grid">
+      ${cards}
+    </div>`;
+}
+
 const PIN = {
   hero: { src: "hero", w: 1023, h: 1537, alt: "Three-tier wood tray styled with pumpkins, a Welcome Fall sign, candles, wood beads and a grateful thankful blessed frame", url: "https://www.pinterest.com/pin/72268769023903306/", label: "Fully Styled Three-Tier Tray" },
   whatIsTieredTray: { src: "what-is-tiered-tray", w: 1000, h: 1504, alt: "Round three-tier tray used as a coffee bar with stacked mugs, sunflowers, coffee beans and a coffee maker on the counter beside it", url: "https://www.pinterest.com/pin/60376451250159421/", label: "Tiered Tray Coffee Bar Setup" },
@@ -34,12 +143,13 @@ const PIN = {
 // No cropping: every image renders at its real, original pixel ratio.
 // Served as AVIF first, WebP second, original JPEG as the final fallback —
 // see picture() in build.js for the shared <picture> markup.
-function photo(key) {
+function photo(key, productsKey) {
   const p = PIN[key];
   return `<figure>
       ${picture({ dir: "tiered-tray-styling", src: p.src, alt: p.alt, w: p.w, h: p.h, className: "article-photo" })}
       <figcaption>Photo via <a href="${p.url}" target="_blank" rel="nofollow noopener">Pinterest — ${p.label}</a></figcaption>
-    </figure>`;
+    </figure>
+    ${productGrid(productsKey)}`;
 }
 
 const body = `
@@ -47,7 +157,7 @@ const body = `
 <p>I have styled plenty of small decorative displays, and I have learned that the trick comes down to height, balance, texture, and restraint. You do not need twenty tiny decorations. You need a few pieces that work together.</p>
 <blockquote><p>&ldquo;Good design is as little design as possible.&rdquo;</p><cite>&mdash; Frank Chimero, The Shape of Design</cite></blockquote>
 <p>That idea fits tiered tray decorating surprisingly well. The tray already gives you layers, so your job involves adding interest without creating visual chaos.</p>
-${photo("hero")}
+${photo("hero", "hero")}
 
 <h2>What Is a Tiered Tray and Why Does It Work So Well?</h2>
 <p>A tiered tray uses two or more levels to display small decorative or practical items vertically. You can find round, square, wood, metal, farmhouse, rustic, modern, and even vintage-inspired versions.</p>
@@ -70,7 +180,7 @@ ${photo("hero")}
   <li>Holiday decorating</li>
 </ul>
 <p>I particularly like tiered trays for small seasonal updates. You can keep the tray itself year round and simply swap pumpkins for pinecones, or flowers for ornaments, when the season changes.</p>
-${photo("whatIsTieredTray")}
+${photo("whatIsTieredTray", "whatIsTieredTray")}
 
 <h2>How Do You Style a Tiered Tray Without Making It Look Cluttered?</h2>
 <p>The easiest answer involves thinking about the tray as one composition rather than several separate shelves.</p>
@@ -83,7 +193,7 @@ ${photo("whatIsTieredTray")}
 <blockquote><p>&ldquo;Design is not just what it looks like and feels like. Design is how it works.&rdquo;</p><cite>&mdash; Steve Jobs, The New York Times, 2003</cite></blockquote>
 <p>A tiered tray needs to work visually and practically. If you place a giant decorative object on the bottom level and block everything behind it, you have technically decorated the tray. You have also created a tiny obstacle course.</p>
 <p>Keep the display functional, especially in a kitchen.</p>
-${photo("withoutClutter")}
+${photo("withoutClutter", "withoutClutter")}
 
 <h2>How to Style a Tiered Tray With the Right Base</h2>
 <p>Before you add decorations, look at the tray itself.</p>
@@ -113,11 +223,11 @@ ${photo("withoutClutter")}
 </ul>
 <p>You do not need every color in every object. Repeat the colors across different levels instead.</p>
 <p>That repetition creates cohesion.</p>
-${photo("colorPalette")}
+${photo("colorPalette", "colorPalette")}
 <h3>Let the surroundings guide you</h3>
 <p>Your tray should relate to the room around it.</p>
 <p>If your kitchen already features warm wood cabinets and brass hardware, a tray filled with icy blue accessories might feel disconnected. You can still use blue, but I would introduce it through one or two smaller accents rather than making it the entire theme.</p>
-${photo("surroundings")}
+${photo("surroundings", "surroundings")}
 
 <h2>How to Style a Tiered Tray With Different Heights</h2>
 <p>Height makes or breaks a tiered tray.</p>
@@ -134,7 +244,7 @@ ${photo("surroundings")}
 </ul>
 <p>This arrangement keeps the eye moving.</p>
 <p>You do not need mathematical precision. Nobody needs a protractor for kitchen decor. Just avoid placing every tall item in one straight line.</p>
-${photo("differentHeights")}
+${photo("differentHeights", "differentHeights")}
 <h3>Vary the shapes too</h3>
 <p>Height alone cannot save a display filled with identical objects.</p>
 <p>Mix:</p>
@@ -148,7 +258,7 @@ ${photo("differentHeights")}
   <li>Greenery</li>
 </ul>
 <p>The contrast between shapes creates visual interest without requiring more color.</p>
-${photo("varyShapes")}
+${photo("varyShapes", "varyShapes")}
 
 <h2>How to Style a Tiered Tray With Texture</h2>
 <p>Texture gives a small display personality.</p>
@@ -157,7 +267,7 @@ ${photo("varyShapes")}
 <p>A wooden bead strand can soften a metal tray. A ceramic mug can add weight beside delicate greenery. A glass jar can introduce a little transparency.</p>
 <blockquote><p>&ldquo;Texture is one of the most important elements in creating visual interest.&rdquo;</p><cite>&mdash; Kelly Hoppen, Kelly Hoppen Design</cite></blockquote>
 <p>You can create a layered look without adding more objects simply by changing the materials.</p>
-${photo("texture")}
+${photo("texture", "texture")}
 
 <h2>How to Style a Tiered Tray for a Kitchen</h2>
 <p>The kitchen gives you one of the easiest places to style a tiered tray because you can combine decoration with useful items.</p>
@@ -166,7 +276,7 @@ ${photo("texture")}
 <p>Try placing a small coffee mug, a miniature coffee sign, a jar of sugar, and a little plant or faux greenery on the different levels.</p>
 <p>Keep frequently used items toward the front so you can grab them easily.</p>
 <p>I also like adding one wooden element because wood instantly makes a coffee display feel warmer.</p>
-${photo("kitchenCoffee")}
+${photo("kitchenCoffee", "kitchenCoffee")}
 <h3>Try a baking themed tray</h3>
 <p>For a baking corner, use:</p>
 <ul>
@@ -179,7 +289,7 @@ ${photo("kitchenCoffee")}
 </ul>
 <p>You can create the look without filling every inch.</p>
 <p>Leave some empty space. Empty space gives your decorations room to breathe and makes the whole tray look more intentional.</p>
-${photo("kitchenBaking")}
+${photo("kitchenBaking", "kitchenBaking")}
 
 <h2>How to Style a Tiered Tray for Different Seasons</h2>
 <p>One of the biggest advantages of a tiered tray involves how easily you can change it throughout the year.</p>
@@ -196,12 +306,12 @@ ${photo("kitchenBaking")}
   <li>Light wood accents</li>
 </ul>
 <p>Keep the palette soft and fresh.</p>
-${photo("springTray")}
+${photo("springTray", "springTray")}
 <h3>Summer tiered tray ideas</h3>
 <p>Summer gives you more room for brighter accents.</p>
 <p>Try lemons, citrus colors, small floral arrangements, blue and white ceramics, or lightweight greenery.</p>
 <p>A simple lemon themed tray can look surprisingly cheerful in a kitchen.</p>
-${photo("summerTray")}
+${photo("summerTray", "summerTray")}
 <h3>Fall tiered tray ideas</h3>
 <p>Fall styling works beautifully with warm neutrals.</p>
 <p>Use:</p>
@@ -214,7 +324,7 @@ ${photo("summerTray")}
   <li>Warm ceramic pieces</li>
 </ul>
 <p>I usually prefer muted orange and terracotta over extremely bright orange because they blend more naturally with neutral interiors.</p>
-${photo("fallTray")}
+${photo("fallTray", "fallTray")}
 <h3>Christmas tiered tray ideas</h3>
 <p>For Christmas, combine greenery with a few seasonal accents.</p>
 <p>You could use:</p>
@@ -228,7 +338,7 @@ ${photo("fallTray")}
   <li>Faux evergreen branches</li>
 </ul>
 <p>The key involves keeping the Christmas pieces small. Your tiered tray should feel festive rather than like Santa's storage unit.</p>
-${photo("christmasTray")}
+${photo("christmasTray", "christmasTray")}
 
 <h2>How to Style a Tiered Tray With Greenery</h2>
 <p>Greenery remains one of my favorite additions because it fills awkward gaps without making the display feel heavy.</p>
@@ -239,7 +349,7 @@ ${photo("christmasTray")}
 <p>A small stem can soften the edge of a tray. A trailing piece can hang slightly over the side. A compact plant can fill an empty corner.</p>
 <p>Avoid putting greenery everywhere.</p>
 <p>If every level contains a plant, you lose the contrast that makes greenery interesting in the first place.</p>
-${photo("greenery")}
+${photo("greenery", "greenery")}
 
 <h2>How to Style a Tiered Tray With Signs and Quotes</h2>
 <p>Small signs can add personality, especially in farmhouse or cottage style spaces.</p>
@@ -249,7 +359,7 @@ ${photo("greenery")}
 <p>For a coffee station, something like &ldquo;But First Coffee&rdquo; makes sense. For a kitchen, a simple food or family phrase can work. For seasonal styling, use one small seasonal message.</p>
 <p>The smaller your tray, the smaller your signs should become.</p>
 <p>That sounds obvious, but oversized signs cause one of the most common tiered tray styling mistakes.</p>
-${photo("signsQuotes")}
+${photo("signsQuotes", "signsQuotes")}
 
 <h2>How to Style a Tiered Tray With the 3 2 1 Formula</h2>
 <p>If you ever stare at an empty tray and think, &ldquo;Where do I even start?&rdquo; try a simple 3 2 1 approach.</p>
@@ -263,7 +373,7 @@ ${photo("signsQuotes")}
 <p>Do not make every level look identical.</p>
 <p>For example, the bottom could hold a small bowl and greenery. The middle could feature a mug and a sign. The top could hold a vase with a short branch.</p>
 <p>Different arrangements create a more collected look.</p>
-${photo("formula321")}
+${photo("formula321", "formula321")}
 
 <h2>How to Style a Tiered Tray in a Small Space</h2>
 <p>Small spaces benefit from tiered trays because they use vertical space efficiently.</p>
@@ -280,7 +390,7 @@ ${photo("formula321")}
 <p>Just remember one important rule: do not sacrifice working space for decoration.</p>
 <p>If you constantly move the tray every time you cook, you probably need to reduce the number of objects or relocate the tray.</p>
 <p>Good decor should make your space feel better, not make breakfast harder.</p>
-${photo("smallSpace")}
+${photo("smallSpace", "smallSpace")}
 
 <h2>Common Tiered Tray Styling Mistakes</h2>
 <p>Even experienced decorators can overdo a tiered tray.</p>
@@ -302,7 +412,7 @@ ${photo("smallSpace")}
 <h3>Decorating without considering function</h3>
 <p>This mistake happens often in kitchens.</p>
 <p>If you use the tray for coffee supplies, keep those supplies accessible. If you use it purely for decoration, place it somewhere that does not interfere with daily tasks.</p>
-${photo("commonMistakes")}
+${photo("commonMistakes", "commonMistakes")}
 
 <h2>How to Style a Tiered Tray Like a Designer</h2>
 <p>You do not need expensive accessories to create a polished display.</p>
@@ -313,7 +423,7 @@ ${photo("commonMistakes")}
 <p>I also recommend taking a quick photo with your phone. Your camera often exposes awkward gaps, crowded corners, and competing colors that your eyes ignore.</p>
 <blockquote><p>&ldquo;The details are not the details. They make the design.&rdquo;</p><cite>&mdash; Charles Eames</cite></blockquote>
 <p>That principle works perfectly here. The little details matter, but only when they support the larger composition.</p>
-${photo("likeADesigner")}
+${photo("likeADesigner", "likeADesigner")}
 
 <h2>Easy Tiered Tray Styling Formula to Try Today</h2>
 <p>If you want a simple starting point, try this combination:</p>
@@ -330,7 +440,7 @@ ${photo("likeADesigner")}
 <p>Finally, remove one object.</p>
 <p>Seriously.</p>
 <p>I often find that the tray looks better after I take one thing away. That final edit creates the breathing room that makes the arrangement feel intentional.</p>
-${photo("easyFormula")}
+${photo("easyFormula", "easyFormula")}
 
 <h2>Final Thoughts on How to Style a Tiered Tray</h2>
 <p>Learning how to style a tiered tray does not require a huge collection of decorations or a perfect eye for design. Start with a simple color palette, create different heights, mix textures, and give each level a purpose.</p>

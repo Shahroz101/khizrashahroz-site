@@ -55,6 +55,7 @@ const gamingRoomArticle = require("./article-gaming-room-setup-ideas.js");
 const bathroomAccentWallArticle = require("./article-bathroom-accent-wall-ideas.js");
 const greenLivingRoomArticle = require("./article-green-living-room-ideas.js");
 const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
+const cottagecoreBedroomArticle = require("./article-cottagecore-bedroom-decor-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -2946,6 +2947,17 @@ const longFormPosts = [
     alt: "A beautiful fall wreath instantly making a home feel cozy",
     image: "/images/fall-wreath-style-guide/hero.jpg",
     bodyHtml: fallWreathStyleGuideArticle.body,
+  },
+  {
+    slug: "cottagecore-bedroom-decor-ideas",
+    title: "30 Cottagecore Bedroom Ideas With Lace, Florals and Vintage Charm",
+    category: "Bedroom",
+    readingTime: "14 min read",
+    date: "May 4, 2027",
+    excerpt: "Lace curtains, iron beds, patchwork quilts, dried flowers and a window seat — 30 cottagecore bedroom ideas that feel collected, not costumey.",
+    alt: "Four-poster bed draped in floral fabric with striped curtains in a cottagecore bedroom",
+    image: "/images/cottagecore-bedroom-decor-ideas/bedroom-07.jpg",
+    bodyHtml: cottagecoreBedroomArticle.body,
   },
 ];
 

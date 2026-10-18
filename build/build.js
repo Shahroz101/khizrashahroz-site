@@ -231,7 +231,7 @@ const bohoLivingRoomGuideArticle = require("./article-boho-living-room-decor-gui
 const farmhouseKitchenSinkGuideArticle = require("./article-farmhouse-kitchen-sink-guide.js");
 const fallGiftBasketArticle = require("./article-fall-gift-basket-ideas.js");
 const livingRoomPartitionArticle = require("./article-living-room-partition-designs.js");
-const diningRoomMirrorArticle = require("./article-dining-room-mirror-ideas.js");
+const twentySofaTrendsArticle = require("./article-20-sofa-trends.js");
 const sofaTrendsArticle = require("./article-sofa-trends-worth-knowing.js");
 const bathroomPaintColorsArticle = require("./article-bathroom-paint-colors-fresh-look.js");
 const lampTypesArticle = require("./article-lamp-types-to-brighten-your-home.js");
@@ -2794,15 +2794,16 @@ const longFormPosts = [
     bodyHtml: livingRoomPartitionArticle.body,
   },
   {
+    // Rewritten from the old dining-room mirror article; the URL (slug) is kept on purpose.
     slug: "dining-room-mirror-ideas",
-    title: "10 Dining Room Mirror Styles Worth Considering",
-    category: "Dining Room",
-    readingTime: "10 min read",
+    title: "20 Sofa Trends",
+    category: "Living Room",
+    readingTime: "13 min read",
     date: "April 20, 2027",
-    excerpt: "From an oversized arch to Art Deco glamour — 10 mirror styles that make a dining room feel brighter and more finished.",
-    alt: "Elegant mirror elevating a dining room's entire look",
-    image: "/images/dining-room-mirror-ideas/hero.png",
-    bodyHtml: diningRoomMirrorArticle.body,
+    excerpt: "From curved bouclé to deep modular sectionals — 20 sofa trends shaping how living rooms look and feel right now.",
+    alt: "Sage green sofa with sculpted arms and a wood-trimmed base in a bright modern living room",
+    image: "/images/20-sofa-trends/hero.jpg",
+    bodyHtml: twentySofaTrendsArticle.body,
   },
   {
     slug: "sofa-trends-worth-knowing",

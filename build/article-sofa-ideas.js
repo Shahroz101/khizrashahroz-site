@@ -16,7 +16,7 @@ function amazonLink(asin) {
 }
 
 const PIN = {
-  hero: { src: "hero", w: 1500, h: 1500, alt: "Modern gray corduroy sectional sofa with reversible chaise in a living room", asin: "B0HJYS5MWP", label: "Modern Upholstered Sectional Sofa" },
+  hero: { src: "hero", w: 1254, h: 1254, alt: "Gray corduroy sectional sofa with a reversible storage chaise and a pull-out bed in a bright living room", asin: "B0H673CH1K", label: "Walsunny 77-Inch Sectional Sleeper Sofa" },
   whatMakesGood: { src: "what-makes-good-sofa", w: 1500, h: 1500, alt: "Beige modular sectional sofa piece shown as a single armless seat module", asin: "B0GXVMS72J", label: "Novilla Modular Sectional Sofa" },
   sizeProportion: { src: "size-and-proportion", w: 1500, h: 1500, alt: "Two people sitting on a compact gray corduroy sofa bed, showing its scale in a room", asin: "B0H8PN5J94", label: "Compact 70-Inch Convertible Sofa" },
   chooseStyle: { src: "choosing-sofa-style", w: 1500, h: 1500, alt: "Black modular sectional sofa pieces shown separated to demonstrate configuration options", asin: "B0GZ213CJD", label: "Modular Sectional Sofa" },
@@ -24,7 +24,7 @@ const PIN = {
   deepSofa: { src: "deep-sofa", w: 1500, h: 1495, alt: "Black modular sectional sofa with a deep seat and L-shape chaise", asin: "B0GX1DPN65", label: "Boneless Cloud Modular Sectional Sofa" },
   curvedSofa: { src: "curved-sofa", w: 1500, h: 1500, alt: "Taupe minimalist sofa with a curved back and rounded wood feet", asin: "B0F2ND1JMH", label: "Modway Holland Curved Back Sofa" },
   creamSofa: { src: "classic-cream-sofa", w: 1500, h: 385, alt: "Large cream linen L-shaped sectional sofa with channel-tufted cushions", asin: "B0BNLPXXJJ", label: "Cream Linen Corner Sectional Sofa" },
-  sectionalSofa: { src: "sectional-sofa", w: 1500, h: 1500, alt: "Brown linen L-shaped sectional sofa with a storage ottoman", asin: "B0HJYRZ2S8", label: "L-Shaped Sectional Sofa With Storage Ottoman" },
+  sectionalSofa: { src: "sectional-sofa", w: 1290, h: 1290, alt: "Beige corduroy L-shaped sectional sofa with a deep chaise in front of a fireplace", asin: "B0DDHSNX1L", label: "HOOOWOOO L-Shaped Sectional Couch" },
   modularSofa: { src: "modular-sofa", w: 1500, h: 1500, alt: "Dark gray modular sofa shown with its sections separated for reconfiguring", asin: "B0HG9KVLV9", label: "Modular Sectional Sofa" },
   brownSofa: { src: "chocolate-brown-sofa", w: 1500, h: 1500, alt: "Chocolate brown tufted sofa with rolled arms in an elegant living room", asin: "B0GZGP3BG3", label: "Brown Upholstered Sofa" },
   sageSofa: { src: "sage-green-sofa", w: 1500, h: 1500, alt: "Sage green convertible sofa styled in a bright living room", asin: "B0H45LZ3XR", label: "Convertible Sofa, Green" },
@@ -39,9 +39,9 @@ const PIN = {
   accentChairs: { src: "accent-chairs", w: 1500, h: 1500, alt: "Two matching tan upholstered accent chairs beside a sofa", asin: "B0D7PGTDBT", label: "Accent Chairs, Set of 2" },
   readingCorner: { src: "reading-corner-chair", w: 1500, h: 1439, alt: "Gray lazy chair with a matching ottoman for a cozy reading corner", asin: "B0BG8B89BP", label: "Lazy Chair With Ottoman" },
   sculpturalSofa: { src: "sculptural-sofa", w: 1499, h: 1500, alt: "Olive green sculptural curved sofa with an architectural silhouette", asin: "B0HB3BQJFZ", label: "V-Shaped Curved Sectional Sofa" },
-  makeWork: { src: "how-to-make-ideas-work", w: 1500, h: 1459, alt: "Black sectional sofa with pillows arranged in a well-proportioned living room", asin: "B0HJZ8Q77C", label: "Modular Sectional Sofa With Pull-Out Bed" },
+  makeWork: { src: "how-to-make-ideas-work", w: 1500, h: 1381, alt: "Black corduroy sectional sofa with a deep chaise and a round coffee table in a living room with an arched alcove", asin: "B0GMWKDNBC", label: "GRUSIGN Cloud Sectional Boneless Couch" },
   whatColor: { src: "sofa-color", w: 1254, h: 1254, alt: "Deep navy blue sofa styled as a bold living room color choice", asin: "B0D9BG81G9", label: "Fireside Sofa, Prussia Blue" },
-  howIChoose: { src: "how-i-would-choose", w: 1500, h: 1442, alt: "Clean black L-shaped sectional sofa in a minimalist living room", asin: "B0HJZG265X", label: "L-Shape Modular Sectional Sofa" },
+  howIChoose: { src: "how-i-would-choose", w: 1500, h: 1500, alt: "Black modular cloud sectional with a movable ottoman in a minimal living room", asin: "B0HCZKHFN4", label: "ROWHY Modular Sectional Cloud Couch With Movable Ottoman" },
   finalThoughts: { src: "final-thoughts", w: 1500, h: 1500, alt: "Woman relaxing on a cozy corduroy loveseat with a laptop", asin: "B0H2LHTHKW", label: "Boneless Couch, Deep Loveseat" },
 };
 

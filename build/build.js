@@ -56,6 +56,7 @@ const bathroomAccentWallArticle = require("./article-bathroom-accent-wall-ideas.
 const greenLivingRoomArticle = require("./article-green-living-room-ideas.js");
 const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
 const cottagecoreBedroomArticle = require("./article-cottagecore-bedroom-decor-ideas.js");
+const winterTrayArticle = require("./article-winter-tray-decor-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -2958,6 +2959,17 @@ const longFormPosts = [
     alt: "Four-poster bed draped in floral fabric with striped curtains in a cottagecore bedroom",
     image: "/images/cottagecore-bedroom-decor-ideas/bedroom-07.jpg",
     bodyHtml: cottagecoreBedroomArticle.body,
+  },
+  {
+    slug: "winter-tray-decor-ideas",
+    title: "37 Winter Tray Ideas to Style a Cozy, Candlelit Home",
+    category: "Seasonal",
+    readingTime: "16 min read",
+    date: "May 5, 2027",
+    excerpt: "Mini villages, cocoa bars, pinecones, brass candlesticks and frosted branches — 37 winter tray ideas for a coffee table, island or console.",
+    alt: "Round wooden tray with candlesticks, bottle brush trees and a small village house for winter",
+    image: "/images/winter-tray-decor-ideas/hero.jpg",
+    bodyHtml: winterTrayArticle.body,
   },
 ];
 

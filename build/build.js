@@ -57,6 +57,7 @@ const greenLivingRoomArticle = require("./article-green-living-room-ideas.js");
 const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
 const cottagecoreBedroomArticle = require("./article-cottagecore-bedroom-decor-ideas.js");
 const winterTrayArticle = require("./article-winter-tray-decor-ideas.js");
+const christmasWreathArticle = require("./article-christmas-wreath-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -2970,6 +2971,17 @@ const longFormPosts = [
     alt: "Round wooden tray with candlesticks, bottle brush trees and a small village house for winter",
     image: "/images/winter-tray-decor-ideas/hero.jpg",
     bodyHtml: winterTrayArticle.body,
+  },
+  {
+    slug: "christmas-wreath-ideas",
+    title: "25 Christmas Wreath Ideas to Dress Up Every Front Door",
+    category: "Holidays",
+    readingTime: "13 min read",
+    date: "October 24, 2026",
+    excerpt: "Plaid bows, frosted pinecones, gold magnolias, gingerbread and more — 25 Christmas wreath ideas for every door color and porch style.",
+    alt: "Full holly and berry Christmas wreath with a red velvet bow on a white door",
+    image: "/images/christmas-wreath-ideas/hero.jpg",
+    bodyHtml: christmasWreathArticle.body,
   },
 ];
 

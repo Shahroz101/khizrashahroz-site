@@ -58,6 +58,7 @@ const cottagecoreStyleArticle = require("./article-cottagecore-style-ideas.js");
 const cottagecoreBedroomArticle = require("./article-cottagecore-bedroom-decor-ideas.js");
 const winterTrayArticle = require("./article-winter-tray-decor-ideas.js");
 const christmasWreathArticle = require("./article-christmas-wreath-ideas.js");
+const vintageChristmasArticle = require("./article-festive-vintage-christmas-decor-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -2982,6 +2983,17 @@ const longFormPosts = [
     alt: "Full holly and berry Christmas wreath with a red velvet bow on a white door",
     image: "/images/christmas-wreath-ideas/hero.jpg",
     bodyHtml: christmasWreathArticle.body,
+  },
+  {
+    slug: "festive-vintage-christmas-decor-ideas",
+    title: "33 Vintage Christmas Decor Ideas With Nostalgic Charm",
+    category: "Holidays",
+    readingTime: "16 min read",
+    date: "October 24, 2026",
+    excerpt: "Mercury glass, retro Santas, bottle brush trees, velvet stockings and lit villages — 33 vintage Christmas decor ideas for every room.",
+    alt: "Christmas tree covered in colorful vintage glass ornaments and warm lights",
+    image: "/images/festive-vintage-christmas-decor-ideas/hero.jpg",
+    bodyHtml: vintageChristmasArticle.body,
   },
 ];
 

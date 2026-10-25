@@ -60,6 +60,7 @@ const winterTrayArticle = require("./article-winter-tray-decor-ideas.js");
 const christmasWreathArticle = require("./article-christmas-wreath-ideas.js");
 const vintageChristmasArticle = require("./article-festive-vintage-christmas-decor-ideas.js");
 const christmasBathroomArticle = require("./article-christmas-bathroom-decor-ideas.js");
+const christmasTieredTrayArticle = require("./article-christmas-tiered-tray-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -3006,6 +3007,17 @@ const longFormPosts = [
     alt: "Flocked Christmas wreath with a red plaid bow over a gray bathroom vanity mirror",
     image: "/images/christmas-bathroom-decor-ideas/hero.jpg",
     bodyHtml: christmasBathroomArticle.body,
+  },
+  {
+    slug: "christmas-tiered-tray-ideas",
+    title: "44 Christmas Tiered Tray Ideas for a Festive Kitchen Counter",
+    category: "Holidays",
+    readingTime: "17 min read",
+    date: "October 25, 2026",
+    excerpt: "Cocoa bars, gingerbread bakeries, snowman families, buffalo plaid and lit villages — 44 Christmas tiered tray ideas to copy this season.",
+    alt: "Two-tier rustic wood tray with a red Joy mug, a small white house, a mini tree and a Merry and Bright sign",
+    image: "/images/christmas-tiered-tray-ideas/hero.jpg",
+    bodyHtml: christmasTieredTrayArticle.body,
   },
 ];
 

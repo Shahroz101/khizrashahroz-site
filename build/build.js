@@ -61,6 +61,7 @@ const christmasWreathArticle = require("./article-christmas-wreath-ideas.js");
 const vintageChristmasArticle = require("./article-festive-vintage-christmas-decor-ideas.js");
 const christmasBathroomArticle = require("./article-christmas-bathroom-decor-ideas.js");
 const christmasTieredTrayArticle = require("./article-christmas-tiered-tray-ideas.js");
+const christmasKitchenArticle = require("./article-christmas-kitchen-decor-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -3018,6 +3019,17 @@ const longFormPosts = [
     alt: "Two-tier rustic wood tray with a red Joy mug, a small white house, a mini tree and a Merry and Bright sign",
     image: "/images/christmas-tiered-tray-ideas/hero.jpg",
     bodyHtml: christmasTieredTrayArticle.body,
+  },
+  {
+    slug: "christmas-kitchen-decor-ideas",
+    title: "36 Christmas Kitchen Decor Ideas for the Heart of the Home",
+    category: "Kitchen",
+    readingTime: "15 min read",
+    date: "October 26, 2026",
+    excerpt: "Garland over the cabinets, cocoa corners, gingerbread bakeries and island centerpieces — 36 Christmas kitchen ideas that still let you cook.",
+    alt: "Lit garland with candles and gold ornaments along the top of wood kitchen cabinets",
+    image: "/images/christmas-kitchen-decor-ideas/hero.jpg",
+    bodyHtml: christmasKitchenArticle.body,
   },
 ];
 

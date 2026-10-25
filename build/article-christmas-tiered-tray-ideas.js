@@ -4,6 +4,8 @@
 // (cocoa bars, gingerbread, snowmen and winter, signs and gnomes, villages,
 // buffalo plaid, ornaments and sweets). Photos are credited to their
 // Pinterest pins; the supplied Amazon product pair stays under each photo.
+// Rewritten 2026-10-25 in an advice-led voice (styling rules, the why behind
+// each look, practical tips) after the first draft read like photo captions.
 // Ends on text. Companion to how-to-style-a-tiered-tray (general styling).
 
 const { picture } = require("./picture-helper.js");
@@ -957,12 +959,12 @@ const PRODUCTS = {
 const IDEAS = [
  {
   "n": 1,
-  "title": "Start With a Simple Hot Cocoa Bar",
+  "title": "Start With a Cocoa Bar People Will Actually Use",
   "paras": [
-   "A cocoa bar is the easiest tiered tray to get right.",
-   "This white two-tier holds a Coffee sign, a snowman, a Christmas mug stuffed with candy canes, a chalkboard that says Hot Cocoa Bar, a Merry block, a gingerbread man and a jar of marshmallows.",
-   "Everything on it can actually be used.",
-   "Fill the jar with real marshmallows and let guests help themselves."
+   "If you only style one tray this season, make it this one.",
+   "A cocoa bar earns its counter space because guests use it, and that changes how you build it. Anything that gets touched needs to sit low and in front. Anything decorative can go tall and at the back.",
+   "That is exactly how this one is arranged: a chalkboard sign leaning forward, a jar of marshmallows within easy reach, and the Coffee sign and the snowman standing behind.",
+   "Buy the jar first. Everything else can come out of your cupboards."
   ],
   "key": "tray-22"
  },
@@ -970,472 +972,471 @@ const IDEAS = [
   "n": 2,
   "title": "Keep the Cocoa Bar Mostly White",
   "paras": [
-   "White on white feels calm in a busy kitchen.",
-   "A white two-tier here carries a big jar of marshmallows, a Hot Cocoa Bar sign, a snowman jar, a small Coffee sign and a red-rimmed mug of candy canes, with a flocked tree beside it.",
-   "The red candy stripes are the only strong color.",
-   "Keep the tray near the kettle so it earns its place."
+   "Color is the first thing to get away from you on a busy counter.",
+   "A mostly white tray stays calm next to a coffee maker, a fruit bowl and whatever else lives there. The red in this one is limited to a mug band and a handful of candy canes, so it reads as a choice and not a mess.",
+   "I use an 80/20 rule: 80 percent of the tray in one quiet color, 20 percent in the accent. Move the accent around until it feels balanced, then stop adding."
   ],
   "key": "tray-23"
  },
  {
   "n": 3,
-  "title": "Add a Milk Jar and Cuddle in a Cup Sign",
+  "title": "Stock It With Things You Really Need",
   "paras": [
-   "A few real supplies make the tray feel honest.",
-   "On this weathered two-tier are a lettered Milk jar with wooden spoons, a Cuddle in a Cup sign, an Enjoy mug of candy canes, striped paper straws, a Merry Christmas mug and a red enamel mug.",
-   "Coffee pods tucked in the back are ready to use.",
-   "Red berries on top keep it festive."
+   "The best trays are half decoration, half storage.",
+   "This coffee corner holds spoons, striped straws, candy canes and individual pods, so there is a reason to reach for it every morning. A Milk jar and a Cuddle in a Cup sign tell guests what is on offer without a word of explanation.",
+   "Hide the practical items in pretty containers. Pods go in a mug, straws in a cup, spoons in a jar.",
+   "One caution: keep chocolate and candy away from a sunny window, or you will be cleaning the tray instead of enjoying it."
   ],
   "key": "tray-18"
  },
  {
   "n": 4,
-  "title": "Build a Santa Mug Cocoa Station",
+  "title": "Build Around One Collectible",
   "paras": [
-   "Santa mugs are instant cheer.",
-   "A wooden pedestal tray holds a Santa cookie jar, two Santa mugs, a tall embossed canister, a little red dish labeled Coal and a bundle of candy canes, all tucked into fresh greenery.",
-   "A red and white towel hangs behind.",
-   "Use the canister for cocoa mix so the display doubles as storage."
+   "A matching pair of mugs can do the work of a dozen small decorations.",
+   "The Santa mugs are the stars here, and everything else stays out of their way. A tall canister gives the back some height, a little red dish keeps the joke going, and pine around the base ties it to the wood.",
+   "When you own something with real personality, don't compete with it. Pull two colors from the piece, use those for the rest, and keep everything else quiet.",
+   "Greenery under and around the base hides gaps and makes the tray look rooted."
   ],
   "key": "tray-02"
  },
  {
   "n": 5,
-  "title": "Go Big With Peppermint and Marshmallows",
+  "title": "Go All In on One Candy Color",
   "paras": [
-   "This one is a full sweet shop.",
-   "A galvanized three-tier is loaded with a Marshmallow canister, a Cocoa canister, a Peppermint Mocha mug, jars of sprinkles and candy, marshmallow-topped mugs and candy canes, with peppermint trees behind.",
-   "Red and white carries the whole thing.",
-   "A polka-dot pitcher on the side holds the milk."
+   "Sometimes the answer to a big tray is a bigger commitment.",
+   "Peppermint red and white runs through every tier of this galvanized stand, from the canisters to the swirl-candy trees behind it. Because the palette never changes, the sheer amount of stuff reads as abundance, not clutter.",
+   "A rule of thumb I rely on: the more items you have, the fewer colors you should use.",
+   "Put the heaviest pieces on the bottom tier for stability, and the lightest on top."
   ],
   "key": "tray-31"
  },
  {
   "n": 6,
-  "title": "Hang a Hot Cocoa Sign Above the Tray",
+  "title": "Hang the Sign Instead of Standing It",
   "paras": [
-   "Signs do not have to sit on the tray.",
-   "A red enamel Hot Cocoa sign hangs from the rail above this wooden tiered tray, which holds Santa mugs, a white house, gingerbread cookies, cookie jars and a red mug.",
-   "A gingerbread-print apron hangs beside it.",
-   "Hanging the sign frees up room on the tiers."
+   "Signs eat tray space. Hang them and you win it back.",
+   "A red Hot Cocoa sign on the rail above this tray sets the scene, which leaves the tiers free for mugs, a cookie jar and a little house.",
+   "An S-hook on a rail, a removable hook or even a loop of twine over a cabinet handle will do. You can raise or lower the sign to suit your counter height.",
+   "Wood trays like this forgive scratches, and they look better as they age."
   ],
   "key": "tray-43"
  },
  {
   "n": 7,
-  "title": "Stack Lettered Mugs With Marshmallow Toppers",
+  "title": "Fake the Whipped Cream",
   "paras": [
-   "Mugs can be the decoration.",
-   "A three-tier stand carries a Holly Jolly mug with a whipped-cream topper, a gnome, lollipops, a Cup of Cheer mug, a Cream mug, a Sugar jar and a Merry Christmas mug.",
-   "The faux toppers make it look ready to drink.",
-   "Keep all the mugs in the same red and white family."
+   "Here is a stylist's cheat: nobody wants real whipped cream sitting out for a week.",
+   "Faux whipped cream and marshmallow toppers, like the ones on these red mugs, keep the cups looking full all season and never spoil.",
+   "Pair every topped mug with a plain one so the eye gets a place to rest. A tray with nothing but details starts to feel noisy.",
+   "A gnome and a couple of lollipops on top make it playful without adding bulk."
   ],
   "key": "tray-41"
  },
  {
   "n": 8,
-  "title": "Give It a Vintage Santa Twist",
+  "title": "Break the Red and Green Habit",
   "paras": [
-   "Teal mugs change the whole mood.",
-   "A dark wood three-tier holds a vintage Santa Claus sign and candy canes on top, teal mugs in the middle, and cocoa packets, a Snow Ball tin and a bowl of popcorn below.",
-   "The teal looks fresh against the reds.",
-   "Pine sprigs soften the edges."
+   "If every Christmas display in your house is red and green, try a different second color.",
+   "Teal mugs against warm wood give this tray a vintage diner feel. The red appears only in the cocoa packets and the candy canes, which is just enough to keep it unmistakably Christmas.",
+   "Choose a color your kitchen already has. A teal bowl, a blue enamel mug or a sage dish towel works the same way.",
+   "Then add one small red thing so the season still shows up."
   ],
   "key": "tray-44"
  },
  {
   "n": 9,
-  "title": "Show Off a Red and White Mug Collection",
+  "title": "Show Off Your Mug Collection",
   "paras": [
-   "Pretty mugs deserve a stage.",
-   "A black two-tier beside the coffee maker holds red and white patterned mugs, a cream pitcher, peppermints, candy canes and a little greenery.",
-   "It is a coffee station first and decor second.",
-   "Mix a few patterns as long as the colors match."
+   "Your everyday mugs are decor. They just need a stage.",
+   "Two black tiers beside the coffee maker turn this collection of red and white mugs into the display. The black base makes the pale china pop, and a creamer and a few small plates fill the gaps.",
+   "Mix the patterns, but keep one thing consistent. Here it is the color story. Different shapes and prints are fine as long as the palette holds.",
+   "Turn the handles outward so people can grab a cup without rearranging anything."
   ],
   "key": "tray-20"
  },
  {
   "n": 10,
-  "title": "Bake Up a Gingerbread Tray",
+  "title": "Make Gingerbread Look Collected, Not Crowded",
   "paras": [
-   "Gingerbread is the sweetest theme of all.",
-   "On this wooden two-tier sit a lit gingerbread house, gingerbread cookies, a striped ribbon, a bowl of peppermint candy, a mug with a gingerbread man and a candy cane, with greenery and berries.",
-   "A rolling pin on the counter finishes the baking story.",
-   "Cookies with royal icing hold up well all season."
+   "Gingerbread is the easiest theme to overdo.",
+   "Think of the house as the star and everything else as supporting cast. This tray has a gingerbread house on top, two gingerbread men guarding it and a single striped ribbon wrapped around the lower tier.",
+   "That ribbon is worth copying. One stripe repeated in two places ties the tiers together for the price of a spool.",
+   "Faux cookies are a safer bet than real ones, which go stale in a week and attract the family dog."
   ],
   "key": "tray-05"
  },
  {
   "n": 11,
-  "title": "Put a Gingerbread Village on the Island",
+  "title": "Put It Where People Gather",
   "paras": [
-   "A kitchen island is the natural home for gingerbread.",
-   "This dark wood three-tier holds a gingerbread house, a row of gingerbread cookies, mini rolling pins, bottle brush trees and peppermints.",
-   "It sits right where everyone gathers.",
-   "Keep the top tier light so it does not look top-heavy."
+   "Where you place the tray matters as much as how you style it.",
+   "This gingerbread tray sits on the corner of a granite island, right where everyone ends up with a coffee. The same tray in a quiet corner would never get the same audience.",
+   "Stack it so the top tier is the lightest. Here the top holds peppermints and bottle brush trees, the middle has cookies and rolling pins, and the house sits low where it is steadiest.",
+   "Before you commit, check that you can still reach the sink and stove without moving it."
   ],
   "key": "tray-09"
  },
  {
   "n": 12,
-  "title": "Add a Sweet Bakes Mug and Star Cookies",
+  "title": "Let Bright Color Do the Talking",
   "paras": [
-   "Green candy canes are a fun surprise.",
-   "A white tray holds a Sweet Bakes mug, a gingerbread house with gumdrops, a gingerbread chef, star cookies, a red rolling pin and a bead garland.",
-   "The colors read like a candy shop.",
-   "Little gingerbread chefs are easy to find online."
+   "A white tray is a blank page for saturated color.",
+   "Red and green candy canes in a Sweet Bakes mug, a gingerbread house and golden star cookies all stand out against this chalky white stand. Nothing else is competing.",
+   "That is the advantage of whitewashed wood: it hides nothing and flatters everything, so only bring in colors you love.",
+   "A bead garland around the base adds a soft, round texture to balance all those angles."
   ],
   "key": "tray-10"
  },
  {
   "n": 13,
-  "title": "Say Tis the Season in Gingerbread",
+  "title": "Add a Joke to Lighten the Look",
   "paras": [
-   "Signs with a joke keep it light.",
-   "A beaded cream tray holds gingerbread houses, a Tis the Season mug with a whipped-cream topper, a Christmas Calories Don't Count sign, a Merry Christmas sign and snowflake cookies.",
-   "The gingerbread tones warm up a white kitchen.",
-   "Prop the signs so they lean a little."
+   "A little humor keeps a tray from feeling precious.",
+   "The Christmas Calories Don't Count sign is the line guests will repeat. It works because the rest of the tray is genuinely pretty: a beaded wood stand, gingerbread houses and a mug with a whipped-cream topper.",
+   "Limit yourself to one joke per tray. After that it becomes a gift shop.",
+   "Lean the sign at a slight tilt rather than setting it square, which looks more relaxed."
   ],
   "key": "tray-11"
  },
  {
   "n": 14,
-  "title": "Open a North Pole Bakery",
+  "title": "Tell a Little Story",
   "paras": [
-   "Pretend the elves run the kitchen.",
-   "A whitewashed tiered tray carries an Official North Pole Bakery sign, a Bake sign, gingerbread figures, a red mug of cocoa with candy cane straws, a Gingerbread block and a tiny rolling pin.",
-   "A white tree on top adds height.",
-   "Striped straws tie the tiers together."
+   "The best themes have a story you can say out loud.",
+   "This one is a bakery at the North Pole. There is a sign saying so, gingerbread figures, cupcakes with striped straws and a tiny rolling pin, and every piece belongs in a baker's world.",
+   "Ask yourself whether the objects would really share a room. If they would, you have a story. If not, cut what doesn't fit.",
+   "And stay with odd numbers. Three gingerbread figures look right. Two or four look arranged."
   ],
   "key": "tray-12"
  },
  {
   "n": 15,
-  "title": "Mix Gingerbread Cookies With a Sugar and Spice Mug",
+  "title": "Anchor the Bottom With Something Heavy",
   "paras": [
-   "Cookies can be ornaments too.",
-   "A galvanized two-tier here holds a gingerbread tree and snowflake cookie, a Baking Christmas Memories sign and a Sugar & Spice mug, with greenery on the base.",
-   "The brown and white palette is simple.",
-   "Faux cookies last year after year."
+   "Every tray needs one visual weight.",
+   "On this dark wood stand it is the big Sugar and Spice mug and a snowflake cookie. Lighter, patterned pieces, like the tree cookie and a Baking Christmas Memories board, can float above them.",
+   "Put your largest and darkest pieces low, and let the airy things rise.",
+   "A sprig of fresh cedar tucked at the front adds scent and free green. Swap it every week or so before it dries out."
   ],
   "key": "tray-13"
  },
  {
   "n": 16,
-  "title": "Set a Galvanized Tray on a Wood Slice",
+  "title": "Pair Cool Metal With Warm Wood",
   "paras": [
-   "Metal and wood make a rustic pair.",
-   "A three-tier galvanized stand sits on a wood slice with a gingerbread house on top, cookies, peppermint candies, a second house and bottle brush trees below.",
-   "The slice adds warmth under the metal.",
-   "Tuck in a few red ornaments for color."
+   "Contrast in material is the quickest upgrade for any tray.",
+   "A galvanized three-tier sitting on a thick slice of wood gets two textures before a single decoration goes on. A gingerbread house tops the stack, cookies fill the middle and peppermints and bottle brush trees tuck around a second house below.",
+   "If you don't own a wood slice, a cutting board or a woven mat under the tray does the same job.",
+   "Raising the whole stand off the counter makes it read as a centerpiece."
   ],
   "key": "tray-14"
  },
  {
   "n": 17,
-  "title": "Gather a Gingerbread Family",
+  "title": "Group Figures in Threes",
   "paras": [
-   "A set of figures tells a story.",
-   "A wooden tiered tray is filled with a gingerbread man in a red hat, gingerbread houses, more gingerbread figures, small trees and a plaid bow.",
-   "Red and white berries fill the gaps.",
-   "Put the tallest figure on top."
+   "Designers return to the number three for a reason.",
+   "Count the gingerbread figures on this tray. A chef in a red hat leads on top, two more guard the houses on the bottom, and everything repeats in small groups. The eye moves naturally from one cluster to the next.",
+   "Place your biggest figure off-center. Dead center looks stiff.",
+   "A red check cloth under the base ties the whole thing back to the kitchen."
   ],
   "key": "tray-15"
  },
  {
   "n": 18,
-  "title": "Spell Out Tidings of Comfort and Joy",
+  "title": "Choose Words You Actually Mean",
   "paras": [
-   "Three tiers give you room for a theme.",
-   "This wood tray holds a Tidings of Comfort and Joy sign, a gingerbread family sign, a gingerbread house, a red cocoa mug, a falala rolling pin, gingerbread figures and candy-striped trees.",
-   "It reads like a little bakery window.",
-   "Use one color of ribbon throughout."
+   "Pick signs that say something true for your home.",
+   "Tidings of Comfort and Joy sits at the top of this three-tier, and We Go Together Like Cookies and Christmas stands on a little wooden house in the middle. Both are short, warm and easy to read from across the room.",
+   "Two signs per tray is the sweet spot. Three starts to look like a shop display.",
+   "A rolling pin stamped with falala adds a bit of lettering without feeling wordy, because it is a prop first and a sign second."
   ],
   "key": "tray-16"
  },
  {
   "n": 19,
-  "title": "Build a Snowman Family on a White Tray",
+  "title": "Try Blue for a Fresh Take on Snowmen",
   "paras": [
-   "Snowmen suit the whole winter, not just Christmas.",
-   "A white beaded two-tier on a burlap mat holds a blue Snow mug, snowman salt and pepper shakers, a snowman mug, a Let It Snow mug and a bowl of snowflake candies.",
-   "The blue is a nice break from red.",
-   "A tiny tree on top adds green."
+   "Blue is a calm break from the usual red.",
+   "A navy snowflake mug anchors this white beaded tray, and snowman salt and pepper shakers keep the mood light. A bowl of icy blue candies picks up the color again.",
+   "Snowmen can stay out until the end of February, since they celebrate winter and not just Christmas. That's a good reason to spend on pieces you will use for months.",
+   "Put a burlap mat under the stand to protect the counter and warm up all that white."
   ],
   "key": "tray-25"
  },
  {
   "n": 20,
-  "title": "Stand Up Wooden Snowmen",
+  "title": "Let Painted Wood Do the Heavy Lifting",
   "paras": [
-   "Painted cutouts are cheap and charming.",
-   "Two wood snowmen in plaid scarves and top hats stand on this pedestal tray, with white pitchers, a gingerbread cookie, pinecones and a dusting of snow.",
-   "A plaid runner underneath picks up the scarves.",
-   "Make your own from scrap wood if you are handy."
+   "Wood cutouts are inexpensive, light and nearly unbreakable, which makes them ideal in a house with kids or pets.",
+   "Two snowmen in plaid scarves stand upright on this pedestal tray. Because they are flat, they take almost no space, and there is room left for white pitchers and a gingerbread cookie.",
+   "Prop cutouts against the center post so they don't topple.",
+   "A plaid runner under the tray repeats the scarves. That small echo is what makes it look styled."
   ],
   "key": "tray-26"
  },
  {
   "n": 21,
-  "title": "Add a Snowplace Like Home Sign",
+  "title": "Treat Your White Dishes Like a Collection",
   "paras": [
-   "A pun always lands.",
-   "A wood tray carries a snowman cup with a red lid, a Snow Day canister, small snowman figures and a There's Snowplace Like Home sign, with pine behind.",
-   "White ceramics keep it crisp.",
-   "Group the snowmen so they look like they are chatting."
+   "White ceramics are the secret weapon of winter decor.",
+   "A snowman cookie jar, a Snow Day canister and a few little figures read as one family here because they share a color, even though the shapes are all different.",
+   "Keep the sign small and let the ceramics lead. A There's Snowplace Like Home block does the job.",
+   "A mini tree adds a pop of green so the whole thing doesn't wash out."
   ],
   "key": "tray-27"
  },
  {
   "n": 22,
-  "title": "Sell Snow Balls for 25 Cents",
+  "title": "Make Your Own Sign",
   "paras": [
-   "Handmade signs feel personal.",
-   "A whitewashed tray holds a Snow Balls 25 cents sign, a Baby It's Cold Outside sign, a snowman block, a snowman figure, a bell and a bead garland with a tassel.",
-   "The palette is white, black and natural wood.",
-   "Write the sign on a scrap of plywood."
+   "A handmade sign is worth more than anything off a shelf.",
+   "The Snow Balls 25 cents tag here is the star, and it is the easiest piece in the whole tray to copy. A scrap of wood, a marker and a loop of twine will take you ten minutes.",
+   "Bead garlands are the cheapest way to soften a tray. Wrap one loosely around the base and let the tassel hang.",
+   "Keep the palette to white, natural wood and a little black, and nearly any sign will fit."
   ],
   "key": "tray-24"
  },
  {
   "n": 23,
-  "title": "Go Black and White With Snow and Sweater Weather",
+  "title": "Light It From Within",
   "paras": [
-   "Black and white can still feel cozy.",
-   "A whitewashed two-tier shows a tall SNOW sign, a snowflake sign, a Sweater Weather sign, Yum mugs with marshmallows, a Let It Snow tag and tiny lights in the greenery.",
-   "Letter tiles on the counter spell a word.",
-   "Warm lights keep it from feeling cold."
+   "Tiny lights turn a nice tray into a memorable one.",
+   "A string of warm lights hides in the greenery of this whitewashed stand, so the SNOW letters and the Sweater Weather sign glow against the brick wall.",
+   "Choose copper-wire lights with a built-in timer, so they come on at dusk without you remembering. Warm white only. Cool white looks like an office.",
+   "The tall letters give you height. The lights give you mood."
   ],
   "key": "tray-19"
  },
  {
   "n": 24,
-  "title": "Say Hello Winter With a Gnome",
+  "title": "Add a Gnome for Height",
   "paras": [
-   "A tall gnome makes a great topper.",
-   "On this wood-slice tiered tray stand a gnome, a Hello Winter sign, wooden snowflakes, pinecones, a tree and a stack of Warm Winter Wishes books on a little sled.",
-   "The browns and whites feel like a cabin.",
-   "Pinecones fill the corners for free."
+   "The easiest way to add height is a tall, soft shape.",
+   "The long felt gnome on this wood-slice tray stretches the design upward, while pinecones keep the base heavy.",
+   "Soft textures like felt and faux fur make a good counterpoint to wood and plastic. Choose a gnome with a hidden face if you can, which looks calmer than a smiling one.",
+   "Stack a few small books at the front and the tray gets a layer for free."
   ],
   "key": "tray-28"
  },
  {
   "n": 25,
-  "title": "Top It With a Snowy Dark Green House",
+  "title": "Crown It With a Statement Piece",
   "paras": [
-   "A single house can anchor a tray.",
-   "A whitewashed three-tier here has a dark green house with snow on top, a Snow sign, a Winter Vibes sign, a Farm Fresh Christmas Trees sign, wood beads, snowflakes and cotton snow.",
-   "The dark green balances all the white.",
-   "Use cotton batting for the snow."
+   "Every tiered tray needs a finial.",
+   "A dark green house dusted with snow sits on top of this whitewashed stand like the cherry on a sundae. Signs, wooden beads and cotton snow below support it without competing.",
+   "A dark piece on top draws the eye first, so use your best item there.",
+   "Fluff cotton batting around the base for snow, but keep it well away from any candle."
   ],
   "key": "tray-08"
  },
  {
   "n": 26,
-  "title": "Hang a Carol Tag With a Gnome",
+  "title": "Say What Your Palette Is in Three Words",
   "paras": [
-   "Carol lyrics make a sweet theme.",
-   "This white two-tier holds a red tag reading Hark the Herald Angels Sing, a gnome in a knit hat, a Joy to the World sign, a Deck the Halls block and a red and cream bead garland.",
-   "A tiny tree adds green.",
-   "Drape the garland over the edge for movement."
+   "Count the colors on this tray: red, white and a touch of green. That is it.",
+   "A Hark the Herald tag, a Joy to the World sign and a red and cream bead garland all share the same two colors, so the carol theme feels like one idea and not several.",
+   "Beads are an easy way to repeat your palette. Wind them around the stand and let the tassel fall over the edge.",
+   "If you can't name your palette in three words, there are probably too many colors."
   ],
   "key": "tray-01"
  },
  {
   "n": 27,
-  "title": "Pair a Red Joy Mug With a Mini House",
+  "title": "Keep Your Piece Count Low",
   "paras": [
-   "Keep the pieces few and the colors tight.",
-   "A rustic two-tier holds a red JOY mug, a white house, a Merry and Bright sign, a flocked tree and sprigs of berries.",
-   "The red and white against dark wood looks classic.",
-   "Three or four pieces per tier is plenty."
+   "You can count every object on this tray with your hands, and that is the secret.",
+   "A red mug, a white house, a framed sign, a bottle brush tree and a few berry sprigs each have room to breathe, and the dark wood frames them.",
+   "Aim for four to six items per tier. If you can't see the tray between objects, take one out.",
+   "Greenery counts as an object, so don't let it bury the sign."
   ],
   "key": "tray-03"
  },
  {
   "n": 28,
-  "title": "Add a Red Truck Mug and a Gnome",
+  "title": "Put It by a Window",
   "paras": [
-   "A red truck is farmhouse Christmas in one object.",
-   "A white tray by a snowy window carries a red truck mug, a Farm Fresh Christmas Trees sign, a gnome in a red hat, a Life Happens Coffee Helps sign, a Sugar jar and a tiny red truck.",
-   "The view outside does half the work.",
-   "Place the tray where it gets daylight."
+   "Natural light is a tray's best friend.",
+   "This one sits at a snowy window, so the red truck mug, the framed Farm Fresh sign and the tall red gnome hat look vivid against the soft white outside.",
+   "Avoid strong afternoon sun on painted or glued pieces. It fades them over a season.",
+   "A leaning frame behind the tray adds depth without taking tier space."
   ],
   "key": "tray-21"
  },
  {
   "n": 29,
-  "title": "Set a Believe Sign on Top",
+  "title": "Lead With One Word",
   "paras": [
-   "One word can lead the whole tray.",
-   "A beaded tray holds a red Believe sign on top, with a Merry mug, a gnome, bottle brush trees, a Winter Wonderland sign, a Merry Christmas sign and a red mug on the tiers below.",
-   "Pine sprigs soften the edges.",
-   "Keep the lettering styles similar."
+   "A single word on top can anchor a whole tray.",
+   "A red Believe sits at the top of this beaded stand, a Merry mug and a gnome in the middle, and a Merry Christmas sign at the base. Every tier has one piece of text, so nothing fights for attention.",
+   "Mix lettering styles. Block, script and handwriting look better together than three of the same.",
+   "Pine sprigs at the edges soften all that print."
   ],
   "key": "tray-40"
  },
  {
   "n": 30,
-  "title": "Spell Merry With Wooden Trees",
+  "title": "Let Green Carry the Season",
   "paras": [
-   "Letters on tree shapes are a clever touch.",
-   "A white two-tier holds wood tree letters that spell MERRY, a green Believe mug, Merry mugs, a snowman, small trees, jingle bells and greenery.",
-   "Beaded tassels hang off the sides.",
-   "Green and white looks fresh in a kitchen."
+   "Not every Christmas tray needs red.",
+   "Green mugs, green wooden trees and green felt do the work here, with white trees and jingle bells adding some sparkle. The Believe mug looks right at home against the brick backsplash.",
+   "Cool greens like sage and pine are easy to live with all winter long.",
+   "Pick wood letters over plastic. Wood ages gracefully, and plastic only looks cheaper over time."
   ],
   "key": "tray-29"
  },
  {
   "n": 31,
-  "title": "Mix Santa Mugs With a Fresh Cut Trees Sign",
+  "title": "Mix Handmade, Vintage and New",
   "paras": [
-   "Felt trees add texture.",
-   "A wood pedestal holds a Fresh Cut Trees sign, Santa mugs, a white deer, a candle, felt trees and a snowflake, with a bell at the base.",
-   "A lace doily sits underneath.",
-   "Candles make it glow in the evening."
+   "A tray looks collected when its pieces come from different places.",
+   "Felt trees, a jar candle, ceramic deer, Santa mugs, a little lantern and a lace doily sit together here and still agree, because the colors are limited to white, green and warm wood.",
+   "The doily is the unsung hero. Lace under a tray makes everything look inherited.",
+   "A cloth napkin works just as well if you don't own one."
   ],
   "key": "tray-30"
  },
  {
   "n": 32,
-  "title": "Park a Red Truck With a Reindeer Mug",
+  "title": "Let a Toy Be the Star",
   "paras": [
-   "A toy truck says Christmas instantly.",
-   "A two-tier wood tray on the island holds a red truck with a tree, a Ho Ho sign, a reindeer mug, a Hot Cocoa Served Here sign, a red mug and a bead garland.",
-   "Pinecones and pine fill the spaces.",
-   "Set a small tree behind for height."
+   "A little red truck is the shortcut to farmhouse Christmas.",
+   "This one carries a mini pine on its bed, which adds a small story and keeps the eye moving up the stand.",
+   "Mind the scale when you use toys. A truck that is too big dwarfs the mugs, and one that is too small disappears.",
+   "Lay everything on the counter first, stand back, and edit before it goes on the tray."
   ],
   "key": "tray-06"
  },
  {
   "n": 33,
-  "title": "Add Black Reindeer Silhouettes",
+  "title": "Use Silhouettes for Clean Lines",
   "paras": [
-   "Silhouettes read well from across the room.",
-   "A wood three-tier holds white houses, a wooden star, a plaid mug, black reindeer cutouts, a monogram mug and a red ornament, with greenery between.",
-   "The black and white feels modern.",
-   "Pick a mug with your initial."
+   "Silhouettes survive a busy room.",
+   "Black reindeer cutouts and white houses give this wood tray a crisp, graphic look. A plaid mug and a red ornament add just enough warmth.",
+   "Flat shapes read from across an open-plan space, which is where a tray like this tends to live.",
+   "Stand the cutouts slightly apart, so each outline stays clear."
   ],
   "key": "tray-42"
  },
  {
   "n": 34,
-  "title": "Go Dark With a Reindeer Crossing Sign",
+  "title": "Pick a Dark Tray for Drama",
   "paras": [
-   "A black tray makes everything else pop.",
-   "This one carries a Reindeer sign, a deer plaque, a Santa mug, cinnamon sticks in a jar, a Believe sign, a wooden tree, black and white snowflakes and bead garland.",
-   "Pine and berries add life.",
-   "Cinnamon sticks add scent too."
+   "A black tray turns everything up a notch.",
+   "Pale pieces glow against it. Look at how the cinnamon sticks, white wooden trees and snowflake cookies stand out on this one.",
+   "Match the tray to your counter: a dark one adds weight to a pale surface, while a light one lifts a dark counter.",
+   "Cinnamon sticks tied in a jar scent the kitchen and cost almost nothing."
   ],
   "key": "tray-17"
  },
  {
   "n": 35,
-  "title": "Light Up a Village of White Houses",
+  "title": "Build a Village in Layers",
   "paras": [
-   "Glowing houses are magic after dark.",
-   "A dark wood three-tier holds lit white ceramic houses, bottle brush trees, pinecones and moss balls.",
-   "No signs, no mugs, just a tiny town.",
-   "Use battery tea lights inside the houses."
+   "Depth is what separates a village from a row of houses.",
+   "Houses sit on all three levels here, with bottle brush trees in front and behind them. Because everything overlaps, your eye reads it as a town on a hillside.",
+   "Use at least three sizes of house, and keep the smallest at the back.",
+   "Battery tea lights are safer than flames, and you can hide the switch behind a tree."
   ],
   "key": "tray-07"
  },
  {
   "n": 36,
-  "title": "Try a Gold Mirrored Tray",
+  "title": "Let a Mirror Double the Glow",
   "paras": [
-   "Mirror and lights multiply the glow.",
-   "A gold mirrored tiered tray carries lit white houses, bottle brush trees, a Santa figure, a Believe block and a Merry Christmas sign, wrapped in tiny lights.",
-   "It looks like a snow globe without the glass.",
-   "Turn down the room lights to enjoy it."
+   "A mirrored tray doubles every light that touches it.",
+   "Lit houses, bottle brush trees and a tiny Santa sit on this reflective stand, wrapped in fairy lights, and the whole thing looks like a snow globe at night.",
+   "Mirrors show fingerprints, so wipe it with a microfiber cloth before guests arrive.",
+   "Dim the room lights and let the tray be the lamp."
   ],
   "key": "tray-38"
  },
  {
   "n": 37,
-  "title": "Mix Buffalo Plaid With Season's Greetings",
+  "title": "Repeat One Pattern, Not Three",
   "paras": [
-   "Buffalo check is a farmhouse favorite.",
-   "A white three-tier holds a Season's Greetings sign, a plaid house with a wreath, an All Is Calm All Is Bright chalkboard, a Be Bright block, a deer print and plaid bows, with berries throughout.",
-   "Black and white keeps it crisp.",
-   "Add one red accent and stop there."
+   "Buffalo plaid is bold, so use it with discipline.",
+   "On this white three-tier the check appears on a house, a bow, a tag and a block, but always in black and white, and everything else is solid.",
+   "If you do mix plaids, change the scale: one large check, one small.",
+   "A few red berries keep the black and white from feeling stark."
   ],
   "key": "tray-32"
  },
  {
   "n": 38,
-  "title": "Fill the Tiers With Plaid Ornaments",
+  "title": "Use Ornaments as Your Filler",
   "paras": [
-   "Ornaments can replace signs entirely.",
-   "A wood three-tier is filled with buffalo plaid balls, pinecones and greenery, topped with a plaid bow and a small house.",
-   "It looks full without a single word.",
-   "Shatterproof balls are safest here."
+   "Ornaments are decor you already own.",
+   "Red and black buffalo check balls fill the tiers of this wood stand with pinecones and greenery, topped with a plaid bow. There isn't a sign anywhere, and it still says Christmas.",
+   "Shatterproof balls are the right choice for kitchens.",
+   "Cluster by size: largest at the bottom, smallest on top."
   ],
   "key": "tray-33"
  },
  {
   "n": 39,
-  "title": "Wrap a Plaid Gift Box for the Tray",
+  "title": "Add Height With a Gift Box",
   "paras": [
-   "A tiny wrapped present looks festive.",
-   "A black tiered tray holds an Oh Holy Night sign, a buffalo plaid gift box, a Merry Christmas tag, a bead garland, a snowman figure and red ornaments, on a plaid table runner.",
-   "Repeat the plaid on the runner.",
-   "Wrap an empty box so it stays light."
+   "A wrapped box is the simplest height cheat there is.",
+   "A buffalo check gift sits on a plaid runner just beside this black tray, adding a block of pattern at a different level than the sign and the snowman.",
+   "Wrap an empty box so it stays light, and tie it with thick ribbon.",
+   "Two or three boxes stacked beside a tray look like a pile of presents."
   ],
   "key": "tray-34"
  },
  {
   "n": 40,
-  "title": "Add Plaid Booties and a Snowplace Sign",
+  "title": "Add One Surprising Object",
   "paras": [
-   "Little fabric booties are an unexpected touch.",
-   "A wood two-tier holds buffalo plaid booties, plaid ornaments, a There's Snowplace Like Home sign, a Merry and Bright mug and small trees, with a plaid bow on top.",
-   "Black and white with a touch of green is cozy.",
-   "Look for baby booties at a thrift store."
+   "Every great tray has one thing guests ask about.",
+   "Here it is the fuzzy plaid booties at the base. Nobody expects them, and they make the whole tray feel cozy.",
+   "Use something soft, like slippers, mittens or a knit ornament, to balance all the hard surfaces.",
+   "Stop at one surprise. A second one starts to look random."
   ],
   "key": "tray-35"
  },
  {
   "n": 41,
-  "title": "Pile On Red, White and Gold Ornaments",
+  "title": "Make the Bow Big",
   "paras": [
-   "Sometimes ornaments say it all.",
-   "A wood three-tier here is heaped with red, white and gold balls, pinecones and greenery, with a big plaid bow on top, set beside the tree.",
-   "It is quick and very full.",
-   "Use different sizes so it does not look flat."
+   "A big bow can pull an overloaded tray together.",
+   "A wide plaid bow crowns this ornament-heavy stand and wraps the whole thing up like a gift.",
+   "Buy wired ribbon at least two and a half inches wide. It holds its shape and looks fuller.",
+   "Make the loops large and even, then fluff them with your fingers."
   ],
   "key": "tray-37"
  },
  {
   "n": 42,
-  "title": "Set a Knit Santa Among Candy Canes",
+  "title": "Soften It With Knit Texture",
   "paras": [
-   "Soft and sweet suits a living room.",
-   "A white three-tier holds a knit Santa on top, red and white ornaments, star cookies, candy canes, a candle and a striped mug, with pillows behind.",
-   "The reds pick up the throw on the sofa.",
-   "A candle on the bottom tier warms it up."
+   "Texture matters more than people think.",
+   "A knit Santa on top makes this white tray feel softer, and it echoes the knit pillows on the sofa behind it.",
+   "Choose items that share a material with your room: a knit throw nearby, a knit figure on the tray.",
+   "A candle on the bottom tier is the finishing touch."
   ],
   "key": "tray-04"
  },
  {
   "n": 43,
-  "title": "Keep the Santa Tray Simple and Elegant",
+  "title": "Edit Until It Feels Elegant",
   "paras": [
-   "A near-twin with a lighter touch.",
-   "This white three-tier again has a knit Santa, red and white ornaments, a star cookie and candy canes, with a candle and peppermint mugs at the base.",
-   "Fewer pieces make it feel elegant.",
-   "Stop before the tiers get crowded."
+   "Elegance usually means taking something away.",
+   "This tray is nearly the same as the one before it, with a knit Santa, ornaments, a star cookie and candy canes, but it has fewer pieces and feels calmer for it.",
+   "When you think you are done, remove one item. That is a stylist's last step, and it improves almost every tray.",
+   "Then step back and look again before you add anything back."
   ],
   "key": "tray-36"
  },
  {
   "n": 44,
-  "title": "Fill It With Wrapped Chocolates",
+  "title": "Make It Edible",
   "paras": [
-   "The best tray might be edible.",
-   "A two-tier dark wood tray holds foil-wrapped truffles in red, green and gold with a few candy canes, in front of a garland-draped mantel.",
-   "Guests can grab one as they pass.",
-   "Refill it and the display stays fresh."
+   "Candy is decor with a built-in refill.",
+   "Foil-wrapped truffles in red, green and gold fill both tiers of this simple dark tray, with a few candy canes poking out. The metallic wrappers sparkle when the light hits them.",
+   "Choose individually wrapped candy for hygiene, and top up as it disappears.",
+   "Set it by the front door and it becomes a small welcome for anyone who walks in."
   ],
   "key": "tray-39"
  }
@@ -1474,20 +1475,26 @@ ${photo(idea.key)}`;
 }
 
 const body = `
-<p>A tiered tray packs a lot of holiday cheer into a very small footprint.</p>
-<p>It fits on a kitchen island, a counter corner or a console, and you can style it in an afternoon.</p>
-<p>The best ones follow a single idea, such as a cocoa bar, a gingerbread bakery or a snowman family, instead of every Christmas item you own.</p>
-<p>Height and texture do the rest: one tall piece like a mug or a mini tree, a few low fillers like garland and pinecones, and a sign or two to tie it together.</p>
-<p>Here are 44 Christmas tiered tray ideas, grouped by theme, to copy or mix.</p>
+<p>Every December I run into the same problem: a kitchen counter that has to look festive and still work for making breakfast.</p>
+<p>A tiered tray is the fix. It decorates upward instead of outward, so you get height, color and a bit of drama in roughly the footprint of a cutting board.</p>
+<p>Most trays go wrong for one reason, which is too many unrelated things. So before the ideas, here are the rules I lean on, followed by 44 trays to borrow from.</p>
 ${photo("hero")}
+
+<h2>Four Rules That Make Any Tray Work</h2>
+<p><strong>Choose one theme.</strong> A cocoa bar, a gingerbread bakery, a snowman family. If you can't describe the tray in four words, it doesn't have a theme yet.</p>
+<p><strong>Think in a loose triangle.</strong> Put the tallest piece at the back or on the top tier, a medium piece on the opposite side and low pieces in front. Your eye should zigzag, not stall.</p>
+<p><strong>Limit the palette.</strong> Two colors plus a neutral is plenty. Repeat each color at least twice so it looks chosen.</p>
+<p><strong>Use odd numbers and leave gaps.</strong> Three mugs, five pinecones. And you should still see some bare tray between objects. That empty space is what makes the rest look styled.</p>
 
 ${IDEAS.map(ideaBlock).join("\n\n")}
 
-<h2>How to Style Your Own Christmas Tray</h2>
-<p>Pick one theme and one color pair, and let everything else go.</p>
-<p>Put the tallest piece on the top tier, mid-height mugs and signs in the middle, and low fillers like garland, beads and pinecones along the edges.</p>
-<p>Leave a little breathing room on each tier. A tray that is slightly under-filled always looks more styled than one that is crammed.</p>
-<p>Then set it where you will see it every day, because that is the whole point.</p>
+<h2>Common Mistakes (and Quick Fixes)</h2>
+<p><strong>Crowding every tier.</strong> It's the most common one. Remove a single item from each tier and the tray immediately looks more expensive.</p>
+<p><strong>Everything at the same height.</strong> A tray of equal-height pieces looks flat. Add a tall candle, a tree or a stack of books to break it up.</p>
+<p><strong>Ignoring the kitchen.</strong> Keep trays away from the stove, where heat and grease will ruin them. Use battery candles near greenery and cotton snow.</p>
+<p><strong>Forgetting to look from the side.</strong> Most of us see the tray from across the room or from the doorway. Stand where you usually stand before you call it finished.</p>
+<p><strong>Packing it away too early.</strong> Swap the red and gold for winter pieces, like snowflakes, pinecones and white ceramics, and the same tray can stay out through February.</p>
+<p>Start with one tray, one theme and one corner of your kitchen. You can always add more next year.</p>
 `;
 
 module.exports = { body };

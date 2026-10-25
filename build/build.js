@@ -59,6 +59,7 @@ const cottagecoreBedroomArticle = require("./article-cottagecore-bedroom-decor-i
 const winterTrayArticle = require("./article-winter-tray-decor-ideas.js");
 const christmasWreathArticle = require("./article-christmas-wreath-ideas.js");
 const vintageChristmasArticle = require("./article-festive-vintage-christmas-decor-ideas.js");
+const christmasBathroomArticle = require("./article-christmas-bathroom-decor-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -2994,6 +2995,17 @@ const longFormPosts = [
     alt: "Christmas tree covered in colorful vintage glass ornaments and warm lights",
     image: "/images/festive-vintage-christmas-decor-ideas/hero.jpg",
     bodyHtml: vintageChristmasArticle.body,
+  },
+  {
+    slug: "christmas-bathroom-decor-ideas",
+    title: "45 Christmas Bathroom Decor Ideas for a Cozy, Festive Holiday",
+    category: "Bathroom",
+    readingTime: "18 min read",
+    date: "October 25, 2026",
+    excerpt: "Wreath-framed mirrors, plaid shower curtains, candlelit trays and tiny trees — 45 Christmas bathroom ideas from the vanity to the tub.",
+    alt: "Flocked Christmas wreath with a red plaid bow over a gray bathroom vanity mirror",
+    image: "/images/christmas-bathroom-decor-ideas/hero.jpg",
+    bodyHtml: christmasBathroomArticle.body,
   },
 ];
 

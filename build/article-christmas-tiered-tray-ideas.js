@@ -438,10 +438,10 @@ const PRODUCTS = {
  ],
  "tray-44": [
   {
-   "asin": "B0FWXC7CHX",
-   "title": "Santa Claus Pattern Candy Snack Jar, Christmas Tinplate Organizer",
+   "asin": "B0H8YFFQ7T",
+   "title": "Ysqool 2 Pcs Vintage Resin Santa Claus Figurines",
    "w": 1500,
-   "h": 1500
+   "h": 1430
   },
   {
    "asin": "B0CM8DCL2D",

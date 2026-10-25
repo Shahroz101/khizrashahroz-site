@@ -5,6 +5,8 @@
 // other rooms). Photos credited to their Pinterest pins; the supplied
 // Amazon product pair stays under each photo. Ends on text.
 // Photos: images/winter-tray-decor-ideas/, products: ...-products/.
+// Rewritten 2026-10-25 in an advice-led voice (styling rules, the why behind
+// each look, practical tips) after the first draft read like photo captions.
 
 const { picture } = require("./picture-helper.js");
 
@@ -810,124 +812,178 @@ const PRODUCTS = {
 const IDEAS = [
  {
   "n": 1,
-  "title": "Start Small With a Mini Tree and a Candle",
+  "title": "Start Small With a Tree, a Candle and Two Ceramics",
   "paras": [
-   "If you have never styled a tray, begin here.",
-   "A round woven tray holds a little potted fir, a big jar candle, and two white ceramic pieces, a tree and a house, all set against a cream sofa.",
-   "Everything sits close together, so the group reads as a single idea instead of scattered objects.",
-   "Keep the tree shorter than the candle jar and the flame stays the star."
+   "If you've never styled a tray, begin with this: one tall thing, one glowing thing, one or two small things. A round woven tray holds a little potted fir, a big jar candle and two white ceramic pieces, a tree and a house, all against a cream sofa.",
+   "Keep the tree shorter than the candle jar so the flame stays the star. Woven trays are forgiving and nearly impossible to put wrong."
   ],
-  "key": "tray-01"
+  "key": "tray-01",
+  "_orig": [
+   "If you've never styled a tray, begin with this: one tall thing, one glowing thing, one or two small things.",
+   "A round woven tray holds a little potted fir, a big jar candle and two white ceramic pieces, a tree and a house, all against a cream sofa.",
+   "Keep the tree shorter than the candle jar so the flame stays the star.",
+   "Woven trays are forgiving and nearly impossible to put wrong."
+  ]
  },
  {
   "n": 2,
   "title": "Tuck a Pinecone Tray Beside the Sofa",
   "paras": [
    "The best tray is the one within arm's reach.",
-   "A small wooden tray on the sofa cushions holds a cluster of pinecones and a single pillar candle, next to knit and plaid pillows.",
-   "It takes two minutes and uses things most of us already have.",
-   "Lay the pinecones around the candle at different angles so they look gathered, not lined up."
+   "A small wooden tray on the sofa cushions holds a cluster of pinecones and a single pillar candle, beside knit and plaid pillows.",
+   "Lay the cones at different angles around the candle so they look gathered, not lined up.",
+   "It takes two minutes and uses things most of us already have."
   ],
-  "key": "tray-22"
+  "key": "tray-22",
+  "_orig": [
+   "The best tray is the one within arm's reach.",
+   "A small wooden tray on the sofa cushions holds a cluster of pinecones and a single pillar candle, beside knit and plaid pillows.",
+   "Lay the cones at different angles around the candle so they look gathered, not lined up.",
+   "It takes two minutes and uses things most of us already have."
+  ]
  },
  {
   "n": 3,
   "title": "Heap Pinecones and Clementines in a Bowl",
   "paras": [
-   "Sometimes a bowl does the work of a whole tray.",
-   "This one is filled with large pinecones and bright clementines resting on a bed of cedar sprigs.",
-   "The orange pops against all that brown, and the scent is a bonus.",
-   "It slips onto a console, a kitchen counter or a dining table without needing anything else."
+   "<p><strong>Sometimes a bowl does the work of a whole tray.</strong> Big pinecones and bright clementines rest on a bed of cedar sprigs in this one, and the orange pops against all that brown.</p>",
+   "Real clementines smell wonderful, but replace them every week.",
+   "It slips onto a console, a counter or a dining table without needing anything else."
   ],
-  "key": "tray-25"
+  "key": "tray-25",
+  "_orig": [
+   "Sometimes a bowl does the work of a whole tray.",
+   "Big pinecones and bright clementines rest on a bed of cedar sprigs in this one, and the orange pops against all that brown.",
+   "Real clementines smell wonderful, but replace them every week.",
+   "It slips onto a console, a counter or a dining table without needing anything else."
+  ]
  },
  {
   "n": 4,
   "title": "Dry Orange Slices on a Dark Wood Tray",
   "paras": [
-   "Dried citrus looks like winter and smells like it too.",
-   "Here a curved dark tray holds a ring of orange slices, a jar stuffed with cinnamon sticks tied in twine, a small bell and a white candle.",
-   "The warm tones glow against the deep wood.",
-   "Bake your own slices low and slow, or buy a bag and save the afternoon."
+   "Dried citrus looks like winter and smells like it, too.",
+   "A curved dark tray holds a ring of orange slices, a jar stuffed with cinnamon sticks tied in twine, a small bell and a white candle.",
+   "<ul><li>Dry your own: slice thin, pat dry and bake at 200°F for two to three hours.</li><li>The warm tones glow against deep wood.</li></ul>"
   ],
-  "key": "tray-17"
+  "key": "tray-17",
+  "_orig": [
+   "Dried citrus looks like winter and smells like it, too.",
+   "A curved dark tray holds a ring of orange slices, a jar stuffed with cinnamon sticks tied in twine, a small bell and a white candle.",
+   "Dry your own: slice thin, pat dry and bake at 200°F for two to three hours.",
+   "The warm tones glow against deep wood."
+  ]
  },
  {
   "n": 5,
-  "title": "Build on a Log Slice With Oranges and Spice",
+  "title": "Build on a Log Slice",
   "paras": [
-   "A thick slice of log makes a base with built-in character.",
-   "This one carries a ribbed white candle ringed with orange slices, cinnamon sticks, walnuts, star anise and sprigs of greenery, finished with a burgundy velvet bow.",
-   "Every piece is natural, so the look feels foraged rather than bought.",
-   "Tuck in a few berries for a little extra color."
+   "A thick slice of log is a base with built-in character.",
+   "This one carries a ribbed white candle ringed with orange slices, cinnamon sticks, walnuts, star anise and greenery, finished with a burgundy velvet bow.",
+   "Everything on it is natural, so the look feels foraged rather than bought. Tuck in a few berries for a little extra color, and set the candle in a glass holder for safety."
   ],
-  "key": "tray-18"
+  "key": "tray-18",
+  "_orig": [
+   "A thick slice of log is a base with built-in character.",
+   "This one carries a ribbed white candle ringed with orange slices, cinnamon sticks, walnuts, star anise and greenery, finished with a burgundy velvet bow.",
+   "Everything on it is natural, so the look feels foraged rather than bought.",
+   "Tuck in a few berries for a little extra color, and set the candle in a glass holder for safety."
+  ]
  },
  {
   "n": 6,
   "title": "Create a Mossy Woodland Scene",
   "paras": [
    "Not every winter tray has to say Christmas.",
-   "A rough-edged wood slice here is covered in moss, with a stag, two rabbits and a small bunny in front of a bottle brush tree, plus pinecones and pine sprigs.",
-   "The result looks like a forest floor in miniature.",
-   "Add figures in odd numbers, and let a couple peek out from behind the greenery."
+   "A rough-edged wood slice is covered in moss here, with a stag, two rabbits and a small bunny in front of a bottle brush tree, plus pinecones and pine sprigs.",
+   "<p><strong>Quick tip:</strong> Use figures in odd numbers and let one or two peek from behind the greenery.</p>",
+   "Moss sheets from a craft store are tidier than loose moss, and they last all season."
   ],
-  "key": "tray-10"
+  "key": "tray-10",
+  "_orig": [
+   "Not every winter tray has to say Christmas.",
+   "A rough-edged wood slice is covered in moss here, with a stag, two rabbits and a small bunny in front of a bottle brush tree, plus pinecones and pine sprigs.",
+   "Use figures in odd numbers and let one or two peek from behind the greenery.",
+   "Moss sheets from a craft store are tidier than loose moss, and they last all season."
+  ]
  },
  {
   "n": 7,
   "title": "Fill a Rustic Crate With Frosted Branches",
   "paras": [
-   "A weathered crate is a tray with a story.",
-   "Inside this one, tall glass hurricanes hold white candles, pale willow branches reach upward, and frosted trees and little moss balls fill the corners.",
-   "The palette stays soft gray and white, which suits a quiet living room.",
+   "A weathered crate is a tray with a story. Inside this one, tall glass hurricanes hold white candles, pale willow branches reach upward, and frosted trees and little moss balls fill the corners.",
+   "Keep the palette soft gray and white if your room is quiet.",
    "Lift the candles with glass so the branches have room to breathe."
   ],
-  "key": "tray-04"
+  "key": "tray-04",
+  "_orig": [
+   "A weathered crate is a tray with a story.",
+   "Inside this one, tall glass hurricanes hold white candles, pale willow branches reach upward, and frosted trees and little moss balls fill the corners.",
+   "Keep the palette soft gray and white if your room is quiet.",
+   "Lift the candles with glass so the branches have room to breathe."
+  ]
  },
  {
   "n": 8,
   "title": "Plant a Tiny Village in a Pale Wood Tray",
   "paras": [
-   "A tray can become a snowy landscape.",
-   "Pale wood frames a bed of faux snow here, with glowing ceramic houses, frosted trees, pinecones and a few red berries scattered between.",
-   "The tiny windows lit from inside do most of the magic.",
-   "Vary the sizes of the houses and trees so the scene has real depth."
+   "Any shallow tray can become a snowy landscape.",
+   "Pale wood frames a bed of faux snow here, with glowing ceramic houses, frosted trees, pinecones and a few red berries. Vary the sizes of the houses and trees, which gives the scene depth.",
+   "The lit windows do most of the magic, so use warm bulbs."
   ],
-  "key": "tray-05"
+  "key": "tray-05",
+  "_orig": [
+   "Any shallow tray can become a snowy landscape.",
+   "Pale wood frames a bed of faux snow here, with glowing ceramic houses, frosted trees, pinecones and a few red berries.",
+   "Vary the sizes of the houses and trees, which gives the scene depth.",
+   "The lit windows do most of the magic, so use warm bulbs."
+  ]
  },
  {
   "n": 9,
-  "title": "Set a Glowing Village on the Kitchen Island",
+  "title": "Set a Glowing Village on the Island",
   "paras": [
    "Put the village where you will see it all day.",
-   "On this marble island, two white houses glow beside flocked trees, pinecones and red berries inside a washed-gray tray, with winter light coming in behind.",
-   "Stone makes a cool backdrop that lets the warm windows stand out.",
-   "A strip of faux snow under the houses ties it together."
+   "On this marble island, two white houses glow beside flocked trees, pinecones and berries inside a washed-gray tray.",
+   "<ul><li>Stone makes a cool backdrop that lets the warm windows stand out.</li><li>A strip of faux snow under the houses ties it together, and a battery cord hides easily.</li></ul>"
   ],
-  "key": "tray-06"
+  "key": "tray-06",
+  "_orig": [
+   "Put the village where you will see it all day.",
+   "On this marble island, two white houses glow beside flocked trees, pinecones and berries inside a washed-gray tray.",
+   "Stone makes a cool backdrop that lets the warm windows stand out.",
+   "A strip of faux snow under the houses ties it together, and a battery cord hides easily."
+  ]
  },
  {
   "n": 10,
   "title": "Bring In a Gingerbread House",
   "paras": [
-   "A gingerbread-style house is a sweet focal point that never gets stale.",
-   "This one is a ceramic cottage with frosted rooflines and a pretty round window, set on a light tray next to a candle in a jar, a tiny white tree and a vase of greenery and blossoms.",
+   "<p><strong>A gingerbread-style house is a sweet focal point that never goes stale.</strong> This one is a ceramic cottage with frosted rooflines and a round window, set on a light tray next to a candle in a jar, a tiny white tree and a vase of greenery.</p>",
+   "<ul><li>Keep the colors pale and let the house carry the detail.</li><li>It works just as well on a coffee table as a counter.</li></ul>"
+  ],
+  "key": "tray-09",
+  "_orig": [
+   "A gingerbread-style house is a sweet focal point that never goes stale.",
+   "This one is a ceramic cottage with frosted rooflines and a round window, set on a light tray next to a candle in a jar, a tiny white tree and a vase of greenery.",
    "Keep the colors pale and let the house carry the detail.",
    "It works just as well on a coffee table as a counter."
-  ],
-  "key": "tray-09"
+  ]
  },
  {
   "n": 11,
-  "title": "Light Candles in Turned Holders and Trees",
+  "title": "Mix Warm Light With a Little Sparkle",
   "paras": [
-   "This tray mixes warm light with a little sparkle.",
-   "A round wooden tray holds candles in turned candlesticks, a small village house, flocked and green bottle brush trees, gold and bronze ornaments and sprigs of eucalyptus.",
-   "The candlesticks add height, while the trees keep the eye moving.",
-   "Tuck in a string of tiny lights for a soft glow after dark."
+   "Candlelight and metallics are a classic mix. A round wooden tray holds candles in turned candlesticks, a small village house, flocked and green bottle brush trees, gold and bronze ornaments and sprigs of eucalyptus.",
+   "The candlesticks add height, which stops everything from sitting on one level. Tuck in a string of tiny lights for a soft glow after dark."
   ],
-  "key": "tray-11"
+  "key": "tray-11",
+  "_orig": [
+   "Candlelight and metallics are a classic mix.",
+   "A round wooden tray holds candles in turned candlesticks, a small village house, flocked and green bottle brush trees, gold and bronze ornaments and sprigs of eucalyptus.",
+   "The candlesticks add height, which stops everything from sitting on one level.",
+   "Tuck in a string of tiny lights for a soft glow after dark."
+  ]
  },
  {
   "n": 12,
@@ -935,21 +991,32 @@ const IDEAS = [
   "paras": [
    "Bulk ornaments look better when they have a home.",
    "A tall clear jar is packed with red balls and topped with berry stems, while white ceramic houses and soft trees surround it on a round wooden tray.",
-   "The glass lets color show from every side.",
-   "It is an easy fix for a bag of ornaments that never made it onto the tree."
+   "The glass lets color show from every side, so each ornament works harder.",
+   "It's a smart fix for a bag of ornaments that never made it onto the tree."
   ],
-  "key": "tray-23"
+  "key": "tray-23",
+  "_orig": [
+   "Bulk ornaments look better when they have a home.",
+   "A tall clear jar is packed with red balls and topped with berry stems, while white ceramic houses and soft trees surround it on a round wooden tray.",
+   "The glass lets color show from every side, so each ornament works harder.",
+   "It's a smart fix for a bag of ornaments that never made it onto the tree."
+  ]
  },
  {
   "n": 13,
-  "title": "Swap in Wicker Trees and Red Berries",
+  "title": "Swap In Wicker Trees and Red Berries",
   "paras": [
+   "<p><strong>Woven trees feel warmer than flocked ones.</strong> Two wicker cones stand on this round tray beside a cream vase of red berry branches and a candle in a red glass holder, with holly leaves around the base.</p>",
+   "The red keeps the palette festive without heavy ornaments.",
+   "It's perfect for a kitchen with wood cabinets and neutral counters."
+  ],
+  "key": "tray-24",
+  "_orig": [
    "Woven trees feel warmer than flocked ones.",
    "Two wicker cones stand on this round tray beside a cream vase of red berry branches and a candle in a red glass holder, with holly leaves around the base.",
    "The red keeps the palette festive without heavy ornaments.",
-   "It fits a kitchen with wood cabinets and neutral counters."
-  ],
-  "key": "tray-24"
+   "It's perfect for a kitchen with wood cabinets and neutral counters."
+  ]
  },
  {
   "n": 14,
@@ -957,87 +1024,126 @@ const IDEAS = [
   "paras": [
    "Cocoa deserves a setup.",
    "A round wooden tray with handles holds a mug of cocoa topped with marshmallows, a lit white house, a candle, pinecones, star anise and a small glass vase of frosted greenery.",
-   "The mug turns the whole arrangement into an invitation to sit.",
-   "Set it on a woven mat to protect the table."
+   "<ul><li>The mug turns the whole arrangement into an invitation to sit.</li><li>Set it on a woven mat to protect the table from heat.</li></ul>"
   ],
-  "key": "tray-02"
+  "key": "tray-02",
+  "_orig": [
+   "Cocoa deserves a setup.",
+   "A round wooden tray with handles holds a mug of cocoa topped with marshmallows, a lit white house, a candle, pinecones, star anise and a small glass vase of frosted greenery.",
+   "The mug turns the whole arrangement into an invitation to sit.",
+   "Set it on a woven mat to protect the table from heat."
+  ]
  },
  {
   "n": 15,
-  "title": "Serve Cocoa and Cookies on a Long Wood Tray",
+  "title": "Serve Cocoa and Cookies on a Long Tray",
   "paras": [
+   "Some trays should be used.",
+   "This long dark tray with iron handles carries two mugs of cocoa, bowls of whipped cream and marshmallows, candy canes, chocolate chip cookies and cinnamon sticks.",
+   "Everything is within reach, so guests can help themselves. Replace the cookies whenever they run low and the display refreshes itself."
+  ],
+  "key": "tray-32",
+  "_orig": [
    "Some trays should be used.",
    "This long dark tray with iron handles carries two mugs of cocoa, bowls of whipped cream and marshmallows, candy canes, chocolate chip cookies and cinnamon sticks.",
    "Everything is within reach, so guests can help themselves.",
    "Replace the cookies whenever they run low and the display refreshes itself."
-  ],
-  "key": "tray-32"
+  ]
  },
  {
   "n": 16,
   "title": "Arrange a Round Board of Cookies and Treats",
   "paras": [
    "Treats can be part of the decor.",
-   "A round wooden board is dotted with cookies, snowflake pretzels, marshmallows, nuts, chocolate candies and a candy cane, with greenery and ornaments creeping in at the edges.",
-   "Keep like with like, so the colors form little groups.",
+   "A round wooden board here is dotted with cookies, snowflake pretzels, marshmallows, nuts, chocolate candies and a candy cane, with greenery and ornaments creeping in at the edges.",
+   "<p><strong>Quick tip:</strong> Keep like with like, so the colors form little groups.</p>",
    "Make it just before guests arrive and it doubles as a centerpiece."
   ],
-  "key": "tray-33"
+  "key": "tray-33",
+  "_orig": [
+   "Treats can be part of the decor.",
+   "A round wooden board here is dotted with cookies, snowflake pretzels, marshmallows, nuts, chocolate candies and a candy cane, with greenery and ornaments creeping in at the edges.",
+   "Keep like with like, so the colors form little groups.",
+   "Make it just before guests arrive and it doubles as a centerpiece."
+  ]
  },
  {
   "n": 17,
   "title": "Turn a Tiered Tray Into a Cocoa Bar",
   "paras": [
-   "A tiered stand gives cocoa fixings a proper address.",
-   "Two white tiers hold a red Christmas mug, a coffee sign, a hot cocoa bar chalkboard, a jar of marshmallows, candy canes, a snowman and a gingerbread cookie.",
+   "A tiered stand gives the fixings a proper address. Two white tiers hold a red Christmas mug, a coffee sign, a hot cocoa bar chalkboard, a jar of marshmallows, candy canes, a snowman and a gingerbread cookie.",
    "Subway tile behind it makes the reds stand out.",
    "Fill the jars with real supplies and it works as well as it looks."
   ],
-  "key": "tray-07"
+  "key": "tray-07",
+  "_orig": [
+   "A tiered stand gives the fixings a proper address.",
+   "Two white tiers hold a red Christmas mug, a coffee sign, a hot cocoa bar chalkboard, a jar of marshmallows, candy canes, a snowman and a gingerbread cookie.",
+   "Subway tile behind it makes the reds stand out.",
+   "Fill the jars with real supplies and it works as well as it looks."
+  ]
  },
  {
   "n": 18,
   "title": "Stack Cocoa Jars on a Tiered Stand",
   "paras": [
    "Gift tags make a tray feel personal.",
-   "Three tiers hold jars of cocoa mix and marshmallows with plaid ribbons, striped straws, mugs and handwritten tags, with fresh greens and pinecones tucked between.",
-   "It looks ready for a party on a kitchen island.",
+   "Three tiers hold jars of cocoa mix and marshmallows tied with plaid ribbons, striped straws, mugs and handwritten tags, with fresh greens and pinecones between. It looks ready for a party on a kitchen island.",
    "Guests can take a jar home when they leave."
   ],
-  "key": "tray-08"
+  "key": "tray-08",
+  "_orig": [
+   "Gift tags make a tray feel personal.",
+   "Three tiers hold jars of cocoa mix and marshmallows tied with plaid ribbons, striped straws, mugs and handwritten tags, with fresh greens and pinecones between.",
+   "It looks ready for a party on a kitchen island.",
+   "Guests can take a jar home when they leave."
+  ]
  },
  {
   "n": 19,
   "title": "Go Black and White With a Gnome",
   "paras": [
    "Graphic black and white is a fun break from red and green.",
-   "A tiered tray carries a plush gnome in a plaid hat, wood blocks lettered with winter phrases, a snowflake or two, a cocoa canister and a jar candle, with a beaded garland and a checkered cloth below.",
-   "The gnome gives it personality.",
-   "Repeat the checks and snowflakes so it feels planned."
+   "A tiered tray here carries a plush gnome in a plaid hat, wood blocks lettered with winter phrases, a snowflake or two, a cocoa canister and a jar candle, with a beaded garland and a checkered cloth below.",
+   "<ul><li>The gnome gives it personality.</li><li>Repeat the checks and snowflakes so it looks planned.</li></ul>"
   ],
-  "key": "tray-26"
+  "key": "tray-26",
+  "_orig": [
+   "Graphic black and white is a fun break from red and green.",
+   "A tiered tray here carries a plush gnome in a plaid hat, wood blocks lettered with winter phrases, a snowflake or two, a cocoa canister and a jar candle, with a beaded garland and a checkered cloth below.",
+   "The gnome gives it personality.",
+   "Repeat the checks and snowflakes so it looks planned."
+  ]
  },
  {
   "n": 20,
   "title": "Layer a Snowman Tray",
   "paras": [
-   "More is more on a playful tier.",
+   "<p><strong>Playful trays reward a tight palette.</strong> This stand is packed with wooden snowmen, trees and snowflakes, black and white beads, plaid ribbons and little signs with winter phrases.</p>",
+   "<ul><li>The strict palette stops it from looking messy.</li><li>It reads as winter rather than Christmas, so it can stay up into January.</li></ul>"
+  ],
+  "key": "tray-27",
+  "_orig": [
+   "Playful trays reward a tight palette.",
    "This stand is packed with wooden snowmen, trees and snowflakes, black and white beads, plaid ribbons and little signs with winter phrases.",
    "The strict palette stops it from looking messy.",
    "It reads as winter rather than Christmas, so it can stay up into January."
-  ],
-  "key": "tray-27"
+  ]
  },
  {
   "n": 21,
   "title": "Add Cotton Stems to a Tiered Tray",
   "paras": [
+   "Cotton stems bring a soft, field-grown feel. Two white tiers here hold greenery with cotton bolls, black and white wood beads, a snowflake block, a warm winter sign, a glass candle and pinecones in a bowl.",
+   "The palette stays cream, black and natural. It suits a minimalist kitchen better than bright reds."
+  ],
+  "key": "tray-28",
+  "_orig": [
    "Cotton stems bring a soft, field-grown feel.",
    "Two white tiers here hold greenery with cotton bolls, black and white wood beads, a snowflake block, a warm winter sign, a glass candle and pinecones in a bowl.",
    "The palette stays cream, black and natural.",
    "It suits a minimalist kitchen better than bright reds."
-  ],
-  "key": "tray-28"
+  ]
  },
  {
   "n": 22,
@@ -1048,40 +1154,61 @@ const IDEAS = [
    "They share creamy tones, so nothing fights.",
    "Use pieces you already own and fill the gaps with a striped towel."
   ],
-  "key": "tray-29"
+  "key": "tray-29",
+  "_orig": [
+   "Mismatched pieces can still feel cohesive.",
+   "On a white beaded tray sit a lattice lantern, a HOME birdhouse with wood beads, a knit gnome mug, a small tree and a candle on an old book.",
+   "They share creamy tones, so nothing fights.",
+   "Use pieces you already own and fill the gaps with a striped towel."
+  ]
  },
  {
   "n": 23,
   "title": "Style Glass Cloches With Velvet Trees",
   "paras": [
+   "<p><strong>Cloches make candles feel like keepsakes.</strong> Two glass domes cover pillar candles on a round gold tray, surrounded by velvet cone trees in green, burgundy and gold, plus ornaments and tiny lights.</p>",
+   "The paneled room behind it adds to the rich look.",
+   "It suits a formal living room or a library."
+  ],
+  "key": "tray-14",
+  "_orig": [
    "Cloches make candles feel like keepsakes.",
    "Two glass domes cover pillar candles on a round gold tray, surrounded by velvet cone trees in green, burgundy and gold, plus ornaments and tiny lights.",
    "The paneled room behind it adds to the rich look.",
    "It suits a formal living room or a library."
-  ],
-  "key": "tray-14"
+  ]
  },
  {
   "n": 24,
   "title": "Pair Brass Tapers With a Marble Tray",
   "paras": [
    "Brass and marble are a quietly grand pairing.",
-   "Tall gold tapers rise from a marble-inset tray edged in gold, with a pillar candle, a gold-trimmed votive and a long swag of eucalyptus.",
+   "Tall gold tapers rise from a marble-inset tray edged in gold here, with a pillar candle, a gold-trimmed votive and a long swag of eucalyptus.",
+   "<ul><li>The greens soften all that polish.</li><li>Set it on a dining table and it needs nothing else.</li></ul>"
+  ],
+  "key": "tray-31",
+  "_orig": [
+   "Brass and marble are a quietly grand pairing.",
+   "Tall gold tapers rise from a marble-inset tray edged in gold here, with a pillar candle, a gold-trimmed votive and a long swag of eucalyptus.",
    "The greens soften all that polish.",
    "Set it on a dining table and it needs nothing else."
-  ],
-  "key": "tray-31"
+  ]
  },
  {
   "n": 25,
   "title": "Warm It Up With Amber, Copper and Brass",
   "paras": [
-   "Winter colors do not have to be cold.",
+   "Winter colors don't have to be cold.",
+   "A brass tray carries a terracotta vase of rust-orange blooms, tall cream candles in brass holders, amber glass pieces and a folded linen towel.",
+   "The tones sit comfortably between autumn and winter. Mix metals in one family and it feels intentional."
+  ],
+  "key": "tray-13",
+  "_orig": [
+   "Winter colors don't have to be cold.",
    "A brass tray carries a terracotta vase of rust-orange blooms, tall cream candles in brass holders, amber glass pieces and a folded linen towel.",
    "The tones sit comfortably between autumn and winter.",
    "Mix metals in one family and it feels intentional."
-  ],
-  "key": "tray-13"
+  ]
  },
  {
   "n": 26,
@@ -1089,32 +1216,48 @@ const IDEAS = [
   "paras": [
    "Paper stars add sparkle with no glitter.",
    "On this silver tray, a gray tin house lantern, a white pillar candle, a mercury glass votive and a tall candlestick are surrounded by pinecones, pine and folded white stars.",
-   "The stars look best dropped casually.",
+   "<p><strong>Quick tip:</strong> The stars look best dropped casually.</p>",
    "Use warm bulbs or real flames for the best glow."
   ],
-  "key": "tray-16"
+  "key": "tray-16",
+  "_orig": [
+   "Paper stars add sparkle with no glitter.",
+   "On this silver tray, a gray tin house lantern, a white pillar candle, a mercury glass votive and a tall candlestick are surrounded by pinecones, pine and folded white stars.",
+   "The stars look best dropped casually.",
+   "Use warm bulbs or real flames for the best glow."
+  ]
  },
  {
   "n": 27,
   "title": "Give a Gold Deer Some Framed Art",
   "paras": [
-   "Add a little gallery energy to a tray.",
-   "A reclining gold deer, a vase of pine and berries, an antique-style frame with a snowy landscape, and a brass candelabra sit on a round wooden tray.",
+   "Add a little gallery energy to a tray. A reclining gold deer, a vase of pine and berries, an antique-style frame with a snowy landscape and a brass candelabra sit on a round wooden tray here.",
    "The art gives the arrangement height.",
    "Lean the frame instead of hanging it so it can move around."
   ],
-  "key": "tray-12"
+  "key": "tray-12",
+  "_orig": [
+   "Add a little gallery energy to a tray.",
+   "A reclining gold deer, a vase of pine and berries, an antique-style frame with a snowy landscape and a brass candelabra sit on a round wooden tray here.",
+   "The art gives the arrangement height.",
+   "Lean the frame instead of hanging it so it can move around."
+  ]
  },
  {
   "n": 28,
   "title": "Pair a Black Deer With Gold Glitter",
   "paras": [
-   "Black and gold feels modern and festive.",
-   "A matte black deer stands in front of a glittered gold vase of pine on a slim black tray, next to a lit candle in glass.",
-   "The contrast makes each piece look sharper.",
-   "It is ideal for a kitchen counter or console."
+   "Black and gold feel modern and festive.",
+   "A matte black deer stands in front of a glittered gold vase of pine on a slim black tray here, next to a lit candle in glass. The contrast makes each piece look sharper.",
+   "It's ideal for a kitchen counter or console."
   ],
-  "key": "tray-35"
+  "key": "tray-35",
+  "_orig": [
+   "Black and gold feel modern and festive.",
+   "A matte black deer stands in front of a glittered gold vase of pine on a slim black tray here, next to a lit candle in glass.",
+   "The contrast makes each piece look sharper.",
+   "It's ideal for a kitchen counter or console."
+  ]
  },
  {
   "n": 29,
@@ -1122,54 +1265,78 @@ const IDEAS = [
   "paras": [
    "White pieces look soft on warm wood.",
    "A resting deer with gold antlers and a carved ceramic tree sit on a round wooden tray, with a potted pine in a basket and a ring of garland.",
+   "<ul><li>The finishes mix without clashing.</li><li>Move the tray after the holidays and it still looks fresh.</li></ul>"
+  ],
+  "key": "tray-37",
+  "_orig": [
+   "White pieces look soft on warm wood.",
+   "A resting deer with gold antlers and a carved ceramic tree sit on a round wooden tray, with a potted pine in a basket and a ring of garland.",
    "The finishes mix without clashing.",
    "Move the tray after the holidays and it still looks fresh."
-  ],
-  "key": "tray-37"
+  ]
  },
  {
   "n": 30,
   "title": "Go Frosty and All White",
   "paras": [
+   "<p><strong>White on white can be the loveliest winter palette.</strong> An octagonal whitewashed tray holds birch logs, flocked pinecones, glass votives, a scale-shaped white tree, pale pampas and branches, and a dusting of snow.</p>",
+   "<ul><li>The textures do the talking, not color.</li><li>Because it feels like winter and not just Christmas, it can stay out all season.</li></ul>"
+  ],
+  "key": "tray-15",
+  "_orig": [
    "White on white can be the loveliest winter palette.",
    "An octagonal whitewashed tray holds birch logs, flocked pinecones, glass votives, a scale-shaped white tree, pale pampas and branches, and a dusting of snow.",
    "The textures do the talking, not color.",
    "Because it feels like winter and not just Christmas, it can stay out all season."
-  ],
-  "key": "tray-15"
+  ]
  },
  {
   "n": 31,
   "title": "Raise Pillar Candles on Wooden Candlesticks",
   "paras": [
+   "Height changes everything. Two white pillar candles stand on turned wood candlesticks in a dark round tray, over a bed of pine boughs, pinecones and a frosty blue succulent.",
+   "Botanical prints and a chunky white blanket sit behind. It works especially well in front of a bookshelf or gallery wall."
+  ],
+  "key": "tray-03",
+  "_orig": [
    "Height changes everything.",
    "Two white pillar candles stand on turned wood candlesticks in a dark round tray, over a bed of pine boughs, pinecones and a frosty blue succulent.",
    "Botanical prints and a chunky white blanket sit behind.",
    "It works especially well in front of a bookshelf or gallery wall."
-  ],
-  "key": "tray-03"
+  ]
  },
  {
   "n": 32,
-  "title": "Weave in a Bead Garland and White Pitcher",
+  "title": "Weave In a Bead Garland and White Pitcher",
   "paras": [
    "Natural textures pair well.",
    "A dark woven tray holds a white pitcher with a frosted tree stem and wood beads with tassels, plus two small white houses.",
    "Let the tassels hang over the edge for movement.",
    "One tall stem is enough."
   ],
-  "key": "tray-36"
+  "key": "tray-36",
+  "_orig": [
+   "Natural textures pair well.",
+   "A dark woven tray holds a white pitcher with a frosted tree stem and wood beads with tassels, plus two small white houses.",
+   "Let the tassels hang over the edge for movement.",
+   "One tall stem is enough."
+  ]
  },
  {
   "n": 33,
   "title": "Stack Books and Candles on a Handled Tray",
   "paras": [
+   "<p><strong>Books are a stylist's best friend.</strong> A round tray with rope handles holds a stack of books, two textured candles and a glass vase of leafy stems in front of a cream sofa.</p>",
+   "It looks calm and not at all seasonal, which means it lasts.",
+   "Swap the stems for pine when you want it to feel more wintry."
+  ],
+  "key": "tray-19",
+  "_orig": [
    "Books are a stylist's best friend.",
    "A round tray with rope handles holds a stack of books, two textured candles and a glass vase of leafy stems in front of a cream sofa.",
    "It looks calm and not at all seasonal, which means it lasts.",
    "Swap the stems for pine when you want it to feel more wintry."
-  ],
-  "key": "tray-19"
+  ]
  },
  {
   "n": 34,
@@ -1177,21 +1344,31 @@ const IDEAS = [
   "paras": [
    "A coffee table likes a few strong pieces.",
    "A pair of books, a carved wooden bowl, a speckled vase of greenery, a rattan tray and a stack of stone coasters share a round pale table here.",
+   "<ul><li>Different heights keep it lively.</li><li>Put in pinecones or ornaments whenever you want to change the season.</li></ul>"
+  ],
+  "key": "tray-20",
+  "_orig": [
+   "A coffee table likes a few strong pieces.",
+   "A pair of books, a carved wooden bowl, a speckled vase of greenery, a rattan tray and a stack of stone coasters share a round pale table here.",
    "Different heights keep it lively.",
    "Put in pinecones or ornaments whenever you want to change the season."
-  ],
-  "key": "tray-20"
+  ]
  },
  {
   "n": 35,
   "title": "Bring a Tray to the Bedroom",
   "paras": [
-   "Winter styling does not have to stay downstairs.",
+   "Winter styling doesn't have to stay downstairs.",
+   "A weathered wooden tray at the end of a bed holds a vase of white tulips, two candles and a folded knit blanket.",
+   "Fresh flowers feel unexpected in winter. Add a cozy throw and the corner begs for a book."
+  ],
+  "key": "tray-21",
+  "_orig": [
+   "Winter styling doesn't have to stay downstairs.",
    "A weathered wooden tray at the end of a bed holds a vase of white tulips, two candles and a folded knit blanket.",
    "Fresh flowers feel unexpected in winter.",
    "Add a cozy throw and the corner begs for a book."
-  ],
-  "key": "tray-21"
+  ]
  },
  {
   "n": 36,
@@ -1199,21 +1376,32 @@ const IDEAS = [
   "paras": [
    "Not everything needs to be Christmas.",
    "A woven rattan tray carries blush roses in a textured vase, a reed diffuser, a candle, a trinket dish and a stack of books.",
-   "The soft pink and cream palette reads romantic and calm.",
+   "<p><strong>Quick tip:</strong> The soft pink and cream palette reads romantic and calm.</p>",
    "It works well past the holidays."
   ],
-  "key": "tray-34"
+  "key": "tray-34",
+  "_orig": [
+   "Not everything needs to be Christmas.",
+   "A woven rattan tray carries blush roses in a textured vase, a reed diffuser, a candle, a trinket dish and a stack of books.",
+   "The soft pink and cream palette reads romantic and calm.",
+   "It works well past the holidays."
+  ]
  },
  {
   "n": 37,
   "title": "Try a Vanity Tray With Eucalyptus",
   "paras": [
+   "Bathrooms and vanities deserve a tray too. A white beaded tray holds a vase of eucalyptus stems and a ceramic jar with makeup brushes, set on marble.",
+   "The greens feel fresh against all that white.",
+   "It keeps small things corralled and still looks decorative."
+  ],
+  "key": "tray-30",
+  "_orig": [
    "Bathrooms and vanities deserve a tray too.",
    "A white beaded tray holds a vase of eucalyptus stems and a ceramic jar with makeup brushes, set on marble.",
    "The greens feel fresh against all that white.",
    "It keeps small things corralled and still looks decorative."
-  ],
-  "key": "tray-30"
+  ]
  }
 ];
 
@@ -1245,25 +1433,31 @@ function photo(key) {
 
 function ideaBlock(idea) {
   return `<h2>${idea.n}. ${idea.title}</h2>
-${idea.paras.map((t) => `<p>${t}</p>`).join("\n")}
+${idea.paras.map((t) => (t.startsWith("<") ? t : `<p>${t}</p>`)).join("\n")}
 ${photo(idea.key)}`;
 }
 
 const body = `
 <p>A styled tray is the quickest way to make a coffee table, kitchen island or console feel ready for winter.</p>
-<p>It is a small, contained project, so there is no need to redecorate a whole room.</p>
-<p>The trays that work best are built around one focal piece, such as a candle, a little village or a vase of greenery, with smaller details layered around it.</p>
-<p>These 37 ideas cover rustic wood, soft white, glowing gold and a bit of whimsy, so there is a look here for nearly any home.</p>
+<p>It's a small, contained project, so there's no need to redecorate a whole room, and it's easy to put away in January.</p>
+<p>The trays that work best are built around one focal piece, whether that's a candle, a little village or a vase of greenery, with smaller details layered around it. Here are the rules I use, followed by 37 ideas.</p>
 ${photo("hero")}
+
+<h2>Five Rules for a Winter Tray</h2>
+<p><strong>Choose the tray first.</strong> Wood, metal and woven all set a different mood, and everything else builds on that.</p>
+<p><strong>Give it one focal point.</strong> A candle, a house, a tree or a vase. Everything else supports it.</p>
+<p><strong>Mix heights.</strong> Something tall, such as a candle or branch, something low, like pinecones or ornaments, and something soft, like greenery or ribbon.</p>
+<p><strong>Repeat a color.</strong> Two colors that show up at least twice each will make it look intentional.</p>
+<p><strong>Leave gaps.</strong> If you can't see the tray between objects, take something off.</p>
 
 ${IDEAS.map(ideaBlock).join("\n\n")}
 
-<h2>How to Build Your Own Winter Tray</h2>
-<p>You do not need to copy any of these exactly.</p>
-<p>Borrow a color palette from one, a focal point from another, and make it yours.</p>
-<p>Start with the tray itself. Wood, metal and woven trays all set a different tone, so choose the base before anything else.</p>
-<p>Then mix heights and textures: something tall like a candle or branch, something low like pinecones or ornaments, and one soft element like greenery or ribbon.</p>
-<p>Keep it simple enough that you will actually enjoy looking at it all season. A tray you love beats one that is merely perfect.</p>
+<h2>Common Mistakes (and Fixes)</h2>
+<p><strong>Too many small things.</strong> Group them or remove half.</p>
+<p><strong>Real candles near greenery.</strong> Use glass holders or battery candles.</p>
+<p><strong>A tray too small for the table.</strong> Choose one that is about a third of the table's width.</p>
+<p><strong>Forgetting function.</strong> If you move the tray every time you need the table, it's in the wrong place.</p>
+<p>Keep it simple enough that you will enjoy looking at it all season. A tray you love beats a perfect one.</p>
 `;
 
 module.exports = { body };

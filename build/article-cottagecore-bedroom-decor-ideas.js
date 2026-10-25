@@ -6,6 +6,8 @@
 // illustrate. Every photo is credited to its Pinterest pin. Ends on text.
 // Photos live in images/cottagecore-bedroom-decor-ideas/, product shots in
 // images/cottagecore-bedroom-decor-ideas-products/.
+// Rewritten 2026-10-25 in an advice-led voice (styling rules, the why behind
+// each look, practical tips) after the first draft read like photo captions.
 
 const { picture } = require("./picture-helper.js");
 
@@ -671,333 +673,483 @@ const PRODUCTS = {
 const IDEAS = [
  {
   "n": 1,
-  "title": "Start With a Window Seat",
+  "title": "Start With a Place to Sit",
   "paras": [
-   "A window seat is the quiet, bookish heart of a cottage bedroom.",
-   "This one curves into an arched window, with a floral cushion and a few pillows set against a soft sage wall.",
-   "Wicker trunks at the foot of the bed hold spare blankets and add another layer of texture.",
-   "No built-in alcove? A slim bench under the window with a well-fitted cushion gets you most of the way there."
+   "Every cottage bedroom needs one spot that makes you stop.",
+   "This window seat curves into an arched window, with a floral cushion, a few pillows and a sage wall behind it. Wicker trunks at the foot of the bed hold spare blankets.",
+   "<ul><li>The cushion matters most. Aim for three to four inches of high-density foam. Anything thinner feels like a plank.</li><li>No built-in alcove? A slim bench under the window with a well-fitted cushion gets you most of the way there.</li></ul>"
   ],
-  "key": "bedroom-30"
+  "key": "bedroom-30",
+  "_orig": [
+   "Every cottage bedroom needs one spot that makes you stop.",
+   "This window seat curves into an arched window, with a floral cushion, a few pillows and a sage wall behind it. Wicker trunks at the foot of the bed hold spare blankets.",
+   "The cushion matters most. Aim for three to four inches of high-density foam. Anything thinner feels like a plank.",
+   "No built-in alcove? A slim bench under the window with a well-fitted cushion gets you most of the way there."
+  ]
  },
  {
   "n": 2,
-  "title": "Let Lace Curtains Soften the Light",
+  "title": "Let Lace Soften the Light",
   "paras": [
-   "Lace is the easiest way to make a bedroom feel gentler.",
-   "The curtain in this room is stirred by the breeze and throws a pattern of light across the floor, while a scrap of lace is draped over a small wooden side table.",
-   "A single vase of hydrangeas on the sill finishes the picture.",
-   "Choose cream or ivory instead of stark white and the room will read warm, not fussy."
+   "Light changes everything in a bedroom, and lace is the easiest way to change it.",
+   "Breeze stirs the curtain here and throws a pattern across the floor, while a scrap of lace is draped over a small wooden table.",
+   "Hang the rod four to six inches past the window frame and as high as you can. It makes the window look bigger. Choose cream or ivory, not stark white, and wash lace gently on a delicate cycle, then dry it flat."
   ],
-  "key": "bedroom-03"
+  "key": "bedroom-03",
+  "_orig": [
+   "Light changes everything in a bedroom, and lace is the easiest way to change it.",
+   "Breeze stirs the curtain here and throws a pattern across the floor, while a scrap of lace is draped over a small wooden table.",
+   "Hang the rod four to six inches past the window frame and as high as you can. It makes the window look bigger.",
+   "Choose cream or ivory, not stark white, and wash lace gently on a delicate cycle, then dry it flat."
+  ]
  },
  {
   "n": 3,
-  "title": "Carry One Floral Print From Window to Bed",
+  "title": "Repeat One Floral From Window to Bed",
   "paras": [
-   "If you love pattern but fear a patchwork mess, repeat a single floral.",
-   "Here the same small botanical print covers the curtains, the ruffled canopy and the bedspread, so the room feels designed rather than collected.",
-   "A white side table with a pitcher of fresh flowers gives the eye somewhere calm to rest.",
-   "Look for a print with some scale to it, because tiny ditsy flowers vanish when they are spread over big pieces."
+   "Pattern gets easier when you repeat it.",
+   "In this room the same small botanical print covers the curtains, the ruffled canopy and the bedspread, so it feels designed instead of collected by accident.",
+   "<p><strong>Quick tip:</strong> Use it in two or three places, then add solids around it. Too many prints and the room looks like a fabric shop.</p>",
+   "Look for a print with some scale. Tiny ditsy flowers vanish when you spread them across big pieces."
   ],
-  "key": "bedroom-29"
+  "key": "bedroom-29",
+  "_orig": [
+   "Pattern gets easier when you repeat it.",
+   "In this room the same small botanical print covers the curtains, the ruffled canopy and the bedspread, so it feels designed instead of collected by accident.",
+   "Use it in two or three places, then add solids around it. Too many prints and the room looks like a fabric shop.",
+   "Look for a print with some scale. Tiny ditsy flowers vanish when you spread them across big pieces."
+  ]
  },
  {
   "n": 4,
   "title": "Hang Red Gingham at the Window",
   "paras": [
-   "Gingham is the friendliest pattern in the cottage playbook.",
-   "A red check curtain with a gathered, ruffled top looks cheerful against pale wallpaper dotted with tiny wildflowers and ferns.",
-   "The small pine dresser and gilded painting nearby keep the whole corner feeling like a farmhouse kitchen moved upstairs.",
-   "Cafe-length or full-length, it works either way."
+   "Gingham is the friendliest pattern there is. A gathered red check curtain looks cheerful here against pale wallpaper dotted with tiny wildflowers and ferns, with a small pine dresser and a gilded painting nearby.",
+   "It pairs with florals as long as the scales differ: small flowers, bigger checks.",
+   "Cafe-length curtains suit a small window. Full length makes a bigger one grander."
   ],
-  "key": "bedroom-16"
+  "key": "bedroom-16",
+  "_orig": [
+   "Gingham is the friendliest pattern there is.",
+   "A gathered red check curtain looks cheerful here against pale wallpaper dotted with tiny wildflowers and ferns, with a small pine dresser and a gilded painting nearby.",
+   "It pairs with florals as long as the scales differ: small flowers, bigger checks.",
+   "Cafe-length curtains suit a small window. Full length makes a bigger one grander."
+  ]
  },
  {
   "n": 5,
-  "title": "Paint the Walls Sage and Hang Botanical Prints",
+  "title": "Paint the Walls Sage",
   "paras": [
-   "Sage green does a lot of work without shouting.",
-   "In this bedroom it backs a light wood bed dressed in white linen and terracotta pillows, with three framed botanical prints hung above it.",
-   "The window keeps the room bright, so the green feels fresh rather than heavy.",
-   "Pick prints with a little warm color in them, like rust leaves, to echo the pillows."
+   "Sage green is a neutral in disguise.",
+   "It backs a light wood bed dressed in white linen and terracotta pillows here, with three framed botanical prints above. Always test the color first. Paint a two-foot swatch and watch it for a full day, because green shifts dramatically with light.",
+   "Hang art six to eight inches above the headboard so it feels connected to the bed."
   ],
-  "key": "bedroom-09"
+  "key": "bedroom-09",
+  "_orig": [
+   "Sage green is a neutral in disguise.",
+   "It backs a light wood bed dressed in white linen and terracotta pillows here, with three framed botanical prints above.",
+   "Always test the color first. Paint a two-foot swatch and watch it for a full day, because green shifts dramatically with light.",
+   "Hang art six to eight inches above the headboard so it feels connected to the bed."
+  ]
  },
  {
   "n": 6,
   "title": "Go Deep Forest Green",
   "paras": [
-   "For a more nocturnal take, paint the wall behind the bed a dark, mossy green.",
-   "Vertical board paneling adds shadow and detail here, and a wooden headboard, matching nightstand and a small brass-based lamp keep the mood warm.",
-   "Bedding in the same family as the wall makes the whole corner feel tucked in.",
-   "Add a woven basket and a stem of dried grass and it looks like a forest cabin."
+   "A dark wall makes a bed feel wrapped in a hug.",
+   "Vertical board paneling adds shadow and detail behind this wooden bed, and bedding in the same green keeps the whole corner tucked in.",
+   "<ul><li>Dark rooms need layered light: a lamp on each side of the bed, plus a warm overhead bulb.</li><li>A satin finish hides marks better than flat on a deep color.</li></ul>"
   ],
-  "key": "bedroom-20"
+  "key": "bedroom-20",
+  "_orig": [
+   "A dark wall makes a bed feel wrapped in a hug.",
+   "Vertical board paneling adds shadow and detail behind this wooden bed, and bedding in the same green keeps the whole corner tucked in.",
+   "Dark rooms need layered light: a lamp on each side of the bed, plus a warm overhead bulb.",
+   "A satin finish hides marks better than flat on a deep color."
+  ]
  },
  {
   "n": 7,
   "title": "Try Moody Florals on One Wall",
   "paras": [
-   "Dark florals turn a bedroom into an old English hideaway.",
-   "Rose-covered wallpaper on a deep green ground rises behind a black iron bed, with emerald velvet bedding, a salmon-pink pillow and a chunky crochet throw layered on top.",
-   "A lantern and a wall light give off candle-style glow.",
-   "Keep the print to one wall or an alcove so the drama stays contained, and peel-and-stick makes it easy for renters."
+   "<p><strong>Dark florals turn a bedroom into an old English hideaway.</strong> Rose-covered wallpaper on a deep green ground rises behind this black iron bed, with emerald velvet, a salmon pillow and a chunky crochet throw layered on top.</p>",
+   "<ul><li>Keep the print to one wall or an alcove, so the drama stays contained.</li><li>Peel-and-stick wallpaper makes this a weekend job, even for renters.</li></ul>"
   ],
-  "key": "bedroom-02"
+  "key": "bedroom-02",
+  "_orig": [
+   "Dark florals turn a bedroom into an old English hideaway.",
+   "Rose-covered wallpaper on a deep green ground rises behind this black iron bed, with emerald velvet, a salmon pillow and a chunky crochet throw layered on top.",
+   "Keep the print to one wall or an alcove, so the drama stays contained.",
+   "Peel-and-stick wallpaper makes this a weekend job, even for renters."
+  ]
  },
  {
   "n": 8,
-  "title": "Make a Wall-Sized Floral Mural",
+  "title": "Let a Mural Replace the Headboard",
   "paras": [
-   "A mural is wallpaper with a flair for the dramatic.",
-   "This one spreads an old-master style bouquet of dahlias, tulips and hydrangeas across a black ground, right above a simple wooden bed with white linen and a knit blanket.",
-   "Because the artwork does all the talking, the rest of the room can stay plain, with a couple of potted ferns at the foot of the bed.",
-   "Choose the scale carefully: big blooms feel painterly, small ones just feel busy."
+   "A mural does the work of a headboard and a painting together. An old-master style bouquet of dahlias, tulips and hydrangeas spreads over this black ground behind a simple wooden bed with white linen and a knit blanket.",
+   "Measure the wall before ordering, because murals come in panels. Choose the scale carefully. Big blooms feel painterly, and small ones just feel busy."
   ],
-  "key": "bedroom-13"
+  "key": "bedroom-13",
+  "_orig": [
+   "A mural does the work of a headboard and a painting together.",
+   "An old-master style bouquet of dahlias, tulips and hydrangeas spreads over this black ground behind a simple wooden bed with white linen and a knit blanket.",
+   "Measure the wall before ordering, because murals come in panels.",
+   "Choose the scale carefully. Big blooms feel painterly, and small ones just feel busy."
+  ]
  },
  {
   "n": 9,
-  "title": "Add Shiplap and a Wood Beam",
+  "title": "Add Architecture Before Decor",
   "paras": [
-   "Architecture can do the cottage work before a single pillow arrives.",
-   "White shiplap walls and rustic ceiling beams frame a black metal bed, plaid cushions and a cream throw in this room.",
-   "A framed winter landscape and a sconce-style reading light keep it from feeling stark.",
-   "If you cannot build in beams, lightweight faux ones and peel-and-stick planks create the same effect without touching the structure."
+   "Some rooms look like a cottage before a single pillow arrives.",
+   "White shiplap walls and rustic ceiling beams frame a black metal bed here, with plaid cushions and a framed winter landscape.",
+   "If you don't own beams, lightweight foam ones and peel-and-stick planks create the same effect without touching the structure.",
+   "Space faux beams evenly, about two to three feet apart."
   ],
-  "key": "bedroom-11"
+  "key": "bedroom-11",
+  "_orig": [
+   "Some rooms look like a cottage before a single pillow arrives.",
+   "White shiplap walls and rustic ceiling beams frame a black metal bed here, with plaid cushions and a framed winter landscape.",
+   "If you don't own beams, lightweight foam ones and peel-and-stick planks create the same effect without touching the structure.",
+   "Space faux beams evenly, about two to three feet apart."
+  ]
  },
  {
   "n": 10,
-  "title": "Choose an Iron Bed Frame",
+  "title": "Choose a Slim Iron Bed",
   "paras": [
-   "A curved metal bed frame is classic cottage furniture.",
-   "Here it is dressed in rumpled white bedding with one floral pillow, a wooden nightstand with little drawers, and an apricot-and-cream bouquet by the window.",
-   "The slim frame keeps the room airy, which matters in a small space.",
-   "Leave the bedding a bit wrinkled on purpose. It looks more welcoming that way."
+   "<p><strong>A slim frame keeps a small bedroom airy.</strong> The curved metal bed here is dressed in rumpled white bedding with one floral pillow, beside a wooden nightstand with small drawers.</p>",
+   "Leave the bedding a little wrinkled. Perfectly flat looks like a hotel.",
+   "Layer in this order: sheet, quilt, throw, then three pillows in different sizes."
   ],
-  "key": "bedroom-04"
+  "key": "bedroom-04",
+  "_orig": [
+   "A slim frame keeps a small bedroom airy.",
+   "The curved metal bed here is dressed in rumpled white bedding with one floral pillow, beside a wooden nightstand with small drawers.",
+   "Leave the bedding a little wrinkled. Perfectly flat looks like a hotel.",
+   "Layer in this order: sheet, quilt, throw, then three pillows in different sizes."
+  ]
  },
  {
   "n": 11,
   "title": "Go Brass and Victorian",
   "paras": [
-   "If iron feels too plain, a brass bed frame brings a little old-house romance.",
-   "This one sits in a bay of tall windows, surrounded by rose wallpaper, a floral quilt and a worn rug in rich reds.",
-   "Fresh red flowers on the sill pick up the pattern around them.",
-   "It is a bold, layered look, so give yourself permission to mix prints and let a few of them clash."
+   "If iron feels too plain, brass brings old-house romance.",
+   "This bed sits in a bay of tall windows surrounded by rose wallpaper, a floral quilt and a worn rug in deep reds.",
+   "<ul><li>It's a bold, layered look. Mix your prints, but let them share a color. Here it is red.</li><li>Check whether a brass bed is solid or plated before you buy. It affects how you polish it.</li></ul>"
   ],
-  "key": "bedroom-26"
+  "key": "bedroom-26",
+  "_orig": [
+   "If iron feels too plain, brass brings old-house romance.",
+   "This bed sits in a bay of tall windows surrounded by rose wallpaper, a floral quilt and a worn rug in deep reds.",
+   "It's a bold, layered look. Mix your prints, but let them share a color. Here it is red.",
+   "Check whether a brass bed is solid or plated before you buy. It affects how you polish it."
+  ]
  },
  {
   "n": 12,
   "title": "Build a Four-Poster With Fabric",
   "paras": [
-   "You do not need a carved bed to get the canopy look.",
-   "A fabric ceiling and floral side drapes turn this bed into a little room within the room, with striped curtains and a matching striped bed skirt below.",
-   "An open book on the duvet suggests nobody is in a hurry.",
-   "Rod-mounted curtains on a simple frame give you the same enclosed feeling at a much lower price."
+   "You don't need a carved bed for a canopy.",
+   "A fabric ceiling and floral side drapes turn this bed into a room within a room, with striped curtains and a matching striped bed skirt below.",
+   "Rod-mounted curtains on a simple frame give you the same enclosed feeling for far less money. If you hang anything from the ceiling, screw into joists and not just drywall."
   ],
-  "key": "bedroom-07"
+  "key": "bedroom-07",
+  "_orig": [
+   "You don't need a carved bed for a canopy.",
+   "A fabric ceiling and floral side drapes turn this bed into a room within a room, with striped curtains and a matching striped bed skirt below.",
+   "Rod-mounted curtains on a simple frame give you the same enclosed feeling for far less money.",
+   "If you hang anything from the ceiling, screw into joists and not just drywall."
+  ]
  },
  {
   "n": 13,
-  "title": "Wrap the Bed in Sheer Fabric and Fairy Lights",
+  "title": "Wrap the Bed in Sheer Fabric and Light",
   "paras": [
    "Sheer drapes and tiny lights are pure bedtime magic.",
-   "Gauzy fabric gathers over this bed in soft swags, with ivy trailing through the folds and a string of warm lights glowing along the edge.",
-   "Add a crown or a ceiling hook, hang the fabric, then wind the lights loosely so they look gathered by hand.",
-   "Warm white bulbs only. Cool white would spoil the mood."
+   "Gauzy fabric gathers over this bed in soft swags, with ivy trailing through and a string of warm lights along the edge.",
+   "<p><strong>Quick tip:</strong> Hang the fabric from one ceiling hook above the middle of the bed and spread it to the corners.</p>",
+   "Use warm white bulbs on a timer, so you don't have to get up to turn them off."
   ],
-  "key": "bedroom-08"
+  "key": "bedroom-08",
+  "_orig": [
+   "Sheer drapes and tiny lights are pure bedtime magic.",
+   "Gauzy fabric gathers over this bed in soft swags, with ivy trailing through and a string of warm lights along the edge.",
+   "Hang the fabric from one ceiling hook above the middle of the bed and spread it to the corners.",
+   "Use warm white bulbs on a timer, so you don't have to get up to turn them off."
+  ]
  },
  {
   "n": 14,
-  "title": "Hang Crochet Lace Overhead in an Attic Room",
+  "title": "Embrace the Slope",
   "paras": [
-   "Sloped attic ceilings are made for cottagecore.",
-   "In this tiny room, whitewashed rafters, a doily-style lace canopy and frilly window curtains surround a bed piled with mismatched, faded patterned linens.",
-   "A wooden chair with an embroidered cushion and a patterned rug add to the thrifted feel.",
-   "Do not worry about matching. The charm here comes from everything being slightly worn."
+   "Sloped attic ceilings are made for cottagecore. Whitewashed rafters, a lace canopy and frilly curtains surround a bed piled with faded patterned linens here, with a wooden chair and a patterned rug beside it.",
+   "Keep furniture low and colors light so the ceiling doesn't feel closer.",
+   "Don't worry about matching. The charm of this room is that everything is slightly worn."
   ],
-  "key": "bedroom-28"
+  "key": "bedroom-28",
+  "_orig": [
+   "Sloped attic ceilings are made for cottagecore.",
+   "Whitewashed rafters, a lace canopy and frilly curtains surround a bed piled with faded patterned linens here, with a wooden chair and a patterned rug beside it.",
+   "Keep furniture low and colors light so the ceiling doesn't feel closer.",
+   "Don't worry about matching. The charm of this room is that everything is slightly worn."
+  ]
  },
  {
   "n": 15,
-  "title": "Mix Pink Stripes With a Stack of Books",
+  "title": "Mix Pink Stripes With Stacked Books",
   "paras": [
    "Soft pink stripes feel like a summer afternoon.",
-   "This bed pairs a rose-and-cream striped duvet with a wooden frame, a plant in a pot and a tall stack of well-read books on the end.",
-   "A cube bookshelf by the pillows, a pinned-up picture and a trailing vine complete the student-garret feeling.",
-   "Cotton bedding with a washed texture keeps it casual."
+   "A rose and cream striped duvet covers this wooden bed, with a plant in a pot, a tall stack of well-read books at the foot and a cube bookshelf beside the pillows. Keep the stripes narrow and the colors in the same family.",
+   "Washed cotton bedding makes it casual and gets softer with every wash."
   ],
-  "key": "bedroom-12"
+  "key": "bedroom-12",
+  "_orig": [
+   "Soft pink stripes feel like a summer afternoon.",
+   "A rose and cream striped duvet covers this wooden bed, with a plant in a pot, a tall stack of well-read books at the foot and a cube bookshelf beside the pillows.",
+   "Keep the stripes narrow and the colors in the same family.",
+   "Washed cotton bedding makes it casual and gets softer with every wash."
+  ]
  },
  {
   "n": 16,
-  "title": "Spread a Crocheted Bedspread Over It All",
+  "title": "Spread a Crocheted Coverlet",
   "paras": [
    "A crocheted coverlet is heirloom decor you can actually use.",
-   "The one in this corner has a diamond lattice with amber lines and sits under a mix of sage, mustard and blush cushions, with a tea tray resting right on the bed.",
-   "A white mosquito-net canopy wrapped in a leafy, light-strung garland and a gallery of small frames above complete the nook.",
-   "Vintage shops and online sellers both carry them, usually for less than you would expect."
+   "This one has a diamond lattice with amber lines, and it sits under sage, mustard and blush cushions, with a white canopy wrapped in leafy garland above.",
+   "<ul><li>Vintage shops and online sellers both carry them. Check for stains and holes, and wash gently.</li><li>Layer it over a solid sheet so the pattern shows.</li></ul>"
   ],
-  "key": "bedroom-17"
+  "key": "bedroom-17",
+  "_orig": [
+   "A crocheted coverlet is heirloom decor you can actually use.",
+   "This one has a diamond lattice with amber lines, and it sits under sage, mustard and blush cushions, with a white canopy wrapped in leafy garland above.",
+   "Vintage shops and online sellers both carry them. Check for stains and holes, and wash gently.",
+   "Layer it over a solid sheet so the pattern shows."
+  ]
  },
  {
   "n": 17,
-  "title": "Pile Up Patchwork Quilts",
+  "title": "Stack Quilts Like Art",
   "paras": [
-   "Folded quilts are decor that keeps you warm.",
-   "In this crowded, colorful room they stack up in a woven basket next to a fireplace, a fringed ottoman and a table set with a mismatched tea service.",
-   "Pastel squares, floral prints and faded stripes sit comfortably together.",
-   "Stack them with the prettiest edges showing, and swap them with the seasons."
+   "<p><strong>Folded quilts are decor that keeps you warm.</strong> They are stacked in a woven basket next to a fireplace here, in a room with a fringed ottoman and a mismatched tea set.</p>",
+   "<ul><li>Fold them with the prettiest edge facing out.</li><li>Store them out of direct sun, and refold every few months so creases don't set.</li></ul>"
   ],
-  "key": "bedroom-22"
+  "key": "bedroom-22",
+  "_orig": [
+   "Folded quilts are decor that keeps you warm.",
+   "They are stacked in a woven basket next to a fireplace here, in a room with a fringed ottoman and a mismatched tea set.",
+   "Fold them with the prettiest edge facing out.",
+   "Store them out of direct sun, and refold every few months so creases don't set."
+  ]
  },
  {
   "n": 18,
-  "title": "Tuck in a Slipcovered Daybed",
+  "title": "Add a Slipcovered Daybed",
   "paras": [
-   "A slipcovered daybed gives a bedroom a spare sofa.",
-   "This one has a relaxed, wrinkled cover and a skirted ottoman in front, set under a leaded window with two glowing wall lights.",
-   "Frames and little pictures climb the wall above, and the whole nook looks made for afternoon naps.",
-   "A ruffle at the bottom is all it takes to soften a plain bench or ottoman."
+   "A slipcovered daybed gives a bedroom a spare sofa. This one has a relaxed, wrinkled cover and a skirted ottoman in front, under a leaded window with two glowing wall lights.",
+   "Slipcovers come off and wash, which is a gift in a house with kids or pets. A ruffle at the bottom is all it takes to soften a plain bench or ottoman."
   ],
-  "key": "bedroom-23"
+  "key": "bedroom-23",
+  "_orig": [
+   "A slipcovered daybed gives a bedroom a spare sofa.",
+   "This one has a relaxed, wrinkled cover and a skirted ottoman in front, under a leaded window with two glowing wall lights.",
+   "Slipcovers come off and wash, which is a gift in a house with kids or pets.",
+   "A ruffle at the bottom is all it takes to soften a plain bench or ottoman."
+  ]
  },
  {
   "n": 19,
-  "title": "Ground the Room With a Jute Rug and Reading Nook",
+  "title": "Anchor the Room With a Big Natural Rug",
   "paras": [
-   "A big natural-fiber rug is the foundation of a cozy room.",
-   "Here a chunky jute rug stretches under a white bed, with a woven leather bench at the foot and a round bouclé chair in the corner by a side table and lamp.",
-   "The textures are all natural, so nothing fights for attention.",
-   "Pick a rug large enough that at least the front legs of the bed and chair sit on it."
+   "A rug is the foundation of the whole room.",
+   "Here a chunky jute rug stretches under a white bed, with a woven leather bench at the foot and a round bouclé chair in the corner.",
+   "It should extend at least 18 inches on each side of the bed, or at the very least cover the front two-thirds.",
+   "Jute can feel rough underfoot. A rug pad softens it."
   ],
-  "key": "bedroom-10"
+  "key": "bedroom-10",
+  "_orig": [
+   "A rug is the foundation of the whole room.",
+   "Here a chunky jute rug stretches under a white bed, with a woven leather bench at the foot and a round bouclé chair in the corner.",
+   "It should extend at least 18 inches on each side of the bed, or at the very least cover the front two-thirds.",
+   "Jute can feel rough underfoot. A rug pad softens it."
+  ]
  },
  {
   "n": 20,
-  "title": "Give the Corner an Armchair",
+  "title": "Give the Corner a Chair",
   "paras": [
-   "Every bedroom has a corner that needs a reason to exist.",
-   "A striped armchair with a block-print pillow and a knit throw sits by the window here, with a vase of blossoming branches on a slim brass side table.",
-   "A pale rug underfoot keeps the whole corner light.",
-   "Choose a quiet stripe if the room already has plenty of pattern."
+   "<p><strong>Every bedroom has a corner that needs a reason to exist.</strong> A striped armchair with a block-print pillow and a knit throw sits by the window here, with blossoming branches on a slim brass side table.</p>",
+   "Angle the chair about 45 degrees, which makes the corner feel inviting.",
+   "Choose a quiet stripe if the room already has a lot of pattern."
   ],
-  "key": "bedroom-25"
+  "key": "bedroom-25",
+  "_orig": [
+   "Every bedroom has a corner that needs a reason to exist.",
+   "A striped armchair with a block-print pillow and a knit throw sits by the window here, with blossoming branches on a slim brass side table.",
+   "Angle the chair about 45 degrees, which makes the corner feel inviting.",
+   "Choose a quiet stripe if the room already has a lot of pattern."
+  ]
  },
  {
   "n": 21,
-  "title": "Use a Vintage Trunk as a Bedside Table",
+  "title": "Use a Trunk as a Bedside Table",
   "paras": [
    "A trunk is storage and a nightstand in one.",
-   "This leather-strapped steamer trunk sits beside the bed holding a lamp, a few books and a reed diffuser, with a large framed print leaning behind.",
-   "A cowhide rug on the floor adds a rustic touch.",
-   "Open it up and you have a place to hide spare linens."
+   "This leather-strapped steamer trunk sits beside the bed holding a lamp, a few books and a reed diffuser, with a large framed print behind it.",
+   "<ul><li>A nightstand should sit within two inches of the mattress top. If your trunk is low, stack a book or two underneath.</li><li>Open it up and you have a place to hide spare linens.</li></ul>"
   ],
-  "key": "bedroom-14"
+  "key": "bedroom-14",
+  "_orig": [
+   "A trunk is storage and a nightstand in one.",
+   "This leather-strapped steamer trunk sits beside the bed holding a lamp, a few books and a reed diffuser, with a large framed print behind it.",
+   "A nightstand should sit within two inches of the mattress top. If your trunk is low, stack a book or two underneath.",
+   "Open it up and you have a place to hide spare linens."
+  ]
  },
  {
   "n": 22,
-  "title": "Pair a Weathered Nightstand With a Ceramic Pitcher",
+  "title": "Embrace Worn Paint",
   "paras": [
-   "Worn paint tells a story that new furniture cannot.",
-   "The chest of drawers beside this bed has a soft, distressed finish, and it holds a cream pitcher full of white blossoms, a mug and a small plant.",
-   "More leafy plants and a basket sit around it, as if the garden has come inside.",
-   "If your furniture is too shiny, light sanding and a wax finish can age it quickly."
+   "Worn paint tells a story new furniture can't.",
+   "The chest of drawers beside this bed has a soft, distressed finish and holds a cream pitcher of white blossoms, a mug and a small plant.",
+   "If your furniture is too shiny, light sanding and a wax finish will age it quickly. Change flower water daily and stems will last twice as long."
   ],
-  "key": "bedroom-15"
+  "key": "bedroom-15",
+  "_orig": [
+   "Worn paint tells a story new furniture can't.",
+   "The chest of drawers beside this bed has a soft, distressed finish and holds a cream pitcher of white blossoms, a mug and a small plant.",
+   "If your furniture is too shiny, light sanding and a wax finish will age it quickly.",
+   "Change flower water daily and stems will last twice as long."
+  ]
  },
  {
   "n": 23,
   "title": "Choose a Wicker Nightstand",
   "paras": [
    "Wicker brings a breezy, seaside-cottage feel.",
-   "This small bedside table has a woven shelf and a drawer, topped with a white pitcher of golden wildflowers and a mug.",
-   "The bed beside it is layered in white linen with blue gingham cushions and a check throw.",
-   "Natural fibers like rattan pair well with blue and white."
+   "This small bedside table has a woven shelf and a drawer, topped with a pitcher of golden wildflowers, and the bed beside it is layered in white linen with blue gingham cushions.",
+   "<p><strong>Quick tip:</strong> Natural fibers like rattan pair well with blue and white.</p>",
+   "Wicker lightens a heavy room."
   ],
-  "key": "bedroom-27"
+  "key": "bedroom-27",
+  "_orig": [
+   "Wicker brings a breezy, seaside-cottage feel.",
+   "This small bedside table has a woven shelf and a drawer, topped with a pitcher of golden wildflowers, and the bed beside it is layered in white linen with blue gingham cushions.",
+   "Natural fibers like rattan pair well with blue and white.",
+   "Wicker lightens a heavy room."
+  ]
  },
  {
   "n": 24,
-  "title": "Find an Antique Dresser With an Oval Mirror",
+  "title": "Hunt for an Antique Dresser",
   "paras": [
-   "A dresser with a tilting oval mirror is a classic for a reason.",
-   "This dark-wood chest has rows of brass-handled drawers, with a small swing mirror, a candlestick and a cluster of old photographs on top.",
-   "Against a dusky gray wall and heavy curtains, it feels like a family heirloom.",
-   "Antique shops, estate sales and online marketplaces are where to hunt."
+   "A dresser with a tilting oval mirror is a classic for a reason. This dark wood chest has brass-handled drawers, with a small swing mirror, a candlestick and old photographs on top.",
+   "When you shop, open every drawer. They should slide smoothly, with dovetail joints at the corners, and no musty smell.",
+   "Don't refinish old wood unless it's badly damaged. The patina is the point."
   ],
-  "key": "bedroom-05"
+  "key": "bedroom-05",
+  "_orig": [
+   "A dresser with a tilting oval mirror is a classic for a reason.",
+   "This dark wood chest has brass-handled drawers, with a small swing mirror, a candlestick and old photographs on top.",
+   "When you shop, open every drawer. They should slide smoothly, with dovetail joints at the corners, and no musty smell.",
+   "Don't refinish old wood unless it's badly damaged. The patina is the point."
+  ]
  },
  {
   "n": 25,
-  "title": "Set Up a Vanity With a Gilded Mirror",
+  "title": "Set Up a Vanity Corner",
   "paras": [
-   "Give yourself a little corner for getting ready.",
-   "A wooden writing-style desk with carved legs and a bentwood chair sits under a tall arched mirror edged in gold, with a vase of white lilies in front.",
-   "The pale blue wall lets the warm wood glow.",
+   "Give yourself a small corner for getting ready.",
+   "A wooden writing-style desk with carved legs and a bentwood chair sits under a tall arched mirror edged in gold, with a vase of white lilies in front. Put the mirror near a window so you get natural light.",
    "Keep the surface clear except for a few pretty glass jars."
   ],
-  "key": "bedroom-21"
+  "key": "bedroom-21",
+  "_orig": [
+   "Give yourself a small corner for getting ready.",
+   "A wooden writing-style desk with carved legs and a bentwood chair sits under a tall arched mirror edged in gold, with a vase of white lilies in front.",
+   "Put the mirror near a window so you get natural light.",
+   "Keep the surface clear except for a few pretty glass jars."
+  ]
  },
  {
   "n": 26,
-  "title": "Style a Washstand With a Pitcher and Bowl",
+  "title": "Style an Old Washstand",
   "paras": [
-   "Before bathrooms were attached, a washstand sat in the bedroom.",
-   "This oak one has a towel bar, brass pulls, a white ceramic pitcher and a wide bowl, with a vintage portrait hanging above.",
-   "It feels like a museum corner, but it is easy to recreate with a thrifted cabinet.",
-   "Use the bowl to hold soap, hair clips or pretty stones."
+   "Before bathrooms were attached, a washstand lived in the bedroom.",
+   "This oak one has a towel bar, brass pulls, a white pitcher and a wide bowl, with a vintage portrait hanging above.",
+   "<ul><li>It's easy to recreate with a thrifted cabinet.</li><li>Use the bowl to hold soap, hair clips or pretty stones.</li></ul>"
   ],
-  "key": "bedroom-24"
+  "key": "bedroom-24",
+  "_orig": [
+   "Before bathrooms were attached, a washstand lived in the bedroom.",
+   "This oak one has a towel bar, brass pulls, a white pitcher and a wide bowl, with a vintage portrait hanging above.",
+   "It's easy to recreate with a thrifted cabinet.",
+   "Use the bowl to hold soap, hair clips or pretty stones."
+  ]
  },
  {
   "n": 27,
-  "title": "Gather a Mismatched Gallery Wall",
+  "title": "Hang a Gallery Wall Like a Collector",
   "paras": [
-   "Hang pictures like they were collected, not matched.",
-   "This wall mixes pencil sketches, a botanical leaf study, a countryside landscape and a seaside scene in wood and dark frames, above a small desk with a vase of daisies.",
-   "Frames in different sizes feel casual, while a shared soft color palette keeps it cohesive.",
-   "Lay them on the floor first and rearrange until it looks right."
+   "<p><strong>Hang pictures like you collected them, not matched them.</strong> This wall mixes pencil sketches, a botanical study, a landscape and a seaside scene in wood and dark frames, above a small desk with a vase of daisies.</p>",
+   "<ul><li>Lay everything out on the floor first. Keep two inches between frames and the center of the group at eye level.</li><li>A shared soft palette keeps mixed frames cohesive.</li></ul>"
   ],
-  "key": "bedroom-06"
+  "key": "bedroom-06",
+  "_orig": [
+   "Hang pictures like you collected them, not matched them.",
+   "This wall mixes pencil sketches, a botanical study, a landscape and a seaside scene in wood and dark frames, above a small desk with a vase of daisies.",
+   "Lay everything out on the floor first. Keep two inches between frames and the center of the group at eye level.",
+   "A shared soft palette keeps mixed frames cohesive."
+  ]
  },
  {
   "n": 28,
   "title": "Turn Empty Frames Into Flower Holders",
   "paras": [
-   "Here is a playful way to hang flowers on the wall.",
-   "Old wooden frames hold little glass bottles and vials, each one filled with fresh daisies, sunflowers or herbs, so the wall looks like a living still life.",
-   "Swap the stems with the season.",
-   "If you want something that lasts longer, framed pressed flowers give you the same botanical feeling without the watering."
+   "This one is a playful way to put flowers on the wall. Old wooden frames hold small glass vials, each filled with fresh daisies, sunflowers or herbs, so the wall looks like a living still life.",
+   "Swap the stems with the season. If you want it to last, framed pressed flowers give you the same botanical feeling without the watering."
   ],
-  "key": "bedroom-19"
+  "key": "bedroom-19",
+  "_orig": [
+   "This one is a playful way to put flowers on the wall.",
+   "Old wooden frames hold small glass vials, each filled with fresh daisies, sunflowers or herbs, so the wall looks like a living still life.",
+   "Swap the stems with the season.",
+   "If you want it to last, framed pressed flowers give you the same botanical feeling without the watering."
+  ]
  },
  {
   "n": 29,
   "title": "Keep Dried Flowers in a Big Vase",
   "paras": [
    "Dried flowers never need watering, which makes them the lazy gardener's best friend.",
-   "A big, chalky white vase holds an armful of rust-colored blooms and twiggy stems on a fluted wooden console.",
-   "The arrangement stays interesting all year, from autumn to deep winter.",
+   "A chalky white vase holds an armful of rust-colored blooms and twiggy stems on a fluted wooden console here.",
+   "Dry fresh bunches upside down in a dark, airy spot for about two weeks.",
    "Group stems by height and let a few branches stick out for a natural shape."
   ],
-  "key": "bedroom-18"
+  "key": "bedroom-18",
+  "_orig": [
+   "Dried flowers never need watering, which makes them the lazy gardener's best friend.",
+   "A chalky white vase holds an armful of rust-colored blooms and twiggy stems on a fluted wooden console here.",
+   "Dry fresh bunches upside down in a dark, airy spot for about two weeks.",
+   "Group stems by height and let a few branches stick out for a natural shape."
+  ]
  },
  {
   "n": 30,
-  "title": "Hang a Straw Hat and Woven Tote by the Door",
+  "title": "Hang a Straw Hat by the Door",
   "paras": [
-   "The easiest idea on the list is also one of the most charming.",
-   "Here a straw hat and a market tote hang from hooks beside a framed set of pressed botanicals in an old window frame, with gingham dresses on a rail and a lace-covered table and lamp nearby.",
-   "It makes everyday belongings part of the decor.",
-   "Mount hooks at different heights so things overlap a little instead of lining up in a row."
+   "<p><strong>The easiest idea on the list is also one of the most charming.</strong> A straw hat and a market tote hang from hooks beside pressed botanicals in an old window frame here, with gingham dresses on a rail.</p>",
+   "Mount the hooks at different heights so things overlap a little.",
+   "It makes everyday belongings part of the decor."
   ],
-  "key": "bedroom-01"
+  "key": "bedroom-01",
+  "_orig": [
+   "The easiest idea on the list is also one of the most charming.",
+   "A straw hat and a market tote hang from hooks beside pressed botanicals in an old window frame here, with gingham dresses on a rail.",
+   "Mount the hooks at different heights so things overlap a little.",
+   "It makes everyday belongings part of the decor."
+  ]
  }
 ];
 
@@ -1029,27 +1181,32 @@ function photo(key) {
 
 function ideaBlock(idea) {
   return `<h2>${idea.n}. ${idea.title}</h2>
-${idea.paras.map((t) => `<p>${t}</p>`).join("\n")}
+${idea.paras.map((t) => (t.startsWith("<") ? t : `<p>${t}</p>`)).join("\n")}
 ${photo(idea.key)}`;
 }
 
 const body = `
 <p>Some bedrooms make you exhale the moment you walk in.</p>
-<p>Think lace stirring at an open window, a quilt that has clearly been loved, and a jar of garden flowers on the nightstand.</p>
-<p>That is cottagecore: soft, a little worn, and happily unbothered by anything sleek.</p>
-<p>The secret is that it should look gathered over time, not bought in one weekend. Florals can sit next to gingham, a flea-market dresser can share a room with new bedding, and nothing needs to match perfectly.</p>
-<p>These 30 ideas run from big moves, like an iron bed or a window seat, down to small touches, like a hat on a hook. Borrow a few and leave the rest.</p>
+<p>Think lace stirring at an open window, a quilt that has clearly been loved and a jar of garden flowers on the nightstand.</p>
+<p>That is cottagecore: soft, a little worn and happily unbothered by anything sleek. The secret is that it should look gathered over time, not bought in a weekend. Here's how I approach it, then 30 ideas to borrow from.</p>
 ${photo("exterior-a")}
+
+<h2>Five Rules for a Cottagecore Bedroom</h2>
+<p><strong>Layer, don't match.</strong> Florals can sit beside gingham, and a flea-market dresser can share a room with new bedding.</p>
+<p><strong>Share one color.</strong> Mixed patterns work when they have a color in common.</p>
+<p><strong>Use natural materials.</strong> Linen, cotton, wood, wicker and jute. They age well, and they feel good.</p>
+<p><strong>Light it softly.</strong> Lamps and string lights at warm temperature, not overhead glare.</p>
+<p><strong>Edit.</strong> Five or six of these ideas in one room is plenty.</p>
 
 ${IDEAS.map(ideaBlock).join("\n\n")}
 
-<h2>How to Keep It Lived-In, Not Costumey</h2>
-<p>Thirty ideas is plenty, and no room needs all of them.</p>
-<p>The bedrooms that feel truly cottagecore usually lean on five or six, added slowly.</p>
-<p>Pick one anchor first &mdash; a bed frame, a wallpaper or a big quilt &mdash; then build around it with texture: a rug, something crocheted, a few framed flowers, and real blooms whenever you can.</p>
+<h2>Common Mistakes (and Fixes)</h2>
+<p><strong>Buying a whole matching set.</strong> It looks like a showroom. Add one old thing.</p>
+<p><strong>Too many patterns at the same scale.</strong> Vary large, medium and small.</p>
+<p><strong>Forgetting comfort.</strong> A pretty bed that isn't comfortable won't last.</p>
+<p><strong>Rushing.</strong> Start with one anchor and add pieces as you find them.</p>
 ${photo("exterior-b")}
-<p>Let the room look a little undone. Stacked books, a throw tossed over a chair and flowers that are not perfectly arranged are what separate a home from a showroom.</p>
-<p>Start small, add pieces as you find them, and let the room grow into itself.</p>
+<p>Let the room look a little undone. Stacked books, a throw tossed over a chair and flowers that aren't perfectly arranged are what separate a home from a showroom.</p>
 `;
 
 module.exports = { body };

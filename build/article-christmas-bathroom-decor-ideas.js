@@ -4,6 +4,8 @@
 // vanity counters, shelves, the toilet area, shower and tub). Photos are
 // credited to their Pinterest pins; the supplied Amazon product pair stays
 // under each photo. Ends on text.
+// Rewritten 2026-10-25 in an advice-led voice (styling rules, the why behind
+// each look, practical tips) after the first draft read like photo captions.
 
 const { picture } = require("./picture-helper.js");
 
@@ -977,498 +979,725 @@ const PRODUCTS = {
 const IDEAS = [
  {
   "n": 1,
-  "title": "Hang a Flocked Wreath Over the Vanity Mirror",
+  "title": "Start With the Mirror",
   "paras": [
-   "The mirror is the easiest place to start.",
-   "A frosted wreath with a big red plaid bow and silver baubles sits on this one, above a gray vanity with a tiny white house and little frosted trees.",
-   "The damask wallpaper keeps it from feeling too basic.",
-   "Hang it with a ribbon loop over the top of the frame."
+   "The mirror is the biggest vertical surface in a bathroom, so it's where I always begin.",
+   "A frosted wreath with a red plaid bow hangs here, centered over the sink, while the little house and trees on the vanity sit off to one side. Symmetry up high, a looser arrangement below. That mix keeps a small room from feeling stiff.",
+   "Hang the wreath on a ribbon looped over the top edge of the mirror. No holes, no hooks, and it takes thirty seconds.",
+   "Keep it light. A heavy wreath will pull on the ribbon and tilt."
   ],
-  "key": "bath-04"
+  "key": "bath-04",
+  "_orig": [
+   "The mirror is the biggest vertical surface in a bathroom, so it's where I always begin.",
+   "A frosted wreath with a red plaid bow hangs here, centered over the sink, while the little house and trees on the vanity sit off to one side. Symmetry up high, a looser arrangement below. That mix keeps a small room from feeling stiff.",
+   "Hang the wreath on a ribbon looped over the top edge of the mirror. No holes, no hooks, and it takes thirty seconds.",
+   "Keep it light. A heavy wreath will pull on the ribbon and tilt."
+  ]
  },
  {
   "n": 2,
-  "title": "Add Berry Wreaths to Mirror and Window",
+  "title": "Repeat One Wreath in Two Places",
   "paras": [
-   "Repeat one wreath in two places and the room looks planned.",
-   "Small berry wreaths with red bows hang on both the mirror and the window here, with a lit garland along the back of the toilet and a few tiny trees on the sill.",
-   "The checkered floor keeps it fresh and bright.",
-   "Use removable hooks so the glass stays clean."
+   "<p><strong>Repetition is the cheapest way to make a room look planned.</strong> Two small berry wreaths, one on the mirror and one on the window, turn two separate surfaces into a pair. A lit garland along the back of the toilet adds a third layer of green without touching the counter.</p>",
+   "Use removable hooks on glass and check the weight limit on the packet.",
+   "Two wreaths is plenty. A third and the room starts to feel like a shop."
   ],
-  "key": "bath-02"
+  "key": "bath-02",
+  "_orig": [
+   "Repetition is the cheapest way to make a room look planned.",
+   "Two small berry wreaths, one on the mirror and one on the window, turn two separate surfaces into a pair. A lit garland along the back of the toilet adds a third layer of green without touching the counter.",
+   "Use removable hooks on glass and check the weight limit on the packet.",
+   "Two wreaths is plenty. A third and the room starts to feel like a shop."
+  ]
  },
  {
   "n": 3,
-  "title": "Make the Mirror Itself a Wreath",
+  "title": "Let the Mirror Become the Wreath",
   "paras": [
-   "Skip the frame and let greenery become one.",
-   "A round mirror is ringed with cedar, pinecones and clusters of red berries, over a wood vanity with a white vessel sink and a small potted pine.",
-   "Black fixtures and a red berry stem on the counter echo the color.",
-   "Wire the greenery to the mirror's hanging hook so it stays in place."
+   "Why hang something on a mirror when the mirror can be the centerpiece?",
+   "A ring of cedar, pinecones and red berries surrounds this round mirror, so wreath and glass read as one shape. A single berry stem on the counter echoes it.",
+   "<ul><li>Wire the greenery to the mirror's own hanging hook and tie it at three points so it holds its circle.</li><li>Choose faux greens for a steamy room. Real ones brown after a week of hot showers.</li></ul>"
   ],
-  "key": "bath-17"
+  "key": "bath-17",
+  "_orig": [
+   "Why hang something on a mirror when the mirror can be the centerpiece?",
+   "A ring of cedar, pinecones and red berries surrounds this round mirror, so wreath and glass read as one shape. A single berry stem on the counter echoes it.",
+   "Wire the greenery to the mirror's own hanging hook and tie it at three points so it holds its circle.",
+   "Choose faux greens for a steamy room. Real ones brown after a week of hot showers."
+  ]
  },
  {
   "n": 4,
-  "title": "Wrap a Mirror in Lights and Greenery",
+  "title": "Light It Low and Warm",
   "paras": [
-   "Soft light turns a small bathroom into a hideaway.",
-   "An oval mirror here carries a little wreath and a string of tiny lights, with candles on the cabinet, a mini tree by the sink and dark shelves with greenery above the toilet.",
-   "The warmth makes it glow like a nook in a cabin.",
-   "Plug-in or battery lights both work."
+   "Small bathrooms look best in soft, low light.",
+   "Fairy lights circle this oval mirror, candles glow on the cabinet and dark shelves of greenery sit above the toilet. The whole room feels like a cabin after dark.",
+   "A good rule: three light sources at different heights, one at the floor, one at the counter, one on the wall. That is what makes a room feel layered. Use battery lights and keep them out of the sink's splash zone. Warm white only, because cool white makes a bathroom look clinical."
   ],
-  "key": "bath-31"
+  "key": "bath-31",
+  "_orig": [
+   "Small bathrooms look best in soft, low light.",
+   "Fairy lights circle this oval mirror, candles glow on the cabinet and dark shelves of greenery sit above the toilet. The whole room feels like a cabin after dark.",
+   "A good rule: three light sources at different heights, one at the floor, one at the counter, one on the wall. That is what makes a room feel layered.",
+   "Use battery lights and keep them out of the sink's splash zone. Warm white only, because cool white makes a bathroom look clinical."
+  ]
  },
  {
   "n": 5,
-  "title": "Swag Garland Over a Dark Wood Mirror",
+  "title": "Let a Dark Frame Show Off Bright Greens",
   "paras": [
-   "A dark frame makes bright greens pop.",
-   "Pine boughs with red berries and silver ornaments drape across the top of this mirror, with a poinsettia and a jar of red balls on the marble counter.",
-   "Sconces on each side keep the light soft.",
-   "Keep the garland to the top edge and let the mirror stay clear."
+   "A dark wood mirror and a bright garland make an easy pair.",
+   "Pine boughs with red berries and silver ornaments arch across the top here, while a poinsettia and a jar of red balls sit low on the marble. The red repeats high and low, and your eye travels between them.",
+   "<p><strong>Quick tip:</strong> Keep the garland along the top edge only, so you can still see your face while brushing your teeth.</p>",
+   "A jar of ornaments is also the best use I know for the chipped or mismatched ones."
   ],
-  "key": "bath-07"
+  "key": "bath-07",
+  "_orig": [
+   "A dark wood mirror and a bright garland make an easy pair.",
+   "Pine boughs with red berries and silver ornaments arch across the top here, while a poinsettia and a jar of red balls sit low on the marble. The red repeats high and low, and your eye travels between them.",
+   "Keep the garland along the top edge only, so you can still see your face while brushing your teeth.",
+   "A jar of ornaments is also the best use I know for the chipped or mismatched ones."
+  ]
  },
  {
   "n": 6,
-  "title": "Tie Garland and Ornaments Around the Mirror",
+  "title": "Wrap All Four Sides of the Frame",
   "paras": [
-   "Take garland all the way around the glass.",
-   "Greenery with red ornaments and bows frames a wood mirror in a shiplap bathroom, while small frosted trees and snowman figurines stand on the vanity.",
-   "The shiplap makes a clean white backdrop.",
-   "Tuck the berries in groups of three for rhythm."
+   "Draping every side of a mirror makes it look like a framed picture. In this shiplap bathroom, garland with red ornaments and bows wraps the wood frame, and small frosted trees and snowman figures wait on the vanity below.",
+   "Space the bows about a hand apart and fix the garland with floral wire, since tape won't hold in steam.",
+   "Keep greenery away from hot bulbs, which dry it out. LED bulbs are cooler and kinder."
   ],
-  "key": "bath-09"
+  "key": "bath-09",
+  "_orig": [
+   "Draping every side of a mirror makes it look like a framed picture.",
+   "In this shiplap bathroom, garland with red ornaments and bows wraps the wood frame, and small frosted trees and snowman figures wait on the vanity below.",
+   "Space the bows about a hand apart and fix the garland with floral wire, since tape won't hold in steam.",
+   "Keep greenery away from hot bulbs, which dry it out. LED bulbs are cooler and kinder."
+  ]
  },
  {
   "n": 7,
-  "title": "Dress Up a Shiplap Vanity With a Round Black Mirror",
+  "title": "Warm Up a Dark Vanity",
   "paras": [
-   "Black accents can look festive too.",
-   "A round black mirror with a red bow and small wreaths hangs over this dark vanity, with mini trees, pine sprigs and funny signs on black wall shelves.",
-   "The shiplap and black metal keep it modern.",
-   "Keep wreaths on one wall so it does not feel heavy."
+   "Black fixtures need warmth, and wreaths supply it.",
+   "A round black mirror with a red bow and a pair of small wreaths hang on shiplap above this dark vanity. Black wall shelves hold mini trees and a funny sign. Group your wreaths on one wall and let the other side stay calm.",
+   "Black and red look sharp together. White towels keep it from feeling heavy."
   ],
-  "key": "bath-08"
+  "key": "bath-08",
+  "_orig": [
+   "Black fixtures need warmth, and wreaths supply it.",
+   "A round black mirror with a red bow and a pair of small wreaths hang on shiplap above this dark vanity. Black wall shelves hold mini trees and a funny sign.",
+   "Group your wreaths on one wall and let the other side stay calm.",
+   "Black and red look sharp together. White towels keep it from feeling heavy."
+  ]
  },
  {
   "n": 8,
-  "title": "Drape a Burlap Bow Garland Over a Round Mirror",
+  "title": "Soften a Modern Mirror With Burlap",
   "paras": [
-   "Rustic touches bring warmth.",
-   "A wide burlap bow and berry garland hang over a thin round mirror, above a white vessel sink on a dark vanity with gold trees and a vintage print.",
-   "The natural fabric adds texture.",
-   "A framed winter scene beside the mirror finishes the look."
+   "Burlap is the fastest way to make something modern feel cozy.",
+   "A wide burlap bow and berry garland cross this thin round mirror, above a white vessel sink on a dark wood vanity.",
+   "<ul><li>Pair rough with shiny. The gold trees nearby stop the burlap from tipping into pure rustic.</li><li>A framed winter scene beside the mirror finishes it.</li></ul>"
   ],
-  "key": "bath-15"
+  "key": "bath-15",
+  "_orig": [
+   "Burlap is the fastest way to make something modern feel cozy.",
+   "A wide burlap bow and berry garland cross this thin round mirror, above a white vessel sink on a dark wood vanity.",
+   "Pair rough with shiny. The gold trees nearby stop the burlap from tipping into pure rustic.",
+   "A framed winter scene beside the mirror finishes it."
+  ]
  },
  {
   "n": 9,
-  "title": "Add Brass Sconces and a Garland Over the Glass",
+  "title": "Match Your Ribbon to Your Metal",
   "paras": [
-   "Brass and greenery are a classic pair.",
-   "A spray of greens tied with a gold ribbon sits above this black-framed mirror, flanked by brass sconces, with a mini tree beside the tub and a striped towel on the vanity.",
-   "The fixtures already look festive.",
-   "A single potted tree in the corner adds height."
+   "<p><strong>Brass fixtures call for gold ribbon. Chrome calls for silver. It sounds obvious, but it is the detail most people miss.</strong> Here a spray of greens tied with gold sits above a black-framed mirror, with brass sconces on either side, so the decoration looks like it came with the room.</p>",
+   "<ul><li>A potted tree in the corner adds height without using any counter.</li><li>Pick a tree small enough that a guest can still reach the tub.</li></ul>"
   ],
-  "key": "bath-22"
+  "key": "bath-22",
+  "_orig": [
+   "Brass fixtures call for gold ribbon. Chrome calls for silver. It sounds obvious, but it is the detail most people miss.",
+   "Here a spray of greens tied with gold sits above a black-framed mirror, with brass sconces on either side, so the decoration looks like it came with the room.",
+   "A potted tree in the corner adds height without using any counter.",
+   "Pick a tree small enough that a guest can still reach the tub."
+  ]
  },
  {
   "n": 10,
-  "title": "Frost the Mirror With Snowy Garland",
+  "title": "Choose a Quiet Palette",
   "paras": [
-   "Frosted needles give a snow-dusted look.",
-   "A thick flocked garland falls along the side of this mirror, with two candles on a wooden tray below and neutral towels on the ring.",
-   "The soft white keeps it calm.",
-   "Choose cream towels for the quietest look."
+   "If you want calm, go quiet on color. A flocked garland falls down one side of this mirror, and two candles sit on a wooden tray below, with cream towels on the ring. The only color in the room is green.",
+   "Buy towels in oatmeal or cream so the greenery does the talking. Keep candles on a tray. It protects the counter and looks tidier. Battery ones are safest near water."
   ],
-  "key": "bath-33"
+  "key": "bath-33",
+  "_orig": [
+   "If you want calm, go quiet on color.",
+   "A flocked garland falls down one side of this mirror, and two candles sit on a wooden tray below, with cream towels on the ring. The only color in the room is green.",
+   "Buy towels in oatmeal or cream so the greenery does the talking.",
+   "Keep candles on a tray. It protects the counter and looks tidier. Battery ones are safest near water."
+  ]
  },
  {
   "n": 11,
-  "title": "Place Poinsettias and Brass Candlesticks Below",
+  "title": "Treat the Mirror and Counter as One Picture",
   "paras": [
-   "A mirror and a counter can work as one display.",
-   "Garland swoops across the glass in this double vanity, with white poinsettias and brass candlesticks beneath it.",
-   "Embroidered towels pick up the gold tone.",
-   "Use white flowers for a clean palette."
+   "I always style the mirror and counter together, never separately.",
+   "Garland swoops across the top of this double vanity mirror, and white poinsettias and brass candlesticks stand underneath, with gold-embroidered towels tying it together.",
+   "White flowers feel elegant, and faux ones are easier because real poinsettias sulk in cold drafts.",
+   "Place candlesticks well away from the sink."
   ],
-  "key": "bath-34"
+  "key": "bath-34",
+  "_orig": [
+   "I always style the mirror and counter together, never separately.",
+   "Garland swoops across the top of this double vanity mirror, and white poinsettias and brass candlesticks stand underneath, with gold-embroidered towels tying it together.",
+   "White flowers feel elegant, and faux ones are easier because real poinsettias sulk in cold drafts.",
+   "Place candlesticks well away from the sink."
+  ]
  },
  {
   "n": 12,
-  "title": "Mix Gold Bells and Rose Gold Baubles",
+  "title": "Mix Metals the Smart Way",
   "paras": [
-   "Warm metallics feel luxurious.",
-   "A garland with lights and tiny gold bells circles this round mirror, with rose gold ornaments in a footed glass dish and a brass tray holding a candle and a perfume bottle.",
-   "The pink tones soften the shine.",
-   "Gold faucets make it all match."
+   "<p><strong>Mixing metals is fine, as long as one of them leads.</strong> Gold bells and lights run along the garland around this round mirror, rose gold baubles sit in a footed dish and a brass tray holds a candle and a perfume bottle.</p>",
+   "Aim for roughly 70 percent gold and 30 percent rose gold.",
+   "Gold faucets make the whole thing feel consistent."
   ],
-  "key": "bath-28"
+  "key": "bath-28",
+  "_orig": [
+   "Mixing metals is fine, as long as one of them leads.",
+   "Gold bells and lights run along the garland around this round mirror, rose gold baubles sit in a footed dish and a brass tray holds a candle and a perfume bottle.",
+   "Aim for roughly 70 percent gold and 30 percent rose gold.",
+   "Gold faucets make the whole thing feel consistent."
+  ]
  },
  {
   "n": 13,
-  "title": "Start With a Snowman and Soft Towels",
+  "title": "Start With a Soap Dispenser",
   "paras": [
-   "A soap dispenser can set the whole mood.",
-   "A smiling snowman dispenser stands on marble next to rolled orange-red towels, a bowl of pinecones and a small potted pine, with snowman-embroidered hand towels behind.",
-   "Everything is easy to put away in January.",
-   "Choose towels in a color you already own."
+   "A soap dispenser is the one decoration every guest actually touches.",
+   "A snowman pump stands on marble next to a pair of rolled red-orange towels, a bowl of pinecones and a small potted pine.",
+   "<ul><li>Pick pieces that are easy to swap out in January, like pumps and towels.</li><li>Rolled towels look tidier than folded ones and take less counter.</li></ul>"
   ],
-  "key": "bath-01"
+  "key": "bath-01",
+  "_orig": [
+   "A soap dispenser is the one decoration every guest actually touches.",
+   "A snowman pump stands on marble next to a pair of rolled red-orange towels, a bowl of pinecones and a small potted pine.",
+   "Pick pieces that are easy to swap out in January, like pumps and towels.",
+   "Rolled towels look tidier than folded ones and take less counter."
+  ]
  },
  {
   "n": 14,
-  "title": "Gift-Wrap a Stack of Towels",
+  "title": "Wrap a Towel Stack Like a Present",
   "paras": [
-   "Towels can be the present.",
-   "On this marble counter, white towels are tied with a red ribbon beside a flocked mini tree with gold ornaments and a gold-topped bottle of soap.",
-   "It looks styled in two minutes.",
-   "Use shatterproof ornaments on small trees."
+   "The quickest bathroom upgrade I know takes two minutes.",
+   "Tie a stack of white hand towels with ribbon and set it next to a mini tree, as shown here with a frosted tree and a gold-topped soap bottle.",
+   "Use wired ribbon. It holds a bow shape even on a soft stack. Shatterproof ornaments on a small tree are safer around tile."
   ],
-  "key": "bath-05"
+  "key": "bath-05",
+  "_orig": [
+   "The quickest bathroom upgrade I know takes two minutes.",
+   "Tie a stack of white hand towels with ribbon and set it next to a mini tree, as shown here with a frosted tree and a gold-topped soap bottle.",
+   "Use wired ribbon. It holds a bow shape even on a soft stack.",
+   "Shatterproof ornaments on a small tree are safer around tile."
+  ]
  },
  {
   "n": 15,
-  "title": "Pair Wrapped Towels With a Pinecone Jar",
+  "title": "Make a Shelf Smell Like Christmas",
   "paras": [
-   "Rustic and cozy in one corner.",
-   "On a wood shelf with fairy lights are a little pine, red-ribboned towels and a jar of pinecones and cinnamon sticks.",
-   "The lights give the shelf a glow.",
-   "Fill the jar with whatever you already have."
+   "Pinecones are free decor with free fragrance.",
+   "A rustic shelf holds a small pine, red-ribboned towels and a jar of pinecones and cinnamon sticks, lit by warm fairy lights.",
+   "<p><strong>Quick tip:</strong> Bake foraged pinecones at 200°F for about 45 minutes before bringing them in, to drive out insects.</p>",
+   "Cinnamon sticks scent a small room better than most candles."
   ],
-  "key": "bath-20"
+  "key": "bath-20",
+  "_orig": [
+   "Pinecones are free decor with free fragrance.",
+   "A rustic shelf holds a small pine, red-ribboned towels and a jar of pinecones and cinnamon sticks, lit by warm fairy lights.",
+   "Bake foraged pinecones at 200°F for about 45 minutes before bringing them in, to drive out insects.",
+   "Cinnamon sticks scent a small room better than most candles."
+  ]
  },
  {
   "n": 16,
-  "title": "Style a Woven Tray With Trees and a House",
+  "title": "Corral Everything on a Tray",
   "paras": [
-   "A tray gathers everything neatly.",
-   "A round rattan tray carries two small potted pines, a glass candle and a little white house, with greenery tucked underneath.",
-   "It sits on the counter beside the sink.",
-   "Pick a tray that matches your faucet finish."
+   "A tray is the best organizing trick in a small bathroom. A woven tray keeps two small pines, a glass candle and a white house together on this counter, so cleaning is a single lift.",
+   "Choose a tray that matches your faucet finish.",
+   "Everything on it should come off in one move."
   ],
-  "key": "bath-38"
+  "key": "bath-38",
+  "_orig": [
+   "A tray is the best organizing trick in a small bathroom.",
+   "A woven tray keeps two small pines, a glass candle and a white house together on this counter, so cleaning is a single lift.",
+   "Choose a tray that matches your faucet finish.",
+   "Everything on it should come off in one move."
+  ]
  },
  {
   "n": 17,
-  "title": "Set a Frosted Tree on a Wooden Tray",
+  "title": "Keep a Tiny Counter Simple",
   "paras": [
-   "Less is more on a small counter.",
-   "An oval wooden tray holds a frosted mini tree, a lit candle on a wood slice, white towels and a woven bottle, in a pale bathroom.",
-   "The palette is soft white and natural.",
-   "Rolled towels keep it practical."
+   "On a small counter, one tree is plenty.",
+   "An oval wooden tray holds a frosted mini tree, a candle on a wood slice and rolled white towels. Set candles on a slice or a dish, so wax can't mark the surface.",
+   "Rolled towels keep the display useful too."
   ],
-  "key": "bath-39"
+  "key": "bath-39",
+  "_orig": [
+   "On a small counter, one tree is plenty.",
+   "An oval wooden tray holds a frosted mini tree, a candle on a wood slice and rolled white towels.",
+   "Set candles on a slice or a dish, so wax can't mark the surface.",
+   "Rolled towels keep the display useful too."
+  ]
  },
  {
   "n": 18,
-  "title": "Light a Candle in a Gold-Trimmed Tray",
+  "title": "Build a Candlelit Corner",
   "paras": [
-   "Candlelight makes a counter feel special.",
-   "A round tray here holds a pot of pine, red berries and a pinecone, a glass candle, a gold tree and an amber soap bottle, with red-striped towels folded beside it.",
-   "The berry colors tie everything together.",
-   "Use a flameless candle if you will not be there."
+   "A candle, a bit of greenery and a berry sprig is a formula that never fails.",
+   "A round tray here holds a pot of pine with berries and a pinecone, a glass candle, a gold tree and an amber soap bottle, with red-striped towels beside it.",
+   "<ul><li>Amber glass is a clever winter color for soap bottles.</li><li>Use a flameless candle if you won't be around.</li></ul>"
   ],
-  "key": "bath-14"
+  "key": "bath-14",
+  "_orig": [
+   "A candle, a bit of greenery and a berry sprig is a formula that never fails.",
+   "A round tray here holds a pot of pine with berries and a pinecone, a glass candle, a gold tree and an amber soap bottle, with red-striped towels beside it.",
+   "Amber glass is a clever winter color for soap bottles.",
+   "Use a flameless candle if you won't be around."
+  ]
  },
  {
   "n": 19,
-  "title": "Go Glam in Gold and White",
+  "title": "Pair White Marble With Gold",
   "paras": [
-   "Marble and gold feel instantly festive.",
-   "A gold mirrored tray carries marble-look soap dispensers, with a small lit tree and gold ornaments nearby, in front of a gilded mirror.",
-   "The greenery adds fresh color.",
-   "Swap the bottles for plain white if you want it quieter."
+   "<p><strong>Marble and gold flatter each other.</strong> A gold mirrored tray carries marble-look soap pieces here, with a small lit tree and gold baubles nearby.</p>",
+   "<ul><li>Decant soap into matching bottles. It makes any counter look styled.</li><li>Keep the quantity down so the marble stays visible.</li></ul>"
   ],
-  "key": "bath-27"
+  "key": "bath-27",
+  "_orig": [
+   "Marble and gold flatter each other.",
+   "A gold mirrored tray carries marble-look soap pieces here, with a small lit tree and gold baubles nearby.",
+   "Decant soap into matching bottles. It makes any counter look styled.",
+   "Keep the quantity down so the marble stays visible."
+  ]
  },
  {
   "n": 20,
-  "title": "Add Gold Ornament Towels and Poinsettias",
+  "title": "Let Seasonal Towels Do the Decorating",
   "paras": [
-   "Embroidered towels do the decorating.",
-   "On this white double vanity, gold ornament towels hang beside white poinsettias and candlesticks in front of a garland mirror.",
-   "It all stays soft and neutral.",
-   "Replace the flowers with your favorite stems."
+   "Seasonal towels are the lowest-effort decor there is. On this white double vanity, gold ornament towels hang near white poinsettias and candlesticks, in front of a garland mirror.",
+   "Hang them where guests dry their hands, so they earn their place. Wash embroidered towels before using them. They shed lint at first."
   ],
-  "key": "bath-19"
+  "key": "bath-19",
+  "_orig": [
+   "Seasonal towels are the lowest-effort decor there is.",
+   "On this white double vanity, gold ornament towels hang near white poinsettias and candlesticks, in front of a garland mirror.",
+   "Hang them where guests dry their hands, so they earn their place.",
+   "Wash embroidered towels before using them. They shed lint at first."
+  ]
  },
  {
   "n": 21,
-  "title": "Place Flocked Trees and Black Deer on the Counter",
+  "title": "Add Deer for a Modern Edge",
   "paras": [
-   "A pair of reindeer adds a modern edge.",
-   "Two frosted trees in burlap pots stand beside slim black deer figurines on a white counter, with a small tray holding a candle.",
-   "Black metal against the white is crisp.",
-   "Use odd numbers of figures."
+   "Black accents make Christmas look modern.",
+   "Two flocked trees in burlap pots stand beside slim black reindeer on this white counter, with a candle on a small tray.",
+   "Angle the figures a little differently so they look like they are moving.",
+   "Burlap pots are a handy cover for plain plastic ones."
   ],
-  "key": "bath-21"
+  "key": "bath-21",
+  "_orig": [
+   "Black accents make Christmas look modern.",
+   "Two flocked trees in burlap pots stand beside slim black reindeer on this white counter, with a candle on a small tray.",
+   "Angle the figures a little differently so they look like they are moving.",
+   "Burlap pots are a handy cover for plain plastic ones."
+  ]
  },
  {
   "n": 22,
-  "title": "Mix Plaid Towels With a Snowman on a Rustic Vanity",
+  "title": "Let a Rug Do the Heavy Lifting",
   "paras": [
-   "Rustic wood loves plaid.",
-   "A distressed vanity here has plaid hand towels, a small snowman, a red bowl and a few trees, with a shelf of mini trees beside it and a Christmas rug on the floor.",
-   "The warm tones feel like a cabin.",
-   "A rug is the quickest change."
+   "<p><strong>If you only change one thing in a bathroom, change the rug.</strong> This weathered vanity has plaid towels, a small snowman and a red bowl, but the Christmas rug on the floor sets the mood.</p>",
+   "Pick one with a non-slip backing.",
+   "If the rug is patterned, keep the towels solid."
   ],
-  "key": "bath-13"
+  "key": "bath-13",
+  "_orig": [
+   "If you only change one thing in a bathroom, change the rug.",
+   "This weathered vanity has plaid towels, a small snowman and a red bowl, but the Christmas rug on the floor sets the mood.",
+   "Pick one with a non-slip backing.",
+   "If the rug is patterned, keep the towels solid."
+  ]
  },
  {
   "n": 23,
-  "title": "Fill a Vintage Pitcher With Greenery",
+  "title": "Use a Pitcher as a Vase",
   "paras": [
    "A pitcher is a vase with a story.",
-   "A white enamel pitcher tied with a red ribbon holds fresh evergreen branches, sitting on a wooden stool by a farmhouse sink with a red-striped towel.",
-   "Pinecones sit around the faucet.",
-   "Cut your own branches for free."
+   "A white enamel pitcher tied with a red ribbon holds fresh evergreen branches on a wooden stool beside a farmhouse sink.",
+   "<ul><li>Cut the branches in the morning, strip the lower needles and stand them in water. Evergreens last for weeks in a cool bathroom.</li><li>A striped towel on the sink adds a bit of color.</li></ul>"
   ],
-  "key": "bath-35"
+  "key": "bath-35",
+  "_orig": [
+   "A pitcher is a vase with a story.",
+   "A white enamel pitcher tied with a red ribbon holds fresh evergreen branches on a wooden stool beside a farmhouse sink.",
+   "Cut the branches in the morning, strip the lower needles and stand them in water. Evergreens last for weeks in a cool bathroom.",
+   "A striped towel on the sink adds a bit of color."
+  ]
  },
  {
   "n": 24,
-  "title": "Add a Cartoon Dog Soap Dispenser",
+  "title": "Add One Piece That Makes Guests Smile",
   "paras": [
-   "Add a little whimsy.",
-   "A playful ceramic dog in a red coat stands as a soap dispenser among red berry greenery, a lit candle and a gold tree on a marble counter, with a plaid ribbon nearby.",
-   "It makes guests smile.",
-   "Keep the rest of the counter simple."
+   "Humor goes a long way in a bathroom.",
+   "A playful ceramic dog in a red coat doubles as a soap pump here, among berry greenery, a candle and a tiny gold tree.",
+   "Choose one funny piece and keep everything else classic. Check that the pump works with your soap, because thick soap can clog it."
   ],
-  "key": "bath-40"
+  "key": "bath-40",
+  "_orig": [
+   "Humor goes a long way in a bathroom.",
+   "A playful ceramic dog in a red coat doubles as a soap pump here, among berry greenery, a candle and a tiny gold tree.",
+   "Choose one funny piece and keep everything else classic.",
+   "Check that the pump works with your soap, because thick soap can clog it."
+  ]
  },
  {
   "n": 25,
-  "title": "Set a Nutcracker Next to a Merry Dispenser",
+  "title": "Pair Dispensers Like Bookends",
   "paras": [
-   "Nutcrackers do not need a mantel.",
-   "A red-coated nutcracker dispenser stands beside a cream dispenser printed with a small tree and the word Merry, against a gray wall and a snowflake curtain.",
-   "They form a cute pair.",
-   "Switch the dispensers back after the holidays."
+   "Dispensers work like bookends.",
+   "A nutcracker pump stands next to a cream dispenser printed with a tree and the word Merry.",
+   "<p><strong>Quick tip:</strong> Two pieces of different heights look better than two identical ones.</p>",
+   "Swap back to plain bottles in January."
   ],
-  "key": "bath-41"
+  "key": "bath-41",
+  "_orig": [
+   "Dispensers work like bookends.",
+   "A nutcracker pump stands next to a cream dispenser printed with a tree and the word Merry.",
+   "Two pieces of different heights look better than two identical ones.",
+   "Swap back to plain bottles in January."
+  ]
  },
  {
   "n": 26,
-  "title": "Pair Poinsettias With Snowflake Soap Bottles",
+  "title": "Keep Red and Green, but Edit",
   "paras": [
-   "Red and green are classic for a reason.",
-   "Red and green snowflake-patterned soap dispensers stand beside a red poinsettia and a glass jar of candy canes on a white counter.",
-   "The hand towel and mirror behind keep it light.",
-   "Use real poinsettias for a fresh look."
+   "Red and green are classic, but quantity matters. Red and green snowflake soap dispensers stand beside a poinsettia and a jar of candy canes on a white counter.",
+   "On white, one strong color is enough. Let the green stay small.",
+   "Candy canes in a clear jar are the cheapest accent you can buy."
   ],
-  "key": "bath-44"
+  "key": "bath-44",
+  "_orig": [
+   "Red and green are classic, but quantity matters.",
+   "Red and green snowflake soap dispensers stand beside a poinsettia and a jar of candy canes on a white counter.",
+   "On white, one strong color is enough. Let the green stay small.",
+   "Candy canes in a clear jar are the cheapest accent you can buy."
+  ]
  },
  {
   "n": 27,
-  "title": "Add a Wire Shelf With a Santa and Red Towels",
+  "title": "Add Storage That Looks Like Decor",
   "paras": [
-   "A wall shelf adds storage and style.",
-   "A black wire rack on the wall holds a little Santa, a flocked tree and a striped box, with red towels below, next to a big black mirror.",
-   "The red pops on white walls.",
-   "Keep towels in a color you will use again."
+   "A wall shelf is decoration with a job.",
+   "A black wire rack holds a little Santa, a flocked tree and a striped box above red towels, next to a big black mirror. Mount it at towel height so the towels are the first thing you reach.",
+   "Red towels on white walls are bold. Stay with one color so it doesn't get busy."
   ],
-  "key": "bath-45"
+  "key": "bath-45",
+  "_orig": [
+   "A wall shelf is decoration with a job.",
+   "A black wire rack holds a little Santa, a flocked tree and a striped box above red towels, next to a big black mirror.",
+   "Mount it at towel height so the towels are the first thing you reach.",
+   "Red towels on white walls are bold. Stay with one color so it doesn't get busy."
+  ]
  },
  {
   "n": 28,
-  "title": "Hang a JOYFUL Sign on a Floating Shelf",
+  "title": "Say It With a Word",
   "paras": [
-   "A word sign says it all.",
-   "Two wood shelves hold a JOYFUL sign, evergreens in an amber vase, white houses and tiny trees, with a basket of towels and a candle, above a POWDER ROOM sign.",
-   "Amber glass adds warmth.",
-   "Pick words that suit your family."
+   "A word sign gives a shelf a focal point.",
+   "Two wood shelves hold a JOYFUL sign, evergreens in an amber vase, white houses and tiny trees above a POWDER ROOM sign.",
+   "<ul><li>Hang the lower shelf about twelve inches under the first.</li><li>Amber glass adds warmth to green and white.</li></ul>"
   ],
-  "key": "bath-23"
+  "key": "bath-23",
+  "_orig": [
+   "A word sign gives a shelf a focal point.",
+   "Two wood shelves hold a JOYFUL sign, evergreens in an amber vase, white houses and tiny trees above a POWDER ROOM sign.",
+   "Hang the lower shelf about twelve inches under the first.",
+   "Amber glass adds warmth to green and white."
+  ]
  },
  {
   "n": 29,
-  "title": "Style a Powder Room Shelf With Merry and Bright",
+  "title": "Use White Shelves to Spotlight Small Things",
   "paras": [
-   "White on white shows off small pieces.",
-   "A Merry and Bright sign, bottle brush trees, white houses and a little wreath sit on narrow white shelves in this powder room.",
-   "The sign gives you a focal point.",
-   "Vary the height of the trees."
+   "<p><strong>White shelves are a good stage for little pieces.</strong> A Merry and Bright sign, bottle brush trees, white houses and a small wreath are spread over three narrow shelves in this powder room.</p>",
+   "<ul><li>Vary the heights. Put taller trees at the ends and small houses in the middle.</li><li>Leave a little shelf empty for balance.</li></ul>"
   ],
-  "key": "bath-24"
+  "key": "bath-24",
+  "_orig": [
+   "White shelves are a good stage for little pieces.",
+   "A Merry and Bright sign, bottle brush trees, white houses and a small wreath are spread over three narrow shelves in this powder room.",
+   "Vary the heights. Put taller trees at the ends and small houses in the middle.",
+   "Leave a little shelf empty for balance."
+  ]
  },
  {
   "n": 30,
-  "title": "Layer Shelves With a Gold Nutcracker and Trees",
+  "title": "Layer a Shelf Like a Stylist",
   "paras": [
-   "Layers make a shelf feel full.",
-   "Two wooden shelves hold bottle brush trees in green, pink and glitter, a gold nutcracker, little houses and an Oh Holy Night print.",
-   "The mix of colors is playful.",
-   "Space everything out so each piece shows."
+   "Layers make a shelf feel full. Two wooden shelves hold bottle brush trees in green, pink and glitter, a gold nutcracker and an Oh Holy Night print.",
+   "Put the tallest items at the back and the small ones in front. Three pieces per foot of shelf is a good guide."
   ],
-  "key": "bath-25"
+  "key": "bath-25",
+  "_orig": [
+   "Layers make a shelf feel full.",
+   "Two wooden shelves hold bottle brush trees in green, pink and glitter, a gold nutcracker and an Oh Holy Night print.",
+   "Put the tallest items at the back and the small ones in front.",
+   "Three pieces per foot of shelf is a good guide."
+  ]
  },
  {
   "n": 31,
-  "title": "Use Black Floating Shelves for Contrast",
+  "title": "Use Black for Contrast",
   "paras": [
-   "Black shelves look sharp.",
-   "On two shelves are a framed Christmas trees sign, a white deer and flocked trees, plus a red Merry Christmas sign, with a basket of toilet paper below.",
-   "The red sign pops.",
-   "Keep the same color on both shelves."
+   "Black shelves look sharp against pale walls.",
+   "A framed Christmas trees sign, a white deer and flocked trees sit on two shelves here, with a red Merry Christmas sign at the bottom.",
+   "Use the same color on both shelves so the display feels like one idea.",
+   "A basket of toilet paper below keeps practical items tidy."
   ],
-  "key": "bath-26"
+  "key": "bath-26",
+  "_orig": [
+   "Black shelves look sharp against pale walls.",
+   "A framed Christmas trees sign, a white deer and flocked trees sit on two shelves here, with a red Merry Christmas sign at the bottom.",
+   "Use the same color on both shelves so the display feels like one idea.",
+   "A basket of toilet paper below keeps practical items tidy."
+  ]
  },
  {
   "n": 32,
-  "title": "Mix Watercolor Art With Bottle Brush Trees",
+  "title": "Lean Art Against the Wall",
   "paras": [
-   "A framed print makes it feel designed.",
-   "Two wood shelves carry a watercolor winter scene, green trees, a frosted tree, a small house and a round sign.",
-   "Everything stays in cool greens and whites.",
-   "Choose a print with a few warm accents."
+   "<p><strong>Art makes a shelf feel designed.</strong> Two wood shelves carry a watercolor winter print, green trees, a frosted tree, a small house and a round sign.</p>",
+   "Choose a print with a few warm accents to balance cool trees.",
+   "Keep frames lightweight when hanging above a toilet."
   ],
-  "key": "bath-36"
+  "key": "bath-36",
+  "_orig": [
+   "Art makes a shelf feel designed.",
+   "Two wood shelves carry a watercolor winter print, green trees, a frosted tree, a small house and a round sign.",
+   "Choose a print with a few warm accents to balance cool trees.",
+   "Keep frames lightweight when hanging above a toilet."
+  ]
  },
  {
   "n": 33,
-  "title": "Fill a Shelf Nook With a Nutcracker and Garland",
+  "title": "Use Every Nook",
   "paras": [
-   "Even a narrow nook can sparkle.",
-   "A small nutcracker, white towels in a basket and potted greens sit on wood shelves, with a light garland across the bottom shelf.",
-   "The red towel on the door adds a pop.",
-   "Roll towels for a tidy look."
+   "A tight nook can still sparkle.",
+   "A small nutcracker, white towels in a basket and potted greens sit on wood shelves here, with a light garland across the bottom.",
+   "<ul><li>Roll towels, which take less space.</li><li>Narrow spaces suit tall, slim decor.</li></ul>"
   ],
-  "key": "bath-37"
+  "key": "bath-37",
+  "_orig": [
+   "A tight nook can still sparkle.",
+   "A small nutcracker, white towels in a basket and potted greens sit on wood shelves here, with a light garland across the bottom.",
+   "Roll towels, which take less space.",
+   "Narrow spaces suit tall, slim decor."
+  ]
  },
  {
   "n": 34,
-  "title": "Mount Reindeer Art on Floating Shelves",
+  "title": "Hang Art on Floating Shelves",
   "paras": [
-   "A reindeer print brings personality.",
-   "Two rough wooden shelves hold a framed deer on a dark background, small white houses and tiny trees, beside a plaid shower curtain.",
-   "A woven lid on the toilet tank completes it.",
-   "Keep objects small so the shelves do not look crowded."
+   "Floating shelves are ideal for tiny rooms.",
+   "Two rough wooden shelves hold a framed reindeer, small white houses and tiny trees beside a plaid curtain.",
+   "Drill into studs or use anchors rated for the weight. A woven lid on the tank adds a natural touch."
   ],
-  "key": "bath-16"
+  "key": "bath-16",
+  "_orig": [
+   "Floating shelves are ideal for tiny rooms.",
+   "Two rough wooden shelves hold a framed reindeer, small white houses and tiny trees beside a plaid curtain.",
+   "Drill into studs or use anchors rated for the weight.",
+   "A woven lid on the tank adds a natural touch."
+  ]
  },
  {
   "n": 35,
-  "title": "Fill a Shelf Above the Toilet in Red and White",
+  "title": "Use the Wall Above the Toilet",
   "paras": [
-   "The space above the toilet is prime real estate.",
-   "A white corner shelf holds red and white cone trees and little houses, with a white branch tree hung with red baubles beneath and a festive hand towel nearby.",
-   "The palette is simple and cheerful.",
-   "Hang ornaments on a branch for a no-fuss tree."
+   "The space above the toilet is the best real estate in the room.",
+   "A white corner shelf holds red and white trees and houses, while a white branch tree hung with red baubles stands below.",
+   "<p><strong>Quick tip:</strong> Hang ornaments on a bare branch for a no-fuss tree.</p>",
+   "Use only lightweight pieces. Anything that falls will land on the toilet."
   ],
-  "key": "bath-03"
+  "key": "bath-03",
+  "_orig": [
+   "The space above the toilet is the best real estate in the room.",
+   "A white corner shelf holds red and white trees and houses, while a white branch tree hung with red baubles stands below.",
+   "Hang ornaments on a bare branch for a no-fuss tree.",
+   "Use only lightweight pieces. Anything that falls will land on the toilet."
+  ]
  },
  {
   "n": 36,
-  "title": "Style the Toilet Tank With a Tray",
+  "title": "Treat the Tank as a Shelf",
   "paras": [
-   "The tank is a surprise shelf.",
-   "A wooden tray holds a tiny frosted tree, a candle and a small house, with a framed pine print on the wall above.",
-   "A woven basket on the floor holds extra paper.",
-   "Keep it light so it is easy to lift."
+   "The toilet tank is a surprise shelf. A wooden tray holds a tiny frosted tree, a candle and a small house, with a framed pine print on the wall above.",
+   "Choose a tray with a lip so nothing slides off.",
+   "Keep it light. The lid still needs to lift."
   ],
-  "key": "bath-06"
+  "key": "bath-06",
+  "_orig": [
+   "The toilet tank is a surprise shelf.",
+   "A wooden tray holds a tiny frosted tree, a candle and a small house, with a framed pine print on the wall above.",
+   "Choose a tray with a lip so nothing slides off.",
+   "Keep it light. The lid still needs to lift."
+  ]
  },
  {
   "n": 37,
-  "title": "Place a Berry Vase on a Cabinet",
+  "title": "Put a Branch in a Jar",
   "paras": [
    "A single vase can lift a corner.",
-   "A glass jar of berry branches tied with a burlap bow sits on a wooden tray by the sink, with a small cabinet above the toilet topped with greenery.",
-   "The red berries are the only color.",
-   "Reuse a pasta sauce jar."
+   "A jar of berry branches tied with burlap sits on a tray beside the sink, with greenery on top of the cabinet over the toilet. An old pasta sauce jar works. Wrap it in twine.",
+   "Cut branches at an angle for longer life."
   ],
-  "key": "bath-32"
+  "key": "bath-32",
+  "_orig": [
+   "A single vase can lift a corner.",
+   "A jar of berry branches tied with burlap sits on a tray beside the sink, with greenery on top of the cabinet over the toilet.",
+   "An old pasta sauce jar works. Wrap it in twine.",
+   "Cut branches at an angle for longer life."
+  ]
  },
  {
   "n": 38,
-  "title": "Tuck a Berry Vase Below the Cabinet",
+  "title": "Vary the Position",
   "paras": [
-   "Variety comes from shifting position.",
-   "A mason jar of pale berry branches with a burlap bow stands on a small tray on the counter, below a white cabinet with a bit of greenery on top.",
-   "The soft color feels fresh.",
-   "Leave the cabinet doors easy to open."
+   "Variety often comes from moving things around.",
+   "A mason jar of pale berries tied with burlap sits on a tray on the counter, below a white cabinet topped with greenery.",
+   "<ul><li>Soft pink berries look gentler than red.</li><li>Don't block the cabinet doors.</li></ul>"
   ],
-  "key": "bath-43"
+  "key": "bath-43",
+  "_orig": [
+   "Variety often comes from moving things around.",
+   "A mason jar of pale berries tied with burlap sits on a tray on the counter, below a white cabinet topped with greenery.",
+   "Soft pink berries look gentler than red.",
+   "Don't block the cabinet doors."
+  ]
  },
  {
   "n": 39,
-  "title": "Hang a Greenery Swag on Coat Hooks",
+  "title": "Use Coat Hooks as a Display",
   "paras": [
-   "Hooks are underused decor.",
-   "A swag with pinecones and snowflakes hangs from a row of black hooks, with a gray towel, a Merry Christmas sign and a candle on the counter.",
-   "The board-and-batten wall adds charm.",
-   "Hang it at eye level."
+   "<p><strong>Hooks are underused decor.</strong> A swag with pinecones and snowflakes hangs from a row of black hooks above a gray towel and a Merry Christmas sign.</p>",
+   "<ul><li>Hang it at eye level for the most impact.</li><li>Use screwed-in hooks, not adhesive ones, for anything heavy.</li></ul>"
   ],
-  "key": "bath-12"
+  "key": "bath-12",
+  "_orig": [
+   "Hooks are underused decor.",
+   "A swag with pinecones and snowflakes hangs from a row of black hooks above a gray towel and a Merry Christmas sign.",
+   "Hang it at eye level for the most impact.",
+   "Use screwed-in hooks, not adhesive ones, for anything heavy."
+  ]
  },
  {
   "n": 40,
-  "title": "Wrap Toilet Paper in Plaid Ribbon",
+  "title": "Wrap Toilet Paper Like Presents",
   "paras": [
-   "The smallest idea may be the most fun.",
-   "Three rolls of toilet paper are tied with red and green plaid ribbon, set by a mirror and a tree.",
-   "Guests notice it right away.",
-   "Keep spare rolls in a basket nearby."
+   "The smallest idea might be the best. Three rolls tied with plaid ribbon sit by the mirror and a tree.",
+   "Use thin ribbon so the rolls still unspool. Keep spares in a basket."
   ],
-  "key": "bath-42"
+  "key": "bath-42",
+  "_orig": [
+   "The smallest idea might be the best.",
+   "Three rolls tied with plaid ribbon sit by the mirror and a tree.",
+   "Use thin ribbon so the rolls still unspool.",
+   "Keep spares in a basket."
+  ]
  },
  {
   "n": 41,
-  "title": "Hang a Plaid Shower Curtain With a Berry Rod",
+  "title": "Hang a Plaid Curtain",
   "paras": [
    "A shower curtain is a big canvas.",
    "A red plaid curtain hangs from a rod draped with a berry garland, in a white tiled shower beside a striped jute rug.",
-   "The garland makes it festive.",
-   "Hang the garland with clips so the rod stays free."
+   "Clip the garland on, don't thread it, so the rod can still slide.",
+   "Choose a liner that matches."
   ],
-  "key": "bath-10"
+  "key": "bath-10",
+  "_orig": [
+   "A shower curtain is a big canvas.",
+   "A red plaid curtain hangs from a rod draped with a berry garland, in a white tiled shower beside a striped jute rug.",
+   "Clip the garland on, don't thread it, so the rod can still slide.",
+   "Choose a liner that matches."
+  ]
  },
  {
   "n": 42,
-  "title": "Pick a Woodland Shower Curtain",
+  "title": "Pick a Woodland Print",
   "paras": [
-   "Animals and snowflakes feel cozy.",
-   "A cream curtain printed with deer, bears and red snowflakes hangs over a tub, with red and green striped towels, plaid mats and a small wreath on the door.",
-   "The colors look rustic.",
-   "Match the mats to the curtain."
+   "<p><strong>Animals and snowflakes feel cozy.</strong> A cream curtain printed with deer, bears and red snowflakes hangs over a tub, with red and green towels, plaid mats and a small wreath on the door.</p>",
+   "Match the bath mat to the curtain, not the towels.",
+   "Hang the wreath on the dry side of the door, away from steam."
   ],
-  "key": "bath-11"
+  "key": "bath-11",
+  "_orig": [
+   "Animals and snowflakes feel cozy.",
+   "A cream curtain printed with deer, bears and red snowflakes hangs over a tub, with red and green towels, plaid mats and a small wreath on the door.",
+   "Match the bath mat to the curtain, not the towels.",
+   "Hang the wreath on the dry side of the door, away from steam."
+  ]
  },
  {
   "n": 43,
-  "title": "Hang a Pine Print Curtain",
+  "title": "Hang Pines on the Curtain",
   "paras": [
-   "Trees on the curtain bring the forest in.",
-   "A white curtain printed with green pines hangs by a vanity with a little red sled tray holding candles, trees and a snowman.",
-   "A hanging shelf holds more greenery.",
-   "Keep the rest minimal."
+   "Pines on the curtain bring the forest in.",
+   "A white curtain printed with green pines hangs by a vanity with a red sled tray holding candles, trees and a snowman.",
+   "<ul><li>A sled makes a fun tray for corralling small items.</li><li>Keep the rest minimal.</li></ul>"
   ],
-  "key": "bath-29"
+  "key": "bath-29",
+  "_orig": [
+   "Pines on the curtain bring the forest in.",
+   "A white curtain printed with green pines hangs by a vanity with a red sled tray holding candles, trees and a snowman.",
+   "A sled makes a fun tray for corralling small items.",
+   "Keep the rest minimal."
+  ]
  },
  {
   "n": 44,
-  "title": "Light the Tub With Candles",
+  "title": "Turn the Tub Into a Spa",
   "paras": [
-   "Turn the tub into a spa.",
-   "Garland and berries on the wall, candles along the tub edge, a wood caddy and rolled towels tied with red ribbon make this look like a retreat.",
-   "Warm light is the key.",
-   "Use flameless candles for safety."
+   "The tub deserves attention too.",
+   "Garland and berries on the wall, candles along the tub edge, a wood caddy and rolled towels tied with red ribbon make this tub look like a retreat.",
+   "Use flameless candles. Real flame near a bath is a risk. Add a bath tray to hold a book."
   ],
-  "key": "bath-18"
+  "key": "bath-18",
+  "_orig": [
+   "The tub deserves attention too.",
+   "Garland and berries on the wall, candles along the tub edge, a wood caddy and rolled towels tied with red ribbon make this tub look like a retreat.",
+   "Use flameless candles. Real flame near a bath is a risk.",
+   "Add a bath tray to hold a book."
+  ]
  },
  {
   "n": 45,
-  "title": "Mount a White Tree on the Wall",
+  "title": "Hang a Tree on the Wall",
   "paras": [
-   "Make a tree that does not use floor space.",
-   "A tall, carved white tree with red and green baubles hangs on the wall above a tub, with a fur rug, embroidered tree towels and a garland.",
-   "It keeps the floor clear.",
-   "It looks great in a gray room."
+   "A wall tree keeps the floor clear.",
+   "A tall carved white tree with red and green baubles hangs above this tub, with a fur rug, embroidered tree towels and a garland.",
+   "<p><strong>Quick tip:</strong> Wall decor is the best choice when floor space is tight.</p>",
+   "Check the wall material before hanging."
   ],
-  "key": "bath-30"
+  "key": "bath-30",
+  "_orig": [
+   "A wall tree keeps the floor clear.",
+   "A tall carved white tree with red and green baubles hangs above this tub, with a fur rug, embroidered tree towels and a garland.",
+   "Wall decor is the best choice when floor space is tight.",
+   "Check the wall material before hanging."
+  ]
  }
 ];
 
@@ -1500,24 +1729,31 @@ function photo(key) {
 
 function ideaBlock(idea) {
   return `<h2>${idea.n}. ${idea.title}</h2>
-${idea.paras.map((t) => `<p>${t}</p>`).join("\n")}
+${idea.paras.map((t) => (t.startsWith("<") ? t : `<p>${t}</p>`)).join("\n")}
 ${photo(idea.key)}`;
 }
 
 const body = `
-<p>The bathroom is the last room most people decorate for Christmas, which is why it makes such a big impression when you do.</p>
-<p>A guest washing their hands notices a few festive touches right away.</p>
-<p>The trick is to keep it small and easy to swap: a towel set, a wreath on the mirror, a tray on the counter. Nothing has to be permanent, and nothing has to compete with your fixtures.</p>
-<p>These 45 ideas cover the whole room, from mirrors and vanities to shelves, the toilet area, shower curtains and the tub.</p>
+<p>The bathroom is the last room most people decorate for Christmas, which is exactly why it makes such an impression when you do.</p>
+<p>A guest washing their hands notices a few festive touches immediately, and a bathroom is small enough that you can finish the whole job in an evening.</p>
+<p>It is also the room where decorating goes wrong most often, because of steam, splashes and a counter that has to keep working. So before the 45 ideas, here is how I approach it.</p>
 ${photo("hero")}
+
+<h2>Five Rules for Decorating a Bathroom</h2>
+<p><strong>Choose pieces you can swap out.</strong> Towels, soap dispensers, a wreath on the mirror. Nothing should be permanent, and nothing should fight your fixtures.</p>
+<p><strong>Keep the counter usable.</strong> If you can't set down a toothbrush, you have decorated too much.</p>
+<p><strong>Respect water and steam.</strong> Faux greenery lasts longer than real, and battery candles beat flames next to a sink or tub.</p>
+<p><strong>Repeat one color.</strong> Red, gold or soft white. If the same color shows up three times, the room looks planned.</p>
+<p><strong>Work in layers.</strong> Mirror, counter, shelf, floor. One touch at each level looks better than ten on the counter.</p>
 
 ${IDEAS.map(ideaBlock).join("\n\n")}
 
-<h2>How to Decorate a Bathroom Without Crowding It</h2>
-<p>Forty-five ideas is a lot, and no bathroom needs all of them.</p>
-<p>Pick two or three and repeat a color, like red, gold or soft white, so the room feels like one picture.</p>
-<p>Keep the counter clear enough to use, since this is still a working room.</p>
-<p>Use battery candles and lights wherever water is near, and take everything down easily when the season ends.</p>
+<h2>Common Bathroom Mistakes (and Fixes)</h2>
+<p><strong>Crowding the counter.</strong> Move half of it to a shelf or the window sill.</p>
+<p><strong>Using adhesive hooks for heavy wreaths.</strong> Steam softens the glue. Choose a ribbon loop or a screw-in hook.</p>
+<p><strong>Forgetting the floor.</strong> A non-slip Christmas rug does more for the mood than another figurine, and it's safer.</p>
+<p><strong>Putting real candles near towels and garland.</strong> Use battery ones and nobody has to worry.</p>
+<p>Pick two or three ideas, repeat one color, and save the rest for next year. A small, tidy bathroom always beats a crowded one.</p>
 `;
 
 module.exports = { body };

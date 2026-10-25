@@ -4,6 +4,8 @@
 // (trees, mantels, villages, entry and outdoors, mirrors and stairs,
 // retro kitchen, tables and gifts). Photos credited to their Pinterest pins;
 // the supplied Amazon product pair stays under each photo. Ends on text.
+// Rewritten 2026-10-25 in an advice-led voice (styling rules, the why behind
+// each look, practical tips) after the first draft read like photo captions.
 
 const { picture } = require("./picture-helper.js");
 
@@ -725,366 +727,532 @@ const PRODUCTS = {
 const IDEAS = [
  {
   "n": 1,
-  "title": "Trim the Tree With Colorful Retro Baubles",
+  "title": "Trim the Tree With Bulbs Your Grandmother Would Recognize",
   "paras": [
-   "Nothing says vintage like a tree full of bright glass.",
-   "This one wears shiny balls in red, green, teal and gold, with warm multicolor lights threaded through the branches.",
-   "The colors feel like a childhood tree.",
-   "Mix the finishes and sizes so nothing looks too matched."
+   "What makes a tree look vintage? Mostly the glass.",
+   "Saturated reds, teals, greens and golds, with warm multicolor lights threaded through, take you straight to a 1960s living room. Modern trees tend to be coordinated. Old ones were gloriously mixed.",
+   "So mix your finishes, shiny with matte and glitter, and your sizes, and hang the biggest balls low and near the trunk. One safety note: check any old light strings for frayed cords before plugging them in, or switch to LED."
   ],
-  "key": "vintage-01"
+  "key": "vintage-01",
+  "_orig": [
+   "What makes a tree look vintage? Mostly the glass.",
+   "Saturated reds, teals, greens and golds, with warm multicolor lights threaded through, take you straight to a 1960s living room. Modern trees tend to be coordinated. Old ones were gloriously mixed.",
+   "So mix your finishes, shiny with matte and glitter, and your sizes, and hang the biggest balls low and near the trunk.",
+   "One safety note: check any old light strings for frayed cords before plugging them in, or switch to LED."
+  ]
  },
  {
   "n": 2,
-  "title": "Switch to Mercury Glass in Silver and Cream",
+  "title": "Choose Mercury Glass for a Softer Shine",
   "paras": [
-   "For a calmer, antique feel, choose mercury glass.",
-   "Silvery teardrops, ivory finials and a few deep red baubles hang on a natural-looking tree, with strands of tinsel tucked into the boughs.",
-   "The soft, aged shine looks like it came out of an attic trunk.",
-   "Hang the larger pieces near the center, where they catch the light."
+   "Real mercury glass was silvered on the inside, which is where that soft, aged shine comes from. Newer pieces copy the look at a fraction of the price.",
+   "This tree wears silver and cream teardrops with a few deep red balls, and strands of tinsel tucked into the boughs.",
+   "<p><strong>Quick tip:</strong> Hang the larger pieces nearer the trunk, where they catch the light and give the tree depth.</p>",
+   "And tinsel goes on one strand at a time. Clumps look like a mistake."
   ],
-  "key": "vintage-02"
+  "key": "vintage-02",
+  "_orig": [
+   "Real mercury glass was silvered on the inside, which is where that soft, aged shine comes from. Newer pieces copy the look at a fraction of the price.",
+   "This tree wears silver and cream teardrops with a few deep red balls, and strands of tinsel tucked into the boughs.",
+   "Hang the larger pieces nearer the trunk, where they catch the light and give the tree depth.",
+   "And tinsel goes on one strand at a time. Clumps look like a mistake."
+  ]
  },
  {
   "n": 3,
   "title": "Fill a Dough Bowl With Old Ornaments",
   "paras": [
-   "Vintage baubles deserve to be seen up close.",
-   "A well-worn wooden bowl on a farmhouse table here holds silver, gold, green and red ornaments with a few small figurines, edged with pine and a lit candle.",
-   "It is a centerpiece that costs almost nothing.",
-   "Dig out the boxes from last year and see what you have."
+   "Not everything belongs on the tree. A well-worn wooden bowl holds silver, gold, green and red ornaments here, with a few tiny figurines, pine around the rim and a lit candle at the side. It sits on a farmhouse table where everyone will see it.",
+   "Dough bowls are my favorite container for this because the shape does half the styling.",
+   "Mix old ornaments with new ones so it doesn't look like a museum."
   ],
-  "key": "vintage-24"
+  "key": "vintage-24",
+  "_orig": [
+   "Not everything belongs on the tree.",
+   "A well-worn wooden bowl holds silver, gold, green and red ornaments here, with a few tiny figurines, pine around the rim and a lit candle at the side. It sits on a farmhouse table where everyone will see it.",
+   "Dough bowls are my favorite container for this because the shape does half the styling.",
+   "Mix old ornaments with new ones so it doesn't look like a museum."
+  ]
  },
  {
   "n": 4,
-  "title": "Light Brass Candlesticks Above a Garland",
+  "title": "Light Brass Candlesticks Under a Garland",
   "paras": [
-   "Brass has a warm, old-house glow.",
-   "Tall brass candlesticks with dark candles stand under a gilt mirror, while a thick garland of greens and red berries drapes across the mantel.",
-   "The lit candles reflect in the glass for double the glow.",
-   "Use flameless candles if the mantel is crowded."
+   "Brass candlesticks are the cheapest way to make a mantel look inherited.",
+   "Tall brass sticks with dark candles stand beneath a gilt mirror here, and a thick garland with red berries drapes across the mantel. Thrift shops sell them for a few dollars. A little polish does the rest. Use tapers in odd numbers, and choose dark red or forest green for an old-fashioned look.",
+   "Never leave real flames near dry garland. LED tapers are a safe stand-in if the mantel is crowded."
   ],
-  "key": "vintage-03"
+  "key": "vintage-03",
+  "_orig": [
+   "Brass candlesticks are the cheapest way to make a mantel look inherited.",
+   "Tall brass sticks with dark candles stand beneath a gilt mirror here, and a thick garland with red berries drapes across the mantel.",
+   "Thrift shops sell them for a few dollars. A little polish does the rest. Use tapers in odd numbers, and choose dark red or forest green for an old-fashioned look.",
+   "Never leave real flames near dry garland. LED tapers are a safe stand-in if the mantel is crowded."
+  ]
  },
  {
   "n": 5,
-  "title": "Hang a Christmas Sign Above the Fireplace",
+  "title": "Hang the Sign Higher Than You Think",
   "paras": [
-   "A big script sign says it all.",
-   "On this white paneled wall, a wooden Christmas sign is flanked by small wreaths and a long garland, with vintage-style stockings and a red throw nearby.",
-   "The red and green stay soft against the white.",
-   "Hang the sign slightly above the mantel to give the display height."
+   "On a wide mantel, divide the wall into thirds.",
+   "A script Christmas sign takes the center of this white paneled wall, with a small wreath on each side and a long garland beneath. Vintage-style stockings and a red throw on a nearby chair repeat the color.",
+   "<ul><li>Hanging the sign a few inches higher than feels natural gives the whole display height.</li><li>Stockings need proper metal hooks. Adhesive ones always fall.</li></ul>"
   ],
-  "key": "vintage-04"
+  "key": "vintage-04",
+  "_orig": [
+   "On a wide mantel, divide the wall into thirds.",
+   "A script Christmas sign takes the center of this white paneled wall, with a small wreath on each side and a long garland beneath. Vintage-style stockings and a red throw on a nearby chair repeat the color.",
+   "Hanging the sign a few inches higher than feels natural gives the whole display height.",
+   "Stockings need proper metal hooks. Adhesive ones always fall."
+  ]
  },
  {
   "n": 6,
-  "title": "Line Up Nutcrackers and Candles",
+  "title": "Stagger Nutcrackers Like a Parade",
   "paras": [
-   "Nutcrackers are classic mantel guards.",
-   "Two red-coated soldiers stand among white candles, red baubles, berries and pine on a carved mantel, with plaid ribbons trailing down the front.",
-   "The tartan ribbon adds a bit of movement.",
-   "Odd numbers of candles look more natural than pairs."
+   "<p><strong>Nutcrackers like company, but not a straight line.</strong> Two red-coated soldiers stand on this mantel among white candles, red berries and pine, with plaid ribbon trailing down the front.</p>",
+   "<ul><li>Place them off-center and slightly staggered, so they look like they're marching, not guarding.</li><li>Let the ribbon tails fall at different lengths, and keep your candles shorter than the soldiers so no one is hidden.</li></ul>"
   ],
-  "key": "vintage-05"
+  "key": "vintage-05",
+  "_orig": [
+   "Nutcrackers like company, but not a straight line.",
+   "Two red-coated soldiers stand on this mantel among white candles, red berries and pine, with plaid ribbon trailing down the front.",
+   "Place them off-center and slightly staggered, so they look like they're marching, not guarding.",
+   "Let the ribbon tails fall at different lengths, and keep your candles shorter than the soldiers so no one is hidden."
+  ]
  },
  {
   "n": 7,
   "title": "Style an Old Cabinet Like a Holiday Shelf",
   "paras": [
-   "Even a plain bookcase can turn nostalgic.",
-   "A cream cabinet here holds a small lit ceramic tree, snow globes, peppermint tins, a snowman, a Santa and a stack of old holiday books.",
-   "Warm light inside makes the shelves glow.",
-   "Group small things in threes and leave room between them."
+   "Any shelf can become a display, and warm light is the trick. A small lit ceramic tree glows in the middle of this cream cabinet, surrounded by snow globes, peppermint tins, a snowman, a Santa and old holiday books.",
+   "Group small things in threes and leave breathing room between groups. Stack the books spine-out in color order so the shelf looks edited."
   ],
-  "key": "vintage-33"
+  "key": "vintage-33",
+  "_orig": [
+   "Any shelf can become a display, and warm light is the trick.",
+   "A small lit ceramic tree glows in the middle of this cream cabinet, surrounded by snow globes, peppermint tins, a snowman, a Santa and old holiday books.",
+   "Group small things in threes and leave breathing room between groups.",
+   "Stack the books spine-out in color order so the shelf looks edited."
+  ]
  },
  {
   "n": 8,
-  "title": "Collect Retro Santas on Crates",
+  "title": "Display Your Collection Together",
   "paras": [
-   "A collection becomes decor when you display it together.",
-   "Glossy Santas and snowmen are crowded onto wooden crates here, with lace doilies, tinsel, candy canes, bright baubles and a tall candle.",
-   "The doilies add to the grandmother's-house feel.",
-   "If you only own a few, group them and the effect is the same."
+   "If you own a few vintage Santas, let them show off.",
+   "Glossy Santas and snowmen crowd wooden crates here, set on lace doilies with tinsel, candy canes and bright baubles.",
+   "The doilies are the secret. They make anything look inherited.",
+   "Three figures are enough to count as a collection, and crates stack like steps, giving you heights for free."
   ],
-  "key": "vintage-27"
+  "key": "vintage-27",
+  "_orig": [
+   "If you own a few vintage Santas, let them show off.",
+   "Glossy Santas and snowmen crowd wooden crates here, set on lace doilies with tinsel, candy canes and bright baubles.",
+   "The doilies are the secret. They make anything look inherited.",
+   "Three figures are enough to count as a collection, and crates stack like steps, giving you heights for free."
+  ]
  },
  {
   "n": 9,
-  "title": "Build a Glowing Village Along a Console",
+  "title": "Build a Village Like a Map",
   "paras": [
-   "A village is the ultimate nostalgia project.",
-   "Lit houses, a church, little skaters and a sparkling tree sit on a bed of snow along a rustic console.",
-   "Layer figures at different distances for depth.",
-   "Hide the cord under the snow so only the light shows."
+   "<p><strong>A village is the ultimate nostalgia project, and it's easier than it looks.</strong> Lit houses, a church, little skaters and a sparkling tree sit on snow along this rustic console.</p>",
+   "Plan it like a map: a main street, a church, a pond, a hill. Place the tallest buildings at the back and the smallest in front.",
+   "Hide cords under the batting, and plug it into a timer so the village lights up every evening on its own."
   ],
-  "key": "vintage-06"
+  "key": "vintage-06",
+  "_orig": [
+   "A village is the ultimate nostalgia project, and it's easier than it looks.",
+   "Lit houses, a church, little skaters and a sparkling tree sit on snow along this rustic console.",
+   "Plan it like a map: a main street, a church, a pond, a hill. Place the tallest buildings at the back and the smallest in front.",
+   "Hide cords under the batting, and plug it into a timer so the village lights up every evening on its own."
+  ]
  },
  {
   "n": 10,
-  "title": "Set a Snowy Village on a Dark Sideboard",
+  "title": "Build Hills Under the Snow",
   "paras": [
-   "Dark wood makes the snow stand out.",
-   "Snow-roofed cottages with lit windows and frosted pines cover a polished sideboard in this display, next to a window with winter light.",
-   "It looks like a miniature mountain town.",
-   "Use batting for the snow and shape it into little hills."
+   "Dark wood makes white snow glow.",
+   "Snow-roofed cottages with lit windows and frosted pines cover this polished sideboard, with winter light behind them.",
+   "<ul><li>Slide books or boxes under the batting to make hills. Even a flat scene looks like a landscape once it has slopes.</li><li>Dim the room lights and let the village be the lamp.</li></ul>"
   ],
-  "key": "vintage-07"
+  "key": "vintage-07",
+  "_orig": [
+   "Dark wood makes white snow glow.",
+   "Snow-roofed cottages with lit windows and frosted pines cover this polished sideboard, with winter light behind them.",
+   "Slide books or boxes under the batting to make hills. Even a flat scene looks like a landscape once it has slopes.",
+   "Dim the room lights and let the village be the lamp."
+  ]
  },
  {
   "n": 11,
-  "title": "Line Wooden Houses Along the Windowsill",
+  "title": "Use the Windowsill",
   "paras": [
-   "Windowsills are underused real estate.",
-   "Small wooden houses with candles stand in a row under lace curtains and strings of tiny lights, with ornaments dangling beside them.",
-   "The light shines out through the glass to the street.",
-   "Use battery candles to keep it safe."
+   "Windowsills are the most underused spot in the house.",
+   "Small wooden houses with tea lights stand in a row under lace curtains and strings of tiny lights here, and the glow shines out to the street as well as inside.",
+   "Use battery tea lights, which won't heat the glass or the curtains. On a narrow ledge, pick small houses. Big ones tip."
   ],
-  "key": "vintage-23"
+  "key": "vintage-23",
+  "_orig": [
+   "Windowsills are the most underused spot in the house.",
+   "Small wooden houses with tea lights stand in a row under lace curtains and strings of tiny lights here, and the glow shines out to the street as well as inside.",
+   "Use battery tea lights, which won't heat the glass or the curtains.",
+   "On a narrow ledge, pick small houses. Big ones tip."
+  ]
  },
  {
   "n": 12,
-  "title": "Tuck a Mini Village on the Bedroom Dresser",
+  "title": "Tuck a Mini Village in the Bedroom",
   "paras": [
-   "The bedroom deserves a little magic too.",
-   "A lit cottage and frosted trees sit on a wood dresser here, next to a bed with gingham and toile pillows and a red knit throw.",
-   "It is small enough not to crowd the room.",
-   "Use warm bulbs so it feels like a nightlight."
+   "The last thing you see before sleep should be soft.",
+   "A little lit cottage and frosted trees sit on this dresser beside a bed with gingham and toile pillows and a red knit throw.",
+   "<p><strong>Quick tip:</strong> Use a warm bulb and a timer so it turns off by itself.</p>",
+   "Keep it to one dresser corner. A bedroom wants calm, not a crowd."
   ],
-  "key": "vintage-30"
+  "key": "vintage-30",
+  "_orig": [
+   "The last thing you see before sleep should be soft.",
+   "A little lit cottage and frosted trees sit on this dresser beside a bed with gingham and toile pillows and a red knit throw.",
+   "Use a warm bulb and a timer so it turns off by itself.",
+   "Keep it to one dresser corner. A bedroom wants calm, not a crowd."
+  ]
  },
  {
   "n": 13,
-  "title": "Pile Bottle Brush Trees on a Cake Stand",
+  "title": "Pile Trees on a Cake Stand",
   "paras": [
-   "A cake stand is a tiny stage.",
-   "This green stand carries a crowd of bottle brush trees in tan, green and red, with little ornaments around the base and a plaid ribbon tied at the stem.",
-   "It makes a good centerpiece for the table.",
-   "Cluster them tight and let a few lean."
+   "A cake stand is a tiny stage. Bottle brush trees in tan, green and red crowd on this green pedestal, with tiny ornaments around the base and a plaid ribbon tied around the stem.",
+   "Cluster them tight and let a few lean. It looks like a forest, not a showroom.",
+   "Check that the stand's top is glazed so the trees don't scratch it."
   ],
-  "key": "vintage-20"
+  "key": "vintage-20",
+  "_orig": [
+   "A cake stand is a tiny stage.",
+   "Bottle brush trees in tan, green and red crowd on this green pedestal, with tiny ornaments around the base and a plaid ribbon tied around the stem.",
+   "Cluster them tight and let a few lean. It looks like a forest, not a showroom.",
+   "Check that the stand's top is glazed so the trees don't scratch it."
+  ]
  },
  {
   "n": 14,
-  "title": "Plant Bottle Brush Trees in Old Crocks",
+  "title": "Plant Trees in Old Crocks",
   "paras": [
-   "Vintage crocks give trees a rustic home.",
-   "Frosted bottle brush trees in teal, white and pink stand in cream crocks with worn labels on a wood shelf.",
-   "The faded pastels feel like flea-market finds.",
-   "Vary the heights for a forest effect."
+   "Old crocks make little trees look planted.",
+   "Frosted bottle brush trees in teal, white and pink stand in cream crocks with worn labels on a wood shelf. Vary the heights and keep the colors in one soft family.",
+   "Flea markets are where to find crocks. A faded marmalade label like these is a bonus."
   ],
-  "key": "vintage-21"
+  "key": "vintage-21",
+  "_orig": [
+   "Old crocks make little trees look planted.",
+   "Frosted bottle brush trees in teal, white and pink stand in cream crocks with worn labels on a wood shelf.",
+   "Vary the heights and keep the colors in one soft family.",
+   "Flea markets are where to find crocks. A faded marmalade label like these is a bonus."
+  ]
  },
  {
   "n": 15,
-  "title": "Lean a Sled by the Front Door",
+  "title": "Lean a Sled Against the Door",
   "paras": [
    "A sled says winter before anyone steps inside.",
-   "This weathered wooden one leans beside a black door, dressed with pine, red berries, frosted pinecones and a big red velvet bow.",
-   "Add a planter with a tiny tree for balance.",
-   "Keep it away from the doormat so the entry stays clear."
+   "A weathered wooden one leans beside this black door, dressed with pine, red berries, frosted pinecones and a big velvet bow.",
+   "<ul><li>Hold it with a discreet hook or a sandbag behind it so wind and toddlers can't topple it.</li><li>Use outdoor-rated or wired ribbon. Plain velvet goes limp in damp weather.</li></ul>"
   ],
-  "key": "vintage-09"
+  "key": "vintage-09",
+  "_orig": [
+   "A sled says winter before anyone steps inside.",
+   "A weathered wooden one leans beside this black door, dressed with pine, red berries, frosted pinecones and a big velvet bow.",
+   "Hold it with a discreet hook or a sandbag behind it so wind and toddlers can't topple it.",
+   "Use outdoor-rated or wired ribbon. Plain velvet goes limp in damp weather."
+  ]
  },
  {
   "n": 16,
-  "title": "Decorate an Indoor Sled With Bells",
+  "title": "Bring the Sled Inside",
   "paras": [
-   "Sleds work in the entryway too.",
-   "An old wooden runner sled holds greenery, brass bells and a burgundy bow, with a basket of birch logs and kraft-wrapped gifts around it.",
-   "A patterned runner underneath adds color.",
-   "Wrap gifts in plain paper so the sled stays the star."
+   "<p><strong>Sleds work in the entryway, too.</strong> An old runner sled holds greenery, brass bells and a burgundy bow, with a basket of birch logs and kraft-wrapped gifts beside it.</p>",
+   "<ul><li>Keep the walkway clear. A sled that sticks out is a tripping hazard.</li><li>Wrap the gifts plainly so the sled stays the star.</li></ul>"
   ],
-  "key": "vintage-10"
+  "key": "vintage-10",
+  "_orig": [
+   "Sleds work in the entryway, too.",
+   "An old runner sled holds greenery, brass bells and a burgundy bow, with a basket of birch logs and kraft-wrapped gifts beside it.",
+   "Keep the walkway clear. A sled that sticks out is a tripping hazard.",
+   "Wrap the gifts plainly so the sled stays the star."
+  ]
  },
  {
   "n": 17,
-  "title": "Fill a Porch Lantern With Ornaments",
+  "title": "Fill a Lantern With Ornaments",
   "paras": [
+   "A lantern can hold more than a candle. This large metal lantern on a frosty step is packed with red, green and gold baubles and warm lights.",
+   "Use a battery string with a timer, and fill it loosely so the light still shows. Choose a lantern with a door that opens, so you can refill it easily."
+  ],
+  "key": "vintage-31",
+  "_orig": [
    "A lantern can hold more than a candle.",
    "This large metal lantern on a frosty step is packed with red, green and gold baubles and warm lights.",
-   "It glows on the porch at dusk.",
-   "Use a plug-in or battery light so there is no flame."
-  ],
-  "key": "vintage-31"
+   "Use a battery string with a timer, and fill it loosely so the light still shows.",
+   "Choose a lantern with a door that opens, so you can refill it easily."
+  ]
  },
  {
   "n": 18,
-  "title": "Hang Rustic Jingle Bells on Jute",
+  "title": "Hang Jingle Bells on Jute",
   "paras": [
-   "Bells are a sound and a decoration.",
-   "Three large brass bells hang from thick jute rope against soft green cedar garland.",
-   "The rough rope looks good with the polished metal.",
-   "Tie them to a door handle or a mantel hook."
+   "Bells give you sound and charm in one.",
+   "Three brass bells hang from thick jute rope against soft green cedar garland here.",
+   "The rough rope and polished metal are the contrast that makes it work.",
+   "Tie them to a door handle, a mantel hook or the back of a chair, and hang them at different lengths."
   ],
-  "key": "vintage-16"
+  "key": "vintage-16",
+  "_orig": [
+   "Bells give you sound and charm in one.",
+   "Three brass bells hang from thick jute rope against soft green cedar garland here.",
+   "The rough rope and polished metal are the contrast that makes it work.",
+   "Tie them to a door handle, a mantel hook or the back of a chair, and hang them at different lengths."
+  ]
  },
  {
   "n": 19,
-  "title": "Combine a Bell Wreath With Cone Trees",
+  "title": "Hang a Ring of Bells on a Mirror",
   "paras": [
-   "Gold bells make a striking wreath.",
-   "A ring of tiny bells hangs in the center of an arched mirror, with a garland curving over the top and brown cone trees and pinecones on the table below.",
-   "The metals and browns feel antique.",
-   "Check the mirror frame so nothing scratches it."
+   "<p><strong>Metals and browns feel antique.</strong> A ring of tiny bells hangs in the center of this arched mirror, with a garland curving over the top and brown cone trees and pinecones on the table below.</p>",
+   "Hang the ring from a ribbon so nothing scratches the glass.",
+   "Group the cone trees in three different heights."
   ],
-  "key": "vintage-15"
+  "key": "vintage-15",
+  "_orig": [
+   "Metals and browns feel antique.",
+   "A ring of tiny bells hangs in the center of this arched mirror, with a garland curving over the top and brown cone trees and pinecones on the table below.",
+   "Hang the ring from a ribbon so nothing scratches the glass.",
+   "Group the cone trees in three different heights."
+  ]
  },
  {
   "n": 20,
   "title": "Wrap a Large Mirror in Garland",
   "paras": [
    "A mirror frame is a ready-made canvas.",
-   "This tall gilt mirror is draped with evergreen, red berries and soft ribbon on both sides, with candles and ornaments sitting on the console in front.",
-   "The garland doubles in the glass.",
-   "Use removable hooks so the wall stays safe."
+   "This tall gilt mirror is draped with evergreen, berries and soft ribbon on both sides, with candles and ornaments on the console in front.",
+   "<ul><li>The glass doubles the garland, so you need only half as much.</li><li>Use removable hooks, and put a bit of felt behind them to protect the frame.</li></ul>"
   ],
-  "key": "vintage-14"
+  "key": "vintage-14",
+  "_orig": [
+   "A mirror frame is a ready-made canvas.",
+   "This tall gilt mirror is draped with evergreen, berries and soft ribbon on both sides, with candles and ornaments on the console in front.",
+   "The glass doubles the garland, so you need only half as much.",
+   "Use removable hooks, and put a bit of felt behind them to protect the frame."
+  ]
  },
  {
   "n": 21,
-  "title": "Add a Burgundy Bow to an Arched Mirror",
+  "title": "Try a Single Swag",
   "paras": [
-   "Sometimes a swag is enough.",
-   "A cluster of cedar curves over the top of this tall gold arched mirror, tied with a burgundy velvet bow and long ribbon tails.",
-   "It frames the living room reflected inside.",
-   "Hang it from one hook and you are done."
+   "Sometimes one swag is enough.",
+   "A cluster of cedar curves over the top of this tall gold arched mirror, tied with a burgundy velvet bow and long tails.",
+   "One hook. One swag. Done. Match the ribbon to a color already in the room."
   ],
-  "key": "vintage-17"
+  "key": "vintage-17",
+  "_orig": [
+   "Sometimes one swag is enough.",
+   "A cluster of cedar curves over the top of this tall gold arched mirror, tied with a burgundy velvet bow and long tails.",
+   "One hook. One swag. Done.",
+   "Match the ribbon to a color already in the room."
+  ]
  },
  {
   "n": 22,
-  "title": "Drape a Staircase With Orange Slices and Velvet",
+  "title": "Drape the Stairs With Orange Slices and Velvet",
   "paras": [
    "Staircases are the prettiest place for garland.",
-   "Full greenery winds down this banister with burgundy ribbon, dried orange slices, pinecones and tiny lights, while little sleds and deer sit on the steps.",
-   "The oranges add scent and warmth.",
-   "Tie it with wire and use ribbon to cover the joins."
+   "Full greenery winds down this banister with burgundy ribbon, dried orange slices, pinecones and tiny lights, while small sleds and deer sit on the steps.",
+   "<p><strong>Quick tip:</strong> Attach it with wire, never tape, and cover the wire with ribbon.</p>",
+   "Dry your own oranges. Slice them thin and bake at 200°F for two to three hours."
   ],
-  "key": "vintage-25"
+  "key": "vintage-25",
+  "_orig": [
+   "Staircases are the prettiest place for garland.",
+   "Full greenery winds down this banister with burgundy ribbon, dried orange slices, pinecones and tiny lights, while small sleds and deer sit on the steps.",
+   "Attach it with wire, never tape, and cover the wire with ribbon.",
+   "Dry your own oranges. Slice them thin and bake at 200°F for two to three hours."
+  ]
  },
  {
   "n": 23,
   "title": "Light Lanterns Along the Steps",
   "paras": [
-   "Lanterns turn stairs into a scene.",
-   "A curved wooden staircase here has garland with bells and bows along the rail, and lit lanterns on the treads that glow against white risers.",
-   "A small tree at the bottom completes it.",
-   "Use battery lanterns for safety on stairs."
+   "Lanterns turn stairs into a scene. A curved wooden staircase here has garland with bells and bows along the rail, with lit lanterns on the treads and a small tree at the bottom.",
+   "Use battery lanterns only, and keep them to the sides of the treads. Stairs are for walking.",
+   "Build the garland thicker at the bottom of the railing for drama."
   ],
-  "key": "vintage-26"
+  "key": "vintage-26",
+  "_orig": [
+   "Lanterns turn stairs into a scene.",
+   "A curved wooden staircase here has garland with bells and bows along the rail, with lit lanterns on the treads and a small tree at the bottom.",
+   "Use battery lanterns only, and keep them to the sides of the treads. Stairs are for walking.",
+   "Build the garland thicker at the bottom of the railing for drama."
+  ]
  },
  {
   "n": 24,
   "title": "Give a Mint Kitchen Red Accents",
   "paras": [
    "Mint and red is peak mid-century.",
-   "This kitchen has green cabinets and shelves filled with red cookware, jars, mixer and candy canes, plus ornament garlands along the shelf edge.",
-   "The red looks bright against the soft green.",
-   "Swap in a few red tea towels for the same effect."
+   "Mint green cabinets are filled with red cookware, a mixer and candy canes here, with an ornament garland along the shelf edge. If your kitchen already has a color, choose its opposite: red for green, blue for orange.",
+   "Use real cookware as decor. Things you use look best."
   ],
-  "key": "vintage-12"
+  "key": "vintage-12",
+  "_orig": [
+   "Mint and red is peak mid-century.",
+   "Mint green cabinets are filled with red cookware, a mixer and candy canes here, with an ornament garland along the shelf edge.",
+   "If your kitchen already has a color, choose its opposite: red for green, blue for orange.",
+   "Use real cookware as decor. Things you use look best."
+  ]
  },
  {
   "n": 25,
-  "title": "Cover a Retro Fridge With Santa Magnets",
+  "title": "Cover the Fridge With Santa Magnets",
   "paras": [
    "Magnets are tiny collectibles.",
-   "A mint green fridge here is covered in snowmen, Santas and sleighs, under a gingham valance with colorful bottle brush trees on the counter.",
-   "It is playful and very 1950s.",
-   "Even a regular fridge works with a bunch of magnets."
+   "A mint green fridge is covered in snowmen, Santas and sleighs here, under a gingham valance with colorful bottle brush trees on the counter.",
+   "<ul><li>Group them by size, with the biggest ones lower.</li><li>Even a plain fridge works, and magnets cost almost nothing.</li></ul>"
   ],
-  "key": "vintage-13"
+  "key": "vintage-13",
+  "_orig": [
+   "Magnets are tiny collectibles.",
+   "A mint green fridge is covered in snowmen, Santas and sleighs here, under a gingham valance with colorful bottle brush trees on the counter.",
+   "Group them by size, with the biggest ones lower.",
+   "Even a plain fridge works, and magnets cost almost nothing."
+  ]
  },
  {
   "n": 26,
   "title": "Set Out Retro Tins and Mugs",
   "paras": [
-   "Everyday things can be Christmas decor.",
-   "On this wood coffee table are Merry Christmas mugs, tins full of ornaments, a ceramic tree and a few old figures.",
-   "It is a casual, collected look.",
-   "Pick pieces with faded graphics for authenticity."
+   "<p><strong>Everyday things can be Christmas decor.</strong> On this wood coffee table are Merry Christmas mugs, tins filled with ornaments, a ceramic tree and a few old figures.</p>",
+   "<ul><li>Tins full of ornaments are one of the easiest displays, and the lid keeps dust out.</li><li>Faded graphics look more authentic than shiny new ones.</li></ul>"
   ],
-  "key": "vintage-29"
+  "key": "vintage-29",
+  "_orig": [
+   "Everyday things can be Christmas decor.",
+   "On this wood coffee table are Merry Christmas mugs, tins filled with ornaments, a ceramic tree and a few old figures.",
+   "Tins full of ornaments are one of the easiest displays, and the lid keeps dust out.",
+   "Faded graphics look more authentic than shiny new ones."
+  ]
  },
  {
   "n": 27,
-  "title": "Hang Velvet Monogram Stockings",
+  "title": "Hang Velvet Stockings in Mixed Colors",
   "paras": [
-   "Velvet stockings feel traditional and rich.",
-   "Three stockings in burgundy, deep green and navy hang with embroidered names and cream cuffs in front of gold lights.",
-   "Different colors feel more collected than a matching set.",
-   "Add a small bauble to each cuff."
+   "Different colors feel collected, a matching set feels bought. Three velvet stockings in burgundy, deep green and navy hang here with embroidered names and cream cuffs.",
+   "Add a small bauble to each cuff. Weigh down your hooks. A stocking full of treats is heavier than it looks."
   ],
-  "key": "vintage-11"
+  "key": "vintage-11",
+  "_orig": [
+   "Different colors feel collected, a matching set feels bought.",
+   "Three velvet stockings in burgundy, deep green and navy hang here with embroidered names and cream cuffs.",
+   "Add a small bauble to each cuff.",
+   "Weigh down your hooks. A stocking full of treats is heavier than it looks."
+  ]
  },
  {
   "n": 28,
-  "title": "String Vintage Postcards on a Garland",
+  "title": "String Postcards on a Garland",
   "paras": [
    "Old postcards are free art.",
-   "Winter scene cards hang from twine with wooden clothespins along the mantel, with greenery and lights behind.",
-   "Change the cards as the season goes.",
-   "Copies or reprints work as well as originals."
+   "Winter scene cards hang from twine with wooden clothespins along this mantel.",
+   "Use color copies of originals, because sunlight fades antique cards.",
+   "Change them through the season."
   ],
-  "key": "vintage-08"
+  "key": "vintage-08",
+  "_orig": [
+   "Old postcards are free art.",
+   "Winter scene cards hang from twine with wooden clothespins along this mantel.",
+   "Use color copies of originals, because sunlight fades antique cards.",
+   "Change them through the season."
+  ]
  },
  {
   "n": 29,
-  "title": "Set a Table With Floral China and Orange Slices",
+  "title": "Mismatch Your China on Purpose",
   "paras": [
+   "<p><strong>Mismatched china is charming.</strong> A long table is set with floral plates, burgundy napkins, brass candlesticks, dried orange slices and a lace runner.</p>",
+   "Collect a plate at a time at thrift shops and use a common thread, like pink and green.",
+   "Keep the runner narrow so you can still see the table."
+  ],
+  "key": "vintage-18",
+  "_orig": [
    "Mismatched china is charming.",
    "A long table is set with floral plates, burgundy napkins, brass candlesticks, dried orange slices and a lace runner.",
-   "The pattern gives it a lived-in look.",
-   "Collect a plate here and there rather than one set."
-  ],
-  "key": "vintage-18"
+   "Collect a plate at a time at thrift shops and use a common thread, like pink and green.",
+   "Keep the runner narrow so you can still see the table."
+  ]
  },
  {
   "n": 30,
-  "title": "Use a Tartan Tablecloth",
+  "title": "Spread a Tartan Cloth",
   "paras": [
    "Tartan on the table is instantly cozy.",
-   "A green plaid cloth is set with gold flatware, red napkins tied with twine and candlesticks.",
-   "The plaid does all the pattern work.",
-   "Keep plates plain and let the cloth stand out."
+   "A green plaid cloth carries gold flatware, red napkins tied with twine and candlesticks.",
+   "<ul><li>Let the cloth carry the pattern and keep plates plain.</li><li>Tying napkins with twine takes seconds.</li></ul>"
   ],
-  "key": "vintage-19"
+  "key": "vintage-19",
+  "_orig": [
+   "Tartan on the table is instantly cozy.",
+   "A green plaid cloth carries gold flatware, red napkins tied with twine and candlesticks.",
+   "Let the cloth carry the pattern and keep plates plain.",
+   "Tying napkins with twine takes seconds."
+  ]
  },
  {
   "n": 31,
   "title": "Pair Navy Plaid With Crystal",
   "paras": [
-   "Plaid does not always have to be red.",
-   "A blue and green plaid cloth carries navy napkins, crystal glasses with gold rims, candles and a tree beyond.",
-   "It feels formal yet relaxed.",
-   "Layer glassware for sparkle."
+   "Plaid doesn't have to be red.",
+   "A blue and green plaid cloth carries navy napkins, crystal glasses with gold rims and candles here, with a tree beyond.",
+   "Layer glassware for sparkle: water, wine and champagne. Set candles at different heights."
   ],
-  "key": "vintage-28"
+  "key": "vintage-28",
+  "_orig": [
+   "Plaid doesn't have to be red.",
+   "A blue and green plaid cloth carries navy napkins, crystal glasses with gold rims and candles here, with a tree beyond.",
+   "Layer glassware for sparkle: water, wine and champagne.",
+   "Set candles at different heights."
+  ]
  },
  {
   "n": 32,
-  "title": "Stack Wooden Crates of Ornaments",
+  "title": "Stack Crates of Ornaments",
   "paras": [
    "Crates make a quick display.",
-   "Weathered wooden boxes are stacked and filled with red and gold ornaments, pinecones and pine branches.",
-   "The warm wood shows off the colors.",
-   "Stack them at different angles for a natural look."
+   "Weathered wooden boxes are stacked and filled with red and gold ornaments, pinecones and pine.",
+   "<p><strong>Quick tip:</strong> Stack them at different angles for a natural look.</p>",
+   "Line the crates with burlap so ornaments don't roll."
   ],
-  "key": "vintage-22"
+  "key": "vintage-22",
+  "_orig": [
+   "Crates make a quick display.",
+   "Weathered wooden boxes are stacked and filled with red and gold ornaments, pinecones and pine.",
+   "Stack them at different angles for a natural look.",
+   "Line the crates with burlap so ornaments don't roll."
+  ]
  },
  {
   "n": 33,
-  "title": "Wrap Gifts in Kraft Paper With Velvet Ribbon",
+  "title": "Wrap Gifts in Kraft Paper and Velvet",
   "paras": [
+   "Simple wrapping looks more expensive. Gifts in kraft paper are tied with wide burgundy velvet ribbon and topped with greenery, cinnamon sticks, star anise and a gingerbread tag.",
+   "Buy wired velvet ribbon at a craft store, and reuse it each year.",
+   "Choose one paper and one ribbon family, then stop."
+  ],
+  "key": "vintage-32",
+  "_orig": [
    "Simple wrapping looks more expensive.",
    "Gifts in kraft paper are tied with wide burgundy velvet ribbon and topped with greenery, cinnamon sticks, star anise and a gingerbread tag.",
-   "The wrapping becomes decor under the tree.",
-   "Save and reuse the ribbon each year."
-  ],
-  "key": "vintage-32"
+   "Buy wired velvet ribbon at a craft store, and reuse it each year.",
+   "Choose one paper and one ribbon family, then stop."
+  ]
  }
 ];
 
@@ -1116,24 +1284,31 @@ function photo(key) {
 
 function ideaBlock(idea) {
   return `<h2>${idea.n}. ${idea.title}</h2>
-${idea.paras.map((t) => `<p>${t}</p>`).join("\n")}
+${idea.paras.map((t) => (t.startsWith("<") ? t : `<p>${t}</p>`)).join("\n")}
 ${photo(idea.key)}`;
 }
 
 const body = `
 <p>Vintage Christmas decor feels warmer than almost anything new off the shelf.</p>
 <p>Mercury glass, bottle brush trees, retro Santas and scraps of velvet and plaid all have a glow that fresh-from-the-box sets rarely match.</p>
-<p>You do not need real antiques to get the look. A few well-chosen new pieces, styled with restraint, can read as nostalgic as anything handed down.</p>
-<p>These 33 ideas go beyond the tree, with mantels, villages, staircases, tables, a retro kitchen and even gift wrap, because a vintage Christmas lives in the small details.</p>
+<p>The good news is that you don't need real antiques to get there. A few well-chosen pieces, styled with restraint, can read as nostalgic as something handed down. Here is how I approach it, followed by 33 ideas for every room.</p>
 ${photo("hero")}
+
+<h2>Five Ways to Get the Vintage Look Without Buying Antiques</h2>
+<p><strong>Mix old and new.</strong> A few thrifted pieces among new ones look collected. A room full of reproductions looks like a catalog.</p>
+<p><strong>Limit your materials.</strong> Choose two or three, such as mercury glass, plaid and brass, and repeat them everywhere.</p>
+<p><strong>Light it warmly.</strong> Soft bulbs and candles (or battery ones) do half the work.</p>
+<p><strong>Choose patina over perfection.</strong> A chipped ornament or a worn sled has more character than a flawless one.</p>
+<p><strong>Shop where the old things are.</strong> Thrift shops, estate sales and flea markets are the best places for glass ornaments, brass candlesticks, crocks and tins.</p>
 
 ${IDEAS.map(ideaBlock).join("\n\n")}
 
-<h2>Keeping the Look Nostalgic, Not Cluttered</h2>
-<p>Thirty-three ideas is plenty. Pick a few and let them breathe.</p>
-<p>Choose two or three materials and repeat them, such as mercury glass, plaid and brass, so the house feels collected instead of crowded.</p>
-<p>Warm lighting does half the work, so use soft bulbs and candles wherever it is safe.</p>
-<p>Above all, use what you love. A chipped ornament with a story beats a perfect new one every time.</p>
+<h2>Common Mistakes (and Fixes)</h2>
+<p><strong>Buying everything new in one color.</strong> It will look flat. Add at least one old, mismatched piece.</p>
+<p><strong>Using cool white lights.</strong> They make everything look modern. Switch to warm.</p>
+<p><strong>Leaving fragile glass at toddler height.</strong> Hang old ornaments up high and put sturdy shatterproof ones low.</p>
+<p><strong>Forgetting cord safety.</strong> Check old light strings for frayed wires and never run cords under rugs.</p>
+<p>Use what you love, in small doses. A chipped ornament with a story always beats a perfect new one.</p>
 `;
 
 module.exports = { body };

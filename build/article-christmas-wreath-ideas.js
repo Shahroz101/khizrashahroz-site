@@ -5,6 +5,8 @@
 // credited to their Pinterest pins; the supplied Amazon product pair stays
 // under each photo. Ends on text.
 // Photos: images/christmas-wreath-ideas/, products: ...-products/.
+// Rewritten 2026-10-25 in an advice-led voice (styling rules, the why behind
+// each look, practical tips) after the first draft read like photo captions.
 
 const { picture } = require("./picture-helper.js");
 
@@ -558,278 +560,402 @@ const PRODUCTS = {
 const IDEAS = [
  {
   "n": 1,
-  "title": "Start With a Full, Classic Holly Wreath",
+  "title": "Put Fullness First",
   "paras": [
-   "If you want a wreath nobody will ever call out of style, begin here.",
-   "This one is packed with dark evergreen, clusters of bright red berries, silver-tipped pinecones and glossy holly leaves, with one long red velvet ribbon trailing down a white door.",
-   "The ribbon is the only extra, and that is why it works.",
-   "Keep it dense: a thin wreath on a big door looks lost."
+   "Size and fullness matter more than any single ornament.",
+   "A good wreath is about two-thirds the width of your door. This one fills its space with dense evergreen, bright red berries, silver-tipped pinecones and glossy holly leaves, with one long velvet ribbon trailing down a white door.",
+   "If yours looks thin, tuck in extra berry picks. It takes two minutes and makes a bigger difference than a new bow."
   ],
-  "key": "wreath-02"
+  "key": "wreath-02",
+  "_orig": [
+   "Size and fullness matter more than any single ornament.",
+   "A good wreath is about two-thirds the width of your door. This one fills its space with dense evergreen, bright red berries, silver-tipped pinecones and glossy holly leaves, with one long velvet ribbon trailing down a white door.",
+   "If yours looks thin, tuck in extra berry picks. It takes two minutes and makes a bigger difference than a new bow."
+  ]
  },
  {
   "n": 2,
-  "title": "Hang a Pine and Berry Wreath With a Door Sign",
+  "title": "Match the Wreath to the Door",
   "paras": [
-   "A dark door makes the greens look richer.",
-   "Long pine needles, red berry sprays and a few pinecones fan out here, finished with a bow in red, green and cream plaid and a small gold JOY hanger above.",
-   "The sign adds a message without adding weight to the wreath.",
-   "Choose a hanger that matches your hardware so it looks planned."
+   "Dark doors make greens look richer.",
+   "Long pine needles, red berry sprays and a few pinecones fan out here, with a bow in red, green and cream plaid and a small gold JOY hanger above.",
+   "<ul><li>As a rule, put a rich, dark wreath on a pale door and a pale one on a dark door.</li><li>Choose a hanger in the same finish as your door hardware so it looks planned.</li></ul>"
   ],
-  "key": "wreath-03"
+  "key": "wreath-03",
+  "_orig": [
+   "Dark doors make greens look richer.",
+   "Long pine needles, red berry sprays and a few pinecones fan out here, with a bow in red, green and cream plaid and a small gold JOY hanger above.",
+   "As a rule, put a rich, dark wreath on a pale door and a pale one on a dark door.",
+   "Choose a hanger in the same finish as your door hardware so it looks planned."
+  ]
  },
  {
   "n": 3,
-  "title": "Go Natural With Pinecones and Pine",
+  "title": "Skip the Ribbon",
   "paras": [
-   "Not every wreath needs a ribbon.",
-   "This round wreath is simply layers of pine, fern-like sprigs and big brown pinecones against a black door.",
-   "The shapes and textures are interesting enough on their own.",
-   "It is also the easiest to leave up through January, since nothing on it says Christmas out loud."
+   "<p><strong>Not every wreath needs a bow.</strong> This one is just layers of pine, fern-like sprigs and big brown pinecones against a black door. The shapes and textures are interesting enough without help.</p>",
+   "<ul><li>It's also the easiest to leave up until February, since nothing on it says Christmas out loud.</li><li>If a cone comes loose, a dab of hot glue fixes it.</li></ul>"
   ],
-  "key": "wreath-04"
+  "key": "wreath-04",
+  "_orig": [
+   "Not every wreath needs a bow.",
+   "This one is just layers of pine, fern-like sprigs and big brown pinecones against a black door. The shapes and textures are interesting enough without help.",
+   "It's also the easiest to leave up until February, since nothing on it says Christmas out loud.",
+   "If a cone comes loose, a dab of hot glue fixes it."
+  ]
  },
  {
   "n": 4,
-  "title": "Tie a Red Plaid Bow on a Grapevine Wreath",
+  "title": "Leave Part of the Ring Bare",
   "paras": [
-   "A grapevine ring leaves lots of room for a bold bow.",
-   "This one is weighted toward one side, with pine, pinecones, red berries and a big red-and-green tartan bow, so the bare vine shows on the other.",
-   "The uneven design feels hand-made, in a good way.",
-   "Hang it slightly off-center on a black door and the red really stands out."
+   "Designers rarely cover a whole wreath. A grapevine ring here carries its pine, pinecones, berries and red-green tartan bow on one side only, and the bare vine shows on the other.",
+   "Place the cluster at about seven o'clock and the eye follows the diagonal. On a black door the red really stands out."
   ],
-  "key": "wreath-12"
+  "key": "wreath-12",
+  "_orig": [
+   "Designers rarely cover a whole wreath.",
+   "A grapevine ring here carries its pine, pinecones, berries and red-green tartan bow on one side only, and the bare vine shows on the other.",
+   "Place the cluster at about seven o'clock and the eye follows the diagonal.",
+   "On a black door the red really stands out."
+  ]
  },
  {
   "n": 5,
-  "title": "Mix Eucalyptus and Berries With a Tartan Bow",
+  "title": "Pair Cool Eucalyptus With a Warm Ribbon",
   "paras": [
-   "Eucalyptus brings a cool, silvery note to Christmas greens.",
-   "Soft round leaves, red berry sprays and pine are gathered at one side of this wreath, with a tartan bow in red and navy and long tails that nearly sweep the door.",
-   "The mix feels fresh next to a traditional red-and-green scheme.",
-   "Let the ribbon tails run long for more drama."
+   "Eucalyptus adds a silvery, cool note to Christmas greens.",
+   "Soft round leaves, red berry sprays and pine gather on one side of this wreath, with a tartan bow in red and navy and tails that nearly sweep the door.",
+   "The mix feels fresher than the usual red and green.",
+   "Let the ribbon tails run long for more drama. Eucalyptus keeps its shape as it dries, so it still looks good in week four."
   ],
-  "key": "wreath-01"
+  "key": "wreath-01",
+  "_orig": [
+   "Eucalyptus adds a silvery, cool note to Christmas greens.",
+   "Soft round leaves, red berry sprays and pine gather on one side of this wreath, with a tartan bow in red and navy and tails that nearly sweep the door.",
+   "The mix feels fresher than the usual red and green.",
+   "Let the ribbon tails run long for more drama.",
+   "Eucalyptus keeps its shape as it dries, so it still looks good in week four."
+  ]
  },
  {
   "n": 6,
-  "title": "Add Buffalo Check and Jingle Bells",
+  "title": "Add a Little Sound",
   "paras": [
-   "This is the rustic cabin version of a wreath.",
-   "Frosted pine, red-and-black checked berries, pinecones and silver jingle bells are wound with rough twine on a plank wooden door.",
-   "The bells give it a little sound and a lot of charm.",
-   "Keep everything in the same checked and natural palette so it feels cozy, not busy."
+   "<p><strong>A wreath with bells greets you every time the door opens.</strong> Frosted pine, buffalo check berries, pinecones and silver jingle bells are wound with rough twine on this plank door.</p>",
+   "Keep everything in the same palette (checks and naturals here) so it feels cozy and not busy.",
+   "Wire bells on with floral wire and double-knot them. A loose bell is easy to lose."
   ],
-  "key": "wreath-17"
+  "key": "wreath-17",
+  "_orig": [
+   "A wreath with bells greets you every time the door opens.",
+   "Frosted pine, buffalo check berries, pinecones and silver jingle bells are wound with rough twine on this plank door.",
+   "Keep everything in the same palette (checks and naturals here) so it feels cozy and not busy.",
+   "Wire bells on with floral wire and double-knot them. A loose bell is easy to lose."
+  ]
  },
  {
   "n": 7,
-  "title": "Hang Gold Bells From a Plaid Bow",
+  "title": "Hang the Bells From the Bow",
   "paras": [
    "Let a few oversized bells do the talking.",
    "Three brass bells swing from twine below a large bow in red, green and cream plaid, set against cedar, eucalyptus, pinecones and red berries.",
-   "The bells make a great focal point.",
-   "They look especially good on a pale siding wall or a white door."
+   "<ul><li>Bells add weight, so use a strong hook and test the wreath before you leave it.</li><li>They look best on pale siding or a white door.</li></ul>"
   ],
-  "key": "wreath-19"
+  "key": "wreath-19",
+  "_orig": [
+   "Let a few oversized bells do the talking.",
+   "Three brass bells swing from twine below a large bow in red, green and cream plaid, set against cedar, eucalyptus, pinecones and red berries.",
+   "Bells add weight, so use a strong hook and test the wreath before you leave it.",
+   "They look best on pale siding or a white door."
+  ]
  },
  {
   "n": 8,
-  "title": "Tuck in Dried Oranges and Cinnamon",
+  "title": "Keep It Simple With Oranges and Cinnamon",
   "paras": [
    "The simplest wreaths often look the best.",
-   "A full, soft green wreath here holds just a few touches: dried orange slices, a cinnamon stick, a pinecone and a loose velvet ribbon in tan.",
-   "Everything adds a little scent and warmth.",
-   "Dry your own orange slices in the oven and wire them in."
+   "A full, soft green wreath here carries just a few touches: dried orange slices, a cinnamon stick, a pinecone and a loose tan velvet ribbon.",
+   "Dry your own oranges by slicing them thin and baking at 200°F for two to three hours. Mist them with clear sealer if the wreath will hang outside."
   ],
-  "key": "wreath-14"
+  "key": "wreath-14",
+  "_orig": [
+   "The simplest wreaths often look the best.",
+   "A full, soft green wreath here carries just a few touches: dried orange slices, a cinnamon stick, a pinecone and a loose tan velvet ribbon.",
+   "Dry your own oranges by slicing them thin and baking at 200°F for two to three hours.",
+   "Mist them with clear sealer if the wreath will hang outside."
+  ]
  },
  {
   "n": 9,
   "title": "Pair Cotton Bolls With Red Berries",
   "paras": [
-   "Cotton has a soft, farmhouse feel that suits Christmas.",
-   "A loose, twiggy ring is dotted with white cotton bolls, rust-colored leaves and bright red berry sprays on a whitewashed plank wall.",
-   "It is airy, lightweight and unusual.",
-   "This one suits a country or modern farmhouse entry."
+   "Cotton gives a wreath a soft farmhouse feel.",
+   "A loose, twiggy ring is dotted with cotton bolls, rust-colored leaves and red berry sprays on a whitewashed wall.",
+   "<p><strong>Quick tip:</strong> Because it's so airy, it needs a pale background. On a dark door the shape would disappear.</p>",
+   "Faux cotton survives rain. Real cotton doesn't."
   ],
-  "key": "wreath-15"
+  "key": "wreath-15",
+  "_orig": [
+   "Cotton gives a wreath a soft farmhouse feel.",
+   "A loose, twiggy ring is dotted with cotton bolls, rust-colored leaves and red berry sprays on a whitewashed wall.",
+   "Because it's so airy, it needs a pale background. On a dark door the shape would disappear.",
+   "Faux cotton survives rain. Real cotton doesn't."
+  ]
  },
  {
   "n": 10,
-  "title": "Craft a Wood Slice Wreath",
+  "title": "Make a Wreath Yourself",
   "paras": [
-   "For a handmade look, build a ring from wood slices.",
-   "Round birch slices form this open wreath, with a deep red hydrangea, burlap ribbon and trailing greenery in the lower corner.",
-   "A twine loop at the top keeps it hanging straight.",
-   "It works well indoors on a wall or on a covered porch."
+   "A handmade wreath is the most personal one on the door. Round slices of birch form this open ring, with a deep red hydrangea, burlap ribbon and trailing greenery in the lower corner.",
+   "Glue the slices to a cardboard ring with hot glue and drill a small hole at the top for twine.",
+   "It's light enough for any hook. Keep it indoors or on a covered porch."
   ],
-  "key": "wreath-16"
+  "key": "wreath-16",
+  "_orig": [
+   "A handmade wreath is the most personal one on the door.",
+   "Round slices of birch form this open ring, with a deep red hydrangea, burlap ribbon and trailing greenery in the lower corner.",
+   "Glue the slices to a cardboard ring with hot glue and drill a small hole at the top for twine.",
+   "It's light enough for any hook. Keep it indoors or on a covered porch."
+  ]
  },
  {
   "n": 11,
-  "title": "Hang an Eucalyptus Wreath With Pinecones",
+  "title": "Let Eucalyptus Be the Only Star",
   "paras": [
    "Eucalyptus on its own is calm and elegant.",
-   "Round gray-green leaves, a scattering of white berries and a few big pinecones circle a white door in this simple design.",
-   "There is no ribbon at all.",
-   "It looks as good in January as it does in December."
+   "Round gray-green leaves, a scattering of white berries and a few big pinecones circle a white door in this simple wreath. There is no ribbon. It looks as good in January as in December.",
+   "Faux holds its color better in sun than real."
   ],
-  "key": "wreath-07"
+  "key": "wreath-07",
+  "_orig": [
+   "Eucalyptus on its own is calm and elegant.",
+   "Round gray-green leaves, a scattering of white berries and a few big pinecones circle a white door in this simple wreath. There is no ribbon.",
+   "It looks as good in January as in December.",
+   "Faux holds its color better in sun than real."
+  ]
  },
  {
   "n": 12,
-  "title": "Choose a Flocked Wreath With a Cream Bow",
+  "title": "Choose a Flocked Wreath and a Soft Bow",
   "paras": [
    "Snow without the cold.",
-   "Thick, frosted branches and white berries wrap around a wreath dotted with pinecones, tied with one wide cream satin bow.",
-   "Cream looks softer than pure white against the frost.",
-   "It is a lovely match for a pale blue or white door."
+   "Thick frosted branches and white berries wrap around cones here, tied with one wide cream satin bow.",
+   "<ul><li>Cream looks softer than pure white against frost.</li><li>Flocking sheds, so shake the wreath outside before you hang it and keep it off a dark doormat.</li></ul>"
   ],
-  "key": "wreath-11"
+  "key": "wreath-11",
+  "_orig": [
+   "Snow without the cold.",
+   "Thick frosted branches and white berries wrap around cones here, tied with one wide cream satin bow.",
+   "Cream looks softer than pure white against frost.",
+   "Flocking sheds, so shake the wreath outside before you hang it and keep it off a dark doormat."
+  ]
  },
  {
   "n": 13,
-  "title": "Add White Poinsettias and Silver Ornaments",
+  "title": "Add Shimmer, Not Glitter",
   "paras": [
-   "A white palette feels crisp and clean.",
-   "Pine and frosted leaves in this design are mixed with white poinsettias, snowy berries, pinecones and silver baubles.",
-   "The silver adds a little shimmer without going full glam.",
-   "Hang it where daylight can catch the metallic pieces."
+   "<p><strong>A white palette feels crisp.</strong> Pine and frosted leaves are mixed here with white poinsettias, snowy berries, pinecones and silver baubles.</p>",
+   "<ul><li>Hang it where daylight can catch the metallic pieces.</li><li>Use shatterproof baubles outside. Wind will test everything.</li></ul>"
   ],
-  "key": "wreath-05"
+  "key": "wreath-05",
+  "_orig": [
+   "A white palette feels crisp.",
+   "Pine and frosted leaves are mixed here with white poinsettias, snowy berries, pinecones and silver baubles.",
+   "Hang it where daylight can catch the metallic pieces.",
+   "Use shatterproof baubles outside. Wind will test everything."
+  ]
  },
  {
   "n": 14,
-  "title": "Wrap a White and Silver Wreath in Burlap Mesh",
+  "title": "Soften Sparkle With Burlap",
   "paras": [
-   "Rustic burlap softens all that sparkle.",
-   "Silver ornaments, white berries and frosted pinecones sit among evergreen on a gray door, with a loose gold-flecked mesh bow in tan.",
-   "The mix of rough and shiny is the charm.",
-   "It is an easy way to dress up a natural wreath."
+   "Rustic burlap tames sparkle. Silver ornaments, white berries and frosted pinecones sit among evergreen here, with a loose gold-flecked mesh bow in tan.",
+   "The mix of rough and shiny is what makes it work. Wired mesh holds its shape in wind."
   ],
-  "key": "wreath-10"
+  "key": "wreath-10",
+  "_orig": [
+   "Rustic burlap tames sparkle.",
+   "Silver ornaments, white berries and frosted pinecones sit among evergreen here, with a loose gold-flecked mesh bow in tan.",
+   "The mix of rough and shiny is what makes it work.",
+   "Wired mesh holds its shape in wind."
+  ]
  },
  {
   "n": 15,
-  "title": "Put a Let It Snow Sign in the Center",
+  "title": "Fill the Middle With a Sign",
   "paras": [
-   "A round sign can fill the empty middle of a wreath.",
-   "Here a white 'let it snow' plaque sits inside a ring of eucalyptus, white poinsettias, pinecones and snowy berries on a dark door.",
-   "The sign gives it a playful message.",
-   "Pick wording that suits you and the wreath will feel personal."
+   "A round sign fills an empty center.",
+   "A white let it snow plaque sits inside a ring of eucalyptus, white poinsettias, pinecones and snowy berries on this dark door.",
+   "Pick wording that suits you and the wreath will feel personal.",
+   "Attach the sign with wire from behind so it hangs straight."
   ],
-  "key": "wreath-20"
+  "key": "wreath-20",
+  "_orig": [
+   "A round sign fills an empty center.",
+   "A white let it snow plaque sits inside a ring of eucalyptus, white poinsettias, pinecones and snowy berries on this dark door.",
+   "Pick wording that suits you and the wreath will feel personal.",
+   "Attach the sign with wire from behind so it hangs straight."
+  ]
  },
  {
   "n": 16,
-  "title": "Go Coastal With Starfish",
+  "title": "Go Coastal",
   "paras": [
-   "Christmas by the sea does not have to be red and green.",
-   "A snow-flocked wreath is dotted with white starfish and tied with a soft white satin bow on a white door.",
-   "The neutral palette keeps it calm.",
-   "It is perfect for a beach house, or anyone who loves a pale, airy look."
+   "<p><strong>Christmas by the sea doesn't need red and green.</strong> A snow-flocked wreath is dotted with white starfish and tied with a soft white satin bow on a white door.</p>",
+   "The neutral palette keeps it calm and airy.",
+   "Use resin starfish outdoors. Real ones go brittle in the cold."
   ],
-  "key": "wreath-22"
+  "key": "wreath-22",
+  "_orig": [
+   "Christmas by the sea doesn't need red and green.",
+   "A snow-flocked wreath is dotted with white starfish and tied with a soft white satin bow on a white door.",
+   "The neutral palette keeps it calm and airy.",
+   "Use resin starfish outdoors. Real ones go brittle in the cold."
+  ]
  },
  {
   "n": 17,
-  "title": "Go Gilded With Champagne Ornaments",
+  "title": "Go Gilded",
   "paras": [
    "Gold is the shortcut to a glowing door.",
-   "This wreath mixes metallic leaves, gold and ivory baubles, frosted branches and tiny lights on a base of pine.",
-   "The leaves and ornaments catch the light from every angle.",
-   "A gray or white door shows them off best."
+   "Metallic leaves, gold and ivory baubles, frosted branches and tiny lights fill a pine base here.",
+   "<ul><li>A gray or white door shows them off best.</li><li>Put the lights on a timer so you don't have to remember.</li></ul>"
   ],
-  "key": "wreath-08"
+  "key": "wreath-08",
+  "_orig": [
+   "Gold is the shortcut to a glowing door.",
+   "Metallic leaves, gold and ivory baubles, frosted branches and tiny lights fill a pine base here.",
+   "A gray or white door shows them off best.",
+   "Put the lights on a timer so you don't have to remember."
+  ]
  },
  {
   "n": 18,
-  "title": "Pair Gold Poinsettias With a Cream Bow",
+  "title": "Choose Poinsettias in a Soft Metallic",
   "paras": [
-   "Poinsettias do not have to be red.",
+   "Poinsettias don't have to be red.",
    "Champagne-gold flowers and glittered ornaments gather at the bottom of this wreath, with a large cream ribbon bow at the top.",
-   "The soft glow looks rich but not loud.",
-   "It suits a white door where nothing competes."
+   "The soft glow looks rich, not loud. It suits a white door where nothing competes."
   ],
-  "key": "wreath-09"
+  "key": "wreath-09",
+  "_orig": [
+   "Poinsettias don't have to be red.",
+   "Champagne-gold flowers and glittered ornaments gather at the bottom of this wreath, with a large cream ribbon bow at the top.",
+   "The soft glow looks rich, not loud.",
+   "It suits a white door where nothing competes."
+  ]
  },
  {
   "n": 19,
-  "title": "Choose Brown Velvet Magnolias",
+  "title": "Try Earthy Browns",
   "paras": [
    "Warm browns feel like a fresh change.",
-   "Rust-brown magnolia blossoms, ivory and gold leaves, amber berry sprays and a wide cream velvet bow sit in front of a black door.",
-   "The earthy palette feels winter-appropriate without leaning on red.",
+   "Rust-brown magnolias, ivory and gold leaves, amber berry sprays and a wide cream velvet bow sit in front of a black door here.",
+   "<p><strong>Quick tip:</strong> The earthy palette feels like winter without leaning on red.</p>",
    "Cream and brown together look soft and expensive."
   ],
-  "key": "wreath-13"
+  "key": "wreath-13",
+  "_orig": [
+   "Warm browns feel like a fresh change.",
+   "Rust-brown magnolias, ivory and gold leaves, amber berry sprays and a wide cream velvet bow sit in front of a black door here.",
+   "The earthy palette feels like winter without leaning on red.",
+   "Cream and brown together look soft and expensive."
+  ]
  },
  {
   "n": 20,
-  "title": "Layer Copper and Gold Metallics",
+  "title": "Layer Metallics",
   "paras": [
+   "This is a sibling to the brown magnolia wreath, with a bit more shine. Copper blossoms, gold eucalyptus leaves and speckled berry sprays wrap a dark green base, finished with a cream velvet bow.",
+   "Metallics glow on a dark door.",
+   "Step back and check the shape. A few stems should reach out for movement."
+  ],
+  "key": "wreath-25",
+  "_orig": [
    "This is a sibling to the brown magnolia wreath, with a bit more shine.",
    "Copper blossoms, gold eucalyptus leaves and speckled berry sprays wrap a dark green base, finished with a cream velvet bow.",
-   "The metallics glow on a dark door.",
-   "Stand back and check the shape: a few stems should reach out for movement."
-  ],
-  "key": "wreath-25"
+   "Metallics glow on a dark door.",
+   "Step back and check the shape. A few stems should reach out for movement."
+  ]
  },
  {
   "n": 21,
-  "title": "Go Black and Gold With Mixed Ribbons",
+  "title": "Go Black and Gold",
   "paras": [
    "For maximum glam, go dark.",
-   "Gold magnolia leaves frame bunches of black and gold ribbon, some printed with snowflakes, with black and gold baubles tucked in on a teal door.",
-   "The textures give it depth.",
-   "It is bold, so keep the rest of your porch simple."
+   "Gold magnolia leaves frame bunches of black and gold ribbon here, some printed with snowflakes, with black and gold baubles on a teal door. Mixing textures gives it depth.",
+   "It's bold, so keep the rest of the porch simple."
   ],
-  "key": "wreath-23"
+  "key": "wreath-23",
+  "_orig": [
+   "For maximum glam, go dark.",
+   "Gold magnolia leaves frame bunches of black and gold ribbon here, some printed with snowflakes, with black and gold baubles on a teal door.",
+   "Mixing textures gives it depth.",
+   "It's bold, so keep the rest of the porch simple."
+  ]
  },
  {
   "n": 22,
-  "title": "Cluster Red and Gold Ornaments",
+  "title": "Use Baubles as the Wreath",
   "paras": [
    "Baubles can be the wreath.",
-   "Big red and gold ornaments sit among red berries, gold glitter sprigs and cedar and eucalyptus on a warm wooden door.",
-   "The colors are classic Christmas, but the gold keeps it from feeling plain.",
-   "Use shatterproof ornaments so the wind cannot do any damage."
+   "Big red and gold ornaments sit among red berries, gold glitter sprigs, cedar and eucalyptus on a warm wooden door.",
+   "<ul><li>The colors are classic Christmas, and the gold keeps it from feeling plain.</li><li>Use shatterproof ornaments and wire each one on twice.</li></ul>"
   ],
-  "key": "wreath-18"
+  "key": "wreath-18",
+  "_orig": [
+   "Baubles can be the wreath.",
+   "Big red and gold ornaments sit among red berries, gold glitter sprigs, cedar and eucalyptus on a warm wooden door.",
+   "The colors are classic Christmas, and the gold keeps it from feeling plain.",
+   "Use shatterproof ornaments and wire each one on twice."
+  ]
  },
  {
   "n": 23,
-  "title": "Make It Sweet With Candy Canes",
+  "title": "Make It Sweet",
   "paras": [
-   "Candy cane stripes are pure fun.",
-   "A frosted wreath here holds mini candy canes, red berries and pinecones, with a big red-and-white striped bow and a round Merry Christmas sign on a slate-blue door.",
-   "The blue door makes the red pop.",
-   "Add a curl of ribbon for movement."
+   "<p><strong>Candy canes are pure fun.</strong> A frosted wreath here holds mini candy canes, red berries and pinecones, with a big red and white striped bow and a round Merry Christmas sign on a slate-blue door.</p>",
+   "<ul><li>The blue door makes the red pop.</li><li>Use plastic candy canes outside, because real ones melt.</li></ul>"
   ],
-  "key": "wreath-06"
+  "key": "wreath-06",
+  "_orig": [
+   "Candy canes are pure fun.",
+   "A frosted wreath here holds mini candy canes, red berries and pinecones, with a big red and white striped bow and a round Merry Christmas sign on a slate-blue door.",
+   "The blue door makes the red pop.",
+   "Use plastic candy canes outside, because real ones melt."
+  ]
  },
  {
   "n": 24,
-  "title": "Hang Gingerbread Cookies and Striped Ribbon",
+  "title": "Hang Gingerbread",
   "paras": [
-   "Gingerbread says home for the holidays.",
-   "Flocked pine in this wreath is topped with gingerbread cutouts and a red-and-cream striped bow with gingerbread-print ribbon, on a sage green door.",
-   "The sweet details are all in the ribbon.",
-   "String lights around the door make the whole scene glow."
+   "Gingerbread says home for the holidays. Flocked pine is topped here with gingerbread cutouts and a red and cream striped bow printed with gingerbread men, on a sage green door.",
+   "String lights around the door make the whole scene glow. Seal paper or wood cookies with clear spray before hanging outside."
   ],
-  "key": "wreath-21"
+  "key": "wreath-21",
+  "_orig": [
+   "Gingerbread says home for the holidays.",
+   "Flocked pine is topped here with gingerbread cutouts and a red and cream striped bow printed with gingerbread men, on a sage green door.",
+   "String lights around the door make the whole scene glow.",
+   "Seal paper or wood cookies with clear spray before hanging outside."
+  ]
  },
  {
   "n": 25,
-  "title": "Soften the Look With Blush Pink",
+  "title": "Soften the Look With Blush",
   "paras": [
    "Pink and Christmas pair surprisingly well.",
-   "Dark pine is brightened with blush poinsettias, pink and silver baubles, white berries, frosted stars and tiny crystals on a white door.",
+   "Dark pine is brightened here with blush poinsettias, pink and silver baubles, white berries, frosted stars and tiny crystals.",
    "It feels playful, modern and a little dreamy.",
    "Silver keeps the pink from looking too sweet."
   ],
-  "key": "wreath-24"
+  "key": "wreath-24",
+  "_orig": [
+   "Pink and Christmas pair surprisingly well.",
+   "Dark pine is brightened here with blush poinsettias, pink and silver baubles, white berries, frosted stars and tiny crystals.",
+   "It feels playful, modern and a little dreamy.",
+   "Silver keeps the pink from looking too sweet."
+  ]
  }
 ];
 
@@ -861,24 +987,31 @@ function photo(key) {
 
 function ideaBlock(idea) {
   return `<h2>${idea.n}. ${idea.title}</h2>
-${idea.paras.map((t) => `<p>${t}</p>`).join("\n")}
+${idea.paras.map((t) => (t.startsWith("<") ? t : `<p>${t}</p>`)).join("\n")}
 ${photo(idea.key)}`;
 }
 
 const body = `
 <p>The wreath is the first thing anyone sees when they walk up to your door.</p>
-<p>It takes a few minutes to hang, yet it changes how the whole entrance feels.</p>
-<p>The best ones are built around a single strong idea, like a bold plaid bow, a cluster of pinecones or an all-white palette, instead of every holiday element at once.</p>
-<p>These 25 Christmas wreath ideas run from classic pine and berries to glam black and gold, so there is a style for every kind of door.</p>
+<p>It takes a few minutes to hang, yet it changes how the whole entrance feels, which makes it the highest-impact piece of holiday decor you can buy.</p>
+<p>The best wreaths are built around one strong idea, like a bold plaid bow, a cluster of pinecones or an all-white palette. Here are the basics I check first, then 25 wreaths to borrow from.</p>
 ${photo("hero")}
+
+<h2>Five Things to Check Before You Hang a Wreath</h2>
+<p><strong>Size.</strong> Aim for about two-thirds the width of the door. A small wreath on a big door looks lost.</p>
+<p><strong>Height.</strong> Hang it at eye level, or a little above. Look at your door from the walkway, not from inside.</p>
+<p><strong>Hanger.</strong> An over-the-door hanger is easiest. Put a bit of felt on the door side so the paint doesn't scuff.</p>
+<p><strong>Weather.</strong> Outside, choose outdoor-rated ribbon, shatterproof baubles and a covered porch if you can.</p>
+<p><strong>Color.</strong> Think about your door. A rich wreath looks best on a pale door, and a pale wreath on a dark one.</p>
 
 ${IDEAS.map(ideaBlock).join("\n\n")}
 
-<h2>How to Choose the One for Your Door</h2>
-<p>You do not need to love all 25. You only need the one that fits your door color, your porch and how bold you want to go this year.</p>
-<p>Start with the base material. Pine, eucalyptus and flocked greenery all read very differently, and the base sets the tone for every ribbon and accent you add after.</p>
-<p>A wreath with one standout detail, like an oversized bow or a cluster of bells, almost always looks better than one balancing five accents at once.</p>
-<p>Whatever you pick, choose the one that makes you smile on the way to your own front door. That is the whole point.</p>
+<h2>Common Wreath Mistakes (and Fixes)</h2>
+<p><strong>Choosing one that is too small.</strong> If in doubt, go bigger.</p>
+<p><strong>A flat, floppy bow.</strong> Use wired ribbon, make large loops and fluff them.</p>
+<p><strong>Too many accents.</strong> A single standout detail beats five competing ones.</p>
+<p><strong>Forgetting the back of the wreath.</strong> Wind can spin it. Wire it to the hanger at two points.</p>
+<p>Pick the one that makes you smile on the way to your own front door. That's really the whole point.</p>
 `;
 
 module.exports = { body };

@@ -63,6 +63,8 @@ const christmasBathroomArticle = require("./article-christmas-bathroom-decor-ide
 const christmasTieredTrayArticle = require("./article-christmas-tiered-tray-ideas.js");
 const christmasKitchenArticle = require("./article-christmas-kitchen-decor-ideas.js");
 const christmasDessertArticle = require("./article-christmas-dessert-ideas.js");
+const newYearsEveArticle = require("./article-new-years-eve-decor-ideas.js");
+const friendsgivingArticle = require("./article-festive-friendsgiving-decor-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -3042,6 +3044,22 @@ const longFormPosts = [
     alt: "Red velvet layer cake with cream cheese frosting rosettes, sugar trees and red pearls",
     image: "/images/christmas-dessert-ideas/hero.jpg",
     bodyHtml: christmasDessertArticle.body,
+  },
+  {
+    slug: "new-years-eve-decor-ideas",
+    title: "30 New Year's Eve Decor Ideas for a Party That Feels Like Midnight",
+    category: "Entertaining", readingTime: "14 min read", date: "October 26, 2026",
+    excerpt: "Thirty New Year's Eve decor ideas, from the entry to the table to the midnight toast, with tips for low light, safe sparkle and a smooth countdown.",
+    alt: "A gold sequin backdrop with black and gold balloons and a lit 2027 marquee sign behind a velvet rope", image: "/images/new-years-eve-decor-ideas/hero.jpg",
+    bodyHtml: newYearsEveArticle.body,
+  },
+  {
+    slug: "festive-friendsgiving-decor-ideas",
+    title: "25 Friendsgiving Decor Ideas for a Cozy Fall Gathering",
+    category: "Entertaining", readingTime: "12 min read", date: "October 26, 2026",
+    excerpt: "Twenty-five Friendsgiving decor ideas for the table, the yard, the food and the front door, with simple tips for hosting a warm potluck.",
+    alt: "A fall dining table with amber glassware, white pumpkins, and taper candles by a stone fireplace", image: "/images/festive-friendsgiving-decor-ideas/hero.jpg",
+    bodyHtml: friendsgivingArticle.body,
   },
 ];
 

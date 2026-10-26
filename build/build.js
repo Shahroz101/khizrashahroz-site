@@ -62,6 +62,7 @@ const vintageChristmasArticle = require("./article-festive-vintage-christmas-dec
 const christmasBathroomArticle = require("./article-christmas-bathroom-decor-ideas.js");
 const christmasTieredTrayArticle = require("./article-christmas-tiered-tray-ideas.js");
 const christmasKitchenArticle = require("./article-christmas-kitchen-decor-ideas.js");
+const christmasDessertArticle = require("./article-christmas-dessert-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -3030,6 +3031,17 @@ const longFormPosts = [
     alt: "Lit garland with candles and gold ornaments along the top of wood kitchen cabinets",
     image: "/images/christmas-kitchen-decor-ideas/hero.jpg",
     bodyHtml: christmasKitchenArticle.body,
+  },
+  {
+    slug: "christmas-dessert-ideas",
+    title: "22 Christmas Dessert Ideas for a Holiday Table People Remember",
+    category: "Entertaining",
+    readingTime: "13 min read",
+    date: "October 26, 2026",
+    excerpt: "Yule logs, pavlova wreaths, no-bake cups, truffle towers and iced cookies — 22 Christmas desserts with the make-ahead tips that keep you out of the kitchen.",
+    alt: "Red velvet layer cake with cream cheese frosting rosettes, sugar trees and red pearls",
+    image: "/images/christmas-dessert-ideas/hero.jpg",
+    bodyHtml: christmasDessertArticle.body,
   },
 ];
 

@@ -664,14 +664,16 @@ const IDEAS = [
    "Guests should know the moment they walk in that this is not a regular Saturday.",
    "A wall of gold sequins, oversized lit numbers, black and gold balloons and a velvet rope set up an arrival moment you can't miss.",
    "Put your statement piece where people stop anyway: by the door or opposite it.",
-   "Light-up marquee numbers are worth the money. They work as décor, a photo prop and a countdown sign at midnight."
+   "Light-up marquee numbers are worth the money. They work as décor, a photo prop and a countdown sign at midnight. Add a rope or a runner on the floor and guests will line up for photos without being asked. If the entry is small, skip the balloons and let the lit numbers carry it."
   ],
   "key": "nye-01",
   "_orig": [
    "Guests should know the moment they walk in that this is not a regular Saturday.",
    "A wall of gold sequins, oversized lit numbers, black and gold balloons and a velvet rope set up an arrival moment you can't miss.",
    "Put your statement piece where people stop anyway: by the door or opposite it.",
-   "Light-up marquee numbers are worth the money. They work as décor, a photo prop and a countdown sign at midnight."
+   "Light-up marquee numbers are worth the money. They work as décor, a photo prop and a countdown sign at midnight.",
+   "Add a rope or a runner on the floor and guests will line up for photos without being asked.",
+   "If the entry is small, skip the balloons and let the lit numbers carry it."
   ]
  },
  {
@@ -680,14 +682,16 @@ const IDEAS = [
   "paras": [
    "<p><strong>A foil number looks expensive and takes minutes to set up.</strong> Gold foil numerals stand on a low cluster of black and gold balloons here, with a bunch of balloons floating beside them against a plain white wall.</p>",
    "Foil holds helium for days, but latex doesn't. Inflate the latex on party day.",
-   "Weigh the base down so a draft or a toddler can't send it across the room."
+   "Weigh the base down so a draft or a toddler can't send it across the room. Buy the numbers in a size that suits the wall. Sixteen inches is dainty, thirty-four inches reads from across the room. Most foil numbers can be reused, so tuck the year away flat for next time."
   ],
   "key": "nye-05",
   "_orig": [
    "A foil number looks expensive and takes minutes to set up.",
    "Gold foil numerals stand on a low cluster of black and gold balloons here, with a bunch of balloons floating beside them against a plain white wall.",
    "Foil holds helium for days, but latex doesn't. Inflate the latex on party day.",
-   "Weigh the base down so a draft or a toddler can't send it across the room."
+   "Weigh the base down so a draft or a toddler can't send it across the room.",
+   "Buy the numbers in a size that suits the wall. Sixteen inches is dainty, thirty-four inches reads from across the room.",
+   "Most foil numbers can be reused, so tuck the year away flat for next time."
   ]
  },
  {
@@ -696,14 +700,16 @@ const IDEAS = [
   "paras": [
    "A photo wall is the cheapest party upgrade I know.",
    "A silver and gold tinsel curtain hangs from a rod behind a stool and a plant here, with clusters of gold, black and clear balloons on either side.",
-   "<ul><li>Hang it from a tension rod or adhesive hooks, and trim the length to just brush the floor.</li><li>Light faces from the front, not from behind, so guests don't turn into silhouettes in the pictures.</li></ul>"
+   "<ul><li>Hang it from a tension rod or adhesive hooks, and trim the length to just brush the floor.</li><li>Light faces from the front, not from behind, so guests don't turn into silhouettes in the pictures. Tinsel catches the light every time someone walks past, so the wall keeps moving even when nobody poses. Tape the top edge twice. Tinsel is lighter than it looks, but it still sags.</li></ul>"
   ],
   "key": "nye-12",
   "_orig": [
    "A photo wall is the cheapest party upgrade I know.",
    "A silver and gold tinsel curtain hangs from a rod behind a stool and a plant here, with clusters of gold, black and clear balloons on either side.",
    "Hang it from a tension rod or adhesive hooks, and trim the length to just brush the floor.",
-   "Light faces from the front, not from behind, so guests don't turn into silhouettes in the pictures."
+   "Light faces from the front, not from behind, so guests don't turn into silhouettes in the pictures.",
+   "Tinsel catches the light every time someone walks past, so the wall keeps moving even when nobody poses.",
+   "Tape the top edge twice. Tinsel is lighter than it looks, but it still sags."
   ]
  },
  {
@@ -712,14 +718,16 @@ const IDEAS = [
   "paras": [
    "Props turn a backdrop into a party game.",
    "Gold fringe falls behind a black-draped table here, with a top hat, glitter glasses, a red feather boa and gold bead necklaces ready to grab.",
-   "Keep the props in one spot and tell people they're there. Most won't think to ask. A mix of hats and glasses works better than a pile of signs, which only a few people will hold."
+   "Keep the props in one spot and tell people they're there. Most won't think to ask. A mix of hats and glasses works better than a pile of signs, which only a few people will hold. Put the table beside the photo wall, not in front of it, so the line doesn't block the shot. Hot glue a stick to paper props so guests can hold them without fuss."
   ],
   "key": "nye-04",
   "_orig": [
    "Props turn a backdrop into a party game.",
    "Gold fringe falls behind a black-draped table here, with a top hat, glitter glasses, a red feather boa and gold bead necklaces ready to grab.",
    "Keep the props in one spot and tell people they're there. Most won't think to ask.",
-   "A mix of hats and glasses works better than a pile of signs, which only a few people will hold."
+   "A mix of hats and glasses works better than a pile of signs, which only a few people will hold.",
+   "Put the table beside the photo wall, not in front of it, so the line doesn't block the shot.",
+   "Hot glue a stick to paper props so guests can hold them without fuss."
   ]
  },
  {
@@ -729,14 +737,16 @@ const IDEAS = [
    "A doorway balloon arch frames the party before anyone walks in.",
    "Black, gold, white and marbled balloons curve over a dark door here, with champagne coupes and a small cake on a table below.",
    "<p><strong>Quick tip:</strong> Use a balloon strip or arch kit so the curve holds. Tying them by hand takes patience.</p>",
-   "Mix at least three sizes of balloon, which makes it look organic and not like a rainbow."
+   "Mix at least three sizes of balloon, which makes it look organic and not like a rainbow. Start from the bottom corners and build up, because it's easier to fix the top than to reshape the base. Leave a gap in the middle of the arch for a sign or a foil number."
   ],
   "key": "nye-11",
   "_orig": [
    "A doorway balloon arch frames the party before anyone walks in.",
    "Black, gold, white and marbled balloons curve over a dark door here, with champagne coupes and a small cake on a table below.",
    "Use a balloon strip or arch kit so the curve holds. Tying them by hand takes patience.",
-   "Mix at least three sizes of balloon, which makes it look organic and not like a rainbow."
+   "Mix at least three sizes of balloon, which makes it look organic and not like a rainbow.",
+   "Start from the bottom corners and build up, because it's easier to fix the top than to reshape the base.",
+   "Leave a gap in the middle of the arch for a sign or a foil number."
   ]
  },
  {
@@ -745,14 +755,16 @@ const IDEAS = [
   "paras": [
    "Clear balloons with gold confetti feel more luxe than solid colors. A bunch of them floats above a candlelit table here, with a gold Happy New Year banner on the wall behind.",
    "Tie balloons to a weight at the table's end so they stay put.",
-   "Put the bunch at one end, not the center, so guests can see each other."
+   "Put the bunch at one end, not the center, so guests can see each other. Confetti balloons are the one balloon type that looks good even a little deflated, which helps by 1 a.m. Pick a weight with a ribbon in your party color so it looks intentional."
   ],
   "key": "nye-27",
   "_orig": [
    "Clear balloons with gold confetti feel more luxe than solid colors.",
    "A bunch of them floats above a candlelit table here, with a gold Happy New Year banner on the wall behind.",
    "Tie balloons to a weight at the table's end so they stay put.",
-   "Put the bunch at one end, not the center, so guests can see each other."
+   "Put the bunch at one end, not the center, so guests can see each other.",
+   "Confetti balloons are the one balloon type that looks good even a little deflated, which helps by 1 a.m.",
+   "Pick a weight with a ribbon in your party color so it looks intentional."
   ]
  },
  {
@@ -761,14 +773,16 @@ const IDEAS = [
   "paras": [
    "Looking up should be as good as looking around.",
    "Black and gold balloons float up to the ceiling here, with long metallic ribbons hanging down over an open dance floor. Use helium for the high ones and leave the ribbons long, so they sway when people move.",
-   "For a midnight drop, tuck a few balloons in a net above the dance floor and release it on the countdown."
+   "For a midnight drop, tuck a few balloons in a net above the dance floor and release it on the countdown. Check the ceiling height first. Standard 8-foot rooms need a short ribbon, or the strands will hit heads. Buy a few extra balloons, because a handful always pop on the way up."
   ],
   "key": "nye-06",
   "_orig": [
    "Looking up should be as good as looking around.",
    "Black and gold balloons float up to the ceiling here, with long metallic ribbons hanging down over an open dance floor.",
    "Use helium for the high ones and leave the ribbons long, so they sway when people move.",
-   "For a midnight drop, tuck a few balloons in a net above the dance floor and release it on the countdown."
+   "For a midnight drop, tuck a few balloons in a net above the dance floor and release it on the countdown.",
+   "Check the ceiling height first. Standard 8-foot rooms need a short ribbon, or the strands will hit heads.",
+   "Buy a few extra balloons, because a handful always pop on the way up."
   ]
  },
  {
@@ -777,14 +791,16 @@ const IDEAS = [
   "paras": [
    "Overhead lights make any room feel like a party.",
    "Strings of warm white bulbs cross the ceiling beams here, with a few hanging ornaments in the windows.",
-   "<ul><li>Run the strands in a zigzag, about eighteen inches apart, and fix with small clear hooks.</li><li>Put them on a dimmer or a timer so you can lower the glow as the night goes on.</li></ul>"
+   "<ul><li>Run the strands in a zigzag, about eighteen inches apart, and fix with small clear hooks.</li><li>Put them on a dimmer or a timer so you can lower the glow as the night goes on. Warm white bulbs flatter skin. Cool white makes everyone look tired by midnight. Test the strands before you climb the ladder, and have a spare set ready.</li></ul>"
   ],
   "key": "nye-15",
   "_orig": [
    "Overhead lights make any room feel like a party.",
    "Strings of warm white bulbs cross the ceiling beams here, with a few hanging ornaments in the windows.",
    "Run the strands in a zigzag, about eighteen inches apart, and fix with small clear hooks.",
-   "Put them on a dimmer or a timer so you can lower the glow as the night goes on."
+   "Put them on a dimmer or a timer so you can lower the glow as the night goes on.",
+   "Warm white bulbs flatter skin. Cool white makes everyone look tired by midnight.",
+   "Test the strands before you climb the ladder, and have a spare set ready."
   ]
  },
  {
@@ -792,14 +808,16 @@ const IDEAS = [
   "title": "Hang Mirror Tinsel Streamers Over the Table",
   "paras": [
    "<p><strong>Movement is what makes a room feel alive.</strong> Long silver tinsel streamers and silver balloons hang over a dinner table, and tiny disco balls scatter among the glasses below.</p>",
-   "<ul><li>Hang them from the ceiling or a rod at different lengths.</li><li>Make sure they clear the candle flames by a good margin.</li></ul>"
+   "<ul><li>Hang them from the ceiling or a rod at different lengths.</li><li>Make sure they clear the candle flames by a good margin. Give the streamers different lengths, from a foot to three feet, so they don't hang in a flat curtain. Keep a fan off. A gentle draft helps the tinsel shimmer, but a strong one tangles it.</li></ul>"
   ],
   "key": "nye-16",
   "_orig": [
    "Movement is what makes a room feel alive.",
    "Long silver tinsel streamers and silver balloons hang over a dinner table, and tiny disco balls scatter among the glasses below.",
    "Hang them from the ceiling or a rod at different lengths.",
-   "Make sure they clear the candle flames by a good margin."
+   "Make sure they clear the candle flames by a good margin.",
+   "Give the streamers different lengths, from a foot to three feet, so they don't hang in a flat curtain.",
+   "Keep a fan off. A gentle draft helps the tinsel shimmer, but a strong one tangles it."
   ]
  },
  {
@@ -807,14 +825,16 @@ const IDEAS = [
   "title": "Float Gold and Silver Balloons Over a Candlelit Table",
   "paras": [
    "Balloons don't have to stay at floor level. Gold and silver balloons hang from strands of fairy lights above this table, with tall tapers and apples at each place.",
-   "Tie balloons to the lights or a ceiling hook, keeping them well above eye level. Use battery tapers, since open flame near balloons is a hazard."
+   "Tie balloons to the lights or a ceiling hook, keeping them well above eye level. Use battery tapers, since open flame near balloons is a hazard. The fairy lights give you something to tie to and a glow that makes the balloons look lit from inside. Foil balloons last longer than latex on a long night, so use those for the top row."
   ],
   "key": "nye-17",
   "_orig": [
    "Balloons don't have to stay at floor level.",
    "Gold and silver balloons hang from strands of fairy lights above this table, with tall tapers and apples at each place.",
    "Tie balloons to the lights or a ceiling hook, keeping them well above eye level.",
-   "Use battery tapers, since open flame near balloons is a hazard."
+   "Use battery tapers, since open flame near balloons is a hazard.",
+   "The fairy lights give you something to tie to and a glow that makes the balloons look lit from inside.",
+   "Foil balloons last longer than latex on a long night, so use those for the top row."
   ]
  },
  {
@@ -824,14 +844,16 @@ const IDEAS = [
    "The countdown is the whole point of the night.",
    "A big round clock hangs in front of a curtain of fairy lights here, with star garlands above and silhouettes of guests below.",
    "Hang it opposite the main seating, so nobody has to look at a phone.",
-   "Set it a few minutes fast if you want a head start on the countdown."
+   "Set it a few minutes fast if you want a head start on the countdown. A clock that's big enough also turns into a nice reveal at midnight, when everyone cheers at the same time. Run a battery clock, so there are no cords across the room."
   ],
   "key": "nye-24",
   "_orig": [
    "The countdown is the whole point of the night.",
    "A big round clock hangs in front of a curtain of fairy lights here, with star garlands above and silhouettes of guests below.",
    "Hang it opposite the main seating, so nobody has to look at a phone.",
-   "Set it a few minutes fast if you want a head start on the countdown."
+   "Set it a few minutes fast if you want a head start on the countdown.",
+   "A clock that's big enough also turns into a nice reveal at midnight, when everyone cheers at the same time.",
+   "Run a battery clock, so there are no cords across the room."
   ]
  },
  {
@@ -840,14 +862,16 @@ const IDEAS = [
   "paras": [
    "<p><strong>A balcony or porch counts as party space.</strong> Snowflake string lights and garland run along this balcony railing, with potted plants and a warm glow against the winter view.</p>",
    "Choose outdoor-rated lights, or solar ones that charge in the afternoon.",
-   "Wire them with zip ties, not tape, since cold weather weakens adhesive."
+   "Wire them with zip ties, not tape, since cold weather weakens adhesive. Add a rug or an outdoor heater and the balcony becomes the room people migrate to after dinner. Check the rail first. Garland shouldn't block a gate or an exit."
   ],
   "key": "nye-28",
   "_orig": [
    "A balcony or porch counts as party space.",
    "Snowflake string lights and garland run along this balcony railing, with potted plants and a warm glow against the winter view.",
    "Choose outdoor-rated lights, or solar ones that charge in the afternoon.",
-   "Wire them with zip ties, not tape, since cold weather weakens adhesive."
+   "Wire them with zip ties, not tape, since cold weather weakens adhesive.",
+   "Add a rug or an outdoor heater and the balcony becomes the room people migrate to after dinner.",
+   "Check the rail first. Garland shouldn't block a gate or an exit."
   ]
  },
  {
@@ -856,14 +880,16 @@ const IDEAS = [
   "paras": [
    "Black and gold is classic for a reason.",
    "Gold cutlery, white plates and tall flutes sit on a dark runner here, with tiny confetti dots and fairy lights between the place settings.",
-   "<ul><li>Start with a dark cloth and only add gold: flatware, chargers, rims on glasses.</li><li>Scatter the confetti sparingly, a pinch at each place, so it looks like glitter and not mess.</li></ul>"
+   "<ul><li>Start with a dark cloth and only add gold: flatware, chargers, rims on glasses.</li><li>Scatter the confetti sparingly, a pinch at each place, so it looks like glitter and not mess. Gold flatware, chargers and rimmed glasses are enough. More gold turns it into costume jewelry. If you don't own gold flatware, spray-painting plain forks with gold metallic paint works and costs a few dollars.</li></ul>"
   ],
   "key": "nye-02",
   "_orig": [
    "Black and gold is classic for a reason.",
    "Gold cutlery, white plates and tall flutes sit on a dark runner here, with tiny confetti dots and fairy lights between the place settings.",
    "Start with a dark cloth and only add gold: flatware, chargers, rims on glasses.",
-   "Scatter the confetti sparingly, a pinch at each place, so it looks like glitter and not mess."
+   "Scatter the confetti sparingly, a pinch at each place, so it looks like glitter and not mess.",
+   "Gold flatware, chargers and rimmed glasses are enough. More gold turns it into costume jewelry.",
+   "If you don't own gold flatware, spray-painting plain forks with gold metallic paint works and costs a few dollars."
   ]
  },
  {
@@ -872,14 +898,16 @@ const IDEAS = [
   "paras": [
    "Soft light is the most flattering thing you can give a guest.",
    "White roses, small votives and tealights crowd a table here, with gold-rimmed glasses and plates glowing in the candlelight.",
-   "Use tealights in glass holders and group them in odd numbers. Keep flowers low so guests can see each other across the table."
+   "Use tealights in glass holders and group them in odd numbers. Keep flowers low so guests can see each other across the table. White roses are forgiving: they look good open, closed or slightly past their best. Trim stems short and set the roses in low bowls to keep sight lines clear."
   ],
   "key": "nye-09",
   "_orig": [
    "Soft light is the most flattering thing you can give a guest.",
    "White roses, small votives and tealights crowd a table here, with gold-rimmed glasses and plates glowing in the candlelight.",
    "Use tealights in glass holders and group them in odd numbers.",
-   "Keep flowers low so guests can see each other across the table."
+   "Keep flowers low so guests can see each other across the table.",
+   "White roses are forgiving: they look good open, closed or slightly past their best.",
+   "Trim stems short and set the roses in low bowls to keep sight lines clear."
   ]
  },
  {
@@ -889,14 +917,16 @@ const IDEAS = [
    "Disco balls bounce the light around the room.",
    "Mini mirrored balls fill a long white dish down the center of this table, with eucalyptus leaves and two tall white candles.",
    "<p><strong>Quick tip:</strong> Cluster the balls in different sizes, and tuck a few on the table too.</p>",
-   "Keep centerpieces under twelve inches tall so conversation flows."
+   "Keep centerpieces under twelve inches tall so conversation flows. Real mirrored balls throw dots of light on the walls once a candle is nearby. That's the whole effect. Fill the dish before guests arrive and top it up later if some roll away."
   ],
   "key": "nye-07",
   "_orig": [
    "Disco balls bounce the light around the room.",
    "Mini mirrored balls fill a long white dish down the center of this table, with eucalyptus leaves and two tall white candles.",
    "Cluster the balls in different sizes, and tuck a few on the table too.",
-   "Keep centerpieces under twelve inches tall so conversation flows."
+   "Keep centerpieces under twelve inches tall so conversation flows.",
+   "Real mirrored balls throw dots of light on the walls once a candle is nearby. That's the whole effect.",
+   "Fill the dish before guests arrive and top it up later if some roll away."
   ]
  },
  {
@@ -905,14 +935,16 @@ const IDEAS = [
   "paras": [
    "A centerpiece can glow without a single flame. Clear mason jars filled with fairy lights stand on a navy cloth strewn with gold stars here.",
    "Use battery lights with a timer. Fill each jar with a loose coil.",
-   "Cut the stars from gold card and scatter them on the table."
+   "Cut the stars from gold card and scatter them on the table. Jars are inexpensive and look expensive when they glow. You can also make them ahead of time. Use warm white lights, as blue-white lights look chilly in a jar."
   ],
   "key": "nye-08",
   "_orig": [
    "A centerpiece can glow without a single flame.",
    "Clear mason jars filled with fairy lights stand on a navy cloth strewn with gold stars here.",
    "Use battery lights with a timer. Fill each jar with a loose coil.",
-   "Cut the stars from gold card and scatter them on the table."
+   "Cut the stars from gold card and scatter them on the table.",
+   "Jars are inexpensive and look expensive when they glow. You can also make them ahead of time.",
+   "Use warm white lights, as blue-white lights look chilly in a jar."
   ]
  },
  {
@@ -921,14 +953,16 @@ const IDEAS = [
   "paras": [
    "A tray makes a loose collection look deliberate.",
    "A gold tray here holds a big star, gold ornaments, a lantern and a candle in a glass. Leave Christmas ornaments out and swap for gold ones in January.",
-   "Vary heights, with the tall piece to the back."
+   "Vary heights, with the tall piece to the back. Put the tallest item at the back and the shortest at the front, which keeps everything visible. Wipe the tray with a damp cloth after the party. Gold finishes scratch easily."
   ],
   "key": "nye-23",
   "_orig": [
    "A tray makes a loose collection look deliberate.",
    "A gold tray here holds a big star, gold ornaments, a lantern and a candle in a glass.",
    "Leave Christmas ornaments out and swap for gold ones in January.",
-   "Vary heights, with the tall piece to the back."
+   "Vary heights, with the tall piece to the back.",
+   "Put the tallest item at the back and the shortest at the front, which keeps everything visible.",
+   "Wipe the tray with a damp cloth after the party. Gold finishes scratch easily."
   ]
  },
  {
@@ -937,14 +971,16 @@ const IDEAS = [
   "paras": [
    "A confetti runner is the cheapest decoration there is.",
    "Colorful metallic dots run down the center of this white table, with tealights and wine glasses along it.",
-   "<ul><li>Use paper confetti rather than plastic, which doesn't sweep up and damages the environment.</li><li>Keep the dots small and sparse. A little goes a long way.</li></ul>"
+   "<ul><li>Use paper confetti rather than plastic, which doesn't sweep up and damages the environment.</li><li>Keep the dots small and sparse. A little goes a long way. Sweep up from the table before dessert, or the confetti ends up in the cake. A runner of tissue paper cut into tiny circles costs almost nothing.</li></ul>"
   ],
   "key": "nye-29",
   "_orig": [
    "A confetti runner is the cheapest decoration there is.",
    "Colorful metallic dots run down the center of this white table, with tealights and wine glasses along it.",
    "Use paper confetti rather than plastic, which doesn't sweep up and damages the environment.",
-   "Keep the dots small and sparse. A little goes a long way."
+   "Keep the dots small and sparse. A little goes a long way.",
+   "Sweep up from the table before dessert, or the confetti ends up in the cake.",
+   "A runner of tissue paper cut into tiny circles costs almost nothing."
   ]
  },
  {
@@ -952,14 +988,16 @@ const IDEAS = [
   "title": "Light a Sparkler Centerpiece",
   "paras": [
    "<p><strong>A starburst light makes a dramatic centerpiece.</strong> A copper-wire starburst glows above a table of candles and bottles here.</p>",
-   "<ul><li>Choose an LED version. Real sparklers don't belong on a dining table.</li><li>Dim the room and let it be the lamp.</li></ul>"
+   "<ul><li>Choose an LED version. Real sparklers don't belong on a dining table.</li><li>Dim the room and let it be the lamp. Hang it a little above eye level so the light doesn't blind anyone seated below. If you can't find a starburst, a cluster of paper stars with a small LED inside gives a similar glow.</li></ul>"
   ],
   "key": "nye-30",
   "_orig": [
    "A starburst light makes a dramatic centerpiece.",
    "A copper-wire starburst glows above a table of candles and bottles here.",
    "Choose an LED version. Real sparklers don't belong on a dining table.",
-   "Dim the room and let it be the lamp."
+   "Dim the room and let it be the lamp.",
+   "Hang it a little above eye level so the light doesn't blind anyone seated below.",
+   "If you can't find a starburst, a cluster of paper stars with a small LED inside gives a similar glow."
   ]
  },
  {
@@ -967,14 +1005,16 @@ const IDEAS = [
   "title": "Light the Living Room, Not Just the Table",
   "paras": [
    "Not every party happens at a dining table. A glowing New Year sign, gold balloons, candles and a low table of flutes set a lounge mood here.",
-   "Use a coffee table as a sit-down spot, with cushions around it. Layer your light sources so no one is lit from above."
+   "Use a coffee table as a sit-down spot, with cushions around it. Layer your light sources so no one is lit from above. Swap overhead light for two or three lamps around the room. Pools of light make a living room feel like a lounge. Add a tray of flutes on the coffee table so people can help themselves."
   ],
   "key": "nye-13",
   "_orig": [
    "Not every party happens at a dining table.",
    "A glowing New Year sign, gold balloons, candles and a low table of flutes set a lounge mood here.",
    "Use a coffee table as a sit-down spot, with cushions around it.",
-   "Layer your light sources so no one is lit from above."
+   "Layer your light sources so no one is lit from above.",
+   "Swap overhead light for two or three lamps around the room. Pools of light make a living room feel like a lounge.",
+   "Add a tray of flutes on the coffee table so people can help themselves."
   ]
  },
  {
@@ -984,14 +1024,16 @@ const IDEAS = [
    "Cozy can be festive.",
    "A gold Happy New Year sign, balloons and candles sit above a table set for dinner by the fireplace.",
    "Choose placemats and napkins in a calm neutral so the gold stands out.",
-   "Dim the overheads and let the fire and candles do the rest."
+   "Dim the overheads and let the fire and candles do the rest. A fireplace is the best decoration you have, so don't crowd the mantel. Keep paper signs a safe distance from the flame, or switch to an electric fire."
   ],
   "key": "nye-14",
   "_orig": [
    "Cozy can be festive.",
    "A gold Happy New Year sign, balloons and candles sit above a table set for dinner by the fireplace.",
    "Choose placemats and napkins in a calm neutral so the gold stands out.",
-   "Dim the overheads and let the fire and candles do the rest."
+   "Dim the overheads and let the fire and candles do the rest.",
+   "A fireplace is the best decoration you have, so don't crowd the mantel.",
+   "Keep paper signs a safe distance from the flame, or switch to an electric fire."
   ]
  },
  {
@@ -1000,14 +1042,16 @@ const IDEAS = [
   "paras": [
    "<p><strong>Sit on the floor and the party goes casual.</strong> A lace teepee lettered with Happy New Year in gold script stands behind a low table with cushions, disco balls and candles.</p>",
    "Use a low table or a sheet on the floor, with lots of pillows.",
-   "Give guests a few cushions each and a blanket, and nobody will ask for a chair."
+   "Give guests a few cushions each and a blanket, and nobody will ask for a chair. Layer rugs and floor cushions, and add a few small side tables for glasses. Offer finger foods. Nobody wants a plate of pasta balanced on a knee."
   ],
   "key": "nye-25",
   "_orig": [
    "Sit on the floor and the party goes casual.",
    "A lace teepee lettered with Happy New Year in gold script stands behind a low table with cushions, disco balls and candles.",
    "Use a low table or a sheet on the floor, with lots of pillows.",
-   "Give guests a few cushions each and a blanket, and nobody will ask for a chair."
+   "Give guests a few cushions each and a blanket, and nobody will ask for a chair.",
+   "Layer rugs and floor cushions, and add a few small side tables for glasses.",
+   "Offer finger foods. Nobody wants a plate of pasta balanced on a knee."
   ]
  },
  {
@@ -1016,14 +1060,16 @@ const IDEAS = [
   "paras": [
    "A buffet works as décor and food.",
    "Glass jars of white pretzels, gold chocolates and gum balls stand on a gold cloth here, with black plates and cupcakes.",
-   "<ul><li>Stick to a palette: black, gold and white.</li><li>Label each item on a small chalkboard card, which helps with allergies.</li></ul>"
+   "<ul><li>Stick to a palette: black, gold and white.</li><li>Label each item on a small chalkboard card, which helps with allergies. Use jars of different heights, with the tallest at the back, for a buffet that looks full without being crowded. Keep scoops or tongs beside each jar so hands stay clean.</li></ul>"
   ],
   "key": "nye-10",
   "_orig": [
    "A buffet works as décor and food.",
    "Glass jars of white pretzels, gold chocolates and gum balls stand on a gold cloth here, with black plates and cupcakes.",
    "Stick to a palette: black, gold and white.",
-   "Label each item on a small chalkboard card, which helps with allergies."
+   "Label each item on a small chalkboard card, which helps with allergies.",
+   "Use jars of different heights, with the tallest at the back, for a buffet that looks full without being crowded.",
+   "Keep scoops or tongs beside each jar so hands stay clean."
   ]
  },
  {
@@ -1032,14 +1078,16 @@ const IDEAS = [
   "paras": [
    "A snack table can be the party's gathering place.",
    "Bowls of popcorn and pretzels, a cheese board and chocolates sit on a dark counter here, with balloons and a chalkboard sign.",
-   "Balance sweet and salty, and put a bowl at each end. String lights behind the table keep it glowing."
+   "Balance sweet and salty, and put a bowl at each end. String lights behind the table keep it glowing. Refill bowls during the night so the table looks fresh when new guests arrive. Set out napkins and small plates at both ends."
   ],
   "key": "nye-19",
   "_orig": [
    "A snack table can be the party's gathering place.",
    "Bowls of popcorn and pretzels, a cheese board and chocolates sit on a dark counter here, with balloons and a chalkboard sign.",
    "Balance sweet and salty, and put a bowl at each end.",
-   "String lights behind the table keep it glowing."
+   "String lights behind the table keep it glowing.",
+   "Refill bowls during the night so the table looks fresh when new guests arrive.",
+   "Set out napkins and small plates at both ends."
   ]
  },
  {
@@ -1049,14 +1097,16 @@ const IDEAS = [
    "A grazing board is elegant and easy.",
    "Figs, grapes, brie with honey, chocolates and gold leaf on slate sit beside a bucket of bubbly here.",
    "<p><strong>Quick tip:</strong> Pick one soft cheese, one hard, fruit and chocolate.</p>",
-   "Keep the bottle on ice a few hours ahead. A bucket of half ice and half water chills it fastest."
+   "Keep the bottle on ice a few hours ahead. A bucket of half ice and half water chills it fastest. Add a small knife for each cheese, so the flavors don't mix. Let cheese sit out for 30 minutes before serving for better flavor, then return it to the fridge after two hours."
   ],
   "key": "nye-26",
   "_orig": [
    "A grazing board is elegant and easy.",
    "Figs, grapes, brie with honey, chocolates and gold leaf on slate sit beside a bucket of bubbly here.",
    "Pick one soft cheese, one hard, fruit and chocolate.",
-   "Keep the bottle on ice a few hours ahead. A bucket of half ice and half water chills it fastest."
+   "Keep the bottle on ice a few hours ahead. A bucket of half ice and half water chills it fastest.",
+   "Add a small knife for each cheese, so the flavors don't mix.",
+   "Let cheese sit out for 30 minutes before serving for better flavor, then return it to the fridge after two hours."
   ]
  },
  {
@@ -1065,14 +1115,16 @@ const IDEAS = [
   "paras": [
    "A bar cart is a party in one piece of furniture. Champagne flutes, decanters, bottles and a bunch of gold accents are arranged on a brass cart here, with a NYE banner across the front.",
    "Keep glasses and ice on the top shelf, and bottles below.",
-   "Add a sign with the night's signature drink to keep people from queuing."
+   "Add a sign with the night's signature drink to keep people from queuing. Check the cart is stable before you load it. Heavy bottles belong on the bottom shelf. Set out a small bowl of garnishes, like berries or lemon twists."
   ],
   "key": "nye-18",
   "_orig": [
    "A bar cart is a party in one piece of furniture.",
    "Champagne flutes, decanters, bottles and a bunch of gold accents are arranged on a brass cart here, with a NYE banner across the front.",
    "Keep glasses and ice on the top shelf, and bottles below.",
-   "Add a sign with the night's signature drink to keep people from queuing."
+   "Add a sign with the night's signature drink to keep people from queuing.",
+   "Check the cart is stable before you load it. Heavy bottles belong on the bottom shelf.",
+   "Set out a small bowl of garnishes, like berries or lemon twists."
   ]
  },
  {
@@ -1081,14 +1133,16 @@ const IDEAS = [
   "paras": [
    "A big sign sets the mood before the party begins.",
    "A cardboard year sign hangs above a Roman numeral clock here, with pocket watches and candles on a shelf below. Cut the numbers from cardboard, which is cheap and easy.",
-   "Hang the clock's hands at five to twelve for the look."
+   "Hang the clock's hands at five to twelve for the look. Cardboard numbers are light enough to tape to a wall without damage. Spray them gold and let them dry outside before you hang them."
   ],
   "key": "nye-03",
   "_orig": [
    "A big sign sets the mood before the party begins.",
    "A cardboard year sign hangs above a Roman numeral clock here, with pocket watches and candles on a shelf below.",
    "Cut the numbers from cardboard, which is cheap and easy.",
-   "Hang the clock's hands at five to twelve for the look."
+   "Hang the clock's hands at five to twelve for the look.",
+   "Cardboard numbers are light enough to tape to a wall without damage.",
+   "Spray them gold and let them dry outside before you hang them."
   ]
  },
  {
@@ -1097,14 +1151,16 @@ const IDEAS = [
   "paras": [
    "Give guests something to write.",
    "A glass jar here is half full of notes, with a pen and paper beside it.",
-   "<ul><li>Provide slips and pens, and pop them in a jar for next year.</li><li>Open the jar at next year's party and read them aloud.</li></ul>"
+   "<ul><li>Provide slips and pens, and pop them in a jar for next year.</li><li>Open the jar at next year's party and read them aloud. Fold the slips so no one can peek, and place a pen on a string next to the jar. Collect predictions along with resolutions for extra laughs next year.</li></ul>"
   ],
   "key": "nye-20",
   "_orig": [
    "Give guests something to write.",
    "A glass jar here is half full of notes, with a pen and paper beside it.",
    "Provide slips and pens, and pop them in a jar for next year.",
-   "Open the jar at next year's party and read them aloud."
+   "Open the jar at next year's party and read them aloud.",
+   "Fold the slips so no one can peek, and place a pen on a string next to the jar.",
+   "Collect predictions along with resolutions for extra laughs next year."
   ]
  },
  {
@@ -1112,14 +1168,16 @@ const IDEAS = [
   "title": "Make a Vision Board for the New Year",
   "paras": [
    "<p><strong>A vision board is a party and a plan.</strong> A big collage of goals and pictures hangs by a bed here.</p>",
-   "<ul><li>Gather magazines and let guests cut and paste.</li><li>Pin it where you'll see it every day.</li></ul>"
+   "<ul><li>Gather magazines and let guests cut and paste.</li><li>Pin it where you'll see it every day. Hand out scissors and glue sticks, and stock the pile with old magazines, stickers and ribbon. Let guests take a photo of their section before leaving.</li></ul>"
   ],
   "key": "nye-21",
   "_orig": [
    "A vision board is a party and a plan.",
    "A big collage of goals and pictures hangs by a bed here.",
    "Gather magazines and let guests cut and paste.",
-   "Pin it where you'll see it every day."
+   "Pin it where you'll see it every day.",
+   "Hand out scissors and glue sticks, and stock the pile with old magazines, stickers and ribbon.",
+   "Let guests take a photo of their section before leaving."
   ]
  },
  {
@@ -1127,14 +1185,16 @@ const IDEAS = [
   "title": "Cut Paper Stars From Old Book Pages",
   "paras": [
    "Old books are the best free craft supply. A garland of paper stars cut from book pages hangs over a window here.",
-   "Cut the stars with a punch and string them on twine. Hang it in the window where light shines through."
+   "Cut the stars with a punch and string them on twine. Hang it in the window where light shines through. A hole punch with a star shape saves a lot of time over scissors. Hang the stars at different heights to give the garland a floating look."
   ],
   "key": "nye-22",
   "_orig": [
    "Old books are the best free craft supply.",
    "A garland of paper stars cut from book pages hangs over a window here.",
    "Cut the stars with a punch and string them on twine.",
-   "Hang it in the window where light shines through."
+   "Hang it in the window where light shines through.",
+   "A hole punch with a star shape saves a lot of time over scissors.",
+   "Hang the stars at different heights to give the garland a floating look."
   ]
  }
 ];

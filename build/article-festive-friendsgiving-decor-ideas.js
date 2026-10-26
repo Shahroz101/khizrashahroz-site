@@ -559,14 +559,16 @@ const IDEAS = [
    "Amber glass is the cheapest way to make a fall table glow.",
    "Amber goblets and bottle vases sit among eucalyptus, small pumpkins and rust napkins on this table beside a fireplace, with tall candles catching the glass.",
    "Mix a few shades, from honey to dark brown, so it looks collected.",
-   "Put candles near the amber pieces, which light them from within."
+   "Put candles near the amber pieces, which light them from within. Amber is also forgiving in photos, because it looks warm even in dim light. Thrift stores are a good place to collect amber glass without paying for a set."
   ],
   "key": "fg-01",
   "_orig": [
    "Amber glass is the cheapest way to make a fall table glow.",
    "Amber goblets and bottle vases sit among eucalyptus, small pumpkins and rust napkins on this table beside a fireplace, with tall candles catching the glass.",
    "Mix a few shades, from honey to dark brown, so it looks collected.",
-   "Put candles near the amber pieces, which light them from within."
+   "Put candles near the amber pieces, which light them from within.",
+   "Amber is also forgiving in photos, because it looks warm even in dim light.",
+   "Thrift stores are a good place to collect amber glass without paying for a set."
   ]
  },
  {
@@ -575,14 +577,16 @@ const IDEAS = [
   "paras": [
    "<p><strong>Dark and warm is a great fall mood.</strong> Pampas grass and dried stems stand in tall vases here with rust napkins, amber glasses and pumpkins, all lit by tapers.</p>",
    "Keep the tallest arrangement to one side so it doesn't block faces.",
-   "Dim the lights and let the candles do the job."
+   "Dim the lights and let the candles do the job. Pampas sheds, so shake it outside before bringing it in and set it away from the food. If you only have a few stems, group them in one tall vase instead of spreading them thin."
   ],
   "key": "fg-03",
   "_orig": [
    "Dark and warm is a great fall mood.",
    "Pampas grass and dried stems stand in tall vases here with rust napkins, amber glasses and pumpkins, all lit by tapers.",
    "Keep the tallest arrangement to one side so it doesn't block faces.",
-   "Dim the lights and let the candles do the job."
+   "Dim the lights and let the candles do the job.",
+   "Pampas sheds, so shake it outside before bringing it in and set it away from the food.",
+   "If you only have a few stems, group them in one tall vase instead of spreading them thin."
   ]
  },
  {
@@ -591,14 +595,16 @@ const IDEAS = [
   "paras": [
    "Burgundy and gold feel rich without being formal.",
    "Deep red napkins on dark plates and gold chargers sit under a vase of burgundy blooms and dried leaves here, on a striped runner.",
-   "<ul><li>Choose one deep color and one metal, and repeat them.</li><li>Chargers protect the table and raise the whole place setting.</li></ul>"
+   "<ul><li>Choose one deep color and one metal, and repeat them.</li><li>Chargers protect the table and raise the whole place setting. Burgundy hides spills, which is useful when thirty dishes are traveling to a table. Add a few gold leaves or a brass candlestick if the table feels flat.</li></ul>"
   ],
   "key": "fg-04",
   "_orig": [
    "Burgundy and gold feel rich without being formal.",
    "Deep red napkins on dark plates and gold chargers sit under a vase of burgundy blooms and dried leaves here, on a striped runner.",
    "Choose one deep color and one metal, and repeat them.",
-   "Chargers protect the table and raise the whole place setting."
+   "Chargers protect the table and raise the whole place setting.",
+   "Burgundy hides spills, which is useful when thirty dishes are traveling to a table.",
+   "Add a few gold leaves or a brass candlestick if the table feels flat."
   ]
  },
  {
@@ -607,14 +613,16 @@ const IDEAS = [
   "paras": [
    "Fruit is a free centerpiece.",
    "Golden pears and white pumpkins sit among magnolia leaves here, with gold chargers, patterned plates and candlesticks.",
-   "Use real pears and they'll last the dinner. Replace them afterward. Magnolia leaves are sturdy, so they hold up on the table all evening."
+   "Use real pears and they'll last the dinner. Replace them afterward. Magnolia leaves are sturdy, so they hold up on the table all evening. Magnolia leaves have glossy tops and fuzzy backs, so turn some over for two tones. Pears can be arranged the night before and kept in a cool room."
   ],
   "key": "fg-25",
   "_orig": [
    "Fruit is a free centerpiece.",
    "Golden pears and white pumpkins sit among magnolia leaves here, with gold chargers, patterned plates and candlesticks.",
    "Use real pears and they'll last the dinner. Replace them afterward.",
-   "Magnolia leaves are sturdy, so they hold up on the table all evening."
+   "Magnolia leaves are sturdy, so they hold up on the table all evening.",
+   "Magnolia leaves have glossy tops and fuzzy backs, so turn some over for two tones.",
+   "Pears can be arranged the night before and kept in a cool room."
   ]
  },
  {
@@ -624,14 +632,16 @@ const IDEAS = [
    "Dark tones feel intentional at a fall table.",
    "A burgundy napkin tied with twine sits on a bronze plate here, among leaves and pumpkins.",
    "<p><strong>Quick tip:</strong> Tie napkins with twine, then add a sprig or a leaf.</p>",
-   "Dark plates make food look more colorful."
+   "Dark plates make food look more colorful. Dark napkins can leave lint on dark plates, so shake them out first. Add a small place card on the napkin to guide seating."
   ],
   "key": "fg-18",
   "_orig": [
    "Dark tones feel intentional at a fall table.",
    "A burgundy napkin tied with twine sits on a bronze plate here, among leaves and pumpkins.",
    "Tie napkins with twine, then add a sprig or a leaf.",
-   "Dark plates make food look more colorful."
+   "Dark plates make food look more colorful.",
+   "Dark napkins can leave lint on dark plates, so shake them out first.",
+   "Add a small place card on the napkin to guide seating."
   ]
  },
  {
@@ -640,14 +650,16 @@ const IDEAS = [
   "paras": [
    "Greenery is the easiest runner. A long garland of eucalyptus and berries runs down a table here, with white pumpkins, tapers and rattan chargers.",
    "Lay the garland first, then tuck in the pumpkins and candles.",
-   "Use wind-safe candles outdoors, or LED ones."
+   "Use wind-safe candles outdoors, or LED ones. Measure the table, then buy garland about a foot longer so the ends can drape. Garland that's real needs water; faux can be reused year after year."
   ],
   "key": "fg-24",
   "_orig": [
    "Greenery is the easiest runner.",
    "A long garland of eucalyptus and berries runs down a table here, with white pumpkins, tapers and rattan chargers.",
    "Lay the garland first, then tuck in the pumpkins and candles.",
-   "Use wind-safe candles outdoors, or LED ones."
+   "Use wind-safe candles outdoors, or LED ones.",
+   "Measure the table, then buy garland about a foot longer so the ends can drape.",
+   "Garland that's real needs water; faux can be reused year after year."
   ]
  },
  {
@@ -656,14 +668,16 @@ const IDEAS = [
   "paras": [
    "White pumpkins are the best neutral in fall.",
    "Cream and white pumpkins, pillar candles in glass cylinders and dried grasses fill this table, with linen napkins. Group pumpkins in odd numbers at different heights.",
-   "Real pumpkins last for weeks, but wipe them off before they sit near food."
+   "Real pumpkins last for weeks, but wipe them off before they sit near food. Use small pumpkins for height variety and leave a few stems of wheat or grass in between. Try pumpkins in cream, pale green and gray for a muted palette."
   ],
   "key": "fg-19",
   "_orig": [
    "White pumpkins are the best neutral in fall.",
    "Cream and white pumpkins, pillar candles in glass cylinders and dried grasses fill this table, with linen napkins.",
    "Group pumpkins in odd numbers at different heights.",
-   "Real pumpkins last for weeks, but wipe them off before they sit near food."
+   "Real pumpkins last for weeks, but wipe them off before they sit near food.",
+   "Use small pumpkins for height variety and leave a few stems of wheat or grass in between.",
+   "Try pumpkins in cream, pale green and gray for a muted palette."
   ]
  },
  {
@@ -672,14 +686,16 @@ const IDEAS = [
   "paras": [
    "A backyard Friendsgiving feels like a picnic with candles.",
    "A farm table in the yard has jars with eucalyptus, mini pumpkins and woven mats, with the sun going down behind.",
-   "<ul><li>Set up in the late afternoon, when the light is soft.</li><li>Weigh down napkins and runners in case the wind picks up.</li></ul>"
+   "<ul><li>Set up in the late afternoon, when the light is soft.</li><li>Weigh down napkins and runners in case the wind picks up. Check the weather a day ahead and have a plan for rain, such as a tent or a garage. Bug spray and citronella candles save a lot of slapping.</li></ul>"
   ],
   "key": "fg-02",
   "_orig": [
    "A backyard Friendsgiving feels like a picnic with candles.",
    "A farm table in the yard has jars with eucalyptus, mini pumpkins and woven mats, with the sun going down behind.",
    "Set up in the late afternoon, when the light is soft.",
-   "Weigh down napkins and runners in case the wind picks up."
+   "Weigh down napkins and runners in case the wind picks up.",
+   "Check the weather a day ahead and have a plan for rain, such as a tent or a garage.",
+   "Bug spray and citronella candles save a lot of slapping."
   ]
  },
  {
@@ -687,14 +703,16 @@ const IDEAS = [
   "title": "Make a Balloon Arch for a Big Party",
   "paras": [
    "<p><strong>A balloon arch is the quickest way to make a space feel special.</strong> Terracotta, cream and gold balloons curve beside a long table in a vineyard here, with dried palm fronds and pampas in the arch.</p>",
-   "<ul><li>Choose fall tones, and add dried plants for texture.</li><li>Use an arch kit and weigh the base so it can't tip.</li></ul>"
+   "<ul><li>Choose fall tones, and add dried plants for texture.</li><li>Use an arch kit and weigh the base so it can't tip. Terracotta and cream balloons look earthy, so they fit fall far better than bright colors. Inflate them the morning of the party and keep them out of direct sun.</li></ul>"
   ],
   "key": "fg-06",
   "_orig": [
    "A balloon arch is the quickest way to make a space feel special.",
    "Terracotta, cream and gold balloons curve beside a long table in a vineyard here, with dried palm fronds and pampas in the arch.",
    "Choose fall tones, and add dried plants for texture.",
-   "Use an arch kit and weigh the base so it can't tip."
+   "Use an arch kit and weigh the base so it can't tip.",
+   "Terracotta and cream balloons look earthy, so they fit fall far better than bright colors.",
+   "Inflate them the morning of the party and keep them out of direct sun."
   ]
  },
  {
@@ -702,14 +720,16 @@ const IDEAS = [
   "title": "Hang Lanterns Over a Backyard Party",
   "paras": [
    "Light is what turns a yard into a venue. Strings of warm bulbs and paper lanterns hang over picnic tables with hay bales and plaid blankets here.",
-   "Hang lights in swags across the yard between trees or poles. Provide blankets for guests as the evening cools."
+   "Hang lights in swags across the yard between trees or poles. Provide blankets for guests as the evening cools. Plan the lights first, then everything else can be low-key. Keep a few lanterns with battery candles on the tables for safe warmth."
   ],
   "key": "fg-21",
   "_orig": [
    "Light is what turns a yard into a venue.",
    "Strings of warm bulbs and paper lanterns hang over picnic tables with hay bales and plaid blankets here.",
    "Hang lights in swags across the yard between trees or poles.",
-   "Provide blankets for guests as the evening cools."
+   "Provide blankets for guests as the evening cools.",
+   "Plan the lights first, then everything else can be low-key.",
+   "Keep a few lanterns with battery candles on the tables for safe warmth."
   ]
  },
  {
@@ -719,14 +739,16 @@ const IDEAS = [
    "A picnic table can look elegant with a good runner.",
    "A macramé runner on a weathered table holds a turkey, candles and pumpkins here, with pillows on the bench.",
    "Add cushions for comfort.",
-   "Bring things inside if it rains, because macramé soaks up water."
+   "Bring things inside if it rains, because macramé soaks up water. Macramé looks best when it hangs a few inches over each side of the table. If the forecast is wet, use a washable cloth instead."
   ],
   "key": "fg-22",
   "_orig": [
    "A picnic table can look elegant with a good runner.",
    "A macramé runner on a weathered table holds a turkey, candles and pumpkins here, with pillows on the bench.",
    "Add cushions for comfort.",
-   "Bring things inside if it rains, because macramé soaks up water."
+   "Bring things inside if it rains, because macramé soaks up water.",
+   "Macramé looks best when it hangs a few inches over each side of the table.",
+   "If the forecast is wet, use a washable cloth instead."
   ]
  },
  {
@@ -735,14 +757,16 @@ const IDEAS = [
   "paras": [
    "<p><strong>Fall doesn't have to be brown.</strong> Candles in yellow, pink, orange and red stand in brass holders over a patterned runner here, with sunflowers and roses in a jar.</p>",
    "Mix colors from the same warm family.",
-   "Dripless candles keep the cloth clean."
+   "Dripless candles keep the cloth clean. Colorful candles make a table feel playful, which suits a casual friends dinner. Keep the flowers simple, since the candles are already the star."
   ],
   "key": "fg-20",
   "_orig": [
    "Fall doesn't have to be brown.",
    "Candles in yellow, pink, orange and red stand in brass holders over a patterned runner here, with sunflowers and roses in a jar.",
    "Mix colors from the same warm family.",
-   "Dripless candles keep the cloth clean."
+   "Dripless candles keep the cloth clean.",
+   "Colorful candles make a table feel playful, which suits a casual friends dinner.",
+   "Keep the flowers simple, since the candles are already the star."
   ]
  },
  {
@@ -751,14 +775,16 @@ const IDEAS = [
   "paras": [
    "Paper is the cheapest tablecloth.",
    "A kraft runner scrawled with Give Thanks and guests' notes runs down this table, with small pumpkins and berry garland.",
-   "<ul><li>Give guests markers and let them doodle.</li><li>Keep the paper in place with tape underneath.</li></ul>"
+   "<ul><li>Give guests markers and let them doodle.</li><li>Keep the paper in place with tape underneath. Keep a roll of tape and a pen holder at the table so the doodles don't stop after the first course. Paper runners can be rolled up and thrown away, which makes cleanup easy.</li></ul>"
   ],
   "key": "fg-05",
   "_orig": [
    "Paper is the cheapest tablecloth.",
    "A kraft runner scrawled with Give Thanks and guests' notes runs down this table, with small pumpkins and berry garland.",
    "Give guests markers and let them doodle.",
-   "Keep the paper in place with tape underneath."
+   "Keep the paper in place with tape underneath.",
+   "Keep a roll of tape and a pen holder at the table so the doodles don't stop after the first course.",
+   "Paper runners can be rolled up and thrown away, which makes cleanup easy."
   ]
  },
  {
@@ -767,14 +793,16 @@ const IDEAS = [
   "paras": [
    "Signs give a gathering a focal point.",
    "An arched sign here says Eat, Drink and Give Thanks in warm tones and leaves.",
-   "Stand it on the buffet or entry table. Choose colors that match your palette."
+   "Stand it on the buffet or entry table. Choose colors that match your palette. Signs are best at eye level, so a sideboard or mantel works better than a table. Pick one with a short phrase so it can be read from across the room."
   ],
   "key": "fg-07",
   "_orig": [
    "Signs give a gathering a focal point.",
    "An arched sign here says Eat, Drink and Give Thanks in warm tones and leaves.",
    "Stand it on the buffet or entry table.",
-   "Choose colors that match your palette."
+   "Choose colors that match your palette.",
+   "Signs are best at eye level, so a sideboard or mantel works better than a table.",
+   "Pick one with a short phrase so it can be read from across the room."
   ]
  },
  {
@@ -784,14 +812,16 @@ const IDEAS = [
    "Write what you're thankful for.",
    "Kraft tags hang from bare branches in a white vase here, among place settings.",
    "<p><strong>Quick tip:</strong> Pre-write a few tags and leave blanks.</p>",
-   "Use real branches from the yard."
+   "Use real branches from the yard. Tags can double as place cards if you write the guest's name on the back. Twine or thin ribbon works best for hanging."
   ],
   "key": "fg-10",
   "_orig": [
    "Write what you're thankful for.",
    "Kraft tags hang from bare branches in a white vase here, among place settings.",
    "Pre-write a few tags and leave blanks.",
-   "Use real branches from the yard."
+   "Use real branches from the yard.",
+   "Tags can double as place cards if you write the guest's name on the back.",
+   "Twine or thin ribbon works best for hanging."
   ]
  },
  {
@@ -800,14 +830,16 @@ const IDEAS = [
   "paras": [
    "Let guests add their own. Paper leaves in red, orange and yellow hang from branches in a pot on a plaid cloth here, with a Gratitude Tree tag and pumpkins.",
    "Put a pen and leaves beside it so people can add.",
-   "Read them aloud over dessert."
+   "Read them aloud over dessert. Cut leaves from construction paper, or buy pre-cut ones for speed. Anchor the branches in a heavy pot with stones or sand so the tree doesn't tip."
   ],
   "key": "fg-11",
   "_orig": [
    "Let guests add their own.",
    "Paper leaves in red, orange and yellow hang from branches in a pot on a plaid cloth here, with a Gratitude Tree tag and pumpkins.",
    "Put a pen and leaves beside it so people can add.",
-   "Read them aloud over dessert."
+   "Read them aloud over dessert.",
+   "Cut leaves from construction paper, or buy pre-cut ones for speed.",
+   "Anchor the branches in a heavy pot with stones or sand so the tree doesn't tip."
   ]
  },
  {
@@ -816,14 +848,16 @@ const IDEAS = [
   "paras": [
    "A menu is a small touch with big impact.",
    "A French Fall Menu card lists the appetizer, entrée, main and dessert here, with autumn leaves around its border. Print on cream cardstock and frame or stand on the table.",
-   "Write allergens at the bottom."
+   "Write allergens at the bottom. Print a few extra copies so you can place one at each end of the buffet. Use a font that's easy to read in dim light."
   ],
   "key": "fg-15",
   "_orig": [
    "A menu is a small touch with big impact.",
    "A French Fall Menu card lists the appetizer, entrée, main and dessert here, with autumn leaves around its border.",
    "Print on cream cardstock and frame or stand on the table.",
-   "Write allergens at the bottom."
+   "Write allergens at the bottom.",
+   "Print a few extra copies so you can place one at each end of the buffet.",
+   "Use a font that's easy to read in dim light."
   ]
  },
  {
@@ -832,14 +866,16 @@ const IDEAS = [
   "paras": [
    "A favor is a thank-you.",
    "Small jars of apple butter with plaid fabric lids and tags are stacked on burlap here, with a candle and pumpkins behind.",
-   "<ul><li>Use mini jars and tags and tie with twine.</li><li>Sterilize jars and label the date.</li></ul>"
+   "<ul><li>Use mini jars and tags and tie with twine.</li><li>Sterilize jars and label the date. Add a handwritten tag with the flavor and the date. If apple butter isn't your thing, small jars of honey or jam work the same way.</li></ul>"
   ],
   "key": "fg-17",
   "_orig": [
    "A favor is a thank-you.",
    "Small jars of apple butter with plaid fabric lids and tags are stacked on burlap here, with a candle and pumpkins behind.",
    "Use mini jars and tags and tie with twine.",
-   "Sterilize jars and label the date."
+   "Sterilize jars and label the date.",
+   "Add a handwritten tag with the flavor and the date.",
+   "If apple butter isn't your thing, small jars of honey or jam work the same way."
   ]
  },
  {
@@ -847,14 +883,16 @@ const IDEAS = [
   "title": "Set Up a Cider Station",
   "paras": [
    "<p><strong>Drinks should be self-serve.</strong> A jar with a spigot of apple cider sits among maple syrup, cinnamon sticks and ginger beer on a cutting board.</p>",
-   "<ul><li>Add a chalkboard tag.</li><li>Offer spirits on the side, so guests can choose.</li></ul>"
+   "<ul><li>Add a chalkboard tag.</li><li>Offer spirits on the side, so guests can choose. Warm cider on the stove keeps the house smelling like fall, and a slow cooker keeps it hot. Put a ladle and cups beside it, plus a small sign for the spice.</li></ul>"
   ],
   "key": "fg-12",
   "_orig": [
    "Drinks should be self-serve.",
    "A jar with a spigot of apple cider sits among maple syrup, cinnamon sticks and ginger beer on a cutting board.",
    "Add a chalkboard tag.",
-   "Offer spirits on the side, so guests can choose."
+   "Offer spirits on the side, so guests can choose.",
+   "Warm cider on the stove keeps the house smelling like fall, and a slow cooker keeps it hot.",
+   "Put a ladle and cups beside it, plus a small sign for the spice."
   ]
  },
  {
@@ -862,14 +900,16 @@ const IDEAS = [
   "title": "Display Pies on Cake Stands",
   "paras": [
    "Dessert makes a table look generous. Pies, cookies and cinnamon rolls sit on cake stands of different heights beside white pumpkins and leaves.",
-   "Use risers to make height. Cut one pie first so guests aren't shy."
+   "Use risers to make height. Cut one pie first so guests aren't shy. Cake stands of different heights let you fit more on a small table and make the dessert look generous. Put a pie server beside each pie so guests don't use the wrong knife."
   ],
   "key": "fg-13",
   "_orig": [
    "Dessert makes a table look generous.",
    "Pies, cookies and cinnamon rolls sit on cake stands of different heights beside white pumpkins and leaves.",
    "Use risers to make height.",
-   "Cut one pie first so guests aren't shy."
+   "Cut one pie first so guests aren't shy.",
+   "Cake stands of different heights let you fit more on a small table and make the dessert look generous.",
+   "Put a pie server beside each pie so guests don't use the wrong knife."
   ]
  },
  {
@@ -879,14 +919,16 @@ const IDEAS = [
    "A buffet saves table space.",
    "Pumpkins, casseroles and bowls sit on a wooden sideboard with leaves.",
    "Put plates at one end and cutlery last.",
-   "Label dishes with small cards."
+   "Label dishes with small cards. Group dishes by type: mains, sides, then desserts at the far end. Use trivets or hot pads to protect the wood from casseroles."
   ],
   "key": "fg-23",
   "_orig": [
    "A buffet saves table space.",
    "Pumpkins, casseroles and bowls sit on a wooden sideboard with leaves.",
    "Put plates at one end and cutlery last.",
-   "Label dishes with small cards."
+   "Label dishes with small cards.",
+   "Group dishes by type: mains, sides, then desserts at the far end.",
+   "Use trivets or hot pads to protect the wood from casseroles."
   ]
  },
  {
@@ -895,14 +937,16 @@ const IDEAS = [
   "paras": [
    "<p><strong>Fruit can be décor and dessert.</strong> Apples and pears sit on a live-edge board with wildflowers and candles.</p>",
    "Use a board with a bit of height.",
-   "Wash the fruit and leave it out."
+   "Wash the fruit and leave it out. A board with fruit also doubles as a snack, so people graze before dinner. Brush apples with a little lemon water if they're cut, to keep them from browning."
   ],
   "key": "fg-16",
   "_orig": [
    "Fruit can be décor and dessert.",
    "Apples and pears sit on a live-edge board with wildflowers and candles.",
    "Use a board with a bit of height.",
-   "Wash the fruit and leave it out."
+   "Wash the fruit and leave it out.",
+   "A board with fruit also doubles as a snack, so people graze before dinner.",
+   "Brush apples with a little lemon water if they're cut, to keep them from browning."
   ]
  },
  {
@@ -911,14 +955,16 @@ const IDEAS = [
   "paras": [
    "Decorate where the party starts.",
    "A tall WELCOME sign, pumpkins, mums and lanterns greet guests at a door with a wreath.",
-   "<ul><li>Place lanterns on the steps.</li><li>Use a doormat that says hello.</li></ul>"
+   "<ul><li>Place lanterns on the steps.</li><li>Use a doormat that says hello. Add a seasonal flower, such as mums, in a pot beside the door, since they last for weeks. Check the lanterns before guests arrive and swap the batteries if needed.</li></ul>"
   ],
   "key": "fg-09",
   "_orig": [
    "Decorate where the party starts.",
    "A tall WELCOME sign, pumpkins, mums and lanterns greet guests at a door with a wreath.",
    "Place lanterns on the steps.",
-   "Use a doormat that says hello."
+   "Use a doormat that says hello.",
+   "Add a seasonal flower, such as mums, in a pot beside the door, since they last for weeks.",
+   "Check the lanterns before guests arrive and swap the batteries if needed."
   ]
  },
  {
@@ -927,14 +973,16 @@ const IDEAS = [
   "paras": [
    "Before dinner, guests need somewhere to sit.",
    "A living room here has cozy pillows, throws, candles and fall stems on the coffee table.",
-   "Add blankets and candles. Set drinks on the coffee table."
+   "Add blankets and candles. Set drinks on the coffee table. Put a basket of throws near the sofa so guests can grab one. A bowl of snacks and a drink station keep the early arrivals busy."
   ],
   "key": "fg-08",
   "_orig": [
    "Before dinner, guests need somewhere to sit.",
    "A living room here has cozy pillows, throws, candles and fall stems on the coffee table.",
    "Add blankets and candles.",
-   "Set drinks on the coffee table."
+   "Set drinks on the coffee table.",
+   "Put a basket of throws near the sofa so guests can grab one.",
+   "A bowl of snacks and a drink station keep the early arrivals busy."
   ]
  },
  {
@@ -944,14 +992,16 @@ const IDEAS = [
    "A garland is the quickest mantel update.",
    "Paper maple leaves and tiny lights run along the mantel.",
    "<p><strong>Quick tip:</strong> Add candles and framed art.</p>",
-   "Use removable hooks."
+   "Use removable hooks. Paper leaves are light, so clear command hooks hold them well. Plug the lights into a timer so they switch on by themselves."
   ],
   "key": "fg-14",
   "_orig": [
    "A garland is the quickest mantel update.",
    "Paper maple leaves and tiny lights run along the mantel.",
    "Add candles and framed art.",
-   "Use removable hooks."
+   "Use removable hooks.",
+   "Paper leaves are light, so clear command hooks hold them well.",
+   "Plug the lights into a timer so they switch on by themselves."
   ]
  }
 ];

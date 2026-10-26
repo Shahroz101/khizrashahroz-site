@@ -508,7 +508,8 @@ const IDEAS = [
    "Roll the sponge while it's still warm, inside a clean towel dusted with cocoa. A cooled sponge cracks.",
    "Drag a fork down the frosting for the bark. The texture hides every flaw.",
    "Holly berries are toxic, so use faux ones or lift them off before serving."
-  ]
+  ],
+  "recipe": "https://www.familysearch.org/en/blog/buche-de-noel-yule-log-recipe"
  },
  {
   "n": 2,
@@ -524,7 +525,8 @@ const IDEAS = [
    "Two red layers with cream cheese filling, a ring of piped rosettes and a few sugar trees and red pearls on top make this cake look finished without much effort.",
    "Use gel food coloring, not liquid, which waters down the batter.",
    "Bring the cream cheese to room temperature for a smooth frosting, and chill the cake for thirty minutes before slicing so the layers cut clean."
-  ]
+  ],
+  "recipe": "https://www.papernstitchblog.com/red-velvet-christmas-cake/"
  },
  {
   "n": 3,
@@ -541,7 +543,8 @@ const IDEAS = [
    "Egg whites whip best at room temperature with no trace of yolk.",
    "Bake low and slow, then let it cool in the oven with the door shut. Sudden cooling cracks it.",
    "Add the cream and fruit just before serving, or the meringue goes soggy."
-  ]
+  ],
+  "recipe": "https://veenaazmanov.com/christmas-pavlova/"
  },
  {
   "n": 4,
@@ -558,7 +561,8 @@ const IDEAS = [
    "Royal icing is your glue, and it sets hard in about an hour. Let the walls dry flat before you stand them up.",
    "Assemble the base the day before and decorate on the day.",
    "A kit is perfectly fine, and it's a fun way to get the kids involved."
-  ]
+  ],
+  "recipe": "https://sallysbakingaddiction.com/gingerbread-house/"
  },
  {
   "n": 5,
@@ -573,7 +577,8 @@ const IDEAS = [
    "Cut the pastry into a tree, spread, then cut side strips and twist them, as with this golden, star-topped tree.",
    "Keep the pastry cold. If it warms and gets sticky, chill it for ten minutes.",
    "Brush with egg wash for gloss, and dust with powdered sugar after baking, not before."
-  ]
+  ],
+  "recipe": "https://xoxobella.com/nutella-puff-pastry-christmas-tree/"
  },
  {
   "n": 6,
@@ -589,7 +594,8 @@ const IDEAS = [
    "Simmer cranberries briefly in simple syrup, drain, roll in sugar and dry on a rack for an hour.",
    "Wrap the springform pan in foil and bake in a water bath so the cheesecake doesn't crack.",
    "Cool it slowly, with the oven off and the door ajar for an hour."
-  ]
+  ],
+  "recipe": "https://noblepig.com/cranberry-cheesecake/"
  },
  {
   "n": 7,
@@ -607,7 +613,8 @@ const IDEAS = [
    "Make the cream the day before and assemble about four hours ahead.",
    "Alternate wet and crunchy layers and finish with crumbs on top so they stay crisp.",
    "Add the whipped cream last, at the table if you can."
-  ]
+  ],
+  "recipe": "https://amandascookin.com/no-bake-berry-cheesecake-trifle/"
  },
  {
   "n": 8,
@@ -624,7 +631,8 @@ const IDEAS = [
    "Dip ladyfingers in coffee for a second or two. Any longer and they fall apart.",
    "Make it the day before, since tiramisu needs at least six hours to set.",
    "Use a vegetable peeler on a chocolate bar for fine curls."
-  ]
+  ],
+  "recipe": "https://us.costanova.com/blogs/recipes/christmas-tiramisu"
  },
  {
   "n": 9,
@@ -640,7 +648,8 @@ const IDEAS = [
    "A moist date cake sits in a bowl with caramel sauce and whipped cream here.",
    "Soak the dates in hot water with a pinch of baking soda to soften them.",
    "Bake it in individual ramekins and it reheats in minutes. Make the sauce ahead and warm it gently."
-  ]
+  ],
+  "recipe": "https://ndc.ie/recipes/sticky-toffee-pudding-with-caramel-cream-sauce/"
  },
  {
   "n": 10,
@@ -657,7 +666,8 @@ const IDEAS = [
    "Freeze them in silicone molds and unmold while frozen for clean sides.",
    "Glaze them while frozen, because it sets instantly.",
    "Pipe melted white chocolate onto parchment and let it set for snowflakes."
-  ]
+  ],
+  "recipe": "https://www.sugarhero.com/galaxy-mousse-cakes/"
  },
  {
   "n": 11,
@@ -675,7 +685,8 @@ const IDEAS = [
    "Press the crumb crust down with the bottom of a glass.",
    "Make them two days ahead, because they only improve.",
    "Use a star tip to pipe the swirl."
-  ]
+  ],
+  "recipe": "https://www.mybakingaddiction.com/gingerbread-oreo-no-bake-mini-cheesecakes/"
  },
  {
   "n": 12,
@@ -691,7 +702,8 @@ const IDEAS = [
    "A strawberry cheesecake cup here is topped with whipped cream and a strawberry Santa hat.",
    "Dry the strawberries before assembling, because wet berries weep.",
    "Chill for up to a day, and add the hat right before serving."
-  ]
+  ],
+  "recipe": "https://sprinklesomefun.com/santa-hat-cheesecake-bites/"
  },
  {
   "n": 13,
@@ -708,7 +720,8 @@ const IDEAS = [
    "Thin the icing until a ribbon disappears in about fifteen seconds for a smooth flood.",
    "Let the cookies dry for eight hours before stacking, with parchment between layers.",
    "Line the box with parchment so grease doesn't show."
-  ]
+  ],
+  "recipe": "https://www.williams-sonoma.com/recipe/cutout-christmas-cookies.html"
  },
  {
   "n": 14,
@@ -724,7 +737,8 @@ const IDEAS = [
    "The red cracks show through the powdered sugar on these.",
    "Chill the dough for at least an hour, then roll it in granulated sugar first and powdered sugar second.",
    "The double roll gives the crackle. Pull them when the edges set, since overbaking dries them out."
-  ]
+  ],
+  "recipe": "https://www.crazyforcrust.com/red-velvet-crinkle-cookies-recipe/"
  },
  {
   "n": 15,
@@ -740,7 +754,8 @@ const IDEAS = [
    "Use candy melts, because real chocolate needs tempering to set shiny.",
    "Dip, tap off the extra, set on parchment and sprinkle while the coating is wet.",
    "Store them airtight. Humidity softens pretzels."
-  ]
+  ],
+  "recipe": "https://www.dinneratthezoo.com/chocolate-covered-pretzels/"
  },
  {
   "n": 16,
@@ -756,7 +771,8 @@ const IDEAS = [
    "Chill the ganache for two hours until scoopable, then use a small cookie scoop.",
    "Cool your hands under cold water before rolling.",
    "Build the tower on a cake stand from the base up."
-  ]
+  ],
+  "recipe": "https://www.oetker.co.uk/recipes/r/christmas-chocolate-truffles"
  },
  {
   "n": 17,
@@ -774,7 +790,8 @@ const IDEAS = [
    "Melt in twenty-second bursts, stirring in between.",
    "Crush the candy canes in a sealed bag with a rolling pin, and sprinkle them before the top layer sets.",
    "Break it into pieces when hard and gift it in a tin."
-  ]
+  ],
+  "recipe": "https://sallysbakingaddiction.com/peppermint-bark/"
  },
  {
   "n": 18,
@@ -791,7 +808,8 @@ const IDEAS = [
    "Line the pan with a foil sling so you can lift the slab out and cut cleanly.",
    "Chill before slicing, because warm brownies crumble.",
    "Add the hats right before serving, since strawberries leak."
-  ]
+  ],
+  "recipe": "https://www.texanerin.com/santa-hat-brownies/"
  },
  {
   "n": 19,
@@ -807,7 +825,8 @@ const IDEAS = [
    "These cups have a chocolate drizzle and red, green and white sprinkles.",
    "Press the centers gently as they come out of the oven, which makes a well for toppings.",
    "Bake them for less time than a pan brownie, since they cook fast, and leave them in the tin until cool."
-  ]
+  ],
+  "recipe": "https://bake-eat-repeat.com/hot-chocolate-brownies-recipe/"
  },
  {
   "n": 20,
@@ -823,7 +842,8 @@ const IDEAS = [
    "Chocolate cupcakes with pink frosting get candy eyes, a red nose and pretzel antlers here.",
    "Let the frosting crust for fifteen minutes before adding decorations so they stay put.",
    "Decorate only on cooled cupcakes."
-  ]
+  ],
+  "recipe": "https://crayonsandcravings.com/reindeer-cupcakes/"
  },
  {
   "n": 21,
@@ -840,7 +860,8 @@ const IDEAS = [
    "White-coated snowmen on sticks stand on a gold tiered stand here with pinecones and greenery.",
    "Chill the balls firm before dipping. Dip the stick tip in melted coating first so the ball stays on.",
    "Thin the coating with a little coconut oil, tap off the drips and dry them upright in a block of foam."
-  ]
+  ],
+  "recipe": "https://lindiandruss.com/snowman-cake-pops/"
  },
  {
   "n": 22,
@@ -856,7 +877,8 @@ const IDEAS = [
    "Frosted cinnamon rolls are stacked from large to small into a tree on this plate, with sprinkles for ornaments.",
    "Bake as usual, cool slightly, then glue the stack with frosting.",
    "It works on Christmas morning, too."
-  ]
+  ],
+  "recipe": "https://redstaryeast.com/recipes/cinnamon-roll-christmas-tree"
  }
 ];
 
@@ -886,16 +908,23 @@ function photo(key) {
     ${productGrid(key)}`;
 }
 
+// "View Recipe" button: links to the recipe on another site (not an affiliate link).
+function recipeButton(idea) {
+  if (!idea.recipe) return "";
+  return `<p class="recipe-link"><a class="shop-cta recipe-cta" href="${idea.recipe}" target="_blank" rel="nofollow noopener">View Recipe <span class="arrow" aria-hidden="true">&rarr;</span></a></p>`;
+}
+
 function ideaBlock(idea) {
   return `<h2>${idea.n}. ${idea.title}</h2>
 ${idea.paras.map((t) => (t.startsWith("<") ? t : `<p>${t}</p>`)).join("\n")}
+${recipeButton(idea)}
 ${photo(idea.key)}`;
 }
 
 const body = `
 <p>Christmas dinner gets all the planning, but it's the dessert table people remember the next day.</p>
 <p>A good spread doesn't have to be complicated. It needs something chocolatey, something fruity and a few bite-sized treats that are easy to grab between conversations.</p>
-<p>The trick is to choose one or two showstoppers and fill in with simple things you can make ahead, so you're not stuck in the kitchen while everyone else is in the living room. Here is how I plan it, then 22 desserts to choose from.</p>
+<p>The trick is to choose one or two showstoppers and fill in with simple things you can make ahead, so you're not stuck in the kitchen while everyone else is in the living room. Here is how I plan it, then 22 desserts to choose from. Every one has a View Recipe button that takes you to a full recipe on another site.</p>
 ${photo("hero")}
 
 <h2>Five Rules for a Dessert Table That Doesn't Stress You Out</h2>

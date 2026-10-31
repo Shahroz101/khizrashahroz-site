@@ -65,6 +65,7 @@ const christmasKitchenArticle = require("./article-christmas-kitchen-decor-ideas
 const christmasDessertArticle = require("./article-christmas-dessert-ideas.js");
 const newYearsEveArticle = require("./article-new-years-eve-decor-ideas.js");
 const friendsgivingArticle = require("./article-festive-friendsgiving-decor-ideas.js");
+const mudroomArticle = require("./article-diy-mudroom-ideas.js");
 const pergolaArticle = require("./article-pergola-ideas.js");
 const dessertBoardArticle = require("./article-dessert-board-ideas.js");
 const aboveCabinetArticle = require("./article-above-cabinet-decor-ideas.js");
@@ -3060,6 +3061,14 @@ const longFormPosts = [
     excerpt: "Twenty-five Friendsgiving decor ideas for the table, the yard, the food and the front door, with simple tips for hosting a warm potluck.",
     alt: "A fall dining table with amber glassware, white pumpkins, and taper candles by a stone fireplace", image: "/images/festive-friendsgiving-decor-ideas/hero.jpg",
     bodyHtml: friendsgivingArticle.body,
+  },
+  {
+    slug: "diy-mudroom-ideas",
+    title: "58 DIY Mudroom Ideas for Wet Boots, Backpacks and Real Life",
+    category: "Entryway", readingTime: "20 min read", date: "October 31, 2026",
+    excerpt: "Fifty-eight mudroom ideas, from a single peg rail to full built-ins, with the hook spacing, bench depths and wipe-clean finishes that make them work.",
+    alt: "A white coastal mudroom locker with basket cubbies, hooks and sandal storage beside a beach door", image: "/images/diy-mudroom-ideas/hero.jpg",
+    bodyHtml: mudroomArticle.body,
   },
 ];
 
